@@ -15,9 +15,26 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Per-route meta tags (description, OG, Twitter, canonical) are managed
-         by react-helmet-async via the SEOHead component. No static duplicates
-         here — they caused crawlers to see hub tags on every page. -->
+    <!-- Static fallback OG tags for social-media crawlers that don't execute JS
+         (WhatsApp, Telegram, LinkedIn, Discord). react-helmet-async replaces these
+         per-route after hydration via the SEOHead component (data-rh="true").
+         On Vercel, prerendering silently skips (no Puppeteer), so these are the
+         ONLY OG tags crawlers see for non-prerendered routes. -->
+    <meta name="description" content="Dense PDFs and buried spreadsheets turned into interactive visual stories. Real data. No spin. Open source." data-rh="true" />
+    <link rel="canonical" href="https://indiandataproject.org" data-rh="true" />
+    <meta property="og:title" content="Indian Data Project — Government Data, Made Visible" data-rh="true" />
+    <meta property="og:description" content="Dense PDFs and buried spreadsheets turned into interactive visual stories. Real data. No spin. Open source." data-rh="true" />
+    <meta property="og:url" content="https://indiandataproject.org" data-rh="true" />
+    <meta property="og:type" content="website" data-rh="true" />
+    <meta property="og:locale" content="en_IN" data-rh="true" />
+    <meta property="og:site_name" content="Indian Data Project" data-rh="true" />
+    <meta property="og:image" content="https://indiandataproject.org/og-logo.png" data-rh="true" />
+    <meta property="og:image:width" content="1200" data-rh="true" />
+    <meta property="og:image:height" content="630" data-rh="true" />
+    <meta name="twitter:card" content="summary_large_image" data-rh="true" />
+    <meta name="twitter:title" content="Indian Data Project — Government Data, Made Visible" data-rh="true" />
+    <meta name="twitter:description" content="Dense PDFs and buried spreadsheets turned into interactive visual stories. Real data. No spin. Open source." data-rh="true" />
+    <meta name="twitter:image" content="https://indiandataproject.org/og-logo.png" data-rh="true" />
 
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#0a0e1a" />

@@ -3,7 +3,7 @@ import type { EnrollmentData, QualityData, SpendingData } from '../data/schema.t
 
 const DOMAIN = 'education';
 const ACCENT = '#3B82F6';
-const YEAR = '2024';
+const YEAR = '2025-26';
 const base = `/data/education/${YEAR}`;
 
 registerChart({

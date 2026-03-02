@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { DemographicsData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -30,18 +30,10 @@ export function UrbanizationSection({ data }: UrbanizationSectionProps) {
     return series;
   }, [data]);
 
-  // State-level urbanization bars (from Census 2011 state data)
-  const urbanBars: BarItem[] = useMemo(() => {
-    return [...data.states]
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.states
       .filter((s) => s.urbanizationRate > 0)
-      .sort((a, b) => b.urbanizationRate - a.urbanizationRate)
-      .slice(0, 20)
-      .map((s) => ({
-        id: s.id,
-        label: s.name,
-        value: s.urbanizationRate,
-        color: 'var(--violet)',
-      }));
+      .map((s) => ({ id: s.id, name: s.name, value: s.urbanizationRate }));
   }, [data]);
 
   return (
@@ -75,30 +67,30 @@ export function UrbanizationSection({ data }: UrbanizationSectionProps) {
             </p>
             <ChartActionsWrapper registryKey="census/urbanization" data={data}>
               <LineChart
-              series={urbanSeries}
-              isVisible={isVisible}
-              formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
-            />
+                series={urbanSeries}
+                isVisible={isVisible}
+                formatValue={(v) => `${v.toFixed(1)}%`}
+                unit="%"
+              />
             </ChartActionsWrapper>
           </div>
         )}
 
-        {/* State urbanization bars */}
-        {urbanBars.length > 0 && (
+        {/* State choropleth */}
+        {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
               Urbanization by State — Census 2011 (%)
             </p>
             <ChartActionsWrapper registryKey="census/urbanization" data={data}>
-              <HorizontalBarChart
-              items={urbanBars}
-              isVisible={isVisible}
-              formatValue={(v) => `${v.toFixed(1)}%`}
-              unit=""
-              labelWidth={140}
-              barHeight={24}
-            />
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--violet)"
+                formatValue={(v) => `${v.toFixed(1)}%`}
+                legendLabel="Urban %"
+                isVisible={isVisible}
+              />
             </ChartActionsWrapper>
           </div>
         )}

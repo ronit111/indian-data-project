@@ -3,7 +3,7 @@ import type { InfrastructureData, HealthSpendingData, DiseaseData } from '../dat
 
 const DOMAIN = 'healthcare';
 const ACCENT = '#F43F5E';
-const YEAR = '2024';
+const YEAR = '2025-26';
 const base = `/data/healthcare/${YEAR}`;
 
 registerChart({

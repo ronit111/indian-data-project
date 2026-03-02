@@ -3,7 +3,7 @@ import type { ParticipationData, SectoralData, UnemploymentData } from '../data/
 
 const DOMAIN = 'employment';
 const ACCENT = '#F59E0B';
-const YEAR = '2024';
+const YEAR = '2025-26';
 const base = `/data/employment/${YEAR}`;
 
 registerChart({

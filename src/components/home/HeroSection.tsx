@@ -87,7 +87,7 @@ export function HeroSection({ summary }: HeroSectionProps) {
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
-          className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full"
+          className="mt-8 inline-flex items-center gap-3 px-4 py-2 rounded-full"
           style={{
             background: 'var(--bg-raised)',
             border: 'var(--border-subtle)',

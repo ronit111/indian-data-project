@@ -240,7 +240,7 @@ export function Header() {
             </Link>
           )}
           <Link to={headerLink} className="flex items-center gap-2 no-underline">
-            <span className={`text-lg font-bold ${isDataDomain ? 'gradient-text-saffron' : 'gradient-text-tricolor'}`}>
+            <span className={`text-lg font-bold ${isDataDomain && !isMultiplierSection ? 'gradient-text-saffron' : 'gradient-text-tricolor'}`}>
               {headerTitle}
             </span>
           </Link>

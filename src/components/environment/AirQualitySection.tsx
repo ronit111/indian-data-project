@@ -4,7 +4,8 @@ import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
+import { DotStrip, type DotStripDataPoint } from '../viz/DotStrip.tsx';
 import type { AirQualityData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -27,16 +28,29 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
     }];
   }, [data]);
 
-  const cityBarItems: BarItem[] = useMemo(() => {
-    return data.cityAQI
-      .slice(0, 20)
-      .map((c) => ({
-        id: c.city,
-        label: c.city,
-        value: c.aqi,
-        color: c.aqi > 200 ? 'var(--negative)' : c.aqi > 100 ? 'var(--amber)' : 'var(--teal)',
-      }));
+  const hasStateAQI = data.stateAQI && data.stateAQI.length > 0;
+
+  const stateChoroData: ChoroplethDataPoint[] = useMemo(() => {
+    if (!hasStateAQI) return [];
+    return data.stateAQI.map((s) => ({
+      id: s.id,
+      name: s.name,
+      value: s.aqi,
+      category: s.category,
+    }));
+  }, [data, hasStateAQI]);
+
+  const cityDots: DotStripDataPoint[] = useMemo(() => {
+    return data.cityAQI.slice(0, 20).map((c) => ({
+      id: c.city,
+      label: c.city,
+      value: c.aqi,
+      color: c.aqi > 200 ? 'var(--negative)' : c.aqi > 100 ? 'var(--amber)' : 'var(--teal)',
+    }));
   }, [data]);
+
+  // Highlight the worst 5 cities
+  const worst5 = useMemo(() => cityDots.slice(0, 5).map((d) => d.id), [cityDots]);
 
   return (
     <section ref={ref} id="air-quality" className="composition" style={{ background: 'var(--bg-surface)' }}>
@@ -77,26 +91,45 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
           </div>
         )}
 
-        {cityBarItems.length > 0 && (
+        {hasStateAQI && (
+          <div className="mt-10">
+            <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+              State-level air quality index
+            </p>
+            <ChartActionsWrapper registryKey="environment/air-quality" data={data}>
+              <GenericChoropleth
+                data={stateChoroData}
+                colorScaleType="sequential"
+                accentColor="var(--negative)"
+                formatValue={(v) => v.toFixed(0)}
+                legendLabel="AQI"
+                isVisible={isVisible}
+                invertScale
+              />
+            </ChartActionsWrapper>
+          </div>
+        )}
+
+        {cityDots.length > 0 && (
           <div className="mt-10">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
               Most polluted cities — annual average AQI (2023)
             </p>
             <ChartActionsWrapper registryKey="environment/air-quality" data={data}>
-              <HorizontalBarChart
-                items={cityBarItems}
-                isVisible={isVisible}
+              <DotStrip
+                data={cityDots}
                 formatValue={(v) => v.toFixed(0)}
-                unit=""
-                labelWidth={120}
-                barHeight={22}
+                valueLabel="AQI"
+                accentColor="var(--negative)"
+                referenceLine={{ value: 150, label: 'Hazardous (CPCB)', color: 'var(--negative)' }}
+                highlightIds={worst5}
+                isVisible={isVisible}
               />
             </ChartActionsWrapper>
           </div>
         )}
 
         <RelatedTopics sectionId="air-quality" domain="environment" />
-
 
         <p className="source-attribution">
           Source: {data.source}

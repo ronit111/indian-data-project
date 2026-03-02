@@ -3,7 +3,7 @@ import type { GSDPData, RevenueData, FiscalHealthData } from '../data/schema.ts'
 
 const DOMAIN = 'states';
 const ACCENT = '#4ADE80';
-const YEAR = '2022-23';
+const YEAR = '2025-26';
 const base = `/data/states/${YEAR}`;
 
 registerChart({

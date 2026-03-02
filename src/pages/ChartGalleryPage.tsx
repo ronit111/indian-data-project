@@ -56,7 +56,7 @@ export default function ChartGalleryPage() {
     <>
       <SEOHead
         title="Chart Gallery — For Journalists — Indian Data Project"
-        description="Browse 59+ interactive charts across 10 data domains. Download CSV, copy embed code, generate citations."
+        description="Browse 90+ interactive charts across 10 data domains. Download CSV, copy embed code, generate citations."
         path="/for-journalists/gallery"
         image="/og-journalists.png"
       />

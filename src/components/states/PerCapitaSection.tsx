@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { GSDPData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -13,11 +14,22 @@ interface PerCapitaSectionProps {
 export function PerCapitaSection({ data }: PerCapitaSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const items: BarItem[] = useMemo(() => {
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.states
+      .filter((s) => s.perCapitaGsdp > 0)
+      .map((s) => ({ id: s.id, name: s.name, value: s.perCapitaGsdp }));
+  }, [data]);
+
+  const nationalAvg = useMemo(() => {
+    const valid = data.states.filter((s) => s.perCapitaGsdp > 0);
+    return valid.reduce((sum, s) => sum + s.perCapitaGsdp, 0) / valid.length;
+  }, [data]);
+
+  const topItems: BarItem[] = useMemo(() => {
     return data.states
       .filter((s) => s.perCapitaGsdp > 0)
       .sort((a, b) => b.perCapitaGsdp - a.perCapitaGsdp)
-      .slice(0, 20)
+      .slice(0, 8)
       .map((s) => ({
         id: s.id,
         label: s.name,
@@ -50,14 +62,30 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/percapita" data={data}>
-          <HorizontalBarChart
-          items={items}
-          isVisible={isVisible}
-          formatValue={(v) => `₹${Math.round(v).toLocaleString('en-IN')}`}
-          unit=""
-          labelWidth={140}
-          barHeight={26}
-        />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <GenericChoropleth
+              data={choroData}
+              colorScaleType="sequential"
+              accentColor="var(--emerald)"
+              formatValue={(v) => `₹${Math.round(v).toLocaleString('en-IN')}`}
+              legendLabel="Per capita GSDP"
+              isVisible={isVisible}
+              nationalAvg={nationalAvg}
+            />
+            <div>
+              <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+                Top 8 by per capita GSDP
+              </p>
+              <HorizontalBarChart
+                items={topItems}
+                isVisible={isVisible}
+                formatValue={(v) => `₹${Math.round(v).toLocaleString('en-IN')}`}
+                unit=""
+                labelWidth={120}
+                barHeight={22}
+              />
+            </div>
+          </div>
         </ChartActionsWrapper>
 
         <p className="source-attribution">

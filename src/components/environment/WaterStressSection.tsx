@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { WaterData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -12,28 +13,26 @@ interface WaterStressSectionProps {
 }
 
 const STAGE_COLORS: Record<string, string> = {
-  'Over-Exploited': 'var(--negative)',
-  'Critical': 'var(--amber)',
-  'Semi-Critical': 'var(--saffron)',
-  'Safe': 'var(--teal)',
+  'Over-Exploited': '#f87171',
+  'Critical': '#F59E0B',
+  'Semi-Critical': '#FF6B35',
+  'Safe': '#14B8A6',
 };
 
 export function WaterStressSection({ data }: WaterStressSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  // Groundwater stage — sorted by severity (high exploitation first)
-  const groundwaterItems: BarItem[] = useMemo(() => {
-    return [...data.groundwaterStage]
-      .sort((a, b) => b.stagePct - a.stagePct)
-      .map((s) => ({
-        id: s.id,
-        label: s.name,
-        value: s.stagePct,
-        color: STAGE_COLORS[s.stage] ?? 'var(--text-muted)',
-      }));
+  // Categorical choropleth data
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.groundwaterStage.map((s) => ({
+      id: s.id,
+      name: s.name,
+      value: s.stagePct,
+      category: s.stage,
+    }));
   }, [data]);
 
-  // Reservoir storage by region
+  // Reservoir storage by region (kept as compact bars)
   const reservoirItems: BarItem[] = useMemo(() => {
     return data.reservoirStorage.map((r) => ({
       id: r.region,
@@ -99,20 +98,20 @@ export function WaterStressSection({ data }: WaterStressSectionProps) {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Groundwater exploitation */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Categorical choropleth */}
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              Groundwater development stage (% extraction / recharge)
+              Groundwater development stage
             </p>
             <ChartActionsWrapper registryKey="environment/water-stress" data={data}>
-              <HorizontalBarChart
-                items={groundwaterItems}
-                isVisible={isVisible}
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="categorical"
+                colorMap={STAGE_COLORS}
                 formatValue={(v) => `${v}%`}
-                unit=""
-                labelWidth={160}
-                barHeight={20}
+                legendLabel="Extraction/Recharge"
+                isVisible={isVisible}
               />
             </ChartActionsWrapper>
           </div>
@@ -136,7 +135,6 @@ export function WaterStressSection({ data }: WaterStressSectionProps) {
         </div>
 
         <RelatedTopics sectionId="water" domain="environment" />
-
 
         <p className="source-attribution">
           Source: {data.source}

@@ -621,7 +621,7 @@ The site is built for maximum discoverability:
 
 *Launch context (documented Mar 2 2026):* The US-Israeli military operation against Iran began Feb 28 2026 (Operation "Epic Fury" / "Roaring Lion"). 200+ dead in Iran, Khamenei killed, 3 US soldiers dead, regional escalation into Lebanon and Gulf states. This is ongoing at time of planned launch (week of Mar 2-9 or Mar 9-16). **Before writing any launch content, interview Ronit on:** (a) Is the conflict still active? (b) How to acknowledge the moment with genuine empathy — not marketing, not performative, but honest recognition that launching a civic data tool during a time of death and destruction carries weight. The connection point: this project exists because transparent, accessible information is a civic good; war is what happens when information, diplomacy, and accountability fail. If we can say something honest about building in dark times without exploiting the moment, we should. If we can't do it right, we stay silent on it.
 
-- [ ] **Launch strategy** (beyond LinkedIn/Twitter):
+- [ ] **Launch strategy** (beyond LinkedIn/Twitter/Instagram):
   - [ ] Identify target communities: Indian civic tech (DataMeet, Open Data India), developer communities (HackerNews, Indie Hackers, Product Hunt, Reddit r/India, r/dataisbeautiful, r/opensource), journalism networks (GIJN, DataJournalism.com), education communities (NCERT teacher forums, education Twitter), open data communities (OKFN, Civic Tech slack groups)
   - [ ] Product Hunt launch: prepare screenshots, tagline, maker comment. Time for Indian morning (US evening)
   - [ ] HackerNews Show HN post: technical angle (11 automated pipelines, D3 viz, 71 open endpoints, zero-auth API)
@@ -630,7 +630,7 @@ The site is built for maximum discoverability:
   - [ ] Open data community announcements: DataMeet mailing list, Open Government Data India forums
   - [ ] Executable launch week plan: Day 1 (LinkedIn + Twitter), Day 2 (Product Hunt + HN), Day 3 (Reddit), Day 4-5 (direct outreach to journalists + educators), Day 6-7 (community forums + follow-up engagement)
   - [ ] Prep: 5-6 high-quality screenshots/GIFs of key interactions (scrollytelling, hemicycle, embed builder, Cmd+K search, calculator, state report card)
-- [ ] **Launch announcement posts** (LinkedIn long-form + Twitter thread) — stream-of-consciousness in Ronit's voice, covering origin story, philosophy, what the portal actually does
+- [ ] **Launch announcement posts** (LinkedIn long-form + Twitter thread + Instagram stories/posts) — stream-of-consciousness in Ronit's voice, covering origin story, philosophy, what the portal actually does
 - [ ] **Ongoing content series** (1 post every 3-4 days) spotlighting individual elements:
   - The "Data IS the design" philosophy and why no card wrappers, no dashboard chrome
   - Building 10 data domains with 11 automated pipelines — zero-touch data freshness

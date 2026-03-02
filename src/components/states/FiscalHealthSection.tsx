@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
-import type { FiscalHealthData } from '../../lib/data/schema.ts';
+import { ScatterChart, type ScatterDataPoint } from '../viz/ScatterChart.tsx';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import type { FiscalHealthData } from '../../lib/data/schema.ts';
 
 interface FiscalHealthSectionProps {
   data: FiscalHealthData;
@@ -14,19 +14,24 @@ interface FiscalHealthSectionProps {
 export function FiscalHealthSection({ data }: FiscalHealthSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const items: BarItem[] = useMemo(() => {
-    return data.states
+  const scatterData: ScatterDataPoint[] = useMemo(() => {
+    // Find top 3 most stressed states for annotation
+    const sorted = [...data.states]
       .filter((s) => s.debtToGsdp > 0)
-      .sort((a, b) => b.debtToGsdp - a.debtToGsdp)
-      .slice(0, 20)
+      .sort((a, b) => b.debtToGsdp - a.debtToGsdp);
+    const topStressed = new Set(sorted.slice(0, 3).map((s) => s.id));
+
+    return data.states
+      .filter((s) => s.debtToGsdp > 0 || s.fiscalDeficitPctGsdp !== 0)
       .map((s) => ({
         id: s.id,
         label: s.name,
-        value: s.debtToGsdp,
-        secondaryValue: Math.abs(s.fiscalDeficitPctGsdp),
-        color: 'var(--saffron)',
-        secondaryColor: 'var(--emerald)',
-        annotation: s.fiscalDeficitPctGsdp < 0 ? 'surplus' : undefined,
+        x: s.fiscalDeficitPctGsdp,
+        y: s.debtToGsdp,
+        color: s.fiscalDeficitPctGsdp < 0 ? 'var(--positive)' : 'var(--saffron)',
+        annotation: topStressed.has(s.id) || s.fiscalDeficitPctGsdp < 0
+          ? s.name
+          : undefined,
       }));
   }, [data]);
 
@@ -50,26 +55,28 @@ export function FiscalHealthSection({ data }: FiscalHealthSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Outstanding debt as a share of GSDP varies wildly. The FRBM Act recommends states keep fiscal deficits below 3% of GSDP, but many exceed this threshold.
+          Each dot is a state. States to the right borrow more, states higher up carry more debt. The FRBM Act recommends keeping fiscal deficits below 3% of GSDP — the dashed line shows who's compliant and who isn't. Green dots are running a surplus.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/fiscal-health" data={data}>
-          <HorizontalBarChart
-          items={items}
-          isVisible={isVisible}
-          showSecondary
-          primaryLabel="Debt-to-GSDP"
-          secondaryLabel="Fiscal Deficit"
-          target={{ value: 3, label: 'FRBM 3% limit', color: 'var(--saffron)' }}
-          formatValue={(v) => `${v.toFixed(1)}% of GSDP`}
-          unit=""
-          labelWidth={140}
-          barHeight={24}
-        />
+          <ScatterChart
+            data={scatterData}
+            xLabel="Fiscal Deficit (% of GSDP)"
+            yLabel="Debt-to-GSDP (%)"
+            xFormat={(v) => `${v.toFixed(1)}%`}
+            yFormat={(v) => `${v.toFixed(0)}%`}
+            xReferenceLine={{ value: 3, label: 'FRBM 3%', color: 'var(--saffron)' }}
+            quadrantLabels={{
+              topLeft: 'Low deficit, high debt',
+              topRight: 'Stressed',
+              bottomLeft: 'Fiscally healthy',
+              bottomRight: 'High deficit, low debt',
+            }}
+            isVisible={isVisible}
+          />
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="fiscal-health" domain="states" />
-
 
         <p className="source-attribution">
           Source: {data.source} ({data.year})

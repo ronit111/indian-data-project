@@ -4,7 +4,7 @@ import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { HealthData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -29,18 +29,11 @@ export function HealthSection({ data }: HealthSectionProps) {
     return series;
   }, [data]);
 
-  // State-level IMR bars — sorted worst to best (highest IMR first), show top 20
-  const stateImrBars: BarItem[] = useMemo(() => {
-    return [...data.stateImr]
-      .sort((a, b) => b.value - a.value)
-      .slice(0, 20)
-      .map((s, i, arr) => ({
-        id: s.id,
-        label: s.name,
-        value: s.value,
-        // Color gradient: worst (saffron) → best (violet)
-        color: i < arr.length * 0.3 ? 'var(--saffron)' : i < arr.length * 0.7 ? 'var(--gold)' : 'var(--violet)',
-      }));
+  // Inverse scale: high IMR = red (bad), low IMR = good
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.stateImr
+      .filter((s) => s.value > 0)
+      .map((s) => ({ id: s.id, name: s.name, value: s.value }));
   }, [data]);
 
   return (
@@ -74,36 +67,35 @@ export function HealthSection({ data }: HealthSectionProps) {
             </p>
             <ChartActionsWrapper registryKey="census/health" data={data}>
               <LineChart
-              series={imrSeries}
-              isVisible={isVisible}
-              formatValue={(v) => v.toFixed(0)}
-              unit="per 1000"
-            />
+                series={imrSeries}
+                isVisible={isVisible}
+                formatValue={(v) => v.toFixed(0)}
+                unit="per 1000"
+              />
             </ChartActionsWrapper>
           </div>
         )}
 
-        {/* State-level IMR bars */}
-        {stateImrBars.length > 0 && (
+        {/* State-level IMR choropleth — inverse: high IMR = red */}
+        {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
               Infant Mortality by State — SRS 2023 (per 1,000 live births)
             </p>
             <ChartActionsWrapper registryKey="census/health" data={data}>
-              <HorizontalBarChart
-              items={stateImrBars}
-              isVisible={isVisible}
-              formatValue={(v) => `${v}`}
-              unit=""
-              labelWidth={140}
-              barHeight={24}
-            />
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--negative)"
+                formatValue={(v) => `${v.toFixed(0)} per 1000`}
+                legendLabel="IMR"
+                isVisible={isVisible}
+              />
             </ChartActionsWrapper>
           </div>
         )}
 
         <RelatedTopics sectionId="health" domain="census" />
-
 
         <p className="source-attribution">
           Source: {data.source}

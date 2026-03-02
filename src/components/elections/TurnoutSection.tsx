@@ -4,7 +4,7 @@ import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { TurnoutData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -15,7 +15,6 @@ interface TurnoutSectionProps {
 export function TurnoutSection({ data }: TurnoutSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  // National turnout trend with annotations
   const turnoutSeries: LineSeries[] = useMemo(() => {
     return [{
       id: 'turnout',
@@ -28,17 +27,14 @@ export function TurnoutSection({ data }: TurnoutSectionProps) {
     }];
   }, [data]);
 
-  // State breakdown as horizontal bars — top 20
-  const stateBarItems: BarItem[] = useMemo(() => {
-    return data.stateBreakdown2024.slice(0, 20).map((s) => ({
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.stateBreakdown2024.map((s) => ({
       id: s.id,
-      label: s.name,
+      name: s.name,
       value: s.turnout,
-      color: s.turnout > 70 ? 'var(--indigo)' : s.turnout > 60 ? 'var(--indigo-light)' : 'var(--text-muted)',
     }));
   }, [data]);
 
-  // Highlight stats
   const highest = data.stateBreakdown2024[0];
   const lowest = data.stateBreakdown2024[data.stateBreakdown2024.length - 1];
   const peak = data.nationalTrend.reduce((a, b) => a.turnout > b.turnout ? a : b);
@@ -107,26 +103,25 @@ export function TurnoutSection({ data }: TurnoutSectionProps) {
           </ChartActionsWrapper>
         </div>
 
-        {stateBarItems.length > 0 && (
+        {choroData.length > 0 && (
           <div className="mt-10">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              State-wise turnout — Lok Sabha 2024 (top 20)
+              State-wise turnout — Lok Sabha 2024
             </p>
             <ChartActionsWrapper registryKey="elections/turnout" data={data}>
-              <HorizontalBarChart
-                items={stateBarItems}
-                isVisible={isVisible}
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--indigo)"
                 formatValue={(v) => `${v.toFixed(1)}%`}
-                unit=""
-                labelWidth={160}
-                barHeight={22}
+                legendLabel="Turnout %"
+                isVisible={isVisible}
               />
             </ChartActionsWrapper>
           </div>
         )}
 
         <RelatedTopics sectionId="turnout" domain="elections" />
-
 
         <p className="source-attribution">
           Source: {data.source}

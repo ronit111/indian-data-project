@@ -1,4 +1,4 @@
-@import "@fontsource-variable/inter";
+@import "@fontsource-variable/source-sans-3";
 @import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
 
@@ -63,7 +63,7 @@
   --sankey-target:     var(--cyan);
 
   /* Typography */
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Type scale — numbers as heroes */

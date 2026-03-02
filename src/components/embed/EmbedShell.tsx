@@ -55,7 +55,7 @@ export function EmbedShell({ title, source, accentColor, domainPath, sectionId, 
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          fontSize: '0.75rem',
+          fontSize: 'var(--text-caption)',
           color: 'var(--text-muted)',
         }}
       >

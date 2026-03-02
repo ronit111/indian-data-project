@@ -4,7 +4,7 @@ import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { LiteracyData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -102,7 +102,6 @@ function GenderGapChart({
 export function LiteracySection({ data }: LiteracySectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  // National literacy time series (WB — may be sparse)
   const literacySeries: LineSeries[] = useMemo(() => {
     const series: LineSeries[] = [];
     if (data.totalTimeSeries.length >= MIN_POINTS) {
@@ -117,17 +116,10 @@ export function LiteracySection({ data }: LiteracySectionProps) {
     return series;
   }, [data]);
 
-  // State ranking by overall literacy
-  const stateRankBars: BarItem[] = useMemo(() => {
-    return [...data.states]
-      .sort((a, b) => b.overallRate - a.overallRate)
-      .slice(0, 20)
-      .map((s) => ({
-        id: s.id,
-        label: s.name,
-        value: s.overallRate,
-        color: 'var(--violet)',
-      }));
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.states
+      .filter((s) => s.overallRate > 0)
+      .map((s) => ({ id: s.id, name: s.name, value: s.overallRate }));
   }, [data]);
 
   const hasTimeSeries = literacySeries.length > 0;
@@ -155,7 +147,7 @@ export function LiteracySection({ data }: LiteracySectionProps) {
           Kerala's literacy rate approaches 94%, rivaling developed nations. Bihar sits near 62%. The gender gap is narrowing — from 22 percentage points in 2001 to about 14 now — but it remains the defining divide.
         </motion.p>
 
-        {/* National trend (if WB data available) */}
+        {/* National trend */}
         {hasTimeSeries && (
           <div className="mb-10">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
@@ -163,11 +155,11 @@ export function LiteracySection({ data }: LiteracySectionProps) {
             </p>
             <ChartActionsWrapper registryKey="census/literacy" data={data}>
               <LineChart
-              series={literacySeries}
-              isVisible={isVisible}
-              formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
-            />
+                series={literacySeries}
+                isVisible={isVisible}
+                formatValue={(v) => `${v.toFixed(1)}%`}
+                unit="%"
+              />
             </ChartActionsWrapper>
           </div>
         )}
@@ -184,27 +176,27 @@ export function LiteracySection({ data }: LiteracySectionProps) {
           </div>
         )}
 
-        {/* State ranking */}
-        {stateRankBars.length > 0 && (
+        {/* State choropleth replacing the 20-bar ranking */}
+        {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
               Overall Literacy Rate by State — Census 2011
             </p>
             <ChartActionsWrapper registryKey="census/literacy" data={data}>
-              <HorizontalBarChart
-              items={stateRankBars}
-              isVisible={isVisible}
-              formatValue={(v) => `${v.toFixed(1)}%`}
-              unit=""
-              labelWidth={140}
-              barHeight={24}
-            />
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--violet)"
+                formatValue={(v) => `${v.toFixed(1)}%`}
+                legendLabel="Literacy Rate"
+                isVisible={isVisible}
+                nationalAvg={74}
+              />
             </ChartActionsWrapper>
           </div>
         )}
 
         <RelatedTopics sectionId="literacy" domain="census" />
-
 
         <p className="source-attribution">
           Source: {data.source}

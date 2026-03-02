@@ -10,7 +10,7 @@ interface ChartContainerProps {
 export function ChartContainer({ title, subtitle, children, className = '' }: ChartContainerProps) {
   return (
     <div
-      className={`rounded-2xl overflow-hidden ${className}`}
+      className={`rounded-xl overflow-hidden ${className}`}
       style={{ background: 'var(--bg-surface)', border: 'var(--border-subtle)' }}
     >
       <div className="px-6 pt-6 pb-2">

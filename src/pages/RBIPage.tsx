@@ -91,11 +91,46 @@ export default function RBIPage() {
 
       <div className="composition-divider" />
 
+      <NarrativeBridge
+        text="When inflation stays in the target band, the RBI has room to focus on growth. But the tools it uses — CRR, SLR, open market operations — shape how much money flows through the system."
+        highlights={{
+          'inflation': 'var(--cyan)',
+          'target': 'var(--cyan)',
+          'crr': 'var(--gold)',
+          'slr': 'var(--gold)',
+          'money': 'var(--gold)',
+        }}
+      />
+
+      <div className="composition-divider" />
+
       {liquidity && <LiquiditySection data={liquidity} />}
 
       <div className="composition-divider" />
 
+      <NarrativeBridge
+        text="Liquidity sets the supply. Credit is where it lands — in home loans, business working capital, and farm financing. The pace of credit growth tells you where the economy is heading."
+        highlights={{
+          'credit': 'var(--saffron)',
+          'loans': 'var(--saffron)',
+          'economy': 'var(--gold)',
+        }}
+      />
+
+      <div className="composition-divider" />
+
       {credit && <CreditSection data={credit} />}
+
+      <div className="composition-divider" />
+
+      <NarrativeBridge
+        text="India's foreign exchange reserves are its shield against global shocks — currency attacks, oil price spikes, and capital flight. The rupee's stability depends on this war chest."
+        highlights={{
+          'reserves': 'var(--cyan)',
+          'shield': 'var(--cyan)',
+          'rupee': 'var(--gold)',
+        }}
+      />
 
       <div className="composition-divider" />
 

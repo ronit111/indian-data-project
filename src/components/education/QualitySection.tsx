@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { QualityData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -13,16 +13,15 @@ interface QualitySectionProps {
 export function QualitySection({ data }: QualitySectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const readingBars: BarItem[] = useMemo(() => {
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
     return data.learningOutcomes
       .filter((s) => s.canReadStd2 > 0)
-      .sort((a, b) => b.canReadStd2 - a.canReadStd2)
-      .map((s) => ({
-        id: s.id,
-        label: s.name,
-        value: s.canReadStd2,
-        color: 'var(--blue)',
-      }));
+      .map((s) => ({ id: s.id, name: s.name, value: s.canReadStd2 }));
+  }, [data]);
+
+  const nationalAvg = useMemo(() => {
+    const valid = data.learningOutcomes.filter((s) => s.canReadStd2 > 0);
+    return valid.reduce((sum, s) => sum + s.canReadStd2, 0) / valid.length;
   }, [data]);
 
   return (
@@ -48,20 +47,21 @@ export function QualitySection({ data }: QualitySectionProps) {
           Only 1 in 4 children in Std III can read at Std II level. The enrollment miracle has not yet translated into a learning miracle.
         </motion.p>
 
-        {readingBars.length > 0 && (
+        {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              % Children in Std III Who Can Read Std II Text (by State)
+              % Children in Std III who can read Std II text (by state)
             </p>
             <ChartActionsWrapper registryKey="education/quality" data={data}>
-              <HorizontalBarChart
-              items={readingBars}
-              isVisible={isVisible}
-              formatValue={(v) => `${v.toFixed(1)}%`}
-              unit=""
-              labelWidth={140}
-              barHeight={24}
-            />
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--blue)"
+                formatValue={(v) => `${v.toFixed(1)}%`}
+                legendLabel="Can read at level"
+                isVisible={isVisible}
+                nationalAvg={nationalAvg}
+              />
             </ChartActionsWrapper>
           </div>
         )}

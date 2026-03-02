@@ -3,7 +3,7 @@ import type { PopulationData, DemographicsData, HealthData, LiteracyData } from 
 
 const DOMAIN = 'census';
 const ACCENT = '#8B5CF6';
-const YEAR = '2024';
+const YEAR = '2025-26';
 const base = `/data/census/${YEAR}`;
 
 registerChart({

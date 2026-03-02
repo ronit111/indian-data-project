@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 import type { GSDPData } from '../../lib/data/schema.ts';
@@ -14,11 +15,17 @@ interface GSDPSectionProps {
 export function GSDPSection({ data }: GSDPSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const items: BarItem[] = useMemo(() => {
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.states
+      .filter((s) => s.gsdp > 0)
+      .map((s) => ({ id: s.id, name: s.name, value: s.gsdp }));
+  }, [data]);
+
+  const topItems: BarItem[] = useMemo(() => {
     return data.states
       .filter((s) => s.gsdp > 0)
       .sort((a, b) => b.gsdp - a.gsdp)
-      .slice(0, 20)
+      .slice(0, 8)
       .map((s) => ({
         id: s.id,
         label: s.name,
@@ -51,18 +58,32 @@ export function GSDPSection({ data }: GSDPSectionProps) {
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/gsdp" data={data}>
-          <HorizontalBarChart
-            items={items}
-            isVisible={isVisible}
-            formatValue={(v) => `₹${(v / 100000).toFixed(2)}L Cr`}
-            unit=""
-            labelWidth={140}
-            barHeight={26}
-          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <GenericChoropleth
+              data={choroData}
+              colorScaleType="sequential"
+              accentColor="var(--emerald)"
+              formatValue={(v) => `₹${(v / 100000).toFixed(1)}L Cr`}
+              legendLabel="GSDP"
+              isVisible={isVisible}
+            />
+            <div>
+              <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+                Top 8 by GSDP
+              </p>
+              <HorizontalBarChart
+                items={topItems}
+                isVisible={isVisible}
+                formatValue={(v) => `₹${(v / 100000).toFixed(2)}L Cr`}
+                unit=""
+                labelWidth={120}
+                barHeight={22}
+              />
+            </div>
+          </div>
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="gsdp" domain="states" />
-
 
         <p className="source-attribution">
           Source: {data.source} ({data.year})

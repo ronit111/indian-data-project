@@ -52,7 +52,7 @@ export function TopicSection({ section, bag, topicId, accent }: TopicSectionProp
 
       {/* Sources */}
       {section.sources.length > 0 && (
-        <p className="text-xs mt-6" style={{ color: 'var(--text-muted)' }}>
+        <p className="source-attribution">
           Source: {section.sources.join(' · ')}
         </p>
       )}

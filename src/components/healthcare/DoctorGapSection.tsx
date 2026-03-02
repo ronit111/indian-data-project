@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
-import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
+import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { InfrastructureData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 
@@ -13,17 +13,13 @@ interface DoctorGapSectionProps {
 export function DoctorGapSection({ data }: DoctorGapSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const doctorBarItems: BarItem[] = useMemo(() => {
-    return [...data.stateInfrastructure]
+  const choroData: ChoroplethDataPoint[] = useMemo(() => {
+    return data.stateInfrastructure
       .filter((s) => s.doctorsPer10K > 0)
-      .sort((a, b) => b.doctorsPer10K - a.doctorsPer10K)
-      .map((s) => ({
-        id: s.id,
-        label: s.name,
-        value: s.doctorsPer10K,
-        color: 'var(--rose)',
-      }));
+      .map((s) => ({ id: s.id, name: s.name, value: s.doctorsPer10K }));
   }, [data]);
+
+  const whoTarget = 10; // WHO recommended minimum
 
   return (
     <section ref={ref} id="doctor-gap" className="composition" style={{ background: 'var(--bg-surface)' }}>
@@ -48,20 +44,21 @@ export function DoctorGapSection({ data }: DoctorGapSectionProps) {
           State-level variation in doctor availability is extreme. Kerala has 10x more doctors per capita than Bihar. Rural areas are severely underserved.
         </motion.p>
 
-        {doctorBarItems.length > 0 && (
+        {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
               Doctors per 10,000 population by state
             </p>
             <ChartActionsWrapper registryKey="healthcare/doctor-gap" data={data}>
-              <HorizontalBarChart
-              items={doctorBarItems}
-              isVisible={isVisible}
-              formatValue={(v) => v.toFixed(1)}
-              unit="per 10K"
-              labelWidth={140}
-              barHeight={24}
-            />
+              <GenericChoropleth
+                data={choroData}
+                colorScaleType="sequential"
+                accentColor="var(--rose)"
+                formatValue={(v) => `${v.toFixed(1)} per 10K`}
+                legendLabel="Doctors per 10K"
+                isVisible={isVisible}
+                nationalAvg={whoTarget}
+              />
             </ChartActionsWrapper>
           </div>
         )}
