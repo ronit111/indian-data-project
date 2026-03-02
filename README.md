@@ -589,6 +589,21 @@ The site is built for maximum discoverability:
 - [ ] Brand consistency pass: audit spacing, card styles, hero patterns, accent harmony, source attributions, mobile consistency across all 10 domains
 - [ ] Implementation + browser QA for every changed section
 
+**Phase 14: Performance & Low-Connectivity Optimization**
+
+*Context: A large portion of the Indian audience accesses the web on 2G/3G connections, budget Android devices (1-2GB RAM), and intermittent connectivity. A civic data platform that only works on fast broadband fails its purpose.*
+
+- [ ] **Bundle audit & code splitting**: Analyze current bundle (index.js is ~1.1MB, ~276KB gzipped). Route-level lazy loading for all 10 domain pages + multiplier pages. Separate D3, Framer Motion, and Zustand into async chunks so the critical path loads fast.
+- [ ] **Image optimization**: Audit all 18 OG images + any inline assets. Convert to WebP/AVIF with fallbacks. Ensure OG PNGs aren't loaded on page (they're only for social previews). Lazy-load any below-fold images.
+- [ ] **JSON data loading strategy**: Hub loads only `summary.json` (good). But scrollytelling pages load full domain data upfront via Zustand hooks. Evaluate: (a) progressive loading (load section data as user scrolls), (b) compression (gzip/brotli on Vercel), (c) stale-while-revalidate caching headers, (d) preload hints for critical data files.
+- [ ] **Font optimization**: Current: Inter (body) + JetBrains Mono (data). After Phase 13 font change, ensure: subset to Latin + Devanagari glyphs only, `font-display: swap`, preload critical weights, self-host (no Google Fonts round-trip).
+- [ ] **Service Worker / offline resilience**: Evaluate Workbox for: (a) precache app shell + critical routes, (b) runtime cache for JSON data files (network-first with cache fallback), (c) offline fallback page ("You're offline — cached data shown below"). This turns the portal into a near-PWA for repeat visitors on flaky connections.
+- [ ] **SVG & D3 rendering performance**: Profile treemap, sankey, hemicycle on low-end devices. Reduce DOM node count where possible (hemicycle has 543 SVG circles). Consider canvas fallback for heavy visualizations on mobile.
+- [ ] **Perceived performance**: Add skeleton screens for data-loading states (replace current spinners). Preload next likely route on hover/touch. Use `content-visibility: auto` for below-fold sections to reduce initial paint cost.
+- [ ] **Lighthouse audit targets**: Score 90+ on Performance, Accessibility, Best Practices, SEO across all routes. Test on simulated "Slow 3G" + "Low-end Mobile" in Chrome DevTools. Specific targets: FCP < 2s, LCP < 3s, CLS < 0.1, TTI < 5s on 3G.
+- [ ] **Device testing**: Test on actual low-end Android (Chrome on a Redmi/Realme with 2GB RAM) if available, or use BrowserStack/remote device lab. Verify: smooth scroll through 9-section scrollytelling, chart interactions responsive, no OOM crashes.
+- [ ] **Accessibility pass**: Keyboard navigation for all interactive elements (chart filters, calculators, search). ARIA labels on SVG visualizations. Screen reader testing on at least hub + 1 domain story page. Color contrast verification for all accent colors against dark backgrounds.
+
 **Pre-Final: Code-Level QA Audit (Codex)**
 - [ ] End-to-end automated code audit via Codex CLI (`codex exec --full-auto`)
 - [ ] Verify all JSON pipeline outputs match TypeScript schema interfaces (Pydantic ↔ TypeScript alignment)

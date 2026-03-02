@@ -229,7 +229,21 @@ These are recurring polish tasks that should be checked after every domain build
 3. **Brand consistency**: Spacing tokens, card styles, hero patterns, accent harmony, source attributions — holistic audit across all domains.
 4. **New components needed**: Choropleth, DotStrip, ScatterChart, BumpChart, SmallMultiples, BulletChart.
 
-This happens after Phase 12 (Multiplier Infrastructure) and before the Codex QA audit. Use design agents (`frontend-design` skill + agent-router for UI/UX specialists) for typography selection and visualization proposals.
+This happens after Phase 12 (Multiplier Infrastructure) and before the performance pass. Use design agents (`frontend-design` skill + agent-router for UI/UX specialists) for typography selection and visualization proposals.
+
+### Performance & Low-Connectivity Optimization (Phase 14)
+**Rationale**: A civic data platform for Indian citizens must work on 2G/3G connections, budget Android devices (1-2GB RAM), and intermittent connectivity. Fast broadband is the exception, not the norm.
+
+Key areas:
+1. **Bundle splitting**: Route-level lazy loading for all domain pages + multiplier pages. Separate D3, Framer Motion, Zustand into async chunks. Target: critical path JS under 200KB gzipped.
+2. **Data loading**: Progressive JSON loading as user scrolls (not all domain data upfront). Stale-while-revalidate caching. Preload hints for critical files.
+3. **Font optimization**: After Phase 13 font change — subset to Latin + Devanagari, `font-display: swap`, preload critical weights, self-host.
+4. **Service Worker**: Workbox for app shell precaching + runtime cache for JSON data. Offline fallback page with cached data. Near-PWA for repeat visitors.
+5. **SVG/D3 performance**: Profile heavy visualizations (hemicycle 543 nodes, treemap, sankey) on low-end devices. Canvas fallback for mobile if needed.
+6. **Lighthouse targets**: 90+ across Performance/Accessibility/Best Practices/SEO. FCP < 2s, LCP < 3s, CLS < 0.1, TTI < 5s on simulated 3G.
+7. **Accessibility**: Keyboard nav for all interactive elements, ARIA labels on SVG charts, screen reader testing, color contrast verification.
+
+This happens after the Design Overhaul (Phase 13) because font/asset changes affect bundle size, and before the Codex QA audit so automated checks catch any issues introduced.
 
 ### Cross-Domain Linking Audit
 Evaluate opportunities to weave connections between domains so users can naturally navigate related data. Examples:
