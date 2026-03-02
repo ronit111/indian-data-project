@@ -15,6 +15,7 @@ interface SankeyDiagramProps {
   width?: number;
   height?: number;
   isVisible: boolean;
+  ariaLabel?: string;
 }
 
 interface NodeExtra {
@@ -37,7 +38,7 @@ function truncateLabel(name: string, maxLen = 22): string {
   return name.length > maxLen ? name.slice(0, maxLen - 1).trimEnd() + '…' : name;
 }
 
-export function SankeyDiagram({ data, width = 900, height = 600, isVisible }: SankeyDiagramProps) {
+export function SankeyDiagram({ data, width = 900, height = 600, isVisible, ariaLabel }: SankeyDiagramProps) {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [pathLengths, setPathLengths] = useState<Map<number, number>>(new Map());
   const pathRefs = useRef<Map<number, SVGPathElement>>(new Map());
@@ -101,7 +102,7 @@ export function SankeyDiagram({ data, width = 900, height = 600, isVisible }: Sa
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 600 }}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 600 }} role="img" aria-label={ariaLabel || 'Sankey flow diagram'}>
         <defs>
           {graph.links.map((link, i) => {
             const srcColor =

@@ -28,6 +28,8 @@ interface AreaChartProps {
   isVisible: boolean;
   formatValue?: (v: number) => string;
   unit?: string;
+  /** Accessible label for screen readers */
+  ariaLabel?: string;
 }
 
 // ─── Constants ───────────────────────────────────────────────────────
@@ -41,6 +43,7 @@ export function AreaChart({
   isVisible,
   formatValue = (v) => `${v}`,
   unit = '%',
+  ariaLabel,
 }: AreaChartProps) {
   const overlayPathRef = useRef<SVGPathElement | null>(null);
   const [overlayLen, setOverlayLen] = useState(0);
@@ -164,7 +167,7 @@ export function AreaChart({
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }} role="img" aria-label={ariaLabel || `Area chart: ${series.map(s => s.name).join(', ')}`}>
         <defs>
           {series.map((s) => (
             <linearGradient key={s.id} id={`area-grad-${s.id}`} x1="0" y1="0" x2="0" y2="1">

@@ -96,6 +96,7 @@ export function WaffleChart({ categories, isVisible, highlightCategory }: Waffle
         <svg
           viewBox="0 0 100 100"
           className="absolute inset-0 w-full h-full"
+          role="img"
           aria-label="Waffle chart showing revenue breakdown"
         >
           {cells.map((cell) => {

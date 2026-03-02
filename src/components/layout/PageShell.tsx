@@ -31,6 +31,13 @@ export function PageShell({ children }: { children: ReactNode }) {
 
   return (
     <div className={`min-h-screen flex flex-col${classroomMode ? ' classroom-mode' : ''}`}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:rounded"
+        style={{ background: 'var(--saffron)', color: 'var(--bg-void)' }}
+      >
+        Skip to main content
+      </a>
       <Header />
       <SearchOverlay />
 
@@ -45,7 +52,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       )}
 
       <PersonalizationBanner />
-      <main className="flex-1 pt-16 overflow-y-auto">{children}</main>
+      <main id="main-content" className="flex-1 pt-16 overflow-y-auto">{children}</main>
       <Footer />
       <FeedbackButton />
       <MobileNav />

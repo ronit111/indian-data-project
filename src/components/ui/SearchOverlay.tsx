@@ -53,6 +53,8 @@ export function SearchOverlay() {
   const [results, setResults] = useState<SearchItem[]>([]);
   const [glossaryTerms, setGlossaryTerms] = useState<SearchItem[]>([]);
   const [questionItems, setQuestionItems] = useState<SearchItem[]>([]);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const listRef = useRef<HTMLDivElement>(null);
 
   // Load glossary terms and citizen questions once
   useEffect(() => {
@@ -192,6 +194,7 @@ export function SearchOverlay() {
   const handleSearch = useCallback(
     (q: string) => {
       setQuery(q);
+      setActiveIndex(-1);
       if (q.trim().length === 0) {
         setResults(searchItems.filter((s) => s.type === 'page'));
       } else {
@@ -217,10 +220,12 @@ export function SearchOverlay() {
   // Focus input when opened
   useEffect(() => {
     if (searchOpen) {
+      setActiveIndex(-1);
       setTimeout(() => inputRef.current?.focus(), 100);
       handleSearch('');
     } else {
       setQuery('');
+      setActiveIndex(-1);
     }
   }, [searchOpen]);
 
@@ -230,6 +235,9 @@ export function SearchOverlay() {
     <div
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]"
       onClick={() => setSearchOpen(false)}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Search"
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div
@@ -249,9 +257,27 @@ export function SearchOverlay() {
             type="text"
             value={query}
             onChange={(e) => handleSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setActiveIndex((prev) => (prev < results.length - 1 ? prev + 1 : 0));
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setActiveIndex((prev) => (prev > 0 ? prev - 1 : results.length - 1));
+              } else if (e.key === 'Enter' && activeIndex >= 0 && results[activeIndex]) {
+                e.preventDefault();
+                navigate(results[activeIndex].route);
+                setSearchOpen(false);
+              }
+            }}
             placeholder="Ask a question, or search ministries, schemes, terms..."
             className="w-full px-3 py-4 bg-transparent border-none outline-none text-sm"
             style={{ color: 'var(--text-primary)' }}
+            role="combobox"
+            aria-expanded={results.length > 0}
+            aria-controls="search-results"
+            aria-activedescendant={activeIndex >= 0 && results[activeIndex] ? `search-item-${results[activeIndex].type}-${results[activeIndex].id}` : undefined}
+            aria-autocomplete="list"
           />
           <kbd
             className="text-xs px-2 py-0.5 rounded font-mono"
@@ -261,24 +287,31 @@ export function SearchOverlay() {
           </kbd>
         </div>
 
-        <div className="max-h-80 overflow-y-auto p-2">
+        <div ref={listRef} id="search-results" role="listbox" className="max-h-80 overflow-y-auto p-2">
           {results.length === 0 && query.length > 0 && (
             <p className="text-sm px-3 py-4 text-center" style={{ color: 'var(--text-muted)' }}>
               No results found
             </p>
           )}
-          {results.map((item) => {
+          {results.map((item, idx) => {
             const badge = BADGE_STYLES[item.type];
+            const isActive = idx === activeIndex;
             return (
               <button
                 key={`${item.type}-${item.id}`}
+                id={`search-item-${item.type}-${item.id}`}
+                role="option"
+                aria-selected={isActive}
+                ref={(el) => {
+                  if (isActive && el) el.scrollIntoView({ block: 'nearest' });
+                }}
                 onClick={() => {
                   navigate(item.route);
                   setSearchOpen(false);
                 }}
+                onMouseEnter={() => setActiveIndex(idx)}
                 className="w-full text-left px-3 py-2.5 rounded-lg transition-colors flex items-start gap-3 cursor-pointer bg-transparent border-none"
-                onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bg-raised)')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                style={{ background: isActive ? 'var(--bg-raised)' : 'transparent' }}
               >
                 <span
                   className="mt-0.5 text-[10px] font-mono uppercase px-1.5 py-0.5 rounded"

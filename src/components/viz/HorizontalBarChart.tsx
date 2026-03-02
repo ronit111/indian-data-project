@@ -30,6 +30,8 @@ interface HorizontalBarChartProps {
   primaryLabel?: string;
   /** Left margin for labels (default 100) */
   labelWidth?: number;
+  /** Accessible label for screen readers */
+  ariaLabel?: string;
 }
 
 // ─── Constants ───────────────────────────────────────────────────────
@@ -56,6 +58,7 @@ export function HorizontalBarChart({
   secondaryLabel,
   primaryLabel,
   labelWidth = 100,
+  ariaLabel,
 }: HorizontalBarChartProps) {
   const tooltip = useTooltip<BarItem>();
 
@@ -90,7 +93,7 @@ export function HorizontalBarChart({
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${totalH}`} className="w-full" style={{ minWidth: 320, overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${width} ${totalH}`} className="w-full" style={{ minWidth: 320, overflow: 'visible' }} role="img" aria-label={ariaLabel || `Bar chart: ${items.length} items`}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
           {/* Target reference line */}
           {target && (

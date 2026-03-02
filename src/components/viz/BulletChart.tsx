@@ -10,6 +10,7 @@ interface BulletChartProps {
   isVisible: boolean;
   width?: number;
   height?: number;
+  ariaLabel?: string;
 }
 
 /**
@@ -26,6 +27,7 @@ export function BulletChart({
   isVisible,
   width = 300,
   height = 32,
+  ariaLabel,
 }: BulletChartProps) {
   const maxVal = ranges?.max ?? Math.max(value, target ?? value) * 1.2;
   const barH = height * 0.45;
@@ -46,7 +48,7 @@ export function BulletChart({
         className="text-caption shrink-0 w-24 text-right truncate"
         title={label}
       >{label}</span>
-      <svg width={width} height={height} className="shrink-0">
+      <svg width={width} height={height} className="shrink-0" role="img" aria-label={ariaLabel || `Bullet chart: ${label}`}>
         {/* Range bands */}
         {ranges && (
           <>

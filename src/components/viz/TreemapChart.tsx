@@ -10,6 +10,7 @@ interface TreemapChartProps {
   width?: number;
   height?: number;
   isVisible: boolean;
+  ariaLabel?: string;
 }
 
 /**
@@ -37,7 +38,7 @@ function getNodeColor(id: string, parentId?: string): string {
   return NODE_COLORS[id] || NODE_COLORS[parentId || ''] || DEFAULT_COLOR;
 }
 
-export function TreemapChart({ root, width = 960, height = 600, isVisible }: TreemapChartProps) {
+export function TreemapChart({ root, width = 960, height = 600, isVisible, ariaLabel }: TreemapChartProps) {
   const [drillPath, setDrillPath] = useState<TreemapNode[]>([]);
   const activeRoot = drillPath.length > 0 ? drillPath[drillPath.length - 1] : root;
   const tooltip = useTooltip<{ name: string; value: number; pct?: number; hasChildren: boolean }>();
@@ -97,7 +98,7 @@ export function TreemapChart({ root, width = 960, height = 600, isVisible }: Tre
       )}
 
       <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: `${width}/${height}` }}>
-        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-full">
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-full" role="img" aria-label={ariaLabel || `Treemap: ${root.name}`}>
           <AnimatePresence mode="wait">
             {layout.map((child, i) => {
               const x0 = (child as unknown as { x0: number }).x0;
@@ -132,7 +133,16 @@ export function TreemapChart({ root, width = 960, height = 600, isVisible }: Tre
                     height={h}
                     fill={color}
                     rx={3}
+                    tabIndex={hasChildren ? 0 : undefined}
+                    role={hasChildren ? 'button' : undefined}
+                    aria-label={`${child.data.name}: ${formatRsCrore(child.value || 0)}${hasChildren ? ' — press Enter to drill down' : ''}`}
                     onClick={() => handleClick(child.data)}
+                    onKeyDown={(e) => {
+                      if (hasChildren && (e.key === 'Enter' || e.key === ' ')) {
+                        e.preventDefault();
+                        handleClick(child.data);
+                      }
+                    }}
                     onMouseEnter={(e) =>
                       tooltip.show(
                         {
@@ -146,6 +156,13 @@ export function TreemapChart({ root, width = 960, height = 600, isVisible }: Tre
                     }
                     onMouseMove={tooltip.move}
                     onMouseLeave={tooltip.hide}
+                    style={{ cursor: hasChildren ? 'pointer' : 'default', outline: 'none' }}
+                    onFocus={(e) => {
+                      if (hasChildren) (e.target as SVGRectElement).setAttribute('stroke', 'var(--text-primary)');
+                    }}
+                    onBlur={(e) => {
+                      (e.target as SVGRectElement).removeAttribute('stroke');
+                    }}
                   />
                   {showLabel && (
                     <text

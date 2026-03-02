@@ -27,6 +27,7 @@ interface GenericChoroplethProps {
   isVisible: boolean;
   nationalAvg?: number;
   invertScale?: boolean;
+  ariaLabel?: string;
 }
 
 interface StateProperties {
@@ -63,6 +64,7 @@ export function GenericChoropleth({
   isVisible,
   nationalAvg,
   invertScale = false,
+  ariaLabel,
 }: GenericChoroplethProps) {
   const [topoData, setTopoData] = useState<TopoData | null>(cachedTopo);
   const [hoveredState, setHoveredState] = useState<string | null>(null);
@@ -165,7 +167,7 @@ export function GenericChoropleth({
   return (
     <div className="w-full">
       <div className="relative w-full" style={{ aspectRatio: '6/7' }}>
-        <svg viewBox="0 0 600 700" className="absolute inset-0 w-full h-full">
+        <svg viewBox="0 0 600 700" className="absolute inset-0 w-full h-full" role="img" aria-label={ariaLabel || `Choropleth map: ${legendLabel || 'state comparison'}`}>
           {sortedFeatures.map((feature, i) => {
             const stName = feature.properties.st_nm;
             const d = pathGenerator(feature) || '';

@@ -26,6 +26,8 @@ interface LineChartProps {
   formatValue?: (v: number) => string;
   /** Unit label for tooltip */
   unit?: string;
+  /** Accessible label for screen readers */
+  ariaLabel?: string;
 }
 
 // ─── Constants ───────────────────────────────────────────────────────
@@ -40,6 +42,7 @@ export function LineChart({
   isVisible,
   formatValue = (v) => `${v}`,
   unit = '%',
+  ariaLabel,
 }: LineChartProps) {
   const pathRefs = useRef<Map<string, SVGPathElement>>(new Map());
   const [pathLengths, setPathLengths] = useState<Map<string, number>>(new Map());
@@ -123,7 +126,7 @@ export function LineChart({
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }} role="img" aria-label={ariaLabel || `Line chart: ${series.map(s => s.name).join(', ')}`}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
           {/* Band overlay (e.g. RBI target range) */}
           {band && (

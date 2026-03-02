@@ -29,6 +29,7 @@ interface ScatterChartProps {
   yReferenceLine?: ReferenceLine;
   quadrantLabels?: { topLeft?: string; topRight?: string; bottomLeft?: string; bottomRight?: string };
   isVisible: boolean;
+  ariaLabel?: string;
 }
 
 const MARGIN = { top: 20, right: 30, bottom: 50, left: 60 };
@@ -44,6 +45,7 @@ export function ScatterChart({
   yReferenceLine,
   quadrantLabels,
   isVisible,
+  ariaLabel,
 }: ScatterChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(600);
@@ -100,6 +102,8 @@ export function ScatterChart({
         viewBox={`0 0 ${width} ${height}`}
         className="w-full"
         style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem' }}
+        role="img"
+        aria-label={ariaLabel || `Scatter chart: ${xLabel} vs ${yLabel}`}
       >
         <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
           {/* Grid lines */}

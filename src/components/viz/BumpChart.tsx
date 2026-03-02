@@ -14,6 +14,7 @@ interface BumpChartProps {
   series: BumpSeries[];
   isVisible: boolean;
   periodLabel?: string;
+  ariaLabel?: string;
 }
 
 const MARGIN = { top: 20, right: 120, bottom: 40, left: 40 };
@@ -22,6 +23,7 @@ export function BumpChart({
   series,
   isVisible,
   periodLabel = 'Period',
+  ariaLabel,
 }: BumpChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(600);
@@ -78,6 +80,8 @@ export function BumpChart({
         viewBox={`0 0 ${width} ${height}`}
         className="w-full"
         style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem' }}
+        role="img"
+        aria-label={ariaLabel || `Bump chart: ${series.map(s => s.name).join(', ')}`}
       >
         <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
           {/* Horizontal grid */}

@@ -2,65 +2,128 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { PageShell } from './components/layout/PageShell.tsx';
-import { LanguageProvider } from './components/i18n/LanguageProvider.tsx';
+
+// ─── Eager: Hub is the primary landing page ─────────────────────────
 import HubPage from './pages/HubPage.tsx';
 
+// ─── Lazy: all other pages load on demand ───────────────────────────
 const EmbedPage = lazy(() => import('./pages/EmbedPage.tsx'));
-import BudgetPage from './pages/BudgetPage.tsx';
-import ExplorePage from './pages/ExplorePage.tsx';
-import FindYourSharePage from './pages/FindYourSharePage.tsx';
-import MethodologyPage from './pages/MethodologyPage.tsx';
-import EconomyPage from './pages/EconomyPage.tsx';
-import EconomyExplorePage from './pages/EconomyExplorePage.tsx';
-import EconomyMethodologyPage from './pages/EconomyMethodologyPage.tsx';
-import RBIPage from './pages/RBIPage.tsx';
-import RBIExplorePage from './pages/RBIExplorePage.tsx';
-import RBIMethodologyPage from './pages/RBIMethodologyPage.tsx';
-import BudgetGlossaryPage from './pages/BudgetGlossaryPage.tsx';
-import EconomyGlossaryPage from './pages/EconomyGlossaryPage.tsx';
-import RBIGlossaryPage from './pages/RBIGlossaryPage.tsx';
-import StatesPage from './pages/StatesPage.tsx';
-import StatesExplorePage from './pages/StatesExplorePage.tsx';
-import StatesMethodologyPage from './pages/StatesMethodologyPage.tsx';
-import StatesGlossaryPage from './pages/StatesGlossaryPage.tsx';
-import CensusPage from './pages/CensusPage.tsx';
-import CensusExplorePage from './pages/CensusExplorePage.tsx';
-import CensusMethodologyPage from './pages/CensusMethodologyPage.tsx';
-import CensusGlossaryPage from './pages/CensusGlossaryPage.tsx';
-import EducationPage from './pages/EducationPage.tsx';
-import EducationExplorePage from './pages/EducationExplorePage.tsx';
-import EducationMethodologyPage from './pages/EducationMethodologyPage.tsx';
-import EducationGlossaryPage from './pages/EducationGlossaryPage.tsx';
-import EmploymentPage from './pages/EmploymentPage.tsx';
-import EmploymentExplorePage from './pages/EmploymentExplorePage.tsx';
-import EmploymentMethodologyPage from './pages/EmploymentMethodologyPage.tsx';
-import EmploymentGlossaryPage from './pages/EmploymentGlossaryPage.tsx';
-import HealthcarePage from './pages/HealthcarePage.tsx';
-import HealthcareExplorePage from './pages/HealthcareExplorePage.tsx';
-import HealthcareMethodologyPage from './pages/HealthcareMethodologyPage.tsx';
-import HealthcareGlossaryPage from './pages/HealthcareGlossaryPage.tsx';
-import EnvironmentPage from './pages/EnvironmentPage.tsx';
-import EnvironmentExplorePage from './pages/EnvironmentExplorePage.tsx';
-import EnvironmentMethodologyPage from './pages/EnvironmentMethodologyPage.tsx';
-import EnvironmentGlossaryPage from './pages/EnvironmentGlossaryPage.tsx';
-import ElectionsPage from './pages/ElectionsPage.tsx';
-import ElectionsExplorePage from './pages/ElectionsExplorePage.tsx';
-import ElectionsMethodologyPage from './pages/ElectionsMethodologyPage.tsx';
-import ElectionsGlossaryPage from './pages/ElectionsGlossaryPage.tsx';
-import EMICalculatorPage from './pages/EMICalculatorPage.tsx';
-import CostOfLivingPage from './pages/CostOfLivingPage.tsx';
-import StateReportCardPage from './pages/StateReportCardPage.tsx';
-import TopicsPage from './pages/TopicsPage.tsx';
-import TopicDetailPage from './pages/TopicDetailPage.tsx';
-import OpenDataPage from './pages/OpenDataPage.tsx';
-import JournalistsPage from './pages/JournalistsPage.tsx';
-import ChartGalleryPage from './pages/ChartGalleryPage.tsx';
-import EmbedBuilderPage from './pages/EmbedBuilderPage.tsx';
-import StoryKitsPage from './pages/StoryKitsPage.tsx';
-import TeachersPage from './pages/TeachersPage.tsx';
-import LessonPlansPage from './pages/LessonPlansPage.tsx';
-import ContributePage from './pages/ContributePage.tsx';
 
+// Budget
+const BudgetPage = lazy(() => import('./pages/BudgetPage.tsx'));
+const ExplorePage = lazy(() => import('./pages/ExplorePage.tsx'));
+const FindYourSharePage = lazy(() => import('./pages/FindYourSharePage.tsx'));
+const MethodologyPage = lazy(() => import('./pages/MethodologyPage.tsx'));
+const BudgetGlossaryPage = lazy(() => import('./pages/BudgetGlossaryPage.tsx'));
+
+// Economy
+const EconomyPage = lazy(() => import('./pages/EconomyPage.tsx'));
+const EconomyExplorePage = lazy(() => import('./pages/EconomyExplorePage.tsx'));
+const EconomyMethodologyPage = lazy(() => import('./pages/EconomyMethodologyPage.tsx'));
+const EconomyGlossaryPage = lazy(() => import('./pages/EconomyGlossaryPage.tsx'));
+const CostOfLivingPage = lazy(() => import('./pages/CostOfLivingPage.tsx'));
+
+// RBI
+const RBIPage = lazy(() => import('./pages/RBIPage.tsx'));
+const RBIExplorePage = lazy(() => import('./pages/RBIExplorePage.tsx'));
+const RBIMethodologyPage = lazy(() => import('./pages/RBIMethodologyPage.tsx'));
+const RBIGlossaryPage = lazy(() => import('./pages/RBIGlossaryPage.tsx'));
+const EMICalculatorPage = lazy(() => import('./pages/EMICalculatorPage.tsx'));
+
+// States
+const StatesPage = lazy(() => import('./pages/StatesPage.tsx'));
+const StatesExplorePage = lazy(() => import('./pages/StatesExplorePage.tsx'));
+const StatesMethodologyPage = lazy(() => import('./pages/StatesMethodologyPage.tsx'));
+const StatesGlossaryPage = lazy(() => import('./pages/StatesGlossaryPage.tsx'));
+const StateReportCardPage = lazy(() => import('./pages/StateReportCardPage.tsx'));
+
+// Census
+const CensusPage = lazy(() => import('./pages/CensusPage.tsx'));
+const CensusExplorePage = lazy(() => import('./pages/CensusExplorePage.tsx'));
+const CensusMethodologyPage = lazy(() => import('./pages/CensusMethodologyPage.tsx'));
+const CensusGlossaryPage = lazy(() => import('./pages/CensusGlossaryPage.tsx'));
+
+// Education
+const EducationPage = lazy(() => import('./pages/EducationPage.tsx'));
+const EducationExplorePage = lazy(() => import('./pages/EducationExplorePage.tsx'));
+const EducationMethodologyPage = lazy(() => import('./pages/EducationMethodologyPage.tsx'));
+const EducationGlossaryPage = lazy(() => import('./pages/EducationGlossaryPage.tsx'));
+
+// Employment
+const EmploymentPage = lazy(() => import('./pages/EmploymentPage.tsx'));
+const EmploymentExplorePage = lazy(() => import('./pages/EmploymentExplorePage.tsx'));
+const EmploymentMethodologyPage = lazy(() => import('./pages/EmploymentMethodologyPage.tsx'));
+const EmploymentGlossaryPage = lazy(() => import('./pages/EmploymentGlossaryPage.tsx'));
+
+// Healthcare
+const HealthcarePage = lazy(() => import('./pages/HealthcarePage.tsx'));
+const HealthcareExplorePage = lazy(() => import('./pages/HealthcareExplorePage.tsx'));
+const HealthcareMethodologyPage = lazy(() => import('./pages/HealthcareMethodologyPage.tsx'));
+const HealthcareGlossaryPage = lazy(() => import('./pages/HealthcareGlossaryPage.tsx'));
+
+// Environment
+const EnvironmentPage = lazy(() => import('./pages/EnvironmentPage.tsx'));
+const EnvironmentExplorePage = lazy(() => import('./pages/EnvironmentExplorePage.tsx'));
+const EnvironmentMethodologyPage = lazy(() => import('./pages/EnvironmentMethodologyPage.tsx'));
+const EnvironmentGlossaryPage = lazy(() => import('./pages/EnvironmentGlossaryPage.tsx'));
+
+// Elections
+const ElectionsPage = lazy(() => import('./pages/ElectionsPage.tsx'));
+const ElectionsExplorePage = lazy(() => import('./pages/ElectionsExplorePage.tsx'));
+const ElectionsMethodologyPage = lazy(() => import('./pages/ElectionsMethodologyPage.tsx'));
+const ElectionsGlossaryPage = lazy(() => import('./pages/ElectionsGlossaryPage.tsx'));
+
+// Cross-domain
+const TopicsPage = lazy(() => import('./pages/TopicsPage.tsx'));
+const TopicDetailPage = lazy(() => import('./pages/TopicDetailPage.tsx'));
+
+// Multiplier pages
+const OpenDataPage = lazy(() => import('./pages/OpenDataPage.tsx'));
+const JournalistsPage = lazy(() => import('./pages/JournalistsPage.tsx'));
+const ChartGalleryPage = lazy(() => import('./pages/ChartGalleryPage.tsx'));
+const EmbedBuilderPage = lazy(() => import('./pages/EmbedBuilderPage.tsx'));
+const StoryKitsPage = lazy(() => import('./pages/StoryKitsPage.tsx'));
+const TeachersPage = lazy(() => import('./pages/TeachersPage.tsx'));
+const LessonPlansPage = lazy(() => import('./pages/LessonPlansPage.tsx'));
+const ContributePage = lazy(() => import('./pages/ContributePage.tsx'));
+
+// ─── Route prefetch map: path prefix → dynamic import ───────────────
+// Used by prefetchRoute() to start chunk downloads on link hover.
+const PREFETCH_MAP: Record<string, () => Promise<unknown>> = {
+  '/budget': () => import('./pages/BudgetPage.tsx'),
+  '/economy': () => import('./pages/EconomyPage.tsx'),
+  '/rbi': () => import('./pages/RBIPage.tsx'),
+  '/states': () => import('./pages/StatesPage.tsx'),
+  '/census': () => import('./pages/CensusPage.tsx'),
+  '/education': () => import('./pages/EducationPage.tsx'),
+  '/employment': () => import('./pages/EmploymentPage.tsx'),
+  '/healthcare': () => import('./pages/HealthcarePage.tsx'),
+  '/environment': () => import('./pages/EnvironmentPage.tsx'),
+  '/elections': () => import('./pages/ElectionsPage.tsx'),
+  '/topics': () => import('./pages/TopicsPage.tsx'),
+  '/open-data': () => import('./pages/OpenDataPage.tsx'),
+  '/for-journalists': () => import('./pages/JournalistsPage.tsx'),
+  '/for-teachers': () => import('./pages/TeachersPage.tsx'),
+  '/contribute': () => import('./pages/ContributePage.tsx'),
+};
+
+const prefetched = new Set<string>();
+
+/** Prefetch a route's chunk on hover. Call with the link's href. */
+export function prefetchRoute(path: string) {
+  // Find the matching prefix
+  const prefix = Object.keys(PREFETCH_MAP).find((p) => path === p || path.startsWith(p + '/'));
+  if (!prefix || prefetched.has(prefix)) return;
+  prefetched.add(prefix);
+  PREFETCH_MAP[prefix]();
+}
+
+// ─── Suspense fallback (matches dark theme) ──────────────────────────
+const PageFallback = () => (
+  <div style={{ background: '#06080f', minHeight: '100vh' }} />
+);
+
+// ─── Route table ─────────────────────────────────────────────────────
 const PAGE_ROUTES = [
   { path: '/', element: <HubPage /> },
   { path: '/budget', element: <BudgetPage /> },
@@ -129,6 +192,20 @@ const REDIRECTS = [
 export default function App() {
   const location = useLocation();
 
+  // Global hover prefetch: start loading route chunks when the user hovers a link
+  useEffect(() => {
+    function handleHover(e: Event) {
+      const anchor = (e.target as HTMLElement).closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (href && href.startsWith('/')) {
+        prefetchRoute(href);
+      }
+    }
+    document.addEventListener('pointerenter', handleHover, true);
+    return () => document.removeEventListener('pointerenter', handleHover, true);
+  }, []);
+
   // Scroll to hash anchor after React renders (SPA deep link support)
   useEffect(() => {
     if (!location.hash) return;
@@ -142,7 +219,7 @@ export default function App() {
   // Embed routes render outside PageShell (no header/footer/nav)
   if (location.pathname.startsWith('/embed/')) {
     return (
-      <Suspense fallback={<div style={{ background: '#06080f', minHeight: '100vh' }} />}>
+      <Suspense fallback={<PageFallback />}>
         <Routes location={location}>
           <Route path="/embed/:domain/:section" element={<EmbedPage />} />
         </Routes>
@@ -152,7 +229,7 @@ export default function App() {
 
   return (
     <PageShell>
-      <LanguageProvider>
+      <Suspense fallback={<PageFallback />}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main routes */}
@@ -168,18 +245,9 @@ export default function App() {
                 element={<Navigate to={r.to} replace />}
               />
             ))}
-
-            {/* Language-prefixed routes: /hi/budget, /te/budget/explore, etc. */}
-            {PAGE_ROUTES.map((r) => (
-              <Route
-                key={`lang-${r.path}`}
-                path={`/:lang${r.path === '/' ? '' : r.path}`}
-                element={r.element}
-              />
-            ))}
           </Routes>
         </AnimatePresence>
-      </LanguageProvider>
+      </Suspense>
     </PageShell>
   );
 }

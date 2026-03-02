@@ -13,6 +13,7 @@ import type { FeatureCollection, Feature, Geometry } from 'geojson';
 interface ChoroplethMapProps {
   states: StateTransfer[];
   isVisible: boolean;
+  ariaLabel?: string;
 }
 
 interface StateProperties {
@@ -22,7 +23,7 @@ interface StateProperties {
 
 type TopoData = Topology<{ states: GeometryCollection<StateProperties> }>;
 
-export function ChoroplethMap({ states, isVisible }: ChoroplethMapProps) {
+export function ChoroplethMap({ states, isVisible, ariaLabel }: ChoroplethMapProps) {
   const [topoData, setTopoData] = useState<TopoData | null>(null);
   const [hoveredState, setHoveredState] = useState<string | null>(null);
   const tooltip = useTooltip<StateTransfer & { topoName: string }>();
@@ -111,7 +112,7 @@ export function ChoroplethMap({ states, isVisible }: ChoroplethMapProps) {
   return (
     <div className="w-full">
       <div className="relative w-full" style={{ aspectRatio: '6/7' }}>
-        <svg viewBox="0 0 600 700" className="absolute inset-0 w-full h-full">
+        <svg viewBox="0 0 600 700" className="absolute inset-0 w-full h-full" role="img" aria-label={ariaLabel || 'Choropleth map of India'}>
           {sortedFeatures.map((feature, i) => {
             const stName = feature.properties.st_nm;
             const d = pathGenerator(feature) || '';

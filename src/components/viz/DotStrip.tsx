@@ -23,6 +23,7 @@ interface DotStripProps {
   referenceLine?: DotStripReferenceLine;
   highlightIds?: string[];
   isVisible: boolean;
+  ariaLabel?: string;
 }
 
 const MARGIN = { top: 10, right: 20, bottom: 30, left: 20 };
@@ -47,6 +48,7 @@ export function DotStrip({
   referenceLine,
   highlightIds = [],
   isVisible,
+  ariaLabel,
 }: DotStripProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(600);
@@ -90,6 +92,8 @@ export function DotStrip({
         viewBox={`0 0 ${width} ${STRIP_H + MARGIN.top + MARGIN.bottom}`}
         className="w-full"
         style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem' }}
+        role="img"
+        aria-label={ariaLabel || `Dot strip: ${valueLabel}`}
       >
         <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
           {/* Axis line */}
