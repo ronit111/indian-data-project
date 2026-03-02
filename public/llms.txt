@@ -11,6 +11,22 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 ### Hub
 - / — Visual portal showcasing all data domains with live stats from each dataset
 
+### Open Data
+- /open-data — Direct access to 71 JSON endpoints with source links, schema notes, and no API key required.
+
+### For Journalists
+- /for-journalists — Newsroom toolkit landing page for fast chart sourcing, attribution-ready stats, and publishing workflows.
+- /for-journalists/gallery — Curated chart gallery with ready-to-use visuals, captions, and source context.
+- /for-journalists/story-kits — Pre-assembled story kits with chart bundles, narrative angles, and cited evidence.
+- /for-journalists/embed-builder — No-code embed builder to generate responsive iframe snippets with attribution.
+
+### For Teachers
+- /for-teachers — Educator hub for classroom-ready data activities and curriculum-linked resources.
+- /for-teachers/lesson-plans — NCERT-mapped lesson plans with learning goals, prompts, and dataset-backed exercises.
+
+### Contribute
+- /contribute — Contributor guide for issues, data corrections, translations, and open-source collaboration.
+
 ### Budget Domain
 - /budget — Scrollytelling narrative (9 sections): animated headline, revenue waffle chart, deficit rupee bar, 20-year budget trends (expenditure vs receipts + deficit % GDP), budget vs actual deviation chart (10 ministries), expenditure treemap, Sankey money flow, state choropleth, per-capita breakdown
 - /budget/explore — Sortable ministry-wise expenditure table with expandable scheme detail. CSV export available.

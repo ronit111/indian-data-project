@@ -17,9 +17,14 @@ Open data platform for Indian citizens. V1 of the broader **India Truth Engine**
 - **`/healthcare` (Healthcare Domain)**: Infrastructure, spending, immunization, disease burden. Sub-routes: `/healthcare/explore`, `/healthcare/methodology`, `/healthcare/glossary`.
 - **`/environment` (Environment Domain)**: Air quality, forest cover, energy transition, carbon footprint, water stress. Sub-routes: `/environment/explore`, `/environment/methodology`, `/environment/glossary`.
 - **`/elections` (Elections Domain)**: Lok Sabha elections 1962-2024 — turnout, party landscape, candidates, representation. Sub-routes: `/elections/explore`, `/elections/methodology`, `/elections/glossary`.
-- **`/embed/{domain}/{section}` (Embed Routes)**: Standalone responsive chart pages for iframe embedding. Renders outside PageShell (no header/footer/nav). ~59 sections available across all 10 domains. Lazy-loaded chart components via `ChartRenderer`.
+- **`/topics` (Cross-Domain Topics)**: 12 curated topics composing data across multiple domains. Sub-route: `/topics/:topicId`. Config-driven via `TopicDef` with `extractData` functions.
+- **`/open-data` (Open Data API)**: Documentation for all 71 JSON endpoints. Code examples (curl/Python/JS), filterable data browser, "Try it" live preview.
+- **`/for-journalists` (Journalist Toolkit)**: Landing + sub-routes: `/for-journalists/gallery` (92-chart filterable gallery), `/for-journalists/story-kits` (6 curated kits), `/for-journalists/embed-builder` (interactive iframe customizer). Header shows 4 sub-tabs.
+- **`/for-teachers` (Teacher Toolkit)**: Landing + sub-route: `/for-teachers/lesson-plans` (7 NCERT-mapped plans, Class 10-12). Classroom mode toggle (larger fonts via `.classroom-mode` CSS class + `?classroom=true` URL param). Header shows 2 sub-tabs.
+- **`/contribute` (Contributor Guide)**: Static page with data usage, issue reporting, code contribution, dataset contribution guidelines.
+- **`/embed/{domain}/{section}` (Embed Routes)**: Standalone responsive chart pages for iframe embedding. Renders outside PageShell (no header/footer/nav). ~92 sections available across all 10 domains + topics. Lazy-loaded chart components via `ChartRenderer`.
 - **Future domains** each get their own top-level route with self-contained sub-pages.
-- Header is **context-aware**: hub title + search on `/`, domain title + sub-nav tabs inside a domain.
+- Header is **context-aware**: hub title + search on `/`, domain title + sub-nav tabs inside a domain, section titles + sub-tabs for multiplier pages (journalists, teachers).
 - **Back links** (header chevron + footer link) point to `/#stories`. New domains should follow this convention.
 - Old routes (`/explore`, `/calculator`, `/methodology`) redirect to `/budget/*` equivalents.
 
@@ -240,3 +245,30 @@ Implementation approaches to evaluate:
 4. **Hub as the crossroads**: The hub page could surface cross-domain insights (e.g., "States that get the most budget allocation vs. their own revenue generation")
 
 This is architecturally complex (requires cross-domain data awareness) and should be a separate phase. Use Codex to audit the codebase for natural connection points.
+
+### Post-Launch: Marketing & Experience Documentation
+**Runs after Citizen QA is complete.** This is the last phase — showcase the work for awareness and document the building experience.
+
+**What to produce:**
+1. **Launch posts** (LinkedIn long-form + Twitter thread): Stream-of-consciousness in Ronit's voice. Origin story, philosophy, what it actually does. Interview Ronit first — surface the real trigger, frustration, or moment that started this.
+2. **Ongoing content series** (~1 post every 3-4 days): Each post spotlights one element — a design philosophy, a technical decision, a visualization choice, the pipeline architecture, the AI collaboration experience, or the civic purpose behind it all.
+3. **Screenshots and recordings**: Key interactions (scrollytelling, calculator, hemicycle, share cards) as social proof.
+
+**Topic backlog for the series:**
+- "Data IS the design" philosophy — no card wrappers, no dashboard chrome
+- 11 automated pipelines — zero-touch data freshness from World Bank, MOSPI, RBI, ECI
+- Scrollytelling as civic communication — making ₹50L Cr budgets tangible
+- Personalization engine — EMI calculator, cost-of-living deflator, state report cards
+- Cross-domain topics — weaving 10 datasets into narratives (Women in India, Water Crisis)
+- Custom D3 visualizations — hemicycle, waffle, choropleth, Sankey
+- Question-first search — 115 citizen questions as entry points
+- Pipeline architecture — World Bank API + MOSPI + curated sources
+- Building with Claude Code — the AI collaboration experience (honest account)
+- Open source as civic infrastructure — AGPL, open data, why this matters
+
+**Process:**
+- Load `worldbuilding-writing` skill for persuasive framing
+- Use agent-router to find marketing/copy/social media agents
+- Interview-first drafting — probing questions before any writing
+- Voice reference: `writing-style.md` in the global memory project folder
+- Ronit's voice: stream-of-consciousness, edgy-but-grounded, no marketing speak, anti-polish endings

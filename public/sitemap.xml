@@ -416,6 +416,56 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Open data and audience pages -->
+  <url>
+    <loc>https://indiandataproject.org/open-data</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-journalists</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-journalists/gallery</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-journalists/story-kits</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-journalists/embed-builder</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-teachers</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/for-teachers/lesson-plans</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://indiandataproject.org/contribute</loc>
+    <lastmod>2025-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Elections data endpoints -->
   <url>
     <loc>https://indiandataproject.org/data/elections/2025-26/summary.json</loc>

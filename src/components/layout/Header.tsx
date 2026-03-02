@@ -21,7 +21,12 @@ export function Header() {
   const isEnvironmentSection = location.pathname.startsWith('/environment');
   const isElectionsSection = location.pathname.startsWith('/elections');
   const isTopicsSection = location.pathname.startsWith('/topics');
-  const isDataDomain = isBudgetSection || isEconomySection || isRBISection || isStatesSection || isCensusSection || isEducationSection || isEmploymentSection || isHealthcareSection || isEnvironmentSection || isElectionsSection || isTopicsSection;
+  const isOpenDataSection = location.pathname === '/open-data';
+  const isJournalistsSection = location.pathname.startsWith('/for-journalists');
+  const isTeachersSection = location.pathname.startsWith('/for-teachers');
+  const isContributeSection = location.pathname === '/contribute';
+  const isMultiplierSection = isOpenDataSection || isJournalistsSection || isTeachersSection || isContributeSection;
+  const isDataDomain = isBudgetSection || isEconomySection || isRBISection || isStatesSection || isCensusSection || isEducationSection || isEmploymentSection || isHealthcareSection || isEnvironmentSection || isElectionsSection || isTopicsSection || isMultiplierSection;
 
   // Context-aware title: show story name when inside a data story
   const headerTitle = isBudgetSection
@@ -46,6 +51,14 @@ export function Header() {
                       ? 'Elections'
                       : isTopicsSection
                         ? 'Cross-Domain Insights'
+                        : isOpenDataSection
+                          ? 'Open Data'
+                          : isJournalistsSection
+                            ? 'For Journalists'
+                            : isTeachersSection
+                              ? 'For Teachers'
+                              : isContributeSection
+                                ? 'Contribute'
                   : 'Indian Data Project';
   const headerLink = isBudgetSection
     ? '/budget'
@@ -69,6 +82,14 @@ export function Header() {
                       ? '/elections'
                       : isTopicsSection
                         ? '/topics'
+                        : isOpenDataSection
+                          ? '/open-data'
+                          : isJournalistsSection
+                            ? '/for-journalists'
+                            : isTeachersSection
+                              ? '/for-teachers'
+                              : isContributeSection
+                                ? '/contribute'
                   : '/';
 
   // Only show nav links inside a data story (domain sub-pages)
@@ -150,6 +171,18 @@ export function Header() {
                         ? [
                             { to: '/topics', label: 'All Topics' },
                           ]
+                        : isJournalistsSection
+                          ? [
+                              { to: '/for-journalists', label: 'Overview' },
+                              { to: '/for-journalists/gallery', label: 'Gallery' },
+                              { to: '/for-journalists/story-kits', label: 'Story Kits' },
+                              { to: '/for-journalists/embed-builder', label: 'Embed Builder' },
+                            ]
+                          : isTeachersSection
+                            ? [
+                                { to: '/for-teachers', label: 'Overview' },
+                                { to: '/for-teachers/lesson-plans', label: 'Lesson Plans' },
+                              ]
                   : [];
 
   const isActiveLink = (linkTo: string) => {
@@ -164,6 +197,8 @@ export function Header() {
     if (linkTo === '/environment') return location.pathname === '/environment';
     if (linkTo === '/elections') return location.pathname === '/elections';
     if (linkTo === '/topics') return location.pathname === '/topics';
+    if (linkTo === '/for-journalists') return location.pathname === '/for-journalists';
+    if (linkTo === '/for-teachers') return location.pathname === '/for-teachers';
     return location.pathname === linkTo;
   };
 

@@ -13,7 +13,12 @@ export function Footer() {
   const isEnvironment = location.pathname.startsWith('/environment');
   const isElections = location.pathname.startsWith('/elections');
   const isTopics = location.pathname.startsWith('/topics');
-  const isDataDomain = isBudget || isEconomy || isRBI || isStates || isCensus || isEducation || isEmployment || isHealthcare || isEnvironment || isElections || isTopics;
+  const isOpenData = location.pathname === '/open-data';
+  const isJournalists = location.pathname.startsWith('/for-journalists');
+  const isTeachers = location.pathname.startsWith('/for-teachers');
+  const isContribute = location.pathname === '/contribute';
+  const isMultiplier = isOpenData || isJournalists || isTeachers || isContribute;
+  const isDataDomain = isBudget || isEconomy || isRBI || isStates || isCensus || isEducation || isEmployment || isHealthcare || isEnvironment || isElections || isTopics || isMultiplier;
 
   return (
     <footer className="relative py-8 pb-24 md:pb-8" style={{ background: 'var(--bg-surface)' }}>
@@ -353,6 +358,19 @@ export function Footer() {
           <p className="text-caption text-center md:text-left">
             Cross-domain analysis from multiple government sources &middot; Not affiliated with GoI
           </p>
+        ) : isMultiplier ? (
+          <p className="text-caption text-center md:text-left">
+            Open data tools for journalists, teachers, and developers &middot;{' '}
+            <a
+              href="https://github.com/ronit111/indian-data-project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              AGPL-3.0
+            </a>
+          </p>
         ) : (
           <p className="text-caption text-center md:text-left">
             Open-source civic tech. Real government data, made accessible.
@@ -381,6 +399,14 @@ export function Footer() {
             'Elections 2025-26'
           ) : isTopics ? (
             'Cross-Domain Insights'
+          ) : isOpenData ? (
+            'Open Data API'
+          ) : isJournalists ? (
+            'For Journalists'
+          ) : isTeachers ? (
+            'For Teachers'
+          ) : isContribute ? (
+            'Contribute'
           ) : (
             <a
               href="https://github.com/ronit111/indian-data-project"

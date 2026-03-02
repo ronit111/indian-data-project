@@ -52,6 +52,14 @@ import CostOfLivingPage from './pages/CostOfLivingPage.tsx';
 import StateReportCardPage from './pages/StateReportCardPage.tsx';
 import TopicsPage from './pages/TopicsPage.tsx';
 import TopicDetailPage from './pages/TopicDetailPage.tsx';
+import OpenDataPage from './pages/OpenDataPage.tsx';
+import JournalistsPage from './pages/JournalistsPage.tsx';
+import ChartGalleryPage from './pages/ChartGalleryPage.tsx';
+import EmbedBuilderPage from './pages/EmbedBuilderPage.tsx';
+import StoryKitsPage from './pages/StoryKitsPage.tsx';
+import TeachersPage from './pages/TeachersPage.tsx';
+import LessonPlansPage from './pages/LessonPlansPage.tsx';
+import ContributePage from './pages/ContributePage.tsx';
 
 const PAGE_ROUTES = [
   { path: '/', element: <HubPage /> },
@@ -101,6 +109,14 @@ const PAGE_ROUTES = [
   { path: '/elections/glossary', element: <ElectionsGlossaryPage /> },
   { path: '/topics', element: <TopicsPage /> },
   { path: '/topics/:topicId', element: <TopicDetailPage /> },
+  { path: '/open-data', element: <OpenDataPage /> },
+  { path: '/for-journalists', element: <JournalistsPage /> },
+  { path: '/for-journalists/gallery', element: <ChartGalleryPage /> },
+  { path: '/for-journalists/embed-builder', element: <EmbedBuilderPage /> },
+  { path: '/for-journalists/story-kits', element: <StoryKitsPage /> },
+  { path: '/for-teachers', element: <TeachersPage /> },
+  { path: '/for-teachers/lesson-plans', element: <LessonPlansPage /> },
+  { path: '/contribute', element: <ContributePage /> },
 ] as const;
 
 // Old routes redirect to new /budget/* paths

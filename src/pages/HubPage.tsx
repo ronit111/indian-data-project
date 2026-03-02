@@ -1502,6 +1502,62 @@ export default function HubPage() {
           'elections/summary': electionsSummary,
         } as TopicDataBag}
       />
+
+      {/* For Developers, Journalists & Teachers */}
+      <section className="mt-24 mb-16">
+        <h2
+          className="text-2xl font-bold mb-2 text-center"
+          style={{ color: 'var(--text-primary)' }}
+        >
+          Build With This Data
+        </h2>
+        <p
+          className="text-sm text-center mb-8 max-w-xl mx-auto"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          Open data for everyone — developers, journalists, and teachers.
+        </p>
+        <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <MultiplierCard
+            to="/open-data"
+            title="Open Data"
+            desc="71 JSON endpoints. No API key."
+            accent="var(--cyan)"
+          />
+          <MultiplierCard
+            to="/for-journalists"
+            title="For Journalists"
+            desc="Chart gallery, story kits, embeds."
+            accent="var(--saffron)"
+          />
+          <MultiplierCard
+            to="/for-teachers"
+            title="For Teachers"
+            desc="NCERT-mapped lesson plans."
+            accent="var(--positive)"
+          />
+        </div>
+      </section>
     </motion.div>
+  );
+}
+
+function MultiplierCard({ to, title, desc, accent }: { to: string; title: string; desc: string; accent: string }) {
+  return (
+    <Link
+      to={to}
+      className="group block rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
+      style={{ background: 'var(--bg-surface)' }}
+    >
+      <div className="h-0.5" style={{ background: accent }} />
+      <div className="p-5 text-center">
+        <h3 className="text-sm font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+          {title}
+        </h3>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+          {desc}
+        </p>
+      </div>
+    </Link>
   );
 }

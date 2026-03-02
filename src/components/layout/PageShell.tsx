@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Header } from './Header.tsx';
@@ -7,9 +7,20 @@ import { Footer } from './Footer.tsx';
 import { SearchOverlay } from '../ui/SearchOverlay.tsx';
 import { FeedbackButton } from '../ui/FeedbackButton.tsx';
 import { PersonalizationBanner } from '../personalization/PersonalizationBanner.tsx';
+import { usePersonalizationStore } from '../../store/personalizationStore.ts';
 
 export function PageShell({ children }: { children: ReactNode }) {
   const location = useLocation();
+  const classroomMode = usePersonalizationStore((s) => s.classroomMode);
+  const setClassroomMode = usePersonalizationStore((s) => s.setClassroomMode);
+
+  // Sync ?classroom=true URL param to store
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('classroom') === 'true' && !classroomMode) {
+      setClassroomMode(true);
+    }
+  }, [location.search, classroomMode, setClassroomMode]);
   const isBudgetStory = location.pathname === '/budget';
   const isEconomyStory = location.pathname === '/economy';
   const isRBIStory = location.pathname === '/rbi';
@@ -19,7 +30,7 @@ export function PageShell({ children }: { children: ReactNode }) {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col${classroomMode ? ' classroom-mode' : ''}`}>
       <Header />
       <SearchOverlay />
 

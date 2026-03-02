@@ -38,6 +38,11 @@ const ROUTES = [
   '/topics/education-employment', '/topics/health-outcomes', '/topics/regional-inequality',
   '/topics/climate-energy', '/topics/youth-jobs', '/topics/urban-rural',
   '/topics/democratic-health', '/topics/agriculture-food', '/topics/water-crisis',
+  // Open resources and audience pages
+  '/open-data',
+  '/for-journalists', '/for-journalists/gallery', '/for-journalists/story-kits', '/for-journalists/embed-builder',
+  '/for-teachers', '/for-teachers/lesson-plans',
+  '/contribute',
   // Representative embed routes (one per domain)
   '/embed/budget/revenue', '/embed/economy/growth', '/embed/rbi/monetary-policy',
   '/embed/states/gsdp', '/embed/census/population', '/embed/education/enrollment',

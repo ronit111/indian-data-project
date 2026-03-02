@@ -473,6 +473,13 @@
   }
 }
 
+/* ─── Classroom Mode ──────────────────────────────────────────── */
+.classroom-mode {
+  --text-body: 1.125rem;
+  --text-annotation: 1rem;
+  --text-caption: 0.875rem;
+}
+
 /* ─── Reduced Motion ───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

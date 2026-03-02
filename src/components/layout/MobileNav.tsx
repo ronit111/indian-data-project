@@ -33,6 +33,11 @@ export function MobileNav() {
   const isEnvironmentSection = location.pathname.startsWith('/environment');
   const isElectionsSection = location.pathname.startsWith('/elections');
   const isTopicsSection = location.pathname.startsWith('/topics');
+  const isOpenDataSection = location.pathname === '/open-data';
+  const isJournalistsSection = location.pathname.startsWith('/for-journalists');
+  const isTeachersSection = location.pathname.startsWith('/for-teachers');
+  const isContributeSection = location.pathname === '/contribute';
+  const isMultiplierSection = isOpenDataSection || isJournalistsSection || isTeachersSection || isContributeSection;
 
   const hubTabs = [
     { to: '/', label: 'Home', icon: ICONS.home },
@@ -132,6 +137,25 @@ export function MobileNav() {
     { to: '/elections/glossary', label: 'Glossary', icon: ICONS.glossary },
   ];
 
+  const journalistsTabs = [
+    { to: '/', label: 'Hub', icon: ICONS.home },
+    { to: '/for-journalists', label: 'Overview', icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z' },
+    { to: '/for-journalists/gallery', label: 'Gallery', icon: ICONS.explore },
+    { to: '/for-journalists/story-kits', label: 'Kits', icon: ICONS.glossary },
+    { to: '/for-journalists/embed-builder', label: 'Embed', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
+  ];
+
+  const teachersTabs = [
+    { to: '/', label: 'Hub', icon: ICONS.home },
+    { to: '/for-teachers', label: 'Overview', icon: ICONS.education },
+    { to: '/for-teachers/lesson-plans', label: 'Plans', icon: ICONS.glossary },
+  ];
+
+  const multiplierTabs = [
+    { to: '/', label: 'Hub', icon: ICONS.home },
+    { to: '/open-data', label: 'Data', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4' },
+  ];
+
   const tabs = isBudgetSection
     ? budgetTabs
     : isEconomySection
@@ -154,6 +178,12 @@ export function MobileNav() {
                       ? electionsTabs
                       : isTopicsSection
                         ? topicsTabs
+                        : isJournalistsSection
+                          ? journalistsTabs
+                          : isTeachersSection
+                            ? teachersTabs
+                            : isMultiplierSection
+                              ? multiplierTabs
                   : hubTabs;
 
   const isActiveTab = (tabTo: string) => {
@@ -169,6 +199,10 @@ export function MobileNav() {
     if (tabTo === '/environment') return location.pathname === '/environment';
     if (tabTo === '/elections') return location.pathname === '/elections';
     if (tabTo === '/topics') return location.pathname === '/topics';
+    if (tabTo === '/open-data') return location.pathname === '/open-data';
+    if (tabTo === '/for-journalists') return location.pathname === '/for-journalists';
+    if (tabTo === '/for-teachers') return location.pathname === '/for-teachers';
+    if (tabTo === '/contribute') return location.pathname === '/contribute';
     return location.pathname === tabTo;
   };
 

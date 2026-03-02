@@ -7,10 +7,12 @@ interface PersonalizationState {
   selectedStateName: string | null;
   householdSize: number;
   bannerDismissed: Record<string, boolean>; // keyed by pathname prefix
+  classroomMode: boolean;
   setState: (stateId: string | null) => void;
   setHouseholdSize: (size: number) => void;
   dismissBanner: (domain: string) => void;
   resetBannerDismissals: () => void;
+  setClassroomMode: (on: boolean) => void;
   clearState: () => void;
 }
 
@@ -21,6 +23,7 @@ export const usePersonalizationStore = create<PersonalizationState>()(
       selectedStateName: null,
       householdSize: 4,
       bannerDismissed: {},
+      classroomMode: false,
       setState: (stateId) =>
         set({
           selectedStateId: stateId,
@@ -33,6 +36,7 @@ export const usePersonalizationStore = create<PersonalizationState>()(
           bannerDismissed: { ...s.bannerDismissed, [domain]: true },
         })),
       resetBannerDismissals: () => set({ bannerDismissed: {} }),
+      setClassroomMode: (on) => set({ classroomMode: on }),
       clearState: () =>
         set({
           selectedStateId: null,

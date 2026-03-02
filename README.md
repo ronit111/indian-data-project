@@ -106,7 +106,7 @@ npm run preview
 | Command | What it does |
 |---------|-------------|
 | `npm run dev` | Start Vite dev server with HMR |
-| `npm run build` | TypeScript check + Vite build + Puppeteer prerender (55 routes: 45 pages + 10 embed) |
+| `npm run build` | TypeScript check + Vite build + Puppeteer prerender (76 routes: 66 pages + 10 embed) |
 | `npm run build:no-prerender` | Build without prerendering (used by Vercel) |
 | `npm run lint` | ESLint check |
 | `npm run preview` | Preview production build locally |
@@ -164,6 +164,16 @@ src/
 │   ├── EMICalculatorPage.tsx    # EMI impact calculator (repo rate → monthly payment)
 │   ├── CostOfLivingPage.tsx     # Cost-of-living inflation calculator (CPI by category)
 │   ├── StateReportCardPage.tsx  # Cross-domain state report card (8 domains, ~25 metrics)
+│   ├── TopicsPage.tsx         # Cross-domain topics hub (12 curated topic cards)
+│   ├── TopicDetailPage.tsx    # Individual topic detail (/topics/:topicId)
+│   ├── OpenDataPage.tsx       # Open Data API documentation (71 endpoints, code examples)
+│   ├── JournalistsPage.tsx    # Journalist toolkit landing (gallery, story kits, embed builder)
+│   ├── ChartGalleryPage.tsx   # Filterable chart gallery (92 charts, domain/type filters)
+│   ├── StoryKitsPage.tsx      # 6 curated story kits with editorial context
+│   ├── EmbedBuilderPage.tsx   # Interactive embed builder with live iframe preview
+│   ├── TeachersPage.tsx       # Teacher toolkit landing (lesson plans, classroom mode)
+│   ├── LessonPlansPage.tsx    # 7 NCERT-mapped lesson plans (Class 10-12)
+│   ├── ContributePage.tsx     # Contributor guide (data usage, issues, code, datasets)
 │   └── EmbedPage.tsx          # Standalone embed chart (reads :domain/:section params, renders outside PageShell)
 ├── components/
 │   ├── home/               # Budget story compositions (Hero, Revenue, Expenditure, Flow, Map, CTA)
@@ -186,14 +196,23 @@ src/
 │   ├── viz/                # D3 visualizations (TreemapChart, SankeyDiagram, ChoroplethMap, WaffleChart, LineChart, AreaChart, HorizontalBarChart, StepChart, AnimatedCounter)
 │   ├── share/              # Chart sharing (ChartActions toolbar, ChartActionsWrapper overlay, ShareBottomSheet for mobile)
 │   ├── embed/              # Embed components (EmbedShell minimal chrome, ChartRenderer lazy chart loader)
+│   ├── multiplier/          # Multiplier infrastructure (CodeBlock, ChartGalleryCard, DataEndpointRow, EmbedConfigurator, StoryKitCard, LessonPlanCard, CitationPopover, ClassroomModeToggle)
+│   ├── topics/              # Cross-domain topic components (TopicCard, TopicHero, TopicSection, RelatedTopics)
 │   ├── ui/                 # Shared UI (Tooltip, NarrativeBridge, SearchOverlay, KeyTakeaways, FeedbackButton, Skeleton, etc.)
 │   ├── layout/             # Header, Footer, MobileNav, PageShell
 │   ├── seo/                # SEOHead (per-route meta tags + OG images + JSON-LD)
 │   └── i18n/               # Language provider and switcher
 ├── lib/
 │   ├── data/schema.ts      # TypeScript interfaces for all data shapes (Budget, Economy, RBI, States, Census, Education, Employment, Healthcare, Environment, Elections)
-│   ├── chartRegistry.ts    # Central chart registry (~49 entries, CSV/share card serialization, domain metadata)
-│   ├── registry/           # Per-domain chart registrations (budget, economy, rbi, states, census, education, employment, healthcare, environment, elections)
+│   ├── chartRegistry.ts    # Central chart registry (~92 entries, CSV/share card serialization, domain metadata)
+│   ├── registry/           # Per-domain chart registrations (budget, economy, rbi, states, census, education, employment, healthcare, environment, elections, topics)
+│   ├── multiplierTypes.ts  # Types for multiplier infrastructure (DataEndpoint, StoryKitDef, LessonPlanDef, etc.)
+│   ├── dataEndpoints.ts    # Static catalog of all 71 JSON endpoints
+│   ├── citationGenerator.ts # APA/Chicago/plain text citation formatter
+│   ├── storyKitConfigs/    # 6 curated story kit definitions
+│   ├── lessonPlanConfigs/  # 7 NCERT-mapped lesson plan definitions
+│   ├── topicConfigs/       # 12 cross-domain topic configurations
+│   ├── topicConfig.ts      # Topic types and domain data map
 │   ├── svgCapture.ts       # SVG→Canvas→PNG capture pipeline (CSS var resolution, font embedding, compositing)
 │   ├── shareCard.ts        # WhatsApp share card Canvas generator (1200×630, <100KB)
 │   ├── csvExport.ts        # RFC 4180 CSV serialization
@@ -223,7 +242,7 @@ public/
 ├── data/emi/               # Curated loan spread data (SBI/HDFC rate cards)
 ├── data/questions.json     # 115 citizen questions across 10 domains (powers question-first search)
 ├── locales/en/             # Translation files
-├── sitemap.xml             # All routes + data endpoints (45 pages + 54 data files)
+├── sitemap.xml             # All routes + data endpoints (76 pages + 54 data files)
 ├── robots.txt              # All bots welcomed (including AI crawlers)
 └── llms.txt                # AI-readable site summary (10 domains)
 
@@ -423,10 +442,10 @@ See [BRAND.md](./BRAND.md) for the full visual identity guide. Key principles:
 
 The site is built for maximum discoverability:
 
-- **Prerendered HTML** for all 55 routes (45 pages + 10 embed routes, Puppeteer at build time)
+- **Prerendered HTML** for all 76 routes (66 pages + 10 embed routes, Puppeteer at build time)
 - **JSON-LD** structured data: `WebApplication`, `Dataset` x10 (Budget + Economy + RBI + States + Census + Education + Employment + Healthcare + Environment + Elections for Google Dataset Search), `BreadcrumbList`
 - **Per-route meta tags** via react-helmet-async (title, description, OG image, Twitter card, canonical)
-- **sitemap.xml** covering 55 pages + 54 downloadable data endpoints
+- **sitemap.xml** covering 76 pages + 54 downloadable data endpoints
 - **robots.txt** explicitly welcoming AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
 - **llms.txt** for AI model discoverability (all 10 domains + glossary terms + embed API)
 - **Noscript fallback** with real content across all ten domains for crawlers that don't execute JS
@@ -544,16 +563,24 @@ The site is built for maximum discoverability:
 - [x] Full SEO layer for both domains (prerender, sitemap, OG images, llms.txt, noscript, JSON-LD)
 - [x] 2 new GitHub Actions pipelines (environment quarterly, elections semi-annual)
 
-**Phase 11: Topic-Based Cross-Domain Views**
-- [ ] `/topics` page with 10-15 cross-domain topic cards (Agriculture, Borrowing Costs, Education Spending, etc.)
-- [ ] Each topic pulls relevant indicators from multiple domains into a single coherent view
-- [ ] Topic tags on individual story sections linking to cross-domain views
+**Phase 11: Topic-Based Cross-Domain Views** ✓
+- [x] 12 curated cross-domain topics composing data across all 10 domains into narrative stories (Women in India, Fiscal Health, Inflation & Cost of Living, Education→Employment Pipeline, Health Outcomes, Regional Inequality, Climate & Energy, Youth & Jobs, Urban vs Rural, Democratic Health, Agriculture & Food Security, Water Crisis)
+- [x] `/topics` hub page with 12 topic cards (live hero stats, domain badges, accent colors)
+- [x] `/topics/{id}` detail pages with hero section, key takeaways, 2-3 chart sections with `ChartActionsWrapper`, deep-link CTAs to source domains
+- [x] Config-driven architecture: `TopicDef` type, `extractData` functions, `useTopicData` hook with `Promise.allSettled`, `DOMAIN_DATA_MAP` mapping ~60 data keys to loaders
+- [x] `RelatedTopics` accent-colored pills wired into 28 existing domain section components
+- [x] Hub integration: "Cross-Domain Insights" section with 4 featured topic cards
+- [x] Chart registry auto-registration for all topic section charts via `registry/topics.ts`
+- [x] Full SEO layer: 13 topic routes prerendered (68 total), sitemap, og-topics.png, llms.txt, search index entries
 
-**Phase 12: Multiplier Infrastructure**
-- [ ] Public REST API for all datasets with OpenAPI documentation
-- [ ] "For Journalists" section (citation-ready text, high-res chart downloads, embed snippets)
-- [ ] "For Teachers" section (lesson plans, classroom mode with larger fonts and slide-by-slide navigation)
-- [ ] Contributor guide for data journalists and civic organizations
+**Phase 12: Multiplier Infrastructure** ✓
+- [x] `/open-data` — Open Data API documentation: 71 JSON endpoints browsable by domain with code examples (curl, Python, JS), "Try it" live preview, and download buttons
+- [x] `/for-journalists` — Journalist toolkit: chart gallery (92 charts with domain/type filters, CSV download, embed copy, citation generator), 6 curated story kits with editorial context and story angles, interactive embed builder with live iframe preview
+- [x] `/for-teachers` — Teacher toolkit: 7 NCERT-mapped lesson plans (Class 10-12, Economics/Political Science/Geography) with teaching notes, discussion questions, and interactive chart references; classroom mode toggle (larger fonts via CSS + URL param `?classroom=true`)
+- [x] `/contribute` — Contributor guide: data usage, issue reporting, code contribution, dataset contribution guidelines
+- [x] Hub integration: "Build With This Data" section with 3 cards linking to Open Data, Journalists, Teachers
+- [x] Navigation: context-aware header titles + sub-tabs for journalists (4 tabs) and teachers (2 tabs), mobile nav wired
+- [x] Full SEO layer: 8 new routes prerendered (76 total), sitemap, llms.txt, 3 OG images, search index entries, noscript fallback
 
 **Phase 13: Design & Visualization Overhaul** *(see BRAND.md audit brief)*
 - [ ] Typography overhaul: replace Inter with warm humanist sans-serif (warm + accessible direction). Evaluate body + heading + mono combinations on actual portal sections.
@@ -574,6 +601,35 @@ The site is built for maximum discoverability:
 
 **Final: Citizen-Perspective QA**
 - [ ] Full product review from the perspective of an average Indian citizen (per CLAUDE.md Final QA protocol)
+
+**Post-Launch: Marketing, Launch Strategy & Documentation Assets**
+
+*Launch context (documented Mar 2 2026):* The US-Israeli military operation against Iran began Feb 28 2026 (Operation "Epic Fury" / "Roaring Lion"). 200+ dead in Iran, Khamenei killed, 3 US soldiers dead, regional escalation into Lebanon and Gulf states. This is ongoing at time of planned launch (week of Mar 2-9 or Mar 9-16). **Before writing any launch content, interview Ronit on:** (a) Is the conflict still active? (b) How to acknowledge the moment with genuine empathy — not marketing, not performative, but honest recognition that launching a civic data tool during a time of death and destruction carries weight. The connection point: this project exists because transparent, accessible information is a civic good; war is what happens when information, diplomacy, and accountability fail. If we can say something honest about building in dark times without exploiting the moment, we should. If we can't do it right, we stay silent on it.
+
+- [ ] **Launch strategy** (beyond LinkedIn/Twitter):
+  - [ ] Identify target communities: Indian civic tech (DataMeet, Open Data India), developer communities (HackerNews, Indie Hackers, Product Hunt, Reddit r/India, r/dataisbeautiful, r/opensource), journalism networks (GIJN, DataJournalism.com), education communities (NCERT teacher forums, education Twitter), open data communities (OKFN, Civic Tech slack groups)
+  - [ ] Product Hunt launch: prepare screenshots, tagline, maker comment. Time for Indian morning (US evening)
+  - [ ] HackerNews Show HN post: technical angle (11 automated pipelines, D3 viz, 71 open endpoints, zero-auth API)
+  - [ ] Direct outreach: Indian data journalists (IndiaSpend, The Wire Data, Scroll.in data team, FactChecker.in), civic tech organizations (CivicDataLab, Janaagraha), education influencers who use data in teaching
+  - [ ] Reddit posts: r/India (civic angle), r/dataisbeautiful (viz angle), r/opensource (AGPL civic infra angle), r/webdev (technical angle)
+  - [ ] Open data community announcements: DataMeet mailing list, Open Government Data India forums
+  - [ ] Executable launch week plan: Day 1 (LinkedIn + Twitter), Day 2 (Product Hunt + HN), Day 3 (Reddit), Day 4-5 (direct outreach to journalists + educators), Day 6-7 (community forums + follow-up engagement)
+  - [ ] Prep: 5-6 high-quality screenshots/GIFs of key interactions (scrollytelling, hemicycle, embed builder, Cmd+K search, calculator, state report card)
+- [ ] **Launch announcement posts** (LinkedIn long-form + Twitter thread) — stream-of-consciousness in Ronit's voice, covering origin story, philosophy, what the portal actually does
+- [ ] **Ongoing content series** (1 post every 3-4 days) spotlighting individual elements:
+  - The "Data IS the design" philosophy and why no card wrappers, no dashboard chrome
+  - Building 10 data domains with 11 automated pipelines — zero-touch data freshness
+  - Scrollytelling as civic communication — making ₹50 lakh crore budgets tangible
+  - The personalization engine — EMI calculator, cost-of-living deflator, state report cards
+  - Cross-domain topic views — weaving 10 datasets into narratives (Women in India, Water Crisis, etc.)
+  - Custom D3 visualizations — hemicycle parliament, waffle charts, choropleth maps, Sankey flows
+  - Question-first search — 115 citizen questions as entry points into government data
+  - The pipeline architecture — World Bank API + MOSPI + curated government sources
+  - Building this entire platform with Claude Code — the AI collaboration experience
+  - Open source as civic infrastructure — why AGPL, why open data matters
+- [ ] Interview-first drafting process: surface real triggers, frustrations, and philosophy before writing
+- [ ] Use worldbuilding-writing skill + marketing/copy agents for persuasive framing
+- [ ] Screenshots and screen recordings of key interactions for social proof
 
 ---
 
