@@ -604,6 +604,126 @@ The site is built for maximum discoverability:
 - [ ] **Device testing**: Test on actual low-end Android (Chrome on a Redmi/Realme with 2GB RAM) if available, or use BrowserStack/remote device lab. Verify: smooth scroll through 9-section scrollytelling, chart interactions responsive, no OOM crashes.
 - [ ] **Accessibility pass**: Keyboard navigation for all interactive elements (chart filters, calculators, search). ARIA labels on SVG visualizations. Screen reader testing on at least hub + 1 domain story page. Color contrast verification for all accent colors against dark backgrounds.
 
+**Phase 15: Crime & Safety Domain**
+
+*India's 11th data domain. Source: NCRB "Crime in India" annual reports + data.gov.in NCRB catalog + MoRTH road accident statistics + World Bank indicators.*
+
+**15a. Pipeline & Data**
+- [ ] Create `pipeline/src/crime/` with sources, validation schemas, and main script
+- [ ] **data.gov.in NCRB API**: Fetch structured crime datasets (IPC crimes, crimes against women, crimes against children, cybercrimes, state-wise breakdowns). Catalog API at `data.gov.in/catalog/crime-india-*`
+- [ ] **World Bank API**: Intentional homicides per 100K (`VC.IHR.PSRC.P5`), other safety indicators
+- [ ] **Curated NCRB data**: Crime in India annual report tables — IPC crime rates, SLL crimes, conviction rates, chargesheet rates, police personnel strength. Data available as Excel/CSV on NCRB website
+- [ ] **Curated MoRTH data**: Road accident fatalities, causes, state-wise breakdown. "Road Accidents in India" annual report
+- [ ] Pydantic validation schemas matching TypeScript interfaces exactly
+- [ ] Cross-check every key figure against NCRB primary publication
+- [ ] GitHub Actions workflow (`crime-pipeline.yml`) — semi-annual cron (Jan 15, Jul 15) aligned to NCRB publication cycle (typically 6-12 month lag)
+- [ ] Target: 7 JSON output files (summary, crimes-overview, crimes-against-women, road-accidents, cybercrime, police-infrastructure, state-wise)
+- [ ] Pick accent color (suggestion: warm crimson/red like `#DC2626` or steel `#64748B`)
+
+**15b. TypeScript Scaffolding**
+- [ ] Interfaces in `src/lib/data/schema.ts` — CrimeData, CrimeOverview, CrimesAgainstWomen, RoadAccidents, CyberCrime, PoliceInfrastructure, etc.
+- [ ] Loader functions in `src/lib/dataLoader.ts`
+- [ ] Zustand store in `src/store/crimeStore.ts`
+- [ ] Data hook in `src/hooks/useCrimeData.ts`
+
+**15c. Scrollytelling Page (`/crime`)**
+- [ ] 5-6 sections with narrative bridges. Candidate sections:
+  1. **Crime Overview** — Total cognizable crimes trend (IPC + SLL), crime rate per lakh, composition breakdown
+  2. **Crimes Against Women** — Rape, domestic violence, dowry deaths, acid attacks, trafficking. State-wise comparison. Trend lines.
+  3. **Road Accidents** — 170,000+ deaths/year. Causes breakdown (speeding, drunk driving, etc.). State-wise fatality rates. Two-wheeler vulnerability.
+  4. **Cybercrime** — Surge trend, financial fraud losses (Rs 22,495 Cr in 2025), complaint types
+  5. **Police Infrastructure** — Police-to-population ratio, women in police force, state-wise strength, vacancies
+  6. **Justice Pipeline** — Chargesheet rate → conviction rate → pendency. How many crimes lead to punishment?
+- [ ] Each section: `useScrollTrigger` → `SectionNumber` → title/annotation → viz → source attribution
+- [ ] Use appropriate viz types (NOT just bar charts): choropleths for state-wise data, dot strips for comparisons, small multiples for crime type trends, bump charts for state rankings over time
+- [ ] Narrative bridges between sections with storytelling connectors
+- [ ] CTA section at bottom with Explore + Methodology glow cards
+
+**15d. Sub-Pages**
+- [ ] Explorer page (`/crime/explore`): Category filters (IPC, crimes against women, road accidents, cyber, police), indicator list, interactive chart
+- [ ] Methodology page (`/crime/methodology`): Data sources, indicator definitions, limitations, NCRB reporting methodology caveats, data lag notes
+- [ ] Glossary page (`/crime/glossary`): ~12-15 terms (IPC, SLL, FIR, chargesheet, cognizable offence, POCSO, dowry death, etc.). Create `public/data/crime/glossary.json`
+- [ ] Glossary wrapper: `src/pages/CrimeGlossaryPage.tsx` → `<GlossaryPage domain="crime" />`
+- [ ] Add domain config to `DOMAIN_CONFIG` in `GlossaryPage.tsx`
+
+**15e. Routing & Navigation**
+- [ ] Routes in `App.tsx` (story, explore, methodology, glossary)
+- [ ] Header: `isDomainSection` detection for `/crime`, title, 4 sub-tabs (Story, Explore, Methodology, Glossary)
+- [ ] MobileNav: add to `hubTabs` array with appropriate icon (shield or alert icon)
+- [ ] Footer: domain-specific NCRB/MoRTH attribution with source links
+- [ ] Back chevron → `/#stories`, footer back link → `/#stories`
+- [ ] Old route redirects (if any)
+
+**15f. Hub Integration**
+- [ ] Domain card in `HubPage.tsx` with mini-visualization and stat pills
+- [ ] Hub loads only `crime/summary.json` — never the full dataset
+- [ ] Update "stories" section order
+
+**15g. Phase 7 Features (Chart Sharing)**
+- [ ] Chart registry entries in `src/lib/registry/crime.ts` — register all scrollytelling + explorer charts
+- [ ] `ChartActionsWrapper` on every chart section (SVG→PNG, CSV, permalink, embed)
+- [ ] `toTabular()` function for each chart (CSV export)
+- [ ] `heroStat()` function for WhatsApp share cards
+- [ ] Embed routes: `/embed/crime/{sectionId}` for all sections
+- [ ] Add to `ChartRenderer` lazy-loaded chart component map
+
+**15h. Phase 8 Features (Personalization)**
+- [ ] State Report Card: Add crime panel to `stateReportEngine.ts` — crime rate, crimes against women rate, road accident fatality rate, police-to-population ratio. Now 12 panels.
+- [ ] Personalization banner stat for `/crime` scrollytelling page (e.g., "{state} crime rate: X per lakh")
+
+**15i. Phase 9 Features (Key Insights & Search)**
+- [ ] `KeyTakeaways` component on crime story page — 4 stat pills (e.g., total crimes trend, crimes against women %, road deaths, conviction rate)
+- [ ] ~13 citizen questions in `questions.json` (e.g., "How many crimes against women are reported each year?", "Which state has the highest crime rate?", "What is India's road accident death toll?", "What percentage of crimes lead to conviction?")
+- [ ] Search overlay entries for crime pages + glossary terms
+
+**15j. Phase 11 Features (Cross-Domain Topics)**
+- [ ] Add `RelatedTopics` pills to crime section components where relevant
+- [ ] Check if existing topics should reference crime data:
+  - "Women in India" topic — should pull crimes against women data
+  - "Democratic Health" topic — could reference police/justice data
+  - "Regional Inequality" topic — crime rate disparity across states
+- [ ] Potentially create new topic: "Safety & Justice" composing crime + judiciary data
+- [ ] Update `DOMAIN_DATA_MAP` in `topicDataMap.ts` with crime data keys
+
+**15k. Phase 12 Features (Multiplier Infrastructure)**
+- [ ] Add crime JSON endpoints to `dataEndpoints.ts` for Open Data page
+- [ ] Chart gallery entries auto-populated from chart registry
+- [ ] Potential story kit: "crime-safety" kit for journalists (data narrative + chart refs + story angles)
+- [ ] Potential lesson plan: Class 11-12 Political Science / Sociology — crime data, justice system, women's safety
+- [ ] Embed routes registered in embed builder dropdown
+
+**15l. Phase 13-14 Features (Design & Performance)**
+- [ ] Use Phase 13 viz components where appropriate (choropleths for state crime maps, dot strips, small multiples)
+- [ ] Lazy-load crime pages via `React.lazy()` (Phase 14 pattern)
+- [ ] ARIA labels on all SVG chart components
+- [ ] Service worker caching for crime JSON files
+- [ ] Mobile: tap-to-reveal share, safe-area padding, scrollable nav (all inherited from this session's fixes)
+
+**15m. SEO & Documentation**
+- [ ] Routes added to `scripts/prerender.mjs`
+- [ ] Sitemap updated (`public/sitemap.xml`) with crime routes + data file URLs
+- [ ] `public/llms.txt` expanded with crime domain description
+- [ ] `index.html` noscript fallback updated with crime domain content
+- [ ] JSON-LD Dataset schema in SEOHead for crime data
+- [ ] OG image: add `og-crime.png` variant to `scripts/generate-og.mjs` and regenerate
+- [ ] Add to `scripts/inject-og.mjs` route→OG mapping
+- [ ] Update CLAUDE.md site architecture section
+- [ ] Update README: pages table, data section (Crime Data), project structure, acknowledgments
+
+**15n. Browser QA (MANDATORY)**
+- [ ] Hub: crime domain card renders with stats and mini-viz
+- [ ] Story: scroll through ALL sections — every chart renders, axes readable, legends accurate
+- [ ] Explorer: filter categories, select indicators, chart renders with correct data
+- [ ] Methodology: all sections readable, source links present
+- [ ] Glossary: terms render, filter works, related term pills scroll to target
+- [ ] Navigation: header tabs work (including Glossary tab), back chevron → `/#stories`
+- [ ] Mobile: bottom nav scrollable (crime tab visible), charts responsive, no horizontal overflow
+- [ ] Search: Cmd+K → type crime term → glossary result appears, citizen questions appear
+- [ ] Share: hover chart → overlay works (desktop), tap chart → share button appears (mobile)
+- [ ] State report card: crime panel renders with correct state data
+- [ ] Embed: `/embed/crime/{section}` renders standalone chart
+- [ ] Build: `npm run build` passes with zero errors
+
 **Pre-Final: Code-Level QA Audit (Codex)**
 - [ ] End-to-end automated code audit via Codex CLI (`codex exec --full-auto`)
 - [ ] Verify all JSON pipeline outputs match TypeScript schema interfaces (Pydantic ↔ TypeScript alignment)
@@ -689,6 +809,7 @@ The underlying budget data is published by the Government of India under the [Go
 - Healthcare data from [National Health Profile 2022](https://cbhidghs.mohfw.gov.in), [NFHS-5](http://rchiips.org/nfhs/), and [World Bank Open Data](https://data.worldbank.org)
 - Environment data from [CPCB](https://cpcb.nic.in) (air quality), [MOEFCC](https://moef.gov.in) (forest cover), [CEA](https://cea.nic.in) (energy mix), and [CWC](https://cwc.gov.in) (water resources)
 - Elections data from [Election Commission of India](https://eci.gov.in), [TCPD Lok Dhaba](https://lokdhaba.ashoka.edu.in) (Lok Sabha results 1962-2024), [ADR/MyNeta](https://myneta.info) (candidate profiles), and [Lok Sabha Secretariat](https://loksabha.nic.in) (women MPs)
+- Crime data from [NCRB "Crime in India"](https://ncrb.gov.in), [data.gov.in NCRB catalog](https://www.data.gov.in/ministrydepartment/National%20Crime%20Records%20Bureau%20(NCRB)), [MoRTH Road Accidents in India](https://morth.nic.in), and [World Bank Open Data](https://data.worldbank.org)
 - CPI category data from [MOSPI eSankhyiki API](https://api.mospi.gov.in) (primary, live CPI by COICOP group), [IMF CPI dataset via DBnomics](https://db.nomics.world/IMF/CPI) (historical baseline), and [Economic Survey](https://www.indiabudget.gov.in/economicsurvey/)
 - Loan spread data from [SBI](https://sbi.co.in), [HDFC Bank](https://hdfcbank.com), and [ICICI Bank](https://icicibank.com) published rate cards
 - Design inspired by [Information is Beautiful](https://informationisbeautiful.net), [Visual Cinnamon](https://www.visualcinnamon.com), and [Kasia Siwosz](https://kasiasiwosz.com)
