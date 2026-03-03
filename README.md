@@ -724,6 +724,36 @@ The site is built for maximum discoverability:
 - [ ] Embed: `/embed/crime/{section}` renders standalone chart
 - [ ] Build: `npm run build` passes with zero errors
 
+**Phase 16: Data Source Automation Audit**
+
+Systematic audit of all 11 domains to identify API-based or machine-readable data sources that we may have missed. The goal: if an authentic, government-published API exists for data we currently curate manually, we should be using it. Post-audit, we'll have a clear picture of automation coverage vs. gaps across every domain.
+
+**Audit scope per domain:**
+- [ ] **Budget**: Audit Open Budgets India API, CKAN/data.gov.in endpoints beyond what `data-pipeline.yml` already fetches. Check for any new CKAN datasets (expenditure actuals, revised estimates) that could replace curated trend data.
+- [ ] **Economy**: Audit MOSPI eSankhyiki API beyond CPI (GDP quarterly estimates, IIP, WPI). Check NSO API for advance/provisional GDP. Verify if RBI DBIE has usable endpoints for macro indicators (GDP, GVA, savings rate).
+- [ ] **RBI**: Audit RBI DBIE (Database on Indian Economy) for programmatic access — repo rate history, forex reserves, monetary aggregates, credit/deposit data. Check if the DBIE download interface has a stable URL pattern or hidden API. Evaluate RBI's new data portal if any.
+- [ ] **State Finances**: Audit RBI Handbook of Statistics on Indian States for any API or bulk download. Check CAG (Comptroller and Auditor General) for state audit data APIs. Check Finance Commission reports for machine-readable data.
+- [ ] **Census**: Audit Census of India website for any API or bulk download (census.gov.in). Check Office of the Registrar General (SRS, CRS) for programmatic access. Evaluate NFHS data API (if DHS Program offers one for India). Check National Population Commission for digital releases.
+- [ ] **Education**: Audit UDISE+ portal for API or bulk download (udiseplus.gov.in). Check ASER Centre for programmatic data access. Evaluate MHRD/MoE data portals. Check data.gov.in for education datasets.
+- [ ] **Employment**: Audit MOSPI PLFS microdata/API access. Check Labour Bureau (labourbureau.gov.in) for digital releases. Evaluate e-Shram portal data. Check RBI KLEMS for programmatic access.
+- [ ] **Healthcare**: Audit CBHI (Central Bureau of Health Intelligence) for NHP data API. Check HMIS (Health Management Information System) portal for facility/outcome data. Evaluate IDSP (Integrated Disease Surveillance Programme) for disease burden data. Check NHA (National Health Authority) for Ayushman Bharat data.
+- [ ] **Environment**: Audit CPCB real-time AQI API (already known: `api.data.gov.in/resource/` CPCB endpoints). Check ISFR (India State of Forest Report) for digital data. Evaluate CEA (Central Electricity Authority) for generation/capacity APIs. Check CWC/CGWB for water level APIs.
+- [ ] **Elections**: Audit ECI (Election Commission of India) for any structured data API. Check Lok Dhaba (TCPD) for programmatic access. Evaluate MyNeta (ADR) for candidate data APIs. Check data.gov.in for election datasets.
+- [ ] **Crime (Phase 15)**: Audit NCRB data.gov.in API endpoints for "Crime in India" datasets. Check MoRTH for road accident data API. Evaluate NCRB website for structured downloads beyond Excel.
+
+**Cross-cutting checks:**
+- [ ] data.gov.in: Comprehensive search across all 11 domain keywords — many ministries publish datasets here with CKAN API access that we may not know about
+- [ ] World Bank API: Verify we're using all relevant India indicators (currently ~30 across 7 domains). Cross-check against full WDI indicator list for gaps.
+- [ ] RBI DBIE: Single most likely source of missed APIs — covers monetary, banking, fiscal, external sector, and state-level data
+- [ ] MOSPI eSankhyiki: Beyond CPI, check for GDP, IIP, WPI, trade, and other macro APIs
+
+**Deliverables:**
+- [ ] Audit report: per-domain table of (current source → available API → recommendation → effort estimate)
+- [ ] For each newly discovered API: test accessibility (auth requirements, rate limits, data freshness, coverage years)
+- [ ] Prioritized implementation list: which APIs to integrate first (based on data freshness gain vs. effort)
+- [ ] Update `pipeline/PIPELINE_DATA_SOURCES.md` with findings
+- [ ] Implement highest-priority API integrations before Codex QA
+
 **Pre-Final: Code-Level QA Audit (Codex)**
 - [ ] End-to-end automated code audit via Codex CLI (`codex exec --full-auto`)
 - [ ] Verify all JSON pipeline outputs match TypeScript schema interfaces (Pydantic ↔ TypeScript alignment)

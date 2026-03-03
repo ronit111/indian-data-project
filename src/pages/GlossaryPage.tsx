@@ -117,6 +117,17 @@ const DOMAIN_CONFIG = {
     seoTitle: 'Glossary — Elections — Indian Data Project',
     seoDescription: 'Plain-language definitions of election terms: Lok Sabha, FPTP, constituency, EVM, NOTA, vote share, delimitation, coalition, ADR, and more.',
   },
+  crime: {
+    accent: 'var(--crimson)',
+    accentDim: 'rgba(220,38,38,0.12)',
+    label: 'Crime & Safety',
+    title: 'Crime & Safety Glossary',
+    description: 'Crime terms explained in plain language. What IPC, FIR, cognizable offence, chargesheet, conviction rate, and NCRB actually mean.',
+    ogImage: '/og-crime.png',
+    basePath: '/crime/glossary',
+    seoTitle: 'Glossary — Crime & Safety — Indian Data Project',
+    seoDescription: 'Plain-language definitions of crime terms: IPC, FIR, chargesheet, conviction rate, NCRB, POCSO, crime rate, pendency, I4C, and more.',
+  },
 } as const;
 
 type Domain = keyof typeof DOMAIN_CONFIG;

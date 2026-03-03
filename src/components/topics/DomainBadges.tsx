@@ -12,6 +12,7 @@ const DOMAIN_LABELS: Record<DomainId, string> = {
   healthcare: 'Healthcare',
   environment: 'Environment',
   elections: 'Elections',
+  crime: 'Crime',
 };
 
 interface DomainBadgesProps {

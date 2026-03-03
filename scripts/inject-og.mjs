@@ -317,6 +317,32 @@ const ROUTES = [
     image: '/og-elections.png',
   },
 
+  // ── Crime & Safety ─────────────────────────────────────────────
+  {
+    path: '/crime',
+    title: 'Crime & Safety — 58.2 Lakh Crimes | Indian Data Project',
+    description: "India's crime landscape in data — IPC crimes, crimes against women, road accidents, cybercrime, police infrastructure, and conviction rates. Source: NCRB, MoRTH, BPRD.",
+    image: '/og-crime.png',
+  },
+  {
+    path: '/crime/explore',
+    title: 'Explore Crime Data — Indian Data Project',
+    description: 'Browse state-wise crime rates, conviction rates, police ratios, and other justice indicators across all Indian states.',
+    image: '/og-crime.png',
+  },
+  {
+    path: '/crime/methodology',
+    title: 'Methodology — Crime Data | Indian Data Project',
+    description: 'Data sources, NCRB methodology, underreporting caveats, Kerala paradox, and limitations for crime data on Indian Data Project.',
+    image: '/og-crime.png',
+  },
+  {
+    path: '/crime/glossary',
+    title: 'Glossary — Crime & Safety — Indian Data Project',
+    description: 'Plain-language definitions of crime terms: FIR, chargesheet, cognizable offence, IPC, SLL, conviction rate, cybercrime, and more.',
+    image: '/og-crime.png',
+  },
+
   // ── Topics ──────────────────────────────────────────────────────
   {
     path: '/topics',
@@ -401,7 +427,7 @@ const ROUTES = [
   {
     path: '/open-data',
     title: 'Open Data API — Indian Data Project',
-    description: 'Free, open JSON API for Indian government data. 71 endpoints across 10 domains — budget, economy, RBI, states, census, education, employment, healthcare, environment, and elections.',
+    description: 'Free, open JSON API for Indian government data. 80 endpoints across 11 domains — budget, economy, RBI, states, census, education, employment, healthcare, environment, elections, and crime.',
     image: '/og-open-data.png',
   },
   {

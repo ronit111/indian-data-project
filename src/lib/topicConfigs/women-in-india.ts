@@ -8,6 +8,7 @@ import type {
   EnrollmentData,
   LiteracyData,
   HealthData,
+  WomenSafetyData,
 } from '../data/schema.ts';
 
 // ─── Typed accessors ────────────────────────────────────────────────
@@ -36,6 +37,9 @@ const literacy = (bag: TopicDataBag) =>
 const health = (bag: TopicDataBag) =>
   bag['census/health'] as HealthData | undefined;
 
+const womenSafety = (bag: TopicDataBag) =>
+  bag['crime/women-safety'] as WomenSafetyData | undefined;
+
 // ─── Config ─────────────────────────────────────────────────────────
 
 export const womenInIndia: TopicDef = {
@@ -44,7 +48,7 @@ export const womenInIndia: TopicDef = {
   subtitle:
     'From parliament to payrolls, classrooms to clinics — how is India doing on gender equity?',
   accent: '#F43F5E',
-  contributingDomains: ['elections', 'employment', 'education', 'census', 'healthcare'],
+  contributingDomains: ['elections', 'employment', 'education', 'census', 'healthcare', 'crime'],
   requiredData: [
     'elections/summary',
     'elections/representation',
@@ -54,6 +58,7 @@ export const womenInIndia: TopicDef = {
     'census/summary',
     'census/literacy',
     'census/health',
+    'crime/women-safety',
   ],
   summaryData: [
     'elections/summary',
@@ -271,6 +276,59 @@ export const womenInIndia: TopicDef = {
         { label: 'Explore health data', route: '/census#health', domain: 'census' },
       ],
     },
+
+    // ── Section 4: Safety & Violence ────────────────────────────────
+    {
+      id: 'safety-violence',
+      sectionNumber: 4,
+      title: 'Safety & Violence',
+      annotation:
+        '4.45 lakh crimes against women were registered in 2022 — cruelty by husband, kidnapping, and assault lead the categories. The reported number is widely believed to be a fraction of the actual incidence due to stigma and institutional barriers to filing complaints.',
+      domains: ['crime'],
+      sources: ['NCRB "Crime in India" 2022'],
+      charts: [
+        {
+          chartType: 'line',
+          chartTitle: 'Crimes Against Women: National Trend',
+          unit: 'cases',
+          accent: '#DC2626',
+          extractData: (bag) => {
+            const d = womenSafety(bag);
+            if (!d?.nationalTrend?.length || d.nationalTrend.length < 3) return null;
+            return [
+              {
+                name: 'Total Cases',
+                color: '#DC2626',
+                data: d.nationalTrend.map((p) => ({
+                  label: p.year,
+                  value: p.total,
+                })),
+              },
+            ];
+          },
+        },
+        {
+          chartType: 'horizontal-bar',
+          chartTitle: 'Crime Types Against Women (2022)',
+          unit: '%',
+          accent: '#DC2626',
+          extractData: (bag) => {
+            const d = womenSafety(bag);
+            if (!d?.crimeTypes?.length) return null;
+            return d.crimeTypes
+              .sort((a, b) => b.pct - a.pct)
+              .map((t) => ({
+                label: t.name,
+                value: t.pct,
+                color: '#DC2626',
+              }));
+          },
+        },
+      ],
+      deepLinks: [
+        { label: 'Explore crime data', route: '/crime#women-safety', domain: 'crime' },
+      ],
+    },
   ],
 
   crossLinks: [
@@ -280,6 +338,7 @@ export const womenInIndia: TopicDef = {
     { domain: 'census', sectionId: 'literacy' },
     { domain: 'census', sectionId: 'health' },
     { domain: 'healthcare', sectionId: 'disease' },
+    { domain: 'crime', sectionId: 'women-safety' },
   ],
 
   ctaLinks: [
@@ -300,6 +359,12 @@ export const womenInIndia: TopicDef = {
       route: '/education',
       domain: 'education',
       description: 'Gender enrollment and dropout data',
+    },
+    {
+      label: 'Crime & Safety',
+      route: '/crime',
+      domain: 'crime',
+      description: 'Crimes against women — 4.45 lakh cases in 2022',
     },
   ],
 };

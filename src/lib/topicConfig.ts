@@ -81,7 +81,16 @@ export type DomainDataKey =
   | 'elections/results'
   | 'elections/candidates'
   | 'elections/representation'
-  | 'elections/indicators';
+  | 'elections/indicators'
+  // Crime
+  | 'crime/summary'
+  | 'crime/overview'
+  | 'crime/women-safety'
+  | 'crime/road-accidents'
+  | 'crime/cybercrime'
+  | 'crime/police'
+  | 'crime/justice'
+  | 'crime/indicators';
 
 // ─── Contributing Domain ────────────────────────────────────────────
 
@@ -95,7 +104,8 @@ export type DomainId =
   | 'employment'
   | 'healthcare'
   | 'environment'
-  | 'elections';
+  | 'elections'
+  | 'crime';
 
 // ─── Data Bag ───────────────────────────────────────────────────────
 // Partial record — some keys may fail to load (allSettled pattern).

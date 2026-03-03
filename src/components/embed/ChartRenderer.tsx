@@ -123,7 +123,18 @@ function buildLineSeries(data: Record<string, unknown>, domain: string, sectionI
   const series: SeriesShape[] = [];
 
   // Known data shapes by domain/section
-  if (domain === 'economy' && sectionId === 'growth') {
+  if (domain === 'crime' && sectionId === 'overview') {
+    const d = data as { nationalTrend: { year: string; ipc: number; sll: number }[] };
+    if (d.nationalTrend?.length >= 3) {
+      series.push({ id: 'ipc', name: 'IPC Crimes', color: '#DC2626', data: d.nationalTrend.map((t) => ({ year: t.year, value: t.ipc })) });
+      series.push({ id: 'sll', name: 'SLL Crimes', color: '#EF4444', data: d.nationalTrend.map((t) => ({ year: t.year, value: t.sll })) });
+    }
+  } else if (domain === 'crime' && sectionId === 'cybercrime') {
+    const d = data as { ncrbTrend: { year: string; cases: number }[] };
+    if (d.ncrbTrend?.length >= 3) {
+      series.push({ id: 'firs', name: 'Cybercrime FIRs', color: '#DC2626', data: d.ncrbTrend.map((t) => ({ year: t.year, value: t.cases })) });
+    }
+  } else if (domain === 'economy' && sectionId === 'growth') {
     const d = data as { series: TimePoint[] };
     if (d.series?.length) {
       series.push({ id: 'gdp', name: 'Real GDP Growth', color: colors[0], data: d.series });
@@ -167,7 +178,13 @@ function buildAreaSeries(data: Record<string, unknown>, domain: string, sectionI
   const colors = ['var(--cyan)', 'var(--saffron)', 'var(--gold)'];
   const series: SeriesShape[] = [];
 
-  if (domain === 'economy' && sectionId === 'sectors') {
+  if (domain === 'crime' && sectionId === 'road-accidents') {
+    const d = data as { nationalTrend: { year: string; killed: number; injured: number }[] };
+    if (d.nationalTrend?.length >= 3) {
+      series.push({ id: 'killed', name: 'Killed', color: '#DC2626', data: d.nationalTrend.map((t) => ({ year: t.year, value: t.killed })) });
+      series.push({ id: 'injured', name: 'Injured', color: '#EF4444', data: d.nationalTrend.map((t) => ({ year: t.year, value: t.injured })) });
+    }
+  } else if (domain === 'economy' && sectionId === 'sectors') {
     const d = data as { sectors: { id: string; name: string; currentGrowth: number; gvaShare: number }[] };
     // Sectors data isn't time-series based for area chart in embed; fall back to line-style
     if (d.sectors?.length) {

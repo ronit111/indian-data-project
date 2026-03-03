@@ -1,0 +1,24 @@
+{
+  "year": "2025-26",
+  "funnel": {
+    "totalForInvestigation": 5413745,
+    "investigated": 4203822,
+    "chargesheeted": 3135620,
+    "chargesheetRate": 74.6,
+    "totalForTrial": 4906386,
+    "trialCompleted": 1802954,
+    "convicted": 705614,
+    "acquitted": 1097340,
+    "convictionRate": 39.1,
+    "pendingInvestigation": 1209923,
+    "pendingTrial": 3103432,
+    "pendencyRate": 63.2
+  },
+  "trialDuration": {
+    "avgYears": 3.5,
+    "casesOver5Years": 28.6,
+    "casesOver10Years": 10.2,
+    "judgesPerMillion": 21.0
+  },
+  "source": "NCRB Crime in India 2022, Chapter 4 — Disposal of Cases by Police & Courts"
+}

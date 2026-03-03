@@ -4,7 +4,7 @@
 
 ## What this site does
 
-Indian Data Project is a hub for Indian government data visualization. Each data domain gets its own visual story with explorable breakdowns. Ten domains are live: Union Budget 2025-26, Economic Survey 2025-26, RBI Data, State Finances, Census & Demographics, Education, Employment, Healthcare, Environment, and Elections.
+Indian Data Project is a hub for Indian government data visualization. Each data domain gets its own visual story with explorable breakdowns. Eleven domains are live: Union Budget 2025-26, Economic Survey 2025-26, RBI Data, State Finances, Census & Demographics, Education, Employment, Healthcare, Environment, Elections, and Crime & Safety.
 
 ## Pages
 
@@ -12,7 +12,7 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 - / — Visual portal showcasing all data domains with live stats from each dataset
 
 ### Open Data
-- /open-data — Direct access to 71 JSON endpoints with source links, schema notes, and no API key required.
+- /open-data — Direct access to 80 JSON endpoints with source links, schema notes, and no API key required.
 
 ### For Journalists
 - /for-journalists — Newsroom toolkit landing page for fast chart sourcing, attribution-ready stats, and publishing workflows.
@@ -88,9 +88,15 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 - /elections/methodology — Data sources (ECI, TCPD Lok Dhaba, ADR/MyNeta, Lok Sabha Secretariat), party grouping methodology, data vintage, limitations
 - /elections/glossary — Plain-language definitions of election terms: Lok Sabha, FPTP, constituency, EVM, NOTA, ECI, MCC, affidavit, ADR, delimitation, coalition, Nari Shakti Vandan Adhiniyam.
 
+### Crime & Safety Domain
+- /crime — Scrollytelling narrative (6 sections): crime overview (IPC/SLL split, national trend, state choropleth), crimes against women (4.45 lakh cases, cruelty and kidnapping lead), road accidents (1.68 lakh killed, 461 daily, overspeeding 69%), cybercrime (3x growth, 3% FIR conversion), police infrastructure (151 per lakh vs UN 222, 11.7% women), justice pipeline (funnel from FIR to conviction, 39.1% rate, 3.5 year avg trial)
+- /crime/explore — State-wise crime indicators: overall rates, women crime rates, road fatalities, police-population ratio, vacancies
+- /crime/methodology — NCRB methodology (FIR-based, cognizable only), underreporting caveats, Kerala paradox, MoRTH road data, World Bank homicide data, 2022 data vintage
+- /crime/glossary — Plain-language definitions: FIR, chargesheet, cognizable offence, IPC, SLL, conviction rate, cybercrime, and more.
+
 ### Cross-Domain Topics
 - /topics — Hub page with 12 curated cross-domain topic cards. Each topic weaves data from 2-5 domains into a narrative view.
-- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps. Domains: Elections, Employment, Education, Census, Healthcare.
+- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps, safety & violence (4.45L crimes against women). Domains: Elections, Employment, Education, Census, Healthcare, Crime.
 - /topics/fiscal-health — India's Fiscal Health: GDP growth engine, spending vs borrowing (fiscal deficit % GDP), RBI monetary policy lever. Domains: Budget, Economy, RBI, States.
 - /topics/inflation-cost — Inflation & Cost of Living: CPI price trajectory, RBI rate response, fiscal connection. Domains: Economy, RBI, Budget.
 - /topics/education-employment — Education to Employment Pipeline: enrollment scale (secondary GER), jobs gap (unemployment rate), education spending. Domains: Education, Employment, Census, Budget.
@@ -178,6 +184,19 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 - TB incidence: 199 per 100,000 (highest global burden)
 - Data sources: NHP 2022 (CBHI), NFHS-5, World Bank Open Data
 
+### Crime & Safety (NCRB 2022)
+- Total cognizable crimes 2022: 58,24,946
+- Crime rate: 422.2 per lakh population
+- Crimes against women: 4,45,256 (rate: 66.4 per lakh women)
+- Road accident deaths: 1,68,491 (461 per day)
+- Conviction rate: 39.1%
+- Chargesheet rate: 74.6%
+- Cybercrime FIRs: 65,893 (I4C complaints: 22.68 lakh)
+- Police-population ratio: 151.1 per lakh (UN recommended: 222)
+- Women in police: 11.7% (2,44,961)
+- Average trial duration: 3.5 years
+- Data sources: NCRB "Crime in India" 2022, MoRTH, BPRD, I4C, World Bank
+
 ### Elections (Lok Sabha 1957-2024)
 - Total electors 2024: 96.88 crore (968.8 million)
 - Voter turnout 2024: 65.8% (17th Lok Sabha)
@@ -219,6 +238,11 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 - TCPD Lok Dhaba (lokdhaba.ashoka.edu.in) — Trivedi Centre for Political Data, Ashoka University — historical Lok Sabha results 1962-2024
 - ADR / MyNeta (adrindia.org, myneta.info) — Association for Democratic Reforms — MP criminal records, assets, education from affidavits
 - Lok Sabha Secretariat — Women MPs count per election, parliamentary composition data
+- NCRB "Crime in India" (ncrb.gov.in) — cognizable crime statistics by IPC/SLL, crimes against women, state-wise breakdowns
+- MoRTH Road Transport & Highways Annual Report — road accidents, causes, fatalities by state
+- Bureau of Police Research & Development (BPRD) — police strength, vacancies, infrastructure
+- Indian Cyber Crime Coordination Centre (I4C) — cybercrime complaints and financial loss estimates
+- World Bank — intentional homicide rate for international comparison
 
 ## Downloadable datasets (JSON)
 
@@ -297,8 +321,19 @@ Indian Data Project is a hub for Indian government data visualization. Each data
 - /data/elections/2025-26/indicators.json — State-level election indicators
 - /data/elections/2025-26/glossary.json — 15 election terms with plain-language definitions
 
+### Crime
+- /data/crime/2025-26/summary.json — Crime headline numbers (total crimes, crime rate, conviction rate, road deaths, cybercrime)
+- /data/crime/2025-26/overview.json — National crime trend 2014-2022, IPC composition, state crime rates
+- /data/crime/2025-26/women-safety.json — Crimes against women trend, crime types, state rates
+- /data/crime/2025-26/road-accidents.json — Road accident trend, causes, state fatality rates
+- /data/crime/2025-26/cybercrime.json — NCRB FIR trend, I4C complaints, crime types
+- /data/crime/2025-26/police.json — Police ratios, state-wise data, women in police, vacancies
+- /data/crime/2025-26/justice.json — Justice funnel (FIR to conviction), conviction rate, trial duration
+- /data/crime/2025-26/indicators.json — State-level crime indicators across 5 categories
+- /data/crime/2025-26/glossary.json — 15 crime terms with plain-language definitions
+
 ### Citizen Questions
-- /data/questions.json — 115 curated citizen questions across 10 domains with answers and section anchors. Used by Cmd+K search.
+- /data/questions.json — 128 curated citizen questions across 11 domains with answers and section anchors. Used by Cmd+K search.
 
 ### EMI Calculator
 - /data/emi/loan-spreads.json — Curated loan spreads over repo rate for home (2.75%), car (3.5%), personal (8%) loans. Sources: SBI EBLR, HDFC, ICICI published rate cards.
@@ -353,6 +388,7 @@ Available embed URLs (examples):
 - /embed/employment/participation — Labour Force Participation
 - /embed/healthcare/infrastructure — Healthcare Infrastructure
 - /embed/elections/turnout — Voter Turnout Trends
+- /embed/crime/overview — Crime Overview (national trend, IPC composition)
 
 Embed pages render with minimal chrome (no header/footer), responsive to container width, dark background, source attribution, and a link back to the full portal.
 

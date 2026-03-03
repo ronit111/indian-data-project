@@ -45,6 +45,9 @@
   --indigo:        #6366F1;
   --indigo-light:  #818CF8;
   --indigo-dim:    rgba(99, 102, 241, 0.12);
+  --crimson:       #DC2626;
+  --crimson-light: #EF4444;
+  --crimson-dim:   rgba(220, 38, 38, 0.12);
 
   /* Semantic */
   --positive: #34d399;
@@ -277,6 +280,13 @@
 
   .gradient-text-indigo {
     background: linear-gradient(135deg, var(--indigo), var(--indigo-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-crimson {
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

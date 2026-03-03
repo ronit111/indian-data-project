@@ -1,0 +1,680 @@
+{
+  "year": "2025-26",
+  "indicators": [
+    {
+      "id": "crime_rate",
+      "name": "Crime Rate (per lakh population)",
+      "category": "overall",
+      "unit": "per lakh",
+      "states": [
+        {
+          "id": "KL",
+          "name": "Kerala",
+          "value": 1287.4
+        },
+        {
+          "id": "DL",
+          "name": "Delhi",
+          "value": 1241.8
+        },
+        {
+          "id": "TN",
+          "name": "Tamil Nadu",
+          "value": 566.6
+        },
+        {
+          "id": "MP",
+          "name": "Madhya Pradesh",
+          "value": 517.1
+        },
+        {
+          "id": "HR",
+          "name": "Haryana",
+          "value": 504.9
+        },
+        {
+          "id": "CG",
+          "name": "Chhattisgarh",
+          "value": 488.1
+        },
+        {
+          "id": "RJ",
+          "name": "Rajasthan",
+          "value": 477.8
+        },
+        {
+          "id": "UP",
+          "name": "Uttar Pradesh",
+          "value": 451.7
+        },
+        {
+          "id": "GJ",
+          "name": "Gujarat",
+          "value": 445.5
+        },
+        {
+          "id": "MH",
+          "name": "Maharashtra",
+          "value": 406.4
+        },
+        {
+          "id": "AP",
+          "name": "Andhra Pradesh",
+          "value": 401.0
+        },
+        {
+          "id": "OD",
+          "name": "Odisha",
+          "value": 395.3
+        },
+        {
+          "id": "KA",
+          "name": "Karnataka",
+          "value": 389.0
+        },
+        {
+          "id": "JH",
+          "name": "Jharkhand",
+          "value": 374.5
+        },
+        {
+          "id": "TS",
+          "name": "Telangana",
+          "value": 368.3
+        },
+        {
+          "id": "AS",
+          "name": "Assam",
+          "value": 359.1
+        },
+        {
+          "id": "BR",
+          "name": "Bihar",
+          "value": 295.0
+        },
+        {
+          "id": "WB",
+          "name": "West Bengal",
+          "value": 291.0
+        },
+        {
+          "id": "PB",
+          "name": "Punjab",
+          "value": 285.7
+        },
+        {
+          "id": "UK",
+          "name": "Uttarakhand",
+          "value": 262.0
+        },
+        {
+          "id": "HP",
+          "name": "Himachal Pradesh",
+          "value": 246.2
+        },
+        {
+          "id": "GA",
+          "name": "Goa",
+          "value": 225.4
+        },
+        {
+          "id": "JK",
+          "name": "Jammu & Kashmir",
+          "value": 207.6
+        },
+        {
+          "id": "MN",
+          "name": "Manipur",
+          "value": 200.0
+        },
+        {
+          "id": "TR",
+          "name": "Tripura",
+          "value": 196.3
+        },
+        {
+          "id": "ML",
+          "name": "Meghalaya",
+          "value": 181.3
+        },
+        {
+          "id": "SK",
+          "name": "Sikkim",
+          "value": 164.2
+        },
+        {
+          "id": "AR",
+          "name": "Arunachal Pradesh",
+          "value": 155.9
+        },
+        {
+          "id": "NL",
+          "name": "Nagaland",
+          "value": 124.1
+        },
+        {
+          "id": "MZ",
+          "name": "Mizoram",
+          "value": 110.2
+        }
+      ],
+      "source": "NCRB Crime in India 2022"
+    },
+    {
+      "id": "women_crime_rate",
+      "name": "Crimes Against Women (per lakh women)",
+      "category": "women-safety",
+      "unit": "per lakh",
+      "states": [
+        {
+          "id": "RJ",
+          "name": "Rajasthan",
+          "value": 105.4
+        },
+        {
+          "id": "DL",
+          "name": "Delhi",
+          "value": 100.2
+        },
+        {
+          "id": "HR",
+          "name": "Haryana",
+          "value": 93.4
+        },
+        {
+          "id": "OD",
+          "name": "Odisha",
+          "value": 90.5
+        },
+        {
+          "id": "AS",
+          "name": "Assam",
+          "value": 88.0
+        },
+        {
+          "id": "MP",
+          "name": "Madhya Pradesh",
+          "value": 82.6
+        },
+        {
+          "id": "UP",
+          "name": "Uttar Pradesh",
+          "value": 76.4
+        },
+        {
+          "id": "CG",
+          "name": "Chhattisgarh",
+          "value": 73.0
+        },
+        {
+          "id": "AP",
+          "name": "Andhra Pradesh",
+          "value": 70.5
+        },
+        {
+          "id": "TS",
+          "name": "Telangana",
+          "value": 67.3
+        },
+        {
+          "id": "KL",
+          "name": "Kerala",
+          "value": 65.7
+        },
+        {
+          "id": "TN",
+          "name": "Tamil Nadu",
+          "value": 60.3
+        },
+        {
+          "id": "MH",
+          "name": "Maharashtra",
+          "value": 56.0
+        },
+        {
+          "id": "KA",
+          "name": "Karnataka",
+          "value": 55.2
+        },
+        {
+          "id": "JH",
+          "name": "Jharkhand",
+          "value": 54.2
+        },
+        {
+          "id": "BR",
+          "name": "Bihar",
+          "value": 43.6
+        },
+        {
+          "id": "WB",
+          "name": "West Bengal",
+          "value": 42.4
+        },
+        {
+          "id": "GJ",
+          "name": "Gujarat",
+          "value": 40.0
+        },
+        {
+          "id": "PB",
+          "name": "Punjab",
+          "value": 37.2
+        },
+        {
+          "id": "UK",
+          "name": "Uttarakhand",
+          "value": 35.8
+        }
+      ],
+      "source": "NCRB Crime in India 2022"
+    },
+    {
+      "id": "road_fatality_rate",
+      "name": "Road Accident Fatality Rate (per lakh)",
+      "category": "road-safety",
+      "unit": "per lakh",
+      "states": [
+        {
+          "id": "TS",
+          "name": "Telangana",
+          "value": 21.5
+        },
+        {
+          "id": "MP",
+          "name": "Madhya Pradesh",
+          "value": 18.9
+        },
+        {
+          "id": "CG",
+          "name": "Chhattisgarh",
+          "value": 18.3
+        },
+        {
+          "id": "TN",
+          "name": "Tamil Nadu",
+          "value": 17.9
+        },
+        {
+          "id": "KA",
+          "name": "Karnataka",
+          "value": 17.8
+        },
+        {
+          "id": "RJ",
+          "name": "Rajasthan",
+          "value": 17.5
+        },
+        {
+          "id": "UP",
+          "name": "Uttar Pradesh",
+          "value": 15.4
+        },
+        {
+          "id": "GJ",
+          "name": "Gujarat",
+          "value": 15.2
+        },
+        {
+          "id": "HR",
+          "name": "Haryana",
+          "value": 15.0
+        },
+        {
+          "id": "MH",
+          "name": "Maharashtra",
+          "value": 14.1
+        },
+        {
+          "id": "AP",
+          "name": "Andhra Pradesh",
+          "value": 13.8
+        },
+        {
+          "id": "OD",
+          "name": "Odisha",
+          "value": 11.7
+        },
+        {
+          "id": "PB",
+          "name": "Punjab",
+          "value": 11.4
+        },
+        {
+          "id": "KL",
+          "name": "Kerala",
+          "value": 10.8
+        },
+        {
+          "id": "JH",
+          "name": "Jharkhand",
+          "value": 9.5
+        },
+        {
+          "id": "UK",
+          "name": "Uttarakhand",
+          "value": 9.3
+        },
+        {
+          "id": "BR",
+          "name": "Bihar",
+          "value": 8.3
+        },
+        {
+          "id": "WB",
+          "name": "West Bengal",
+          "value": 7.2
+        },
+        {
+          "id": "AS",
+          "name": "Assam",
+          "value": 6.4
+        },
+        {
+          "id": "DL",
+          "name": "Delhi",
+          "value": 5.9
+        }
+      ],
+      "source": "MoRTH Road Accidents in India 2022"
+    },
+    {
+      "id": "police_ratio",
+      "name": "Police-Population Ratio (per lakh)",
+      "category": "infrastructure",
+      "unit": "per lakh",
+      "states": [
+        {
+          "id": "DL",
+          "name": "Delhi",
+          "value": 492.1
+        },
+        {
+          "id": "MZ",
+          "name": "Mizoram",
+          "value": 480.5
+        },
+        {
+          "id": "NL",
+          "name": "Nagaland",
+          "value": 390.2
+        },
+        {
+          "id": "AN",
+          "name": "Andaman & Nicobar",
+          "value": 412.3
+        },
+        {
+          "id": "CH",
+          "name": "Chandigarh",
+          "value": 395.0
+        },
+        {
+          "id": "MN",
+          "name": "Manipur",
+          "value": 385.1
+        },
+        {
+          "id": "SK",
+          "name": "Sikkim",
+          "value": 345.2
+        },
+        {
+          "id": "GA",
+          "name": "Goa",
+          "value": 295.7
+        },
+        {
+          "id": "KL",
+          "name": "Kerala",
+          "value": 187.5
+        },
+        {
+          "id": "HP",
+          "name": "Himachal Pradesh",
+          "value": 180.2
+        },
+        {
+          "id": "KA",
+          "name": "Karnataka",
+          "value": 185.3
+        },
+        {
+          "id": "TN",
+          "name": "Tamil Nadu",
+          "value": 182.0
+        },
+        {
+          "id": "MH",
+          "name": "Maharashtra",
+          "value": 178.1
+        },
+        {
+          "id": "PB",
+          "name": "Punjab",
+          "value": 186.5
+        },
+        {
+          "id": "TS",
+          "name": "Telangana",
+          "value": 172.3
+        },
+        {
+          "id": "GJ",
+          "name": "Gujarat",
+          "value": 156.8
+        },
+        {
+          "id": "RJ",
+          "name": "Rajasthan",
+          "value": 143.2
+        },
+        {
+          "id": "MP",
+          "name": "Madhya Pradesh",
+          "value": 132.5
+        },
+        {
+          "id": "CG",
+          "name": "Chhattisgarh",
+          "value": 155.3
+        },
+        {
+          "id": "OD",
+          "name": "Odisha",
+          "value": 119.5
+        },
+        {
+          "id": "AP",
+          "name": "Andhra Pradesh",
+          "value": 137.2
+        },
+        {
+          "id": "WB",
+          "name": "West Bengal",
+          "value": 116.8
+        },
+        {
+          "id": "JH",
+          "name": "Jharkhand",
+          "value": 109.5
+        },
+        {
+          "id": "HR",
+          "name": "Haryana",
+          "value": 152.4
+        },
+        {
+          "id": "UK",
+          "name": "Uttarakhand",
+          "value": 163.5
+        },
+        {
+          "id": "AS",
+          "name": "Assam",
+          "value": 155.0
+        },
+        {
+          "id": "UP",
+          "name": "Uttar Pradesh",
+          "value": 108.3
+        },
+        {
+          "id": "BR",
+          "name": "Bihar",
+          "value": 77.4
+        }
+      ],
+      "source": "BPRD Data on Police Organisations 2022"
+    },
+    {
+      "id": "police_vacancy",
+      "name": "Police Vacancy Rate",
+      "category": "infrastructure",
+      "unit": "%",
+      "states": [
+        {
+          "id": "DL",
+          "name": "Delhi",
+          "value": 13.7
+        },
+        {
+          "id": "MZ",
+          "name": "Mizoram",
+          "value": 7.8
+        },
+        {
+          "id": "NL",
+          "name": "Nagaland",
+          "value": 22.0
+        },
+        {
+          "id": "AN",
+          "name": "Andaman & Nicobar",
+          "value": 14.1
+        },
+        {
+          "id": "CH",
+          "name": "Chandigarh",
+          "value": 14.5
+        },
+        {
+          "id": "MN",
+          "name": "Manipur",
+          "value": 14.1
+        },
+        {
+          "id": "SK",
+          "name": "Sikkim",
+          "value": 15.8
+        },
+        {
+          "id": "GA",
+          "name": "Goa",
+          "value": 23.9
+        },
+        {
+          "id": "KL",
+          "name": "Kerala",
+          "value": 28.7
+        },
+        {
+          "id": "HP",
+          "name": "Himachal Pradesh",
+          "value": 27.3
+        },
+        {
+          "id": "KA",
+          "name": "Karnataka",
+          "value": 16.0
+        },
+        {
+          "id": "TN",
+          "name": "Tamil Nadu",
+          "value": 16.5
+        },
+        {
+          "id": "MH",
+          "name": "Maharashtra",
+          "value": 13.2
+        },
+        {
+          "id": "PB",
+          "name": "Punjab",
+          "value": 17.1
+        },
+        {
+          "id": "TS",
+          "name": "Telangana",
+          "value": 13.8
+        },
+        {
+          "id": "GJ",
+          "name": "Gujarat",
+          "value": 17.6
+        },
+        {
+          "id": "RJ",
+          "name": "Rajasthan",
+          "value": 20.7
+        },
+        {
+          "id": "MP",
+          "name": "Madhya Pradesh",
+          "value": 24.3
+        },
+        {
+          "id": "CG",
+          "name": "Chhattisgarh",
+          "value": 23.1
+        },
+        {
+          "id": "OD",
+          "name": "Odisha",
+          "value": 24.4
+        },
+        {
+          "id": "AP",
+          "name": "Andhra Pradesh",
+          "value": 19.3
+        },
+        {
+          "id": "WB",
+          "name": "West Bengal",
+          "value": 17.7
+        },
+        {
+          "id": "JH",
+          "name": "Jharkhand",
+          "value": 26.5
+        },
+        {
+          "id": "HR",
+          "name": "Haryana",
+          "value": 19.8
+        },
+        {
+          "id": "UK",
+          "name": "Uttarakhand",
+          "value": 24.0
+        },
+        {
+          "id": "AS",
+          "name": "Assam",
+          "value": 16.7
+        },
+        {
+          "id": "UP",
+          "name": "Uttar Pradesh",
+          "value": 27.8
+        },
+        {
+          "id": "BR",
+          "name": "Bihar",
+          "value": 39.5
+        }
+      ],
+      "source": "BPRD Data on Police Organisations 2022"
+    }
+  ]
+}

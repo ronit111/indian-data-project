@@ -20,13 +20,14 @@ export function Header() {
   const isHealthcareSection = location.pathname.startsWith('/healthcare');
   const isEnvironmentSection = location.pathname.startsWith('/environment');
   const isElectionsSection = location.pathname.startsWith('/elections');
+  const isCrimeSection = location.pathname.startsWith('/crime');
   const isTopicsSection = location.pathname.startsWith('/topics');
   const isOpenDataSection = location.pathname === '/open-data';
   const isJournalistsSection = location.pathname.startsWith('/for-journalists');
   const isTeachersSection = location.pathname.startsWith('/for-teachers');
   const isContributeSection = location.pathname === '/contribute';
   const isMultiplierSection = isOpenDataSection || isJournalistsSection || isTeachersSection || isContributeSection;
-  const isDataDomain = isBudgetSection || isEconomySection || isRBISection || isStatesSection || isCensusSection || isEducationSection || isEmploymentSection || isHealthcareSection || isEnvironmentSection || isElectionsSection || isTopicsSection || isMultiplierSection;
+  const isDataDomain = isBudgetSection || isEconomySection || isRBISection || isStatesSection || isCensusSection || isEducationSection || isEmploymentSection || isHealthcareSection || isEnvironmentSection || isElectionsSection || isCrimeSection || isTopicsSection || isMultiplierSection;
 
   // Context-aware title: show story name when inside a data story
   const headerTitle = isBudgetSection
@@ -49,8 +50,10 @@ export function Header() {
                     ? 'Environment'
                     : isElectionsSection
                       ? 'Elections'
-                      : isTopicsSection
-                        ? 'Cross-Domain Insights'
+                      : isCrimeSection
+                        ? 'Crime & Safety'
+                        : isTopicsSection
+                          ? 'Cross-Domain Insights'
                         : isOpenDataSection
                           ? 'Open Data'
                           : isJournalistsSection
@@ -80,8 +83,10 @@ export function Header() {
                     ? '/environment'
                     : isElectionsSection
                       ? '/elections'
-                      : isTopicsSection
-                        ? '/topics'
+                      : isCrimeSection
+                        ? '/crime'
+                        : isTopicsSection
+                          ? '/topics'
                         : isOpenDataSection
                           ? '/open-data'
                           : isJournalistsSection
@@ -167,7 +172,14 @@ export function Header() {
                           { to: '/elections/methodology', label: 'Methodology' },
                           { to: '/elections/glossary', label: 'Glossary' },
                         ]
-                      : isTopicsSection
+                      : isCrimeSection
+                        ? [
+                            { to: '/crime', label: 'Story' },
+                            { to: '/crime/explore', label: 'Explore' },
+                            { to: '/crime/methodology', label: 'Methodology' },
+                            { to: '/crime/glossary', label: 'Glossary' },
+                          ]
+                        : isTopicsSection
                         ? [
                             { to: '/topics', label: 'All Topics' },
                           ]
@@ -196,6 +208,7 @@ export function Header() {
     if (linkTo === '/healthcare') return location.pathname === '/healthcare';
     if (linkTo === '/environment') return location.pathname === '/environment';
     if (linkTo === '/elections') return location.pathname === '/elections';
+    if (linkTo === '/crime') return location.pathname === '/crime';
     if (linkTo === '/topics') return location.pathname === '/topics';
     if (linkTo === '/for-journalists') return location.pathname === '/for-journalists';
     if (linkTo === '/for-teachers') return location.pathname === '/for-teachers';

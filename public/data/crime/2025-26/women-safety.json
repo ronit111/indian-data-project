@@ -1,0 +1,217 @@
+{
+  "year": "2025-26",
+  "nationalTrend": [
+    {
+      "year": "2014",
+      "total": 337922,
+      "rate": 56.3
+    },
+    {
+      "year": "2015",
+      "total": 327394,
+      "rate": 53.9
+    },
+    {
+      "year": "2016",
+      "total": 338954,
+      "rate": 55.2
+    },
+    {
+      "year": "2017",
+      "total": 359849,
+      "rate": 57.9
+    },
+    {
+      "year": "2018",
+      "total": 378236,
+      "rate": 58.8
+    },
+    {
+      "year": "2019",
+      "total": 405861,
+      "rate": 62.4
+    },
+    {
+      "year": "2020",
+      "total": 371503,
+      "rate": 56.5
+    },
+    {
+      "year": "2021",
+      "total": 428278,
+      "rate": 64.5
+    },
+    {
+      "year": "2022",
+      "total": 445256,
+      "rate": 66.4
+    }
+  ],
+  "crimeTypes": [
+    {
+      "id": "cruelty",
+      "name": "Cruelty by Husband/Relatives",
+      "cases": 145309,
+      "pct": 32.6
+    },
+    {
+      "id": "kidnapping",
+      "name": "Kidnapping & Abduction",
+      "cases": 105418,
+      "pct": 23.7
+    },
+    {
+      "id": "assault",
+      "name": "Assault to Outrage Modesty",
+      "cases": 82727,
+      "pct": 18.6
+    },
+    {
+      "id": "rape",
+      "name": "Rape",
+      "cases": 31516,
+      "pct": 7.1
+    },
+    {
+      "id": "dowry-death",
+      "name": "Dowry Deaths",
+      "cases": 6450,
+      "pct": 1.4
+    },
+    {
+      "id": "cybercrime-women",
+      "name": "Cybercrime Against Women",
+      "cases": 7796,
+      "pct": 1.8
+    },
+    {
+      "id": "other-women",
+      "name": "Other Crimes Against Women",
+      "cases": 66040,
+      "pct": 14.8
+    }
+  ],
+  "stateRates": [
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "rate": 105.4,
+      "total": 40738
+    },
+    {
+      "id": "DL",
+      "name": "Delhi",
+      "rate": 100.2,
+      "total": 10036
+    },
+    {
+      "id": "HR",
+      "name": "Haryana",
+      "rate": 93.4,
+      "total": 13048
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "rate": 90.5,
+      "total": 19567
+    },
+    {
+      "id": "AS",
+      "name": "Assam",
+      "rate": 88.0,
+      "total": 14915
+    },
+    {
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "rate": 82.6,
+      "total": 32714
+    },
+    {
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "rate": 76.4,
+      "total": 82180
+    },
+    {
+      "id": "CG",
+      "name": "Chhattisgarh",
+      "rate": 73.0,
+      "total": 10115
+    },
+    {
+      "id": "AP",
+      "name": "Andhra Pradesh",
+      "rate": 70.5,
+      "total": 17911
+    },
+    {
+      "id": "TS",
+      "name": "Telangana",
+      "rate": 67.3,
+      "total": 12150
+    },
+    {
+      "id": "KL",
+      "name": "Kerala",
+      "rate": 65.7,
+      "total": 11725
+    },
+    {
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "rate": 60.3,
+      "total": 23268
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "rate": 56.0,
+      "total": 34625
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "rate": 55.2,
+      "total": 17676
+    },
+    {
+      "id": "JH",
+      "name": "Jharkhand",
+      "rate": 54.2,
+      "total": 9619
+    },
+    {
+      "id": "BR",
+      "name": "Bihar",
+      "rate": 43.6,
+      "total": 25316
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "rate": 42.4,
+      "total": 19823
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "rate": 40.0,
+      "total": 12889
+    },
+    {
+      "id": "PB",
+      "name": "Punjab",
+      "rate": 37.2,
+      "total": 5308
+    },
+    {
+      "id": "UK",
+      "name": "Uttarakhand",
+      "rate": 35.8,
+      "total": 1906
+    }
+  ],
+  "source": "NCRB Crime in India 2022, Chapter 5"
+}

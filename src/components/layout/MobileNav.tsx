@@ -18,6 +18,7 @@ const ICONS = {
   healthcare: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
   environment: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
   elections: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+  crime: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
   topics: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
   reportCard: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
 };
@@ -34,6 +35,7 @@ export function MobileNav() {
   const isHealthcareSection = location.pathname.startsWith('/healthcare');
   const isEnvironmentSection = location.pathname.startsWith('/environment');
   const isElectionsSection = location.pathname.startsWith('/elections');
+  const isCrimeSection = location.pathname.startsWith('/crime');
   const isTopicsSection = location.pathname.startsWith('/topics');
   const isOpenDataSection = location.pathname === '/open-data';
   const isJournalistsSection = location.pathname.startsWith('/for-journalists');
@@ -53,6 +55,7 @@ export function MobileNav() {
     { to: '/healthcare', label: 'Health', icon: ICONS.healthcare },
     { to: '/environment', label: 'Environ.', icon: ICONS.environment },
     { to: '/elections', label: 'Elections', icon: ICONS.elections },
+    { to: '/crime', label: 'Crime', icon: ICONS.crime },
     { to: '/topics', label: 'Topics', icon: ICONS.topics },
   ];
 
@@ -145,6 +148,14 @@ export function MobileNav() {
     { to: '/elections/glossary', label: 'Glossary', icon: ICONS.glossary },
   ];
 
+  const crimeTabs = [
+    { to: '/', label: 'Hub', icon: ICONS.home },
+    { to: '/crime', label: 'Story', icon: ICONS.crime },
+    { to: '/crime/explore', label: 'Explore', icon: ICONS.explore },
+    { to: '/crime/methodology', label: 'Methods', icon: ICONS.methodology },
+    { to: '/crime/glossary', label: 'Glossary', icon: ICONS.glossary },
+  ];
+
   const journalistsTabs = [
     { to: '/', label: 'Hub', icon: ICONS.home },
     { to: '/for-journalists', label: 'Overview', icon: 'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z' },
@@ -184,9 +195,11 @@ export function MobileNav() {
                     ? environmentTabs
                     : isElectionsSection
                       ? electionsTabs
-                      : isTopicsSection
-                        ? topicsTabs
-                        : isJournalistsSection
+                      : isCrimeSection
+                        ? crimeTabs
+                        : isTopicsSection
+                          ? topicsTabs
+                          : isJournalistsSection
                           ? journalistsTabs
                           : isTeachersSection
                             ? teachersTabs
@@ -206,6 +219,7 @@ export function MobileNav() {
     if (tabTo === '/healthcare') return location.pathname === '/healthcare';
     if (tabTo === '/environment') return location.pathname === '/environment';
     if (tabTo === '/elections') return location.pathname === '/elections';
+    if (tabTo === '/crime') return location.pathname === '/crime';
     if (tabTo === '/topics') return location.pathname === '/topics';
     if (tabTo === '/open-data') return location.pathname === '/open-data';
     if (tabTo === '/for-journalists') return location.pathname === '/for-journalists';

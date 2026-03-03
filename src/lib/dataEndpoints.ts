@@ -727,6 +727,98 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     sourceUrl: 'https://eci.gov.in',
   },
 
+  // Crime & Safety
+  {
+    domain: 'crime',
+    file: 'summary.json',
+    path: '/data/crime/2025-26/summary.json',
+    description:
+      'Crime snapshot with total crimes, crime rate, road deaths, conviction rate, and police ratio.',
+    schema: 'CrimeSummary',
+    source: 'NCRB + MoRTH + BPRD',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'overview.json',
+    path: '/data/crime/2025-26/overview.json',
+    description:
+      'National crime trend (IPC vs SLL), IPC composition by type, state crime rates, and homicide rate.',
+    schema: 'CrimeOverviewData',
+    source: 'NCRB + World Bank',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'women-safety.json',
+    path: '/data/crime/2025-26/women-safety.json',
+    description:
+      'Crimes against women — national trend, crime types breakdown, and state-wise rates per lakh women.',
+    schema: 'WomenSafetyData',
+    source: 'NCRB Crime in India 2022',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'road-accidents.json',
+    path: '/data/crime/2025-26/road-accidents.json',
+    description:
+      'Road accident deaths and injuries trend, cause breakdown, and state fatality rates.',
+    schema: 'RoadAccidentData',
+    source: 'MoRTH Annual Report 2022',
+    sourceUrl: 'https://morth.nic.in',
+  },
+  {
+    domain: 'crime',
+    file: 'cybercrime.json',
+    path: '/data/crime/2025-26/cybercrime.json',
+    description:
+      'NCRB cybercrime FIR trend, I4C complaint volume, financial losses, and crime type breakdown.',
+    schema: 'CybercrimeData',
+    source: 'NCRB + I4C',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'police.json',
+    path: '/data/crime/2025-26/police.json',
+    description:
+      'Police strength, vacancy, women in force, police-population ratio by state.',
+    schema: 'PoliceData',
+    source: 'BPRD Data on Police Organisations 2022',
+    sourceUrl: 'https://bprd.nic.in',
+  },
+  {
+    domain: 'crime',
+    file: 'justice.json',
+    path: '/data/crime/2025-26/justice.json',
+    description:
+      'Justice pipeline funnel (FIR to conviction), trial duration, judges per million, pendency.',
+    schema: 'JusticeData',
+    source: 'NCRB Crime in India 2022',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'indicators.json',
+    path: '/data/crime/2025-26/indicators.json',
+    description:
+      'Key crime indicators (crime rate, women crime rate, road fatality, police ratio, vacancy) by state.',
+    schema: 'CrimeIndicatorsData',
+    source: 'NCRB + MoRTH + BPRD',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+  {
+    domain: 'crime',
+    file: 'glossary.json',
+    path: '/data/crime/2025-26/glossary.json',
+    description:
+      'Definitions of crime, safety, and justice terms used in the crime data story.',
+    schema: 'GlossaryData',
+    source: 'NCRB + MoRTH + BPRD',
+    sourceUrl: 'https://ncrb.gov.in',
+  },
+
   // Cross-domain questions
   {
     domain: 'all',

@@ -62,6 +62,14 @@ import type {
   CandidatesData,
   RepresentationData,
   ElectionsIndicatorsData,
+  CrimeSummary,
+  CrimeOverviewData,
+  WomenSafetyData,
+  RoadAccidentData,
+  CybercrimeData,
+  PoliceData,
+  JusticeData,
+  CrimeIndicatorsData,
   GlossaryData,
   LoanSpreadsData,
   CitizenQuestion,
@@ -274,6 +282,31 @@ export const loadRepresentation = (year: string) =>
 
 export const loadElectionsIndicators = (year: string) =>
   fetchJson<ElectionsIndicatorsData>(`/data/elections/${year}/indicators.json`);
+
+// ─── Crime & Safety Domain ─────────────────────────────────────
+export const loadCrimeSummary = (year: string) =>
+  fetchJson<CrimeSummary>(`/data/crime/${year}/summary.json`);
+
+export const loadCrimeOverview = (year: string) =>
+  fetchJson<CrimeOverviewData>(`/data/crime/${year}/overview.json`);
+
+export const loadWomenSafety = (year: string) =>
+  fetchJson<WomenSafetyData>(`/data/crime/${year}/women-safety.json`);
+
+export const loadRoadAccidents = (year: string) =>
+  fetchJson<RoadAccidentData>(`/data/crime/${year}/road-accidents.json`);
+
+export const loadCybercrime = (year: string) =>
+  fetchJson<CybercrimeData>(`/data/crime/${year}/cybercrime.json`);
+
+export const loadPolice = (year: string) =>
+  fetchJson<PoliceData>(`/data/crime/${year}/police.json`);
+
+export const loadJustice = (year: string) =>
+  fetchJson<JusticeData>(`/data/crime/${year}/justice.json`);
+
+export const loadCrimeIndicators = (year: string) =>
+  fetchJson<CrimeIndicatorsData>(`/data/crime/${year}/indicators.json`);
 
 // ─── EMI Calculator ────────────────────────────────────────────
 export const loadLoanSpreads = () =>

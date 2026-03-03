@@ -6,6 +6,7 @@ import { CLASS12_ECONOMICS_BUDGET } from './class12-economics-budget.ts';
 import { CLASS10_POLSCI_ELECTIONS } from './class10-polsci-elections.ts';
 import { CLASS10_GEOGRAPHY_POPULATION } from './class10-geography-population.ts';
 import { CLASS11_GEOGRAPHY_ENVIRONMENT } from './class11-geography-environment.ts';
+import { CLASS10_CIVICS_CRIME } from './class10-civics-crime.ts';
 
 export const LESSON_PLAN_CONFIGS: Record<string, LessonPlanDef> = {
   'class10-economics-budget': CLASS10_ECONOMICS_BUDGET,
@@ -15,6 +16,7 @@ export const LESSON_PLAN_CONFIGS: Record<string, LessonPlanDef> = {
   'class10-polsci-elections': CLASS10_POLSCI_ELECTIONS,
   'class10-geography-population': CLASS10_GEOGRAPHY_POPULATION,
   'class11-geography-environment': CLASS11_GEOGRAPHY_ENVIRONMENT,
+  'class10-civics-crime': CLASS10_CIVICS_CRIME,
 };
 
 export const ALL_LESSON_PLANS: LessonPlanDef[] = Object.values(LESSON_PLAN_CONFIGS);

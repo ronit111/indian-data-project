@@ -1022,5 +1022,109 @@
     "answer": "About 30% of MPs are post-graduates, 44% graduates, and 26% have below-graduate education.",
     "sectionId": "money-muscle",
     "route": "/elections#money-muscle"
+  },
+  {
+    "id": "crime-how-much",
+    "domain": "crime",
+    "question": "How much crime happens in India?",
+    "answer": "India recorded 58.2 lakh cognizable crimes in 2022 — one every 5 seconds.",
+    "sectionId": "crime-overview",
+    "route": "/crime#crime-overview"
+  },
+  {
+    "id": "crime-women-safe",
+    "domain": "crime",
+    "question": "Are women safe in India?",
+    "answer": "4.45 lakh crimes against women were reported in 2022 — cruelty and kidnapping lead.",
+    "sectionId": "women-safety",
+    "route": "/crime#women-safety"
+  },
+  {
+    "id": "crime-highest-state",
+    "domain": "crime",
+    "question": "Which state has the highest crime rate?",
+    "answer": "Crime rates vary widely — Kerala reports the most due to better registration, not more crime.",
+    "sectionId": "crime-overview",
+    "route": "/crime#crime-overview"
+  },
+  {
+    "id": "crime-road-deaths",
+    "domain": "crime",
+    "question": "What is India's road accident death toll?",
+    "answer": "1.68 lakh people died in road accidents in 2022 — 461 deaths every day.",
+    "sectionId": "road-accidents",
+    "route": "/crime#road-accidents"
+  },
+  {
+    "id": "crime-conviction-rate",
+    "domain": "crime",
+    "question": "What percentage of crimes lead to conviction?",
+    "answer": "Only 39.1% of trials result in conviction — the justice pipeline loses most cases.",
+    "sectionId": "justice-pipeline",
+    "route": "/crime#justice-pipeline"
+  },
+  {
+    "id": "crime-police-ratio",
+    "domain": "crime",
+    "question": "How many police per person does India have?",
+    "answer": "India has 151 police per lakh population — 32% below the UN recommended 222.",
+    "sectionId": "police",
+    "route": "/crime#police"
+  },
+  {
+    "id": "crime-cybercrime-growing",
+    "domain": "crime",
+    "question": "Is cybercrime growing in India?",
+    "answer": "Cybercrime FIRs tripled from 2017 to 2022. Only 3% of complaints become FIRs.",
+    "sectionId": "cybercrime",
+    "route": "/crime#cybercrime"
+  },
+  {
+    "id": "crime-conviction-low",
+    "domain": "crime",
+    "question": "Why is the conviction rate so low?",
+    "answer": "Overburdened courts, evidence gaps, and only 21 judges per million contribute to low convictions.",
+    "sectionId": "justice-pipeline",
+    "route": "/crime#justice-pipeline"
+  },
+  {
+    "id": "crime-common-types",
+    "domain": "crime",
+    "question": "Which types of crime are most common?",
+    "answer": "Theft, hurt, and cruelty by husband are the three most-registered IPC crimes.",
+    "sectionId": "crime-overview",
+    "route": "/crime#crime-overview"
+  },
+  {
+    "id": "crime-chargesheet",
+    "domain": "crime",
+    "question": "What is a chargesheet?",
+    "answer": "A chargesheet is the police's formal accusation filed in court after investigation — 74.6% of cases get one.",
+    "sectionId": "justice-pipeline",
+    "route": "/crime#justice-pipeline"
+  },
+  {
+    "id": "crime-trial-duration",
+    "domain": "crime",
+    "question": "How long do criminal trials take?",
+    "answer": "Average trial duration is 3.5 years. Over 4.5 crore cases are pending across Indian courts.",
+    "sectionId": "justice-pipeline",
+    "route": "/crime#justice-pipeline"
+  },
+  {
+    "id": "crime-kerala-paradox",
+    "domain": "crime",
+    "question": "What is the Kerala paradox in crime data?",
+    "answer": "Kerala has high reported crime but high HDI — better policing means more registration, not more crime.",
+    "sectionId": "crime-overview",
+    "route": "/crime#crime-overview"
+  },
+  {
+    "id": "crime-women-reported",
+    "domain": "crime",
+    "question": "How many crimes against women are reported each year?",
+    "answer": "4.45 lakh in 2022 — a rate of 66.4 per lakh women. Cruelty by husband is the top category.",
+    "sectionId": "women-safety",
+    "route": "/crime#women-safety"
   }
 ]

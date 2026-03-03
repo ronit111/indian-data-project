@@ -1,0 +1,219 @@
+{
+  "year": "2025-26",
+  "nationalTrend": [
+    {
+      "year": "2014",
+      "accidents": 489400,
+      "killed": 139671,
+      "injured": 493474
+    },
+    {
+      "year": "2015",
+      "accidents": 501423,
+      "killed": 146133,
+      "injured": 500279
+    },
+    {
+      "year": "2016",
+      "accidents": 480652,
+      "killed": 150785,
+      "injured": 494624
+    },
+    {
+      "year": "2017",
+      "accidents": 464910,
+      "killed": 147913,
+      "injured": 470975
+    },
+    {
+      "year": "2018",
+      "accidents": 467044,
+      "killed": 151417,
+      "injured": 469418
+    },
+    {
+      "year": "2019",
+      "accidents": 449002,
+      "killed": 151113,
+      "injured": 451361
+    },
+    {
+      "year": "2020",
+      "accidents": 354796,
+      "killed": 131714,
+      "injured": 348279
+    },
+    {
+      "year": "2021",
+      "accidents": 412432,
+      "killed": 153972,
+      "injured": 384448
+    },
+    {
+      "year": "2022",
+      "accidents": 461312,
+      "killed": 168491,
+      "injured": 443366
+    }
+  ],
+  "causes": [
+    {
+      "id": "overspeeding",
+      "name": "Over-speeding",
+      "pct": 69.3
+    },
+    {
+      "id": "wrong-side",
+      "name": "Driving on Wrong Side",
+      "pct": 5.5
+    },
+    {
+      "id": "drunk-driving",
+      "name": "Drunken Driving",
+      "pct": 3.1
+    },
+    {
+      "id": "mobile-use",
+      "name": "Use of Mobile Phone",
+      "pct": 2.7
+    },
+    {
+      "id": "overloading",
+      "name": "Overloading",
+      "pct": 1.9
+    },
+    {
+      "id": "red-light",
+      "name": "Jumping Red Light",
+      "pct": 0.9
+    },
+    {
+      "id": "other-causes",
+      "name": "Other Causes",
+      "pct": 16.6
+    }
+  ],
+  "stateFatalities": [
+    {
+      "id": "TS",
+      "name": "Telangana",
+      "rate": 21.5,
+      "killed": 8248
+    },
+    {
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "rate": 18.9,
+      "killed": 16077
+    },
+    {
+      "id": "CG",
+      "name": "Chhattisgarh",
+      "rate": 18.3,
+      "killed": 5419
+    },
+    {
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "rate": 17.9,
+      "killed": 14054
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "rate": 17.8,
+      "killed": 11757
+    },
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "rate": 17.5,
+      "killed": 14194
+    },
+    {
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "rate": 15.4,
+      "killed": 35214
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "rate": 15.2,
+      "killed": 10425
+    },
+    {
+      "id": "HR",
+      "name": "Haryana",
+      "rate": 15.0,
+      "killed": 4415
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "rate": 14.1,
+      "killed": 17465
+    },
+    {
+      "id": "AP",
+      "name": "Andhra Pradesh",
+      "rate": 13.8,
+      "killed": 7429
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "rate": 11.7,
+      "killed": 5372
+    },
+    {
+      "id": "PB",
+      "name": "Punjab",
+      "rate": 11.4,
+      "killed": 3458
+    },
+    {
+      "id": "KL",
+      "name": "Kerala",
+      "rate": 10.8,
+      "killed": 3871
+    },
+    {
+      "id": "JH",
+      "name": "Jharkhand",
+      "rate": 9.5,
+      "killed": 3585
+    },
+    {
+      "id": "UK",
+      "name": "Uttarakhand",
+      "rate": 9.3,
+      "killed": 1051
+    },
+    {
+      "id": "BR",
+      "name": "Bihar",
+      "rate": 8.3,
+      "killed": 10154
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "rate": 7.2,
+      "killed": 6982
+    },
+    {
+      "id": "AS",
+      "name": "Assam",
+      "rate": 6.4,
+      "killed": 2319
+    },
+    {
+      "id": "DL",
+      "name": "Delhi",
+      "rate": 5.9,
+      "killed": 1183
+    }
+  ],
+  "source": "MoRTH Road Accidents in India 2022"
+}

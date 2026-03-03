@@ -20,6 +20,7 @@ import {
   loadForest,
   loadWater,
   loadTurnout,
+  loadCrimeIndicators,
 } from '../lib/dataLoader.ts';
 import { StateSelector } from '../components/personalization/StateSelector.tsx';
 import { ReportCardGrid } from '../components/report-card/ReportCardGrid.tsx';
@@ -62,6 +63,7 @@ export default function StateReportCardPage() {
       { key: 'forest', fn: () => loadForest(year) },
       { key: 'water', fn: () => loadWater(year) },
       { key: 'turnout', fn: () => loadTurnout(year) },
+      { key: 'crimeIndicators', fn: () => loadCrimeIndicators(year) },
     ] as const;
 
     Promise.allSettled(loaders.map((l) => l.fn())).then((results) => {

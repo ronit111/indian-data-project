@@ -32,6 +32,7 @@ const ROUTES = [
   '/healthcare', '/healthcare/explore', '/healthcare/methodology', '/healthcare/glossary',
   '/environment', '/environment/explore', '/environment/methodology', '/environment/glossary',
   '/elections', '/elections/explore', '/elections/methodology', '/elections/glossary',
+  '/crime', '/crime/explore', '/crime/methodology', '/crime/glossary',
   // Topics hub + 12 topic detail pages
   '/topics',
   '/topics/women-in-india', '/topics/fiscal-health', '/topics/inflation-cost',
@@ -48,6 +49,7 @@ const ROUTES = [
   '/embed/states/gsdp', '/embed/census/population', '/embed/education/enrollment',
   '/embed/employment/participation', '/embed/healthcare/infrastructure', '/embed/environment/air-quality',
   '/embed/elections/turnout',
+  '/embed/crime/overview',
 ];
 
 const MIME_TYPES = {

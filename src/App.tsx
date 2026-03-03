@@ -73,6 +73,12 @@ const ElectionsExplorePage = lazy(() => import('./pages/ElectionsExplorePage.tsx
 const ElectionsMethodologyPage = lazy(() => import('./pages/ElectionsMethodologyPage.tsx'));
 const ElectionsGlossaryPage = lazy(() => import('./pages/ElectionsGlossaryPage.tsx'));
 
+// Crime
+const CrimePage = lazy(() => import('./pages/CrimePage.tsx'));
+const CrimeExplorerPage = lazy(() => import('./pages/CrimeExplorerPage.tsx'));
+const CrimeMethodologyPage = lazy(() => import('./pages/CrimeMethodologyPage.tsx'));
+const CrimeGlossaryPage = lazy(() => import('./pages/CrimeGlossaryPage.tsx'));
+
 // Cross-domain
 const TopicsPage = lazy(() => import('./pages/TopicsPage.tsx'));
 const TopicDetailPage = lazy(() => import('./pages/TopicDetailPage.tsx'));
@@ -100,6 +106,7 @@ const PREFETCH_MAP: Record<string, () => Promise<unknown>> = {
   '/healthcare': () => import('./pages/HealthcarePage.tsx'),
   '/environment': () => import('./pages/EnvironmentPage.tsx'),
   '/elections': () => import('./pages/ElectionsPage.tsx'),
+  '/crime': () => import('./pages/CrimePage.tsx'),
   '/topics': () => import('./pages/TopicsPage.tsx'),
   '/open-data': () => import('./pages/OpenDataPage.tsx'),
   '/for-journalists': () => import('./pages/JournalistsPage.tsx'),
@@ -170,6 +177,10 @@ const PAGE_ROUTES = [
   { path: '/elections/explore', element: <ElectionsExplorePage /> },
   { path: '/elections/methodology', element: <ElectionsMethodologyPage /> },
   { path: '/elections/glossary', element: <ElectionsGlossaryPage /> },
+  { path: '/crime', element: <CrimePage /> },
+  { path: '/crime/explore', element: <CrimeExplorerPage /> },
+  { path: '/crime/methodology', element: <CrimeMethodologyPage /> },
+  { path: '/crime/glossary', element: <CrimeGlossaryPage /> },
   { path: '/topics', element: <TopicsPage /> },
   { path: '/topics/:topicId', element: <TopicDetailPage /> },
   { path: '/open-data', element: <OpenDataPage /> },

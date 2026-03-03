@@ -122,6 +122,13 @@ export const DOMAIN_META: Record<string, DomainMeta> = {
     basePath: '/elections',
     defaultYear: '2025-26',
   },
+  crime: {
+    name: 'Crime & Safety',
+    accent: '#DC2626',
+    accentLight: '#EF4444',
+    basePath: '/crime',
+    defaultYear: '2025-26',
+  },
   topics: {
     name: 'Cross-Domain Topics',
     accent: '#A78BFA',

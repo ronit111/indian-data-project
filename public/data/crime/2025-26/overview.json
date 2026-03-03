@@ -1,0 +1,459 @@
+{
+  "year": "2025-26",
+  "nationalTrend": [
+    {
+      "year": "2014",
+      "total": 4730830,
+      "ipc": 2851563,
+      "sll": 1879267,
+      "rate": 374.6
+    },
+    {
+      "year": "2015",
+      "total": 4647459,
+      "ipc": 2810024,
+      "sll": 1837435,
+      "rate": 363.0
+    },
+    {
+      "year": "2016",
+      "total": 4831515,
+      "ipc": 2975711,
+      "sll": 1855804,
+      "rate": 372.6
+    },
+    {
+      "year": "2017",
+      "total": 5059089,
+      "ipc": 3091676,
+      "sll": 1967413,
+      "rate": 385.5
+    },
+    {
+      "year": "2018",
+      "total": 5015127,
+      "ipc": 3132954,
+      "sll": 1882173,
+      "rate": 377.8
+    },
+    {
+      "year": "2019",
+      "total": 5156172,
+      "ipc": 3225701,
+      "sll": 1930471,
+      "rate": 383.5
+    },
+    {
+      "year": "2020",
+      "total": 4527694,
+      "ipc": 2904490,
+      "sll": 1623204,
+      "rate": 332.3
+    },
+    {
+      "year": "2021",
+      "total": 5343323,
+      "ipc": 3370183,
+      "sll": 1973140,
+      "rate": 388.1
+    },
+    {
+      "year": "2022",
+      "total": 5824946,
+      "ipc": 3561379,
+      "sll": 2263567,
+      "rate": 422.2
+    }
+  ],
+  "ipcComposition": [
+    {
+      "id": "theft",
+      "name": "Theft",
+      "cases": 376090,
+      "pct": 10.6
+    },
+    {
+      "id": "hurt",
+      "name": "Causing Hurt",
+      "cases": 331464,
+      "pct": 9.3
+    },
+    {
+      "id": "cruelty-women",
+      "name": "Cruelty by Husband/Relatives",
+      "cases": 145309,
+      "pct": 4.1
+    },
+    {
+      "id": "kidnapping",
+      "name": "Kidnapping & Abduction",
+      "cases": 109400,
+      "pct": 3.1
+    },
+    {
+      "id": "assault-women",
+      "name": "Assault on Women",
+      "cases": 82727,
+      "pct": 2.3
+    },
+    {
+      "id": "burglary",
+      "name": "Burglary",
+      "cases": 63920,
+      "pct": 1.8
+    },
+    {
+      "id": "robbery",
+      "name": "Robbery",
+      "cases": 12958,
+      "pct": 0.4
+    },
+    {
+      "id": "rape",
+      "name": "Rape",
+      "cases": 31516,
+      "pct": 0.9
+    },
+    {
+      "id": "murder",
+      "name": "Murder",
+      "cases": 28522,
+      "pct": 0.8
+    },
+    {
+      "id": "riots",
+      "name": "Riots",
+      "cases": 29386,
+      "pct": 0.8
+    },
+    {
+      "id": "cheating",
+      "name": "Cheating",
+      "cases": 163092,
+      "pct": 4.6
+    },
+    {
+      "id": "other-ipc",
+      "name": "Other IPC Crimes",
+      "cases": 2156995,
+      "pct": 60.6
+    }
+  ],
+  "stateRates": [
+    {
+      "id": "KL",
+      "name": "Kerala",
+      "rate": 1287.4,
+      "total": 461652
+    },
+    {
+      "id": "DL",
+      "name": "Delhi",
+      "rate": 1241.8,
+      "total": 248485
+    },
+    {
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "rate": 566.6,
+      "total": 444779
+    },
+    {
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "rate": 517.1,
+      "total": 438879
+    },
+    {
+      "id": "HR",
+      "name": "Haryana",
+      "rate": 504.9,
+      "total": 148714
+    },
+    {
+      "id": "CG",
+      "name": "Chhattisgarh",
+      "rate": 488.1,
+      "total": 144680
+    },
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "rate": 477.8,
+      "total": 386975
+    },
+    {
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "rate": 451.7,
+      "total": 1030895
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "rate": 445.5,
+      "total": 305310
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "rate": 406.4,
+      "total": 502803
+    },
+    {
+      "id": "AP",
+      "name": "Andhra Pradesh",
+      "rate": 401.0,
+      "total": 216063
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "rate": 395.3,
+      "total": 181038
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "rate": 389.0,
+      "total": 256803
+    },
+    {
+      "id": "JH",
+      "name": "Jharkhand",
+      "rate": 374.5,
+      "total": 140820
+    },
+    {
+      "id": "TS",
+      "name": "Telangana",
+      "rate": 368.3,
+      "total": 140979
+    },
+    {
+      "id": "AS",
+      "name": "Assam",
+      "rate": 359.1,
+      "total": 130010
+    },
+    {
+      "id": "BR",
+      "name": "Bihar",
+      "rate": 295.0,
+      "total": 361019
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "rate": 291.0,
+      "total": 282024
+    },
+    {
+      "id": "PB",
+      "name": "Punjab",
+      "rate": 285.7,
+      "total": 86773
+    },
+    {
+      "id": "UK",
+      "name": "Uttarakhand",
+      "rate": 262.0,
+      "total": 29597
+    },
+    {
+      "id": "HP",
+      "name": "Himachal Pradesh",
+      "rate": 246.2,
+      "total": 18325
+    },
+    {
+      "id": "GA",
+      "name": "Goa",
+      "rate": 225.4,
+      "total": 3587
+    },
+    {
+      "id": "JK",
+      "name": "Jammu & Kashmir",
+      "rate": 207.6,
+      "total": 27596
+    },
+    {
+      "id": "MN",
+      "name": "Manipur",
+      "rate": 200.0,
+      "total": 6098
+    },
+    {
+      "id": "TR",
+      "name": "Tripura",
+      "rate": 196.3,
+      "total": 7989
+    },
+    {
+      "id": "ML",
+      "name": "Meghalaya",
+      "rate": 181.3,
+      "total": 6214
+    },
+    {
+      "id": "SK",
+      "name": "Sikkim",
+      "rate": 164.2,
+      "total": 1137
+    },
+    {
+      "id": "AR",
+      "name": "Arunachal Pradesh",
+      "rate": 155.9,
+      "total": 2529
+    },
+    {
+      "id": "NL",
+      "name": "Nagaland",
+      "rate": 124.1,
+      "total": 2694
+    },
+    {
+      "id": "MZ",
+      "name": "Mizoram",
+      "rate": 110.2,
+      "total": 1372
+    }
+  ],
+  "homicideRate": [
+    {
+      "year": "1990",
+      "value": 5.11
+    },
+    {
+      "year": "1991",
+      "value": 5.5
+    },
+    {
+      "year": "1992",
+      "value": 5.5
+    },
+    {
+      "year": "1993",
+      "value": 5.2
+    },
+    {
+      "year": "1994",
+      "value": 5.04
+    },
+    {
+      "year": "1995",
+      "value": 4.83
+    },
+    {
+      "year": "1996",
+      "value": 4.79
+    },
+    {
+      "year": "1997",
+      "value": 4.75
+    },
+    {
+      "year": "1998",
+      "value": 4.84
+    },
+    {
+      "year": "1999",
+      "value": 4.6
+    },
+    {
+      "year": "2000",
+      "value": 4.55
+    },
+    {
+      "year": "2001",
+      "value": 4.31
+    },
+    {
+      "year": "2002",
+      "value": 4.17
+    },
+    {
+      "year": "2003",
+      "value": 3.97
+    },
+    {
+      "year": "2004",
+      "value": 4.09
+    },
+    {
+      "year": "2005",
+      "value": 3.91
+    },
+    {
+      "year": "2006",
+      "value": 3.83
+    },
+    {
+      "year": "2007",
+      "value": 3.81
+    },
+    {
+      "year": "2008",
+      "value": 3.81
+    },
+    {
+      "year": "2009",
+      "value": 3.74
+    },
+    {
+      "year": "2010",
+      "value": 3.74
+    },
+    {
+      "year": "2011",
+      "value": 3.78
+    },
+    {
+      "year": "2012",
+      "value": 3.71
+    },
+    {
+      "year": "2013",
+      "value": 3.54
+    },
+    {
+      "year": "2014",
+      "value": 3.61
+    },
+    {
+      "year": "2015",
+      "value": 3.34
+    },
+    {
+      "year": "2016",
+      "value": 3.15
+    },
+    {
+      "year": "2017",
+      "value": 3.08
+    },
+    {
+      "year": "2018",
+      "value": 3.03
+    },
+    {
+      "year": "2019",
+      "value": 2.95
+    },
+    {
+      "year": "2020",
+      "value": 2.94
+    },
+    {
+      "year": "2021",
+      "value": 2.92
+    },
+    {
+      "year": "2022",
+      "value": 2.82
+    }
+  ],
+  "source": "NCRB Crime in India 2022 + World Bank"
+}

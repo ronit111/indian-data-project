@@ -1151,6 +1151,201 @@ export interface ElectionsIndicatorsData {
   indicators: ElectionsIndicator[];
 }
 
+// ─── Crime & Safety Domain ──────────────────────────────────────
+
+export interface CrimeSummary {
+  year: string;
+  totalCrimes: number;
+  crimeRate: number;
+  roadDeaths: number;
+  convictionRatePct: number;
+  womenCrimes: number;
+  cybercrimes: number;
+  policeRatioActual: number;
+  dataYear: string;
+  lastUpdated: string;
+  source: string;
+}
+
+export interface CrimeTrendPoint {
+  year: string;
+  total: number;
+  ipc: number;
+  sll: number;
+  rate: number;
+}
+
+export interface CrimeComposition {
+  id: string;
+  name: string;
+  cases: number;
+  pct: number;
+}
+
+export interface StateCrimeRate {
+  id: string;
+  name: string;
+  rate: number;
+  total: number;
+}
+
+export interface HomicidePoint {
+  year: string;
+  value: number;
+}
+
+export interface CrimeOverviewData {
+  year: string;
+  nationalTrend: CrimeTrendPoint[];
+  ipcComposition: CrimeComposition[];
+  stateRates: StateCrimeRate[];
+  homicideRate: HomicidePoint[];
+  source: string;
+}
+
+export interface WomenCrimeTrend {
+  year: string;
+  total: number;
+  rate: number;
+}
+
+export interface WomenCrimeType {
+  id: string;
+  name: string;
+  cases: number;
+  pct: number;
+}
+
+export interface StateWomenRate {
+  id: string;
+  name: string;
+  rate: number;
+  total: number;
+}
+
+export interface WomenSafetyData {
+  year: string;
+  nationalTrend: WomenCrimeTrend[];
+  crimeTypes: WomenCrimeType[];
+  stateRates: StateWomenRate[];
+  source: string;
+}
+
+export interface RoadAccidentTrend {
+  year: string;
+  accidents: number;
+  killed: number;
+  injured: number;
+}
+
+export interface AccidentCause {
+  id: string;
+  name: string;
+  pct: number;
+}
+
+export interface StateFatality {
+  id: string;
+  name: string;
+  rate: number;
+  killed: number;
+}
+
+export interface RoadAccidentData {
+  year: string;
+  nationalTrend: RoadAccidentTrend[];
+  causes: AccidentCause[];
+  stateFatalities: StateFatality[];
+  source: string;
+}
+
+export interface CybercrimeTrend {
+  year: string;
+  cases: number;
+  rate: number;
+}
+
+export interface CybercrimeType {
+  id: string;
+  name: string;
+  cases: number;
+  pct: number;
+}
+
+export interface CybercrimeData {
+  year: string;
+  ncrbTrend: CybercrimeTrend[];
+  crimeTypes: CybercrimeType[];
+  i4cComplaints: number;
+  i4cFinancialLossCrore: number;
+  i4cNote: string;
+  source: string;
+}
+
+export interface StatePoliceRatio {
+  id: string;
+  name: string;
+  sanctioned: number;
+  actual: number;
+}
+
+export interface PoliceData {
+  year: string;
+  sanctionedStrength: number;
+  actualStrength: number;
+  vacancyPct: number;
+  sanctionedRatePerLakh: number;
+  actualRatePerLakh: number;
+  unRecommended: number;
+  womenPolicePct: number;
+  womenPoliceTotal: number;
+  stateRatios: StatePoliceRatio[];
+  source: string;
+}
+
+export interface JusticeFunnel {
+  totalForInvestigation: number;
+  investigated: number;
+  chargesheeted: number;
+  chargesheetRate: number;
+  totalForTrial: number;
+  trialCompleted: number;
+  convicted: number;
+  acquitted: number;
+  convictionRate: number;
+  pendingInvestigation: number;
+  pendingTrial: number;
+  pendencyRate: number;
+}
+
+export interface TrialDuration {
+  avgYears: number;
+  casesOver5Years: number;
+  casesOver10Years: number;
+  judgesPerMillion: number;
+}
+
+export interface JusticeData {
+  year: string;
+  funnel: JusticeFunnel;
+  trialDuration: TrialDuration;
+  source: string;
+}
+
+export interface CrimeIndicator {
+  id: string;
+  name: string;
+  category: string;
+  unit: string;
+  states: StateValue[];
+  source: string;
+}
+
+export interface CrimeIndicatorsData {
+  year: string;
+  indicators: CrimeIndicator[];
+}
+
 // ─── Glossary (shared across domains) ──────────────────────────
 
 export interface GlossaryTerm {
@@ -1163,7 +1358,7 @@ export interface GlossaryTerm {
 }
 
 export interface GlossaryData {
-  domain: 'budget' | 'economy' | 'rbi' | 'states' | 'census' | 'education' | 'employment' | 'healthcare' | 'environment' | 'elections';
+  domain: 'budget' | 'economy' | 'rbi' | 'states' | 'census' | 'education' | 'employment' | 'healthcare' | 'environment' | 'elections' | 'crime';
   year: string;
   terms: GlossaryTerm[];
 }

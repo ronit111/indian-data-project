@@ -65,6 +65,14 @@ import {
   loadCandidates,
   loadRepresentation,
   loadElectionsIndicators,
+  loadCrimeSummary,
+  loadCrimeOverview,
+  loadWomenSafety,
+  loadRoadAccidents,
+  loadCybercrime,
+  loadPolice,
+  loadJustice,
+  loadCrimeIndicators,
 } from './dataLoader.ts';
 
 interface LoaderEntry {
@@ -143,4 +151,13 @@ export const DOMAIN_DATA_MAP: Record<DomainDataKey, LoaderEntry> = {
   'elections/candidates': { loader: loadCandidates, year: '2025-26' },
   'elections/representation': { loader: loadRepresentation, year: '2025-26' },
   'elections/indicators': { loader: loadElectionsIndicators, year: '2025-26' },
+  // Crime
+  'crime/summary': { loader: loadCrimeSummary, year: '2025-26' },
+  'crime/overview': { loader: loadCrimeOverview, year: '2025-26' },
+  'crime/women-safety': { loader: loadWomenSafety, year: '2025-26' },
+  'crime/road-accidents': { loader: loadRoadAccidents, year: '2025-26' },
+  'crime/cybercrime': { loader: loadCybercrime, year: '2025-26' },
+  'crime/police': { loader: loadPolice, year: '2025-26' },
+  'crime/justice': { loader: loadJustice, year: '2025-26' },
+  'crime/indicators': { loader: loadCrimeIndicators, year: '2025-26' },
 };

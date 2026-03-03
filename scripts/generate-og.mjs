@@ -147,6 +147,16 @@ const VARIANTS = [
     glowColor: 'rgba(99,102,241,0.08)',
   },
   {
+    filename: 'og-crime.png',
+    title: 'Crime & Safety',
+    tagline: '58.2 lakh crimes, 39% conviction rate, 461 road deaths daily',
+    accentFrom: '#DC2626',
+    accentTo: '#EF4444',
+    cornerTL: 'rgba(220,38,38,0.25)',
+    cornerBR: 'rgba(239,68,68,0.2)',
+    glowColor: 'rgba(220,38,38,0.08)',
+  },
+  {
     filename: 'og-emi-calculator.png',
     title: 'EMI Impact Calculator',
     tagline: 'How RBI repo rate changes affect your home, car, or personal loan EMI',

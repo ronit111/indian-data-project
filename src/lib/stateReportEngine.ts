@@ -22,6 +22,7 @@ import type {
   ForestData,
   WaterData,
   TurnoutData,
+  CrimeIndicatorsData,
 } from './data/schema.ts';
 import { ALL_STATE_CODES } from './stateMapping.ts';
 
@@ -75,6 +76,7 @@ export interface AllDomainData {
   forest?: ForestData;
   water?: WaterData;
   turnout?: TurnoutData;
+  crimeIndicators?: CrimeIndicatorsData;
 }
 
 // ─── Metric Definitions ─────────────────────────────────────────────
@@ -116,6 +118,10 @@ const METRIC_DEFS: MetricDef[] = [
   { key: 'groundwaterSafe', label: 'Groundwater Stage', unit: '%', higherIsBetter: false, domain: 'environment' },
   // Elections (from turnout.json)
   { key: 'voterTurnout2024', label: 'Voter Turnout 2024', unit: '%', higherIsBetter: true, domain: 'elections' },
+  // Crime (from indicators.json)
+  { key: 'crimeRate', label: 'Crime Rate', unit: 'per lakh', higherIsBetter: false, domain: 'crime' },
+  { key: 'womenCrimeRate', label: 'Crimes Against Women', unit: 'per lakh', higherIsBetter: false, domain: 'crime' },
+  { key: 'policeRatio', label: 'Police Ratio', unit: 'per lakh', higherIsBetter: true, domain: 'crime' },
 ];
 
 // ─── Domain panel config ────────────────────────────────────────────
@@ -132,6 +138,7 @@ const PANEL_CONFIG: Record<string, { title: string; accentColor: string }> = {
   health: { title: 'Health Outcomes (NFHS-5)', accentColor: '#F43F5E' },
   environment: { title: 'Environment', accentColor: '#14B8A6' },
   elections: { title: 'Elections', accentColor: '#6366F1' },
+  crime: { title: 'Crime & Safety', accentColor: '#DC2626' },
 };
 
 // ─── Data extraction helpers ────────────────────────────────────────
@@ -292,6 +299,24 @@ const EXTRACTORS: Record<string, Extractor> = {
     );
     const all = d.turnout?.stateBreakdown2024.map((x) => x.turnout) ?? [];
     return { value: s?.turnout ?? null, all };
+  },
+  crimeRate: (sid, d) => {
+    const ind = d.crimeIndicators?.indicators.find((i) => i.id === 'crime_rate');
+    const s = ind?.states.find((x) => x.id === sid || x.id.toUpperCase() === sid.toUpperCase());
+    const all = ind?.states.map((x) => x.value) ?? [];
+    return { value: s?.value ?? null, all };
+  },
+  womenCrimeRate: (sid, d) => {
+    const ind = d.crimeIndicators?.indicators.find((i) => i.id === 'women_crime_rate');
+    const s = ind?.states.find((x) => x.id === sid || x.id.toUpperCase() === sid.toUpperCase());
+    const all = ind?.states.map((x) => x.value) ?? [];
+    return { value: s?.value ?? null, all };
+  },
+  policeRatio: (sid, d) => {
+    const ind = d.crimeIndicators?.indicators.find((i) => i.id === 'police_ratio');
+    const s = ind?.states.find((x) => x.id === sid || x.id.toUpperCase() === sid.toUpperCase());
+    const all = ind?.states.map((x) => x.value) ?? [];
+    return { value: s?.value ?? null, all };
   },
 };
 

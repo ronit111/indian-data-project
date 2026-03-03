@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollTrigger } from '../hooks/useScrollTrigger.ts';
 import { SEOHead } from '../components/seo/SEOHead.tsx';
-import { loadSummary, loadEconomySummary, loadRBISummary, loadStatesSummary, loadCensusSummary, loadEducationSummary, loadEmploymentSummary, loadHealthcareSummary, loadEnvironmentSummary, loadElectionsSummary } from '../lib/dataLoader.ts';
+import { loadSummary, loadEconomySummary, loadRBISummary, loadStatesSummary, loadCensusSummary, loadEducationSummary, loadEmploymentSummary, loadHealthcareSummary, loadEnvironmentSummary, loadElectionsSummary, loadCrimeSummary } from '../lib/dataLoader.ts';
 import { formatLakhCrore, formatIndianNumber } from '../lib/format.ts';
-import type { BudgetSummary, EconomySummary, RBISummary, StatesSummary, CensusSummary, EducationSummary, EmploymentSummary, HealthcareSummary, EnvironmentSummary, ElectionsSummary } from '../lib/data/schema.ts';
+import type { BudgetSummary, EconomySummary, RBISummary, StatesSummary, CensusSummary, EducationSummary, EmploymentSummary, HealthcareSummary, EnvironmentSummary, ElectionsSummary, CrimeSummary } from '../lib/data/schema.ts';
 import { TopicCard } from '../components/topics/TopicCard.tsx';
 import { TOPIC_CONFIGS, FEATURED_TOPIC_IDS } from '../lib/topicConfigs/index.ts';
 import type { TopicDataBag } from '../lib/topicConfig.ts';
@@ -1350,6 +1350,96 @@ function ElectionsDomainCard({ summary }: { summary: ElectionsSummary | null }) 
   );
 }
 
+function CrimeDomainCard({ summary }: { summary: CrimeSummary | null }) {
+  const [ref, isVisible] = useScrollTrigger({ threshold: 0.1 });
+
+  // Mini justice funnel: 3 shrinking bars showing attrition
+  const funnelStages = useMemo(() => {
+    if (!summary) return null;
+    return [
+      { label: 'Reported', pct: 100 },
+      { label: 'Chargesheeted', pct: 74.6 },
+      { label: 'Convicted', pct: summary.convictionRatePct },
+    ];
+  }, [summary]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 32 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.1 }}
+      className="mt-8"
+    >
+      <Link
+        to="/crime"
+        className="group block relative rounded-2xl p-px no-underline overflow-hidden"
+        style={{ transition: 'transform 0.3s ease' }}
+        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0px)'; }}
+      >
+        <div
+          className="absolute inset-0 rounded-2xl opacity-20 group-hover:opacity-50"
+          style={{
+            background: 'linear-gradient(135deg, var(--crimson), transparent 40%, var(--crimson-light) 80%, transparent)',
+            transition: 'opacity 0.4s ease',
+          }}
+        />
+        <div
+          className="absolute -inset-2 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl pointer-events-none"
+          style={{
+            background: 'linear-gradient(135deg, rgba(220,38,38,0.06), rgba(239,68,68,0.04))',
+            transition: 'opacity 0.4s ease',
+          }}
+        />
+
+        <div className="relative rounded-2xl overflow-hidden" style={{ background: 'var(--bg-surface)' }}>
+          <div className="grid md:grid-cols-[1.4fr_1fr]">
+            <div className="relative p-8 md:p-12 flex flex-col justify-between min-h-[320px]">
+              <div className="absolute top-0 right-0 w-3/4 h-full pointer-events-none opacity-[0.03]" style={{ background: 'radial-gradient(ellipse at 70% 50%, var(--crimson), transparent 70%)' }} />
+              <div className="relative z-10">
+                <span className="text-section-num tracking-[0.15em] uppercase mb-4 block">11 — Data Story</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: 'var(--text-primary)', lineHeight: 1.15 }}>Crime &amp; Safety</h2>
+                <p className="text-annotation mb-6 max-w-md">{summary ? `${(summary.totalCrimes / 100000).toFixed(1)}L` : '...'} crimes recorded in {summary?.dataYear ?? '2022'}. One every 5 seconds. From FIR to conviction, the justice pipeline loses 60% along the way.</p>
+              </div>
+              <div className="relative z-10">
+                {funnelStages && (
+                  <div className="mb-6 max-w-xs space-y-1.5">
+                    {funnelStages.map((stage, i) => (
+                      <div key={stage.label} className="flex items-center gap-2">
+                        <span className="text-[9px] font-mono w-20 text-right" style={{ color: 'var(--text-muted)' }}>{stage.label}</span>
+                        <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'var(--bg-raised)' }}>
+                          <motion.div
+                            className="h-full rounded-full"
+                            style={{ background: i === 2 ? 'var(--crimson)' : i === 1 ? 'var(--crimson-light)' : 'var(--text-muted)' }}
+                            initial={{ width: 0 }}
+                            animate={isVisible ? { width: `${stage.pct}%` } : {}}
+                            transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.4 + i * 0.15 }}
+                          />
+                        </div>
+                        <span className="text-[9px] font-mono w-8" style={{ color: 'var(--crimson)' }}>{stage.pct}%</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--crimson)' }}>
+                  <span>Explore crime data</span>
+                  <span className="group-hover:translate-x-1.5 inline-block" style={{ transition: 'transform 0.2s ease' }}>&rarr;</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-8 md:p-12 flex flex-col justify-center gap-8 border-t md:border-t-0 md:border-l" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+              <StatPill label="Crime rate" value={summary ? `${summary.crimeRate}/lakh` : '...'} color="var(--crimson)" delay={0.3} isVisible={isVisible} />
+              <StatPill label="Conviction rate" value={summary ? `${summary.convictionRatePct}%` : '...'} color="var(--crimson)" delay={0.4} isVisible={isVisible} />
+              <StatPill label="Road deaths/day" value={summary ? `${Math.round(summary.roadDeaths / 365)}` : '...'} color="var(--crimson-light, #EF4444)" delay={0.5} isVisible={isVisible} />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
 function CrossDomainInsights({ summaryBag }: { summaryBag: TopicDataBag }) {
   const [ref, isVisible] = useScrollTrigger<HTMLElement>({ threshold: 0.1 });
   const featuredTopics = FEATURED_TOPIC_IDS
@@ -1415,6 +1505,7 @@ export default function HubPage() {
   const [healthcareSummary, setHealthcareSummary] = useState<HealthcareSummary | null>(null);
   const [environmentSummary, setEnvironmentSummary] = useState<EnvironmentSummary | null>(null);
   const [electionsSummary, setElectionsSummary] = useState<ElectionsSummary | null>(null);
+  const [crimeSummary, setCrimeSummary] = useState<CrimeSummary | null>(null);
 
   useEffect(() => {
     loadSummary('2025-26').then(setSummary).catch(() => {});
@@ -1427,6 +1518,7 @@ export default function HubPage() {
     loadHealthcareSummary('2025-26').then(setHealthcareSummary).catch(() => {});
     loadEnvironmentSummary('2025-26').then(setEnvironmentSummary).catch(() => {});
     loadElectionsSummary('2025-26').then(setElectionsSummary).catch(() => {});
+    loadCrimeSummary('2025-26').then(setCrimeSummary).catch(() => {});
   }, []);
 
   // Scroll to hash anchor (e.g. /#stories) after mount
@@ -1485,6 +1577,8 @@ export default function HubPage() {
         <EnvironmentDomainCard summary={environmentSummary} />
 
         <ElectionsDomainCard summary={electionsSummary} />
+
+        <CrimeDomainCard summary={crimeSummary} />
       </section>
 
       {/* Cross-Domain Insights */}
@@ -1500,6 +1594,7 @@ export default function HubPage() {
           'healthcare/summary': healthcareSummary,
           'environment/summary': environmentSummary,
           'elections/summary': electionsSummary,
+          'crime/summary': crimeSummary,
         } as TopicDataBag}
       />
 

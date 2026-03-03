@@ -1,0 +1,172 @@
+{
+  "domain": "crime",
+  "year": "2025-26",
+  "terms": [
+    {
+      "id": "ipc",
+      "term": "Indian Penal Code (IPC)",
+      "simple": "India's main criminal law, covering offences like murder, theft, assault, and fraud. Replaced by the Bharatiya Nyaya Sanhita (BNS) in 2024.",
+      "detail": "The IPC was enacted in 1860 during British rule and remained India's primary criminal code for 164 years. It defines offences, punishments, and exceptions. NCRB categorizes all crimes as either IPC crimes or Special & Local Laws (SLL) crimes. In 2022, IPC crimes accounted for 61% of all registered crimes. The IPC was replaced by the Bharatiya Nyaya Sanhita (BNS, 2023) effective July 1, 2024, though NCRB data through 2022 uses IPC categories.",
+      "inContext": "3.56 lakh IPC crimes in 2022 (61% of total). Replaced by BNS from July 2024.",
+      "relatedTerms": [
+        "sll",
+        "fir",
+        "cognizable"
+      ]
+    },
+    {
+      "id": "sll",
+      "term": "Special & Local Laws (SLL)",
+      "simple": "Crimes under specific laws like NDPS (drugs), Arms Act, SC/ST Act, POCSO, and state-level regulations — separate from the main IPC.",
+      "detail": "SLL crimes are offences under laws other than the IPC. Major SLL categories include: NDPS Act (narcotics), Arms Act, SC/ST (Prevention of Atrocities) Act, POCSO (child sexual offences), IT Act (cybercrime), Excise Act, Gambling Act, and various state-specific laws. SLL crimes made up 39% of total cognizable crimes in 2022 (22.6 lakh cases). Some laws like POCSO carry stricter penalties than equivalent IPC sections.",
+      "inContext": "22.6 lakh SLL crimes in 2022 (39% of total). Includes NDPS, Arms Act, POCSO, IT Act.",
+      "relatedTerms": [
+        "ipc",
+        "pocso"
+      ]
+    },
+    {
+      "id": "fir",
+      "term": "First Information Report (FIR)",
+      "simple": "The official document filed at a police station when a cognizable crime is reported. It starts the legal process.",
+      "detail": "An FIR is filed under Section 154 of CrPC (now Section 173 of BNSS) when information about a cognizable offence reaches the police. Filing an FIR is mandatory — refusal is punishable. The FIR captures the complainant's statement, the nature of the crime, and known details. It triggers investigation and is the basis for NCRB crime statistics. Zero FIRs (filed at any station regardless of jurisdiction) were introduced to reduce victims being turned away. E-FIR filing is available in some states.",
+      "inContext": "58.2 lakh FIRs registered in 2022. Zero FIR ensures no jurisdictional refusal.",
+      "relatedTerms": [
+        "cognizable",
+        "chargesheet"
+      ]
+    },
+    {
+      "id": "cognizable",
+      "term": "Cognizable Offence",
+      "simple": "A serious crime where police can arrest without a warrant and must register an FIR. Murder, theft, and assault are cognizable.",
+      "detail": "Cognizable offences are listed in the First Schedule of CrPC. Police have the authority (and obligation) to investigate without a magistrate's order. Non-cognizable offences (like minor fights or defamation) require a magistrate's permission for investigation and cannot lead to arrest without a warrant. NCRB statistics primarily cover cognizable crimes because these generate FIRs. The cognizable/non-cognizable distinction affects police responsiveness — victims of non-cognizable offences often face reluctance from police to act.",
+      "inContext": "All NCRB crime data is FIR-based, covering cognizable offences only.",
+      "relatedTerms": [
+        "fir",
+        "ipc"
+      ]
+    },
+    {
+      "id": "chargesheet",
+      "term": "Chargesheet (Charge Sheet)",
+      "simple": "A police report filed in court after investigation, formally accusing someone of a crime with evidence. Also called a 'final report.'",
+      "detail": "After investigation, police file a chargesheet (Section 173 CrPC / Section 193 BNSS) if they find sufficient evidence, or a closure report if not. The chargesheet includes charges, evidence, witness statements, and forensic reports. In 2022, the chargesheet rate for IPC crimes was 74.6% — meaning ~25% of investigated cases were closed without charges. A high chargesheet rate indicates investigative completion, not necessarily justice — chargesheeted cases still face trial delays. The chargesheet must be filed within 60-90 days (depending on offence severity) or the accused gets default bail.",
+      "inContext": "74.6% chargesheet rate in 2022. Filed within 60-90 days or accused gets default bail.",
+      "relatedTerms": [
+        "fir",
+        "conviction-rate"
+      ]
+    },
+    {
+      "id": "conviction-rate",
+      "term": "Conviction Rate",
+      "simple": "The percentage of completed trials that result in the accused being found guilty. India's rate is about 39%.",
+      "detail": "Conviction rate = (persons convicted / total persons whose trials were completed) × 100. India's 39.1% conviction rate for IPC crimes (2022) is often cited as low, but context matters: it counts only completed trials, not pending cases. The US federal conviction rate is ~93% (but most cases are plea bargains — rare in India). Low conviction reflects investigation quality, evidence standards, witness protection gaps, and overloaded courts. Some crime categories have higher rates: NDPS (~71%), murder (~43%). The rate varies wildly by state.",
+      "inContext": "39.1% for IPC crimes in 2022. US federal rate (~93%) includes plea bargains.",
+      "relatedTerms": [
+        "chargesheet",
+        "pendency"
+      ]
+    },
+    {
+      "id": "pendency",
+      "term": "Case Pendency",
+      "simple": "Cases stuck in the court system waiting for trial. Over 31 lakh criminal cases were pending at the end of 2022.",
+      "detail": "Pendency is the backlog of cases awaiting disposal. In 2022, 63.2% of all cases at courts were pending at year-end (31 lakh cases). Causes: judge vacancies (India has ~21 judges per million vs global average of ~50), slow investigation, adjournments, witness unavailability, and procedural delays. 28.6% of pending cases are older than 5 years, 10.2% older than 10 years. The National Judicial Data Grid (NJDG) tracks pendency in real time. Fast-track courts and e-courts have been set up to address the backlog.",
+      "inContext": "31 lakh cases pending (63.2%). 28.6% older than 5 years. 21 judges per million population.",
+      "relatedTerms": [
+        "conviction-rate",
+        "chargesheet"
+      ]
+    },
+    {
+      "id": "pocso",
+      "term": "POCSO Act",
+      "simple": "The Protection of Children from Sexual Offences Act (2012) — a special law for crimes against children under 18.",
+      "detail": "POCSO was enacted in 2012 to address child sexual abuse with gender-neutral provisions. It covers penetrative assault, sexual assault, sexual harassment, and pornography involving children. Key features: child-friendly procedures (no repeated questioning, in-camera trials, identity protection), mandatory reporting, and presumption of guilt (accused must prove innocence). Special POCSO courts must complete trials within 1 year. In practice, conviction rates under POCSO are around 35-40% and trials often exceed the 1-year mandate.",
+      "inContext": "Gender-neutral. Mandatory reporting. Special courts must complete trials in 1 year.",
+      "relatedTerms": [
+        "sll",
+        "conviction-rate"
+      ]
+    },
+    {
+      "id": "ncrb",
+      "term": "National Crime Records Bureau (NCRB)",
+      "simple": "The government agency that collects, analyzes, and publishes crime data for all of India.",
+      "detail": "NCRB was established in 1986 under the Ministry of Home Affairs. It publishes the annual 'Crime in India' report — the most comprehensive source of crime statistics in the country. NCRB collects data from all state police forces, compiles it, and produces state-wise, crime-wise, and demographic breakdowns. Limitations: data is FIR-based (underreporting is significant), there's typically a 1-2 year publication lag, and definitions/classifications occasionally change between years. NCRB also maintains the Crime and Criminal Tracking Network & Systems (CCTNS).",
+      "inContext": "Publishes 'Crime in India' annually. FIR-based data since 1953. 1-2 year lag.",
+      "relatedTerms": [
+        "fir",
+        "ipc",
+        "sll"
+      ]
+    },
+    {
+      "id": "crime-rate",
+      "term": "Crime Rate",
+      "simple": "The number of crimes per 1 lakh (100,000) population. Makes crime numbers comparable across states of different sizes.",
+      "detail": "Crime rate = (total cognizable crimes / mid-year population) × 100,000. It normalizes for population, making states comparable. India's overall crime rate was 422.2 in 2022. Kerala's rate (1,287) is highest but largely reflects better reporting and policing — not worse safety. Bihar's rate (295) is low partly due to underreporting. Crime rate is limited: it doesn't capture severity (one murder counts the same as one theft), underreporting, or demographic factors. Always interpret alongside reporting culture, police coverage, and urbanization.",
+      "inContext": "India: 422.2 per lakh (2022). Kerala: 1,287 (high reporting). Bihar: 295 (underreporting).",
+      "relatedTerms": [
+        "ncrb",
+        "cognizable"
+      ]
+    },
+    {
+      "id": "dowry-death",
+      "term": "Dowry Death (Section 304B IPC)",
+      "simple": "Death of a woman within 7 years of marriage due to dowry harassment — treated as murder under Indian law.",
+      "detail": "Section 304B IPC (now Section 80 BNS) defines dowry death: if a woman dies within 7 years of marriage under unnatural circumstances, and it's shown she was subjected to cruelty or harassment for dowry, the husband/in-laws are presumed guilty. Punishment: 7 years to life imprisonment. In 2022, 6,450 dowry deaths were registered — about 18 per day. This is widely considered an undercount. The Dowry Prohibition Act (1961) criminalizes giving and taking dowry, but enforcement is weak. States with highest dowry deaths: UP, Bihar, MP.",
+      "inContext": "6,450 cases in 2022 (~18 per day). UP, Bihar, MP have highest numbers.",
+      "relatedTerms": [
+        "ipc",
+        "fir"
+      ]
+    },
+    {
+      "id": "morth",
+      "term": "MoRTH (Ministry of Road Transport & Highways)",
+      "simple": "The central ministry responsible for road safety policy. Publishes the annual 'Road Accidents in India' report.",
+      "detail": "MoRTH road accident data is more comprehensive than NCRB motor vehicle accident FIRs because MoRTH includes accidents not registered as FIRs and uses state transport department records in addition to police records. In 2022: 4.61 lakh accidents, 1.68 lakh deaths, 4.43 lakh injuries. India has about 1% of the world's vehicles but accounts for ~11% of global road fatality deaths. Over-speeding causes ~69% of fatal accidents. The Motor Vehicles (Amendment) Act 2019 significantly increased penalties for traffic violations.",
+      "inContext": "1.68 lakh road deaths in 2022. India: 1% of vehicles, 11% of global road deaths.",
+      "relatedTerms": [
+        "ncrb"
+      ]
+    },
+    {
+      "id": "i4c",
+      "term": "I4C (Indian Cyber Crime Coordination Centre)",
+      "simple": "A government portal (cybercrime.gov.in) where citizens can report cybercrimes online — separate from filing an FIR.",
+      "detail": "I4C was set up by MHA in 2020 to coordinate cybercrime response across states. The portal (cybercrime.gov.in) allows online complaint filing for financial fraud, women/child-related cybercrimes, and other cybercrimes. In 2022, 22.68 lakh complaints were filed on the portal vs only 65,893 cybercrime FIRs registered by NCRB — the 34x gap reflects how few complaints convert to formal police cases. I4C also operates a toll-free helpline (1930) for financial fraud, which has recovered hundreds of crores through quick intervention.",
+      "inContext": "22.68 lakh complaints vs 65,893 FIRs (34x gap). Helpline: 1930.",
+      "relatedTerms": [
+        "ncrb",
+        "fir"
+      ]
+    },
+    {
+      "id": "bprd",
+      "term": "BPRD (Bureau of Police Research & Development)",
+      "simple": "A government research body that publishes data on police strength, infrastructure, and modernization across all states.",
+      "detail": "BPRD was established in 1970 under MHA. It publishes the annual 'Data on Police Organisations' report — the definitive source for police workforce statistics. Key metrics: sanctioned vs actual strength (17.8% vacancy in 2022), police-population ratios by state, women in police (11.7%), training infrastructure, and technology adoption. BPRD also runs training programs and conducts research on policing challenges. The UN recommends 222 police per lakh population — India's actual ratio is 151, with Bihar as low as 77 per lakh.",
+      "inContext": "17.8% police vacancy. UN recommends 222 per lakh; India has 151. Bihar: 77.",
+      "relatedTerms": [
+        "ncrb",
+        "i4c"
+      ]
+    },
+    {
+      "id": "kerala-paradox",
+      "term": "Kerala Paradox (Reporting Effect)",
+      "simple": "Kerala has India's highest crime rate but also the best policing — high numbers often mean better reporting, not worse safety.",
+      "detail": "Kerala's crime rate (1,287 per lakh in 2022) is ~3x the national average, yet Kerala consistently ranks among India's safest states in citizen surveys. The paradox is explained by: higher police-population ratio (188 per lakh vs 151 national), better-educated population more likely to report crimes, stronger women's rights awareness (more domestic violence and harassment FIRs), and inclusive policing practices. Conversely, states like Bihar (295) have low rates partly due to underreporting, social barriers to filing FIRs, and fewer police stations per capita. Crime rate alone is a poor safety indicator.",
+      "inContext": "Kerala: 1,287 rate but highest literacy, best police ratio. Bihar: 295 rate but high underreporting.",
+      "relatedTerms": [
+        "crime-rate",
+        "ncrb"
+      ]
+    }
+  ]
+}

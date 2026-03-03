@@ -12,13 +12,14 @@ export function Footer() {
   const isHealthcare = location.pathname.startsWith('/healthcare');
   const isEnvironment = location.pathname.startsWith('/environment');
   const isElections = location.pathname.startsWith('/elections');
+  const isCrime = location.pathname.startsWith('/crime');
   const isTopics = location.pathname.startsWith('/topics');
   const isOpenData = location.pathname === '/open-data';
   const isJournalists = location.pathname.startsWith('/for-journalists');
   const isTeachers = location.pathname.startsWith('/for-teachers');
   const isContribute = location.pathname === '/contribute';
   const isMultiplier = isOpenData || isJournalists || isTeachers || isContribute;
-  const isDataDomain = isBudget || isEconomy || isRBI || isStates || isCensus || isEducation || isEmployment || isHealthcare || isEnvironment || isElections || isTopics || isMultiplier;
+  const isDataDomain = isBudget || isEconomy || isRBI || isStates || isCensus || isEducation || isEmployment || isHealthcare || isEnvironment || isElections || isCrime || isTopics || isMultiplier;
 
   return (
     <footer className="relative py-8 pb-24 md:pb-8" style={{ background: 'var(--bg-surface)' }}>
@@ -354,6 +355,50 @@ export function Footer() {
             </a>
             {' '}&middot; Not affiliated with ECI or GoI
           </p>
+        ) : isCrime ? (
+          <p className="text-caption text-center md:text-left">
+            Data from{' '}
+            <a
+              href="https://ncrb.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              NCRB
+            </a>
+            {' '}&middot;{' '}
+            <a
+              href="https://morth.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              MoRTH
+            </a>
+            {' '}&middot;{' '}
+            <a
+              href="https://bprd.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              BPRD
+            </a>
+            {' '}&middot;{' '}
+            <a
+              href="https://data.worldbank.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-hover"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              World Bank
+            </a>
+            {' '}&middot; Not affiliated with GoI
+          </p>
         ) : isTopics ? (
           <p className="text-caption text-center md:text-left">
             Cross-domain analysis from multiple government sources &middot; Not affiliated with GoI
@@ -397,6 +442,8 @@ export function Footer() {
             'Environment 2025-26'
           ) : isElections ? (
             'Elections 2025-26'
+          ) : isCrime ? (
+            'Crime & Safety 2022'
           ) : isTopics ? (
             'Cross-Domain Insights'
           ) : isOpenData ? (

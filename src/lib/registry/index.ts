@@ -12,4 +12,5 @@ import './employment.ts';
 import './healthcare.ts';
 import './environment.ts';
 import './elections.ts';
+import './crime.ts';
 import './topics.ts';

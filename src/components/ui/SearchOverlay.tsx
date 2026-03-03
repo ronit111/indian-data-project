@@ -69,7 +69,8 @@ export function SearchOverlay() {
       loadGlossary('healthcare', '2025-26').catch(() => null),
       loadGlossary('environment', '2025-26').catch(() => null),
       loadGlossary('elections', '2025-26').catch(() => null),
-    ]).then(([budget, economy, rbi, states, census, education, employment, healthcare, environment, elections]) => {
+      loadGlossary('crime', '2025-26').catch(() => null),
+    ]).then(([budget, economy, rbi, states, census, education, employment, healthcare, environment, elections, crime]) => {
       const items: SearchItem[] = [];
       if (budget) items.push(...budget.terms.map((t) => glossaryTermToSearchItem(t, 'budget')));
       if (economy) items.push(...economy.terms.map((t) => glossaryTermToSearchItem(t, 'economy')));
@@ -81,6 +82,7 @@ export function SearchOverlay() {
       if (healthcare) items.push(...healthcare.terms.map((t) => glossaryTermToSearchItem(t, 'healthcare')));
       if (environment) items.push(...environment.terms.map((t) => glossaryTermToSearchItem(t, 'environment')));
       if (elections) items.push(...elections.terms.map((t) => glossaryTermToSearchItem(t, 'elections')));
+      if (crime) items.push(...crime.terms.map((t) => glossaryTermToSearchItem(t, 'crime')));
       setGlossaryTerms(items);
     });
 
@@ -170,6 +172,10 @@ export function SearchOverlay() {
     { type: 'page', id: 'elections-explore', name: 'Elections Explorer', subtitle: 'Browse election indicators by state', route: '/elections/explore' },
     { type: 'page', id: 'elections-methodology', name: 'Elections Methodology', subtitle: 'ECI, TCPD, and ADR data sources', route: '/elections/methodology' },
     { type: 'page', id: 'elections-glossary', name: 'Elections Glossary', subtitle: 'Election terms in plain language', route: '/elections/glossary' },
+    { type: 'page', id: 'crime', name: 'Crime & Safety', subtitle: 'IPC crimes, women safety, road accidents, cybercrime, police, justice', route: '/crime' },
+    { type: 'page', id: 'crime-explore', name: 'Crime Explorer', subtitle: 'Browse crime indicators by state', route: '/crime/explore' },
+    { type: 'page', id: 'crime-methodology', name: 'Crime Methodology', subtitle: 'NCRB, MoRTH, and BPRD data sources', route: '/crime/methodology' },
+    { type: 'page', id: 'crime-glossary', name: 'Crime Glossary', subtitle: 'Crime and justice terms in plain language', route: '/crime/glossary' },
     { type: 'page', id: 'emi-calculator', name: 'EMI Calculator', subtitle: 'How repo rate changes affect your loan EMI', route: '/rbi/calculator' },
     { type: 'page', id: 'cost-of-living', name: 'Cost of Living Calculator', subtitle: 'How inflation changed your spending power', route: '/economy/calculator' },
     { type: 'page', id: 'state-report-card', name: 'State Report Card', subtitle: 'Your state ranked across 6 domains', route: '/states/your-state' },
