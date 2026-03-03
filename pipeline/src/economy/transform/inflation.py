@@ -29,6 +29,7 @@ def build_inflation(
     wb_cpi_data: list[dict],
     survey_year: str,
     mospi_cpi_by_category: list[dict] | None = None,
+    wpi_data: list[dict] | None = None,
 ) -> dict:
     """
     Build inflation.json from World Bank annual CPI data + Survey data points.
@@ -41,6 +42,7 @@ def build_inflation(
         survey_year: Fiscal year label (e.g., "2025-26").
         mospi_cpi_by_category: Optional list of COICOP division entries from
             the MOSPI eSankhyiki API. If None, falls back to curated data.
+        wpi_data: Optional WPI fiscal year data from MOSPI WPI API.
     """
     series = []
     for point in wb_cpi_data:
@@ -103,16 +105,25 @@ def build_inflation(
         "IMF CPI (db.nomics.world)",
     ]
     if mospi_cpi_by_category:
-        source_parts.append("MOSPI eSankhyiki API (api.mospi.gov.in)")
+        source_parts.append("MOSPI eSankhyiki CPI API (api.mospi.gov.in)")
+    if wpi_data:
+        source_parts.append("MOSPI eSankhyiki WPI API (api.mospi.gov.in)")
     source = " + ".join(source_parts)
 
-    return {
+    result = {
         "year": survey_year,
         "targetBand": {"lower": 2, "upper": 6},
         "series": series,
         "cpiByCategory": cpi_by_category,
         "source": source,
     }
+
+    # Add WPI series if available (new indicator from MOSPI WPI API)
+    if wpi_data:
+        result["wpiSeries"] = wpi_data
+        logger.info(f"  WPI series: {len(wpi_data)} fiscal years added")
+
+    return result
 
 
 # ── IMF historical baseline (2014-15 to 2018-19) ──────────────────────

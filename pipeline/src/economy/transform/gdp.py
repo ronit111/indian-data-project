@@ -13,18 +13,22 @@ def calendar_to_fiscal(cal_year: str) -> str:
     return f"{y}-{str(y + 1)[-2:]}"
 
 
-def build_gdp_growth(wb_data: list[dict], survey_year: str) -> dict:
+def build_gdp_growth(wb_data: list[dict], survey_year: str, source: str = "World Bank") -> dict:
     """
-    Build gdp-growth.json from World Bank GDP growth data.
+    Build gdp-growth.json from GDP growth data.
+
+    Accepts data from either MOSPI NAS (primary) or World Bank (fallback).
+    Both provide {year, value} format. NAS data already has fiscal year labels;
+    World Bank data uses calendar years and gets converted.
 
     NSO First Advance Estimate: 7.4% real GDP growth for FY2025-26 (Jan 2026).
     World Bank data lags by ~1 year, so we supplement the latest year from the Survey.
-
-    Source: World Bank NY.GDP.MKTP.KD.ZG + Economic Survey 2025-26 Chapter 1
     """
     series = []
     for point in wb_data:
-        fiscal_year = calendar_to_fiscal(point["year"])
+        year = point["year"]
+        # NAS data already uses fiscal year format ("2024-25"); WB uses calendar ("2024")
+        fiscal_year = year if "-" in str(year) else calendar_to_fiscal(str(year))
         series.append({
             "year": fiscal_year,
             "value": round(point["value"], 1),
@@ -47,10 +51,16 @@ def build_gdp_growth(wb_data: list[dict], survey_year: str) -> dict:
     # Sort by fiscal year
     series.sort(key=lambda x: x["year"])
 
+    source_url = (
+        "MOSPI NAS API (api.mospi.gov.in/api/nas/getNASData) + Economic Survey 2025-26"
+        if source == "MOSPI NAS"
+        else "https://api.worldbank.org/v2/country/ind/indicator/NY.GDP.MKTP.KD.ZG + Economic Survey 2025-26"
+    )
+
     return {
         "year": survey_year,
         "indicator": "Real GDP Growth Rate",
         "unit": "percent",
         "series": series,
-        "source": "https://api.worldbank.org/v2/country/ind/indicator/NY.GDP.MKTP.KD.ZG + Economic Survey 2025-26",
+        "source": source_url,
     }

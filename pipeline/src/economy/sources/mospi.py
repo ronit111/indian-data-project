@@ -1,13 +1,8 @@
 """
 MOSPI eSankhyiki CPI API client — fetches group/subgroup-level CPI data.
 
-Uses the eSankhyiki API at api.mospi.gov.in/api/cpi/getCPIIndex (Swagger spec
-at esankhyiki.mospi.gov.in/layout/swagger_user_cpi.yaml). This endpoint returns
-group-wise monthly CPI indices and YoY inflation rates for Base 2012=100.
-
-Key: NO authentication required. The API returns up to 10 records per page.
-Paginating 3 pages per month-year gives us all group-level data for Combined
-sector, All India.
+Uses the shared MOSPI client to fetch from api.mospi.gov.in/api/cpi/getCPIIndex.
+Returns group-wise monthly CPI indices and YoY inflation rates for Base 2012=100.
 
 We fetch monthly data and compute fiscal year annual averages for each COICOP
 group, producing the cpiByCategory array used by the cost-of-living calculator.
@@ -20,13 +15,9 @@ import time
 from datetime import datetime
 from typing import Any
 
-import requests
+from src.common.mospi_client import fetch_single_page, RATE_LIMIT_DELAY
 
 logger = logging.getLogger(__name__)
-
-BASE_URL = "https://api.mospi.gov.in/api/cpi/getCPIIndex"
-TIMEOUT = 30
-PAGES_PER_QUERY = 3  # 10 records/page × 3 = 30 records, enough for all groups
 
 # Mapping from MOSPI API group/subgroup names to our COICOP division codes.
 # The Base 2012 CPI uses 6 groups, with divisions under "Miscellaneous".
@@ -38,33 +29,22 @@ TARGET_GROUPS: dict[tuple[str, str], tuple[str, str]] = {
     ("Miscellaneous", "Education"): ("10", "Education"),
 }
 
-
-def _fetch_page(year: int, month: int, page: int = 1) -> list[dict]:
-    """Fetch one page of CPI data for a given month, Combined sector, All India."""
-    params = {
-        "base_year": "2012",
-        "series": "Current",
-        "year": str(year),
-        "month_code": str(month),
-        "sector_code": "3",  # Combined
-        "page": str(page),
-        "Format": "JSON",
-    }
-    try:
-        resp = requests.get(BASE_URL, params=params, timeout=TIMEOUT)
-        resp.raise_for_status()
-        data = resp.json()
-        return data.get("data", [])
-    except requests.exceptions.RequestException as e:
-        logger.warning(f"  MOSPI API error (year={year} month={month} page={page}): {e}")
-        return []
+# CPI-specific pagination: 3 pages × default limit is enough for all groups
+PAGES_PER_QUERY = 3
 
 
 def _fetch_month(year: int, month: int) -> dict[tuple[str, str], dict[str, Any]]:
     """Fetch target group-level CPI data for a given month. Returns only All India Combined."""
     results: dict[tuple[str, str], dict[str, Any]] = {}
     for page in range(1, PAGES_PER_QUERY + 1):
-        records = _fetch_page(year, month, page)
+        params = {
+            "base_year": "2012",
+            "series": "Current",
+            "year": str(year),
+            "month_code": str(month),
+            "sector_code": "3",  # Combined
+        }
+        records, _meta = fetch_single_page("cpi", params, page=page, limit=10)
         if not records:
             break
         for r in records:

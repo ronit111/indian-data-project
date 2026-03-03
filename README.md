@@ -767,6 +767,19 @@ Systematic audit of all 11 domains to identify API-based or machine-readable dat
 **Final: Citizen-Perspective QA**
 - [ ] Full product review from the perspective of an average Indian citizen (per CLAUDE.md Final QA protocol)
 
+**Pre-Launch: Repository Documentation Audit**
+
+Audit every non-code file in the repo for long-term hygiene before going public. The goal: a clean, minimal documentation footprint that serves contributors and users — no internal breadcrumbs, stale references, or files that only made sense during buildout.
+
+- [ ] Inventory all markdown, text, and config files across the repo (README, CHANGELOG, CLAUDE.md, pipeline docs, llms.txt, etc.)
+- [ ] Remove or consolidate files that are redundant, outdated, or internal-only (build notes, scratch docs, phase-specific plans that are now complete)
+- [ ] Streamline README.md: collapse completed phases into a concise "what shipped" summary, keep only active/future phases as detailed checklists
+- [ ] Review CLAUDE.md for stale instructions, completed TODOs, or references to removed code — tighten to reflect the current codebase
+- [ ] Audit pipeline documentation (`pipeline/PIPELINE_DATA_SOURCES.md`, pipeline READMEs) for accuracy against actual pipeline code
+- [ ] Check for any files that shouldn't be public (internal notes, credentials references, debug artifacts)
+- [ ] Verify all documentation cross-references (links between files, route references, file paths) are still valid
+- [ ] Ensure LICENSE, CONTRIBUTING guidelines, and repo metadata are present and accurate for an open-source project
+
 **Post-Launch: Marketing, Launch Strategy & Documentation Assets**
 
 *Launch context (documented Mar 2 2026):* The US-Israeli military operation against Iran began Feb 28 2026 (Operation "Epic Fury" / "Roaring Lion"). 200+ dead in Iran, Khamenei killed, 3 US soldiers dead, regional escalation into Lebanon and Gulf states. This is ongoing at time of planned launch (week of Mar 2-9 or Mar 9-16). **Before writing any launch content, interview Ronit on:** (a) Is the conflict still active? (b) How to acknowledge the moment with genuine empathy — not marketing, not performative, but honest recognition that launching a civic data tool during a time of death and destruction carries weight. The connection point: this project exists because transparent, accessible information is a civic good; war is what happens when information, diplomacy, and accountability fail. If we can say something honest about building in dark times without exploiting the moment, we should. If we can't do it right, we stay silent on it.

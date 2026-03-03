@@ -70,7 +70,16 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--cyan)' }} />
             <span>
-              MoSPI National Accounts Statistics — GVA by sector at current and constant prices
+              <a
+                href="https://api.mospi.gov.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium link-hover"
+                style={{ color: 'var(--cyan)' }}
+              >
+                MOSPI eSankhyiki API
+              </a>{' '}
+              — NAS GDP/GVA (api.mospi.gov.in/api/nas), WPI wholesale prices, CPI by category. Auto-refreshed quarterly via GitHub Actions
             </span>
           </li>
         </ul>
@@ -82,9 +91,9 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          GDP growth rates use real GDP at constant prices (base year 2011-12). The World Bank
-          reports calendar year data (e.g. CY 2024), which we map to India's fiscal year
-          (April-March) as FY 2024-25.
+          GDP growth rates use real GDP at constant prices (base year 2011-12). MOSPI NAS API provides
+          GDP/GVA at both current and constant prices, with World Bank as fallback. Calendar year data
+          (e.g. CY 2024) is mapped to India's fiscal year (April-March) as FY 2024-25.
         </p>
         <div
           className="mt-4 rounded-lg px-5 py-4"

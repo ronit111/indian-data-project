@@ -159,7 +159,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--cyan)' }} />
             <span>
-              <strong>RBI Handbook</strong> — Published annually (typically March-April). The latest edition covers data up to FY 2022-23. There is a 1-2 year lag because state GDP estimates require compilation from all 36 states/UTs.
+              <strong>RBI Handbook</strong> — Published annually (typically March-April). GSDP, per capita NSDP, and fiscal deficit data are now auto-extracted from the Handbook XLSX tables via an automated scraper, with curated data as fallback. There is a 1-2 year lag because state GDP estimates require compilation from all 36 states/UTs.
             </span>
           </li>
           <li className="flex gap-3 items-start">
@@ -171,7 +171,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--cyan)' }} />
             <span>
-              <strong>Pipeline</strong> — Data is curated annually when the RBI publishes its Handbook (typically March). The GitHub Actions workflow is scheduled to run after the expected publication date.
+              <strong>Pipeline</strong> — The pipeline automatically downloads RBI Handbook XLSX files, parses state-level tables (GSDP, per capita, fiscal deficit), and generates JSON outputs. Curated data (revenue, debt/GSDP) supplements the automated extraction. The GitHub Actions workflow runs semi-annually after expected publication dates.
             </span>
           </li>
         </ul>
@@ -185,7 +185,7 @@ const SECTIONS = [
         <li className="flex gap-3 items-start">
           <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
           <span>
-            State-level data typically lags national data by 1-2 years. The latest available data is FY 2022-23 for most indicators. Some smaller UTs may have incomplete data.
+            State-level data typically lags national data by 1-2 years. Some smaller UTs (Andaman & Nicobar, Chandigarh, Lakshadweep, Ladakh) may have incomplete data.
           </span>
         </li>
         <li className="flex gap-3 items-start">

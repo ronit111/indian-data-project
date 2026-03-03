@@ -40,23 +40,23 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
             <span>
-              <strong style={{ color: 'var(--amber)' }}>PLFS Quarterly Bulletin</strong> (national, Oct-Dec 2025, curated).{' '}
+              <strong style={{ color: 'var(--amber)' }}>MOSPI PLFS API</strong> (national + state-level, automated).{' '}
               <a
-                href="https://mospi.gov.in/publication/plfs-quarterly-bulletin"
+                href="https://api.mospi.gov.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium link-hover"
                 style={{ color: 'var(--amber)' }}
               >
-                mospi.gov.in
+                api.mospi.gov.in
               </a>{' '}
-              — The most current labour force data from the Periodic Labour Force Survey. Provides quarterly unemployment rate, LFPR, and worker population ratio at the national level using Current Weekly Status (CWS) approach.
+              — PLFS data via eSankhyiki REST API (api.mospi.gov.in/api/plfs/getData). Provides LFPR, WPR, unemployment rate, and self-employment share at national and state levels. Auto-refreshed quarterly via GitHub Actions, with curated data as fallback.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
             <span>
-              <strong style={{ color: 'var(--amber)' }}>PLFS Annual Report 2023-24</strong> (state-level, 2023-24, curated).{' '}
+              <strong style={{ color: 'var(--amber)' }}>PLFS Annual Report 2023-24</strong> (state-level, curated fallback).{' '}
               <a
                 href="https://mospi.gov.in/publication/plfs-annual-report"
                 target="_blank"
@@ -66,7 +66,7 @@ const SECTIONS = [
               >
                 mospi.gov.in
               </a>{' '}
-              — State-level unemployment rates, LFPR, worker population ratios, and sectoral distribution using Usual Status (ps+ss) approach. Covers all 36 states and union territories.
+              — Used as fallback when the PLFS API is unavailable. State-level unemployment rates, LFPR, worker population ratios using Usual Status (ps+ss) approach.
             </span>
           </li>
           <li className="flex gap-3 items-start">

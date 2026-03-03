@@ -45,11 +45,15 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
             <span>
-              <strong style={{ color: 'var(--teal)' }}>Tier 2 — CEA</strong> (installed capacity mix 2015-2024, curated).{' '}
+              <strong style={{ color: 'var(--teal)' }}>Tier 2 — CEA + MOSPI Energy API</strong> (capacity + supply, automated + curated).{' '}
               <a href="https://cea.nic.in/installed-capacity-report/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--teal)' }}>
                 cea.nic.in
               </a>{' '}
-              — Central Electricity Authority All India Installed Capacity reports. Fuel-wise breakdown: coal, gas, nuclear, hydro, solar, wind, biomass, small hydro. As of 31 March each year.
+              — CEA installed capacity by fuel type (curated).{' '}
+              <a href="https://api.mospi.gov.in" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--teal)' }}>
+                MOSPI Energy API
+              </a>{' '}
+              — Energy supply balance by commodity in KToE (automated via eSankhyiki API).
             </span>
           </li>
           <li className="flex gap-3 items-start">

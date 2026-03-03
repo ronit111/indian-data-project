@@ -2,18 +2,19 @@
 Environment Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — World Bank API + curated CPCB/FSI/CEA/CWC/CGWB data
+  1. FETCH   — MOSPI Energy API + World Bank API + curated CPCB/FSI/CEA/CWC/CGWB data
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/environment/
 
-Data sources:
-  - World Bank Development Indicators (CO2, PM2.5, forest, energy, GHG, protected areas)
-  - CPCB NAQI 2023 — state-wise AQI + top 30 polluted cities
-  - ISFR 2023 — Forest Survey of India (state forest cover)
-  - CEA — Central Electricity Authority (installed capacity mix 2015-2024)
-  - CWC — Central Water Commission (major reservoir storage)
-  - CGWB — Central Ground Water Board (groundwater stage by state)
+Data source priority:
+  - Energy supply: MOSPI Energy API (primary) → curated CEA data (fallback)
+  - Air quality: Curated CPCB NAQI (no usable annual API available)
+  - Forest: World Bank + curated ISFR
+  - Water: Curated CWC/CGWB
+
+Note: CPCB data.gov.in API provides real-time readings only (no annual averages).
+Annual AQI statistics remain curated from CPCB NAQI reports.
 """
 
 import logging
@@ -24,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.environment.sources.world_bank import fetch_multiple
+from src.environment.sources.mospi_energy import fetch_energy_supply
 from src.environment.sources.curated import (
     CPCB_AQI_STATES,
     CPCB_AQI_CITIES,
@@ -64,11 +66,21 @@ def run_environment_pipeline():
 
     # ── Stage 1: FETCH ──────────────────────────────────────────────
     logger.info("Stage 1: FETCH")
+
+    # 1a. MOSPI Energy API (primary for energy supply data)
+    logger.info("  Fetching MOSPI Energy API...")
+    mospi_energy = fetch_energy_supply()
+    if mospi_energy:
+        logger.info(f"  MOSPI Energy: {len(mospi_energy)} commodities (primary)")
+    else:
+        logger.info("  MOSPI Energy: unavailable, using curated CEA data")
+
+    # 1b. World Bank
     logger.info("  Fetching 11 indicators from World Bank API...")
-
     wb_data = fetch_multiple()
-
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
+
+    # 1c. Curated sources
     logger.info(f"  Curated: {len(CPCB_AQI_STATES)} CPCB state AQI entries")
     logger.info(f"  Curated: {len(CPCB_AQI_CITIES)} CPCB city AQI entries")
     logger.info(f"  Curated: {len(FSI_FOREST_STATES)} FSI state forest entries")
@@ -81,7 +93,7 @@ def run_environment_pipeline():
 
     air_quality_data = build_air_quality(wb_data, CPCB_AQI_STATES, CPCB_AQI_CITIES, SURVEY_YEAR)
     forest_data = build_forest(wb_data, FSI_FOREST_STATES, SURVEY_YEAR)
-    energy_data = build_energy(wb_data, CEA_ENERGY_MIX, SURVEY_YEAR)
+    energy_data = build_energy(wb_data, CEA_ENERGY_MIX, SURVEY_YEAR, mospi_energy=mospi_energy)
     water_data = build_water(CWC_RESERVOIR_STORAGE, CGWB_GROUNDWATER_STATES, SURVEY_YEAR)
     summary_data = _build_summary()
     indicators_data = _build_indicators()

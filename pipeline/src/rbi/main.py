@@ -21,6 +21,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.rbi.sources.world_bank import fetch_multiple
+from src.rbi.sources.rbi_handbook_economy import (
+    fetch_interest_rates,
+    fetch_forex_reserves,
+)
 from src.rbi.transform.monetary_policy import (
     build_monetary_policy,
     CURRENT_RATES,
@@ -62,7 +66,14 @@ def run_rbi_pipeline():
     logger.info("=" * 60)
 
     # ── Stage 1: FETCH ──────────────────────────────────────────
-    logger.info("Stage 1: FETCH from World Bank API")
+    # 1a. RBI Handbook (automated — fills WB gaps)
+    logger.info("Stage 1: FETCH")
+    logger.info("  1a. RBI Handbook of Statistics on Indian Economy")
+    handbook_rates = fetch_interest_rates()
+    handbook_forex = fetch_forex_reserves()
+
+    # 1b. World Bank API
+    logger.info("  1b. World Bank API")
     wb_data = fetch_multiple(
         [
             "broad_money_growth",
@@ -97,20 +108,22 @@ def run_rbi_pipeline():
         SURVEY_YEAR,
     )
 
-    # 2c. Credit (World Bank credit & interest rate indicators)
+    # 2c. Credit (World Bank + Handbook Table 62 for lending/deposit rates)
     credit_data = build_credit(
         wb_data.get("domestic_credit_pct_gdp", []),
         wb_data.get("private_credit_pct_gdp", []),
         wb_data.get("lending_rate", []),
         wb_data.get("deposit_rate", []),
         SURVEY_YEAR,
+        handbook_rates=handbook_rates,
     )
 
-    # 2d. Forex (World Bank reserves & exchange rate)
+    # 2d. Forex (World Bank + Handbook Table 147 for extended history)
     forex_data = build_forex(
         wb_data.get("reserves_usd", []),
         wb_data.get("exchange_rate", []),
         SURVEY_YEAR,
+        handbook_forex=handbook_forex,
     )
 
     # 2e. Summary (hub page card — latest values from all sources)

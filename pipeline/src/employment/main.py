@@ -2,16 +2,16 @@
 Employment Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — World Bank API + curated PLFS/KLEMS data
+  1. FETCH   — MOSPI PLFS API (primary) + World Bank API + curated PLFS/KLEMS data (fallback)
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/employment/
 
-Data sources:
-  - World Bank Development Indicators (ILO-modelled unemployment, LFPR, sectoral)
-  - PLFS Annual Report 2023-24 (state-level employment)
-  - PLFS Quarterly Bulletin Oct-Dec 2025 (latest national estimates)
-  - RBI KLEMS Database (sectoral employment breakdown)
+Data source priority:
+  - State-level employment: MOSPI PLFS API (primary) → curated PLFS data (fallback)
+  - National totals: MOSPI PLFS API (primary) → curated (fallback)
+  - Time series: World Bank ILO-modelled estimates (primary for historical trends)
+  - Sectoral: RBI KLEMS (curated, no API)
 """
 
 import logging
@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.employment.sources.world_bank import fetch_multiple
+from src.employment.sources.mospi_plfs import fetch_state_employment, fetch_national_totals
 from src.employment.sources.curated import (
     PLFS_STATE_DATA,
     SECTORAL_EMPLOYMENT,
@@ -56,22 +57,40 @@ def run_employment_pipeline():
 
     # ── Stage 1: FETCH ──────────────────────────────────────────────
     logger.info("Stage 1: FETCH")
+
+    # 1a. MOSPI PLFS API — state-level + national totals (primary)
+    logger.info("  Fetching MOSPI PLFS API (state-level employment)...")
+    plfs_api_states = fetch_state_employment(year="2023-24")
+    plfs_api_nationals = fetch_national_totals(year="2023-24")
+
+    if plfs_api_states:
+        plfs_state_data = plfs_api_states
+        logger.info(f"  PLFS API: {len(plfs_state_data)} states (MOSPI primary)")
+    else:
+        plfs_state_data = PLFS_STATE_DATA
+        logger.info(f"  PLFS API unavailable, using curated fallback: {len(plfs_state_data)} states")
+
+    if plfs_api_nationals:
+        national_totals = plfs_api_nationals
+        logger.info(f"  PLFS API national totals: {len(national_totals)} metrics (MOSPI primary)")
+    else:
+        national_totals = NATIONAL_TOTALS
+        logger.info(f"  PLFS API nationals unavailable, using curated fallback")
+
+    # 1b. World Bank — historical time series
     logger.info("  Fetching 17 indicators from World Bank API...")
-
     wb_data = fetch_multiple()
-
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
-    logger.info(f"  Curated: {len(PLFS_STATE_DATA)} PLFS states")
     logger.info(f"  Curated: {len(SECTORAL_EMPLOYMENT)} KLEMS sectors")
 
     # ── Stage 2: TRANSFORM ──────────────────────────────────────────
     logger.info("Stage 2: TRANSFORM")
 
-    unemployment_data = build_unemployment(wb_data, PLFS_STATE_DATA, SURVEY_YEAR)
-    participation_data = build_participation(wb_data, PLFS_STATE_DATA, SURVEY_YEAR)
+    unemployment_data = build_unemployment(wb_data, plfs_state_data, SURVEY_YEAR)
+    participation_data = build_participation(wb_data, plfs_state_data, SURVEY_YEAR)
     sectoral_data = build_sectoral(wb_data, SECTORAL_EMPLOYMENT, SURVEY_YEAR)
-    summary_data = _build_summary()
-    indicators_data = _build_indicators(PLFS_STATE_DATA)
+    summary_data = _build_summary(national_totals)
+    indicators_data = _build_indicators(plfs_state_data)
     glossary_data = _build_glossary()
 
     # ── Stage 3: VALIDATE ───────────────────────────────────────────
@@ -120,17 +139,17 @@ def run_employment_pipeline():
     logger.info("=" * 60)
 
 
-def _build_summary() -> dict:
+def _build_summary(national_totals: dict) -> dict:
     return {
         "year": SURVEY_YEAR,
-        "unemploymentRate": NATIONAL_TOTALS["unemploymentRate"],
-        "lfpr": NATIONAL_TOTALS["lfpr"],
-        "youthUnemployment": NATIONAL_TOTALS["youthUnemployment"],
-        "femaleLfpr": NATIONAL_TOTALS["femaleLfpr"],
-        "workforceTotal": NATIONAL_TOTALS["workforceTotal"],
-        "selfEmployedPct": NATIONAL_TOTALS["selfEmployedPct"],
+        "unemploymentRate": national_totals["unemploymentRate"],
+        "lfpr": national_totals["lfpr"],
+        "youthUnemployment": national_totals["youthUnemployment"],
+        "femaleLfpr": national_totals["femaleLfpr"],
+        "workforceTotal": national_totals["workforceTotal"],
+        "selfEmployedPct": national_totals["selfEmployedPct"],
         "lastUpdated": date.today().isoformat(),
-        "source": "PLFS Annual Report 2023-24 + Quarterly Bulletin Oct-Dec 2025",
+        "source": "MOSPI PLFS API (api.mospi.gov.in) + PLFS Annual Report 2023-24",
     }
 
 

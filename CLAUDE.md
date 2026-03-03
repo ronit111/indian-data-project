@@ -56,22 +56,27 @@ Open data platform for Indian citizens. V1 of the broader **India Truth Engine**
 - If data doesn't exist for a planned feature, the feature waits. No exceptions.
 
 ## Automated Data Pipelines
-Eleven GitHub Actions workflows keep data fresh without manual intervention:
+Twelve GitHub Actions workflows keep data fresh without manual intervention:
 - **Budget** (`data-pipeline.yml`): Daily cron + Budget Day polling (Feb 1). Source: CKAN API.
-- **Economy** (`economy-pipeline.yml`): Quarterly (Feb, Mar, Jun, Dec) aligned to NSO/Survey/WB release cycles. Source: World Bank API + MOSPI eSankhyiki CPI API + curated Economic Survey figures.
-- **RBI** (`rbi-pipeline.yml`): Bi-monthly (10th of Feb/Apr/Jun/Aug/Oct/Dec) aligned to MPC meeting schedule. Source: World Bank API + curated MPC decisions.
-- **States** (`states-pipeline.yml`): Semi-annual (Jan 15, Jul 15) aligned to RBI Handbook publication (~Aug-Sep). Source: curated RBI Handbook data. Creates GitHub reminder issues in July for upcoming Handbook releases.
+- **Economy** (`economy-pipeline.yml`): Quarterly (Feb, Mar, Jun, Dec) aligned to NSO/Survey/WB release cycles. Source: MOSPI eSankhyiki NAS/WPI APIs (primary) + World Bank API (fallback) + MOSPI CPI API + curated Economic Survey figures.
+- **RBI** (`rbi-pipeline.yml`): Bi-monthly (10th of Feb/Apr/Jun/Aug/Oct/Dec) aligned to MPC meeting schedule. Source: RBI Handbook XLSX Tables 43/62/147 (primary) + World Bank API (fallback) + curated MPC decisions.
+- **States** (`states-pipeline.yml`): Semi-annual (Jan 15, Jul 15) aligned to RBI Handbook publication (~Aug-Sep). Source: RBI Handbook on Indian States XLSX Tables 19/21/22/164 (primary) + curated data (fallback). Creates GitHub reminder issues in July for upcoming Handbook releases.
 - **Census** (`census-pipeline.yml`): Quarterly (15th of Jan/Apr/Jul/Oct). Source: World Bank API + curated Census 2011/NPC 2026/NFHS-5/SRS 2022. Curated data (NFHS-5, SRS, Census 2011) is static until new surveys publish.
 - **Education** (`education-pipeline.yml`): Quarterly (15th of Jan/Apr/Jul/Oct). Source: World Bank API + curated UDISE+ 2023-24 + ASER 2024.
-- **Employment** (`employment-pipeline.yml`): Quarterly (1st of Mar/Jun/Sep/Dec) aligned to PLFS release schedule. Source: World Bank API + curated PLFS state data + RBI KLEMS.
+- **Employment** (`employment-pipeline.yml`): Quarterly (1st of Mar/Jun/Sep/Dec) aligned to PLFS release schedule. Source: MOSPI eSankhyiki PLFS API (primary) + World Bank API (fallback) + curated PLFS state data + RBI KLEMS.
 - **Healthcare** (`healthcare-pipeline.yml`): Quarterly (15th of Feb/May/Aug/Nov). Source: World Bank API + curated NHP 2022 + NFHS-5 immunization.
-- **Environment** (`environment-pipeline.yml`): Quarterly (15th of Jan/Apr/Jul/Oct). Source: World Bank API + curated CPCB AQI + ISFR 2023 + CEA capacity + CWC/CGWB water.
+- **Environment** (`environment-pipeline.yml`): Quarterly (15th of Jan/Apr/Jul/Oct). Source: World Bank API + MOSPI Energy API + curated CPCB AQI + ISFR 2023 + CEA capacity + CWC/CGWB water.
 - **Elections** (`elections-pipeline.yml`): Semi-annual (Jan 15, Jul 15). Source: purely curated data from ECI, TCPD, ADR, Lok Sabha Secretariat. No API calls — election data is event-driven.
-- **Freshness Monitor** (`data-freshness-monitor.yml`): Monthly check. Auto-creates GitHub issues for stale data, MPC decision reminders, Survey/Budget prep reminders. Covers all 10 domains.
+- **Crime** (`crime-pipeline.yml`): Semi-annual (Jan 15, Jul 15). Source: purely curated NCRB "Crime in India" 2022 + MoRTH + BPRD + World Bank. No API calls.
+- **Freshness Monitor** (`data-freshness-monitor.yml`): Monthly check. Auto-creates GitHub issues for stale data, MPC decision reminders, Survey/Budget prep reminders. Covers all 11 domains.
 
-**Shared pipeline infrastructure**: All 7 World Bank-sourced pipelines share `pipeline/src/common/world_bank.py` (retry with exponential backoff, HTTPError handling, configurable precision). Domain-specific files in `pipeline/src/{domain}/sources/world_bank.py` are thin wrappers with only `INDICATORS` dict and precision config. See `pipeline/PIPELINE_DATA_SOURCES.md` for the full catalog of 30+ curated data constants.
+**Shared pipeline infrastructure**:
+- **World Bank client** (`pipeline/src/common/world_bank.py`): Shared by 7 pipelines. Retry with exponential backoff, HTTPError handling, configurable precision. Domain-specific files in `pipeline/src/{domain}/sources/world_bank.py` are thin wrappers.
+- **MOSPI eSankhyiki client** (`pipeline/src/common/mospi_client.py`): Shared paginated fetcher with retry logic for all 7 MOSPI endpoints (CPI, NAS GDP/GVA, PLFS, WPI, IIP, Energy, ASI). No authentication required.
+- **RBI Handbook scraper** (`pipeline/src/common/rbi_handbook.py`): Session-based XLSX downloader for both RBI Handbooks (Indian Economy + Indian States). Scrapes publication pages for current download URLs (contain unpredictable hashes), downloads specific table XLSX files, parses with `openpyxl`. Anti-bot bypass via browser-like headers + session cookies.
+- See `pipeline/PIPELINE_DATA_SOURCES.md` for the full catalog of 30+ curated data constants.
 
-**Curated data** (MPC decisions in `monetary_policy.py`, fiscal deficit series in `fiscal.py`, Economic Survey headline numbers in `main.py`, NFHS-5/SRS health data in `curated.py`) requires human updates when government publications drop. The freshness monitor creates reminder issues for these.
+**Curated data** (MPC decisions in `monetary_policy.py`, fiscal deficit series in `fiscal.py`, Economic Survey headline numbers in `main.py`, NFHS-5/SRS health data in `curated.py`) requires human updates when government publications drop. Most curated data now serves as **fallback** — automated sources (MOSPI APIs, RBI Handbook XLSX) are tried first. The freshness monitor creates reminder issues for manual updates.
 
 ## Design Identity
 - Dark theme: void (#06080f) / raised (#0e1420) / surface (#131b27)

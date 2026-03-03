@@ -181,8 +181,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--cyan)' }} />
             <span>
-              <strong>RBI DBIE</strong> — Not yet integrated. When added, will provide monthly and
-              weekly data for the most current indicators.
+              <strong>RBI Handbook Tables</strong> — Interest rate structure (Table 62) and forex reserves (Table 147) are automatically extracted from the Handbook XLSX files. The pipeline scrapes the RBI publications page for current download URLs and parses the Excel data.
             </span>
           </li>
         </ul>

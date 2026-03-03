@@ -103,12 +103,20 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | Domain | Automated % | Manual Update Items | Pipeline Workflow |
 |--------|------------|--------------------|--------------------|
 | Budget | ~95% | Budget trends, BvA (annual) | `data-pipeline.yml` (daily cron) |
-| Economy | ~80% | Summary figures, fiscal deficit (annual) | `economy-pipeline.yml` (quarterly) |
-| RBI | ~70% | MPC decisions (~6x/yr), current rates | `rbi-pipeline.yml` (bi-monthly) |
-| States | ~0% | All data (annual, from RBI Handbook PDF) | `states-pipeline.yml` (semi-annual) |
+| Economy | ~95% | Summary figures (annual) | `economy-pipeline.yml` (quarterly) |
+| RBI | ~85% | MPC decisions (~6x/yr), current rates | `rbi-pipeline.yml` (bi-monthly) |
+| States | ~80% | Revenue data, debt/GSDP ratios (annual) | `states-pipeline.yml` (semi-annual) |
 | Census | ~40% | Census 2011, NFHS-5, SRS (infrequent) | `census-pipeline.yml` (quarterly) |
 | Education | ~40% | UDISE+, ASER (annual) | `education-pipeline.yml` (quarterly) |
-| Employment | ~50% | PLFS quarterly/annual, KLEMS (quarterly) | `employment-pipeline.yml` (quarterly) |
+| Employment | ~90% | KLEMS sectoral data (annual) | `employment-pipeline.yml` (quarterly) |
 | Healthcare | ~40% | NHP, NFHS-5 immunization (annual/5-year) | `healthcare-pipeline.yml` (quarterly) |
+| Environment | ~55% | AQI (curated), forest cover, water (curated) | `environment-pipeline.yml` (quarterly) |
+| Elections | ~0% | All data (event-driven, no API) | `elections-pipeline.yml` (semi-annual) |
+| Crime | ~0% | All data (annual, NCRB publication) | `crime-pipeline.yml` (semi-annual) |
+
+**Phase 16 Automation Sources (added Mar 2026)**:
+- **MOSPI eSankhyiki APIs** (no auth): NAS GDP/GVA, PLFS employment, WPI inflation, Energy balance
+- **RBI Handbook XLSX scraper**: Auto-downloads Tables 19-24 (states GSDP), 62 (interest rates), 147 (forex reserves), 164 (fiscal deficit)
+- **Shared MOSPI client**: `pipeline/src/common/mospi_client.py` — paginated fetcher with retry logic for all 7 MOSPI endpoints
 
 The **freshness monitor** (`data-freshness-monitor.yml`) runs monthly and creates GitHub issues for upcoming data releases and stale data.
