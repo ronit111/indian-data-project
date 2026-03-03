@@ -29,7 +29,7 @@ const ROUTES = [
   {
     path: '/',
     title: 'Indian Data Project — Government Data, Made Visible',
-    description: 'Dense PDFs and buried spreadsheets turned into interactive visual stories. Real data. No spin. Open source.',
+    description: 'Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories. Real data. No spin. Open source.',
     image: '/og-logo.png',
   },
 

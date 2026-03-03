@@ -16,7 +16,9 @@ const ICONS = {
   education: 'M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222',
   employment: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M3 8a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z',
   healthcare: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+  environment: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
   elections: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+  topics: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
   reportCard: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
 };
 
@@ -45,12 +47,18 @@ export function MobileNav() {
     { to: '/economy', label: 'Economy', icon: ICONS.economy },
     { to: '/rbi', label: 'RBI', icon: ICONS.rbi },
     { to: '/states', label: 'States', icon: ICONS.states },
-    { to: '/topics', label: 'Topics', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
+    { to: '/census', label: 'Census', icon: ICONS.census },
+    { to: '/education', label: 'Education', icon: ICONS.education },
+    { to: '/employment', label: 'Jobs', icon: ICONS.employment },
+    { to: '/healthcare', label: 'Health', icon: ICONS.healthcare },
+    { to: '/environment', label: 'Environ.', icon: ICONS.environment },
+    { to: '/elections', label: 'Elections', icon: ICONS.elections },
+    { to: '/topics', label: 'Topics', icon: ICONS.topics },
   ];
 
   const topicsTabs = [
     { to: '/', label: 'Hub', icon: ICONS.home },
-    { to: '/topics', label: 'Topics', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
+    { to: '/topics', label: 'Topics', icon: ICONS.topics },
   ];
 
   const budgetTabs = [
@@ -123,7 +131,7 @@ export function MobileNav() {
 
   const environmentTabs = [
     { to: '/', label: 'Hub', icon: ICONS.home },
-    { to: '/environment', label: 'Story', icon: ICONS.healthcare },
+    { to: '/environment', label: 'Story', icon: ICONS.environment },
     { to: '/environment/explore', label: 'Explore', icon: ICONS.explore },
     { to: '/environment/methodology', label: 'Methods', icon: ICONS.methodology },
     { to: '/environment/glossary', label: 'Glossary', icon: ICONS.glossary },
@@ -184,7 +192,7 @@ export function MobileNav() {
                             ? teachersTabs
                             : isMultiplierSection
                               ? multiplierTabs
-                  : hubTabs;
+                    : hubTabs;
 
   const isActiveTab = (tabTo: string) => {
     if (tabTo === '/') return location.pathname === '/';
@@ -206,41 +214,55 @@ export function MobileNav() {
     return location.pathname === tabTo;
   };
 
+  // Hub has 12 tabs — needs horizontal scroll. Domain sub-tabs (3-6 items) fit fine.
+  const needsScroll = tabs.length > 6;
+
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass mobile-nav-safe">
-      <div className="flex justify-around items-center h-14">
-        {tabs.map((tab) => {
-          const isActive = isActiveTab(tab.to);
-          return (
-            <Link
-              key={tab.to}
-              to={tab.to}
-              className="relative flex flex-col items-center gap-1 px-3 py-1 no-underline transition-colors"
-              style={{
-                color: isActive ? 'var(--saffron)' : 'var(--text-muted)',
-              }}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={isActive ? 2 : 1.5}
+      <div className="relative">
+        {/* Scroll affordance — right edge gradient */}
+        {needsScroll && (
+          <div
+            className="absolute right-0 top-0 bottom-0 w-8 pointer-events-none z-10"
+            style={{ background: 'linear-gradient(to right, transparent, var(--bg-void))' }}
+          />
+        )}
+        <div
+          className={`flex items-center h-14 ${needsScroll ? 'overflow-x-auto scrollbar-hide gap-0 px-1' : 'justify-around'}`}
+        >
+          {tabs.map((tab) => {
+            const isActive = isActiveTab(tab.to);
+            return (
+              <Link
+                key={tab.to}
+                to={tab.to}
+                className={`relative flex flex-col items-center gap-0.5 py-1 no-underline transition-colors ${needsScroll ? 'min-w-[52px] px-2' : 'px-3'}`}
+                style={{
+                  color: isActive ? 'var(--saffron)' : 'var(--text-muted)',
+                }}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d={tab.icon} />
-              </svg>
-              <span className="text-[10px] font-medium">{tab.label}</span>
-              {isActive && (
-                <motion.div
-                  layoutId="mobile-nav-dot"
-                  className="absolute bottom-0 w-1 h-1 rounded-full"
-                  style={{ backgroundColor: 'var(--saffron)' }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                />
-              )}
-            </Link>
-          );
-        })}
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={isActive ? 2 : 1.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d={tab.icon} />
+                </svg>
+                <span className="text-[9px] font-medium leading-tight">{tab.label}</span>
+                {isActive && (
+                  <motion.div
+                    layoutId="mobile-nav-dot"
+                    className="absolute bottom-0 w-1 h-1 rounded-full"
+                    style={{ backgroundColor: 'var(--saffron)' }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );

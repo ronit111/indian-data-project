@@ -4,86 +4,62 @@
     {
       "id": "transfers-to-states",
       "name": "State Transfers",
-      "percentOfExpenditure": 23.9,
-      "humanContext": "Funding your state's roads, schools, and hospitals",
-      "humanContextMultiplier": 0
+      "percentOfExpenditure": 23.9
     },
     {
       "id": "interest-payments",
       "name": "Interest Payments",
-      "percentOfExpenditure": 21.5,
-      "humanContext": "Servicing past government debt",
-      "humanContextMultiplier": 0
+      "percentOfExpenditure": 21.5
     },
     {
       "id": "defence",
       "name": "Defence",
-      "percentOfExpenditure": 13.6,
-      "humanContext": "school mid-day meals",
-      "humanContextMultiplier": 167
+      "percentOfExpenditure": 13.6
     },
     {
       "id": "subsidies",
       "name": "Subsidies",
-      "percentOfExpenditure": 7.9,
-      "humanContext": "months of subsidized ration for one family",
-      "humanContextMultiplier": 4
+      "percentOfExpenditure": 7.9
     },
     {
       "id": "road-transport",
       "name": "Roads & Highways",
-      "percentOfExpenditure": 5.5,
-      "humanContext": "metres of national highway",
-      "humanContextMultiplier": 0.02
+      "percentOfExpenditure": 5.5
     },
     {
       "id": "railways",
       "name": "Railways",
-      "percentOfExpenditure": 5.3,
-      "humanContext": "train journeys (sleeper class)",
-      "humanContextMultiplier": 12
+      "percentOfExpenditure": 5.3
     },
     {
       "id": "home-affairs",
       "name": "Home Affairs",
-      "percentOfExpenditure": 4.4,
-      "humanContext": "police and border security",
-      "humanContextMultiplier": 0
+      "percentOfExpenditure": 4.4
     },
     {
       "id": "rural-development",
       "name": "Rural Development",
-      "percentOfExpenditure": 3.6,
-      "humanContext": "days of MGNREGA wages",
-      "humanContextMultiplier": 8
+      "percentOfExpenditure": 3.6
     },
     {
       "id": "agriculture",
       "name": "Agriculture",
-      "percentOfExpenditure": 2.7,
-      "humanContext": "farmer PM-KISAN installments",
-      "humanContextMultiplier": 3
+      "percentOfExpenditure": 2.7
     },
     {
       "id": "education",
       "name": "Education",
-      "percentOfExpenditure": 2.5,
-      "humanContext": "school textbooks",
-      "humanContextMultiplier": 25
+      "percentOfExpenditure": 2.5
     },
     {
       "id": "health",
       "name": "Health",
-      "percentOfExpenditure": 1.8,
-      "humanContext": "basic health checkups",
-      "humanContextMultiplier": 5
+      "percentOfExpenditure": 1.8
     },
     {
       "id": "other",
       "name": "Everything Else",
-      "percentOfExpenditure": 7.3,
-      "humanContext": "science, environment, culture, and more",
-      "humanContextMultiplier": 0
+      "percentOfExpenditure": 7.3
     }
   ]
 }

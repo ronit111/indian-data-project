@@ -206,6 +206,13 @@ export default function App() {
     return () => document.removeEventListener('pointerenter', handleHover, true);
   }, []);
 
+  // Scroll to top on route change (unless navigating to a hash anchor)
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
+
   // Scroll to hash anchor after React renders (SPA deep link support)
   useEffect(() => {
     if (!location.hash) return;

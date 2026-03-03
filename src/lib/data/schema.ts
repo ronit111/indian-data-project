@@ -175,8 +175,8 @@ export interface ExpenditureShare {
   id: string                     // ministry id
   name: string
   percentOfExpenditure: number
-  humanContext: string           // "school mid-day meals", "ISRO launches"
-  humanContextMultiplier: number // how many of that thing per Rs 1 of tax
+  humanContext?: string
+  humanContextMultiplier?: number
 }
 
 export interface ExpenditureSharesData {

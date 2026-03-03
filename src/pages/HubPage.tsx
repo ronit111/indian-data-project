@@ -59,7 +59,7 @@ function HubHero() {
             className="text-lg md:text-xl leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
-            {'Dense PDFs and buried spreadsheets turned into interactive visual stories.'}
+            {'Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories.'}
           </p>
           <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             {'Real data. No spin. Open source.'}
@@ -1449,7 +1449,7 @@ export default function HubPage() {
     >
       <SEOHead
         title="Indian Data Project — Government Data, Made Visible"
-        description="Dense PDFs and buried spreadsheets turned into interactive visual stories. Real data. No spin. Open source."
+        description="Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories. Real data. No spin. Open source."
         path="/"
       />
 

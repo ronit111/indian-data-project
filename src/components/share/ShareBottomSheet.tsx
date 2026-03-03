@@ -98,10 +98,11 @@ export function ShareBottomSheet({ entry, data, svgRef, onClose }: ShareBottomSh
 
       {/* Sheet */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl px-6 pt-4 pb-8"
+        className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl px-6 pt-4"
         style={{
           background: 'var(--bg-raised)',
           borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+          paddingBottom: 'max(5rem, calc(3.5rem + env(safe-area-inset-bottom)))',
         }}
       >
         {/* Drag handle */}

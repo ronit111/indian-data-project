@@ -477,6 +477,10 @@
   }
 }
 
+/* ─── Scrollbar hide (horizontal scroll nav) ─────────────────── */
+.scrollbar-hide { scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
 /* ─── Classroom Mode ──────────────────────────────────────────── */
 .classroom-mode {
   --text-body: 1.125rem;

@@ -9,11 +9,12 @@ const VARIANTS = [
     filename: 'og-logo.png',
     title: 'Indian Data Project',
     tagline: 'Open government data, made accessible and visual',
-    accentFrom: '#FF6B35',
-    accentTo: '#FFC857',
-    cornerTL: 'rgba(255,107,53,0.2)',
-    cornerBR: 'rgba(74,234,220,0.2)',
-    glowColor: 'rgba(255,107,53,0.06)',
+    accentFrom: '#FF9933',
+    accentMid: '#FFFFFF',
+    accentTo: '#138808',
+    cornerTL: 'rgba(255,153,51,0.2)',
+    cornerBR: 'rgba(19,136,8,0.2)',
+    glowColor: 'rgba(255,153,51,0.06)',
   },
   {
     filename: 'og-open-data.png',
@@ -214,7 +215,7 @@ function buildHTML(variant) {
   .title {
     font-family: 'Inter', system-ui, sans-serif; font-weight: 800;
     font-size: 52px; letter-spacing: -0.03em;
-    background: linear-gradient(135deg, ${variant.accentFrom}, ${variant.accentTo});
+    background: linear-gradient(135deg, ${variant.accentFrom}${variant.accentMid ? `, ${variant.accentMid}` : ''}, ${variant.accentTo});
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .tagline {

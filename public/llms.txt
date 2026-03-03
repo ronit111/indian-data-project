@@ -1,6 +1,6 @@
 # Indian Data Project
 
-> Open Indian government data made accessible, visual, and shareable. Dense PDFs and buried spreadsheets turned into interactive visual stories.
+> Open Indian government data made accessible, visual, and shareable. Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories.
 
 ## What this site does
 

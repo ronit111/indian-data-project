@@ -79,20 +79,6 @@ export function SpendingAllocation({ totalTax, shares }: SpendingAllocationProps
                 </span>
               </motion.div>
             </div>
-
-            {/* humanContext as annotation chip */}
-            {share.humanContext && share.humanContextMultiplier > 0 && amount > 0 && (() => {
-              const count = Math.round(amount * share.humanContextMultiplier * 0.00001);
-              if (count < 1) return null;
-              return (
-                <p
-                  className="text-xs mt-1 ml-1 inline-block px-2 py-0.5 rounded-full"
-                  style={{ color: 'var(--text-muted)', background: 'var(--bg-raised)' }}
-                >
-                  ≈ {count} {share.humanContext}
-                </p>
-              );
-            })()}
           </div>
         );
       })}
