@@ -370,7 +370,7 @@ export function buildReportCard(
   });
 
   // Group by domain
-  const domainOrder = ['economy', 'budget', 'revenue', 'fiscal', 'demographics', 'education', 'employment', 'healthcare', 'health', 'environment', 'elections'];
+  const domainOrder = ['economy', 'budget', 'revenue', 'fiscal', 'demographics', 'education', 'employment', 'healthcare', 'health', 'environment', 'elections', 'crime'];
   const panels: DomainPanel[] = domainOrder.map((domain) => {
     const metrics = metricResults.filter((m) => m.def.domain === domain);
     const config = PANEL_CONFIG[domain] ?? { title: domain, accentColor: '#6B7280' };

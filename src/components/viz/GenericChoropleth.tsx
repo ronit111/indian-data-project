@@ -4,7 +4,8 @@ import { scaleSequential, scaleDiverging, scaleOrdinal } from 'd3-scale';
 import { interpolateRgb } from 'd3-interpolate';
 import * as topojson from 'topojson-client';
 import { TOPO_NAME_TO_STATE_CODE } from '../../lib/stateMapping.ts';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry } from 'geojson';
 
@@ -71,11 +72,14 @@ export function GenericChoropleth({
   const tooltip = useTooltip<ChoroplethDataPoint & { topoName: string }>();
 
   useEffect(() => {
+    // If another instance resolved the topo data between our useState init and this effect,
+    // sync up and skip the fetch.
     if (cachedTopo) {
-      setTopoData(cachedTopo);
+      if (!topoData) setTopoData(cachedTopo);
       return;
     }
     loadTopo().then(setTopoData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only runs on mount
   }, []);
 
   const dataMap = useMemo(

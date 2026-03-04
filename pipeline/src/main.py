@@ -343,6 +343,20 @@ def run_pipeline():
         errors.append(f"budget-vs-actual: {e}")
         logger.error(f"  budget-vs-actual.json FAILED: {e}")
 
+    try:
+        TaxSlabsData(**tax_slabs_data)
+        logger.info("  tax-slabs.json ✓")
+    except Exception as e:
+        errors.append(f"tax-slabs: {e}")
+        logger.error(f"  tax-slabs.json FAILED: {e}")
+
+    try:
+        ExpenditureSharesData(**expenditure_shares_data)
+        logger.info("  expenditure-shares.json ✓")
+    except Exception as e:
+        errors.append(f"expenditure-shares: {e}")
+        logger.error(f"  expenditure-shares.json FAILED: {e}")
+
     # Integrity checks
     ministry_sum = sum(m["budgetEstimate"] for m in ministries)
     pct_covered = ministry_sum / total_expenditure * 100

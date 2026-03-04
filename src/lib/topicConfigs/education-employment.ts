@@ -2,7 +2,6 @@ import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
 import type {
   EducationSummary,
   EmploymentSummary,
-  CensusSummary,
   EnrollmentData,
   UnemploymentData,
   SpendingData,
@@ -10,7 +9,6 @@ import type {
 
 const eduSummary = (bag: TopicDataBag) => bag['education/summary'] as EducationSummary | undefined;
 const empSummary = (bag: TopicDataBag) => bag['employment/summary'] as EmploymentSummary | undefined;
-const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
 const enrollment = (bag: TopicDataBag) => bag['education/enrollment'] as EnrollmentData | undefined;
 const unemployment = (bag: TopicDataBag) => bag['employment/unemployment'] as UnemploymentData | undefined;
 const spending = (bag: TopicDataBag) => bag['education/spending'] as SpendingData | undefined;

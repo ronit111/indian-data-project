@@ -19,12 +19,10 @@ interface AgeDemographicsSectionProps {
  */
 function AgeWaffle({
   young,
-  working,
   elderly,
   isVisible,
 }: {
   young: number;
-  working: number;
   elderly: number;
   isVisible: boolean;
 }) {
@@ -94,7 +92,6 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
 
   // Latest year values for waffle
   const latestYoung = data.ageStructure.young.at(-1)?.value ?? 26;
-  const latestWorking = data.ageStructure.working.at(-1)?.value ?? 67;
   const latestElderly = data.ageStructure.elderly.at(-1)?.value ?? 7;
 
   const ageSeries: LineSeries[] = useMemo(() => {
@@ -146,7 +143,6 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
           </p>
           <AgeWaffle
             young={latestYoung}
-            working={latestWorking}
             elderly={latestElderly}
             isVisible={isVisible}
           />

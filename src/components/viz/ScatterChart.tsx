@@ -1,6 +1,7 @@
 import { useMemo, useState, useRef, useEffect } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 export interface ScatterDataPoint {
   id: string;

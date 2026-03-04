@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { scaleLinear } from 'd3-scale';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 import type { BudgetVsActualData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 

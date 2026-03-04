@@ -65,9 +65,14 @@ class WPIEntry(BaseModel):
     wpiInflation: float | None = None
 
 
+class TargetBand(BaseModel):
+    lower: float
+    upper: float
+
+
 class InflationData(BaseModel):
     year: str
-    targetBand: dict  # {lower: float, upper: float}
+    targetBand: TargetBand
     series: list[InflationSeries]
     cpiByCategory: list[CPICategoryEntry] = []
     wpiSeries: list[WPIEntry] = []

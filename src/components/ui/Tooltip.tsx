@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TooltipProps {
@@ -11,37 +11,31 @@ interface TooltipProps {
 /**
  * Cursor-following tooltip shared by all visualizations.
  * Renders at fixed viewport position with backdrop blur.
- * Usage: position it using useMousePosition coordinates.
+ * Uses heuristic offsets based on known maxWidth (280px) to avoid
+ * viewport overflow without DOM measurement.
  */
 export function Tooltip({ content, visible, x, y }: TooltipProps) {
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState({ x: 12, y: -12 });
-
-  useEffect(() => {
-    if (!tooltipRef.current || !visible) return;
-    const rect = tooltipRef.current.getBoundingClientRect();
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-
-    setOffset({
-      x: x + rect.width + 24 > vw ? -rect.width - 12 : 12,
-      y: y - rect.height - 12 < 0 ? 12 : -rect.height - 12,
-    });
-  }, [x, y, visible]);
+  // Heuristic edge detection: tooltip maxWidth is 280 + 12px padding = ~292px
+  const vw = typeof window !== 'undefined' ? window.innerWidth : 1200;
+  const maxW = Math.min(292, vw - 24); // Clamp on narrow viewports
+  const estH = 80;
+  const rawOffsetX = x + maxW + 24 > vw ? -maxW - 12 : 12;
+  // Prevent tooltip from going off the left edge
+  const offsetX = x + rawOffsetX < 0 ? -x + 8 : rawOffsetX;
+  const offsetY = y - estH - 12 < 0 ? 12 : -estH - 12;
 
   return (
     <AnimatePresence>
       {visible && content && (
         <motion.div
-          ref={tooltipRef}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.12, ease: [0.25, 1, 0.5, 1] }}
           className="pointer-events-none fixed z-50"
           style={{
-            left: x + offset.x,
-            top: y + offset.y,
+            left: x + offsetX,
+            top: y + offsetY,
           }}
         >
           <div
@@ -82,57 +76,4 @@ export function TooltipRow({ label, value }: { label: string; value: string }) {
 
 export function TooltipHint({ children }: { children: ReactNode }) {
   return <p className="text-caption mt-1 italic">{children}</p>;
-}
-
-/**
- * Hook for managing tooltip state in visualizations.
- */
-export function useTooltip<T = unknown>() {
-  const [data, setData] = useState<T | null>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const scrollingRef = useRef(false);
-  const scrollTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  const show = useCallback((item: T, e: React.MouseEvent) => {
-    if (scrollingRef.current) return;
-    setData(item);
-    setPosition({ x: e.clientX, y: e.clientY });
-  }, []);
-
-  const move = useCallback((e: React.MouseEvent) => {
-    if (scrollingRef.current) return;
-    setPosition({ x: e.clientX, y: e.clientY });
-  }, []);
-
-  const hide = useCallback(() => {
-    setData(null);
-  }, []);
-
-  // Auto-hide on scroll and prevent re-show while scrolling.
-  // SVG hover rects fire onMouseEnter as they pass under the cursor
-  // during scroll, so we debounce to avoid tooltip flicker.
-  useEffect(() => {
-    const dismiss = () => {
-      setData(null);
-      scrollingRef.current = true;
-      clearTimeout(scrollTimer.current);
-      scrollTimer.current = setTimeout(() => {
-        scrollingRef.current = false;
-      }, 150);
-    };
-    window.addEventListener('scroll', dismiss, { passive: true, capture: true });
-    return () => {
-      window.removeEventListener('scroll', dismiss, { capture: true });
-      clearTimeout(scrollTimer.current);
-    };
-  }, []);
-
-  return {
-    data,
-    position,
-    visible: data !== null,
-    show,
-    move,
-    hide,
-  };
 }

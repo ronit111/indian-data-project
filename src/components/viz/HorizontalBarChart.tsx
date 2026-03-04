@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 // ─── Types ───────────────────────────────────────────────────────────
 export interface BarItem {
@@ -87,7 +88,7 @@ export function HorizontalBarChart({
       return scaleLinear().domain([-extent, extent]).range([0, innerW]);
     }
     return scaleLinear()
-      .domain([0, max * 1.15])
+      .domain([0, Math.max(max * 1.15, 1)])
       .range([0, innerW]);
   }, [items, target, innerW, showSecondary, hasDiverging]);
 

@@ -51,9 +51,15 @@ export function useBudgetData(year: string): BudgetData {
     error: null,
   });
 
+  // Reset loading state when dependency changes (React-recommended "setState during render" pattern)
+  const [prevYear, setPrevYear] = useState(year);
+  if (prevYear !== year) {
+    setPrevYear(year);
+    setData((d) => ({ ...d, loading: true, error: null }));
+  }
+
   useEffect(() => {
     let cancelled = false;
-    setData((d) => ({ ...d, loading: true, error: null }));
 
     Promise.all([
       loadSummary(year),

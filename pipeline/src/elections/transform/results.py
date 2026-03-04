@@ -31,11 +31,13 @@ def build_results(seat_evolution: list[dict], results_2024: list[dict],
         cat_id = cat["id"]
         data_points = []
         for election in seat_evolution:
+            seats = election.get(cat_id, 0)
+            total = election.get("totalSeats", 0)
             data_points.append({
                 "year": election["year"],
-                "seats": election[cat_id],
-                "totalSeats": election["totalSeats"],
-                "pct": round(election[cat_id] / election["totalSeats"] * 100, 1),
+                "seats": seats,
+                "totalSeats": total,
+                "pct": round(seats / total * 100, 1) if total > 0 else 0.0,
             })
         series.append({
             "id": cat_id,

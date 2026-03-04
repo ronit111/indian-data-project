@@ -8,7 +8,8 @@ import {
 } from 'd3-sankey';
 import type { SankeyData } from '../../lib/data/schema.ts';
 import { formatRsCrore } from '../../lib/format.ts';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 interface SankeyDiagramProps {
   data: SankeyData;
@@ -71,9 +72,15 @@ export function SankeyDiagram({ data, width = 900, height = 600, isVisible, aria
 
   useEffect(() => {
     const lengths = new Map<number, number>();
-    pathRefs.current.forEach((el, idx) => {
-      if (el) lengths.set(idx, el.getTotalLength());
-    });
+    // Only measure refs for current links; prune stale entries from previous layouts
+    for (let i = 0; i < graph.links.length; i++) {
+      const el = pathRefs.current.get(i);
+      if (el) lengths.set(i, el.getTotalLength());
+    }
+    for (const key of pathRefs.current.keys()) {
+      if (key >= graph.links.length) pathRefs.current.delete(key);
+    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- DOM measurement requires setState in effect
     setPathLengths(lengths);
   }, [graph]);
 

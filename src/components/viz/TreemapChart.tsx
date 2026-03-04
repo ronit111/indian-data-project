@@ -3,7 +3,8 @@ import * as d3 from 'd3-hierarchy';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { TreemapNode } from '../../lib/data/schema.ts';
 import { formatRsCrore, formatPercent } from '../../lib/format.ts';
-import { Tooltip, TooltipTitle, TooltipRow, TooltipHint, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow, TooltipHint } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 interface TreemapChartProps {
   root: TreemapNode;

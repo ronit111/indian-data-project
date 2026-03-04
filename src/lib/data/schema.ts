@@ -267,11 +267,18 @@ export interface InflationSeries {
   cpiCore: number | null;
 }
 
+export interface WPIEntry {
+  year: string;
+  wpiIndex: number;
+  wpiInflation?: number;
+}
+
 export interface InflationData {
   year: string;
   targetBand: { lower: number; upper: number };
   series: InflationSeries[];
   cpiByCategory?: CPICategoryEntry[];
+  wpiSeries?: WPIEntry[];
   source: string;
 }
 
@@ -854,6 +861,7 @@ export interface HealthcareIndicatorsData {
 export interface CPICategoryEntry {
   division: string;  // COICOP code: '01', '04', '06', '07', '10'
   name: string;
+  source?: string;
   series: { period: string; value: number }[];
 }
 

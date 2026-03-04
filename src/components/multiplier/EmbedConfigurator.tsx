@@ -33,7 +33,11 @@ export function EmbedConfigurator({ defaultDomain, defaultSection }: EmbedConfig
   const embedUrl = domain && sectionId ? getEmbedUrl(domain, sectionId) : '';
   const fullUrl = `https://indiandataproject.org${embedUrl}`;
 
-  const snippet = `<iframe\n  src="${fullUrl}"\n  width="${width}"\n  height="${height}"\n  frameborder="0"\n  title="Indian Data Project"\n  loading="lazy"\n  style="border-radius: 8px;"\n></iframe>`;
+  // Sanitize width/height: only allow digits, %, or px to prevent attribute injection
+  const safeWidth = /^[\d]+(%|px)?$/.test(width) ? width : '100%';
+  const safeHeight = /^[\d]+(%|px)?$/.test(height) ? height : '450';
+
+  const snippet = `<iframe\n  src="${fullUrl}"\n  width="${safeWidth}"\n  height="${safeHeight}"\n  frameborder="0"\n  title="Indian Data Project"\n  loading="lazy"\n  style="border-radius: 8px;"\n></iframe>`;
 
   const [copied, setCopied] = useState(false);
   const handleCopy = async () => {

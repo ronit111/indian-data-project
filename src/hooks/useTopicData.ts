@@ -29,10 +29,15 @@ export function useTopicData(keys: DomainDataKey[]): TopicDataState {
 
   const keysKey = keys.join(',');
 
+  // Reset loading state when dependency changes (React-recommended "setState during render" pattern)
+  const [prevKeysKey, setPrevKeysKey] = useState(keysKey);
+  if (prevKeysKey !== keysKey) {
+    setPrevKeysKey(keysKey);
+    setState((s) => ({ ...s, loading: true, error: null }));
+  }
+
   useEffect(() => {
     let cancelled = false;
-
-    setState((s) => ({ ...s, loading: true, error: null }));
 
     const currentKeys = keysKey.split(',') as DomainDataKey[];
     const promises = currentKeys.map((key) => {

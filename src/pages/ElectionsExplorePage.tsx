@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useElectionsStore } from '../store/electionsStore.ts';
-import { useElectionsData } from '../hooks/useElectionsData.ts';
 import { useUrlState } from '../hooks/useUrlState.ts';
 import { SEOHead } from '../components/seo/SEOHead.tsx';
 import { HorizontalBarChart, type BarItem } from '../components/viz/HorizontalBarChart.tsx';
@@ -34,13 +33,20 @@ export default function ElectionsExplorePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Reset loading state when year changes (setState during render pattern)
+  const [prevYear, setPrevYear] = useState(year);
+  if (prevYear !== year) {
+    setPrevYear(year);
+    setLoading(true);
+    setError(null);
+  }
+
   useUrlState({
     indicator: { get: () => selectedIndicatorId, set: setIndicatorId },
   });
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
     loadElectionsIndicators(year)
       .then((data) => {
         if (!cancelled) {

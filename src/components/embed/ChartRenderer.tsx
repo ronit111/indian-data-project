@@ -5,6 +5,7 @@
  */
 import { lazy, Suspense } from 'react';
 import type { ChartType } from '../../lib/chartRegistry.ts';
+import { formatPercent, formatIndianNumber } from '../../lib/format.ts';
 
 const LineChart = lazy(() => import('../viz/LineChart.tsx').then((m) => ({ default: m.LineChart })));
 const AreaChart = lazy(() => import('../viz/AreaChart.tsx').then((m) => ({ default: m.AreaChart })));
@@ -86,21 +87,95 @@ function renderAreaChart(data: Record<string, unknown>, domain: string, sectionI
   return <AreaChart series={series} isVisible={true} />;
 }
 
-function renderBarChart(data: Record<string, unknown>, _domain: string, _sectionId: string) {
-  // Look for common bar data shapes
-  const states = (data as { states?: { name: string; value: number; id: string }[] }).states;
-  if (states) {
-    const items = states
-      .sort((a: { value: number }, b: { value: number }) => b.value - a.value)
+function renderBarChart(data: Record<string, unknown>, domain: string, sectionId: string) {
+  const { arrayKey, valueKey, labelKey } = getBarFieldMapping(domain, sectionId);
+
+  // Find the data array (states, stateRates, stateRatios, groundwaterStage, etc.)
+  const arr = (data as Record<string, unknown>)[arrayKey] as Record<string, unknown>[] | undefined;
+  if (arr && arr.length > 0) {
+    const items = arr
+      .filter((s) => typeof s[valueKey] === 'number' && Number.isFinite(s[valueKey] as number))
+      .sort((a, b) => Math.abs(b[valueKey] as number) - Math.abs(a[valueKey] as number))
       .slice(0, 15)
-      .map((s: { id: string; name: string; value: number }) => ({
-        id: s.id,
-        label: s.name,
-        value: s.value,
+      .map((s) => ({
+        id: String(s.id || s[labelKey] || ''),
+        label: String(s[labelKey] || s.name || ''),
+        value: s[valueKey] as number,
       }));
-    return <HorizontalBarChart items={items} isVisible={true} />;
+    if (items.length > 0) {
+      const { formatValue, unit } = getBarFormatting(domain, sectionId);
+      return <HorizontalBarChart items={items} isVisible={true} formatValue={formatValue} unit={unit} />;
+    }
   }
   return <div style={{ color: 'var(--text-muted)', padding: 20 }}>No data available</div>;
+}
+
+/** Map domain/sectionId to the correct array name, value field, and label field */
+function getBarFieldMapping(domain: string, sectionId: string): { arrayKey: string; valueKey: string; labelKey: string } {
+  const defaults = { labelKey: 'name' };
+  switch (domain) {
+    case 'states':
+      switch (sectionId) {
+        case 'gsdp': return { arrayKey: 'states', valueKey: 'gsdp', ...defaults };
+        case 'growth': return { arrayKey: 'states', valueKey: 'growthRate', ...defaults };
+        case 'percapita': return { arrayKey: 'states', valueKey: 'perCapitaGsdp', ...defaults };
+        case 'revenue': return { arrayKey: 'states', valueKey: 'selfSufficiencyRatio', ...defaults };
+        case 'fiscal-health': return { arrayKey: 'states', valueKey: 'fiscalDeficitPctGsdp', ...defaults };
+      }
+      break;
+    case 'crime':
+      switch (sectionId) {
+        case 'overview': return { arrayKey: 'stateRates', valueKey: 'rate', ...defaults };
+        case 'crimes-against-women': return { arrayKey: 'stateRates', valueKey: 'rate', ...defaults };
+        case 'police': return { arrayKey: 'stateRatios', valueKey: 'actual', ...defaults };
+      }
+      break;
+    case 'healthcare':
+      if (sectionId === 'infrastructure') return { arrayKey: 'stateInfrastructure', valueKey: 'doctorsPer10K', ...defaults };
+      break;
+    case 'environment':
+      if (sectionId === 'water') return { arrayKey: 'groundwaterStage', valueKey: 'stagePct', ...defaults };
+      break;
+    case 'education':
+      if (sectionId === 'quality') return { arrayKey: 'stateInfrastructure', valueKey: 'ptr', ...defaults };
+      break;
+    case 'census':
+      if (sectionId === 'literacy') return { arrayKey: 'states', valueKey: 'overallRate', ...defaults };
+      break;
+    case 'elections':
+      if (sectionId === 'money-muscle') return { arrayKey: 'topWealthiest', valueKey: 'assetsCrore', ...defaults };
+      break;
+  }
+  return { arrayKey: 'states', valueKey: 'value', ...defaults };
+}
+
+/** Format values and unit labels for bar chart embeds */
+function getBarFormatting(domain: string, sectionId: string): { formatValue: (v: number) => string; unit: string } {
+  // Rs Crore values
+  if (domain === 'states' && (sectionId === 'gsdp' || sectionId === 'percapita')) {
+    return { formatValue: (v) => `₹${(v / 100000).toFixed(1)}L Cr`, unit: '' };
+  }
+  if (domain === 'elections' && sectionId === 'money-muscle') {
+    return { formatValue: (v) => `₹${v.toFixed(0)} Cr`, unit: '' };
+  }
+  // Percentages
+  if (domain === 'states' && (sectionId === 'growth' || sectionId === 'revenue' || sectionId === 'fiscal-health')) {
+    return { formatValue: (v) => formatPercent(v), unit: '' };
+  }
+  if (domain === 'crime' || domain === 'census') {
+    return { formatValue: (v) => v >= 100 ? formatIndianNumber(v) : v.toFixed(1), unit: '' };
+  }
+  if (domain === 'environment' && sectionId === 'water') {
+    return { formatValue: (v) => formatPercent(v), unit: '' };
+  }
+  if (domain === 'healthcare') {
+    return { formatValue: (v) => v.toFixed(1), unit: '' };
+  }
+  if (domain === 'education') {
+    return { formatValue: (v) => v >= 10 ? Math.round(v).toString() : v.toFixed(1), unit: '' };
+  }
+  // Default: no unit suffix, plain number
+  return { formatValue: (v) => v >= 1000 ? formatIndianNumber(v) : v.toFixed(1), unit: '' };
 }
 
 // ─── Series builders ──────────────────────────────────────────────────

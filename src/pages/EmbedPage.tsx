@@ -19,12 +19,21 @@ export default function EmbedPage() {
   const entry = getChartEntry(registryKey);
   const meta = domain ? DOMAIN_META[domain] : undefined;
 
-  useEffect(() => {
+  // Handle missing entry during render (setState during render pattern)
+  const [prevEntry, setPrevEntry] = useState(entry);
+  if (prevEntry !== entry) {
+    setPrevEntry(entry);
     if (!entry) {
       setError('Chart not found');
       setLoading(false);
-      return;
+    } else {
+      setLoading(true);
+      setError(null);
     }
+  }
+
+  useEffect(() => {
+    if (!entry) return;
 
     // Load all data files for this chart
     Promise.all(entry.dataFiles.map((f) => fetch(f).then((r) => r.json())))
@@ -33,8 +42,8 @@ export default function EmbedPage() {
         setData(results.length === 1 ? results[0] : results);
         setLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
+      .catch(() => {
+        setError('Failed to load chart data');
         setLoading(false);
       });
   }, [entry]);
@@ -62,7 +71,7 @@ export default function EmbedPage() {
   if (error) {
     return (
       <div style={{ padding: 40, textAlign: 'center', color: '#f87171', background: '#06080f', minHeight: '100vh' }}>
-        Error: {error}
+        {error}
       </div>
     );
   }

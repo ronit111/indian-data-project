@@ -7,7 +7,6 @@ import type {
   ParticipationData,
   EnrollmentData,
   LiteracyData,
-  HealthData,
   WomenSafetyData,
 } from '../data/schema.ts';
 
@@ -33,9 +32,6 @@ const enrollment = (bag: TopicDataBag) =>
 
 const literacy = (bag: TopicDataBag) =>
   bag['census/literacy'] as LiteracyData | undefined;
-
-const health = (bag: TopicDataBag) =>
-  bag['census/health'] as HealthData | undefined;
 
 const womenSafety = (bag: TopicDataBag) =>
   bag['crime/women-safety'] as WomenSafetyData | undefined;

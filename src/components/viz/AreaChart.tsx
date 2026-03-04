@@ -1,7 +1,8 @@
 import { useMemo, useRef, useEffect, useState } from 'react';
 import { scaleLinear, scalePoint } from 'd3-scale';
 import { area as d3Area, line as d3Line, curveMonotoneX } from 'd3-shape';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 // ─── Types ───────────────────────────────────────────────────────────
 export interface AreaSeries {

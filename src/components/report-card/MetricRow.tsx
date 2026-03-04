@@ -33,15 +33,12 @@ const QUARTILE_LABELS: Record<number, string> = {
   4: 'Bottom 25%',
 };
 
-export function MetricRow({ metric, accentColor, index }: MetricRowProps) {
+export function MetricRow({ metric, index }: MetricRowProps) {
   const { def, value, nationalAvg, rank, totalStates, quartile } = metric;
 
   if (value == null) return null;
 
   const quartileColor = QUARTILE_COLORS[quartile] ?? '#6B7280';
-
-  // Position dot on min-max gauge
-  const allRange = totalStates > 0;
 
   return (
     <motion.div

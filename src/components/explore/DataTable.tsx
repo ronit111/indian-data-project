@@ -68,23 +68,6 @@ export function DataTable({ data }: DataTableProps) {
   const ministryCount = sorted.filter((m) => m.name.startsWith('Ministry')).length;
   const categoryCount = sorted.length - ministryCount;
 
-  const SortHeader = ({ label, field, className = '' }: { label: string; field: SortKey; className?: string }) => (
-    <th
-      className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider cursor-pointer select-none transition-colors ${className}`}
-      style={{ color: sortKey === field ? 'var(--text-secondary)' : 'var(--text-muted)' }}
-      onClick={() => handleSort(field)}
-    >
-      <span className="flex items-center gap-1">
-        {label}
-        {sortKey === field && (
-          <span style={{ color: 'var(--saffron)' }}>
-            {sortDir === 'asc' ? '\u2191' : '\u2193'}
-          </span>
-        )}
-      </span>
-    </th>
-  );
-
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
@@ -107,11 +90,27 @@ export function DataTable({ data }: DataTableProps) {
         <table className="w-full">
           <thead className="sticky top-16 z-10" style={{ background: 'var(--bg-raised)' }}>
             <tr>
-              <SortHeader label="Expenditure Head" field="name" />
-              <SortHeader label="Budget (Rs Cr)" field="budgetEstimate" />
-              <SortHeader label="% Total" field="percentOfTotal" />
-              <SortHeader label="YoY" field="yoyChange" />
-              <SortHeader label="Per Capita" field="perCapita" />
+              {([['Expenditure Head', 'name'], ['Budget (Rs Cr)', 'budgetEstimate'], ['% Total', 'percentOfTotal'], ['YoY', 'yoyChange'], ['Per Capita', 'perCapita']] as const).map(([label, field]) => (
+                <th
+                  key={field}
+                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider"
+                  aria-sort={sortKey === field ? (sortDir === 'asc' ? 'ascending' : 'descending') : undefined}
+                >
+                  <button
+                    type="button"
+                    onClick={() => handleSort(field)}
+                    className="flex items-center gap-1 cursor-pointer select-none bg-transparent border-none p-0 text-xs font-semibold uppercase tracking-wider transition-colors"
+                    style={{ color: sortKey === field ? 'var(--text-secondary)' : 'var(--text-muted)' }}
+                  >
+                    {label}
+                    {sortKey === field && (
+                      <span style={{ color: 'var(--saffron)' }}>
+                        {sortDir === 'asc' ? '\u2191' : '\u2193'}
+                      </span>
+                    )}
+                  </button>
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -176,6 +175,10 @@ function MinistryRow({
           borderLeft: expanded ? '2px solid var(--saffron)' : '2px solid transparent',
         }}
         onClick={hasSchemes ? onToggle : undefined}
+        onKeyDown={hasSchemes ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } } : undefined}
+        tabIndex={hasSchemes ? 0 : undefined}
+        role={hasSchemes ? 'button' : undefined}
+        aria-expanded={hasSchemes ? expanded : undefined}
       >
         <td className="px-4 py-3">
           <div className="flex items-center gap-2">
@@ -277,6 +280,10 @@ function MinistryCard({
         border: expanded ? '1px solid var(--cyan)' : 'var(--border-subtle)',
       }}
       onClick={hasSchemes ? onToggle : undefined}
+      onKeyDown={hasSchemes ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } } : undefined}
+      tabIndex={hasSchemes ? 0 : undefined}
+      role={hasSchemes ? 'button' : undefined}
+      aria-expanded={hasSchemes ? expanded : undefined}
     >
       <div className="flex justify-between items-start mb-2">
         <div className="flex-1">

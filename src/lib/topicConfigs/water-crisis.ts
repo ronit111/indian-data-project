@@ -1,5 +1,5 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { EnvironmentSummary, CensusSummary, WaterData, PopulationData } from '../data/schema.ts';
+import type { EnvironmentSummary, CensusSummary, WaterData } from '../data/schema.ts';
 
 const envSummary = (bag: TopicDataBag) => bag['environment/summary'] as EnvironmentSummary | undefined;
 const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;

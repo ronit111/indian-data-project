@@ -6,7 +6,6 @@ import type {
   FiscalData,
   MonetaryPolicyData,
   GDPGrowthData,
-  BudgetTrendsData,
 } from '../data/schema.ts';
 
 // ─── Typed accessors ────────────────────────────────────────────────
@@ -28,9 +27,6 @@ const monetaryPolicy = (bag: TopicDataBag) =>
 
 const gdpGrowth = (bag: TopicDataBag) =>
   bag['economy/gdp-growth'] as GDPGrowthData | undefined;
-
-const budgetTrends = (bag: TopicDataBag) =>
-  bag['budget/trends'] as BudgetTrendsData | undefined;
 
 // ─── Config ─────────────────────────────────────────────────────────
 

@@ -27,17 +27,6 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   const [showMobileActions, setShowMobileActions] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const entry = getChartEntry(registryKey);
-  if (!entry) return <>{children}</>;
-
-  const handleMouseEnter = () => {
-    // Lazily grab SVG reference on first hover
-    if (!svgRef.current && containerRef.current) {
-      svgRef.current = containerRef.current.querySelector('svg');
-    }
-    setHovered(true);
-  };
-
   const handleMobileTap = useCallback(() => {
     if (!svgRef.current && containerRef.current) {
       svgRef.current = containerRef.current.querySelector('svg');
@@ -57,6 +46,17 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   useEffect(() => {
     return () => clearTimeout(hideTimer.current);
   }, []);
+
+  const entry = getChartEntry(registryKey);
+  if (!entry) return <>{children}</>;
+
+  const handleMouseEnter = () => {
+    // Lazily grab SVG reference on first hover
+    if (!svgRef.current && containerRef.current) {
+      svgRef.current = containerRef.current.querySelector('svg');
+    }
+    setHovered(true);
+  };
 
   return (
     <div

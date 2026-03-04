@@ -64,22 +64,11 @@ export const EXPENSE_PRESETS: Record<string, { label: string; total: number; mul
 };
 
 /**
- * Find the CPI rate for a specific year from a time series.
- * Returns null if the year isn't found.
- */
-function findRate(
-  series: { period: string; value: number }[],
-  year: string
-): number | null {
-  const entry = series.find((s) => s.period === year);
-  return entry?.value ?? null;
-}
-
-/**
  * Parse the starting calendar year from a fiscal year string (e.g., "2019-20" → 2019).
  */
 function fiscalYearStart(fy: string): number {
-  return parseInt(fy.split('-')[0], 10);
+  const n = parseInt(fy.split('-')[0], 10);
+  return isNaN(n) ? 0 : n;
 }
 
 /**
@@ -173,7 +162,7 @@ export function calculateCostChange(
   // Compute years between for annualized rate
   const yearCount = estimateYearsBetween(fromYear, toYear);
   const annualizedRate =
-    yearCount > 0
+    yearCount > 0 && adjustedTotal > 0
       ? (Math.pow(currentTotal / adjustedTotal, 1 / yearCount) - 1) * 100
       : 0;
 

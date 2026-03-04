@@ -24,7 +24,8 @@ export async function generateShareCard(options: ShareCardOptions): Promise<Blob
   const canvas = document.createElement('canvas');
   canvas.width = 1200;
   canvas.height = 630;
-  const ctx = canvas.getContext('2d')!;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Canvas 2D context unavailable');
 
   // Background
   const bgGrad = ctx.createLinearGradient(0, 0, 1200, 630);
@@ -139,7 +140,9 @@ export async function shareCard(options: ShareCardOptions): Promise<'shared' | '
       return 'shared';
     }
   } catch (e) {
-    if ((e as Error).name === 'AbortError') return 'shared'; // user cancelled share sheet
+    // User cancelled the share sheet — don't force a download
+    if (e instanceof Error && e.name === 'AbortError') return 'shared';
+    // Any other share failure → fall through to download
   }
 
   // Fallback: download

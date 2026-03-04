@@ -3,7 +3,7 @@ Pydantic models matching the TypeScript schema contract.
 Used to validate pipeline output before writing JSON.
 """
 
-from pydantic import BaseModel, ConfigDict, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 # ─── Budget Summary ───────────────────────────────────────────────
@@ -144,7 +144,7 @@ class SchemesData(BaseModel):
 
 # ─── Tax Calculator ──────────────────────────────────────────────
 class TaxSlab(BaseModel):
-    from_: float  # 'from' is reserved in Python
+    from_: float = Field(alias="from")  # 'from' is reserved in Python
     to: float | None
     rate: float
 
@@ -166,7 +166,7 @@ class TaxRegime(BaseModel):
 class TaxSlabsData(BaseModel):
     assessmentYear: str
     financialYear: str
-    regimes: dict  # {"new": TaxRegime, "old": TaxRegime}
+    regimes: dict[str, TaxRegime]  # {"new": TaxRegime, "old": TaxRegime}
     cess: float
     surchargeSlabs: list[TaxSlab]
 

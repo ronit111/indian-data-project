@@ -60,7 +60,7 @@ export function calculateEMI(
   if (tenureMonths <= 0) {
     throw new Error('Tenure must be > 0 months');
   }
-  if (annualRate === 0) {
+  if (annualRate <= 0) {
     const monthlyEMI = principal / tenureMonths;
     return { monthlyEMI, totalPayment: principal, totalInterest: 0, effectiveRate: 0, interestRatio: 0 };
   }
@@ -68,6 +68,10 @@ export function calculateEMI(
   const r = annualRate / 12 / 100;
   const n = tenureMonths;
   const power = Math.pow(1 + r, n);
+  // Guard against overflow (extremely high rate × long tenure)
+  if (!isFinite(power) || power <= 1) {
+    return { monthlyEMI: 0, totalPayment: 0, totalInterest: 0, effectiveRate: annualRate, interestRatio: 0 };
+  }
   const monthlyEMI = (principal * r * power) / (power - 1);
   const totalPayment = monthlyEMI * n;
   const totalInterest = totalPayment - principal;
@@ -112,5 +116,7 @@ export function getEffectiveRate(
   loanType: LoanType,
   spreads: LoanSpreadsData
 ): number {
-  return repoRate + spreads.spreads[loanType].typicalSpread;
+  const spread = spreads.spreads[loanType];
+  if (!spread) return repoRate;
+  return repoRate + spread.typicalSpread;
 }

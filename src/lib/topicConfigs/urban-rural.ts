@@ -1,8 +1,7 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { CensusSummary, EmploymentSummary, HealthcareSummary, PopulationData } from '../data/schema.ts';
+import type { CensusSummary, HealthcareSummary, PopulationData } from '../data/schema.ts';
 
 const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
-const empSummary = (bag: TopicDataBag) => bag['employment/summary'] as EmploymentSummary | undefined;
 const population = (bag: TopicDataBag) => bag['census/population'] as PopulationData | undefined;
 
 export const urbanRural: TopicDef = {

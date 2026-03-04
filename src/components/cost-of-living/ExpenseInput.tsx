@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useCostOfLivingStore } from '../../store/costOfLivingStore.ts';
 import { EXPENSE_PRESETS } from '../../lib/costOfLivingEngine.ts';
 import { formatIndianNumber } from '../../lib/format.ts';

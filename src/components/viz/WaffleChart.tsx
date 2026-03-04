@@ -1,7 +1,8 @@
 import { useMemo, useState, useCallback } from 'react';
 import type { RevenueCategory } from '../../lib/data/schema.ts';
 import { formatPercent, formatRsCrore } from '../../lib/format.ts';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 
 interface WaffleChartProps {
   categories: RevenueCategory[];
@@ -41,15 +42,13 @@ export function WaffleChart({ categories, isVisible, highlightCategory }: Waffle
 
   const sorted = useMemo(() => {
     const s = [...categories].sort((a, b) => b.percentOfTotal - a.percentOfTotal);
-    let remaining = TOTAL;
-    return s.map((cat, i) => {
-      const squares =
-        i === s.length - 1
-          ? remaining
-          : Math.round((cat.percentOfTotal / 100) * TOTAL);
-      remaining -= squares;
-      return { ...cat, squares: Math.max(0, squares) };
-    });
+    return s.reduce<Array<(typeof s)[number] & { squares: number }>>((acc, cat, i) => {
+      const used = acc.reduce((sum, c) => sum + c.squares, 0);
+      const squares = i === s.length - 1
+        ? TOTAL - used
+        : Math.round((cat.percentOfTotal / 100) * TOTAL);
+      return [...acc, { ...cat, squares: Math.max(0, squares) }];
+    }, []);
   }, [categories]);
 
   const cells = useMemo(() => {

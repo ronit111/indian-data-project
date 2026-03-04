@@ -1,8 +1,7 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { EnvironmentSummary, EconomySummary, EnergyData, ForestData } from '../data/schema.ts';
+import type { EnvironmentSummary, EnergyData, ForestData } from '../data/schema.ts';
 
 const envSummary = (bag: TopicDataBag) => bag['environment/summary'] as EnvironmentSummary | undefined;
-const ecoSummary = (bag: TopicDataBag) => bag['economy/summary'] as EconomySummary | undefined;
 const energy = (bag: TopicDataBag) => bag['environment/energy'] as EnergyData | undefined;
 const forest = (bag: TopicDataBag) => bag['environment/forest'] as ForestData | undefined;
 

@@ -21,6 +21,8 @@ def yoy_change(current: float, previous: float | None) -> float | None:
 
 def per_capita(amount_crore: float, population: int = POPULATION) -> float:
     """Convert Rs crore to per-capita Rs."""
+    if population <= 0:
+        return 0.0
     # 1 crore = 10,000,000
     total_rs = amount_crore * 1e7
     return round(total_rs / population, 0)

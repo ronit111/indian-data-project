@@ -21,7 +21,7 @@ const CHART_TYPE_LABELS: Record<string, string> = {
   custom: 'Custom',
 };
 
-export function ChartGalleryCard({ entry, registryKey }: ChartGalleryCardProps) {
+export function ChartGalleryCard({ entry }: ChartGalleryCardProps) {
   const [feedback, setFeedback] = useState('');
   const [csvLoading, setCsvLoading] = useState(false);
   const [showCitation, setShowCitation] = useState(false);

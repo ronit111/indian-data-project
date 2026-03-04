@@ -67,13 +67,14 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
   // Bar segments: cumulative x positions
   const barWidth = 1000;
   const segments = useMemo(() => {
-    let x = 0;
-    return dailyBreakdown.map((m) => {
-      const width = m.share * barWidth;
-      const seg = { ...m, x, width };
-      x += width;
-      return seg;
-    });
+    return dailyBreakdown.reduce<Array<(typeof dailyBreakdown)[number] & { x: number; width: number }>>(
+      (acc, m) => {
+        const prevEnd = acc.length > 0 ? acc[acc.length - 1].x + acc[acc.length - 1].width : 0;
+        const width = m.share * barWidth;
+        return [...acc, { ...m, x: prevEnd, width }];
+      },
+      []
+    );
   }, [dailyBreakdown]);
 
   return (

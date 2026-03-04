@@ -101,7 +101,7 @@ def get_curated_statewise_data() -> pd.DataFrame:
         ("KA", "Karnataka", 48000, 67300000),
         ("GJ", "Gujarat", 42000, 70800000),
         ("AP", "Andhra Pradesh", 48000, 52400000),
-        ("OR", "Odisha", 54000, 46700000),
+        ("OD", "Odisha", 54000, 46700000),
         ("TS", "Telangana", 30000, 40000000),
         ("KL", "Kerala", 24000, 35200000),
         ("JH", "Jharkhand", 42000, 38000000),

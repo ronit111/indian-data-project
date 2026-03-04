@@ -1,9 +1,7 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { EmploymentSummary, EducationSummary, CensusSummary, UnemploymentData, SectoralData } from '../data/schema.ts';
+import type { EmploymentSummary, UnemploymentData, SectoralData } from '../data/schema.ts';
 
 const empSummary = (bag: TopicDataBag) => bag['employment/summary'] as EmploymentSummary | undefined;
-const eduSummary = (bag: TopicDataBag) => bag['education/summary'] as EducationSummary | undefined;
-const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
 const unemployment = (bag: TopicDataBag) => bag['employment/unemployment'] as UnemploymentData | undefined;
 const sectoral = (bag: TopicDataBag) => bag['employment/sectoral'] as SectoralData | undefined;
 

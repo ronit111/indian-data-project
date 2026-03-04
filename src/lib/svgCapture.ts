@@ -162,9 +162,15 @@ export async function captureSvgToPng(
 
   // 2. Get SVG dimensions from viewBox
   const viewBox = svgElement.getAttribute('viewBox');
-  const [, , svgW, svgH] = viewBox
-    ? viewBox.split(/\s+/).map(Number)
-    : [0, 0, 700, 360];
+  let svgW = 700;
+  let svgH = 360;
+  if (viewBox) {
+    const parts = viewBox.split(/[\s,]+/).map(Number);
+    if (parts.length >= 4 && parts.every(n => isFinite(n))) {
+      svgW = parts[2] || 700;
+      svgH = parts[3] || 360;
+    }
+  }
 
   // 3. Serialize to data URI and load as image
   const dataUri = serializeSvgToDataUri(clone);
@@ -174,7 +180,8 @@ export async function captureSvgToPng(
   const canvas = document.createElement('canvas');
   canvas.width = width;
   canvas.height = height;
-  const ctx = canvas.getContext('2d')!;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Canvas 2D context unavailable');
 
   // 5. Dark background
   const bgGrad = ctx.createLinearGradient(0, 0, width, height);

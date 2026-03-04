@@ -44,6 +44,14 @@ export default function CrimeExplorerPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Reset loading state when year changes (setState during render pattern)
+  const [prevYear, setPrevYear] = useState(year);
+  if (prevYear !== year) {
+    setPrevYear(year);
+    setLoading(true);
+    setError(null);
+  }
+
   useUrlState({
     indicator: { get: () => selectedIndicatorId, set: setIndicatorId },
     category: { get: () => selectedCategory === 'all' ? null : selectedCategory, set: (v) => setCategory(v ?? 'all') },
@@ -51,7 +59,6 @@ export default function CrimeExplorerPage() {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
     loadCrimeIndicators(year)
       .then((data) => {
         if (!cancelled) {

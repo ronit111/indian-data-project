@@ -1,5 +1,5 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { StatesSummary, GSDPData, EnrollmentData, HealthData } from '../data/schema.ts';
+import type { StatesSummary, GSDPData, EnrollmentData } from '../data/schema.ts';
 
 const statesSummary = (bag: TopicDataBag) => bag['states/summary'] as StatesSummary | undefined;
 const gsdp = (bag: TopicDataBag) => bag['states/gsdp'] as GSDPData | undefined;

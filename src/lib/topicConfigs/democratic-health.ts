@@ -1,10 +1,8 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { ElectionsSummary, CensusSummary, TurnoutData, CandidatesData } from '../data/schema.ts';
+import type { ElectionsSummary, TurnoutData } from '../data/schema.ts';
 
 const elecSummary = (bag: TopicDataBag) => bag['elections/summary'] as ElectionsSummary | undefined;
-const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
 const turnout = (bag: TopicDataBag) => bag['elections/turnout'] as TurnoutData | undefined;
-const candidates = (bag: TopicDataBag) => bag['elections/candidates'] as CandidatesData | undefined;
 
 export const democraticHealth: TopicDef = {
   id: 'democratic-health',

@@ -24,6 +24,9 @@ def build_gsdp(
         base_year: Constant price base year (e.g. "2011-12")
         history_data: Optional 3-year GSDP history for top states
     """
+    if not curated_data:
+        logger.warning("  gsdp.json: no state data available")
+        return {"year": data_year, "baseYear": base_year, "states": [], "source": "RBI Handbook of Statistics on Indian States"}
     states = sorted(curated_data, key=lambda s: s["gsdp"], reverse=True)
     logger.info(f"  gsdp.json: {len(states)} states, top = {states[0]['name']}")
 

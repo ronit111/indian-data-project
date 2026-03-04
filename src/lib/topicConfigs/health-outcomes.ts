@@ -1,10 +1,8 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { HealthcareSummary, CensusSummary, HealthData, InfrastructureData, HealthSpendingData } from '../data/schema.ts';
+import type { HealthcareSummary, HealthData, HealthSpendingData } from '../data/schema.ts';
 
 const hcSummary = (bag: TopicDataBag) => bag['healthcare/summary'] as HealthcareSummary | undefined;
-const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
 const healthData = (bag: TopicDataBag) => bag['census/health'] as HealthData | undefined;
-const infra = (bag: TopicDataBag) => bag['healthcare/infrastructure'] as InfrastructureData | undefined;
 const hcSpending = (bag: TopicDataBag) => bag['healthcare/spending'] as HealthSpendingData | undefined;
 
 export const healthOutcomes: TopicDef = {

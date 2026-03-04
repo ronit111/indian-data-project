@@ -100,7 +100,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'd3-vendor': ['d3', 'd3-geo', 'd3-hierarchy', 'd3-sankey', 'd3-scale', 'd3-shape'],
+          'd3-vendor': ['d3-geo', 'd3-hierarchy', 'd3-sankey', 'd3-scale', 'd3-shape'],
           'motion-vendor': ['framer-motion'],
           'zustand-vendor': ['zustand'],
         },

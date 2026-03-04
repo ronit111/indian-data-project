@@ -13,7 +13,7 @@ interface TopicSectionProps {
   accent: string;
 }
 
-export function TopicSection({ section, bag, topicId, accent }: TopicSectionProps) {
+export function TopicSection({ section, bag, topicId }: TopicSectionProps) {
   const [ref, isVisible] = useScrollTrigger<HTMLElement>({ threshold: 0.15 });
 
   return (

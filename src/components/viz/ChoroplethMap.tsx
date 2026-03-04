@@ -1,12 +1,12 @@
 import { useMemo, useState, useEffect } from 'react';
 import { geoMercator, geoPath } from 'd3-geo';
-import { scaleSequential } from 'd3-scale';
 import { interpolateRgb } from 'd3-interpolate';
 import * as topojson from 'topojson-client';
 import type { StateTransfer } from '../../lib/data/schema.ts';
 import { formatRsCrore, formatIndianNumber } from '../../lib/format.ts';
 import { TOPO_NAME_TO_BUDGET_CODE, NE_STATES, STATES_WITHOUT_BUDGET_DATA } from '../../lib/stateMapping.ts';
-import { Tooltip, TooltipTitle, TooltipRow, useTooltip } from '../ui/Tooltip.tsx';
+import { Tooltip, TooltipTitle, TooltipRow } from '../ui/Tooltip.tsx';
+import { useTooltip } from '../../hooks/useTooltip.ts';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry } from 'geojson';
 
@@ -51,8 +51,8 @@ export function ChoroplethMap({ states, isVisible, ariaLabel }: ChoroplethMapPro
   const neData = stateMap.get('NE');
 
   // Convert TopoJSON to GeoJSON features
-  const { features, projection, pathGenerator } = useMemo(() => {
-    if (!topoData) return { features: [] as Feature<Geometry, StateProperties>[], projection: null, pathGenerator: null };
+  const { features, pathGenerator } = useMemo(() => {
+    if (!topoData) return { features: [] as Feature<Geometry, StateProperties>[], pathGenerator: null };
 
     const geoJSON = topojson.feature(topoData, topoData.objects.states) as FeatureCollection<Geometry, StateProperties>;
     const width = 600;
@@ -61,7 +61,7 @@ export function ChoroplethMap({ states, isVisible, ariaLabel }: ChoroplethMapPro
     const proj = geoMercator().fitSize([width, height], geoJSON);
     const path = geoPath(proj);
 
-    return { features: geoJSON.features, projection: proj, pathGenerator: path };
+    return { features: geoJSON.features, pathGenerator: path };
   }, [topoData]);
 
   // Color scale: diverging saffron → neutral → cyan

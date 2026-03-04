@@ -117,7 +117,7 @@ const PREFETCH_MAP: Record<string, () => Promise<unknown>> = {
 const prefetched = new Set<string>();
 
 /** Prefetch a route's chunk on hover. Call with the link's href. */
-export function prefetchRoute(path: string) {
+function prefetchRoute(path: string) {
   // Find the matching prefix
   const prefix = Object.keys(PREFETCH_MAP).find((p) => path === p || path.startsWith(p + '/'));
   if (!prefix || prefetched.has(prefix)) return;
