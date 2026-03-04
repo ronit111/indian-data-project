@@ -12,7 +12,7 @@ import { OutOfPocketSection } from '../components/healthcare/OutOfPocketSection.
 import { ImmunizationSection } from '../components/healthcare/ImmunizationSection.tsx';
 import { DiseaseBurdenSection } from '../components/healthcare/DiseaseBurdenSection.tsx';
 import { DoctorGapSection } from '../components/healthcare/DoctorGapSection.tsx';
-import { HealthcareCTASection } from '../components/healthcare/HealthcareCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function HealthcarePage() {
   const year = useHealthcareStore((s) => s.selectedYear);
@@ -142,7 +142,7 @@ export default function HealthcarePage() {
 
       <div className="composition-divider" />
 
-      <HealthcareCTASection />
+      <DomainCTA domain="healthcare" />
     </motion.div>
   );
 }

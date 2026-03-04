@@ -11,7 +11,7 @@ import { PartyLandscapeSection } from '../components/elections/PartyLandscapeSec
 import { LokSabha2024Section } from '../components/elections/LokSabha2024Section.tsx';
 import { MoneyMuscleSection } from '../components/elections/MoneyMuscleSection.tsx';
 import { GenderGapSection } from '../components/elections/GenderGapSection.tsx';
-import { ElectionsCTASection } from '../components/elections/ElectionsCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function ElectionsPage() {
   const year = useElectionsStore((s) => s.selectedYear);
@@ -137,7 +137,7 @@ export default function ElectionsPage() {
 
       <div className="composition-divider" />
 
-      <ElectionsCTASection />
+      <DomainCTA domain="elections" />
     </motion.div>
   );
 }

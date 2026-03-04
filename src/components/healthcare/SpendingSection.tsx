@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import type { HealthSpendingData, ForexData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -197,6 +198,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
         )}
 
         <RelatedTopics sectionId="spending" domain="healthcare" />
+        <CrossDomainLink domain="healthcare" sectionId="spending" />
 
         <p className="source-attribution">
           Source: {data.source} · Exchange rates: RBI / World Bank

@@ -5,6 +5,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { EnrollmentData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface DropoutSectionProps {
   data: EnrollmentData;
@@ -101,6 +102,8 @@ export function DropoutSection({ data }: DropoutSectionProps) {
             </ChartActionsWrapper>
           </div>
         )}
+
+        <CrossDomainLink domain="education" sectionId="dropout" />
 
         <p className="source-attribution">
           Source: {data.source}

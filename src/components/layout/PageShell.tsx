@@ -21,6 +21,16 @@ export function PageShell({ children }: { children: ReactNode }) {
       setClassroomMode(true);
     }
   }, [location.search, classroomMode, setClassroomMode]);
+
+  // Classroom mode: scale root font-size so ALL rem-based sizes grow proportionally
+  useEffect(() => {
+    if (classroomMode) {
+      document.documentElement.style.fontSize = '19px';
+    } else {
+      document.documentElement.style.fontSize = '';
+    }
+    return () => { document.documentElement.style.fontSize = ''; };
+  }, [classroomMode]);
   const isBudgetStory = location.pathname === '/budget';
   const isEconomyStory = location.pathname === '/economy';
   const isRBIStory = location.pathname === '/rbi';

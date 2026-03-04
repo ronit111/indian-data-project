@@ -492,10 +492,23 @@
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
 /* ─── Classroom Mode ──────────────────────────────────────────── */
+/* Root font-size scaled to 19px via JS (PageShell.tsx) so ALL rem-based
+   Tailwind classes grow proportionally. These overrides handle the custom
+   properties used by .text-annotation, .text-caption, etc. plus higher
+   contrast text colors for projector readability. */
 .classroom-mode {
-  --text-body: 1.125rem;
-  --text-annotation: 1rem;
-  --text-caption: 0.875rem;
+  /* Scale custom type vars proportionally */
+  --text-hero:        clamp(3.5rem, 9vw, 8rem);
+  --text-composition: clamp(1.75rem, 3.5vw, 3rem);
+  --text-stat:        2.125rem;
+  --text-body:        1.125rem;
+  --text-annotation:  1rem;
+  --text-caption:     0.875rem;
+  --text-section-num: 0.8125rem;
+
+  /* Higher contrast — brighter text for projector readability */
+  --text-secondary: #d0d5dc;
+  --text-muted:     #a0aab8;
 }
 
 /* ─── Reduced Motion ───────────────────────────────────────────── */

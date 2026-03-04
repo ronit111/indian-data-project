@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { FiscalData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -67,6 +68,7 @@ export function FiscalSection({ fiscal }: FiscalSectionProps) {
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="fiscal" domain="economy" />
+        <CrossDomainLink domain="economy" sectionId="fiscal" />
 
 
         <p className="source-attribution">

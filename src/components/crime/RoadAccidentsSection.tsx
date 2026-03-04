@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { AreaChart, type AreaSeries } from '../viz/AreaChart.tsx';
 import { HorizontalBarChart } from '../viz/HorizontalBarChart.tsx';
 import { DotStrip } from '../viz/DotStrip.tsx';
@@ -124,6 +125,7 @@ export function RoadAccidentsSection({ data }: RoadAccidentsSectionProps) {
         </div>
 
         <RelatedTopics sectionId="road-accidents" domain="crime" />
+        <CrossDomainLink domain="crime" sectionId="road-accidents" />
 
         <p className="source-attribution">
           Source: {data.source}

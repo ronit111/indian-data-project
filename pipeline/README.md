@@ -1,6 +1,6 @@
-# India Budget Data Pipeline
+# Data Pipelines
 
-Fetches, transforms, and validates Union Budget 2025-26 data, producing JSON files consumed by the React frontend.
+Fetches, transforms, and validates data for all 11 domains of the India Data Portal. Each pipeline produces JSON files consumed by the React frontend.
 
 ## Setup
 
@@ -9,48 +9,46 @@ cd pipeline
 pip install -e ".[dev]"
 ```
 
-## Run the Pipeline
+## Running Pipelines
 
 ```bash
+# Run a specific domain pipeline
+python src/{domain}/main.py
+
+# Run the budget pipeline
 python src/main.py
 ```
 
-This will:
-1. Attempt to fetch data from Open Budgets India (CKAN API)
-2. Fall back to curated 2025-26 budget data if the API is unavailable
-3. Transform data into visualization-ready structures (Sankey, treemap, etc.)
-4. Validate all output against Pydantic schemas
-5. Write JSON files to `../public/data/`
-
-## Output Files
-
-| File | Description |
-|------|-------------|
-| `budget/2025-26/summary.json` | Top-level budget numbers |
-| `budget/2025-26/receipts.json` | Revenue/receipt categories |
-| `budget/2025-26/expenditure.json` | Ministry-wise expenditure |
-| `budget/2025-26/sankey.json` | Sankey diagram nodes & links |
-| `budget/2025-26/treemap.json` | Treemap hierarchy |
-| `budget/2025-26/statewise.json` | State-wise transfers |
-| `budget/2025-26/schemes.json` | Government schemes |
-| `tax-calculator/slabs.json` | Income tax slabs (new & old regime) |
-| `tax-calculator/expenditure-shares.json` | How tax money is spent |
-| `years.json` | Available budget years |
-
-## Run Tests
-
-```bash
-pytest tests/ -v
-```
+Each pipeline:
+1. Fetches data from automated sources (APIs, XLSX scrapers)
+2. Falls back to curated data if APIs are unavailable
+3. Transforms into visualization-ready structures
+4. Validates output against Pydantic schemas
+5. Writes JSON files to `../public/data/{domain}/`
 
 ## Architecture
 
 ```
 src/
-├── main.py              # Orchestrates all stages
-├── sources/             # Data fetching (CKAN API)
-├── extract/             # CSV/Excel parsing + curated data
-├── transform/           # Normalization, metrics, Sankey, treemap
-├── validate/            # Pydantic models matching TypeScript schema
+├── main.py              # Budget pipeline (original)
+├── common/              # Shared infrastructure
+│   ├── world_bank.py    # World Bank API client (7 domains)
+│   ├── mospi_client.py  # MOSPI eSankhyiki API client (CPI, GDP, PLFS, WPI, IIP, Energy)
+│   └── rbi_handbook.py  # RBI Handbook XLSX scraper
+├── {domain}/            # Per-domain pipeline
+│   ├── main.py          # Orchestrates stages
+│   ├── sources/         # Data fetching (API + curated constants)
+│   ├── transform/       # Normalization, metrics, viz structures
+│   └── validate/        # Pydantic models matching TypeScript schema
 └── publish/             # JSON file writer
+```
+
+## Data Sources
+
+See [PIPELINE_DATA_SOURCES.md](./PIPELINE_DATA_SOURCES.md) for the full catalog of automated and curated sources, update triggers, and data integrity practices.
+
+## Tests
+
+```bash
+pytest tests/ -v
 ```

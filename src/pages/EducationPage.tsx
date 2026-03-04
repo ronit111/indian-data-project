@@ -12,7 +12,7 @@ import { DropoutSection } from '../components/education/DropoutSection.tsx';
 import { QualitySection } from '../components/education/QualitySection.tsx';
 import { TeacherSection } from '../components/education/TeacherSection.tsx';
 import { SpendingSection } from '../components/education/SpendingSection.tsx';
-import { EducationCTASection } from '../components/education/EducationCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function EducationPage() {
   const year = useEducationStore((s) => s.selectedYear);
@@ -140,7 +140,7 @@ export default function EducationPage() {
 
       <div className="composition-divider" />
 
-      <EducationCTASection />
+      <DomainCTA domain="education" />
     </motion.div>
   );
 }

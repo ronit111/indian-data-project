@@ -12,7 +12,7 @@ import { VitalStatsSection } from '../components/census/VitalStatsSection.tsx';
 import { HealthSection } from '../components/census/HealthSection.tsx';
 import { LiteracySection } from '../components/census/LiteracySection.tsx';
 import { UrbanizationSection } from '../components/census/UrbanizationSection.tsx';
-import { CensusCTASection } from '../components/census/CensusCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function CensusPage() {
   const year = useCensusStore((s) => s.selectedYear);
@@ -162,7 +162,7 @@ export default function CensusPage() {
 
       <div className="composition-divider" />
 
-      <CensusCTASection />
+      <DomainCTA domain="census" />
     </motion.div>
   );
 }

@@ -5,6 +5,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import type { DemographicsData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 const MIN_POINTS = 3;
 const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -164,6 +165,8 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
             </ChartActionsWrapper>
           </div>
         )}
+
+        <CrossDomainLink domain="census" sectionId="age" />
 
         <p className="source-attribution">
           Source: {data.source}

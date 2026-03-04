@@ -47,7 +47,7 @@ export default function OpenDataPage() {
     <>
       <SEOHead
         title="Open Data API — Indian Data Project"
-        description="Free, open JSON API for Indian government data. 71 endpoints across 10 domains — budget, economy, RBI, states, census, education, employment, healthcare, environment, and elections."
+        description="Free, open JSON API for Indian government data. 80 endpoints across 11 domains — budget, economy, RBI, states, census, education, employment, healthcare, environment, elections, and crime."
         path="/open-data"
         image="/og-open-data.png"
       />
@@ -79,7 +79,7 @@ export default function OpenDataPage() {
               className="px-3 py-1 rounded-full text-xs font-bold"
               style={{ background: 'var(--bg-raised)', color: 'var(--saffron)' }}
             >
-              10 domains
+              11 domains
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-bold"

@@ -9,7 +9,7 @@
 import type { ChartType } from './chartRegistry.ts';
 
 // ─── Domain Data Keys ───────────────────────────────────────────────
-// Every loadable JSON file across all 10 domains, keyed for lookup.
+// Every loadable JSON file across all 11 domains, keyed for lookup.
 
 export type DomainDataKey =
   // Budget

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { HealthData } from '../../lib/data/schema.ts';
@@ -96,6 +97,7 @@ export function HealthSection({ data }: HealthSectionProps) {
         )}
 
         <RelatedTopics sectionId="health" domain="census" />
+        <CrossDomainLink domain="census" sectionId="health" />
 
         <p className="source-attribution">
           Source: {data.source}

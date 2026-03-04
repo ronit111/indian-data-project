@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import type { MonetaryPolicyData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -88,6 +89,7 @@ export function MonetaryPolicySection({ data }: MonetaryPolicySectionProps) {
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="monetary-policy" domain="rbi" />
+        <CrossDomainLink domain="rbi" sectionId="monetary-policy" />
 
 
         <p className="source-attribution">

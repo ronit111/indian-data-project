@@ -181,7 +181,7 @@ export function SearchOverlay() {
       { type: 'page', id: 'emi-calculator', name: 'EMI Calculator', subtitle: 'How repo rate changes affect your loan EMI', route: '/rbi/calculator' },
       { type: 'page', id: 'cost-of-living', name: 'Cost of Living Calculator', subtitle: 'How inflation changed your spending power', route: '/economy/calculator' },
       { type: 'page', id: 'state-report-card', name: 'State Report Card', subtitle: 'Your state ranked across 6 domains', route: '/states/your-state' },
-      { type: 'page', id: 'open-data', name: 'Open Data API', subtitle: '71 JSON endpoints, no API key, CORS enabled', route: '/open-data' },
+      { type: 'page', id: 'open-data', name: 'Open Data API', subtitle: '80 JSON endpoints, no API key, CORS enabled', route: '/open-data' },
       { type: 'page', id: 'journalists', name: 'For Journalists', subtitle: 'Chart gallery, story kits, embed builder', route: '/for-journalists' },
       { type: 'page', id: 'chart-gallery', name: 'Chart Gallery', subtitle: 'Browse and filter all charts with CSV and embed', route: '/for-journalists/gallery' },
       { type: 'page', id: 'story-kits', name: 'Story Kits', subtitle: 'Curated data bundles with editorial context', route: '/for-journalists/story-kits' },

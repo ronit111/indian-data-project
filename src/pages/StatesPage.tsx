@@ -11,7 +11,7 @@ import { GrowthSection } from '../components/states/GrowthSection.tsx';
 import { RevenueSection } from '../components/states/RevenueSection.tsx';
 import { FiscalHealthSection } from '../components/states/FiscalHealthSection.tsx';
 import { PerCapitaSection } from '../components/states/PerCapitaSection.tsx';
-import { StatesCTASection } from '../components/states/StatesCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 import { formatIndianNumber } from '../lib/format.ts';
 
 export default function StatesPage() {
@@ -145,7 +145,7 @@ export default function StatesPage() {
 
       <div className="composition-divider" />
 
-      <StatesCTASection />
+      <DomainCTA domain="states" />
     </motion.div>
   );
 }

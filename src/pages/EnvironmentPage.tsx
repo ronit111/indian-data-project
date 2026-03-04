@@ -11,7 +11,7 @@ import { ForestCoverSection } from '../components/environment/ForestCoverSection
 import { EnergyTransitionSection } from '../components/environment/EnergyTransitionSection.tsx';
 import { CarbonFootprintSection } from '../components/environment/CarbonFootprintSection.tsx';
 import { WaterStressSection } from '../components/environment/WaterStressSection.tsx';
-import { EnvironmentCTASection } from '../components/environment/EnvironmentCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function EnvironmentPage() {
   const year = useEnvironmentStore((s) => s.selectedYear);
@@ -137,7 +137,7 @@ export default function EnvironmentPage() {
 
       <div className="composition-divider" />
 
-      <EnvironmentCTASection />
+      <DomainCTA domain="environment" />
     </motion.div>
   );
 }

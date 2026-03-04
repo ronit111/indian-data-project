@@ -12,7 +12,7 @@ import { RoadAccidentsSection } from '../components/crime/RoadAccidentsSection.t
 import { CybercrimeSection } from '../components/crime/CybercrimeSection.tsx';
 import { PoliceSection } from '../components/crime/PoliceSection.tsx';
 import { JusticeSection } from '../components/crime/JusticeSection.tsx';
-import { CrimeCTASection } from '../components/crime/CrimeCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function CrimePage() {
   const year = useCrimeStore((s) => s.selectedYear);
@@ -166,7 +166,7 @@ export default function CrimePage() {
 
       <div className="composition-divider" />
 
-      <CrimeCTASection />
+      <DomainCTA domain="crime" />
     </motion.div>
   );
 }

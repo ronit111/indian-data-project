@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
 import type { InflationData } from '../../lib/data/schema.ts';
@@ -87,6 +88,7 @@ export function InflationSection({ inflation }: InflationSectionProps) {
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="inflation" domain="economy" />
+        <CrossDomainLink domain="economy" sectionId="inflation" />
 
 
         <p className="source-attribution">

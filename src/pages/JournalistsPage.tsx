@@ -103,7 +103,7 @@ export default function JournalistsPage() {
               <QuickLink
                 to="/open-data"
                 label="Open Data API"
-                desc="Direct JSON access to all 71 endpoints"
+                desc="Direct JSON access to all 80 endpoints"
               />
               <QuickLink
                 to="/topics"

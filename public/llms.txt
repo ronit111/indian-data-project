@@ -1,6 +1,6 @@
 # Indian Data Project
 
-> India publishes vast amounts of government data — budget documents, economic surveys, RBI reports, census figures, crime statistics, election results. But this data is buried in dense PDFs, broken APIs, and spreadsheets formatted for bureaucrats. Indian Data Project makes it accessible, visual, and engaging for regular citizens. 11 data domains as scrollable visual stories, 136 searchable citizen questions, 3 personalisation calculators, 80 open JSON endpoints. Open source (AGPL), no login, no paywall.
+> India publishes vast amounts of government data — budget documents, economic surveys, RBI reports, census figures, crime statistics, election results. But this data is buried in dense PDFs, broken APIs, and spreadsheets formatted for bureaucrats. Indian Data Project makes it accessible, visual, and engaging for regular citizens. 11 data domains as scrollable visual stories, 161 searchable citizen questions, 3 personalisation calculators, 80 open JSON endpoints. Open source (AGPL), no login, no paywall.
 
 ## Why this exists
 

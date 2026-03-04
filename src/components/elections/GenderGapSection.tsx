@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import type { RepresentationData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -102,6 +103,7 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
         </motion.div>
 
         <RelatedTopics sectionId="representation" domain="elections" />
+        <CrossDomainLink domain="elections" sectionId="gender-gap" />
 
 
         <p className="source-attribution">

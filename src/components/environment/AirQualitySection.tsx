@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import { DotStrip, type DotStripDataPoint } from '../viz/DotStrip.tsx';
@@ -130,6 +131,7 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
         )}
 
         <RelatedTopics sectionId="air-quality" domain="environment" />
+        <CrossDomainLink domain="environment" sectionId="air-quality" />
 
         <p className="source-attribution">
           Source: {data.source}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { InfrastructureData } from '../../lib/data/schema.ts';
@@ -117,6 +118,7 @@ export function InfrastructureSection({ data }: InfrastructureSectionProps) {
         )}
 
         <RelatedTopics sectionId="infrastructure" domain="healthcare" />
+        <CrossDomainLink domain="healthcare" sectionId="infrastructure" />
 
 
         <p className="source-attribution">

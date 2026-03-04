@@ -9,6 +9,7 @@ import { loadRBIIndicators } from '../../lib/dataLoader.ts';
 import { useState, useEffect } from 'react';
 import type { RBIIndicatorsData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface InflationTargetSectionProps {
   monetaryPolicy: MonetaryPolicyData | null;
@@ -110,6 +111,8 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
           />
           </ChartActionsWrapper>
         )}
+
+        <CrossDomainLink domain="rbi" sectionId="inflation-target" />
 
         <p className="source-attribution">
           Source: World Bank, RBI Monetary Policy Statements

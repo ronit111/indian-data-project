@@ -12,7 +12,7 @@ import { YouthUnemploymentSection } from '../components/employment/YouthUnemploy
 import { GenderGapSection } from '../components/employment/GenderGapSection.tsx';
 import { InformalitySection } from '../components/employment/InformalitySection.tsx';
 import { RuralUrbanSection } from '../components/employment/RuralUrbanSection.tsx';
-import { EmploymentCTASection } from '../components/employment/EmploymentCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function EmploymentPage() {
   const year = useEmploymentStore((s) => s.selectedYear);
@@ -141,7 +141,7 @@ export default function EmploymentPage() {
 
       <div className="composition-divider" />
 
-      <EmploymentCTASection />
+      <DomainCTA domain="employment" />
     </motion.div>
   );
 }

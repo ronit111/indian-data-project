@@ -5,6 +5,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import type { QualityData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface QualitySectionProps {
   data: QualityData;
@@ -65,6 +66,8 @@ export function QualitySection({ data }: QualitySectionProps) {
             </ChartActionsWrapper>
           </div>
         )}
+
+        <CrossDomainLink domain="education" sectionId="quality" />
 
         <p className="source-attribution">
           Source: {data.source}

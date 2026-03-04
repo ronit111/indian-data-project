@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { LineChart, type LineSeries } from '../viz/LineChart.tsx';
 import type { SectoralData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -86,6 +87,7 @@ export function StructuralShiftSection({ data }: StructuralShiftSectionProps) {
         )}
 
         <RelatedTopics sectionId="sectoral" domain="employment" />
+        <CrossDomainLink domain="employment" sectionId="structural" />
 
 
         <p className="source-attribution">

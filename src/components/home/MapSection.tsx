@@ -6,6 +6,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import type { StatewiseData } from '../../lib/data/schema.ts';
 import { formatLakhCrore, formatIndianNumber } from '../../lib/format.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface MapSectionProps {
   statewise: StatewiseData;
@@ -92,6 +93,8 @@ export function MapSection({ statewise }: MapSectionProps) {
           <ChartActionsWrapper registryKey="budget/map" data={statewise}>
             <ChoroplethMap states={statewise.states} isVisible={isVisible} />
           </ChartActionsWrapper>
+
+          <CrossDomainLink domain="budget" sectionId="map" />
         </div>
       </div>
     </section>

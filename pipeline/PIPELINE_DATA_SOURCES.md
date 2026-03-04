@@ -114,7 +114,7 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | Elections | ~0% | All data (event-driven, no API) | `elections-pipeline.yml` (semi-annual) |
 | Crime | ~0% | All data (annual, NCRB publication) | `crime-pipeline.yml` (semi-annual) |
 
-**Phase 16 Automation Sources (added Mar 2026)**:
+**Additional automated sources**:
 - **MOSPI eSankhyiki APIs** (no auth): NAS GDP/GVA, PLFS employment, WPI inflation, Energy balance
 - **RBI Handbook XLSX scraper**: Auto-downloads Tables 19-24 (states GSDP), 62 (interest rates), 147 (forex reserves), 164 (fiscal deficit)
 - **Shared MOSPI client**: `pipeline/src/common/mospi_client.py` — paginated fetcher with retry logic for all 7 MOSPI endpoints

@@ -5,6 +5,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { RevenueData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface RevenueSectionProps {
   data: RevenueData;
@@ -65,6 +66,8 @@ export function RevenueSection({ data }: RevenueSectionProps) {
           barHeight={24}
         />
         </ChartActionsWrapper>
+
+        <CrossDomainLink domain="states" sectionId="revenue" />
 
         <p className="source-attribution">
           Source: {data.source} ({data.year})

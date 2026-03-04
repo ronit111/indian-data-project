@@ -12,7 +12,7 @@ import { LiquiditySection } from '../components/rbi/LiquiditySection.tsx';
 import { CreditSection } from '../components/rbi/CreditSection.tsx';
 import { ForexSection } from '../components/rbi/ForexSection.tsx';
 import { ExchangeRateSection } from '../components/rbi/ExchangeRateSection.tsx';
-import { RBICTASection } from '../components/rbi/RBICTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 
 export default function RBIPage() {
   const year = useRBIStore((s) => s.selectedYear);
@@ -142,7 +142,7 @@ export default function RBIPage() {
 
       <div className="composition-divider" />
 
-      <RBICTASection />
+      <DomainCTA domain="rbi" />
     </motion.div>
   );
 }

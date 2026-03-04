@@ -55,7 +55,7 @@ export default function TopicsPage() {
             style={{ borderColor: 'rgba(255,255,255,0.1)', borderTopColor: 'var(--saffron)' }}
           />
           <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>
-            Loading summaries from 10 domains…
+            Loading summaries from 11 domains…
           </p>
         </div>
       )}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { SectorsData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -65,6 +66,7 @@ export function SectorsSection({ sectors }: SectorsSectionProps) {
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="sectors" domain="economy" />
+        <CrossDomainLink domain="economy" sectionId="sectors" />
 
 
         <p className="source-attribution">

@@ -5,6 +5,7 @@ import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import type { ParticipationData } from '../../lib/data/schema.ts';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 
 interface GenderGapSectionProps {
   data: ParticipationData;
@@ -68,6 +69,8 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
             </ChartActionsWrapper>
           </div>
         )}
+
+        <CrossDomainLink domain="employment" sectionId="gender-gap" />
 
         <p className="source-attribution">
           Source: {data.source}

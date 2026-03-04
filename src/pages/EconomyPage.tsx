@@ -9,7 +9,7 @@ import { FiscalSection } from '../components/economy/FiscalSection.tsx';
 import { ExternalSection } from '../components/economy/ExternalSection.tsx';
 import { SectorsSection } from '../components/economy/SectorsSection.tsx';
 import { OutlookSection } from '../components/economy/OutlookSection.tsx';
-import { EconomyCTASection } from '../components/economy/EconomyCTASection.tsx';
+import { DomainCTA } from '../components/ui/DomainCTA.tsx';
 import { NarrativeBridge } from '../components/ui/NarrativeBridge.tsx';
 import { SkeletonChart } from '../components/ui/Skeleton.tsx';
 import { KeyTakeaways } from '../components/ui/KeyTakeaways.tsx';
@@ -153,7 +153,7 @@ export default function EconomyPage() {
       {/* CTA — explore further */}
       <div className="composition-divider" />
 
-      <EconomyCTASection />
+      <DomainCTA domain="economy" />
     </motion.div>
   );
 }

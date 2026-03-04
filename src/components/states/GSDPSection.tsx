@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import { SectionNumber } from '../ui/SectionNumber.tsx';
 import { RelatedTopics } from '../ui/RelatedTopics.tsx';
+import { CrossDomainLink } from '../ui/CrossDomainLink.tsx';
 import { GenericChoropleth, type ChoroplethDataPoint } from '../viz/GenericChoropleth.tsx';
 import { HorizontalBarChart, type BarItem } from '../viz/HorizontalBarChart.tsx';
 import { ChartActionsWrapper } from '../share/ChartActionsWrapper.tsx';
@@ -84,6 +85,7 @@ export function GSDPSection({ data }: GSDPSectionProps) {
         </ChartActionsWrapper>
 
         <RelatedTopics sectionId="gsdp" domain="states" />
+        <CrossDomainLink domain="states" sectionId="gsdp" />
 
         <p className="source-attribution">
           Source: {data.source} ({data.year})

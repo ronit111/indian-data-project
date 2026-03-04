@@ -1621,7 +1621,7 @@ export default function HubPage() {
           <MultiplierCard
             to="/open-data"
             title="Open Data"
-            desc="71 JSON endpoints. No API key."
+            desc="80 JSON endpoints. No API key."
             accent="var(--cyan)"
           />
           <MultiplierCard
