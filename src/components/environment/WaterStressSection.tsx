@@ -74,6 +74,15 @@ export function WaterStressSection({ data }: WaterStressSectionProps) {
           India is the world's largest groundwater user. Punjab extracts 165% of what recharges — meaning the water table is dropping every year. 21 major cities may run dry by 2030.
         </motion.p>
 
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="text-annotation mb-8 max-w-xl"
+        >
+          Solutions exist. Rajasthan's community johads have recharged groundwater across thousands of villages. Chennai made rooftop rainwater harvesting mandatory after its 2019 crisis. Several states have expanded drip irrigation to cut agricultural water use. The challenge is scaling what works.
+        </motion.p>
+
         {/* Groundwater stage summary pills */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}

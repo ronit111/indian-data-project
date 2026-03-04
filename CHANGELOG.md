@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.18.0] - 2026-03-04
+
+### Phase 18: Citizen QA — Holistic Product Review
+
+Editorial pass lifting citizen-friendliness from ~7.2/10 to 8.5+ across all 11 domains. Every annotation rewritten from the perspective of a class 10-12 educated Indian citizen visiting the portal for the first time.
+
+**Track 1: Jargon Translation (15 rewrites)**
+- **RBI (5)**: Repo rate/CRR mechanism explained, M3/OMO in plain language, forex reserves as citizen-impact ("petrol, phones, imports"), credit-to-GDP demystified, MPC voting explained with 2-6% tolerance band
+- **Healthcare (3)**: Out-of-pocket poverty impact + Ayushman Bharat context, "non-communicable diseases" → "lifestyle diseases", spending per-citizen with Sri Lanka/Thailand comparison
+- **Economy (2)**: GDP growth one-liner definition, CAD/remittances with citizen-impact ("weakens rupee, makes imports expensive")
+- **States (2)**: GSDP defined inline, FRBM Act explained + Punjab 47% debt-to-GSDP (verified from data)
+- **Crime (1)**: IPC/SLL/cognizable explained in one paragraph
+- **Employment (1)**: "Informal" defined as no contract, no PF, no ESI, no paid leave
+- **Education (1)**: ASER source context added, evidence-first reorder
+
+**Track 2: "So What?" Bridges (2 sections)**
+- Justice pipeline: global conviction rate comparison + judges-per-million context (live data)
+- Water stress: solutions frame — Rajasthan johads, Chennai rainwater harvesting, drip irrigation
+
+**Track 3: Hub + Calculator + Report Card UX (3 fixes)**
+- Hub: "Pick a story below, or press Cmd+K to ask a question" prompt for first-time visitors
+- Calculator: inflation definition + action prompt replacing passive subtitle
+- Report card: explanatory message for missing state data
+
+**Track 4: Glossary + Citizen Questions**
+- 2 new glossary terms: `underreporting` (crime), `installed-vs-generation` (environment)
+- 8 new citizen questions (128 → 136 total): Ayushman Bharat, climate targets, crime rate variation, informal work, court duration, MPC, FRBM
+
+**Analogy Quality Gate**: All comparisons verified against portal JSON data. Punjab debt (47% from fiscal-health.json), inflation (generic prompt, not hardcoded), healthcare spending (verified global average).
+
+**23 files changed**, 121 insertions, 20 deletions. Zero build errors, 81 prerendered routes. All changes browser-verified via DOM text inspection across every modified page.
+
 ## [0.15.0] - 2026-03-02
 
 ### Phase 10B: Elections Domain

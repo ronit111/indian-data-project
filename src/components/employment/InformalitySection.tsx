@@ -46,8 +46,7 @@ export function InformalitySection({ data }: InformalitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          8 of every 10 Indian workers are self-employed or in informal work. No contracts, no
-          benefits, no safety net.
+          8 of every 10 Indian workers are in informal work — no written contract, no provident fund, no ESI health cover, no paid leave. If work stops, income stops. There is no safety net.
         </motion.p>
 
         {barItems.length > 0 && (

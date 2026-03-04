@@ -76,9 +76,9 @@ export function CrimeOverviewSection({ data }: CrimeOverviewSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          58.2 lakh cognizable crimes in 2022 — up {growth}% since 2014.
+          58.2 lakh cognizable crimes in 2022 — up {growth}% since 2014. Cognizable means crimes where police must register an FIR.
           {covidDip && <> The 2020 dip to {(covidDip.total / 100000).toFixed(1)}L reflects lockdown suppression, not safer streets.</>}
-          {' '}IPC crimes (theft, assault, murder) make up 61% of the total.
+          {' '}IPC crimes cover everyday offences (theft, assault, murder, fraud). Special & Local Laws (SLL) cover specific acts like drug offences and cybercrime. IPC makes up 61% of the total.
         </motion.p>
 
         {/* Trend chart */}

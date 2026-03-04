@@ -76,7 +76,7 @@ export function DomainPanel({ panel, defaultOpen = true }: DomainPanelProps) {
                   className="text-xs py-4 text-center"
                   style={{ color: 'var(--text-muted)' }}
                 >
-                  Data unavailable for this state
+                  Data not yet available for this state. Some surveys don't cover all states, or data is being updated.
                 </p>
               ) : (
                 validMetrics.map((metric, i) => (

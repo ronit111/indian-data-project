@@ -44,7 +44,7 @@ export function QualitySection({ data }: QualitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Only 1 in 4 children in Std III can read at Std II level. The enrollment miracle has not yet translated into a learning miracle.
+          ASER (Annual Status of Education Report) tested children across rural India. The finding: only 1 in 4 children in Std III can read a Std II textbook. Enrollment is nearly universal, but learning has not kept pace — children are in school, yet many cannot read or do basic math at their grade level.
         </motion.p>
 
         {choroData.length > 0 && (

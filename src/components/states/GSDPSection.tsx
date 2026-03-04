@@ -54,7 +54,7 @@ export function GSDPSection({ data }: GSDPSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Maharashtra, Tamil Nadu, and Karnataka together produce more GDP than many countries. But the gap between top and bottom tells the story of India's uneven development.
+          GSDP (Gross State Domestic Product) is the total value of everything a state produces in a year — from factories and farms to IT services and shops. Maharashtra, Tamil Nadu, and Karnataka together produce more than many countries. But the gap between top and bottom tells the story of India's uneven development.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/gsdp" data={data}>

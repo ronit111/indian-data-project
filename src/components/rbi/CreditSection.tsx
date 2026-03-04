@@ -32,7 +32,7 @@ export function CreditSection({ data }: CreditSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Private sector credit tracks how much bank lending flows to businesses and individuals — the engine of economic growth. At over 50% of GDP, India's credit-to-GDP ratio reflects a deepening financial system.
+          This tracks total bank loans to businesses and families — home loans, business credit, personal loans. At over 50% of GDP, India's lending has deepened significantly, meaning more people and businesses have access to formal credit than a decade ago.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/credit" data={data}>

@@ -69,6 +69,17 @@
       ]
     },
     {
+      "id": "installed-vs-generation",
+      "term": "Installed Capacity vs Generation",
+      "simple": "Installed capacity (GW) is the maximum a power plant CAN produce. Actual generation depends on weather, demand, and plant type.",
+      "detail": "A 100 MW solar plant does not produce 100 MW round the clock. Solar panels work only during daylight and their output depends on cloud cover and season — they typically generate at ~20% of capacity (called 'capacity factor'). Wind turbines: ~25-30%. Coal plants: ~55-60%. Hydro: ~30-40%. This is why India needs far more renewable capacity than coal to generate the same amount of electricity. When comparing energy sources, always check whether the number refers to installed capacity (potential) or actual generation (what was produced). India's renewable installed capacity (43% of total) generates about 23% of actual electricity because of lower capacity factors.",
+      "inContext": "Solar: ~20% capacity factor. Coal: ~60%. Installed ≠ generated.",
+      "relatedTerms": [
+        "renewable-energy",
+        "coal"
+      ]
+    },
+    {
       "id": "renewable-energy",
       "term": "Renewable Energy",
       "simple": "Electricity from sources that don't run out — solar, wind, hydro, and biomass. India's renewables are growing fast.",

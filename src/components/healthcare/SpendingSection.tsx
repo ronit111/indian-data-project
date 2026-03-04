@@ -57,7 +57,7 @@ export function SpendingSection({ data }: SpendingSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India spends about 3% of GDP on health — half the global average. The gap means crumbling infrastructure, understaffed hospitals, and patients paying out of pocket.
+          India spends about 3% of GDP on health — half the global average of ~6%. The gap translates to fewer doctors, fewer hospital beds, and families bearing over half the cost directly from their pockets. For context, even countries with smaller economies like Sri Lanka and Thailand spend a higher share of GDP on public health.
         </motion.p>
 
         {spendingSeries.length > 0 && (

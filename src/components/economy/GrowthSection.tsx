@@ -33,7 +33,7 @@ export function GrowthSection({ gdp }: GrowthSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          A decade of GDP growth, from the pre-pandemic boom through the COVID contraction to a strong recovery. The 2020-21 dip marks the sharpest contraction in India's history.
+          GDP growth measures how much more the economy produced this year compared to last — more goods, more services, more jobs. From the pre-pandemic boom through the sharpest contraction in India's history (2020-21) to a strong recovery, this is the headline number that shapes the economic mood.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/growth" data={gdp}>

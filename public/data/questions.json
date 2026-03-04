@@ -1126,5 +1126,61 @@
     "answer": "4.45 lakh in 2022 — a rate of 66.4 per lakh women. Cruelty by husband is the top category.",
     "sectionId": "women-safety",
     "route": "/crime#women-safety"
+  },
+  {
+    "id": "env-climate-targets",
+    "domain": "environment",
+    "question": "Is India meeting its climate targets?",
+    "answer": "India targets 500 GW non-fossil capacity by 2030 and net-zero by 2070. Renewable capacity is growing fast but coal hasn't declined.",
+    "sectionId": "carbon-footprint",
+    "route": "/environment#carbon-footprint"
+  },
+  {
+    "id": "healthcare-ayushman-eligibility",
+    "domain": "healthcare",
+    "question": "What is Ayushman Bharat and who qualifies?",
+    "answer": "Ayushman Bharat provides Rs 5 lakh hospitalization cover to 55 crore citizens. But outpatient costs remain uncovered.",
+    "sectionId": "oop",
+    "route": "/healthcare#oop"
+  },
+  {
+    "id": "crime-state-variation",
+    "domain": "crime",
+    "question": "Why do some states have higher crime rates than others?",
+    "answer": "Higher crime rates often reflect better policing and reporting — Kerala has the highest rate but also the best police coverage.",
+    "sectionId": "crime-overview",
+    "route": "/crime#crime-overview"
+  },
+  {
+    "id": "employment-informal-meaning",
+    "domain": "employment",
+    "question": "What is informal work and why does it matter?",
+    "answer": "80% of Indian workers have no contract, no PF, no health cover. If work stops, income stops — no safety net.",
+    "sectionId": "informality",
+    "route": "/employment#informality"
+  },
+  {
+    "id": "crime-court-duration",
+    "domain": "crime",
+    "question": "How long does a court case take in India?",
+    "answer": "Average trial takes 3.5 years. 28.6% of cases have been pending for over 5 years.",
+    "sectionId": "justice-pipeline",
+    "route": "/crime#justice-pipeline"
+  },
+  {
+    "id": "rbi-what-is-mpc",
+    "domain": "rbi",
+    "question": "What is the MPC and what does it do?",
+    "answer": "The Monetary Policy Committee is 6 experts who vote on interest rates every 2 months to keep inflation between 2-6%.",
+    "sectionId": "inflation-target",
+    "route": "/rbi#inflation-target"
+  },
+  {
+    "id": "states-frbm-meaning",
+    "domain": "states",
+    "question": "What is FRBM and why does it matter?",
+    "answer": "The FRBM Act caps state borrowing at 3% of GSDP. States that breach this limit are spending future generations' money.",
+    "sectionId": "fiscal-health",
+    "route": "/states#fiscal-health"
   }
 ]

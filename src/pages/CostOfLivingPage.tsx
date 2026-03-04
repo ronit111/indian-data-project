@@ -110,7 +110,7 @@ export default function CostOfLivingPage() {
             style={{ color: 'var(--text-secondary)' }}
             variants={fadeUp}
           >
-            How has inflation changed what your money buys?
+            Inflation means prices rise over time — the same basket of goods costs more each year. Enter your monthly expenses to see how much more they cost today.
             {inflation && (
               <span className="block text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
                 CPI data: {availableYears[0]} – {latestYear}

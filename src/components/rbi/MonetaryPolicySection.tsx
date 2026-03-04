@@ -75,7 +75,7 @@ export function MonetaryPolicySection({ data }: MonetaryPolicySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          From easing cycles to emergency COVID cuts to post-pandemic tightening, every repo rate move reflects the RBI's reading of growth versus inflation. The CRR sets how much banks must hold in reserve.
+          When prices rise too fast, RBI raises the repo rate — the interest rate at which banks borrow from RBI — making loans expensive and cooling the economy. When growth slows, it cuts rates to boost lending. The CRR (Cash Reserve Ratio) controls how much of your bank deposit stays locked with RBI instead of being lent out.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/monetary-policy" data={data}>

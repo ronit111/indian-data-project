@@ -90,7 +90,7 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          RBI targets CPI inflation at 4%, with a tolerance band of 2-6%. When inflation breaches the upper bound, the MPC raises rates. The dashed line shows how repo rate tracks against CPI.
+          The MPC — a committee of 6 experts — votes on interest rates every 2 months. Their job: keep price rises between 2-6% per year, targeting 4%. Below 2% signals a sluggish economy. Above 6% means your grocery bill is rising too fast. The dashed line shows how the repo rate tracks against actual CPI inflation.
         </motion.p>
 
         {series.length > 0 && (

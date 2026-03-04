@@ -56,7 +56,7 @@ export function ExternalSection({ external }: ExternalSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India imports more than it exports, creating a persistent trade deficit. The current account deficit (CAD) measures the full external balance including services and remittances.
+          India imports more than it exports — especially oil, electronics, and gold — creating a persistent trade deficit. The Current Account Deficit (CAD) is the gap between what India earns from the world and what it pays. Remittances — money sent home by Indians working abroad — help narrow this gap. A large deficit weakens the rupee, making petrol, phones, and imported goods more expensive for everyone.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/external" data={external}>

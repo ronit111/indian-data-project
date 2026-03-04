@@ -46,7 +46,7 @@ export function ForexSection({ data }: ForexSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Forex reserves are the safety net against external shocks. India's reserves include foreign currency assets, gold, SDRs, and the IMF reserve tranche. A larger reserve means more room to defend the rupee.
+          Forex reserves are India's emergency savings in foreign currency. They keep the rupee stable, ensure we can pay for oil and essential imports, and prevent currency crises that would make petrol, electronics, and imported goods more expensive overnight. The reserves include foreign currency assets, gold, and IMF holdings.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/forex" data={data}>

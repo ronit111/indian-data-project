@@ -64,6 +64,11 @@ function HubHero() {
           <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             {'Real data. No spin. Open source.'}
           </p>
+          <p className="mt-3 text-sm" style={{ color: 'var(--text-muted)', opacity: 0.7 }}>
+            {'Pick a story below, or press '}
+            <kbd className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'var(--bg-raised)', border: 'var(--border-subtle)' }}>⌘K</kbd>
+            {' to ask a question.'}
+          </p>
         </motion.div>
 
         {/* Scroll indicator — thin line growing downward */}

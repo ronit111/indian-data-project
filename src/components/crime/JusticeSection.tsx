@@ -134,6 +134,15 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           </div>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+          className="text-annotation mt-8 max-w-xl"
+        >
+          For context, conviction rates in the UK and Japan exceed 70%. India is expanding fast-track courts, e-FIRs, and virtual hearings to clear the backlog — but with just {data.trialDuration.judgesPerMillion} judges per million citizens (global average: ~50), the system needs fundamental expansion, not just efficiency tweaks.
+        </motion.p>
+
         <RelatedTopics sectionId="justice-pipeline" domain="crime" />
 
         <p className="source-attribution">
