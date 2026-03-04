@@ -2,6 +2,21 @@
 
 All notable changes to the Indian Data Project.
 
+## [0.21.1] - 2026-03-05
+
+### Data Accuracy Audit
+
+- Verified all 11 domain curated data constants against authoritative government publications
+- Fixed 15 wrong values across 6 domains (Elections, Employment, Education, Healthcare, Environment, Crime)
+- Rebuilt all 27 ASER 2024 state entries from PDF (47 of 50 previous values were AI-fabricated)
+- Rebuilt all 30 NFHS-5 immunization state entries from machine-readable dataset (21 had errors >5pp)
+- Rebuilt all 32 UDISE+ 2023-24 state entries from PDF tables
+- Fixed Elections alliance totals: NDA 284→293, INDIA 221→234, Others 38→16 (17 missing parties added)
+- Fixed Employment: youth unemployment 12.8→10.2%, self-employed 52.4→58.4%, female LFPR 35.2→34.9%
+- Fixed Environment: Mizoram forest change sign reversal (-186→+242 km²)
+- Added `curated_validator.py` — automated cross-checks for curated data (run after every edit)
+- Added `CURATED_DATA_AUDIT.md` documenting all findings, fixes, and prevention guidelines
+
 ## [0.21.0] - 2026-03-04
 
 ### Cross-Domain Linking & Copy Audit
