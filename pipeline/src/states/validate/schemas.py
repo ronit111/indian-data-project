@@ -76,9 +76,12 @@ class StatesSummary(BaseModel):
     nationalGsdpTotal: float    # Rs lakh crore
     growthRange: str            # e.g. "3.2% – 14.1%"
     averagePerCapita: float     # Rs
-    stateCount: int
+    totalStatesAndUTs: int = 36
+    statesWithData: int
+    stateCount: int             # backward compat alias for statesWithData
     lastUpdated: str
     source: str
+    note: str = ""
 
 
 # ─── Indicators (Explorer) ─────────────────────────────────────────────

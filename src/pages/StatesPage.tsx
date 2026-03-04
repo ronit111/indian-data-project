@@ -64,7 +64,7 @@ export default function StatesPage() {
           { value: `₹${formatIndianNumber(summary.averagePerCapita)}`, label: 'Average state income per person', sectionId: 'percapita' },
           { value: summary.growthRange, label: 'Growth gap: slowest to fastest state', sectionId: 'growth' },
           { value: `₹${summary.topGsdpValue}L Cr`, label: 'Maharashtra alone, bigger than many nations', sectionId: 'gsdp' },
-          { value: String(summary.stateCount), label: 'States and UTs — 31 different economies', sectionId: 'fiscal-health' },
+          { value: '36', label: 'States and UTs — 36 different economies', sectionId: 'fiscal-health' },
         ]}
       />}
 

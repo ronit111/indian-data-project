@@ -190,9 +190,13 @@ def _build_summary(gsdp_data: list[dict]) -> dict:
         "nationalGsdpTotal": round(total_gsdp / 100000, 2),
         "growthRange": f"{min(growth_rates):.1f}% – {max(growth_rates):.1f}%" if growth_rates else "N/A",
         "averagePerCapita": avg_per_capita,
-        "stateCount": len(valid_states),
+        "totalStatesAndUTs": 36,
+        "statesWithData": len(valid_states),
+        "stateCount": len(valid_states),  # kept for backward compat
         "lastUpdated": date.today().isoformat(),
         "source": "RBI Handbook of Statistics on Indian States",
+        "note": "India has 28 states and 8 union territories (36 total). Data covers "
+                f"{len(valid_states)}; remaining UTs have incomplete state accounts in the RBI Handbook.",
     }
 
 

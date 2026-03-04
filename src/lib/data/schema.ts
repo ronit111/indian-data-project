@@ -481,9 +481,12 @@ export interface StatesSummary {
   nationalGsdpTotal: number;  // Rs lakh crore
   growthRange: string;        // e.g. "3.2% – 14.1%"
   averagePerCapita: number;   // Rs
-  stateCount: number;
+  totalStatesAndUTs: number;  // 36 (28 states + 8 UTs)
+  statesWithData: number;     // typically 31 (5 small UTs lack complete data)
+  stateCount: number;         // backward compat alias for statesWithData
   lastUpdated: string;
   source: string;
+  note?: string;
 }
 
 export interface StateValue {

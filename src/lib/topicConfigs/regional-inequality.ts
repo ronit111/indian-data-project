@@ -28,7 +28,7 @@ export const regionalInequality: TopicDef = {
   },
 
   takeaways: [
-    { value: (bag) => { const s = statesSummary(bag); return s ? `${s.stateCount}` : '—'; }, label: 'States & UTs tracked', sectionId: 'income-divide' },
+    { value: '36', label: 'States & UTs', sectionId: 'income-divide' },
     { value: (bag) => { const s = statesSummary(bag); return s?.topGsdpState ? `₹${(s.topGsdpValue / 100000).toFixed(1)}L Cr` : '—'; }, label: `Top state GSDP`, sectionId: 'income-divide' },
     { value: (bag) => { const s = statesSummary(bag); return s ? s.growthRange : '—'; }, label: 'GSDP growth range', sectionId: 'income-divide' },
     { value: '8x', label: 'Per capita gap: Goa vs Bihar', sectionId: 'income-divide' },
@@ -88,7 +88,7 @@ export const regionalInequality: TopicDef = {
           const s = statesSummary(bag);
           if (!s) return null;
           return [
-            { label: 'States Tracked', value: `${s.stateCount}`, accent: '#8B5CF6' },
+            { label: 'States & UTs', value: '36', accent: '#8B5CF6' },
             { label: 'Top State', value: s.topGsdpState, accent: '#4ADE80' },
             { label: 'Avg Per Capita', value: `₹${(s.averagePerCapita / 1000).toFixed(0)}K`, accent: '#FF6B35' },
             { label: 'Growth Range', value: s.growthRange, accent: '#4AEADC' },

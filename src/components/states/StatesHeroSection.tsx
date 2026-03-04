@@ -54,7 +54,7 @@ export function StatesHeroSection({ summary }: StatesHeroSectionProps) {
           className="text-lg md:text-xl mb-6"
           style={{ color: 'var(--text-secondary)' }}
         >
-          {summary?.stateCount ?? 31} states and union territories, one economy
+          28 states and 8 union territories, one economy
         </motion.p>
 
         {/* Hero number */}

@@ -5,7 +5,10 @@
   "nationalGsdpTotal": 280.73,
   "growthRange": "2.9% – 25.4%",
   "averagePerCapita": 171687,
+  "totalStatesAndUTs": 36,
+  "statesWithData": 31,
   "stateCount": 31,
   "lastUpdated": "2026-03-01",
-  "source": "RBI Handbook of Statistics on Indian States"
+  "source": "RBI Handbook of Statistics on Indian States",
+  "note": "India has 28 states and 8 union territories (36 total). Data covers 31; five small UTs (Lakshadweep, Andaman & Nicobar, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Chandigarh) have incomplete state accounts in the RBI Handbook."
 }

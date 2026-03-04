@@ -711,7 +711,7 @@ function StatesDomainCard({ summary }: { summary: StatesSummary | null }) {
               />
               <StatPill
                 label="States & UTs"
-                value={summary ? `${summary.stateCount}` : '...'}
+                value="36"
                 color="var(--emerald)"
                 delay={0.5}
                 isVisible={isVisible}
