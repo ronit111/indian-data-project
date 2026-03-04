@@ -1,6 +1,6 @@
 {
   "year": "2025-26",
-  "totalStudents": 234963031,
+  "totalStudents": 248045828,
   "totalSchools": 1471891,
   "totalTeachers": 9807600,
   "gerPrimary": 93.0,
@@ -10,26 +10,25 @@
   "topEnrolledStates": [
     {
       "name": "Uttar Pradesh",
-      "students": 41500000
-    },
-    {
-      "name": "Bihar",
-      "students": 27800000
+      "students": 41662794
     },
     {
       "name": "Maharashtra",
-      "students": 22400000
+      "students": 21375970
+    },
+    {
+      "name": "Bihar",
+      "students": 21348149
     },
     {
       "name": "West Bengal",
-      "students": 18300000
+      "students": 18015525
     },
     {
-      "name": "Madhya Pradesh",
-      "students": 17200000
+      "name": "Rajasthan",
+      "students": 16786065
     }
   ],
-  "lastUpdated": "2026-03-04",
-  "source": "UDISE+ 2023-24 + World Bank + ASER 2024",
-  "note": "topEnrolledStates use curated state data that needs verification against UDISE+ dashboard. National totals are verified against UDISE+ 2023-24 official report."
+  "lastUpdated": "2026-03-05",
+  "source": "UDISE+ 2023-24 + World Bank + ASER 2024"
 }

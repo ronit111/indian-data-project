@@ -37,6 +37,55 @@
       "constituency": "Kurukshetra (HR)",
       "party": "BJP",
       "assetsCrore": 1241
+    },
+    {
+      "rank": 4,
+      "name": "Prabhakar Reddy Vemireddy",
+      "constituency": "Nellore (AP)",
+      "party": "TDP",
+      "assetsCrore": 716
+    },
+    {
+      "rank": 5,
+      "name": "C. M. Ramesh",
+      "constituency": "Anakapalle (AP)",
+      "party": "BJP",
+      "assetsCrore": 497
+    },
+    {
+      "rank": 6,
+      "name": "Jyotiraditya M. Scindia",
+      "constituency": "Guna (MP)",
+      "party": "BJP",
+      "assetsCrore": 424
+    },
+    {
+      "rank": 7,
+      "name": "Chhatrapati Shahu Shahaji",
+      "constituency": "Kolhapur (MH)",
+      "party": "INC",
+      "assetsCrore": 342
+    },
+    {
+      "rank": 8,
+      "name": "Sribharat Mathukumili",
+      "constituency": "Visakhapatnam (AP)",
+      "party": "TDP",
+      "assetsCrore": 298
+    },
+    {
+      "rank": 9,
+      "name": "Hemamalini Dharmendra Deol",
+      "constituency": "Mathura (UP)",
+      "party": "BJP",
+      "assetsCrore": 278
+    },
+    {
+      "rank": 10,
+      "name": "Dr. Prabha Mallikarjun",
+      "constituency": "Davanagere (KA)",
+      "party": "INC",
+      "assetsCrore": 241
     }
   ],
   "topCriminal": [

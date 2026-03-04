@@ -32,8 +32,10 @@ Finding = tuple[str, str]  # (severity, message)
 
 # ── Generic checks ────────────────────────────────────────────────────
 
-def check_percentage_range(data: list[dict], fields: list[str], label: str) -> list[Finding]:
-    """Verify percentage fields are in [0, 120]. GER can exceed 100."""
+def check_percentage_range(
+    data: list[dict], fields: list[str], label: str, max_val: float = 120,
+) -> list[Finding]:
+    """Verify percentage fields are in [0, max_val]. GER can exceed 100 for small states."""
     findings: list[Finding] = []
     for entry in data:
         name = entry.get("name", entry.get("id", "?"))
@@ -41,8 +43,8 @@ def check_percentage_range(data: list[dict], fields: list[str], label: str) -> l
             val = entry.get(f)
             if val is None:
                 continue
-            if not (0 <= val <= 120):
-                findings.append(("CRITICAL", f"{label}: {name}.{f} = {val} is outside [0, 120]"))
+            if not (0 <= val <= max_val):
+                findings.append(("CRITICAL", f"{label}: {name}.{f} = {val} is outside [0, {max_val}]"))
     return findings
 
 
@@ -160,11 +162,15 @@ def validate_education() -> list[Finding]:
         NATIONAL_TOTALS["totalStudents"], f"{label} students", tolerance_pct=5,
     )
 
-    # Percentages in range
+    # Percentages in range (GER can exceed 100% in small NE states like Meghalaya 176.5%)
     findings += check_percentage_range(
         UDISE_2023_24_STATES,
-        ["gerPrimary", "gerSecondary", "gerHigherSec",
-         "dropoutPrimary", "dropoutSecondary",
+        ["gerPrimary", "gerSecondary", "gerHigherSec"],
+        label, max_val=200,
+    )
+    findings += check_percentage_range(
+        UDISE_2023_24_STATES,
+        ["dropoutPrimary", "dropoutSecondary",
          "schoolsWithComputers", "schoolsWithInternet", "girlsToilets"],
         label,
     )

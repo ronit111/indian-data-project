@@ -72,45 +72,41 @@ NHP_2022_STATES = [
 # but here we focus specifically on immunization metrics for the
 # healthcare infrastructure story.
 #
-# ⚠️ DATA QUALITY WARNING (flagged 2026-03-04 audit)
-# Spot-checks found discrepancies:
-#   - Bihar fullImmunization: 54.2% here vs ~71% in NFHS-5 factsheet
-#   - Kerala fullImmunization: 84.2% here vs ~78% in NFHS-5 factsheet
-# TO FIX: Verify each state against the NFHS-5 State Factsheet PDFs at
-# https://rchiips.org/nfhs/NFHS-5_FCTS/NFHS-5%20State%20Modules/
-# The national NFHS-5 full immunization rate is 76-77%.
+# ✅ VERIFIED 2026-03-04: All values from pratapvardhan/NFHS-5 CSV dataset
+# (DOI: 10.7910/DVN/42WNZF), cross-checked against rchiips.org state factsheets.
+# National average fullImmunization = 76.4%.
 
 IMMUNIZATION_STATES = [
-    {"id": "UP", "name": "Uttar Pradesh", "fullImmunization": 67.0, "bcg": 92.4, "measles": 80.2, "dpt3": 72.8},
-    {"id": "MH", "name": "Maharashtra", "fullImmunization": 77.4, "bcg": 96.8, "measles": 88.6, "dpt3": 82.4},
-    {"id": "BR", "name": "Bihar", "fullImmunization": 54.2, "bcg": 87.6, "measles": 68.4, "dpt3": 62.8},
-    {"id": "WB", "name": "West Bengal", "fullImmunization": 74.8, "bcg": 98.2, "measles": 88.4, "dpt3": 80.6},
-    {"id": "MP", "name": "Madhya Pradesh", "fullImmunization": 68.4, "bcg": 94.2, "measles": 82.6, "dpt3": 74.2},
-    {"id": "TN", "name": "Tamil Nadu", "fullImmunization": 82.6, "bcg": 98.4, "measles": 92.8, "dpt3": 88.2},
-    {"id": "RJ", "name": "Rajasthan", "fullImmunization": 66.8, "bcg": 93.6, "measles": 80.4, "dpt3": 72.4},
-    {"id": "KA", "name": "Karnataka", "fullImmunization": 76.8, "bcg": 97.4, "measles": 88.2, "dpt3": 82.8},
-    {"id": "GJ", "name": "Gujarat", "fullImmunization": 72.4, "bcg": 95.8, "measles": 84.6, "dpt3": 78.2},
-    {"id": "AP", "name": "Andhra Pradesh", "fullImmunization": 73.6, "bcg": 97.2, "measles": 86.4, "dpt3": 79.8},
-    {"id": "TS", "name": "Telangana", "fullImmunization": 75.4, "bcg": 97.8, "measles": 88.2, "dpt3": 80.6},
-    {"id": "OD", "name": "Odisha", "fullImmunization": 73.2, "bcg": 96.4, "measles": 86.8, "dpt3": 78.4},
-    {"id": "KL", "name": "Kerala", "fullImmunization": 84.2, "bcg": 99.2, "measles": 94.6, "dpt3": 90.4},
-    {"id": "JH", "name": "Jharkhand", "fullImmunization": 61.8, "bcg": 92.8, "measles": 76.4, "dpt3": 68.6},
-    {"id": "AS", "name": "Assam", "fullImmunization": 58.4, "bcg": 90.6, "measles": 72.8, "dpt3": 66.2},
-    {"id": "PB", "name": "Punjab", "fullImmunization": 79.2, "bcg": 97.6, "measles": 90.4, "dpt3": 84.6},
-    {"id": "CG", "name": "Chhattisgarh", "fullImmunization": 70.2, "bcg": 95.4, "measles": 84.2, "dpt3": 76.8},
-    {"id": "HR", "name": "Haryana", "fullImmunization": 74.6, "bcg": 96.8, "measles": 86.4, "dpt3": 80.2},
-    {"id": "UK", "name": "Uttarakhand", "fullImmunization": 74.8, "bcg": 97.2, "measles": 88.6, "dpt3": 80.8},
-    {"id": "JK", "name": "Jammu & Kashmir", "fullImmunization": 72.4, "bcg": 96.4, "measles": 84.8, "dpt3": 78.6},
-    {"id": "HP", "name": "Himachal Pradesh", "fullImmunization": 82.4, "bcg": 98.6, "measles": 92.4, "dpt3": 88.2},
-    {"id": "DL", "name": "Delhi", "fullImmunization": 73.8, "bcg": 96.2, "measles": 86.2, "dpt3": 79.4},
-    {"id": "GA", "name": "Goa", "fullImmunization": 80.4, "bcg": 98.4, "measles": 92.8, "dpt3": 86.4},
-    {"id": "TR", "name": "Tripura", "fullImmunization": 62.6, "bcg": 93.8, "measles": 78.4, "dpt3": 70.2},
-    {"id": "MN", "name": "Manipur", "fullImmunization": 55.8, "bcg": 88.4, "measles": 72.6, "dpt3": 64.8},
-    {"id": "ML", "name": "Meghalaya", "fullImmunization": 46.2, "bcg": 84.6, "measles": 62.4, "dpt3": 54.8},
-    {"id": "NL", "name": "Nagaland", "fullImmunization": 39.8, "bcg": 78.4, "measles": 56.8, "dpt3": 48.2},
-    {"id": "MZ", "name": "Mizoram", "fullImmunization": 52.4, "bcg": 86.8, "measles": 68.4, "dpt3": 60.2},
-    {"id": "SK", "name": "Sikkim", "fullImmunization": 76.4, "bcg": 97.8, "measles": 88.6, "dpt3": 82.4},
-    {"id": "AR", "name": "Arunachal Pradesh", "fullImmunization": 38.6, "bcg": 76.2, "measles": 54.6, "dpt3": 46.8},
+    {"id": "UP", "name": "Uttar Pradesh", "fullImmunization": 69.6, "bcg": 93.2, "measles": 83.3, "dpt3": 80.8},
+    {"id": "MH", "name": "Maharashtra", "fullImmunization": 73.5, "bcg": 93.8, "measles": 84.7, "dpt3": 83.4},
+    {"id": "BR", "name": "Bihar", "fullImmunization": 71.0, "bcg": 95.5, "measles": 85.7, "dpt3": 85.0},
+    {"id": "WB", "name": "West Bengal", "fullImmunization": 87.8, "bcg": 98.6, "measles": 94.4, "dpt3": 95.0},
+    {"id": "MP", "name": "Madhya Pradesh", "fullImmunization": 77.1, "bcg": 95.4, "measles": 88.0, "dpt3": 87.4},
+    {"id": "TN", "name": "Tamil Nadu", "fullImmunization": 89.2, "bcg": 97.6, "measles": 95.8, "dpt3": 94.8},
+    {"id": "RJ", "name": "Rajasthan", "fullImmunization": 80.4, "bcg": 95.6, "measles": 91.2, "dpt3": 89.3},
+    {"id": "KA", "name": "Karnataka", "fullImmunization": 84.1, "bcg": 97.2, "measles": 91.2, "dpt3": 92.1},
+    {"id": "GJ", "name": "Gujarat", "fullImmunization": 76.3, "bcg": 94.7, "measles": 86.8, "dpt3": 86.1},
+    {"id": "AP", "name": "Andhra Pradesh", "fullImmunization": 73.0, "bcg": 94.6, "measles": 87.1, "dpt3": 88.4},
+    {"id": "TS", "name": "Telangana", "fullImmunization": 79.1, "bcg": 93.5, "measles": 90.6, "dpt3": 89.2},
+    {"id": "OD", "name": "Odisha", "fullImmunization": 90.5, "bcg": 97.3, "measles": 95.9, "dpt3": 94.7},
+    {"id": "KL", "name": "Kerala", "fullImmunization": 77.8, "bcg": 97.6, "measles": 88.3, "dpt3": 85.2},
+    {"id": "JH", "name": "Jharkhand", "fullImmunization": 73.9, "bcg": 95.0, "measles": 86.7, "dpt3": 85.6},
+    {"id": "AS", "name": "Assam", "fullImmunization": 66.4, "bcg": 92.5, "measles": 82.8, "dpt3": 81.7},
+    {"id": "PB", "name": "Punjab", "fullImmunization": 76.2, "bcg": 95.3, "measles": 88.1, "dpt3": 88.5},
+    {"id": "CG", "name": "Chhattisgarh", "fullImmunization": 79.7, "bcg": 96.4, "measles": 90.2, "dpt3": 87.5},
+    {"id": "HR", "name": "Haryana", "fullImmunization": 76.9, "bcg": 95.0, "measles": 89.4, "dpt3": 88.5},
+    {"id": "UK", "name": "Uttarakhand", "fullImmunization": 80.8, "bcg": 95.2, "measles": 90.6, "dpt3": 89.7},
+    {"id": "JK", "name": "Jammu & Kashmir", "fullImmunization": 86.2, "bcg": 95.1, "measles": 91.7, "dpt3": 92.8},
+    {"id": "HP", "name": "Himachal Pradesh", "fullImmunization": 89.3, "bcg": 98.2, "measles": 95.9, "dpt3": 96.1},
+    {"id": "DL", "name": "Delhi", "fullImmunization": 76.0, "bcg": 96.8, "measles": 90.1, "dpt3": 85.0},
+    {"id": "GA", "name": "Goa", "fullImmunization": 81.9, "bcg": 97.9, "measles": 92.9, "dpt3": 90.8},
+    {"id": "TR", "name": "Tripura", "fullImmunization": 69.5, "bcg": 94.7, "measles": 86.3, "dpt3": 85.9},
+    {"id": "MN", "name": "Manipur", "fullImmunization": 68.8, "bcg": 95.4, "measles": 76.6, "dpt3": 81.4},
+    {"id": "ML", "name": "Meghalaya", "fullImmunization": 63.8, "bcg": 89.3, "measles": 72.5, "dpt3": 73.1},
+    {"id": "NL", "name": "Nagaland", "fullImmunization": 57.9, "bcg": 85.5, "measles": 73.8, "dpt3": 71.5},
+    {"id": "MZ", "name": "Mizoram", "fullImmunization": 72.5, "bcg": 83.4, "measles": 80.9, "dpt3": 80.7},
+    {"id": "SK", "name": "Sikkim", "fullImmunization": 80.6, "bcg": 96.6, "measles": 90.5, "dpt3": 91.4},
+    {"id": "AR", "name": "Arunachal Pradesh", "fullImmunization": 64.9, "bcg": 87.9, "measles": 80.7, "dpt3": 77.7},
 ]
 
 # ── National headline numbers ──────────────────────────────────────

@@ -683,7 +683,6 @@ export interface StateLearning {
   name: string;
   canReadStd2: number;
   canDoSubtraction: number;
-  canReadEnglish: number;
 }
 
 export interface QualityData {

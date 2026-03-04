@@ -1042,12 +1042,140 @@
       "voteShare": 0.6,
       "color": "#0284C7",
       "alliance": "NDA"
+    },
+    {
+      "party": "JSP",
+      "fullName": "Jana Sena Party",
+      "seats": 2,
+      "voteShare": 0.3,
+      "color": "#E11D48",
+      "alliance": "NDA"
+    },
+    {
+      "party": "RLD",
+      "fullName": "Rashtriya Lok Dal",
+      "seats": 2,
+      "voteShare": 0.2,
+      "color": "#16A34A",
+      "alliance": "NDA"
+    },
+    {
+      "party": "VCK",
+      "fullName": "Viduthalai Chiruthaigal Katchi",
+      "seats": 2,
+      "voteShare": 0.2,
+      "color": "#B91C1C",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "CPI(ML)(L)",
+      "fullName": "CPI (Marxist-Leninist) Liberation",
+      "seats": 2,
+      "voteShare": 0.2,
+      "color": "#EF4444",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "CPI",
+      "fullName": "Communist Party of India",
+      "seats": 2,
+      "voteShare": 0.5,
+      "color": "#DC2626",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "AJSU",
+      "fullName": "AJSU Party",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#2563EB",
+      "alliance": "NDA"
+    },
+    {
+      "party": "HAM(S)",
+      "fullName": "Hindustani Awam Morcha (Secular)",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#7C3AED",
+      "alliance": "NDA"
+    },
+    {
+      "party": "SKM",
+      "fullName": "Sikkim Krantikari Morcha",
+      "seats": 1,
+      "voteShare": 0.0,
+      "color": "#F59E0B",
+      "alliance": "NDA"
+    },
+    {
+      "party": "UPPL",
+      "fullName": "United People's Party Liberal",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#0891B2",
+      "alliance": "NDA"
+    },
+    {
+      "party": "ADAL",
+      "fullName": "Apna Dal (Soneylal)",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#CA8A04",
+      "alliance": "NDA"
+    },
+    {
+      "party": "KC(M)",
+      "fullName": "Kerala Congress (Mani)",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#047857",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "RSP",
+      "fullName": "Revolutionary Socialist Party",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#BE123C",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "MDMK",
+      "fullName": "Marumalarchi Dravida Munnetra Kazhagam",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#DC2626",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "AIFB",
+      "fullName": "All India Forward Bloc",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#B91C1C",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "AIMIM",
+      "fullName": "All India Majlis-e-Ittehadul Muslimeen",
+      "seats": 1,
+      "voteShare": 0.4,
+      "color": "#15803D",
+      "alliance": "—"
+    },
+    {
+      "party": "AIADMK",
+      "fullName": "All India Anna Dravida Munnetra Kazhagam",
+      "seats": 0,
+      "voteShare": 1.4,
+      "color": "#15803D",
+      "alliance": "—"
     }
   ],
   "allianceTotals2024": {
-    "NDA": 284,
-    "INDIA": 221,
-    "Others": 38,
+    "NDA": 293,
+    "INDIA": 234,
+    "Others": 16,
     "majorityMark": 272
   },
   "source": "ECI Official Results + TCPD Lok Dhaba"

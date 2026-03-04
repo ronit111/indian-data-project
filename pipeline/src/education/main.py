@@ -205,15 +205,6 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "states": [{"id": s["id"], "name": s["name"], "value": s["canDoSubtraction"]} for s in aser_states],
         "source": "ASER 2024",
     })
-    indicators.append({
-        "id": "can_read_english",
-        "name": "Can Read English (Std V children)",
-        "category": "quality",
-        "unit": "%",
-        "states": [{"id": s["id"], "name": s["name"], "value": s["canReadEnglish"]} for s in aser_states],
-        "source": "ASER 2024",
-    })
-
     # Infrastructure category
     indicators.append({
         "id": "ptr",

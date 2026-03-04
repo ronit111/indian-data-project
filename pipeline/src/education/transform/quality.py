@@ -34,7 +34,6 @@ def build_quality(
             "name": s["name"],
             "canReadStd2": s["canReadStd2"],
             "canDoSubtraction": s["canDoSubtraction"],
-            "canReadEnglish": s["canReadEnglish"],
         }
         for s in aser_states
     ]

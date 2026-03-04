@@ -80,7 +80,6 @@ class StateLearning(BaseModel):
     name: str
     canReadStd2: float
     canDoSubtraction: float
-    canReadEnglish: float
 
 
 class QualityData(BaseModel):
