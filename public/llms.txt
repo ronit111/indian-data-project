@@ -184,7 +184,7 @@ This is an independent civic project built by one person, not affiliated with or
 - Data sources: Census of India 2011, World Bank Open Data, NFHS-5, SRS 2023, National Population Commission
 
 ### Education
-- Total students: 235.0 million (UDISE+ 2023-24, Grades I-XII)
+- Total students: 248.0 million (UDISE+ 2023-24, Pre-Primary to Higher Secondary)
 - Total schools: 1.47 million (14.72 lakh)
 - GER Primary: 93.0%, Secondary: 77.4%, Tertiary: 28.4% (GER methodology changed in UDISE+ 2022-23 with SDMIS)
 - Pupil-teacher ratio: 25 (national average)
