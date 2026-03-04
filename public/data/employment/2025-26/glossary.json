@@ -30,8 +30,8 @@
       "id": "youth-unemployment",
       "term": "Youth Unemployment",
       "simple": "The unemployment rate among people aged 15-29, typically 3-4 times higher than the overall rate.",
-      "detail": "India has ~60 crore people under 25 — the world's largest youth population. Youth unemployment at ~12.8% means roughly 2 crore young people are actively seeking work but can't find it. The paradox: educated youth face higher unemployment than uneducated youth (graduates: ~15% vs illiterates: ~2%), because educated youth have higher job expectations and can afford to wait. This is the 'educated unemployment' problem.",
-      "inContext": "Youth UR (15-29): 12.8%. Graduates: ~15%. School dropouts: ~3%.",
+      "detail": "India has ~60 crore people under 25 — the world's largest youth population. Youth unemployment at ~10.2% (PLFS 2023-24, usual status) means roughly 1.5 crore young people are actively seeking work but can't find it. The paradox: educated youth face higher unemployment than uneducated youth (graduates: ~15% vs illiterates: ~2%), because educated youth have higher job expectations and can afford to wait. This is the 'educated unemployment' problem.",
+      "inContext": "Youth UR (15-29): 10.2% (PLFS 2023-24 usual status). Graduates: ~15%. School dropouts: ~3%.",
       "relatedTerms": [
         "unemployment-rate",
         "demographic-dividend",

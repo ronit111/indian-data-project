@@ -30,6 +30,17 @@ This file is manually curated.
 #   ptr (pupil-teacher ratio), gerPrimary (%), gerSecondary (%),
 #   gerHigherSec (%), dropoutPrimary (%), dropoutSecondary (%),
 #   schoolsWithComputers (%), schoolsWithInternet (%), girlsToilets (%)
+#
+# ⚠️ DATA QUALITY WARNING (flagged 2026-03-04 audit)
+# State-level data has KNOWN INTEGRITY ISSUES:
+#   1. State teacher totals sum to ~69 lakh, but national total is 98 lakh (29% gap)
+#   2. PTR values don't match students/teachers for many states (e.g., MH: stored 28, computed 35)
+#   3. Bihar verified WRONG: teachers 430K (actual 657K), students 27.8M (actual 21.0M),
+#      PTR 65 (actual 32), GER primary 104.1% (actual 83.4%), dropout primary 2.8% (actual 8.9%)
+#
+# TO FIX: Extract correct state data from https://dashboard.udiseplus.gov.in/
+# or the UDISE+ 2023-24 PDF report. Run curated_validator.py after updating.
+# National totals below are corrected; state data still needs per-state verification.
 
 UDISE_2023_24_STATES = [
     {"id": "UP", "name": "Uttar Pradesh", "totalSchools": 267035, "totalTeachers": 866000, "totalStudents": 41500000, "ptr": 48, "gerPrimary": 100.2, "gerSecondary": 76.9, "gerHigherSec": 56.8, "dropoutPrimary": 1.4, "dropoutSecondary": 14.6, "schoolsWithComputers": 22.4, "schoolsWithInternet": 19.2, "girlsToilets": 97.3},
@@ -76,8 +87,19 @@ UDISE_2023_24_STATES = [
 # canDoSubtraction: % of Std III children who can do 2-digit subtraction
 # canReadEnglish: % of Std V children who can read simple English sentences
 #
-# The 2024 report shows slow recovery from COVID-era learning loss, with
-# reading levels still below ASER 2018 pre-pandemic baseline in many states.
+# ⚠️ DATA QUALITY WARNING (flagged 2026-03-04 audit)
+# CRITICAL ISSUES:
+#   1. "canReadEnglish" is NOT a standard ASER 2024 metric. ASER reports
+#      Std V reading (Std II level text) and division, not English reading.
+#      This field appears fabricated.
+#   2. UP canReadStd2 = 18.6% but ASER 2024 govt schools report = 27.9% (9pp off)
+#   3. National average from ASER 2024 is 27.1% (all schools) for Std III reading.
+#      Weighted average of curated state values appears lower than this.
+#
+# TO FIX: Download state PDFs from https://asercentre.org/aser-2024/
+# Remove "canReadEnglish" field. Replace with verified ASER metrics.
+# Standard ASER metrics: Std III read Std II text, Std III subtraction,
+# Std V read Std II text, Std V division.
 
 ASER_2024_STATES = [
     {"id": "UP", "name": "Uttar Pradesh", "canReadStd2": 18.6, "canDoSubtraction": 16.2, "canReadEnglish": 24.8},
@@ -110,10 +132,10 @@ ASER_2024_STATES = [
 # ── National headline numbers ──────────────────────────────────
 # Source: UDISE+ 2023-24 Flash Statistics — Summary page
 NATIONAL_TOTALS = {
-    "totalStudents": 248200000,    # 24.82 crore
-    "totalSchools": 1489115,       # 14.89 lakh
-    "totalTeachers": 9740000,      # 97.4 lakh
-    "ptrNational": 26,             # national pupil-teacher ratio
-    "gerPrimary": 104.8,           # national GER primary (>100 due to over-age enrollment)
-    "gerSecondary": 79.6,
+    "totalStudents": 234963031,    # 23.50 crore (UDISE+ 2023-24 Grades I-XII)
+    "totalSchools": 1471891,       # 14.72 lakh (UDISE+ 2023-24)
+    "totalTeachers": 9807600,      # 98.08 lakh (UDISE+ 2023-24)
+    "ptrNational": 25,             # ~234.9M / 9.8M = 24-25 (UDISE+ does not publish a single blended PTR)
+    "gerPrimary": 93.0,            # UDISE+ 2023-24 (dropped from 103.4 in 2021-22 after SDMIS methodology change)
+    "gerSecondary": 77.4,          # UDISE+ 2023-24
 }

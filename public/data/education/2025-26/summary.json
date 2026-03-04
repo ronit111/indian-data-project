@@ -1,11 +1,11 @@
 {
   "year": "2025-26",
-  "totalStudents": 248200000,
-  "totalSchools": 1489115,
-  "totalTeachers": 9740000,
-  "gerPrimary": 104.8,
-  "gerSecondary": 79.6,
-  "ptrNational": 26,
+  "totalStudents": 234963031,
+  "totalSchools": 1471891,
+  "totalTeachers": 9807600,
+  "gerPrimary": 93.0,
+  "gerSecondary": 77.4,
+  "ptrNational": 25,
   "educationSpendGDP": 4.1,
   "topEnrolledStates": [
     {
@@ -29,6 +29,7 @@
       "students": 17200000
     }
   ],
-  "lastUpdated": "2026-03-01",
-  "source": "UDISE+ 2023-24 + World Bank + ASER 2024"
+  "lastUpdated": "2026-03-04",
+  "source": "UDISE+ 2023-24 + World Bank + ASER 2024",
+  "note": "topEnrolledStates use curated state data that needs verification against UDISE+ dashboard. National totals are verified against UDISE+ 2023-24 official report."
 }

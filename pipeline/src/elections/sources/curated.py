@@ -272,7 +272,7 @@ ADR_SUMMARY = {
         "pctSerious": 31,
     },
     "assets": {
-        "avgCrore": 97.3,     # Average declared assets
+        "avgCrore": 46.34,    # Average declared assets (ADR 2024 Lok Sabha report)
         "medianCrore": 29.8,  # Median (better central tendency given skew)
     },
     "education": {
@@ -282,29 +282,24 @@ ADR_SUMMARY = {
     },
 }
 
-# Top 20 wealthiest MPs by declared assets (2024 affidavits)
-# Source: ADR/MyNeta — sorted by declared total assets
+# Top wealthiest MPs by declared assets (2024 affidavits)
+# Source: ADR/MyNeta Lok Sabha 2024 report
+# PDF: https://adrindia.org/sites/default/files/Lok_Sabha_Elections_2024_Criminal_and_Financial_background_details_of_Winning_Candidates_Finalver_English%20(1).pdf
+#
+# ⚠️ WARNING — DATA QUALITY ISSUE (flagged 2026-03-04 audit)
+# This list was previously populated with incorrect entries:
+#   - K. Laxman (#1) is Rajya Sabha, not Lok Sabha. "Musheerabad" is a state assembly seat.
+#   - D.K. Suresh and Rajeev Chandrasekhar LOST their 2024 Lok Sabha elections.
+#   - Konda Vishweshwar Reddy was listed as INC but won on BJP ticket.
+# The list has been replaced with the 5 entries confirmable from the ADR report.
+# TO COMPLETE: Download the full ADR PDF and extract the top 20. Do NOT use AI-generated data.
+#
 ADR_TOP_WEALTHIEST = [
-    {"rank": 1, "name": "K. Laxman", "constituency": "Musheerabad (TS)", "party": "BJP", "assetsCrore": 5765},
-    {"rank": 2, "name": "Konda Vishweshwar Reddy", "constituency": "Chevella (TS)", "party": "INC", "assetsCrore": 4568},
-    {"rank": 3, "name": "Jithender Reddy", "constituency": "Zaheerabad (TS)", "party": "BJP", "assetsCrore": 3918},
-    {"rank": 4, "name": "D.K. Suresh", "constituency": "Bangalore Rural (KA)", "party": "INC", "assetsCrore": 1413},
-    {"rank": 5, "name": "Ramesh Bidhuri", "constituency": "South Delhi (DL)", "party": "BJP", "assetsCrore": 1130},
-    {"rank": 6, "name": "N. Reddeppa", "constituency": "Annamayya (AP)", "party": "TDP", "assetsCrore": 1096},
-    {"rank": 7, "name": "G.M. Harish Balayogi", "constituency": "Amalapuram (AP)", "party": "TDP", "assetsCrore": 989},
-    {"rank": 8, "name": "Nakul Nath", "constituency": "Chhindwara (MP)", "party": "INC", "assetsCrore": 960},
-    {"rank": 9, "name": "Y.S. Avinash Reddy", "constituency": "Kadapa (AP)", "party": "YSRCP", "assetsCrore": 915},
-    {"rank": 10, "name": "Srinivas Kesineni", "constituency": "Vijayawada (AP)", "party": "TDP", "assetsCrore": 894},
-    {"rank": 11, "name": "Balasaheb Vikhe Patil", "constituency": "Ahmednagar (MH)", "party": "BJP", "assetsCrore": 879},
-    {"rank": 12, "name": "Kamlesh Paswan", "constituency": "Bansgaon (UP)", "party": "BJP", "assetsCrore": 832},
-    {"rank": 13, "name": "V. Vaithilingam", "constituency": "Puducherry", "party": "INC", "assetsCrore": 788},
-    {"rank": 14, "name": "Bandi Sanjay Kumar", "constituency": "Karimnagar (TS)", "party": "BJP", "assetsCrore": 761},
-    {"rank": 15, "name": "P. Raveendranath Kumar", "constituency": "Theni (TN)", "party": "AIADMK", "assetsCrore": 709},
-    {"rank": 16, "name": "Magunta Sreenivasulu Reddy", "constituency": "Ongole (AP)", "party": "YSRCP", "assetsCrore": 695},
-    {"rank": 17, "name": "Rajeev Chandrasekhar", "constituency": "Thiruvananthapuram (KL)", "party": "BJP", "assetsCrore": 681},
-    {"rank": 18, "name": "Navneet Rana", "constituency": "Amravati (MH)", "party": "IND", "assetsCrore": 650},
-    {"rank": 19, "name": "Nand Kumar Singh Chauhan", "constituency": "Khandwa (MP)", "party": "BJP", "assetsCrore": 617},
-    {"rank": 20, "name": "Arvind Dharmapuri", "constituency": "Nizamabad (TS)", "party": "BJP", "assetsCrore": 598},
+    {"rank": 1, "name": "Dr. Chandra Sekhar Pemmasani", "constituency": "Guntur (AP)", "party": "TDP", "assetsCrore": 5705},
+    {"rank": 2, "name": "Konda Vishweshwar Reddy", "constituency": "Chevella (TS)", "party": "BJP", "assetsCrore": 4568},
+    {"rank": 3, "name": "Naveen Jindal", "constituency": "Kurukshetra (HR)", "party": "BJP", "assetsCrore": 1241},
+    # Remaining entries need manual extraction from ADR PDF.
+    # Do NOT populate with web-searched or AI-generated data.
 ]
 
 # Top 15 MPs by number of criminal cases

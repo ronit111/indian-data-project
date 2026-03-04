@@ -120,3 +120,30 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 - **Shared MOSPI client**: `pipeline/src/common/mospi_client.py` — paginated fetcher with retry logic for all 7 MOSPI endpoints
 
 The **freshness monitor** (`data-freshness-monitor.yml`) runs monthly and creates GitHub issues for upcoming data releases and stale data.
+
+---
+
+## Curated Data Quality
+
+### Validation
+
+Run the automated curated data validator after any manual data update:
+
+```bash
+cd pipeline
+python -m src.common.curated_validator
+```
+
+This checks: state sums ≈ national totals, PTR = students/teachers, percentages in range, known reference anchors, no duplicate IDs, elections losing candidates check.
+
+### Known Pitfalls
+
+1. **UDISE+ methodology change (2022-23)**: GER dropped from ~103% to ~93% after SDMIS introduction. Old values >100 are not comparable to new values.
+2. **PLFS methodology**: "Usual Status" (annual, ages 15+) ≠ "Current Weekly Status" (quarterly, urban). Always specify which methodology a number uses.
+3. **NFHS-5 vs SRS**: NFHS-5 IMR (survey-based, 2019-21) ≠ SRS IMR (civil registration, 2022). Both are legitimate but not comparable.
+4. **Forest cover**: ISFR reports "forest cover" (21.76%) and "forest + tree cover" (25.17%) separately. The 25.17% is often miscited as "forest cover."
+5. **World Bank lag**: World Bank data runs ~1-2 years behind national releases. When curating, check if a more recent government source exists.
+
+### Audit History
+
+- **2026-03-04**: Full 11-domain audit. Fixed 15 values, flagged 4 sections for manual verification. See `CURATED_DATA_AUDIT.md`.

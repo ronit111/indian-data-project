@@ -1272,7 +1272,7 @@
     "route": "/elections#party-landscape"
   },
   {
-    "id": "census-sex-ratio",
+    "id": "census-sex-ratio-why",
     "domain": "census",
     "question": "What is India's sex ratio and why does it matter?",
     "answer": "India has about 943 females per 1,000 males. The gap reflects decades of son preference, sex-selective practices, and unequal access to healthcare.",

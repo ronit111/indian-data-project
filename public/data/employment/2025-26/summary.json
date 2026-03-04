@@ -2,10 +2,10 @@
   "year": "2025-26",
   "unemploymentRate": 4.2,
   "lfpr": 55.8,
-  "youthUnemployment": 12.8,
-  "femaleLfpr": 35.2,
+  "youthUnemployment": 10.2,
+  "femaleLfpr": 34.9,
   "workforceTotal": 57.0,
-  "selfEmployedPct": 52.4,
-  "lastUpdated": "2026-03-01",
-  "source": "PLFS Annual Report 2023-24 + Quarterly Bulletin Oct-Dec 2025"
+  "selfEmployedPct": 58.4,
+  "lastUpdated": "2026-03-04",
+  "source": "PLFS Annual Report 2023-24 (usual status) + Quarterly Bulletin Oct-Dec 2025 (CWS)"
 }

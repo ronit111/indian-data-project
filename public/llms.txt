@@ -184,17 +184,17 @@ This is an independent civic project built by one person, not affiliated with or
 - Data sources: Census of India 2011, World Bank Open Data, NFHS-5, SRS 2023, National Population Commission
 
 ### Education
-- Total students: 248.2 million (UDISE+ 2023-24)
-- Total schools: 1.47 million
-- GER Primary: 104.8%, Secondary: 79.6%, Tertiary: 28.4%
-- Pupil-teacher ratio: 26 (national average)
+- Total students: 235.0 million (UDISE+ 2023-24, Grades I-XII)
+- Total schools: 1.47 million (14.72 lakh)
+- GER Primary: 93.0%, Secondary: 77.4%, Tertiary: 28.4% (GER methodology changed in UDISE+ 2022-23 with SDMIS)
+- Pupil-teacher ratio: 25 (national average)
 - Education spending: 4.1% of GDP (NEP 2020 target: 6%)
 - Data sources: UDISE+ 2023-24, ASER 2024, World Bank Open Data
 
 ### Employment
 - Unemployment rate: 4.2% (PLFS Oct-Dec 2025)
 - Labour force participation rate: 55.8%
-- Female LFPR: 35.2%, Youth unemployment: 12.8%
+- Female LFPR: 34.9% (CWS), Youth unemployment: 10.2% (PLFS 2023-24 usual status, 15-29 age group)
 - Agricultural employment: declining from 60% (2000) to 42% (2023)
 - Services employment: rising from 23% (2000) to 32% (2023)
 - Data sources: PLFS Quarterly Bulletin, PLFS Annual Report 2023-24, World Bank, RBI KLEMS
@@ -203,7 +203,7 @@ This is an independent civic project built by one person, not affiliated with or
 - Hospital beds: 0.5 per 1,000 (WHO recommends 3.5)
 - Physicians: 0.7 per 1,000
 - Health expenditure: 3.3% of GDP (global average ~6%)
-- Out-of-pocket spending: 48.2% of total health expenditure
+- Out-of-pocket spending: 45.1% of total health expenditure (World Bank 2021, declining from 62% in 2014)
 - DPT immunization: 91%, Measles: 92%
 - TB incidence: 199 per 100,000 (highest global burden)
 - Data sources: NHP 2022 (CBHI), NFHS-5, World Bank Open Data
@@ -228,7 +228,7 @@ This is an independent civic project built by one person, not affiliated with or
 - BJP seats 2024: 240 (36.6% vote share), INC seats: 99 (21.2%)
 - NDA total: 293 seats, INDIA bloc: 234 seats
 - MPs with criminal cases: 46% (251 out of 543), Serious charges: 31%
-- Average MP assets: Rs 97.3 crore (ADR analysis of affidavits)
+- Average MP assets: Rs 46.34 crore (ADR analysis of affidavits)
 - Women MPs: 74 out of 543 (13.6%), Nari Shakti Vandan Adhiniyam targets 33%
 - Data sources: Election Commission of India, TCPD Lok Dhaba (Ashoka University), ADR/MyNeta.info, Lok Sabha Secretariat
 

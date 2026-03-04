@@ -187,13 +187,13 @@ ROAD_ACCIDENT_TREND = [
 # Cause-wise breakdown of road accidents — 2022
 # Source: MoRTH Road Accidents in India 2022
 ROAD_ACCIDENT_CAUSES = [
-    {"id": "overspeeding", "name": "Over-speeding", "pct": 69.3},
-    {"id": "wrong-side", "name": "Driving on Wrong Side", "pct": 5.5},
+    {"id": "overspeeding", "name": "Over-speeding", "pct": 72.3},  # MoRTH 2022: 72.3% of total accidents
+    {"id": "wrong-side", "name": "Driving on Wrong Side", "pct": 4.9},  # MoRTH 2022
     {"id": "drunk-driving", "name": "Drunken Driving", "pct": 3.1},
     {"id": "mobile-use", "name": "Use of Mobile Phone", "pct": 2.7},
     {"id": "overloading", "name": "Overloading", "pct": 1.9},
     {"id": "red-light", "name": "Jumping Red Light", "pct": 0.9},
-    {"id": "other-causes", "name": "Other Causes", "pct": 16.6},
+    {"id": "other-causes", "name": "Other Causes", "pct": 14.2},  # remainder to sum to 100%
 ]
 
 # State-wise road accident fatality rates (deaths per lakh population) — 2022

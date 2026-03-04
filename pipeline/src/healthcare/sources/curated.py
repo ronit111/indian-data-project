@@ -71,6 +71,14 @@ NHP_2022_STATES = [
 # Note: These overlap with Census domain's NFHS-5 stateHealth data,
 # but here we focus specifically on immunization metrics for the
 # healthcare infrastructure story.
+#
+# ⚠️ DATA QUALITY WARNING (flagged 2026-03-04 audit)
+# Spot-checks found discrepancies:
+#   - Bihar fullImmunization: 54.2% here vs ~71% in NFHS-5 factsheet
+#   - Kerala fullImmunization: 84.2% here vs ~78% in NFHS-5 factsheet
+# TO FIX: Verify each state against the NFHS-5 State Factsheet PDFs at
+# https://rchiips.org/nfhs/NFHS-5_FCTS/NFHS-5%20State%20Modules/
+# The national NFHS-5 full immunization rate is 76-77%.
 
 IMMUNIZATION_STATES = [
     {"id": "UP", "name": "Uttar Pradesh", "fullImmunization": 67.0, "bcg": 92.4, "measles": 80.2, "dpt3": 72.8},
@@ -111,7 +119,7 @@ NATIONAL_TOTALS = {
     "hospitalBedsPer1000": 0.5,         # NHP 2022 (govt hospitals only)
     "physiciansPer1000": 0.7,           # World Bank 2022
     "healthExpGDP": 3.3,                # World Bank 2021 (latest)
-    "outOfPocketPct": 48.2,             # World Bank 2021
+    "outOfPocketPct": 45.1,              # World Bank 2021 (SH.XPD.OOPC.CH.ZS = 45.11)
     "dptImmunization": 91.0,            # World Bank 2023
     "tbIncidence": 199.0,               # WHO/World Bank 2023, per 100K
 }

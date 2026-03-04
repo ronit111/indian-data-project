@@ -121,7 +121,7 @@ FSI_FOREST_STATES = [
     {"id": "TS", "name": "Telangana", "forestCoverKm2": 21214, "pctGeographicArea": 18.93, "changeKm2": 32},
     {"id": "KL", "name": "Kerala", "forestCoverKm2": 21144, "pctGeographicArea": 54.42, "changeKm2": -14},
     {"id": "AS", "name": "Assam", "forestCoverKm2": 28312, "pctGeographicArea": 36.08, "changeKm2": -339},
-    {"id": "MZ", "name": "Mizoram", "forestCoverKm2": 17820, "pctGeographicArea": 84.53, "changeKm2": -186},
+    {"id": "MZ", "name": "Mizoram", "forestCoverKm2": 17820, "pctGeographicArea": 85.34, "changeKm2": 242},  # ISFR 2023: max increase among states
     {"id": "GJ", "name": "Gujarat", "forestCoverKm2": 14857, "pctGeographicArea": 7.57, "changeKm2": -8},
     {"id": "ML", "name": "Meghalaya", "forestCoverKm2": 17046, "pctGeographicArea": 76.00, "changeKm2": -73},
     {"id": "NL", "name": "Nagaland", "forestCoverKm2": 12251, "pctGeographicArea": 73.90, "changeKm2": -23},

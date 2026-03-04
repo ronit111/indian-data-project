@@ -8,7 +8,7 @@
     "pctSerious": 31
   },
   "assets": {
-    "avgCrore": 97.3,
+    "avgCrore": 46.34,
     "medianCrore": 29.8
   },
   "education": {
@@ -19,143 +19,24 @@
   "topWealthiest": [
     {
       "rank": 1,
-      "name": "K. Laxman",
-      "constituency": "Musheerabad (TS)",
-      "party": "BJP",
-      "assetsCrore": 5765
+      "name": "Dr. Chandra Sekhar Pemmasani",
+      "constituency": "Guntur (AP)",
+      "party": "TDP",
+      "assetsCrore": 5705
     },
     {
       "rank": 2,
       "name": "Konda Vishweshwar Reddy",
       "constituency": "Chevella (TS)",
-      "party": "INC",
+      "party": "BJP",
       "assetsCrore": 4568
     },
     {
       "rank": 3,
-      "name": "Jithender Reddy",
-      "constituency": "Zaheerabad (TS)",
+      "name": "Naveen Jindal",
+      "constituency": "Kurukshetra (HR)",
       "party": "BJP",
-      "assetsCrore": 3918
-    },
-    {
-      "rank": 4,
-      "name": "D.K. Suresh",
-      "constituency": "Bangalore Rural (KA)",
-      "party": "INC",
-      "assetsCrore": 1413
-    },
-    {
-      "rank": 5,
-      "name": "Ramesh Bidhuri",
-      "constituency": "South Delhi (DL)",
-      "party": "BJP",
-      "assetsCrore": 1130
-    },
-    {
-      "rank": 6,
-      "name": "N. Reddeppa",
-      "constituency": "Annamayya (AP)",
-      "party": "TDP",
-      "assetsCrore": 1096
-    },
-    {
-      "rank": 7,
-      "name": "G.M. Harish Balayogi",
-      "constituency": "Amalapuram (AP)",
-      "party": "TDP",
-      "assetsCrore": 989
-    },
-    {
-      "rank": 8,
-      "name": "Nakul Nath",
-      "constituency": "Chhindwara (MP)",
-      "party": "INC",
-      "assetsCrore": 960
-    },
-    {
-      "rank": 9,
-      "name": "Y.S. Avinash Reddy",
-      "constituency": "Kadapa (AP)",
-      "party": "YSRCP",
-      "assetsCrore": 915
-    },
-    {
-      "rank": 10,
-      "name": "Srinivas Kesineni",
-      "constituency": "Vijayawada (AP)",
-      "party": "TDP",
-      "assetsCrore": 894
-    },
-    {
-      "rank": 11,
-      "name": "Balasaheb Vikhe Patil",
-      "constituency": "Ahmednagar (MH)",
-      "party": "BJP",
-      "assetsCrore": 879
-    },
-    {
-      "rank": 12,
-      "name": "Kamlesh Paswan",
-      "constituency": "Bansgaon (UP)",
-      "party": "BJP",
-      "assetsCrore": 832
-    },
-    {
-      "rank": 13,
-      "name": "V. Vaithilingam",
-      "constituency": "Puducherry",
-      "party": "INC",
-      "assetsCrore": 788
-    },
-    {
-      "rank": 14,
-      "name": "Bandi Sanjay Kumar",
-      "constituency": "Karimnagar (TS)",
-      "party": "BJP",
-      "assetsCrore": 761
-    },
-    {
-      "rank": 15,
-      "name": "P. Raveendranath Kumar",
-      "constituency": "Theni (TN)",
-      "party": "AIADMK",
-      "assetsCrore": 709
-    },
-    {
-      "rank": 16,
-      "name": "Magunta Sreenivasulu Reddy",
-      "constituency": "Ongole (AP)",
-      "party": "YSRCP",
-      "assetsCrore": 695
-    },
-    {
-      "rank": 17,
-      "name": "Rajeev Chandrasekhar",
-      "constituency": "Thiruvananthapuram (KL)",
-      "party": "BJP",
-      "assetsCrore": 681
-    },
-    {
-      "rank": 18,
-      "name": "Navneet Rana",
-      "constituency": "Amravati (MH)",
-      "party": "IND",
-      "assetsCrore": 650
-    },
-    {
-      "rank": 19,
-      "name": "Nand Kumar Singh Chauhan",
-      "constituency": "Khandwa (MP)",
-      "party": "BJP",
-      "assetsCrore": 617
-    },
-    {
-      "rank": 20,
-      "name": "Arvind Dharmapuri",
-      "constituency": "Nizamabad (TS)",
-      "party": "BJP",
-      "assetsCrore": 598
+      "assetsCrore": 1241
     }
   ],
   "topCriminal": [
