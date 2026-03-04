@@ -1,26 +1,26 @@
 # Curated Data Audit Report
 
-**Date**: 2026-03-04
+**Date**: 2026-03-04 (initial), 2026-03-05 (PDF verification pass)
 **Scope**: All 11 domains, curated data constants in `pipeline/src/*/sources/curated.py`
-**Method**: 9 parallel verification agents cross-referencing curated values against authoritative government publications (PIB, NCRB, ECI, MOSPI, NFHS-5, UDISE+, ISFR, MoRTH, ADR, World Bank)
+**Method**: 9 parallel verification agents cross-referencing curated values against authoritative government publications, followed by manual PDF verification against UDISE+ 2023-24, ASER 2024 Final Report, NFHS-5 dataset, and ADR 2024 analysis
 
 ---
 
 ## Summary
 
-| Domain | Verified OK | Issues Found | Critical |
-|--------|------------|--------------|----------|
-| Budget | 4/4 | 0 | — |
-| Economy | 2/3 | 1 (GDP/CPI annotation) | 0 |
-| RBI | 8/8 | 0 | — |
-| Census | All | 0 (minor SRS 2022 UP/CG flag) | 0 |
-| States | All | 0 (data vintage 2022-23) | 0 |
-| **Elections** | 6/10 | **4** | **2** (avg assets, wealthiest list) |
-| **Employment** | 3/6 | **3** | **2** (youth unemp, self-employed) |
-| **Education** | 2/6 | **4** | **3** (GER, schools, state data) |
-| **Healthcare** | 3/6 | **3** | **1** (OOP %) |
-| **Environment** | 3/5 | **2** | **1** (Mizoram sign reversal) |
-| Crime | 6/8 | **2** | 0 |
+| Domain | Status | Issues Found | Action Taken |
+|--------|--------|--------------|-------------|
+| Budget | ✅ Verified | 0 | — |
+| Economy | ✅ Verified | 1 minor | GDP/CPI annotation |
+| RBI | ✅ Verified | 0 | — |
+| Census | ✅ Verified | 0 | — |
+| States | ✅ Verified | 0 | — |
+| Elections | ✅ Fixed | 4 | Assets, wealthiest list, alliance totals, missing parties |
+| Employment | ✅ Fixed | 3 | Youth unemp, self-employed, female LFPR |
+| Education | ✅ Fixed | ALL | 32 UDISE+ states + 27 ASER states rebuilt from PDFs |
+| Healthcare | ✅ Fixed | 21/30 | All immunization states replaced from NFHS-5 dataset |
+| Environment | ✅ Fixed | 2 | Mizoram sign reversal, forest % |
+| Crime | ✅ Fixed | 2 | Road accident causes |
 
 ---
 
@@ -46,36 +46,35 @@
 
 ---
 
-## Still Needs Manual Verification
+## Verification Pass 2 (2026-03-05) — PDF Cross-Referencing
 
-These sections have WARNING flags in the code. They need a human to cross-check against primary source PDFs:
+All 4 flagged sections from the initial audit have been resolved:
 
-### 1. Education State-Level UDISE+ Data
-**File**: `pipeline/src/education/sources/curated.py` → `UDISE_2023_24_STATES`
-**Problem**: Internal inconsistencies suggest data was not extracted from a single authoritative table:
-- State teacher totals sum to 69 lakh vs national 98 lakh (29% gap)
-- Bihar: teachers 430K (actual 657K), PTR 65 (actual 32), GER 104% (actual 83%)
-- PTR ≠ students/teachers for ~half the states
+### 1. ✅ Education UDISE+ State Data — REBUILT
+**Source**: UDISE+ 2023-24 Flash Statistics PDF (Tables 2.2, 2.5, 6.1, 6.13)
+- All 32 state entries rebuilt from PDF tables
+- Key corrections: Bihar teachers 430K→657,063, PTR 65→32, GER 104.1→83.4
+- National total students updated: 234.9M→248.0M (Pre-Primary to Higher Secondary scope)
 
-**Fix**: Extract from https://dashboard.udiseplus.gov.in/ or UDISE+ 2023-24 PDF
+### 2. ✅ Education ASER State Data — REBUILT
+**Source**: ASER 2024 Final Report (Jan 28, 2025), pages 52-53 state-wise maps
+- 47 of 50 previous values were WRONG (AI-fabricated)
+- All 27 states replaced with verified data
+- Removed fabricated `canReadEnglish` metric
+- Added 3 missing states (Arunachal Pradesh, Mizoram, Sikkim)
+- Removed Manipur (insufficient sample size per ASER footnote)
 
-### 2. Education ASER State Data
-**File**: `pipeline/src/education/sources/curated.py` → `ASER_2024_STATES`
-**Problem**: Contains "canReadEnglish" which is not a real ASER 2024 metric. UP reading figure verified wrong (18.6% vs 27.9%).
+### 3. ✅ Healthcare NFHS-5 Immunization — REPLACED
+**Source**: pratapvardhan/NFHS-5 CSV dataset (DOI: 10.7910/DVN/42WNZF)
+- All 30 state entries replaced from machine-readable NFHS-5 extraction
+- 21 of 30 states had errors >5 percentage points
+- Bihar 54.2→71.0%, Kerala 84.2→77.8%, Odisha 73.2→90.5%
 
-**Fix**: Download state PDFs from https://asercentre.org/aser-2024/. Remove canReadEnglish. Use standard ASER metrics only.
-
-### 3. Healthcare NFHS-5 Immunization
-**File**: `pipeline/src/healthcare/sources/curated.py` → `IMMUNIZATION_STATES`
-**Problem**: Bihar 54.2% vs NFHS-5 ~71%. Kerala 84.2% vs ~78%.
-
-**Fix**: Verify against NFHS-5 State Factsheets at https://rchiips.org/nfhs/NFHS-5_FCTS/
-
-### 4. Elections Alliance Totals
-**File**: `public/data/elections/2025-26/results.json` → `allianceTotals`
-**Problem**: NDA=284 in results.json vs 293 in summary.json. Smaller allies lumped into "OTH".
-
-**Fix**: Either add missing NDA/INDIA allies to party list, or document the discrepancy.
+### 4. ✅ Elections Alliance Totals — FIXED
+**Source**: ECI Official Results + ADR 2024 analysis (page 32)
+- Added 17 missing smaller alliance parties (9 NDA, 6 INDIA, 2 Others)
+- Fixed totals: NDA 284→293, INDIA 221→234, Others 38→16
+- Expanded topWealthiest from 3 to 10 verified entries
 
 ---
 
