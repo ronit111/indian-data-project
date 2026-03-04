@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.19.0] - 2026-03-04
+
+### Phase 19: LLM & Search Metadata Overhaul
+
+Rewrote all LLM-facing and search-engine-facing metadata to center the portal's core essence: dense PDFs, broken APIs, and buried spreadsheets turned into accessible visual stories for citizens.
+
+**llms.txt** — Major rewrite of intro and structure
+- New opening leads with the citizen problem (buried data) instead of a generic feature list
+- Added "Why this exists", "What you can do here", "What makes this credible", "Who built this and why" sections
+- Fixed stale counts (128 → 136 citizen questions, 8 → 11 domains)
+
+**Meta descriptions** (index.html) — All 4 tags updated
+- `<meta name="description">`, `og:description`, `twitter:description`, JSON-LD `description`
+- Shifted from tax-money framing to data accessibility framing
+- Noscript fallback rewritten with comprehensive citizen-facing paragraph
+
+**Hub page** (HubPage.tsx, home.json, inject-og.mjs)
+- SEOHead description aligned with new meta copy
+- Hero subtitle updated in locale file
+- OG injection script updated for hub path
+
+**5 files changed**, 40 insertions, 16 deletions. Zero build errors, 81 prerendered routes.
+
 ## [0.18.0] - 2026-03-04
 
 ### Phase 18: Citizen QA — Holistic Product Review

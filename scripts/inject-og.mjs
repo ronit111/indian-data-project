@@ -29,7 +29,7 @@ const ROUTES = [
   {
     path: '/',
     title: 'Indian Data Project — Government Data, Made Visible',
-    description: 'Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories. Real data. No spin. Open source.',
+    description: "India's government data is buried in dense PDFs, broken APIs, and spreadsheets formatted for bureaucrats. This portal turns it into visual stories anyone can follow — 11 domains, from budget to elections to healthcare.",
     image: '/og-logo.png',
   },
 

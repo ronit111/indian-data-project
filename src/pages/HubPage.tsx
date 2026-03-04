@@ -59,7 +59,7 @@ function HubHero() {
             className="text-lg md:text-xl leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
-            {'Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories.'}
+            {'Dense PDFs and buried spreadsheets turned into interactive visual stories.'}
           </p>
           <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             {'Real data. No spin. Open source.'}
@@ -1546,7 +1546,7 @@ export default function HubPage() {
     >
       <SEOHead
         title="Indian Data Project — Government Data, Made Visible"
-        description="Broken APIs, dense PDFs, and buried spreadsheets turned into visual stories. Real data. No spin. Open source."
+        description="India's government data is buried in dense PDFs, broken APIs, and spreadsheets formatted for bureaucrats. This portal turns it into visual stories anyone can follow — 11 domains, from budget to elections to healthcare."
         path="/"
       />
 
