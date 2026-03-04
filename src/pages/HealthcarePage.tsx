@@ -16,7 +16,7 @@ import { HealthcareCTASection } from '../components/healthcare/HealthcareCTASect
 
 export default function HealthcarePage() {
   const year = useHealthcareStore((s) => s.selectedYear);
-  const { summary, infrastructure, spending, disease, loading, error } = useHealthcareData(year);
+  const { summary, infrastructure, spending, disease, forex, loading, error } = useHealthcareData(year);
 
   if (loading) {
     return (
@@ -99,7 +99,7 @@ export default function HealthcarePage() {
 
       <div className="composition-divider" />
 
-      {spending && <SpendingSection data={spending} />}
+      {spending && <SpendingSection data={spending} forex={forex} />}
 
       <div className="composition-divider" />
 

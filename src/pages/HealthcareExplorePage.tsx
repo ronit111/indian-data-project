@@ -11,7 +11,6 @@ import { SkeletonChart, SkeletonText } from '../components/ui/Skeleton.tsx';
 const CATEGORIES = [
   { value: 'all', label: 'All' },
   { value: 'infrastructure', label: 'Infrastructure' },
-  { value: 'spending', label: 'Spending' },
   { value: 'immunization', label: 'Immunization' },
   { value: 'disease', label: 'Disease' },
 ] as const;
@@ -25,16 +24,16 @@ const INDICATOR_COLORS: Record<string, string> = {
   sub_centres: 'var(--rose-light)',
   doctors_per_10k: 'var(--rose)',
   doctors_at_phc: 'var(--rose-light)',
-  health_exp_gdp: 'var(--rose)',
-  health_exp_per_capita: 'var(--rose-light)',
-  oop_pct: 'var(--saffron)',
-  govt_health_exp: 'var(--rose)',
   full_immunization: 'var(--rose)',
   bcg: 'var(--rose-light)',
   measles: 'var(--rose)',
   dpt3: 'var(--rose-light)',
   tb_incidence: 'var(--saffron)',
   hiv_prevalence: 'var(--rose)',
+  imr: 'var(--rose)',
+  under5mr: 'var(--rose-light)',
+  stunting: 'var(--saffron)',
+  wasting: 'var(--saffron)',
 };
 
 const stagger = {
@@ -109,7 +108,7 @@ export default function HealthcareExplorePage() {
     >
       <SEOHead
         title="Explore Healthcare Data — Indian Data Project"
-        description="Browse and compare state-wise healthcare infrastructure, spending, immunization, and disease indicators across all Indian states."
+        description="Browse and compare state-wise healthcare infrastructure, immunization, and disease indicators across all Indian states."
         path="/healthcare/explore"
         image="/og-healthcare.png"
       />
@@ -237,6 +236,13 @@ export default function HealthcareExplorePage() {
                     Source: {activeIndicator.source}
                   </p>
                 </motion.div>
+              )}
+              {!activeIndicator && filteredIndicators.length === 0 && (
+                <div className="flex-1 flex items-center justify-center py-16">
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                    No indicators available for this category yet.
+                  </p>
+                </div>
               )}
             </div>
           </div>

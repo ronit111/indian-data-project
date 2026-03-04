@@ -1,5 +1,42 @@
 # Changelog
 
+## [0.20.0] - 2026-03-04
+
+### Phase 20: Data Completeness Pass — Fill Every Dead End
+
+Comprehensive audit filling empty explorer tabs, surfacing hidden data, and adding the healthcare domain's most emotionally resonant datapoint.
+
+**Track 1: Healthcare Explorer — Disease tab filled**
+- Added 4 NFHS-5 disease indicators to `indicators.json`: Infant Mortality Rate, Under-5 Mortality Rate, Stunting Prevalence, Wasting Prevalence (23 states each)
+- Removed empty "Spending" tab (national-only data belongs in scrollytelling, not state-comparison explorer)
+- Added indicator colors for disease category (rose + saffron accents)
+
+**Track 2: Employment Explorer — Sectoral tab removed**
+- Removed empty "Sectoral" tab (national time-series data, not state-level). Tabs: All, Unemployment, Participation, Informality
+- Cleaned up unused `INDICATOR_COLORS` entries (agriculture_share, industry_share, services_share)
+
+**Track 3: Healthcare ₹19/day hero stat**
+- Per-capita health spending converted from USD to INR using RBI exchange rates (`forex.json`)
+- Full-viewport hero number with rose gradient, AnimatedCounter, "on your health, every day" subtitle
+- Annotation: "less per day than what most Indians spend on a cup of chai"
+- INR per-capita trend chart: ₹3,439 (2014) → ₹6,995 (2023), 103% increase
+- Cross-domain data loading: `useHealthcareData` now fetches `loadForex()` alongside healthcare data
+- Exchange rate source transparently attributed in source line
+
+**Track 5: Empty state safety net (all 10 explorers)**
+- Added "No indicators available for this category yet" fallback when filtered indicators list is empty
+- Applied to: Budget, Economy, RBI, States, Census, Education, Employment, Healthcare, Environment, Elections
+
+**Track 6: 13 new citizen questions (148 → 161 total)**
+- Budget: income tax slabs, GST explained
+- Healthcare: per-person spending, out-of-pocket burden
+- Employment: farming share, gig economy
+- Economy: GDP explained. Education: per-student spending
+- Environment: climate change impact. Crime: police per person
+- Elections: party count. Census: sex ratio. States: richest state
+
+**15 files changed**, ~442 insertions, ~20 deletions. Zero build errors, 81 prerendered routes.
+
 ## [0.19.0] - 2026-03-04
 
 ### Phase 19: LLM & Search Metadata Overhaul

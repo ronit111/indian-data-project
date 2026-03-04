@@ -12,7 +12,6 @@ const CATEGORIES = [
   { value: 'all', label: 'All' },
   { value: 'unemployment', label: 'Unemployment' },
   { value: 'participation', label: 'Participation' },
-  { value: 'sectoral', label: 'Sectoral' },
   { value: 'informality', label: 'Informality' },
 ] as const;
 
@@ -27,9 +26,6 @@ const INDICATOR_COLORS: Record<string, string> = {
   lfpr_male: 'var(--amber)',
   lfpr_female: 'var(--amber-light)',
   emp_pop_ratio: 'var(--amber)',
-  agriculture_share: 'var(--amber)',
-  industry_share: 'var(--amber-light)',
-  services_share: 'var(--cyan)',
   self_employed: 'var(--saffron)',
   vulnerable_employment: 'var(--saffron)',
 };
@@ -102,7 +98,7 @@ export default function EmploymentExplorePage() {
     >
       <SEOHead
         title="Explore Employment Data — Indian Data Project"
-        description="Browse and compare state-wise unemployment, participation, sectoral employment, and informality indicators across all Indian states."
+        description="Browse and compare state-wise unemployment, participation, and informality indicators across all Indian states."
         path="/employment/explore"
         image="/og-employment.png"
       />
@@ -230,6 +226,13 @@ export default function EmploymentExplorePage() {
                     Source: {activeIndicator.source}
                   </p>
                 </motion.div>
+              )}
+              {!activeIndicator && filteredIndicators.length === 0 && (
+                <div className="flex-1 flex items-center justify-center py-16">
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                    No indicators available for this category yet.
+                  </p>
+                </div>
               )}
             </div>
           </div>

@@ -5,6 +5,7 @@ import {
   loadHealthSpending,
   loadDisease,
   loadHealthcareIndicators,
+  loadForex,
 } from '../lib/dataLoader.ts';
 import type {
   HealthcareSummary,
@@ -12,6 +13,7 @@ import type {
   HealthSpendingData,
   DiseaseData,
   HealthcareIndicatorsData,
+  ForexData,
 } from '../lib/data/schema.ts';
 
 interface HealthcareData {
@@ -20,6 +22,7 @@ interface HealthcareData {
   spending: HealthSpendingData | null;
   disease: DiseaseData | null;
   indicators: HealthcareIndicatorsData | null;
+  forex: ForexData | null;
   loading: boolean;
   error: string | null;
 }
@@ -31,6 +34,7 @@ export function useHealthcareData(year: string): HealthcareData {
     spending: null,
     disease: null,
     indicators: null,
+    forex: null,
     loading: true,
     error: null,
   });
@@ -51,8 +55,9 @@ export function useHealthcareData(year: string): HealthcareData {
       loadHealthSpending(year),
       loadDisease(year),
       loadHealthcareIndicators(year),
+      loadForex(year),
     ])
-      .then(([summary, infrastructure, spending, disease, indicators]) => {
+      .then(([summary, infrastructure, spending, disease, indicators, forex]) => {
         if (!cancelled) {
           setData({
             summary,
@@ -60,6 +65,7 @@ export function useHealthcareData(year: string): HealthcareData {
             spending,
             disease,
             indicators,
+            forex,
             loading: false,
             error: null,
           });

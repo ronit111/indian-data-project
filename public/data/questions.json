@@ -1182,5 +1182,109 @@
     "answer": "The FRBM Act caps state borrowing at 3% of GSDP. States that breach this limit are spending future generations' money.",
     "sectionId": "fiscal-health",
     "route": "/states#fiscal-health"
+  },
+  {
+    "id": "budget-income-tax-slabs",
+    "domain": "budget",
+    "question": "How much tax do I pay on my salary?",
+    "answer": "Under the new tax regime, income up to \u20b912 lakh is effectively tax-free. Above that, rates range from 5% to 30% in slabs.",
+    "sectionId": "calculator",
+    "route": "/budget/calculator"
+  },
+  {
+    "id": "budget-gst-explained",
+    "domain": "budget",
+    "question": "What is GST and how does it work?",
+    "answer": "GST is an indirect tax on goods and services, replacing 17 older taxes. It applies at 5%, 12%, 18%, or 28% depending on the item.",
+    "sectionId": "revenue",
+    "route": "/budget#revenue"
+  },
+  {
+    "id": "healthcare-spend-per-person",
+    "domain": "healthcare",
+    "question": "How much does India spend on healthcare per person?",
+    "answer": "About \u20b919 per day per citizen (\u20b97,000/year). That's less than the cost of one OPD visit at a private hospital.",
+    "sectionId": "spending",
+    "route": "/healthcare#spending"
+  },
+  {
+    "id": "healthcare-out-of-pocket",
+    "domain": "healthcare",
+    "question": "Why do Indians pay so much out of pocket for health?",
+    "answer": "Over 50% of health spending comes from patients' own pockets \u2014 among the highest in the world. Low public spending forces families to pay directly.",
+    "sectionId": "oop",
+    "route": "/healthcare#oop"
+  },
+  {
+    "id": "employment-farming-share",
+    "domain": "employment",
+    "question": "What percentage of Indians work in farming?",
+    "answer": "About 42% of India's workforce is in agriculture, but farming contributes only ~18% of GDP \u2014 a lot of people sharing a small pie.",
+    "sectionId": "sectoral",
+    "route": "/employment#sectoral"
+  },
+  {
+    "id": "employment-gig-economy",
+    "domain": "employment",
+    "question": "What is the gig economy?",
+    "answer": "Gig workers are delivery riders, cab drivers, and freelancers with no fixed employer. Most have no PF, insurance, or job security.",
+    "sectionId": "informality",
+    "route": "/employment#informality"
+  },
+  {
+    "id": "economy-gdp-explained",
+    "domain": "economy",
+    "question": "What is GDP and why does it matter?",
+    "answer": "GDP is the total value of everything India produces in a year. When GDP grows, there's more income to go around \u2014 but distribution matters too.",
+    "sectionId": "growth",
+    "route": "/economy#growth"
+  },
+  {
+    "id": "education-spend-per-student",
+    "domain": "education",
+    "question": "How much does India spend on education per student?",
+    "answer": "India spends about 3% of GDP on education \u2014 well below the 6% recommended by the NEP. Per-student spending varies hugely across states.",
+    "sectionId": "spending",
+    "route": "/education#spending"
+  },
+  {
+    "id": "env-climate-change-india",
+    "domain": "environment",
+    "question": "What is climate change and how does it affect India?",
+    "answer": "Rising global temperatures are making Indian heatwaves deadlier, monsoons more erratic, and coastal cities more flood-prone. India is among the most climate-vulnerable nations.",
+    "sectionId": "carbon-footprint",
+    "route": "/environment#carbon-footprint"
+  },
+  {
+    "id": "crime-police-per-person",
+    "domain": "crime",
+    "question": "How many police officers does India have per person?",
+    "answer": "India has about 151 police per lakh population \u2014 32% below the UN-recommended 222. That's roughly 1 officer for every 660 citizens.",
+    "sectionId": "police-infrastructure",
+    "route": "/crime#police-infrastructure"
+  },
+  {
+    "id": "elections-party-count",
+    "domain": "elections",
+    "question": "How many political parties are there in India?",
+    "answer": "Over 2,700 parties are registered with the Election Commission. Only 6 have national party status; most are regional or state-level.",
+    "sectionId": "party-landscape",
+    "route": "/elections#party-landscape"
+  },
+  {
+    "id": "census-sex-ratio",
+    "domain": "census",
+    "question": "What is India's sex ratio and why does it matter?",
+    "answer": "India has about 943 females per 1,000 males. The gap reflects decades of son preference, sex-selective practices, and unequal access to healthcare.",
+    "sectionId": "demographics",
+    "route": "/census#demographics"
+  },
+  {
+    "id": "states-richest-state",
+    "domain": "states",
+    "question": "Which is the richest state in India?",
+    "answer": "Maharashtra has the largest economy by GSDP (\u20b935+ lakh crore). But per person, Goa is the richest \u2014 size vs. prosperity are different things.",
+    "sectionId": "gsdp",
+    "route": "/states#gsdp"
   }
 ]

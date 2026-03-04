@@ -240,7 +240,7 @@ public/
 ├── data/environment/2025-26/ # 7 structured JSON environment datasets
 ├── data/elections/2025-26/  # 7 structured JSON elections datasets
 ├── data/emi/               # Curated loan spread data (SBI/HDFC rate cards)
-├── data/questions.json     # 115 citizen questions across 10 domains (powers question-first search)
+├── data/questions.json     # 161 citizen questions across 11 domains (powers question-first search)
 ├── locales/en/             # Translation files
 ├── sitemap.xml             # All routes + data endpoints (76 pages + 54 data files)
 ├── robots.txt              # All bots welcomed (including AI crawlers)
@@ -421,7 +421,7 @@ EMI data lives in `public/data/emi/`:
 
 | File | Contents |
 |------|----------|
-| `questions.json` | 115 curated citizen questions across 10 domains with answers and section anchors. Powers question-first Cmd+K search. |
+| `questions.json` | 161 curated citizen questions across 11 domains with answers and section anchors. Powers question-first Cmd+K search. |
 
 Data sourced from [Open Budgets India](https://openbudgetsindia.org), [indiabudget.gov.in](https://www.indiabudget.gov.in), [Economic Survey](https://www.indiabudget.gov.in/economicsurvey/), [RBI DBIE](https://data.rbi.org.in), [RBI Monetary Policy Statements](https://www.rbi.org.in), [RBI Handbook of Statistics on Indian States](https://www.rbi.org.in), [Census of India](https://censusindia.gov.in), [NFHS](http://rchiips.org/nfhs/), [UDISE+](https://udiseplus.gov.in), [ASER](https://asercentre.org), [PLFS](https://mospi.gov.in), [MOSPI eSankhyiki API](https://api.mospi.gov.in), [NHP/CBHI](https://cbhidghs.mohfw.gov.in), [CPCB](https://cpcb.nic.in), [MOEFCC](https://moef.gov.in), [CEA](https://cea.nic.in), [CWC](https://cwc.gov.in), [Election Commission of India](https://eci.gov.in), [TCPD Lok Dhaba](https://lokdhaba.ashoka.edu.in), [ADR/MyNeta](https://myneta.info), [IMF CPI via DBnomics](https://db.nomics.world/IMF/CPI), [SBI/HDFC rate cards](https://sbi.co.in), and [World Bank Open Data API](https://data.worldbank.org) under the [Government Open Data License — India](https://data.gov.in/government-open-data-license-india).
 
@@ -551,7 +551,7 @@ The site is built for maximum discoverability:
 
 **Phase 9: Key Insights & Question-First Search** ✓
 - [x] "Key Takeaways" stat pill strip on all 10 story pages (4 pills each, runtime-computed, scroll-to-section click, staggered entrance animation)
-- [x] 115 curated citizen questions across 10 domains (`public/data/questions.json`) with one-sentence answers mapped to section anchors
+- [x] 161 curated citizen questions across 11 domains (`public/data/questions.json`) with one-sentence answers mapped to section anchors
 - [x] Questions indexed in Fuse.js Cmd+K search with amber QUESTION badges ("Why are prices rising?" → `/economy#inflation`)
 
 **Phase 10: New Domains — Environment, Elections** ✓

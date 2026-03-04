@@ -155,6 +155,13 @@ export default function ExplorePage() {
         )}
 
         {expenditure && <DataTable data={expenditure} />}
+        {expenditure && expenditure.ministries.length === 0 && (
+          <div className="flex items-center justify-center py-16">
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              No indicators available for this category yet.
+            </p>
+          </div>
+        )}
       </div>
     </motion.div>
   );

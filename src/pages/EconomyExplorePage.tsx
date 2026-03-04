@@ -215,6 +215,13 @@ export default function EconomyExplorePage() {
                   </p>
                 </motion.div>
               )}
+              {!activeIndicator && filteredIndicators.length === 0 && (
+                <div className="flex-1 flex items-center justify-center py-16">
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                    No indicators available for this category yet.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}

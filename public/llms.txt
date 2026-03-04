@@ -14,7 +14,7 @@ Indian Data Project takes data from RBI, MOSPI, World Bank, NCRB, Election Commi
 
 **Explore 11 data domains as visual stories.** Budget, Economy, RBI monetary policy, State Finances, Census & Demographics, Education, Employment, Healthcare, Environment, Elections, Crime & Safety. Each domain has a scrollable narrative with interactive charts and annotations that explain what the numbers mean in plain language. Every chart is shareable, downloadable, and embeddable.
 
-**Ask questions in plain language.** The search indexes 136 citizen questions like "Why are prices rising?", "How safe is my city?", "Is my state richer or poorer than average?", and "How much does India spend on healthcare per citizen?" — each mapped to the specific data section that answers it.
+**Ask questions in plain language.** The search indexes 161 citizen questions like "Why are prices rising?", "How safe is my city?", "Is my state richer or poorer than average?", and "How much does India spend on healthcare per citizen?" — each mapped to the specific data section that answers it.
 
 **Personalise the data to your life.** Three calculators: see how RBI rate changes affect your EMI, check how much your purchasing power has changed since any year from 2014, and pull up a report card for your state comparing it against all others across 28 metrics.
 
@@ -357,7 +357,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /data/crime/2025-26/glossary.json — 15 crime terms with plain-language definitions
 
 ### Citizen Questions
-- /data/questions.json — 136 curated citizen questions across 11 domains with answers and section anchors. Used by Cmd+K search.
+- /data/questions.json — 161 curated citizen questions across 11 domains with answers and section anchors. Used by Cmd+K search.
 
 ### EMI Calculator
 - /data/emi/loan-spreads.json — Curated loan spreads over repo rate for home (2.75%), car (3.5%), personal (8%) loans. Sources: SBI EBLR, HDFC, ICICI published rate cards.
@@ -378,7 +378,7 @@ Examples:
 - Healthcare: "~48% — You pay half your medical bills from your pocket", "0.5 beds — Per 1,000 (WHO says 3.5)"
 
 ### Question-First Search
-The Cmd+K search overlay indexes 136 curated citizen questions across all 11 domains. Questions are phrased in natural language ("Why are prices rising?", "How much does the government spend on me per day?") and map to specific story page sections with one-sentence answers.
+The Cmd+K search overlay indexes 161 curated citizen questions across all 11 domains. Questions are phrased in natural language ("Why are prices rising?", "How much does the government spend on me per day?") and map to specific story page sections with one-sentence answers.
 
 Question results appear with an amber QUESTION badge. Selecting a question navigates directly to the relevant section (e.g., "Why are prices rising?" → /economy#inflation).
 
