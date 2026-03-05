@@ -2,6 +2,12 @@
 
 All notable changes to the Indian Data Project.
 
+## [0.21.2] - 2026-03-05
+
+### Bug Fix
+
+- Fixed "Top state GSDP" stat pill on Regional Inequality topic showing "₹0.0L Cr" instead of "₹35.3L Cr" — `topGsdpValue` was being divided by 100,000 despite already being in lakh crore units
+
 ## [0.21.1] - 2026-03-05
 
 ### Data Accuracy Audit
