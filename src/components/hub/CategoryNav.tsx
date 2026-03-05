@@ -121,7 +121,7 @@ export function CategoryNav({ sentinelId }: CategoryNavProps) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky z-40 transition-all duration-300"
+      className="sticky z-40 transition-all duration-300 hidden md:block"
       style={{
         top: '56px', // below header
         backdropFilter: isStuck ? 'blur(16px)' : 'none',

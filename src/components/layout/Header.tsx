@@ -273,6 +273,23 @@ export function Header() {
           </Link>
         </div>
 
+        {/* Mobile search icon — visible only on small screens */}
+        <button
+          onClick={toggleSearch}
+          className="md:hidden p-2 rounded-lg cursor-pointer transition-colors hover:bg-[var(--bg-raised)]"
+          style={{
+            color: 'var(--text-muted)',
+            background: 'transparent',
+            border: 'none',
+          }}
+          aria-label="Search"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+        </button>
+
         <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => {
             const isActive = isActiveLink(link.to);
