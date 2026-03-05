@@ -29,7 +29,7 @@ export const regionalInequality: TopicDef = {
 
   takeaways: [
     { value: '36', label: 'States & UTs', sectionId: 'income-divide' },
-    { value: (bag) => { const s = statesSummary(bag); return s?.topGsdpState ? `₹${(s.topGsdpValue / 100000).toFixed(1)}L Cr` : '—'; }, label: `Top state GSDP`, sectionId: 'income-divide' },
+    { value: (bag) => { const s = statesSummary(bag); return s?.topGsdpState ? `₹${s.topGsdpValue.toFixed(1)}L Cr` : '—'; }, label: `Top state GSDP`, sectionId: 'income-divide' },
     { value: (bag) => { const s = statesSummary(bag); return s ? s.growthRange : '—'; }, label: 'GSDP growth range', sectionId: 'income-divide' },
     { value: '8x', label: 'Per capita gap: Goa vs Bihar', sectionId: 'income-divide' },
   ],
