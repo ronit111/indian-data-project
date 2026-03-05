@@ -105,7 +105,7 @@ export function TopicChartRenderer({ chart, bag }: TopicChartRendererProps) {
 
       {/* Line chart */}
       {chart.chartType === 'line' && (
-        <div className="w-full" style={{ height: '320px' }}>
+        <div className="w-full">
           <LineChart
             series={toLineSeries(data as RawSeriesItem[])}
             isVisible={isVisible}
@@ -116,7 +116,7 @@ export function TopicChartRenderer({ chart, bag }: TopicChartRendererProps) {
 
       {/* Area chart */}
       {chart.chartType === 'area' && (
-        <div className="w-full" style={{ height: '320px' }}>
+        <div className="w-full">
           <AreaChart
             series={toLineSeries(data as RawSeriesItem[]).map((s) => ({
               ...s,
