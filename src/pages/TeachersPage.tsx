@@ -43,7 +43,7 @@ export default function TeachersPage() {
         <div className="grid sm:grid-cols-2 gap-6 mb-12">
           <Link
             to="/for-teachers/lesson-plans"
-            className="group block rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
+            className="group block h-full rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
             style={{ background: 'var(--bg-surface)' }}
           >
             <div className="h-1" style={{ background: 'var(--saffron)' }} />
@@ -83,7 +83,7 @@ export default function TeachersPage() {
           </Link>
 
           <div
-            className="rounded-xl overflow-hidden"
+            className="h-full rounded-xl overflow-hidden"
             style={{ background: 'var(--bg-surface)' }}
           >
             <div className="h-1" style={{ background: 'var(--positive)' }} />

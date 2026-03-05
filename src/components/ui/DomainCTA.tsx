@@ -105,7 +105,7 @@ export function DomainCTA({ domain }: DomainCTAProps) {
                   <Link
                     key={r.domain}
                     to={meta.route}
-                    className="group flex items-center gap-3 px-4 py-3 rounded-lg no-underline transition-all duration-150 hover:brightness-110"
+                    className="group flex h-full items-center gap-3 px-4 py-3 rounded-lg no-underline transition-all duration-150 hover:brightness-110"
                     style={{
                       background: 'var(--bg-raised)',
                       borderLeft: `3px solid ${meta.accent}`,

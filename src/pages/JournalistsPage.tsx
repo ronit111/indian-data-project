@@ -60,7 +60,7 @@ export default function JournalistsPage() {
             <Link
               key={card.to}
               to={card.to}
-              className="group block rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
+              className="group block h-full rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
               style={{ background: 'var(--bg-surface)' }}
             >
               <div className="h-1" style={{ background: card.accent }} />

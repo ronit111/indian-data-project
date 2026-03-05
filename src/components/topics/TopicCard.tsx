@@ -26,10 +26,11 @@ export function TopicCard({ topic, bag, index, isVisible = true }: TopicCardProp
         delay: index * 0.06,
         ease: [0.16, 1, 0.3, 1],
       }}
+      className="h-full"
     >
       <Link
         to={`/topics/${topic.id}`}
-        className="group block rounded-xl p-5 no-underline transition-all duration-200 hover:brightness-110"
+        className="group block h-full rounded-xl p-5 no-underline transition-all duration-200 hover:brightness-110"
         style={{
           background: 'var(--bg-raised)',
           border: `1px solid ${topic.accent}15`,

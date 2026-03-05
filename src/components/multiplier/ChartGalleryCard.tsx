@@ -68,7 +68,7 @@ export function ChartGalleryCard({ entry }: ChartGalleryCardProps) {
 
   return (
     <div
-      className="relative rounded-xl overflow-hidden transition-transform duration-200 hover:-translate-y-1"
+      className="relative h-full rounded-xl overflow-hidden transition-transform duration-200 hover:-translate-y-1"
       style={{ background: 'var(--bg-surface)' }}
     >
       {/* Accent bar */}

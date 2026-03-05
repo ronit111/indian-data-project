@@ -15,7 +15,7 @@ export function LessonPlanCard({ plan }: LessonPlanCardProps) {
   return (
     <Link
       to={`/for-teachers/lesson-plans#${plan.id}`}
-      className="group block rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
+      className="group block h-full rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
       style={{ background: 'var(--bg-surface)' }}
     >
       <div className="h-0.5" style={{ background: plan.accent }} />

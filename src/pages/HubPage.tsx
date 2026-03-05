@@ -1646,7 +1646,7 @@ function MultiplierCard({ to, title, desc, accent }: { to: string; title: string
   return (
     <Link
       to={to}
-      className="group block rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
+      className="group block h-full rounded-xl overflow-hidden no-underline transition-transform duration-200 hover:-translate-y-1"
       style={{ background: 'var(--bg-surface)' }}
     >
       <div className="h-0.5" style={{ background: accent }} />
