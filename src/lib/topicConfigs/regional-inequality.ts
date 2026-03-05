@@ -49,8 +49,8 @@ export const regionalInequality: TopicDef = {
         extractData: (bag) => {
           const d = gsdp(bag);
           if (!d?.states?.length) return null;
-          const sorted = [...d.states].sort((a, b) => b.perCapitaGsdp - a.perCapitaGsdp).slice(0, 15);
-          return sorted.map(s => ({ name: s.name, value: s.perCapitaGsdp }));
+          const sorted = [...d.states].sort((a, b) => b.perCapitaNsdp - a.perCapitaNsdp).slice(0, 15);
+          return sorted.map(s => ({ name: s.name, value: s.perCapitaNsdp }));
         },
       }],
       deepLinks: [{ label: 'State finances', route: '/states#gsdp', domain: 'states' }],
