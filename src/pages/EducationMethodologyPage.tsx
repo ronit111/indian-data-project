@@ -165,7 +165,7 @@ const SECTIONS = [
           </table>
         </div>
         <p className="mt-3 text-xs" style={{ color: 'var(--text-muted)' }}>
-          The NEP 2020 (National Education Policy) sets a target of 6% of GDP for education spending. India currently spends approximately 3.5%, placing it below the global average of 4.3% and well below OECD averages of 5-6%. The spending series includes both central and state government expenditure on education.
+          The NEP 2020 (National Education Policy) sets a target of 6% of GDP for education spending. India currently spends approximately 4.1%, placing it close to the global average of 4.3% but still below OECD averages of 5-6%. The spending series includes both central and state government expenditure on education.
         </p>
       </>
     ),

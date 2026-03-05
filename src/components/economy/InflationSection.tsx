@@ -69,7 +69,7 @@ export function InflationSection({ inflation }: InflationSectionProps) {
         >
           {hasBreakdown
             ? 'The RBI targets CPI inflation between 2-6%. Food prices remain the most volatile component, while core inflation has been steadily declining.'
-            : 'The RBI targets CPI inflation between 2-6%. After peaking in 2020, headline inflation has moved back within the target band.'}
+            : 'The RBI targets CPI inflation between 2-6%. After peaking at 6.7% in 2022-23, headline inflation has moved back within the target band.'}
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/inflation" data={inflation}>

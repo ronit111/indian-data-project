@@ -195,6 +195,7 @@ BUDGET_TRENDS_SERIES: list[dict] = [
         "fiscalDeficitPctGDP": 4.80,
         "revenueDeficitPctGDP": 1.80,
     },
+    # Source: Budget at a Glance 2025-26 (indiabudget.gov.in), Statement 1
     {
         "year": "2025-26",
         "expenditure": 5065345,

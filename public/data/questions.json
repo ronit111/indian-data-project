@@ -91,7 +91,7 @@
     "id": "budget-deficit-trend",
     "domain": "budget",
     "question": "Is the budget deficit getting better or worse?",
-    "answer": "It has improved from 6.4% in 2021-22 to 4.4% in 2025-26 \u2014 a declining trend.",
+    "answer": "It has improved from 6.7% in 2021-22 to 4.4% in 2025-26 \u2014 a declining trend.",
     "sectionId": "trends",
     "route": "/budget#trends"
   },
@@ -171,7 +171,7 @@
     "id": "economy-agriculture-gdp",
     "domain": "economy",
     "question": "What percentage of GDP comes from agriculture?",
-    "answer": "Agriculture contributes about 15% of GDP but employs over 40% of workers.",
+    "answer": "Agriculture contributes about 16% of GDP but employs over 43% of workers.",
     "sectionId": "sectors",
     "route": "/economy#sectors"
   },
@@ -723,7 +723,7 @@
     "id": "healthcare-beds",
     "domain": "healthcare",
     "question": "How many hospital beds does India have?",
-    "answer": "India has only 0.5 beds per 1,000 people \u2014 WHO recommends 3.5 per 1,000.",
+    "answer": "India has only 0.5 beds per 1,000 people \u2014 WHO recommends 3 per 1,000.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -739,7 +739,7 @@
     "id": "healthcare-bankrupt",
     "domain": "healthcare",
     "question": "Why do people go bankrupt from hospital bills?",
-    "answer": "Over 60% of health spending is out-of-pocket \u2014 families bear the cost directly.",
+    "answer": "About 45% of health spending is out-of-pocket \u2014 families bear a huge share of costs directly.",
     "sectionId": "oop",
     "route": "/healthcare#oop"
   },
@@ -779,7 +779,7 @@
     "id": "healthcare-ayushman",
     "domain": "healthcare",
     "question": "Does Ayushman Bharat actually help?",
-    "answer": "Insurance coverage has expanded but out-of-pocket spending remains over 60%.",
+    "answer": "Insurance coverage has expanded but out-of-pocket spending remains around 45%.",
     "sectionId": "oop",
     "route": "/healthcare#oop"
   },
@@ -859,7 +859,7 @@
     "id": "env-renewable-energy",
     "domain": "environment",
     "question": "How much of India's electricity comes from renewables?",
-    "answer": "Renewable sources now make up over half of India's installed electricity capacity, led by solar and wind.",
+    "answer": "Renewable sources (including hydro) now make up about 43% of India's installed electricity capacity, led by solar and wind.",
     "sectionId": "energy-transition",
     "route": "/environment#energy-transition"
   },
@@ -1211,7 +1211,7 @@
     "id": "healthcare-out-of-pocket",
     "domain": "healthcare",
     "question": "Why do Indians pay so much out of pocket for health?",
-    "answer": "Over 50% of health spending comes from patients' own pockets \u2014 among the highest in the world. Low public spending forces families to pay directly.",
+    "answer": "About 45% of health spending comes from patients' own pockets \u2014 among the highest in the world. Low public spending forces families to pay directly.",
     "sectionId": "oop",
     "route": "/healthcare#oop"
   },
@@ -1219,7 +1219,7 @@
     "id": "employment-farming-share",
     "domain": "employment",
     "question": "What percentage of Indians work in farming?",
-    "answer": "About 42% of India's workforce is in agriculture, but farming contributes only ~18% of GDP \u2014 a lot of people sharing a small pie.",
+    "answer": "About 43% of India's workforce is in agriculture, but farming contributes only ~16% of GDP \u2014 a lot of people sharing a small pie.",
     "sectionId": "sectoral",
     "route": "/employment#sectoral"
   },
@@ -1243,7 +1243,7 @@
     "id": "education-spend-per-student",
     "domain": "education",
     "question": "How much does India spend on education per student?",
-    "answer": "India spends about 3% of GDP on education \u2014 well below the 6% recommended by the NEP. Per-student spending varies hugely across states.",
+    "answer": "India spends about 4.1% of GDP on education \u2014 below the 6% recommended by the NEP. Per-student spending varies hugely across states.",
     "sectionId": "spending",
     "route": "/education#spending"
   },

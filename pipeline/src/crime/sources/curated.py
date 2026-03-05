@@ -64,7 +64,7 @@ IPC_CRIME_COMPOSITION = [
     {"id": "murder", "name": "Murder", "cases": 28522, "pct": 0.8},
     {"id": "riots", "name": "Riots", "cases": 29386, "pct": 0.8},
     {"id": "cheating", "name": "Cheating", "cases": 163092, "pct": 4.6},
-    {"id": "other-ipc", "name": "Other IPC Crimes", "cases": 2156995, "pct": 60.6},
+    {"id": "other-ipc", "name": "Other IPC Crimes", "cases": 2186995, "pct": 61.4},
 ]
 
 
@@ -218,7 +218,7 @@ STATE_ROAD_FATALITIES = [
     {"id": "BR", "name": "Bihar", "rate": 8.3, "killed": 10154},
     {"id": "WB", "name": "West Bengal", "rate": 7.2, "killed": 6982},
     {"id": "AS", "name": "Assam", "rate": 6.4, "killed": 2319},
-    {"id": "DL", "name": "Delhi", "rate": 5.9, "total": 1183},
+    {"id": "DL", "name": "Delhi", "rate": 5.9, "killed": 1183},  # Fixed: was "total", should be "killed"
 ]
 
 
@@ -266,11 +266,11 @@ I4C_CONTEXT = {
 # ══════════════════════════════════════════════════════════════════════
 
 POLICE_NATIONAL = {
-    "sanctionedStrength": 2540152,  # ~25.4 lakh sanctioned
-    "actualStrength": 2086972,      # ~20.87 lakh actual
-    "vacancyPct": 17.8,
-    "sanctionedRatePerLakh": 183.8,  # sanctioned per lakh
-    "actualRatePerLakh": 151.1,      # actual per lakh (UN recommends 222)
+    "sanctionedStrength": 2682376,  # ~26.8 lakh sanctioned (BPRD DoPO 2022, as on 01.01.2022)
+    "actualStrength": 2090000,      # ~20.9 lakh actual (BPRD DoPO 2022)
+    "vacancyPct": 22.1,             # BPRD DoPO 2022: 5.95 lakh vacancies / 26.8 lakh = ~22%
+    "sanctionedRatePerLakh": 197.0,  # sanctioned per lakh (BPRD DoPO 2022)
+    "actualRatePerLakh": 152.0,      # actual per lakh (BPRD DoPO 2022; UN recommends 222)
     "unRecommended": 222,            # UN recommended police-population ratio
     "womenPolicePct": 11.7,          # % women in total police force
     "womenPoliceTotal": 244160,
@@ -362,7 +362,7 @@ NATIONAL_TOTALS = {
     "cybercrimes2022": 65893,
     "convictionRatePct": 39.1,
     "chargesheetRatePct": 74.6,
-    "policeRatioActual": 151.1,
+    "policeRatioActual": 152.0,
     "womenCrimes2022": 445256,
     "womenCrimeRate2022": 66.4,
     "pendingTrialCases": 3103432,

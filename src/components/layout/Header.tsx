@@ -37,6 +37,7 @@ export function Header() {
   const isContributeSection = location.pathname === '/contribute';
   const isMultiplierSection = isOpenDataSection || isJournalistsSection || isTeachersSection || isContributeSection;
   const isDataDomain = isBudgetSection || isEconomySection || isRBISection || isStatesSection || isCensusSection || isEducationSection || isEmploymentSection || isHealthcareSection || isEnvironmentSection || isElectionsSection || isCrimeSection || isTopicsSection || isMultiplierSection;
+  const isHub = location.pathname === '/';
 
   // Context-aware title: show story name when inside a data story
   const headerTitle = isBudgetSection
@@ -304,22 +305,42 @@ export function Header() {
             <div className="w-px h-5 mx-2" style={{ background: 'rgba(255,255,255,0.08)' }} />
           )}
 
-          <button
-            onClick={toggleSearch}
-            className="p-2 rounded-lg cursor-pointer transition-colors hover:bg-[var(--bg-raised)]"
-            style={{
-              color: 'var(--text-muted)',
-              background: 'transparent',
-              border: 'none',
-            }}
-            aria-label="Search"
-            title="Search"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="7" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-          </button>
+          {isHub ? (
+            <button
+              onClick={toggleSearch}
+              className="flex items-center gap-2 px-4 py-1.5 rounded-lg cursor-pointer transition-colors hover:bg-[var(--bg-raised)]"
+              style={{
+                color: 'var(--text-muted)',
+                background: 'var(--bg-raised)',
+                border: '1px solid rgba(255,255,255,0.06)',
+              }}
+              aria-label="Search"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <span className="text-sm">Search</span>
+              <kbd className="ml-2 text-[10px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--text-muted)' }}>/</kbd>
+            </button>
+          ) : (
+            <button
+              onClick={toggleSearch}
+              className="p-2 rounded-lg cursor-pointer transition-colors hover:bg-[var(--bg-raised)]"
+              style={{
+                color: 'var(--text-muted)',
+                background: 'transparent',
+                border: 'none',
+              }}
+              aria-label="Search"
+              title="Search"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+          )}
         </nav>
       </div>
     </motion.header>

@@ -254,8 +254,8 @@ def _build_glossary() -> dict:
                 "id": "oop-expenditure",
                 "term": "Out-of-Pocket Expenditure (OOP)",
                 "simple": "Healthcare costs paid directly by patients from their own pockets, without insurance or government coverage.",
-                "detail": "India's OOP health spending is ~48% of total health expenditure — among the highest globally (global average: ~18%). This means for every ₹100 spent on healthcare, ₹48 comes from patient pockets. High OOP pushes ~5.5 crore Indians into poverty annually due to medical expenses. It's the primary driver of catastrophic health expenditure. The solution: expanding public health insurance (Ayushman Bharat) and reducing dependence on private providers.",
-                "inContext": "India OOP: ~48% (global avg: 18%). Pushes ~5.5 crore into poverty annually.",
+                "detail": "India's OOP health spending is ~45% of total health expenditure (World Bank 2021) — among the highest globally (global average: ~18%). This means for every ₹100 spent on healthcare, ₹45 comes from patient pockets. High OOP pushes ~5.5 crore Indians into poverty annually due to medical expenses. It's the primary driver of catastrophic health expenditure. The solution: expanding public health insurance (Ayushman Bharat) and reducing dependence on private providers.",
+                "inContext": "India OOP: ~45% (World Bank 2021, global avg: 18%). Pushes ~5.5 crore into poverty annually.",
                 "relatedTerms": ["health-expenditure", "ayushman-bharat"],
             },
             {
@@ -303,7 +303,7 @@ def _build_glossary() -> dict:
                 "term": "Universal Immunization Programme (UIP)",
                 "simple": "India's national programme providing free vaccines to all children and pregnant women.",
                 "detail": "UIP covers 12 vaccines for children (BCG, OPV, DPT, hepatitis B, measles, JE, pneumococcal, rotavirus, etc.) and 2 for pregnant women (tetanus). India is the world's largest vaccine producer and consumer. Full immunization coverage (all scheduled doses) has risen from 44% (NFHS-4, 2015-16) to 76% (NFHS-5, 2019-21). Mission Indradhanush (2014) intensified coverage in low-performing districts.",
-                "inContext": "Full immunization: 76% nationally (NFHS-5). Range: 39% (Nagaland) to 84% (Kerala).",
+                "inContext": "Full immunization: 76% nationally (NFHS-5). Range: 58% (Nagaland) to 91% (Odisha).",
                 "relatedTerms": ["phc", "disease-burden"],
             },
             {

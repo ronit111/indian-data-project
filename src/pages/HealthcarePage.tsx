@@ -61,7 +61,7 @@ export default function HealthcarePage() {
       {summary && <KeyTakeaways
         accent="#F43F5E"
         pills={[
-          { value: `${summary.outOfPocketPct}%`, label: 'You pay half your medical bills from your pocket', sectionId: 'oop' },
+          { value: `${summary.outOfPocketPct}%`, label: 'Of every medical bill comes from your pocket', sectionId: 'oop' },
           { value: `${summary.hospitalBedsPer1000} beds`, label: 'Hospital beds per 1,000 (WHO says 3.5)', sectionId: 'infrastructure' },
           { value: `${summary.healthExpGDP}% of GDP`, label: 'What India spends on your health', sectionId: 'spending' },
           { value: `${summary.tbIncidence}/lakh`, label: 'TB cases — highest burden in the world', sectionId: 'disease' },

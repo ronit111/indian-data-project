@@ -105,38 +105,44 @@ CPCB_AQI_CITIES = [
 # pctGeographicArea: Forest cover as % of state geographic area
 # changeKm2: Change from ISFR 2021 (positive = gain, negative = loss)
 # National total forest cover: 8,27,357 km2 (25.17% of geographic area)
+#
+# All 30 states verified against ISFR 2023 Volume II PDF (Tables 10.X.2 and 10.X.3).
+# forestCoverKm2 = Total from Table 10.X.2 (VDF + MDF + OF), rounded to integer.
+# changeKm2 = Grand Total "Change w.r.t. 2021 Raster based" from Table 10.X.3.
+# pctGeographicArea = "% of Calculated Area by Sol" from Table 10.X.2.
+# Verified 2026-03-05 by reading every state chapter from the 382-page PDF.
 
 FSI_FOREST_STATES = [
-    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.11, "changeKm2": 8},
-    {"id": "AR", "name": "Arunachal Pradesh", "forestCoverKm2": 66688, "pctGeographicArea": 79.63, "changeKm2": -258},
-    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55717, "pctGeographicArea": 41.21, "changeKm2": 11},
-    {"id": "MH", "name": "Maharashtra", "forestCoverKm2": 50778, "pctGeographicArea": 16.52, "changeKm2": -89},
-    {"id": "OD", "name": "Odisha", "forestCoverKm2": 51619, "pctGeographicArea": 33.15, "changeKm2": 275},
-    {"id": "KA", "name": "Karnataka", "forestCoverKm2": 38575, "pctGeographicArea": 20.12, "changeKm2": -30},
-    {"id": "UP", "name": "Uttar Pradesh", "forestCoverKm2": 14806, "pctGeographicArea": 6.15, "changeKm2": 18},
-    {"id": "RJ", "name": "Rajasthan", "forestCoverKm2": 16572, "pctGeographicArea": 4.84, "changeKm2": 33},
-    {"id": "TN", "name": "Tamil Nadu", "forestCoverKm2": 26364, "pctGeographicArea": 20.27, "changeKm2": -106},
-    {"id": "AP", "name": "Andhra Pradesh", "forestCoverKm2": 29784, "pctGeographicArea": 18.19, "changeKm2": 12},
-    {"id": "JH", "name": "Jharkhand", "forestCoverKm2": 23553, "pctGeographicArea": 29.55, "changeKm2": -73},
-    {"id": "TS", "name": "Telangana", "forestCoverKm2": 21214, "pctGeographicArea": 18.93, "changeKm2": 32},
-    {"id": "KL", "name": "Kerala", "forestCoverKm2": 21144, "pctGeographicArea": 54.42, "changeKm2": -14},
-    {"id": "AS", "name": "Assam", "forestCoverKm2": 28312, "pctGeographicArea": 36.08, "changeKm2": -339},
-    {"id": "MZ", "name": "Mizoram", "forestCoverKm2": 17820, "pctGeographicArea": 85.34, "changeKm2": 242},  # ISFR 2023: max increase among states
-    {"id": "GJ", "name": "Gujarat", "forestCoverKm2": 14857, "pctGeographicArea": 7.57, "changeKm2": -8},
-    {"id": "ML", "name": "Meghalaya", "forestCoverKm2": 17046, "pctGeographicArea": 76.00, "changeKm2": -73},
-    {"id": "NL", "name": "Nagaland", "forestCoverKm2": 12251, "pctGeographicArea": 73.90, "changeKm2": -23},
-    {"id": "MN", "name": "Manipur", "forestCoverKm2": 16598, "pctGeographicArea": 74.34, "changeKm2": -249},
-    {"id": "WB", "name": "West Bengal", "forestCoverKm2": 16832, "pctGeographicArea": 18.95, "changeKm2": -56},
-    {"id": "HP", "name": "Himachal Pradesh", "forestCoverKm2": 15434, "pctGeographicArea": 27.72, "changeKm2": 15},
-    {"id": "TR", "name": "Tripura", "forestCoverKm2": 7726, "pctGeographicArea": 73.68, "changeKm2": -32},
-    {"id": "UK", "name": "Uttarakhand", "forestCoverKm2": 24303, "pctGeographicArea": 45.44, "changeKm2": -22},
-    {"id": "BR", "name": "Bihar", "forestCoverKm2": 7381, "pctGeographicArea": 7.84, "changeKm2": 12},
-    {"id": "SK", "name": "Sikkim", "forestCoverKm2": 3341, "pctGeographicArea": 47.10, "changeKm2": -2},
-    {"id": "JK", "name": "Jammu & Kashmir", "forestCoverKm2": 20230, "pctGeographicArea": 49.18, "changeKm2": -24},
-    {"id": "PB", "name": "Punjab", "forestCoverKm2": 1849, "pctGeographicArea": 3.67, "changeKm2": 18},
-    {"id": "HR", "name": "Haryana", "forestCoverKm2": 1603, "pctGeographicArea": 3.63, "changeKm2": -5},
-    {"id": "GA", "name": "Goa", "forestCoverKm2": 2237, "pctGeographicArea": 60.34, "changeKm2": -3},
-    {"id": "DL", "name": "Delhi", "forestCoverKm2": 195, "pctGeographicArea": 13.18, "changeKm2": -0.5},
+    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.11, "changeKm2": -371.54},
+    {"id": "AR", "name": "Arunachal Pradesh", "forestCoverKm2": 65882, "pctGeographicArea": 78.67, "changeKm2": -91.17},
+    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55812, "pctGeographicArea": 41.21, "changeKm2": -19.13},
+    {"id": "MH", "name": "Maharashtra", "forestCoverKm2": 50859, "pctGeographicArea": 16.53, "changeKm2": -54.47},
+    {"id": "OD", "name": "Odisha", "forestCoverKm2": 52434, "pctGeographicArea": 33.68, "changeKm2": 151.89},
+    {"id": "KA", "name": "Karnataka", "forestCoverKm2": 39254, "pctGeographicArea": 20.47, "changeKm2": 147.70},
+    {"id": "UP", "name": "Uttar Pradesh", "forestCoverKm2": 15046, "pctGeographicArea": 6.24, "changeKm2": 118.43},
+    {"id": "RJ", "name": "Rajasthan", "forestCoverKm2": 16548, "pctGeographicArea": 4.84, "changeKm2": -83.80},
+    {"id": "TN", "name": "Tamil Nadu", "forestCoverKm2": 26450, "pctGeographicArea": 20.34, "changeKm2": -60.96},
+    {"id": "AP", "name": "Andhra Pradesh", "forestCoverKm2": 30085, "pctGeographicArea": 18.46, "changeKm2": -138.66},
+    {"id": "JH", "name": "Jharkhand", "forestCoverKm2": 23766, "pctGeographicArea": 29.81, "changeKm2": 58.81},
+    {"id": "TS", "name": "Telangana", "forestCoverKm2": 21179, "pctGeographicArea": 18.89, "changeKm2": -100.42},
+    {"id": "KL", "name": "Kerala", "forestCoverKm2": 22059, "pctGeographicArea": 56.76, "changeKm2": 133.42},
+    {"id": "AS", "name": "Assam", "forestCoverKm2": 28314, "pctGeographicArea": 36.10, "changeKm2": -11.76},
+    {"id": "MZ", "name": "Mizoram", "forestCoverKm2": 17990, "pctGeographicArea": 85.34, "changeKm2": 241.73},
+    {"id": "GJ", "name": "Gujarat", "forestCoverKm2": 15017, "pctGeographicArea": 7.66, "changeKm2": 180.07},
+    {"id": "ML", "name": "Meghalaya", "forestCoverKm2": 16967, "pctGeographicArea": 75.65, "changeKm2": -30.00},
+    {"id": "NL", "name": "Nagaland", "forestCoverKm2": 12222, "pctGeographicArea": 73.72, "changeKm2": -51.89},
+    {"id": "MN", "name": "Manipur", "forestCoverKm2": 16585, "pctGeographicArea": 74.28, "changeKm2": -54.83},
+    {"id": "WB", "name": "West Bengal", "forestCoverKm2": 16832, "pctGeographicArea": 18.96, "changeKm2": 50.22},
+    {"id": "HP", "name": "Himachal Pradesh", "forestCoverKm2": 15580, "pctGeographicArea": 27.99, "changeKm2": 54.73},
+    {"id": "TR", "name": "Tripura", "forestCoverKm2": 7585, "pctGeographicArea": 72.33, "changeKm2": -95.31},
+    {"id": "UK", "name": "Uttarakhand", "forestCoverKm2": 24304, "pctGeographicArea": 45.44, "changeKm2": -22.98},
+    {"id": "BR", "name": "Bihar", "forestCoverKm2": 7532, "pctGeographicArea": 8.00, "changeKm2": 129.19},
+    {"id": "SK", "name": "Sikkim", "forestCoverKm2": 3358, "pctGeographicArea": 47.33, "changeKm2": 5.19},
+    {"id": "JK", "name": "Jammu & Kashmir", "forestCoverKm2": 21346, "pctGeographicArea": 39.07, "changeKm2": 83.55},
+    {"id": "PB", "name": "Punjab", "forestCoverKm2": 1846, "pctGeographicArea": 3.67, "changeKm2": -0.45},
+    {"id": "HR", "name": "Haryana", "forestCoverKm2": 1614, "pctGeographicArea": 3.65, "changeKm2": -13.96},
+    {"id": "GA", "name": "Goa", "forestCoverKm2": 2266, "pctGeographicArea": 61.21, "changeKm2": -1.50},
+    {"id": "DL", "name": "Delhi", "forestCoverKm2": 195, "pctGeographicArea": 13.17, "changeKm2": -0.08},
 ]
 
 # ── CEA — Installed Capacity Mix (MW), 2015-2024 ─────────────────

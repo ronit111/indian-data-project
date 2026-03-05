@@ -1,14 +1,14 @@
 {
   "year": "2025-26",
   "topGsdpState": "Maharashtra",
-  "topGsdpValue": 35.28,
-  "nationalGsdpTotal": 280.73,
-  "growthRange": "2.9% – 25.4%",
-  "averagePerCapita": 171687,
+  "topGsdpValue": 45.32,
+  "nationalGsdpTotal": 310.13,
+  "growthRange": "8.7% – 16.0%",
+  "averagePerCapita": 207973,
   "totalStatesAndUTs": 36,
-  "statesWithData": 31,
-  "stateCount": 31,
-  "lastUpdated": "2026-03-01",
+  "statesWithData": 25,
+  "stateCount": 25,
+  "lastUpdated": "2026-03-06",
   "source": "RBI Handbook of Statistics on Indian States",
-  "note": "India has 28 states and 8 union territories (36 total). Data covers 31; five small UTs (Lakshadweep, Andaman & Nicobar, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Chandigarh) have incomplete state accounts in the RBI Handbook."
+  "note": "India has 28 states and 8 union territories (36 total). Data covers 25; remaining UTs have incomplete state accounts in the RBI Handbook."
 }

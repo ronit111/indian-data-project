@@ -908,14 +908,6 @@
       "alliance": "INDIA"
     },
     {
-      "party": "OTH",
-      "fullName": "Other Parties",
-      "seats": 4,
-      "voteShare": 6.2,
-      "color": "#9CA3AF",
-      "alliance": "—"
-    },
-    {
       "party": "DMK",
       "fullName": "Dravida Munnetra Kazhagam",
       "seats": 22,
@@ -1004,6 +996,14 @@
       "alliance": "INDIA"
     },
     {
+      "party": "YSRCP",
+      "fullName": "YSR Congress Party",
+      "seats": 4,
+      "voteShare": 2.1,
+      "color": "#7C3AED",
+      "alliance": "—"
+    },
+    {
       "party": "AAP",
       "fullName": "Aam Aadmi Party",
       "seats": 3,
@@ -1026,6 +1026,14 @@
       "voteShare": 0.3,
       "color": "#15803D",
       "alliance": "INDIA"
+    },
+    {
+      "party": "OTH",
+      "fullName": "Other Parties",
+      "seats": 3,
+      "voteShare": 5.5,
+      "color": "#9CA3AF",
+      "alliance": "—"
     },
     {
       "party": "JD(S)",
@@ -1080,6 +1088,14 @@
       "fullName": "Communist Party of India",
       "seats": 2,
       "voteShare": 0.5,
+      "color": "#DC2626",
+      "alliance": "INDIA"
+    },
+    {
+      "party": "JKNC",
+      "fullName": "Jammu & Kashmir National Conference",
+      "seats": 2,
+      "voteShare": 0.3,
       "color": "#DC2626",
       "alliance": "INDIA"
     },
@@ -1156,19 +1172,11 @@
       "alliance": "INDIA"
     },
     {
-      "party": "JKNC",
-      "fullName": "Jammu & Kashmir National Conference",
-      "seats": 2,
-      "voteShare": 0.2,
-      "color": "#DC143C",
-      "alliance": "INDIA"
-    },
-    {
-      "party": "KC(J)",
-      "fullName": "Kerala Congress (Joseph)",
+      "party": "RLP",
+      "fullName": "Rashtriya Loktantrik Party",
       "seats": 1,
-      "voteShare": 0.1,
-      "color": "#166534",
+      "voteShare": 0.2,
+      "color": "#F59E0B",
       "alliance": "INDIA"
     },
     {
@@ -1177,6 +1185,14 @@
       "seats": 1,
       "voteShare": 0.4,
       "color": "#15803D",
+      "alliance": "—"
+    },
+    {
+      "party": "ZPM",
+      "fullName": "Zoram People's Movement",
+      "seats": 1,
+      "voteShare": 0.0,
+      "color": "#14B8A6",
       "alliance": "—"
     },
     {
@@ -1191,7 +1207,7 @@
   "allianceTotals2024": {
     "NDA": 293,
     "INDIA": 234,
-    "Others": 16,
+    "Others": 20,
     "majorityMark": 272
   },
   "source": "ECI Official Results + TCPD Lok Dhaba"

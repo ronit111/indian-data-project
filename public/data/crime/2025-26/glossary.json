@@ -147,18 +147,6 @@
       ]
     },
     {
-      "id": "underreporting",
-      "term": "Underreporting",
-      "simple": "Many crimes are never reported to police. Experts estimate only 30-40% of crimes actually result in an FIR.",
-      "detail": "Underreporting is especially severe for domestic violence, sexual assault, corruption, and petty theft. Barriers include fear of police, social stigma, lack of awareness, distance to police stations, and belief that police won't act. NCRB data only captures FIR-registered (cognizable) crimes, so the true crime picture is significantly worse than the numbers suggest. States with better policing and higher literacy (like Kerala) show higher reported crime rates — which is actually a sign of trust in the system, not worse safety. The gap between I4C complaints (22.68 lakh) and cybercrime FIRs (65,893) in 2022 illustrates the reporting gap starkly.",
-      "inContext": "Only 30-40% of crimes are reported. Kerala's high rate reflects trust, not danger.",
-      "relatedTerms": [
-        "fir",
-        "cognizable",
-        "kerala-paradox"
-      ]
-    },
-    {
       "id": "bprd",
       "term": "BPRD (Bureau of Police Research & Development)",
       "simple": "A government research body that publishes data on police strength, infrastructure, and modernization across all states.",

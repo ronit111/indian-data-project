@@ -65,7 +65,7 @@ export function EnrollmentSection({ data }: EnrollmentSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India has pushed primary enrollment past 100%. The real revolution is in secondary and tertiary education, where enrollment has tripled in two decades.
+          India has achieved near-universal primary enrollment with a GER above 93%. The real revolution is in secondary and tertiary education, where enrollment has tripled in two decades.
         </motion.p>
 
         {enrollmentSeries.length > 0 && (

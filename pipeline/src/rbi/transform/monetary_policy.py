@@ -34,6 +34,7 @@ REPO_RATE_DECISIONS = [
     {"date": "2015-03-04", "rate": 7.50, "change": -0.25, "stance": "Easing"},
     {"date": "2015-06-02", "rate": 7.25, "change": -0.25, "stance": "Easing"},
     {"date": "2015-09-29", "rate": 6.75, "change": -0.50, "stance": "Easing"},
+    {"date": "2016-04-05", "rate": 6.50, "change": -0.25, "stance": "Easing"},
 
     # MPC era (Oct 2016 onwards)
     # Source: RBI MPC Statements — https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx

@@ -101,7 +101,7 @@ const SECTIONS = [
         >
           <p className="text-sm font-medium mb-1" style={{ color: 'var(--cyan)' }}>Note</p>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            The 2025-26 GDP growth figure (6.4%) is an advance estimate from the Economic Survey.
+            The 2025-26 GDP growth figure (7.4%) is an advance estimate from the Economic Survey.
             This will be revised when actual data becomes available. Previous year figures may also be
             revised by NSO.
           </p>

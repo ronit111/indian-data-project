@@ -48,7 +48,7 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Male LFPR is nearly 80%. Female LFPR is barely 37%. The gap is among the widest in the
+          Male LFPR is about 78%. Female LFPR is around 35%. The gap is among the widest in the
           world, though it has been narrowing since 2017.
         </motion.p>
 

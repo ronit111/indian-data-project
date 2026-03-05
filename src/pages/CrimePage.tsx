@@ -87,11 +87,11 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="One in four IPC crimes targets women. 4.45 lakh cases in 2022 — only what's reported. Cruelty by husbands tops the list."
+        text="4.45 lakh crimes against women in 2022 — only what's reported. One case every 71 seconds. Cruelty by husbands tops the list."
         highlights={{
-          'women': 'var(--crimson)',
           '4.45': 'var(--crimson)',
           'lakh': 'var(--crimson)',
+          '71 seconds': 'var(--crimson-light)',
           'Cruelty': 'var(--crimson-light)',
         }}
       />

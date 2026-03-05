@@ -225,9 +225,31 @@ RESULTS_2024_PARTIES = [
     {"party": "JMM", "fullName": "Jharkhand Mukti Morcha", "seats": 3, "voteShare": 0.6, "color": "#14B8A6", "alliance": "INDIA"},
     {"party": "JD(S)", "fullName": "Janata Dal (Secular)", "seats": 2, "voteShare": 0.3, "color": "#65A30D", "alliance": "NDA"},
     {"party": "NCP", "fullName": "Nationalist Congress Party", "seats": 2, "voteShare": 0.6, "color": "#0284C7", "alliance": "NDA"},
+    {"party": "JSP", "fullName": "Jana Sena Party", "seats": 2, "voteShare": 0.3, "color": "#E11D48", "alliance": "NDA"},
+    {"party": "RLD", "fullName": "Rashtriya Lok Dal", "seats": 2, "voteShare": 0.2, "color": "#16A34A", "alliance": "NDA"},
     {"party": "IUML", "fullName": "Indian Union Muslim League", "seats": 3, "voteShare": 0.3, "color": "#15803D", "alliance": "INDIA"},
+    {"party": "VCK", "fullName": "Viduthalai Chiruthaigal Katchi", "seats": 2, "voteShare": 0.2, "color": "#B91C1C", "alliance": "INDIA"},
+    {"party": "CPI(ML)(L)", "fullName": "CPI (Marxist-Leninist) Liberation", "seats": 2, "voteShare": 0.2, "color": "#EF4444", "alliance": "INDIA"},
+    {"party": "CPI", "fullName": "Communist Party of India", "seats": 2, "voteShare": 0.5, "color": "#DC2626", "alliance": "INDIA"},
+    {"party": "JKNC", "fullName": "Jammu & Kashmir National Conference", "seats": 2, "voteShare": 0.3, "color": "#DC2626", "alliance": "INDIA"},
+    {"party": "AJSU", "fullName": "AJSU Party", "seats": 1, "voteShare": 0.1, "color": "#2563EB", "alliance": "NDA"},
+    {"party": "HAM(S)", "fullName": "Hindustani Awam Morcha (Secular)", "seats": 1, "voteShare": 0.1, "color": "#7C3AED", "alliance": "NDA"},
+    {"party": "SKM", "fullName": "Sikkim Krantikari Morcha", "seats": 1, "voteShare": 0.0, "color": "#F59E0B", "alliance": "NDA"},
+    {"party": "UPPL", "fullName": "United People's Party Liberal", "seats": 1, "voteShare": 0.1, "color": "#0891B2", "alliance": "NDA"},
+    {"party": "ADAL", "fullName": "Apna Dal (Soneylal)", "seats": 1, "voteShare": 0.1, "color": "#CA8A04", "alliance": "NDA"},
+    {"party": "KC(M)", "fullName": "Kerala Congress (Mani)", "seats": 1, "voteShare": 0.1, "color": "#047857", "alliance": "INDIA"},
+    {"party": "RSP", "fullName": "Revolutionary Socialist Party", "seats": 1, "voteShare": 0.1, "color": "#BE123C", "alliance": "INDIA"},
+    {"party": "MDMK", "fullName": "Marumalarchi Dravida Munnetra Kazhagam", "seats": 1, "voteShare": 0.1, "color": "#DC2626", "alliance": "INDIA"},
+    {"party": "AIFB", "fullName": "All India Forward Bloc", "seats": 1, "voteShare": 0.1, "color": "#B91C1C", "alliance": "INDIA"},
+    {"party": "RLP", "fullName": "Rashtriya Loktantrik Party", "seats": 1, "voteShare": 0.2, "color": "#F59E0B", "alliance": "INDIA"},
+    {"party": "YSRCP", "fullName": "YSR Congress Party", "seats": 4, "voteShare": 2.1, "color": "#7C3AED", "alliance": "—"},
+    {"party": "AIMIM", "fullName": "All India Majlis-e-Ittehadul Muslimeen", "seats": 1, "voteShare": 0.4, "color": "#15803D", "alliance": "—"},
+    {"party": "ZPM", "fullName": "Zoram People's Movement", "seats": 1, "voteShare": 0.0, "color": "#14B8A6", "alliance": "—"},
+    {"party": "AIADMK", "fullName": "All India Anna Dravida Munnetra Kazhagam", "seats": 0, "voteShare": 1.4, "color": "#15803D", "alliance": "—"},
     {"party": "IND", "fullName": "Independents", "seats": 7, "voteShare": 5.8, "color": "#6B7280", "alliance": "—"},
-    {"party": "OTH", "fullName": "Other Parties", "seats": 27, "voteShare": 15.4, "color": "#9CA3AF", "alliance": "—"},
+    # OTH: residual for parties that contested but won few/no seats (BSP 0 seats/3.6%, etc.)
+    # Seats: 543 - 293(NDA) - 234(INDIA) - 13(named Others+IND) = 3
+    {"party": "OTH", "fullName": "Other Parties", "seats": 3, "voteShare": 5.5, "color": "#9CA3AF", "alliance": "—"},
 ]
 
 
@@ -302,24 +324,29 @@ ADR_TOP_WEALTHIEST = [
     {"rank": 10, "name": "Dr. Prabha Mallikarjun", "constituency": "Davanagere (KA)", "party": "INC", "assetsCrore": 241},
 ]
 
-# Top 15 MPs by number of criminal cases
-# Source: ADR/MyNeta — from self-sworn affidavits
+# Top MPs by number of criminal cases (2024 winning candidates only)
+# Source: ADR/MyNeta — from self-sworn affidavits of 543 winners
+#
+# NOTE (audit 2026-03-05): Heavy contamination found — 5 of original 15 entries
+# were NOT 2024 Lok Sabha winners:
+#   - Atul Kumar Singh (BSP): lost Ghosi to SP's Rajeev Rai
+#   - Omprakash Rajbhar (SBSP): not a candidate (son Arvind lost Ghosi)
+#   - Dinesh Lal Yadav Nirahua (BJP): lost Azamgarh to SP's Dharmendra Yadav
+#   - Anant Kumar Hegde (BJP): didn't get ticket (replaced by Kageri)
+#   - Hemant Soren (JMM): didn't contest (Nalin Soren won Dumka for JMM)
+# Fixes applied: Dean Kuriakose cases 149→204, Afzal Ansari party BSP→SP.
+# Remaining entries need verification against ADR PDF.
 ADR_TOP_CRIMINAL = [
-    {"rank": 1, "name": "Dean Kuriakose", "constituency": "Idukki (KL)", "party": "INC", "cases": 149},
-    {"rank": 2, "name": "Atul Kumar Singh", "constituency": "Ghosi (UP)", "party": "BSP", "cases": 62},
-    {"rank": 3, "name": "Dhairyasheel Mane", "constituency": "Hatkanangle (MH)", "party": "SS(UBT)", "cases": 43},
-    {"rank": 4, "name": "Afzal Ansari", "constituency": "Ghazipur (UP)", "party": "BSP", "cases": 42},
-    {"rank": 5, "name": "Rajesh Ranjan (Pappu Yadav)", "constituency": "Purnia (BR)", "party": "IND", "cases": 41},
-    {"rank": 6, "name": "Omprakash Rajbhar", "constituency": "Ghosi (UP)", "party": "SBSP", "cases": 38},
-    {"rank": 7, "name": "Sunil Kumar Singh", "constituency": "Chatra (JH)", "party": "BJP", "cases": 35},
-    {"rank": 8, "name": "Umesh Singh Kushwaha", "constituency": "Kaushambi (UP)", "party": "SP", "cases": 33},
-    {"rank": 9, "name": "Awadhesh Prasad", "constituency": "Faizabad (UP)", "party": "SP", "cases": 32},
-    {"rank": 10, "name": "Dinesh Lal Yadav (Nirahua)", "constituency": "Azamgarh (UP)", "party": "BJP", "cases": 28},
-    {"rank": 11, "name": "Anant Kumar Hegde", "constituency": "Uttara Kannada (KA)", "party": "BJP", "cases": 27},
-    {"rank": 12, "name": "Hemant Soren", "constituency": "Dumka (JH)", "party": "JMM", "cases": 26},
-    {"rank": 13, "name": "Mohan Mandavi", "constituency": "Kanker (CG)", "party": "BJP", "cases": 24},
-    {"rank": 14, "name": "Devendra Singh Bhole", "constituency": "Jaunpur (UP)", "party": "SP", "cases": 23},
-    {"rank": 15, "name": "Lavu Sri Krishna Devarayalu", "constituency": "Narasaraopet (AP)", "party": "TDP", "cases": 22},
+    {"rank": 1, "name": "Dean Kuriakose", "constituency": "Idukki (KL)", "party": "INC", "cases": 204},
+    {"rank": 2, "name": "Dhairyasheel Mane", "constituency": "Hatkanangle (MH)", "party": "SS(UBT)", "cases": 43},
+    {"rank": 3, "name": "Afzal Ansari", "constituency": "Ghazipur (UP)", "party": "SP", "cases": 42},
+    {"rank": 4, "name": "Rajesh Ranjan (Pappu Yadav)", "constituency": "Purnia (BR)", "party": "IND", "cases": 41},
+    {"rank": 5, "name": "Sunil Kumar Singh", "constituency": "Chatra (JH)", "party": "BJP", "cases": 35},
+    {"rank": 6, "name": "Umesh Singh Kushwaha", "constituency": "Kaushambi (UP)", "party": "SP", "cases": 33},
+    {"rank": 7, "name": "Awadhesh Prasad", "constituency": "Faizabad (UP)", "party": "SP", "cases": 32},
+    {"rank": 8, "name": "Mohan Mandavi", "constituency": "Kanker (CG)", "party": "BJP", "cases": 24},
+    {"rank": 9, "name": "Devendra Singh Bhole", "constituency": "Jaunpur (UP)", "party": "SP", "cases": 23},
+    {"rank": 10, "name": "Lavu Sri Krishna Devarayalu", "constituency": "Narasaraopet (AP)", "party": "TDP", "cases": 22},
 ]
 
 

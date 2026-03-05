@@ -4,188 +4,182 @@
     {
       "id": "AR",
       "name": "Arunachal Pradesh",
-      "fiscalDeficitPctGsdp": 5.0,
+      "fiscalDeficitPctGsdp": 6.8,
       "debtToGsdp": 51.4
     },
     {
       "id": "PB",
       "name": "Punjab",
-      "fiscalDeficitPctGsdp": 5.0,
+      "fiscalDeficitPctGsdp": 3.6,
       "debtToGsdp": 47.1
     },
     {
       "id": "NL",
       "name": "Nagaland",
-      "fiscalDeficitPctGsdp": 4.2,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 45.7
     },
     {
       "id": "HP",
       "name": "Himachal Pradesh",
-      "fiscalDeficitPctGsdp": 6.5,
+      "fiscalDeficitPctGsdp": 4.7,
       "debtToGsdp": 45.2
     },
     {
       "id": "ML",
       "name": "Meghalaya",
-      "fiscalDeficitPctGsdp": 6.0,
+      "fiscalDeficitPctGsdp": 3.4,
       "debtToGsdp": 42.9
     },
     {
       "id": "MN",
       "name": "Manipur",
-      "fiscalDeficitPctGsdp": 4.4,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 42.6
     },
     {
       "id": "BR",
       "name": "Bihar",
-      "fiscalDeficitPctGsdp": 6.0,
+      "fiscalDeficitPctGsdp": 2.9,
       "debtToGsdp": 39.3
     },
     {
       "id": "WB",
       "name": "West Bengal",
-      "fiscalDeficitPctGsdp": 3.3,
+      "fiscalDeficitPctGsdp": 3.8,
       "debtToGsdp": 39.1
     },
     {
       "id": "KL",
       "name": "Kerala",
-      "fiscalDeficitPctGsdp": 2.5,
+      "fiscalDeficitPctGsdp": 3.6,
       "debtToGsdp": 37.9
     },
     {
       "id": "RJ",
       "name": "Rajasthan",
-      "fiscalDeficitPctGsdp": 3.8,
+      "fiscalDeficitPctGsdp": 4.1,
       "debtToGsdp": 37.3
     },
     {
       "id": "MZ",
       "name": "Mizoram",
-      "fiscalDeficitPctGsdp": 3.6,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 37.2
     },
     {
       "id": "GA",
       "name": "Goa",
-      "fiscalDeficitPctGsdp": 1.2,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 34.1
     },
     {
       "id": "AP",
       "name": "Andhra Pradesh",
-      "fiscalDeficitPctGsdp": 4.0,
+      "fiscalDeficitPctGsdp": 4.3,
       "debtToGsdp": 33.1
     },
     {
       "id": "JK",
-      "name": "Jammu and Kashmir",
-      "fiscalDeficitPctGsdp": 2.2,
+      "name": "Jammu & Kashmir",
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 33.0
     },
     {
       "id": "TN",
       "name": "Tamil Nadu",
-      "fiscalDeficitPctGsdp": 3.4,
+      "fiscalDeficitPctGsdp": 3.5,
       "debtToGsdp": 31.7
     },
     {
       "id": "HR",
       "name": "Haryana",
-      "fiscalDeficitPctGsdp": 3.2,
+      "fiscalDeficitPctGsdp": 2.8,
       "debtToGsdp": 31.4
     },
     {
       "id": "TR",
       "name": "Tripura",
-      "fiscalDeficitPctGsdp": 2.1,
+      "fiscalDeficitPctGsdp": 4.7,
       "debtToGsdp": 31.4
     },
     {
       "id": "SK",
       "name": "Sikkim",
-      "fiscalDeficitPctGsdp": 4.5,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 31.3
     },
     {
       "id": "UP",
       "name": "Uttar Pradesh",
-      "fiscalDeficitPctGsdp": 2.8,
+      "fiscalDeficitPctGsdp": 2.9,
       "debtToGsdp": 30.4
     },
     {
       "id": "MP",
       "name": "Madhya Pradesh",
-      "fiscalDeficitPctGsdp": 3.3,
+      "fiscalDeficitPctGsdp": 4.2,
       "debtToGsdp": 29.4
     },
     {
       "id": "JH",
       "name": "Jharkhand",
-      "fiscalDeficitPctGsdp": 1.1,
+      "fiscalDeficitPctGsdp": 1.8,
       "debtToGsdp": 28.4
     },
     {
       "id": "PY",
       "name": "Puducherry",
-      "fiscalDeficitPctGsdp": -0.8,
+      "fiscalDeficitPctGsdp": 2.1,
       "debtToGsdp": 27.5
     },
     {
       "id": "AS",
       "name": "Assam",
-      "fiscalDeficitPctGsdp": 5.9,
+      "fiscalDeficitPctGsdp": 3.5,
       "debtToGsdp": 27.0
     },
     {
       "id": "TS",
       "name": "Telangana",
-      "fiscalDeficitPctGsdp": 2.5,
+      "fiscalDeficitPctGsdp": 3.0,
       "debtToGsdp": 26.7
     },
     {
       "id": "UK",
       "name": "Uttarakhand",
-      "fiscalDeficitPctGsdp": 1.0,
+      "fiscalDeficitPctGsdp": 2.5,
       "debtToGsdp": 26.5
     },
     {
       "id": "KA",
       "name": "Karnataka",
-      "fiscalDeficitPctGsdp": 2.1,
+      "fiscalDeficitPctGsdp": 2.9,
       "debtToGsdp": 25.1
     },
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "fiscalDeficitPctGsdp": 1.0,
+      "fiscalDeficitPctGsdp": 3.8,
       "debtToGsdp": 23.5
     },
     {
       "id": "OD",
       "name": "Odisha",
-      "fiscalDeficitPctGsdp": 2.0,
+      "fiscalDeficitPctGsdp": 3.6,
       "debtToGsdp": 19.5
     },
     {
       "id": "GJ",
       "name": "Gujarat",
-      "fiscalDeficitPctGsdp": 0.8,
+      "fiscalDeficitPctGsdp": 0.0,
       "debtToGsdp": 19.2
     },
     {
       "id": "MH",
       "name": "Maharashtra",
-      "fiscalDeficitPctGsdp": 1.9,
+      "fiscalDeficitPctGsdp": 2.4,
       "debtToGsdp": 18.1
-    },
-    {
-      "id": "DL",
-      "name": "Delhi",
-      "fiscalDeficitPctGsdp": -0.4,
-      "debtToGsdp": 1.6
     },
     {
       "id": "AN",

@@ -94,7 +94,7 @@
       "name": "Dean Kuriakose",
       "constituency": "Idukki (KL)",
       "party": "INC",
-      "cases": 149
+      "cases": 204
     },
     {
       "rank": 2,
@@ -105,17 +105,17 @@
     },
     {
       "rank": 3,
+      "name": "Afzal Ansari",
+      "constituency": "Ghazipur (UP)",
+      "party": "SP",
+      "cases": 42
+    },
+    {
+      "rank": 4,
       "name": "Rajesh Ranjan (Pappu Yadav)",
       "constituency": "Purnia (BR)",
       "party": "IND",
       "cases": 41
-    },
-    {
-      "rank": 4,
-      "name": "Omprakash Rajbhar",
-      "constituency": "Ghosi (UP)",
-      "party": "SBSP",
-      "cases": 38
     },
     {
       "rank": 5,
@@ -140,41 +140,20 @@
     },
     {
       "rank": 8,
-      "name": "Dinesh Lal Yadav (Nirahua)",
-      "constituency": "Azamgarh (UP)",
-      "party": "BJP",
-      "cases": 28
-    },
-    {
-      "rank": 9,
-      "name": "Anant Kumar Hegde",
-      "constituency": "Uttara Kannada (KA)",
-      "party": "BJP",
-      "cases": 27
-    },
-    {
-      "rank": 10,
-      "name": "Hemant Soren",
-      "constituency": "Dumka (JH)",
-      "party": "JMM",
-      "cases": 26
-    },
-    {
-      "rank": 11,
       "name": "Mohan Mandavi",
       "constituency": "Kanker (CG)",
       "party": "BJP",
       "cases": 24
     },
     {
-      "rank": 12,
+      "rank": 9,
       "name": "Devendra Singh Bhole",
       "constituency": "Jaunpur (UP)",
       "party": "SP",
       "cases": 23
     },
     {
-      "rank": 13,
+      "rank": 10,
       "name": "Lavu Sri Krishna Devarayalu",
       "constituency": "Narasaraopet (AP)",
       "party": "TDP",

@@ -76,7 +76,7 @@ export function RoadAccidentsSection({ data }: RoadAccidentsSectionProps) {
         >
           {latest ? `${(latest.killed / 1000).toFixed(1)}K` : '—'} dead on Indian roads in 2022 — {perDay ?? '—'} every day.
           India has 1% of the world's vehicles but 11% of global road deaths.
-          Over-speeding alone causes 69% of fatal accidents.
+          Over-speeding alone causes 72% of fatal accidents.
         </motion.p>
 
         {/* Killed + Injured trend */}

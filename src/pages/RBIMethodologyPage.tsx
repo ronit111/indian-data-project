@@ -93,7 +93,7 @@ const SECTIONS = [
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
             <span>
               <strong>CRR (Cash Reserve Ratio)</strong> — Fraction of deposits banks must hold with
-              RBI. Currently 4.50%.
+              RBI. Currently 3.00%.
             </span>
           </li>
           <li className="flex gap-3 items-start">

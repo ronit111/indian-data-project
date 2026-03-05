@@ -63,7 +63,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       )}
 
       <PersonalizationBanner />
-      <main id="main-content" className="flex-1 pt-16 overflow-y-auto">{children}</main>
+      <main id="main-content" className="flex-1 pt-16">{children}</main>
       <Footer />
       <FeedbackButton />
       <BackToTop />

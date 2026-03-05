@@ -70,7 +70,7 @@ export function TeacherSection({ data }: TeacherSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India has 28 students per primary teacher — better than the global average. But the gap between states is enormous. Some states have 50+ students per teacher.
+          India has 25 students per primary teacher — better than the global average. But the gap between states is enormous. Some states have 50+ students per teacher.
         </motion.p>
 
         {ptrSeries.length > 0 && (

@@ -160,6 +160,10 @@
 
 /* ─── Component classes (in @layer components — between base & utilities) ── */
 @layer components {
+  /* Hide scrollbar for horizontal scroll navs */
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+
   /* Typography */
   .font-mono {
     font-family: var(--font-mono);

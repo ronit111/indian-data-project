@@ -86,8 +86,8 @@ export function PartyLandscapeSection({ data }: PartyLandscapeSectionProps) {
           className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8"
         >
           {[
-            { era: '1957–1984', label: 'Congress Era', detail: 'Single-party dominance. INC averaged 330+ seats.', color: '#00BFFF' },
-            { era: '1989–2009', label: 'Coalition Era', detail: 'No single party crossed 210 seats. Regional parties held the balance.', color: '#14B8A6' },
+            { era: '1957–1984', label: 'Congress Era', detail: 'Single-party dominance. INC averaged 325 seats across 7 elections.', color: '#00BFFF' },
+            { era: '1989–2009', label: 'Coalition Era', detail: 'No single party crossed 240 seats. Regional parties held the balance.', color: '#14B8A6' },
             { era: '2014–2024', label: 'BJP Era', detail: 'BJP crossed 240 in 3 consecutive elections. 2024: first check.', color: '#FF6B35' },
           ].map((e) => (
             <div

@@ -6,8 +6,8 @@
       "id": "ger",
       "term": "Gross Enrollment Ratio (GER)",
       "simple": "The total number of students enrolled at a level, as a percentage of the age-appropriate population.",
-      "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~105%, meaning nearly universal enrollment plus some over-age students. Secondary GER at ~80% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
-      "inContext": "India's primary GER: ~105%. Secondary: ~80%. Higher secondary: ~57%.",
+      "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~93% (UDISE+ 2023-24, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~77% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
+      "inContext": "India's primary GER: ~93% (UDISE+ 2023-24, post-SDMIS). Secondary: ~77%. Higher secondary: ~57%.",
       "relatedTerms": [
         "ner",
         "dropout-rate",
@@ -19,7 +19,7 @@
       "term": "Net Enrollment Ratio (NER)",
       "simple": "The percentage of age-appropriate children enrolled at the correct school level.",
       "detail": "Unlike GER, NER only counts children of the official age group. It can never exceed 100%. NER gives a truer picture of access: if GER is 105% but NER is 92%, it means 8% of age-appropriate children are out of school while some older children are still in primary. India reports both, but UDISE+ primarily uses GER.",
-      "inContext": "India's primary NER is ~92%, compared to GER of ~105%",
+      "inContext": "India's primary NER is ~92%, compared to GER of ~93% (post-SDMIS)",
       "relatedTerms": [
         "ger",
         "out-of-school"
@@ -41,8 +41,8 @@
       "id": "ptr",
       "term": "Pupil-Teacher Ratio (PTR)",
       "simple": "The average number of students per teacher.",
-      "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is ~26:1, but this masks huge gaps: Bihar has 65:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
-      "inContext": "National PTR: 26:1. Bihar: 65:1. HP: 14:1. RTE target: 30:1.",
+      "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is ~25:1, but this masks gaps: Jharkhand has 35:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
+      "inContext": "National PTR: 25:1. Bihar: 32:1. HP: 14:1. RTE target: 30:1.",
       "relatedTerms": [
         "rte",
         "udise",
@@ -102,7 +102,7 @@
       "term": "UDISE+ (Unified District Information System for Education Plus)",
       "simple": "India's comprehensive school census, covering every school from pre-primary to higher secondary.",
       "detail": "UDISE+ collects data from 14.89 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
-      "inContext": "UDISE+ 2023-24: 14.89 lakh schools, 97.4 lakh teachers, 24.82 crore students",
+      "inContext": "UDISE+ 2023-24: 14.72 lakh schools, 98.08 lakh teachers, 24.80 crore students",
       "relatedTerms": [
         "ger",
         "ptr",

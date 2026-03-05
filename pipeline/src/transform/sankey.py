@@ -18,12 +18,19 @@ def build_sankey(
         expenditures: list of {"id", "name", "budgetEstimate"} dicts
         total_expenditure: total expenditure in Rs crore
         year: budget year string
+
+    Note: Receipt amounts are GROSS tax collections. The centre devolves
+    ~41% of the divisible pool to states under the Finance Commission.
+    We add a "States' Share of Taxes" outflow so the Sankey balances:
+    gross inflows = central expenditure + states' share.
     """
     nodes = []
     links = []
 
     # Revenue nodes (left side)
+    total_inflows = 0
     for r in receipts:
+        total_inflows += r["amount"]
         nodes.append({
             "id": r["id"],
             "name": r["name"],
@@ -37,13 +44,29 @@ def build_sankey(
             "verified": True,
         })
 
-    # Central government node (middle)
+    # Central government node (middle) — value = total inflows for balanced Sankey
     nodes.append({
         "id": "central-govt",
         "name": "Central Government",
         "group": "center",
-        "value": total_expenditure,
+        "value": round(total_inflows),
     })
+
+    # States' share of taxes (constitutional devolution under Finance Commission)
+    states_share = round(total_inflows - total_expenditure)
+    if states_share > 0:
+        nodes.append({
+            "id": "states-tax-share",
+            "name": "States' Share of Taxes",
+            "group": "expenditure",
+            "value": states_share,
+        })
+        links.append({
+            "source": "central-govt",
+            "target": "states-tax-share",
+            "value": states_share,
+            "verified": True,
+        })
 
     # Expenditure nodes (right side)
     named_total = 0

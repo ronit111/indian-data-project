@@ -61,7 +61,7 @@ export default function EmploymentPage() {
       {summary && <KeyTakeaways
         accent="#F59E0B"
         pills={[
-          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — over twice the national rate', sectionId: 'youth' },
+          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — over 2× the national rate', sectionId: 'youth' },
           { value: `${summary.selfEmployedPct}%`, label: 'Self-employed — most Indians are their own boss', sectionId: 'informality' },
           { value: `${summary.femaleLfpr}%`, label: 'Only 1 in 3 women in the workforce', sectionId: 'gender-gap' },
           { value: `${summary.workforceTotal} Cr`, label: "India's total workforce", sectionId: 'participation' },

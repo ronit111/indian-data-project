@@ -221,6 +221,11 @@ export function SearchOverlay() {
         e.preventDefault();
         setSearchOpen(!searchOpen);
       }
+      // "/" opens search when not focused on an input
+      if (e.key === '/' && !searchOpen && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)) {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
       if (e.key === 'Escape') setSearchOpen(false);
     };
     window.addEventListener('keydown', handler);

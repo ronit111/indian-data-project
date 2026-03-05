@@ -62,7 +62,7 @@ export default function EnvironmentPage() {
         pills={[
           { value: `${summary?.pm25?.toFixed(0) ?? '—'} μg/m³`, label: 'PM2.5 — 10× the WHO safe limit', sectionId: 'air-quality' },
           { value: `${summary?.forestPct?.toFixed(1) ?? '—'}%`, label: 'Forest cover (target: 33%)', sectionId: 'forest-cover' },
-          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: 'Renewable installed capacity', sectionId: 'energy-transition' },
+          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: 'Energy from renewables', sectionId: 'energy-transition' },
           { value: `${summary?.co2PerCapita?.toFixed(1) ?? '—'}t`, label: 'CO₂ per capita (US: 14t)', sectionId: 'carbon-footprint' },
         ]}
       />
@@ -70,11 +70,10 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's environmental story is one of contradictions. The air is toxic, forest cover has grown steadily but the gains mask losses in the northeast and the decline of dense natural forest. Meanwhile, the energy transition is accelerating faster than almost anywhere on earth."
+        text="India's environmental story is one of contradictions. The air is toxic, natural forests in the northeast are disappearing, but the energy transition is accelerating faster than almost anywhere on earth."
         highlights={{
           'toxic': 'var(--negative)',
-          'grown steadily': 'var(--teal)',
-          'losses': 'var(--saffron)',
+          'disappearing': 'var(--saffron)',
           'accelerating': 'var(--teal)',
           'energy': 'var(--teal)',
         }}
@@ -87,12 +86,12 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="While the air gets worse, India's forests provide a vital shield. But the national average hides a troubling pattern: the northeast is losing natural forests even as plantations grow in the center."
+        text="While the air gets worse, India's forests provide a vital shield. But the national average hides wide variation: Madhya Pradesh lost 372 km² while Mizoram gained 242 km² between 2021 and 2023."
         highlights={{
           'forests': 'var(--teal)',
           'shield': 'var(--teal)',
-          'losing': 'var(--negative)',
-          'northeast': 'var(--saffron)',
+          'lost': 'var(--negative)',
+          'gained': 'var(--positive)',
         }}
       />
 

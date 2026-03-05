@@ -166,7 +166,7 @@
     {
       "division": "01",
       "name": "Food & Non-Alcoholic Beverages",
-      "source": "IMF CPI (db.nomics.world) CY 2014-2018 + Economic Survey 2022-26",
+      "source": "IMF CPI (db.nomics.world) FY 2014-19 + MOSPI eSankhyiki API (api.mospi.gov.in) FY 2019+",
       "series": [
         {
           "period": "2014-15",
@@ -189,31 +189,39 @@
           "value": 1.3
         },
         {
+          "period": "2019-20",
+          "value": 6.0
+        },
+        {
+          "period": "2020-21",
+          "value": 7.0
+        },
+        {
           "period": "2021-22",
-          "value": 3.8
+          "value": 4.3
         },
         {
           "period": "2022-23",
-          "value": 6.6
+          "value": 6.7
         },
         {
           "period": "2023-24",
-          "value": 7.5
+          "value": 7.0
         },
         {
           "period": "2024-25",
-          "value": 7.5
+          "value": 6.7
         },
         {
           "period": "2025-26",
-          "value": 5.8
+          "value": -0.8
         }
       ]
     },
     {
       "division": "04",
       "name": "Housing, Water, Electricity, Gas",
-      "source": "IMF CPI (db.nomics.world) CY 2014-2018",
+      "source": "IMF CPI (db.nomics.world) FY 2014-19 + MOSPI eSankhyiki API (api.mospi.gov.in) FY 2019+",
       "series": [
         {
           "period": "2014-15",
@@ -234,13 +242,41 @@
         {
           "period": "2018-19",
           "value": 7.3
+        },
+        {
+          "period": "2019-20",
+          "value": 4.2
+        },
+        {
+          "period": "2020-21",
+          "value": 3.2
+        },
+        {
+          "period": "2021-22",
+          "value": 3.7
+        },
+        {
+          "period": "2022-23",
+          "value": 4.3
+        },
+        {
+          "period": "2023-24",
+          "value": 3.9
+        },
+        {
+          "period": "2024-25",
+          "value": 2.8
+        },
+        {
+          "period": "2025-26",
+          "value": 3.0
         }
       ]
     },
     {
       "division": "06",
       "name": "Health",
-      "source": "IMF CPI (db.nomics.world) CY 2014-2018",
+      "source": "IMF CPI (db.nomics.world) FY 2014-19 + MOSPI eSankhyiki API (api.mospi.gov.in) FY 2019+",
       "series": [
         {
           "period": "2014-15",
@@ -261,13 +297,41 @@
         {
           "period": "2018-19",
           "value": 6.2
+        },
+        {
+          "period": "2019-20",
+          "value": 6.3
+        },
+        {
+          "period": "2020-21",
+          "value": 5.4
+        },
+        {
+          "period": "2021-22",
+          "value": 7.5
+        },
+        {
+          "period": "2022-23",
+          "value": 6.0
+        },
+        {
+          "period": "2023-24",
+          "value": 5.6
+        },
+        {
+          "period": "2024-25",
+          "value": 4.1
+        },
+        {
+          "period": "2025-26",
+          "value": 4.1
         }
       ]
     },
     {
       "division": "07",
-      "name": "Transport",
-      "source": "IMF CPI (db.nomics.world) CY 2014-2018",
+      "name": "Transport & Communication",
+      "source": "IMF CPI (db.nomics.world) FY 2014-19 + MOSPI eSankhyiki API (api.mospi.gov.in) FY 2019+",
       "series": [
         {
           "period": "2014-15",
@@ -288,13 +352,41 @@
         {
           "period": "2018-19",
           "value": 6.6
+        },
+        {
+          "period": "2019-20",
+          "value": 2.4
+        },
+        {
+          "period": "2020-21",
+          "value": 10.6
+        },
+        {
+          "period": "2021-22",
+          "value": 10.1
+        },
+        {
+          "period": "2022-23",
+          "value": 5.9
+        },
+        {
+          "period": "2023-24",
+          "value": 1.9
+        },
+        {
+          "period": "2024-25",
+          "value": 2.4
+        },
+        {
+          "period": "2025-26",
+          "value": 2.2
         }
       ]
     },
     {
       "division": "10",
       "name": "Education",
-      "source": "IMF CPI (db.nomics.world) CY 2014-2018",
+      "source": "IMF CPI (db.nomics.world) FY 2014-19 + MOSPI eSankhyiki API (api.mospi.gov.in) FY 2019+",
       "series": [
         {
           "period": "2014-15",
@@ -315,9 +407,37 @@
         {
           "period": "2018-19",
           "value": 6.1
+        },
+        {
+          "period": "2019-20",
+          "value": 5.5
+        },
+        {
+          "period": "2020-21",
+          "value": 2.3
+        },
+        {
+          "period": "2021-22",
+          "value": 2.9
+        },
+        {
+          "period": "2022-23",
+          "value": 5.3
+        },
+        {
+          "period": "2023-24",
+          "value": 5.2
+        },
+        {
+          "period": "2024-25",
+          "value": 3.9
+        },
+        {
+          "period": "2025-26",
+          "value": 3.8
         }
       ]
     }
   ],
-  "source": "https://api.worldbank.org/v2/country/ind/indicator/FP.CPI.TOTL.ZG + Economic Survey 2025-26 Ch.5 + IMF CPI (db.nomics.world)"
+  "source": "World Bank CPI (api.worldbank.org) + Economic Survey 2025-26 Ch.5 + IMF CPI (db.nomics.world) + MOSPI eSankhyiki CPI API (api.mospi.gov.in)"
 }

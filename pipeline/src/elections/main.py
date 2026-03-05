@@ -259,7 +259,7 @@ def _build_glossary() -> dict:
                 "id": "affidavit",
                 "term": "Candidate Affidavit",
                 "simple": "A sworn legal document every candidate must file, declaring their criminal record, assets, education, and liabilities.",
-                "detail": "Since 2003 (Supreme Court directive in Union of India v. ADR), all candidates must file affidavits with the Returning Officer. These are public documents, searchable on myneta.info. Mandatory disclosures: criminal cases (pending + convicted), total assets + liabilities, educational qualifications, sources of income. False information can lead to disqualification. ADR (Association for Democratic Reforms) systematically analyzes all 543 winning MPs' affidavits after each election. In 2024: 46% of MPs declared criminal cases, average declared assets were ₹97.3 crore.",
+                "detail": "Since 2003 (Supreme Court directive in Union of India v. ADR), all candidates must file affidavits with the Returning Officer. These are public documents, searchable on myneta.info. Mandatory disclosures: criminal cases (pending + convicted), total assets + liabilities, educational qualifications, sources of income. False information can lead to disqualification. ADR (Association for Democratic Reforms) systematically analyzes all 543 winning MPs' affidavits after each election. In 2024: 46% of MPs declared criminal cases, average declared assets were ₹46.34 crore (ADR 2024 analysis).",
                 "inContext": "Mandatory since 2003. In 2024: 46% of MPs declared criminal cases.",
                 "relatedTerms": ["adr"],
             },

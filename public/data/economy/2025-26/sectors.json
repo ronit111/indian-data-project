@@ -6,21 +6,21 @@
       "name": "Agriculture & Allied",
       "currentGrowth": 3.8,
       "fiveYearAvg": 4.5,
-      "gvaShare": 16.3
+      "gvaShare": 17.0
     },
     {
       "id": "industry",
       "name": "Industry",
       "currentGrowth": 6.2,
       "fiveYearAvg": 5.4,
-      "gvaShare": 24.6
+      "gvaShare": 26.0
     },
     {
       "id": "services",
       "name": "Services",
       "currentGrowth": 7.2,
       "fiveYearAvg": 7.8,
-      "gvaShare": 49.9
+      "gvaShare": 50.0
     },
     {
       "id": "construction",
@@ -37,5 +37,5 @@
       "gvaShare": 15.2
     }
   ],
-  "source": "https://www.indiabudget.gov.in/economicsurvey/ (Ch.1, Table 1.1) + World Bank GDP indicators"
+  "source": "https://www.indiabudget.gov.in/economicsurvey/ (Ch.1, Table 1.1) + MOSPI NAS API"
 }

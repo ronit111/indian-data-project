@@ -426,154 +426,139 @@
   ],
   "stateLfpr": [
     {
-      "id": "UP",
-      "name": "Uttar Pradesh",
-      "value": 49.8
-    },
-    {
-      "id": "MH",
-      "name": "Maharashtra",
-      "value": 56.8
-    },
-    {
-      "id": "BR",
-      "name": "Bihar",
-      "value": 42.6
-    },
-    {
-      "id": "WB",
-      "name": "West Bengal",
-      "value": 52.4
-    },
-    {
-      "id": "MP",
-      "name": "Madhya Pradesh",
-      "value": 52.6
-    },
-    {
-      "id": "TN",
-      "name": "Tamil Nadu",
-      "value": 58.4
-    },
-    {
-      "id": "RJ",
-      "name": "Rajasthan",
-      "value": 56.2
-    },
-    {
-      "id": "KA",
-      "name": "Karnataka",
-      "value": 56.4
-    },
-    {
-      "id": "GJ",
-      "name": "Gujarat",
-      "value": 55.6
-    },
-    {
-      "id": "AP",
-      "name": "Andhra Pradesh",
-      "value": 57.2
-    },
-    {
-      "id": "TS",
-      "name": "Telangana",
-      "value": 55.8
-    },
-    {
-      "id": "OD",
-      "name": "Odisha",
-      "value": 54.2
-    },
-    {
-      "id": "KL",
-      "name": "Kerala",
-      "value": 52.8
-    },
-    {
-      "id": "JH",
-      "name": "Jharkhand",
-      "value": 48.6
+      "id": "AR",
+      "name": "Arunachal Pradesh",
+      "value": 73.0
     },
     {
       "id": "AS",
       "name": "Assam",
-      "value": 50.4
+      "value": 66.9
     },
     {
-      "id": "PB",
-      "name": "Punjab",
-      "value": 54.6
+      "id": "BR",
+      "name": "Bihar",
+      "value": 53.2
     },
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "value": 55.4
-    },
-    {
-      "id": "HR",
-      "name": "Haryana",
-      "value": 52.8
-    },
-    {
-      "id": "UK",
-      "name": "Uttarakhand",
-      "value": 53.4
-    },
-    {
-      "id": "JK",
-      "name": "Jammu & Kashmir",
-      "value": 48.2
-    },
-    {
-      "id": "HP",
-      "name": "Himachal Pradesh",
-      "value": 58.6
+      "value": 71.5
     },
     {
       "id": "DL",
       "name": "Delhi",
-      "value": 48.4
+      "value": 46.4
     },
     {
       "id": "GA",
       "name": "Goa",
-      "value": 54.2
+      "value": 51.8
     },
     {
-      "id": "TR",
-      "name": "Tripura",
-      "value": 52.8
+      "id": "GJ",
+      "name": "Gujarat",
+      "value": 64.6
     },
     {
-      "id": "MN",
-      "name": "Manipur",
-      "value": 54.6
+      "id": "HP",
+      "name": "Himachal Pradesh",
+      "value": 74.4
+    },
+    {
+      "id": "HR",
+      "name": "Haryana",
+      "value": 49.5
+    },
+    {
+      "id": "JH",
+      "name": "Jharkhand",
+      "value": 63.8
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "value": 56.8
+    },
+    {
+      "id": "KL",
+      "name": "Kerala",
+      "value": 56.2
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "value": 59.0
     },
     {
       "id": "ML",
       "name": "Meghalaya",
-      "value": 56.2
+      "value": 76.9
     },
     {
-      "id": "NL",
-      "name": "Nagaland",
-      "value": 50.4
+      "id": "MN",
+      "name": "Manipur",
+      "value": 59.6
+    },
+    {
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "value": 68.9
     },
     {
       "id": "MZ",
       "name": "Mizoram",
-      "value": 56.8
+      "value": 54.2
+    },
+    {
+      "id": "NL",
+      "name": "Nagaland",
+      "value": 73.3
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "value": 64.9
+    },
+    {
+      "id": "PB",
+      "name": "Punjab",
+      "value": 55.7
     },
     {
       "id": "SK",
       "name": "Sikkim",
-      "value": 58.4
+      "value": 76.2
     },
     {
-      "id": "AR",
-      "name": "Arunachal Pradesh",
-      "value": 52.6
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "value": 58.8
+    },
+    {
+      "id": "TR",
+      "name": "Tripura",
+      "value": 63.0
+    },
+    {
+      "id": "TS",
+      "name": "Telangana",
+      "value": 62.2
+    },
+    {
+      "id": "UK",
+      "name": "Uttarakhand",
+      "value": 60.7
+    },
+    {
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "value": 56.9
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "value": 61.1
     }
   ],
   "source": "World Bank (ILO modelled) + PLFS Annual Report 2023-24"

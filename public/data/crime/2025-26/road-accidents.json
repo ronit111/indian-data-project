@@ -60,12 +60,12 @@
     {
       "id": "overspeeding",
       "name": "Over-speeding",
-      "pct": 69.3
+      "pct": 72.3
     },
     {
       "id": "wrong-side",
       "name": "Driving on Wrong Side",
-      "pct": 5.5
+      "pct": 4.9
     },
     {
       "id": "drunk-driving",
@@ -90,7 +90,7 @@
     {
       "id": "other-causes",
       "name": "Other Causes",
-      "pct": 16.6
+      "pct": 14.2
     }
   ],
   "stateFatalities": [

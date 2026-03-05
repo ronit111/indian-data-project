@@ -145,7 +145,7 @@ export function LiteracySection({ data }: LiteracySectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Kerala's literacy rate approaches 94%, rivaling developed nations. Bihar sits near 62%. The gender gap is narrowing — from 22 percentage points in 2001 to about 14 now — but it remains the defining divide.
+          Kerala's literacy rate approaches 94%, rivaling developed nations. Bihar sits near 62%. The gender gap is narrowing — from 26 percentage points in 2001 to about 14 now — but it remains the defining divide.
         </motion.p>
 
         {/* National trend */}

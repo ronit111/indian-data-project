@@ -163,7 +163,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
             <span>
-              <strong>Gender-disaggregated LFPR</strong> — Male and female participation rates tracked separately. The gap between male (~78%) and female (~37%) LFPR is one of the widest among major economies. Female LFPR has been rising since 2017 after a decades-long decline.
+              <strong>Gender-disaggregated LFPR</strong> — Male and female participation rates tracked separately. The gap between male (~78%) and female (~35%) LFPR is one of the widest among major economies. Female LFPR has been rising since 2017 after a decades-long decline.
             </span>
           </li>
         </ul>

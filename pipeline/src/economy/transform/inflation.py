@@ -240,21 +240,22 @@ def _build_cpi_by_category(mospi_data: list[dict] | None = None) -> list[dict]:
         for entry in mospi_data:
             mospi_by_code[entry["division"]] = entry["series"]
 
-    use_api = bool(mospi_by_code)
-    recent_source = (
-        "MOSPI eSankhyiki API (api.mospi.gov.in)"
-        if use_api
-        else "MOSPI eSankhyiki API (curated fallback, fetched 2026-03-01)"
-    )
-
     result: list[dict] = []
     for code in ["01", "04", "06", "07", "10"]:
         # Start with IMF baseline
         series = list(_IMF_BASELINE.get(code, []))
         baseline_periods = {p["period"] for p in series}
 
-        # Append recent data (API or curated fallback)
-        recent = mospi_by_code.get(code) if use_api else _CURATED_MOSPI_FALLBACK.get(code)
+        # Per-division hybrid: use API data if available for THIS division,
+        # otherwise fall back to curated data for THIS division.
+        api_series = mospi_by_code.get(code)
+        if api_series:
+            recent = api_series
+            recent_source = "MOSPI eSankhyiki API (api.mospi.gov.in)"
+        else:
+            recent = _CURATED_MOSPI_FALLBACK.get(code)
+            recent_source = "MOSPI eSankhyiki API (curated fallback, fetched 2026-03-01)"
+
         if recent:
             for point in recent:
                 if point["period"] not in baseline_periods:

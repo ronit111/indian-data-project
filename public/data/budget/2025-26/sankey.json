@@ -47,7 +47,13 @@
       "id": "central-govt",
       "name": "Central Government",
       "group": "center",
-      "value": 5065345
+      "value": 6482936
+    },
+    {
+      "id": "states-tax-share",
+      "name": "States' Share of Taxes",
+      "group": "expenditure",
+      "value": 1417591
     },
     {
       "id": "interest-payments",
@@ -163,6 +169,12 @@
       "source": "borrowings",
       "target": "central-govt",
       "value": 1568936,
+      "verified": true
+    },
+    {
+      "source": "central-govt",
+      "target": "states-tax-share",
+      "value": 1417591,
       "verified": true
     },
     {
