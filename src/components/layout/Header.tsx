@@ -1,11 +1,10 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { type MouseEvent } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useUIStore } from '../../store/uiStore.ts';
 
 export function Header() {
   const location = useLocation();
-  const navigate = useNavigate();
   const toggleSearch = useUIStore((s) => s.toggleSearch);
   const { scrollY } = useScroll();
 
