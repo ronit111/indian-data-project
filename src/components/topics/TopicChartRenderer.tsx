@@ -66,12 +66,15 @@ function toLineSeries(raw: RawSeriesItem[]) {
   }));
 }
 
-function toBarItems(raw: Array<{ name: string; value: number }>) {
-  return raw.map((item, i) => ({
-    id: item.name.toLowerCase().replace(/\s+/g, '-') || `bar-${i}`,
-    label: item.name,
-    value: item.value,
-  }));
+function toBarItems(raw: Array<{ name?: string; label?: string; value: number }>) {
+  return raw.map((item, i) => {
+    const label = item.name ?? item.label ?? `Item ${i + 1}`;
+    return {
+      id: label.toLowerCase().replace(/\s+/g, '-') || `bar-${i}`,
+      label,
+      value: item.value,
+    };
+  });
 }
 
 // ─── Main Renderer ──────────────────────────────────────────────────

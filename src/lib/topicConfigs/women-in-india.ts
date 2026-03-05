@@ -314,9 +314,8 @@ export const womenInIndia: TopicDef = {
             return d.crimeTypes
               .sort((a, b) => b.pct - a.pct)
               .map((t) => ({
-                label: t.name,
+                name: t.name,
                 value: t.pct,
-                color: '#DC2626',
               }));
           },
         },
