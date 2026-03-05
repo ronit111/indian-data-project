@@ -8,14 +8,14 @@
       "simple": "The total value of all goods and services produced within a state in a year — the state's GDP.",
       "detail": "GSDP is the state-level equivalent of GDP. It measures economic output within a state's borders. GSDP at 'current prices' uses today's prices (includes inflation), while 'constant prices' strips out inflation to show real growth. States like Maharashtra and Tamil Nadu have GSDPs comparable to medium-sized countries.",
       "inContext": "Maharashtra leads with ₹35.28 lakh crore (FY 2022-23 at current prices)",
-      "relatedTerms": ["per-capita-gsdp", "gsdp-growth-rate", "constant-prices"]
+      "relatedTerms": ["per-capita-nsdp", "gsdp-growth-rate", "constant-prices"]
     },
     {
-      "id": "per-capita-gsdp",
-      "term": "Per Capita GSDP",
-      "simple": "A state's GDP divided by its population — how much economic output each person 'produces' on average.",
-      "detail": "Per capita GSDP adjusts for population size, revealing which states are truly wealthier per person. A state with high total GSDP but a huge population (like Uttar Pradesh) may have low per capita income. Smaller states like Goa and Sikkim often top per capita rankings because their economies are decent but populations are small.",
-      "inContext": "Goa and Sikkim lead with per capita GSDP several times the national average",
+      "id": "per-capita-nsdp",
+      "term": "Per Capita NSDP",
+      "simple": "A state's net domestic product divided by its population. NSDP = GSDP minus depreciation, so it reflects the income actually available to residents.",
+      "detail": "Per capita NSDP adjusts for population size and capital depreciation, revealing which states are truly wealthier per person. A state with high total GSDP but a huge population (like Uttar Pradesh) may have low per capita income. Smaller states like Goa and Sikkim often top per capita rankings because their economies are decent but populations are small. Source: RBI Handbook Table 19.",
+      "inContext": "Goa and Sikkim lead with per capita NSDP several times the national average",
       "relatedTerms": ["gsdp", "gsdp-growth-rate"]
     },
     {

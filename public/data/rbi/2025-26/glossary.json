@@ -7,14 +7,14 @@
       "term": "Repo Rate",
       "simple": "The interest rate at which the RBI lends money to banks overnight.",
       "detail": "When banks need short-term funds, they borrow from the RBI by pledging government securities as collateral (a 'repurchase agreement'). The repo rate is the RBI's primary tool for controlling inflation. Raising the repo rate makes borrowing costlier, slowing spending and cooling prices. Cutting it does the opposite.",
-      "inContext": "5.25% (as of February 2026, cut from 6.50% in early 2025)",
+      "inContext": "6.25% (as of February 2025, cut from 6.50%)",
       "relatedTerms": ["reverse-repo-rate", "mpc", "monetary-policy-stance"]
     },
     {
       "id": "reverse-repo-rate",
       "term": "Reverse Repo Rate",
       "simple": "The interest rate the RBI pays banks for parking their excess cash with it.",
-      "detail": "When banks have more money than they can lend, they deposit it with the RBI and earn the reverse repo rate. This acts as a floor for short-term interest rates — banks won't lend below what they can earn risk-free from the RBI. The reverse repo rate is typically 0.25% below the repo rate.",
+      "detail": "When banks have more money than they can lend, they deposit it with the RBI and earn the reverse repo rate. This acts as a floor for short-term interest rates — banks won't lend below what they can earn risk-free from the RBI. Since April 2022, the Standing Deposit Facility (SDF) has replaced the reverse repo rate as the effective floor of the Liquidity Adjustment Facility (LAF). The reverse repo rate remains formally in the framework but is no longer the operative floor rate.",
       "relatedTerms": ["repo-rate", "crr"]
     },
     {
@@ -22,7 +22,7 @@
       "term": "CRR (Cash Reserve Ratio)",
       "simple": "The percentage of deposits banks must keep with the RBI as cash — they can't lend this out.",
       "detail": "If CRR is 4%, a bank with ₹100 Cr in deposits must park ₹4 Cr with the RBI. Banks earn zero interest on CRR deposits. When the RBI raises CRR, banks have less money to lend, tightening liquidity. When it cuts CRR, more money flows into the lending system.",
-      "inContext": "3.0% (reduced from 4.5% in late 2024)",
+      "inContext": "4.0% (reduced from 4.5% in December 2024)",
       "relatedTerms": ["slr", "repo-rate"]
     },
     {
@@ -45,7 +45,7 @@
       "term": "Monetary Policy Stance",
       "simple": "The RBI's signal about which direction interest rates are likely to move next.",
       "detail": "The stance tells markets what to expect. 'Accommodative' means the RBI is biased toward cutting rates (supporting growth). 'Neutral' means no bias either way. 'Withdrawal of accommodation' means the RBI is biased toward raising rates (fighting inflation). 'Tightening' means active rate hikes. The stance change often precedes actual rate changes.",
-      "inContext": "Neutral (as of February 2026)",
+      "inContext": "Neutral (as of February 2025)",
       "relatedTerms": ["mpc", "repo-rate"]
     },
     {

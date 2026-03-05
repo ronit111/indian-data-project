@@ -363,7 +363,7 @@
     "id": "states-per-capita",
     "domain": "states",
     "question": "What is per capita income in my state?",
-    "answer": "Average per capita GSDP is \u20b91.72 lakh, but varies from \u20b950K to \u20b95L+.",
+    "answer": "Average per capita NSDP is \u20b91.72 lakh, but varies from \u20b950K to \u20b95L+.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },
@@ -379,7 +379,7 @@
     "id": "states-bihar-income",
     "domain": "states",
     "question": "Does Bihar really have the lowest per capita income?",
-    "answer": "Bihar and UP rank among the lowest in per capita GSDP \u2014 see the full state ranking.",
+    "answer": "Bihar and UP rank among the lowest in per capita NSDP \u2014 see the full state ranking.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },

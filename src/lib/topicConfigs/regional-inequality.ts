@@ -23,7 +23,7 @@ export const regionalInequality: TopicDef = {
       const s = statesSummary(bag);
       return s ? `₹${(s.averagePerCapita / 1000).toFixed(0)}K` : '—';
     },
-    label: 'Average Per Capita GSDP',
+    label: 'Average Per Capita NSDP',
     context: 'The average hides an 8x gap between richest and poorest states',
   },
 
@@ -41,16 +41,16 @@ export const regionalInequality: TopicDef = {
       id: 'income-divide',
       sectionNumber: 1,
       title: 'The Income Divide',
-      annotation: 'Per capita GSDP ranges from ₹30,000 in Bihar to ₹2.5+ lakh in Goa. Southern and western states cluster at the top; Bihar, UP, and Jharkhand lag.',
+      annotation: 'Per capita NSDP ranges from ₹30,000 in Bihar to ₹2.5+ lakh in Goa. Southern and western states cluster at the top; Bihar, UP, and Jharkhand lag.',
       domains: ['states'],
       sources: ['RBI Handbook'],
       charts: [{
-        chartType: 'horizontal-bar', chartTitle: 'Per Capita GSDP by State', unit: '₹', accent: '#8B5CF6',
+        chartType: 'horizontal-bar', chartTitle: 'Per Capita NSDP by State', unit: '₹', accent: '#8B5CF6',
         extractData: (bag) => {
           const d = gsdp(bag);
           if (!d?.states?.length) return null;
-          const sorted = [...d.states].sort((a, b) => b.perCapitaGsdp - a.perCapitaGsdp).slice(0, 15);
-          return sorted.map(s => ({ name: s.name, value: s.perCapitaGsdp }));
+          const sorted = [...d.states].sort((a, b) => b.perCapitaNsdp - a.perCapitaNsdp).slice(0, 15);
+          return sorted.map(s => ({ name: s.name, value: s.perCapitaNsdp }));
         },
       }],
       deepLinks: [{ label: 'State finances', route: '/states#gsdp', domain: 'states' }],

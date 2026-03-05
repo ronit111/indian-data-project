@@ -1,6 +1,6 @@
 {
   "year": "2025-26",
-  "hospitalBedsPer1000": 0.5,
+  "hospitalBedsPer1000": 1.6,
   "physiciansPer1000": 0.7,
   "healthExpGDP": 3.3,
   "outOfPocketPct": 45.1,

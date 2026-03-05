@@ -10,7 +10,7 @@ const sectoral = (bag: TopicDataBag) => bag['employment/sectoral'] as SectoralDa
 export const agricultureFood: TopicDef = {
   id: 'agriculture-food',
   title: 'Agriculture & Food Security',
-  subtitle: '42% of India\'s workforce is in agriculture, but it produces only 15% of GDP. Can India feed itself sustainably?',
+  subtitle: '42% of India\'s workforce is in agriculture, but it produces only ~16% of GDP. Can India feed itself sustainably?',
   accent: '#22C55E',
   contributingDomains: ['budget', 'economy', 'employment', 'environment'],
   requiredData: [
@@ -31,12 +31,12 @@ export const agricultureFood: TopicDef = {
 
   takeaways: [
     { value: '~42%', label: 'Workforce in agriculture', sectionId: 'agri-paradox' },
-    { value: '~15%', label: 'Agriculture share of GDP', sectionId: 'agri-paradox' },
+    { value: '~16%', label: 'Agriculture share of GDP', sectionId: 'agri-paradox' },
     { value: (bag) => { const e = ecoSummary(bag); return e ? `${e.cpiInflation}%` : '—'; }, label: 'CPI inflation (food-driven)', sectionId: 'food-prices' },
     { value: (bag) => { const e = envSummary(bag); return e ? `${e.forestPct}%` : '—'; }, label: 'Forest cover', sectionId: 'sustainability' },
   ],
 
-  narrativeBridge: 'Agriculture is India\'s employment backbone but its productivity laggard. The sector supports 42% of the workforce but contributes just 15% of GDP — a productivity gap that keeps rural incomes low. Meanwhile, food prices drive inflation spikes, and water stress threatens future harvests.',
+  narrativeBridge: 'Agriculture is India\'s employment backbone but its productivity laggard. The sector supports 42% of the workforce but contributes just ~16% of GDP — a productivity gap that keeps rural incomes low. Meanwhile, food prices drive inflation spikes, and water stress threatens future harvests.',
 
   sections: [
     {

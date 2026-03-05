@@ -40,7 +40,7 @@ export const healthOutcomes: TopicDef = {
       id: 'child-health',
       sectionNumber: 1,
       title: 'Child Survival',
-      annotation: 'India\'s infant mortality rate has dropped from 68 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
+      annotation: 'India\'s infant mortality rate has dropped from 66 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
       domains: ['healthcare', 'census'],
       sources: ['SRS 2022', 'NFHS-5', 'World Bank'],
       charts: [{
@@ -79,7 +79,7 @@ export const healthOutcomes: TopicDef = {
       id: 'spending-gap',
       sectionNumber: 3,
       title: 'Who Pays?',
-      annotation: 'Nearly half of all health spending in India comes out of patients\' pockets. Public health expenditure is ~3.3% of GDP, below the global average of ~6%. Ayushman Bharat has expanded coverage, but the financing gap persists.',
+      annotation: 'Nearly half of all health spending in India comes out of patients\' pockets. Total health expenditure is ~3.3% of GDP, below the global average of ~6%. Ayushman Bharat has expanded coverage, but the financing gap persists.',
       domains: ['healthcare', 'budget'],
       sources: ['NHP 2022', 'World Bank'],
       charts: [{

@@ -14,7 +14,7 @@ class StateGSDPEntry(BaseModel):
     gsdp: float            # Rs crore, current prices
     gsdpConstant: float | None = None  # Rs crore, constant prices (2011-12 base)
     growthRate: float      # % annual growth
-    perCapitaGsdp: float   # Rs
+    perCapitaNsdp: float   # Rs (Per Capita NSDP from RBI Table 19)
     population: float      # lakhs
 
 

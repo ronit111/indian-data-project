@@ -228,11 +228,11 @@ def _build_indicators(
     })
 
     indicators.append({
-        "id": "per_capita_gsdp",
-        "name": "Per Capita GSDP",
+        "id": "per_capita_nsdp",
+        "name": "Per Capita NSDP",
         "category": "percapita",
         "unit": "Rs",
-        "states": [{"id": s["id"], "name": s["name"], "value": s["perCapitaGsdp"]} for s in gsdp_data if s["perCapitaGsdp"] > 0],
+        "states": [{"id": s["id"], "name": s["name"], "value": s["perCapitaNsdp"]} for s in gsdp_data if s["perCapitaNsdp"] > 0],
         "source": "RBI Handbook of Statistics on Indian States",
     })
 

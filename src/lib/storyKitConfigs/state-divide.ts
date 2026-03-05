@@ -13,7 +13,7 @@ export const STATE_DIVIDE: StoryKitDef = {
     },
     {
       registryKey: 'states/percapita',
-      caption: 'Per-capita GSDP by state. Goa and Sikkim lead due to small populations — the real comparison is between large states like UP, Bihar vs. TN, Karnataka.',
+      caption: 'Per-capita NSDP by state. Goa and Sikkim lead due to small populations — the real comparison is between large states like UP, Bihar vs. TN, Karnataka.',
     },
     {
       registryKey: 'states/fiscal-health',

@@ -145,7 +145,7 @@ export const inflationCost: TopicDef = {
       sectionNumber: 2,
       title: 'The RBI Response',
       annotation:
-        'When inflation crossed 6%, the RBI hiked the repo rate by 250 basis points in just 14 months. Now, with inflation cooling, rate cuts have begun. Each 25 bps cut changes EMIs for millions of borrowers.',
+        'When inflation crossed 6%, the RBI hiked the repo rate by 250 basis points in just 10 months. Now, with inflation cooling, rate cuts have begun. Each 25 bps cut changes EMIs for millions of borrowers.',
       domains: ['rbi'],
       sources: ['RBI MPC Statements'],
       charts: [

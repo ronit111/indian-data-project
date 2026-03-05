@@ -200,7 +200,7 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 3,
       title: 'Education & Health',
       annotation:
-        'The literacy gender gap has shrunk from 25 percentage points in 1991 to ~15 today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality (103 per lakh) and child marriage rates remind us that progress is uneven.',
+        'The literacy gender gap has shrunk from 25 percentage points in 1991 to ~14 percentage points today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality (103 per lakh) and child marriage rates remind us that progress is uneven.',
       domains: ['education', 'census', 'healthcare'],
       sources: ['Census of India', 'UDISE+', 'NFHS-5', 'World Bank'],
       charts: [

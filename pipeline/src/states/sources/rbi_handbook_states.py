@@ -69,7 +69,7 @@ def fetch_handbook_gsdp() -> tuple[list[dict[str, Any]], list[dict[str, Any]], s
     Returns (gsdp_data, gsdp_history, data_year) matching the curated.py schema,
     or None if the Handbook is unreachable.
 
-    gsdp_data: [{id, name, gsdp, gsdpConstant, growthRate, perCapitaGsdp, population}]
+    gsdp_data: [{id, name, gsdp, gsdpConstant, growthRate, perCapitaNsdp, population}]
     gsdp_history: [{id, name, gsdp: [{year, value}]}] for top 10 states, last 3 years
     data_year: fiscal year string (e.g., "2022-23")
     """
@@ -133,7 +133,11 @@ def fetch_handbook_gsdp() -> tuple[list[dict[str, Any]], list[dict[str, Any]], s
         pc_years = percapita_by_state.get(state_name, {})
         per_capita_val = round(pc_years.get(latest_year, 0))
 
-        # Implied population (GSDP crore * 100 / per_capita)
+        # Implied population (GSDP crore * 100 / per_capita_nsdp)
+        # NOTE: This divides GSDP by per-capita-NSDP, which inflates population by ~14%
+        # (since NSDP = GSDP - depreciation). The derived population is approximate.
+        # Per-capita values displayed on frontend come directly from Table 19, not from
+        # this derived population, so they remain accurate.
         population = round(gsdp_crore * 100 / per_capita_val, 2) if per_capita_val > 0 else 0
 
         gsdp_data.append({
@@ -142,7 +146,7 @@ def fetch_handbook_gsdp() -> tuple[list[dict[str, Any]], list[dict[str, Any]], s
             "gsdp": gsdp_crore,
             "gsdpConstant": gsdp_const_crore,
             "growthRate": growth_rate,
-            "perCapitaGsdp": per_capita_val,
+            "perCapitaNsdp": per_capita_val,
             "population": population,
         })
 
@@ -161,7 +165,7 @@ def fetch_handbook_gsdp() -> tuple[list[dict[str, Any]], list[dict[str, Any]], s
                 "id": ut_id,
                 "name": ut_names.get(ut_id, ut_id),
                 "gsdp": 0, "gsdpConstant": 0, "growthRate": 0,
-                "perCapitaGsdp": 0, "population": 0,
+                "perCapitaNsdp": 0, "population": 0,
             })
 
     # Build gsdp_history (top 10 by GSDP, last 3 years)

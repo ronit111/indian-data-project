@@ -131,7 +131,7 @@ export default function StatesPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Total GDP can be misleading — a large population inflates the number. Per capita GSDP reveals which states actually produce more per person. The answers may surprise you."
+        text="Total GDP can be misleading — a large population inflates the number. Per capita NSDP reveals which states actually produce more per person. The answers may surprise you."
         highlights={{
           'per capita': 'var(--emerald)',
           'Per capita': 'var(--emerald)',

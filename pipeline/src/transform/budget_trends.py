@@ -197,9 +197,9 @@ BUDGET_TRENDS_SERIES: list[dict] = [
     },
     {
         "year": "2025-26",
-        "expenditure": 5010449,
-        "receipts": 3470200,
-        "fiscalDeficit": 1568460,
+        "expenditure": 5065345,
+        "receipts": 3496409,
+        "fiscalDeficit": 1568936,
         "fiscalDeficitPctGDP": 4.40,
         "revenueDeficitPctGDP": 1.50,
     },

@@ -1,44 +1,8 @@
 {
   "year": "2025-26",
-  "currentRate": 5.25,
+  "currentRate": 6.25,
   "currentStance": "Neutral",
   "decisions": [
-    {
-      "date": "2026-02-06",
-      "rate": 5.25,
-      "change": 0.0,
-      "stance": "Neutral"
-    },
-    {
-      "date": "2025-12-06",
-      "rate": 5.25,
-      "change": -0.25,
-      "stance": "Neutral"
-    },
-    {
-      "date": "2025-10-01",
-      "rate": 5.5,
-      "change": 0.0,
-      "stance": "Neutral"
-    },
-    {
-      "date": "2025-08-06",
-      "rate": 5.5,
-      "change": 0.0,
-      "stance": "Neutral"
-    },
-    {
-      "date": "2025-06-06",
-      "rate": 5.5,
-      "change": -0.5,
-      "stance": "Neutral"
-    },
-    {
-      "date": "2025-04-09",
-      "rate": 6.0,
-      "change": -0.25,
-      "stance": "Accommodative"
-    },
     {
       "date": "2025-02-07",
       "rate": 6.25,
@@ -228,10 +192,6 @@
     {
       "year": "2024-25",
       "value": 4.0
-    },
-    {
-      "year": "2025-26",
-      "value": 3.0
     }
   ],
   "source": "RBI Monetary Policy Statements — https://www.rbi.org.in"

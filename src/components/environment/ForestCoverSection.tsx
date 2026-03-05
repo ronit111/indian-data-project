@@ -82,13 +82,13 @@ export function ForestCoverSection({ data }: ForestCoverSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India has 25.17% forest cover — below the 33% policy target. The northeast is losing forests fastest, while plantation-led gains in central India mask the decline of natural forests.
+          India has 25.17% forest cover (ISFR 2023) — up from 21% in 2001, but still below the 33% policy target. The national gain of +1,540 km² masks a split: plantation-led growth in central India, while the northeast loses natural forests.
         </motion.p>
 
         {forestSeries.length > 0 && (
           <div className="mb-8">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              Forest cover as % of land area
+              Forest cover as % of land area (World Bank satellite estimates; ISFR ground-survey figure is higher at 25.17%)
             </p>
             <ChartActionsWrapper registryKey="environment/forest-cover" data={data}>
               <LineChart

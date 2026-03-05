@@ -22,7 +22,7 @@ const INDICATOR_COLORS: Record<string, string> = {
   gsdp_current: 'var(--emerald)',
   gsdp_constant: 'var(--cyan)',
   gsdp_growth: 'var(--emerald)',
-  per_capita_gsdp: 'var(--emerald)',
+  per_capita_nsdp: 'var(--emerald)',
   own_tax_revenue: 'var(--emerald)',
   central_transfers: 'var(--cyan)',
   total_revenue: 'var(--emerald)',

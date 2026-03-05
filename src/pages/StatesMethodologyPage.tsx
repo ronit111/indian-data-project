@@ -87,10 +87,10 @@ const SECTIONS = [
               </tr>
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GSDP (Current Prices)</td><td className="py-2 pr-4 font-mono text-xs">Table 19</td><td className="py-2">Rs crore</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GSDP (Constant 2011-12 Prices)</td><td className="py-2 pr-4 font-mono text-xs">Table 21</td><td className="py-2">Rs crore</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GSDP Growth Rate</td><td className="py-2 pr-4 font-mono text-xs">Derived</td><td className="py-2">%</td></tr>
-              <tr><td className="py-2 pr-4">Per Capita GSDP</td><td className="py-2 pr-4 font-mono text-xs">Table 22</td><td className="py-2">Rs/person</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Per Capita NSDP (Current Prices)</td><td className="py-2 pr-4 font-mono text-xs">Table 19</td><td className="py-2">Rs/person</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GSDP (Current Prices)</td><td className="py-2 pr-4 font-mono text-xs">Table 21</td><td className="py-2">Rs crore</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GSDP (Constant 2011-12 Prices)</td><td className="py-2 pr-4 font-mono text-xs">Table 22</td><td className="py-2">Rs crore</td></tr>
+              <tr><td className="py-2 pr-4">GSDP Growth Rate</td><td className="py-2 pr-4 font-mono text-xs">Derived</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
         </div>
@@ -198,6 +198,18 @@ const SECTIONS = [
           <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
           <span>
             Growth rates are year-on-year at constant (2011-12) prices. Multi-year compound growth rates would give a different picture for states with volatile annual growth.
+          </span>
+        </li>
+        <li className="flex gap-3 items-start">
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
+          <span>
+            <strong>Data vintage:</strong> All state-level economic data is FY 2022-23 vintage from the RBI Handbook. The directory path says "2025-26" but reflects the latest available data year, not projections.
+          </span>
+        </li>
+        <li className="flex gap-3 items-start">
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
+          <span>
+            <strong>Per capita values are NSDP, not GSDP.</strong> RBI Table 19 reports Net State Domestic Product per capita. NSDP = GSDP minus depreciation of capital assets. The derived population figures (GSDP / per-capita-NSDP) are approximate and inflate true population by ~14%.
           </span>
         </li>
         <li className="flex gap-3 items-start">

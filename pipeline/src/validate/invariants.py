@@ -112,6 +112,22 @@ def check_statewise_transfers(statewise: dict) -> list[str]:
     return errors
 
 
+def check_receipts_equals_expenditure(receipts: dict, expenditure: dict) -> list[str]:
+    """Receipts total (incl. borrowings) must equal total expenditure."""
+    errors = []
+    r_total = receipts["total"]
+    e_total = expenditure["total"]
+    diff = abs(r_total - e_total)
+    if diff > 1:
+        errors.append(
+            f"Receipts total ({r_total:,.0f}) != expenditure total ({e_total:,.0f}), "
+            f"diff = {diff:,.0f} Cr. Receipts incl. borrowings must fund all expenditure."
+        )
+    else:
+        logger.info(f"  receipts total == expenditure total ({e_total:,.0f} Cr) ✓")
+    return errors
+
+
 def run_all_invariants(
     treemap: dict,
     expenditure: dict,
@@ -125,5 +141,6 @@ def run_all_invariants(
     errors.extend(check_treemap_expenditure(treemap, expenditure))
     errors.extend(check_scheme_consistency(schemes, expenditure))
     errors.extend(check_receipts_percentages(receipts))
+    errors.extend(check_receipts_equals_expenditure(receipts, expenditure))
     errors.extend(check_statewise_transfers(statewise))
     return errors

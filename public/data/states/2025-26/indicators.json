@@ -330,8 +330,8 @@
       "source": "RBI Handbook of Statistics on Indian States"
     },
     {
-      "id": "per_capita_gsdp",
-      "name": "Per Capita GSDP",
+      "id": "per_capita_nsdp",
+      "name": "Per Capita NSDP",
       "category": "percapita",
       "unit": "Rs",
       "states": [

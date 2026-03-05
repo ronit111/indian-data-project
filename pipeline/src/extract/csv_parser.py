@@ -52,16 +52,28 @@ def get_curated_expenditure_data() -> pd.DataFrame:
 
 def get_curated_receipts_data() -> pd.DataFrame:
     """
-    Curated Union Budget 2025-26 receipts data.
-    Based on Budget at a Glance / Receipt Budget.
+    Curated Union Budget 2025-26 receipts data — NET to Centre.
+
+    Source: Union Budget 2025-26, Budget at a Glance (Statement 1)
+    Key constraint: Total receipts (incl. borrowings) = Total Expenditure = Rs 50,65,345 Cr
+
+    Tax amounts are NET (after deducting States' share of Rs 14,22,444 Cr).
+    Individual tax NET amounts allocated proportionally from:
+      - Net Tax Revenue: Rs 28,37,409 Cr (official)
+      - Customs: Rs 2,40,000 Cr (not shared, stays with Centre)
+      - Remaining net: Rs 25,97,409 Cr split by gross proportions
+
+    Non-Tax & Other Revenue (Rs 6,59,000 Cr) = Non-Tax Revenue (Rs 5,83,000 Cr)
+      + Non-Debt Capital Receipts (Rs 76,000 Cr).
     """
     data = [
-        ("income-tax", "Income Tax", 1438000, 1256000),
-        ("corporate-tax", "Corporate Tax", 1082000, 980000),
-        ("gst", "GST", 1178000, 1062000),
-        ("excise", "Excise Duty", 317000, 300000),
-        ("customs", "Customs Duty", 240000, 223000),
-        ("non-tax-revenue", "Non-Tax Revenue", 659000, 600000),
+        # NET amounts after States' share deduction
+        ("income-tax", "Income Tax", 930198, 812400),
+        ("corporate-tax", "Corporate Tax", 699954, 634019),
+        ("gst", "GST", 762100, 687196),
+        ("excise", "Excise Duty", 205157, 194095),
+        ("customs", "Customs Duty", 240000, 223048),
+        ("non-tax-revenue", "Non-Tax & Other Revenue", 659000, 603346),
         ("borrowings", "Borrowings & Other Liabilities", 1568936, 1586000),
     ]
 

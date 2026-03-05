@@ -92,7 +92,7 @@ export function EnvironmentHeroSection({ summary }: EnvironmentHeroSectionProps)
             Forest {summary?.forestPct?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; Renewables {summary?.renewablesPct?.toFixed(1) ?? '—'}%
+            &middot; Renewables {summary?.renewablesPct?.toFixed(1) ?? '—'}% (capacity)
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; CO₂ {summary?.co2PerCapita?.toFixed(1) ?? '—'}t/capita

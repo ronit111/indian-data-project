@@ -18,7 +18,7 @@ registerChart({
     const d = data as GSDPData;
     return {
       headers: ['State', 'GSDP (Rs Cr)', 'Growth Rate (%)', 'Per Capita (Rs)'],
-      rows: d.states.map((s) => [s.name, s.gsdp, s.growthRate, s.perCapitaGsdp]),
+      rows: d.states.map((s) => [s.name, s.gsdp, s.growthRate, s.perCapitaNsdp]),
     };
   },
   heroStat: (data) => {
@@ -89,7 +89,7 @@ registerChart({
 registerChart({
   domain: DOMAIN,
   sectionId: 'percapita',
-  title: 'Per Capita GSDP',
+  title: 'Per Capita NSDP',
   source: 'RBI Handbook of Statistics on Indian States',
   accentColor: ACCENT,
   dataFiles: [`${base}/gsdp.json`],
@@ -97,10 +97,10 @@ registerChart({
   toTabular: (data) => {
     const d = data as GSDPData;
     return {
-      headers: ['State', 'Per Capita GSDP (Rs)'],
+      headers: ['State', 'Per Capita NSDP (Rs)'],
       rows: d.states
-        .sort((a, b) => b.perCapitaGsdp - a.perCapitaGsdp)
-        .map((s) => [s.name, s.perCapitaGsdp]),
+        .sort((a, b) => b.perCapitaNsdp - a.perCapitaNsdp)
+        .map((s) => [s.name, s.perCapitaNsdp]),
     };
   },
 });

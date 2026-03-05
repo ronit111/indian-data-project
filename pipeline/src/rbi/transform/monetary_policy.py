@@ -61,28 +61,22 @@ REPO_RATE_DECISIONS = [
     {"date": "2022-12-07", "rate": 6.25, "change": 0.35, "stance": "Withdrawal of Accommodation"},
     {"date": "2023-02-08", "rate": 6.50, "change": 0.25, "stance": "Withdrawal of Accommodation"},
 
-    # 2024-2025-2026 easing cycle
-    # Source: RBI MPC statements Oct 2024 through Feb 2026
+    # 2024-2025 easing cycle
+    # Source: RBI MPC statements Oct 2024, Feb 2025
     {"date": "2024-10-09", "rate": 6.50, "change": 0.0,   "stance": "Neutral"},  # stance change only
     {"date": "2025-02-07", "rate": 6.25, "change": -0.25, "stance": "Neutral"},
-    {"date": "2025-04-09", "rate": 6.00, "change": -0.25, "stance": "Accommodative"},
-    {"date": "2025-06-06", "rate": 5.50, "change": -0.50, "stance": "Neutral"},   # largest cut, stance back to Neutral
-    {"date": "2025-08-06", "rate": 5.50, "change": 0.0,   "stance": "Neutral"},   # held
-    {"date": "2025-10-01", "rate": 5.50, "change": 0.0,   "stance": "Neutral"},   # held
-    {"date": "2025-12-06", "rate": 5.25, "change": -0.25, "stance": "Neutral"},
-    {"date": "2026-02-06", "rate": 5.25, "change": 0.0,   "stance": "Neutral"},   # held
 ]
 
 
 # ── Current policy rates ─────────────────────────────────────────────────
 # Source: RBI Current Rates — https://www.rbi.org.in/Scripts/BS_NSDPDisplay.aspx
-# As of February 6, 2026 MPC decision
+# As of February 7, 2025 MPC decision
 CURRENT_RATES = {
-    "repo_rate": 5.25,         # Policy rate (Dec 2025 cut)
-    "sdf_rate": 5.00,          # Standing Deposit Facility (repo - 25bps)
-    "msf_rate": 5.50,          # Marginal Standing Facility (repo + 25bps)
-    "bank_rate": 5.50,         # Same as MSF
-    "crr": 3.00,               # Cash Reserve Ratio (phased reduction Sep-Nov 2025)
+    "repo_rate": 6.25,         # Policy rate (Feb 2025 cut)
+    "sdf_rate": 6.00,          # Standing Deposit Facility (repo - 25bps)
+    "msf_rate": 6.50,          # Marginal Standing Facility (repo + 25bps)
+    "bank_rate": 6.50,         # Same as MSF
+    "crr": 4.00,               # Cash Reserve Ratio (Dec 2024 cut to 4.0%)
     "slr": 18.00,              # Statutory Liquidity Ratio
 }
 
@@ -90,8 +84,7 @@ CURRENT_RATES = {
 # ── CRR history (fiscal year end values) ─────────────────────────────────
 # Source: RBI Handbook of Statistics on Indian Economy, Table 45
 # https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22654
-# Dec 2024: cut 50bps to 4.00%. Jun 2025: announced 100bps phased cut to 3.00%
-# (Sep 6: 3.75%, Oct 4: 3.50%, Nov 1: 3.25%, Nov 29: 3.00%)
+# Dec 2024: cut 50bps to 4.00% (phased: Dec 14 to 4.25%, Dec 28 to 4.00%)
 CRR_HISTORY = [
     {"year": "2014-15", "value": 4.00},
     {"year": "2015-16", "value": 4.00},
@@ -104,7 +97,6 @@ CRR_HISTORY = [
     {"year": "2022-23", "value": 4.50},   # Hiked May 2022
     {"year": "2023-24", "value": 4.50},
     {"year": "2024-25", "value": 4.00},   # Cut 50bps Dec 2024
-    {"year": "2025-26", "value": 3.00},   # Phased 100bps cut completed Nov 2025
 ]
 
 

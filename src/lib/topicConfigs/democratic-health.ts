@@ -56,7 +56,7 @@ export const democraticHealth: TopicDef = {
       id: 'quality-representation',
       sectionNumber: 2,
       title: 'Quality of Representation',
-      annotation: 'Nearly half of elected MPs in 2024 face criminal charges. The average MP\'s declared assets are ₹70+ crore. Women hold only 13.6% of seats, despite the 33% reservation bill. Literacy and education of the electorate haven\'t kept pace with democratic ambition.',
+      annotation: 'Nearly half of elected MPs in 2024 face criminal charges. The average MP\'s declared assets are ₹46 crore. Women hold only 13.6% of seats, despite the 33% reservation bill. Literacy and education of the electorate haven\'t kept pace with democratic ambition.',
       domains: ['elections', 'census'],
       sources: ['ADR / MyNeta', 'ECI', 'Census 2011'],
       charts: [{

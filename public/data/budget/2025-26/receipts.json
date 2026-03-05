@@ -1,60 +1,60 @@
 {
   "year": "2025-26",
-  "total": 6482936,
+  "total": 5065345,
   "categories": [
     {
       "id": "income-tax",
       "name": "Income Tax",
-      "amount": 1438000,
-      "percentOfTotal": 22.2,
-      "previousYear": 1256000,
+      "amount": 930198,
+      "percentOfTotal": 18.4,
+      "previousYear": 812400,
       "yoyChange": 14.5
     },
     {
       "id": "corporate-tax",
       "name": "Corporate Tax",
-      "amount": 1082000,
-      "percentOfTotal": 16.7,
-      "previousYear": 980000,
+      "amount": 699954,
+      "percentOfTotal": 13.8,
+      "previousYear": 634019,
       "yoyChange": 10.4
     },
     {
       "id": "gst",
       "name": "GST",
-      "amount": 1178000,
-      "percentOfTotal": 18.2,
-      "previousYear": 1062000,
+      "amount": 762100,
+      "percentOfTotal": 15.0,
+      "previousYear": 687196,
       "yoyChange": 10.9
     },
     {
       "id": "excise",
       "name": "Excise Duty",
-      "amount": 317000,
-      "percentOfTotal": 4.9,
-      "previousYear": 300000,
+      "amount": 205157,
+      "percentOfTotal": 4.1,
+      "previousYear": 194095,
       "yoyChange": 5.7
     },
     {
       "id": "customs",
       "name": "Customs Duty",
       "amount": 240000,
-      "percentOfTotal": 3.7,
-      "previousYear": 223000,
+      "percentOfTotal": 4.7,
+      "previousYear": 223048,
       "yoyChange": 7.6
     },
     {
       "id": "non-tax-revenue",
-      "name": "Non-Tax Revenue",
+      "name": "Non-Tax & Other Revenue",
       "amount": 659000,
-      "percentOfTotal": 10.2,
-      "previousYear": 600000,
-      "yoyChange": 9.8
+      "percentOfTotal": 13.0,
+      "previousYear": 603346,
+      "yoyChange": 9.2
     },
     {
       "id": "borrowings",
       "name": "Borrowings & Other Liabilities",
       "amount": 1568936,
-      "percentOfTotal": 24.2,
+      "percentOfTotal": 31.0,
       "previousYear": 1586000,
       "yoyChange": -1.1
     }

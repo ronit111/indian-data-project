@@ -289,11 +289,11 @@
     {
       "id": "AP",
       "name": "Andhra Pradesh",
-      "population": 53740000,
+      "population": 49386799,
       "density": 308,
       "urbanPercent": 29.47,
       "ruralPercent": 70.53,
-      "decadalGrowth": 11.1
+      "decadalGrowth": 9.2
     },
     {
       "id": "OD",

@@ -268,10 +268,10 @@ function EconomyDomainCard({ summary }: { summary: EconomySummary | null }) {
     // These are loaded separately for the story page; for the hub we show summary stats only
     return [
       { year: '21-22', value: 9.7 },
-      { year: '22-23', value: 7.6 },
-      { year: '23-24', value: 9.2 },
+      { year: '22-23', value: 7.0 },
+      { year: '23-24', value: 8.2 },
       { year: '24-25', value: 6.5 },
-      { year: '25-26', value: 6.4 },
+      { year: '25-26', value: 7.4 },
     ];
   }, [summary]);
 

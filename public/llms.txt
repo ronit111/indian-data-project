@@ -71,7 +71,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /rbi/glossary — Plain-language definitions of RBI terms: repo rate, CRR, SLR, MPC, monetary policy stance, inflation targeting, M3 money supply, forex reserves, basis points.
 
 ### State Finances Domain
-- /states — Scrollytelling narrative: state GSDP landscape (horizontal bar chart), growth leaders, revenue self-sufficiency (stacked bars showing own tax vs central transfers), fiscal health (debt-to-GSDP with FRBM 3% reference line), per capita GSDP
+- /states — Scrollytelling narrative: state GSDP landscape (horizontal bar chart), growth leaders, revenue self-sufficiency (stacked bars showing own tax vs central transfers), fiscal health (debt-to-GSDP with FRBM 3% reference line), per capita NSDP
 - /states/explore — Browseable indicator explorer with categories: GSDP, Revenue, Fiscal, Per Capita. Select any indicator to compare across 31 of 36 states/UTs (5 small UTs have incomplete accounts).
 - /states/methodology — Data sources (RBI Handbook, State Finances report, Finance Commission), indicator definitions, data freshness (FY 2022-23 vintage), limitations
 - /states/glossary — Plain-language definitions of state finance terms: GSDP, per capita income, own tax revenue, central transfers, devolution, FRBM Act, fiscal deficit, debt-to-GSDP, Finance Commission, self-sufficiency ratio.
@@ -125,7 +125,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /topics/inflation-cost — Inflation & Cost of Living: CPI price trajectory, RBI rate response, fiscal connection. Domains: Economy, RBI, Budget.
 - /topics/education-employment — Education to Employment Pipeline: enrollment scale (secondary GER), jobs gap (unemployment rate), education spending. Domains: Education, Employment, Census, Budget.
 - /topics/health-outcomes — Health Outcomes: child health (IMR trends), infrastructure gap (hospital beds, doctors), health spending (% GDP). Domains: Healthcare, Census, Budget, States.
-- /topics/regional-inequality — Regional Inequality: income divide (per capita GSDP by state), education disparity, fiscal transfer mechanisms. Domains: States, Budget, Census, Education, Healthcare.
+- /topics/regional-inequality — Regional Inequality: income divide (per capita NSDP by state), education disparity, fiscal transfer mechanisms. Domains: States, Budget, Census, Education, Healthcare.
 - /topics/climate-energy — Climate & Energy Transition: energy mix (renewables growth), carbon footprint, forest cover by state. Domains: Environment, Economy, Budget.
 - /topics/youth-jobs — Youth & Jobs: youth unemployment (3x national rate), structural shift (sectoral employment), quality of work. Domains: Employment, Education, Census, Economy.
 - /topics/urban-rural — Urban vs Rural Divide: urbanization wave (population growth rate), access gap (healthcare, literacy). Domains: Census, Employment, Healthcare, Environment, Education.
@@ -169,7 +169,7 @@ This is an independent civic project built by one person, not affiliated with or
 - National combined state GDP: Rs 280.73 lakh crore
 - Growth range: 2.9% to 25.4% (constant prices)
 - Data across 31 of 36 states/UTs (5 small UTs have incomplete accounts)
-- Average per capita GSDP: Rs 1,71,687
+- Average per capita NSDP: Rs 1,71,687
 - Data source: RBI Handbook of Statistics on Indian States
 
 ### Census & Demographics

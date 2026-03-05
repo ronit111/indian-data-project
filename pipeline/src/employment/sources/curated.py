@@ -96,7 +96,7 @@ NATIONAL_TOTALS = {
     "unemploymentRate": 4.2,        # PLFS quarterly CWS
     "lfpr": 55.8,                   # PLFS quarterly
     "youthUnemployment": 10.2,      # PLFS Annual Report 2023-24 (usual status, 15-29 age group)
-    "femaleLfpr": 34.9,             # PLFS quarterly Oct-Dec 2025 CWS
+    "femaleLfpr": 35.2,             # PLFS quarterly Oct-Dec 2025 CWS
     "workforceTotal": 57.0,         # crores (PLFS annual 2023-24)
     "selfEmployedPct": 58.4,        # PLFS Annual Report 2023-24 (usual status, ps+ss)
 }

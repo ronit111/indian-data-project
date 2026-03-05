@@ -41,7 +41,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 525166, "re": 571954, "actual": 585464},
             {"year": "2023-24", "be": 593537, "re": 607614, "actual": 612436},
             {"year": "2024-25", "be": 621541, "re": 630336, "actual": None},
-            {"year": "2025-26", "be": 680000, "re": None, "actual": None},
+            {"year": "2025-26", "be": 681210, "re": None, "actual": None},
         ],
     },
     {
@@ -54,7 +54,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 138203, "re": 149968, "actual": 151899},
             {"year": "2023-24", "be": 159005, "re": 165866, "actual": 163738},
             {"year": "2024-25", "be": 171952, "re": 169467, "actual": None},
-            {"year": "2025-26", "be": 178351, "re": None, "actual": None},
+            {"year": "2025-26", "be": 178482, "re": None, "actual": None},
         ],
     },
     {
@@ -67,7 +67,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 199108, "re": 242608, "actual": 228714},
             {"year": "2023-24", "be": 271508, "re": 275008, "actual": 267727},
             {"year": "2024-25", "be": 278000, "re": 265200, "actual": None},
-            {"year": "2025-26", "be": 275000, "re": None, "actual": None},
+            {"year": "2025-26", "be": 278000, "re": None, "actual": None},
         ],
     },
     {
@@ -80,7 +80,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 140367, "re": 167100, "actual": 168093},
             {"year": "2023-24", "be": 241268, "re": 257864, "actual": 252300},
             {"year": "2024-25", "be": 262200, "re": 255600, "actual": None},
-            {"year": "2025-26", "be": 267200, "re": None, "actual": None},
+            {"year": "2025-26", "be": 265200, "re": None, "actual": None},
         ],
     },
     {
@@ -93,7 +93,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 185776, "re": 189418, "actual": 185002},
             {"year": "2023-24", "be": 196035, "re": 197748, "actual": 196100},
             {"year": "2024-25", "be": 208876, "re": 212671, "actual": None},
-            {"year": "2025-26", "be": 219643, "re": None, "actual": None},
+            {"year": "2025-26", "be": 221049, "re": None, "actual": None},
         ],
     },
     {
@@ -119,7 +119,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 86201, "re": 79145, "actual": 76736},
             {"year": "2023-24", "be": 89155, "re": 79290, "actual": 77710},
             {"year": "2024-25", "be": 90659, "re": 82070, "actual": None},
-            {"year": "2025-26", "be": 99858, "re": None, "actual": None},
+            {"year": "2025-26", "be": 90959, "re": None, "actual": None},
         ],
     },
     {
@@ -132,7 +132,7 @@ MINISTRY_DATA: list[dict] = [
             {"year": "2022-23", "be": 132514, "re": 111768, "actual": 106530},
             {"year": "2023-24", "be": 126821, "re": 115529, "actual": 114483},
             {"year": "2024-25", "be": 135553, "re": 118570, "actual": None},
-            {"year": "2025-26", "be": 141936, "re": None, "actual": None},
+            {"year": "2025-26", "be": 135580, "re": None, "actual": None},
         ],
     },
     {

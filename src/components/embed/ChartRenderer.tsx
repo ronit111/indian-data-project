@@ -118,7 +118,7 @@ function getBarFieldMapping(domain: string, sectionId: string): { arrayKey: stri
       switch (sectionId) {
         case 'gsdp': return { arrayKey: 'states', valueKey: 'gsdp', ...defaults };
         case 'growth': return { arrayKey: 'states', valueKey: 'growthRate', ...defaults };
-        case 'percapita': return { arrayKey: 'states', valueKey: 'perCapitaGsdp', ...defaults };
+        case 'percapita': return { arrayKey: 'states', valueKey: 'perCapitaNsdp', ...defaults };
         case 'revenue': return { arrayKey: 'states', valueKey: 'selfSufficiencyRatio', ...defaults };
         case 'fiscal-health': return { arrayKey: 'states', valueKey: 'fiscalDeficitPctGsdp', ...defaults };
       }

@@ -22,7 +22,7 @@ BASE_YEAR = "2011-12"
 
 # ── STATE GSDP DATA ─────────────────────────────────────────────────────
 # Source: RBI Handbook of Statistics on Indian States, Table 4
-# GSDP at current prices (Rs crore), growth rate (%), per capita GSDP (Rs), population (lakhs)
+# GSDP at current prices (Rs crore), growth rate (%), per capita NSDP (Rs), population (lakhs)
 # All 28 states + 8 Union Territories
 #
 # FY 2022-23 values curated from RBI Handbook tables:
@@ -31,46 +31,47 @@ BASE_YEAR = "2011-12"
 #   - Table 19: Per Capita NSDP at current prices (Rs)
 # Notes:
 #   - growthRate is computed as YoY % change in current-price GSDP (2022-23 vs 2021-22).
-#   - population is implied population in lakhs: (GSDP Rs crore * 100) / perCapitaGsdp.
+#   - population is implied population in lakhs: (GSDP Rs crore * 100) / perCapitaNsdp.
+#     NOTE: This divides GSDP by per-capita-NSDP, inflating population by ~14%. Approximate only.
 #   - For small UTs without comparable FY 2022-23 series in this pipeline (AN, CH, DN, LA, LD),
 #     numeric fields are set to 0 as requested.
 STATE_GSDP_DATA: list[dict] = [
-    {"id": "AP", "name": "Andhra Pradesh", "gsdp": 1309463.97, "gsdpConstant": 757301.42, "growthRate": 11.00, "perCapitaGsdp": 219518, "population": 596.52},
-    {"id": "AR", "name": "Arunachal Pradesh", "gsdp": 37851.14, "gsdpConstant": 24575.44, "growthRate": 13.65, "perCapitaGsdp": 205645, "population": 18.41},
-    {"id": "AS", "name": "Assam", "gsdp": 493166.50, "gsdpConstant": 299561.72, "growthRate": 19.60, "perCapitaGsdp": 118504, "population": 416.16},
-    {"id": "BR", "name": "Bihar", "gsdp": 855881.11, "gsdpConstant": 467036.02, "growthRate": 23.08, "perCapitaGsdp": 54383, "population": 1573.80},
-    {"id": "CG", "name": "Chhattisgarh", "gsdp": 457608.99, "gsdpConstant": 298037.58, "growthRate": 10.62, "perCapitaGsdp": 147325, "population": 310.61},
-    {"id": "GA", "name": "Goa", "gsdp": 95973.16, "gsdpConstant": 55256.59, "growthRate": 7.20, "perCapitaGsdp": 492114, "population": 19.50},
-    {"id": "GJ", "name": "Gujarat", "gsdp": 2084274.05, "gsdpConstant": 1277785.66, "growthRate": 12.65, "perCapitaGsdp": 270043, "population": 771.83},
-    {"id": "HR", "name": "Haryana", "gsdp": 1089166.20, "gsdpConstant": 620456.53, "growthRate": 13.87, "perCapitaGsdp": 296592, "population": 367.23},
-    {"id": "HP", "name": "Himachal Pradesh", "gsdp": 190630.75, "gsdpConstant": 104925.45, "growthRate": 14.12, "perCapitaGsdp": 214535, "population": 88.86},
-    {"id": "JH", "name": "Jharkhand", "gsdp": 400194.85, "gsdpConstant": 234506.76, "growthRate": 16.78, "perCapitaGsdp": 92579, "population": 432.27},
-    {"id": "KA", "name": "Karnataka", "gsdp": 2241368.80, "gsdpConstant": 1420034.00, "growthRate": 13.50, "perCapitaGsdp": 332926, "population": 673.23},
-    {"id": "KL", "name": "Kerala", "gsdp": 1097347.67, "gsdpConstant": 687246.11, "growthRate": 13.76, "perCapitaGsdp": 240573, "population": 456.14},
-    {"id": "MP", "name": "Madhya Pradesh", "gsdp": 1049059.58, "gsdpConstant": 670295.74, "growthRate": 15.32, "perCapitaGsdp": 111065, "population": 944.55},
-    {"id": "MH", "name": "Maharashtra", "gsdp": 3527922.12, "gsdpConstant": 2300636.24, "growthRate": 16.37, "perCapitaGsdp": 242247, "population": 1456.33},
-    {"id": "MN", "name": "Manipur", "gsdp": 47381.86, "gsdpConstant": 25013.37, "growthRate": 20.96, "perCapitaGsdp": 108192, "population": 43.79},
-    {"id": "ML", "name": "Meghalaya", "gsdp": 46600.95, "gsdpConstant": 31023.47, "growthRate": 9.14, "perCapitaGsdp": 113241, "population": 41.15},
-    {"id": "MZ", "name": "Mizoram", "gsdp": 30454.31, "gsdpConstant": 18965.00, "growthRate": 25.36, "perCapitaGsdp": 198962, "population": 15.31},
-    {"id": "NL", "name": "Nagaland", "gsdp": 35192.97, "gsdpConstant": 20945.58, "growthRate": 11.47, "perCapitaGsdp": 125887, "population": 27.96},
-    {"id": "OD", "name": "Odisha", "gsdp": 745131.36, "gsdpConstant": 453389.95, "growthRate": 17.27, "perCapitaGsdp": 149162, "population": 499.55},
-    {"id": "PB", "name": "Punjab", "gsdp": 680277.37, "gsdpConstant": 422944.70, "growthRate": 8.81, "perCapitaGsdp": 193770, "population": 351.07},
-    {"id": "RJ", "name": "Rajasthan", "gsdp": 1413620.35, "gsdpConstant": 868935.36, "growthRate": 13.79, "perCapitaGsdp": 161882, "population": 873.24},
-    {"id": "SK", "name": "Sikkim", "gsdp": 42756.58, "gsdpConstant": 24735.47, "growthRate": 14.63, "perCapitaGsdp": 437472, "population": 9.77},
-    {"id": "TN", "name": "Tamil Nadu", "gsdp": 2721572.22, "gsdpConstant": 1639189.31, "growthRate": 12.09, "perCapitaGsdp": 268978, "population": 1011.82},
-    {"id": "TS", "name": "Telangana", "gsdp": 1404860.89, "gsdpConstant": 853021.98, "growthRate": 11.97, "perCapitaGsdp": 309927, "population": 453.29},
-    {"id": "TR", "name": "Tripura", "gsdp": 72636.14, "gsdpConstant": 45762.30, "growthRate": 12.57, "perCapitaGsdp": 141010, "population": 51.51},
-    {"id": "UP", "name": "Uttar Pradesh", "gsdp": 2439203.03, "gsdpConstant": 1628425.15, "growthRate": 11.70, "perCapitaGsdp": 83636, "population": 2916.45},
-    {"id": "UK", "name": "Uttarakhand", "gsdp": 315947.71, "gsdpConstant": 211129.68, "growthRate": 10.91, "perCapitaGsdp": 221547, "population": 142.61},
-    {"id": "WB", "name": "West Bengal", "gsdp": 1759368.53, "gsdpConstant": 1043272.56, "growthRate": 10.15, "perCapitaGsdp": 136618, "population": 1287.80},
-    {"id": "AN", "name": "Andaman and Nicobar Islands", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaGsdp": 0, "population": 0},
-    {"id": "CH", "name": "Chandigarh", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaGsdp": 0, "population": 0},
-    {"id": "DN", "name": "Dadra and Nagar Haveli and Daman and Diu", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaGsdp": 0, "population": 0},
-    {"id": "DL", "name": "Delhi", "gsdp": 1108914.85, "gsdpConstant": 699205.66, "growthRate": 2.88, "perCapitaGsdp": 407643, "population": 272.03},
-    {"id": "JK", "name": "Jammu and Kashmir", "gsdp": 230727.11, "gsdpConstant": 143852.56, "growthRate": 7.12, "perCapitaGsdp": 107944, "population": 213.75},
-    {"id": "LA", "name": "Ladakh", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaGsdp": 0, "population": 0},
-    {"id": "LD", "name": "Lakshadweep", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaGsdp": 0, "population": 0},
-    {"id": "PY", "name": "Puducherry", "gsdp": 48425.13, "gsdpConstant": 32954.59, "growthRate": 10.53, "perCapitaGsdp": 328825, "population": 14.73},
+    {"id": "AP", "name": "Andhra Pradesh", "gsdp": 1309463.97, "gsdpConstant": 757301.42, "growthRate": 11.00, "perCapitaNsdp": 219518, "population": 596.52},
+    {"id": "AR", "name": "Arunachal Pradesh", "gsdp": 37851.14, "gsdpConstant": 24575.44, "growthRate": 13.65, "perCapitaNsdp": 205645, "population": 18.41},
+    {"id": "AS", "name": "Assam", "gsdp": 493166.50, "gsdpConstant": 299561.72, "growthRate": 19.60, "perCapitaNsdp": 118504, "population": 416.16},
+    {"id": "BR", "name": "Bihar", "gsdp": 855881.11, "gsdpConstant": 467036.02, "growthRate": 23.08, "perCapitaNsdp": 54383, "population": 1573.80},
+    {"id": "CG", "name": "Chhattisgarh", "gsdp": 457608.99, "gsdpConstant": 298037.58, "growthRate": 10.62, "perCapitaNsdp": 147325, "population": 310.61},
+    {"id": "GA", "name": "Goa", "gsdp": 95973.16, "gsdpConstant": 55256.59, "growthRate": 7.20, "perCapitaNsdp": 492114, "population": 19.50},
+    {"id": "GJ", "name": "Gujarat", "gsdp": 2084274.05, "gsdpConstant": 1277785.66, "growthRate": 12.65, "perCapitaNsdp": 270043, "population": 771.83},
+    {"id": "HR", "name": "Haryana", "gsdp": 1089166.20, "gsdpConstant": 620456.53, "growthRate": 13.87, "perCapitaNsdp": 296592, "population": 367.23},
+    {"id": "HP", "name": "Himachal Pradesh", "gsdp": 190630.75, "gsdpConstant": 104925.45, "growthRate": 14.12, "perCapitaNsdp": 214535, "population": 88.86},
+    {"id": "JH", "name": "Jharkhand", "gsdp": 400194.85, "gsdpConstant": 234506.76, "growthRate": 16.78, "perCapitaNsdp": 92579, "population": 432.27},
+    {"id": "KA", "name": "Karnataka", "gsdp": 2241368.80, "gsdpConstant": 1420034.00, "growthRate": 13.50, "perCapitaNsdp": 332926, "population": 673.23},
+    {"id": "KL", "name": "Kerala", "gsdp": 1097347.67, "gsdpConstant": 687246.11, "growthRate": 13.76, "perCapitaNsdp": 240573, "population": 456.14},
+    {"id": "MP", "name": "Madhya Pradesh", "gsdp": 1049059.58, "gsdpConstant": 670295.74, "growthRate": 15.32, "perCapitaNsdp": 111065, "population": 944.55},
+    {"id": "MH", "name": "Maharashtra", "gsdp": 3527922.12, "gsdpConstant": 2300636.24, "growthRate": 16.37, "perCapitaNsdp": 242247, "population": 1456.33},
+    {"id": "MN", "name": "Manipur", "gsdp": 47381.86, "gsdpConstant": 25013.37, "growthRate": 20.96, "perCapitaNsdp": 108192, "population": 43.79},
+    {"id": "ML", "name": "Meghalaya", "gsdp": 46600.95, "gsdpConstant": 31023.47, "growthRate": 9.14, "perCapitaNsdp": 113241, "population": 41.15},
+    {"id": "MZ", "name": "Mizoram", "gsdp": 30454.31, "gsdpConstant": 18965.00, "growthRate": 25.36, "perCapitaNsdp": 198962, "population": 15.31},
+    {"id": "NL", "name": "Nagaland", "gsdp": 35192.97, "gsdpConstant": 20945.58, "growthRate": 11.47, "perCapitaNsdp": 125887, "population": 27.96},
+    {"id": "OD", "name": "Odisha", "gsdp": 745131.36, "gsdpConstant": 453389.95, "growthRate": 17.27, "perCapitaNsdp": 149162, "population": 499.55},
+    {"id": "PB", "name": "Punjab", "gsdp": 680277.37, "gsdpConstant": 422944.70, "growthRate": 8.81, "perCapitaNsdp": 193770, "population": 351.07},
+    {"id": "RJ", "name": "Rajasthan", "gsdp": 1413620.35, "gsdpConstant": 868935.36, "growthRate": 13.79, "perCapitaNsdp": 161882, "population": 873.24},
+    {"id": "SK", "name": "Sikkim", "gsdp": 42756.58, "gsdpConstant": 24735.47, "growthRate": 14.63, "perCapitaNsdp": 437472, "population": 9.77},
+    {"id": "TN", "name": "Tamil Nadu", "gsdp": 2721572.22, "gsdpConstant": 1639189.31, "growthRate": 12.09, "perCapitaNsdp": 268978, "population": 1011.82},
+    {"id": "TS", "name": "Telangana", "gsdp": 1404860.89, "gsdpConstant": 853021.98, "growthRate": 11.97, "perCapitaNsdp": 309927, "population": 453.29},
+    {"id": "TR", "name": "Tripura", "gsdp": 72636.14, "gsdpConstant": 45762.30, "growthRate": 12.57, "perCapitaNsdp": 141010, "population": 51.51},
+    {"id": "UP", "name": "Uttar Pradesh", "gsdp": 2439203.03, "gsdpConstant": 1628425.15, "growthRate": 11.70, "perCapitaNsdp": 83636, "population": 2916.45},
+    {"id": "UK", "name": "Uttarakhand", "gsdp": 315947.71, "gsdpConstant": 211129.68, "growthRate": 10.91, "perCapitaNsdp": 221547, "population": 142.61},
+    {"id": "WB", "name": "West Bengal", "gsdp": 1759368.53, "gsdpConstant": 1043272.56, "growthRate": 10.15, "perCapitaNsdp": 136618, "population": 1287.80},
+    {"id": "AN", "name": "Andaman and Nicobar Islands", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaNsdp": 0, "population": 0},
+    {"id": "CH", "name": "Chandigarh", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaNsdp": 0, "population": 0},
+    {"id": "DN", "name": "Dadra and Nagar Haveli and Daman and Diu", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaNsdp": 0, "population": 0},
+    {"id": "DL", "name": "Delhi", "gsdp": 1108914.85, "gsdpConstant": 699205.66, "growthRate": 2.88, "perCapitaNsdp": 407643, "population": 272.03},
+    {"id": "JK", "name": "Jammu and Kashmir", "gsdp": 230727.11, "gsdpConstant": 143852.56, "growthRate": 7.12, "perCapitaNsdp": 107944, "population": 213.75},
+    {"id": "LA", "name": "Ladakh", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaNsdp": 0, "population": 0},
+    {"id": "LD", "name": "Lakshadweep", "gsdp": 0, "gsdpConstant": 0, "growthRate": 0, "perCapitaNsdp": 0, "population": 0},
+    {"id": "PY", "name": "Puducherry", "gsdp": 48425.13, "gsdpConstant": 32954.59, "growthRate": 10.53, "perCapitaNsdp": 328825, "population": 14.73},
 ]
 
 

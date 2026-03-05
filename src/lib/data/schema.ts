@@ -423,7 +423,7 @@ export interface StateGSDPEntry {
   gsdp: number;              // Rs crore, current prices
   gsdpConstant: number | null; // Rs crore, constant prices (2011-12 base)
   growthRate: number;         // % annual growth
-  perCapitaGsdp: number;      // Rs
+  perCapitaNsdp: number;      // Rs (Per Capita NSDP from RBI Table 19)
   population: number;         // lakhs
 }
 

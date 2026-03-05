@@ -83,7 +83,7 @@ export interface AllDomainData {
 
 const METRIC_DEFS: MetricDef[] = [
   // Economy (from gsdp.json)
-  { key: 'perCapitaGsdp', label: 'Per Capita GSDP', unit: 'Rs', higherIsBetter: true, domain: 'economy' },
+  { key: 'perCapitaNsdp', label: 'Per Capita NSDP', unit: 'Rs', higherIsBetter: true, domain: 'economy' },
   { key: 'growthRate', label: 'GSDP Growth', unit: '%', higherIsBetter: true, domain: 'economy' },
   { key: 'gsdp', label: 'Total GSDP', unit: 'Rs Cr', higherIsBetter: true, domain: 'economy' },
   // Budget (from statewise.json)
@@ -109,7 +109,7 @@ const METRIC_DEFS: MetricDef[] = [
   { key: 'bedsPerLakh', label: 'Hospital Beds', unit: 'per lakh', higherIsBetter: true, domain: 'healthcare' },
   { key: 'doctorsPer10K', label: 'Doctors', unit: 'per 10K', higherIsBetter: true, domain: 'healthcare' },
   // Health - NFHS-5 (from health.json, disease.json)
-  { key: 'imr', label: 'Infant Mortality', unit: 'per 1000', higherIsBetter: false, domain: 'health' },
+  { key: 'imr', label: 'Infant Mortality (SRS)', unit: 'per 1000', higherIsBetter: false, domain: 'health' },
   { key: 'fullImmunization', label: 'Full Immunization', unit: '%', higherIsBetter: true, domain: 'health' },
   { key: 'stunting', label: 'Stunting', unit: '%', higherIsBetter: false, domain: 'health' },
   // Environment (from air-quality.json, forest.json, water.json)
@@ -155,10 +155,10 @@ function findInArray<T extends { id: string }>(
 }
 
 const EXTRACTORS: Record<string, Extractor> = {
-  perCapitaGsdp: (sid, d) => {
+  perCapitaNsdp: (sid, d) => {
     const s = findInArray(d.gsdp?.states, sid);
-    const all = d.gsdp?.states.map((x) => x.perCapitaGsdp) ?? [];
-    return { value: s?.perCapitaGsdp ?? null, all };
+    const all = d.gsdp?.states.map((x) => x.perCapitaNsdp) ?? [];
+    return { value: s?.perCapitaNsdp ?? null, all };
   },
   growthRate: (sid, d) => {
     const s = findInArray(d.gsdp?.states, sid);

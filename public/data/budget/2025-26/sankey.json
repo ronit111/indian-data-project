@@ -5,25 +5,25 @@
       "id": "income-tax",
       "name": "Income Tax",
       "group": "revenue",
-      "value": 1438000
+      "value": 930198
     },
     {
       "id": "corporate-tax",
       "name": "Corporate Tax",
       "group": "revenue",
-      "value": 1082000
+      "value": 699954
     },
     {
       "id": "gst",
       "name": "GST",
       "group": "revenue",
-      "value": 1178000
+      "value": 762100
     },
     {
       "id": "excise",
       "name": "Excise Duty",
       "group": "revenue",
-      "value": 317000
+      "value": 205157
     },
     {
       "id": "customs",
@@ -33,7 +33,7 @@
     },
     {
       "id": "non-tax-revenue",
-      "name": "Non-Tax Revenue",
+      "name": "Non-Tax & Other Revenue",
       "group": "revenue",
       "value": 659000
     },
@@ -126,25 +126,25 @@
     {
       "source": "income-tax",
       "target": "central-govt",
-      "value": 1438000,
+      "value": 930198,
       "verified": true
     },
     {
       "source": "corporate-tax",
       "target": "central-govt",
-      "value": 1082000,
+      "value": 699954,
       "verified": true
     },
     {
       "source": "gst",
       "target": "central-govt",
-      "value": 1178000,
+      "value": 762100,
       "verified": true
     },
     {
       "source": "excise",
       "target": "central-govt",
-      "value": 317000,
+      "value": 205157,
       "verified": true
     },
     {

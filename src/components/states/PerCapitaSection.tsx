@@ -16,24 +16,27 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
 
   const choroData: ChoroplethDataPoint[] = useMemo(() => {
     return data.states
-      .filter((s) => s.perCapitaGsdp > 0)
-      .map((s) => ({ id: s.id, name: s.name, value: s.perCapitaGsdp }));
+      .filter((s) => s.perCapitaNsdp > 0)
+      .map((s) => ({ id: s.id, name: s.name, value: s.perCapitaNsdp }));
   }, [data]);
 
   const nationalAvg = useMemo(() => {
-    const valid = data.states.filter((s) => s.perCapitaGsdp > 0);
-    return valid.reduce((sum, s) => sum + s.perCapitaGsdp, 0) / valid.length;
+    // Weighted average: sum(GSDP) / sum(population) * 100 (GSDP in crore, population in lakhs)
+    const valid = data.states.filter((s) => s.perCapitaNsdp > 0 && s.population > 0);
+    const totalGsdp = valid.reduce((sum, s) => sum + s.gsdp, 0);
+    const totalPop = valid.reduce((sum, s) => sum + s.population, 0);
+    return totalPop > 0 ? (totalGsdp * 100) / totalPop : 0;
   }, [data]);
 
   const topItems: BarItem[] = useMemo(() => {
     return data.states
-      .filter((s) => s.perCapitaGsdp > 0)
-      .sort((a, b) => b.perCapitaGsdp - a.perCapitaGsdp)
+      .filter((s) => s.perCapitaNsdp > 0)
+      .sort((a, b) => b.perCapitaNsdp - a.perCapitaNsdp)
       .slice(0, 8)
       .map((s) => ({
         id: s.id,
         label: s.name,
-        value: s.perCapitaGsdp,
+        value: s.perCapitaNsdp,
         color: 'var(--emerald)',
       }));
   }, [data]);
@@ -58,7 +61,7 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          A state's total GDP can be large simply because it has a large population. Per capita GSDP adjusts for population, revealing which states actually produce more per person. Goa and Sikkim outpace much larger states.
+          A state's total GDP can be large simply because it has a large population. Per capita NSDP adjusts for population, revealing which states actually produce more per person. Goa and Sikkim outpace much larger states.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/percapita" data={data}>
@@ -68,13 +71,13 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
               colorScaleType="sequential"
               accentColor="var(--emerald)"
               formatValue={(v) => `₹${Math.round(v).toLocaleString('en-IN')}`}
-              legendLabel="Per capita GSDP"
+              legendLabel="Per capita NSDP"
               isVisible={isVisible}
               nationalAvg={nationalAvg}
             />
             <div>
               <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-                Top 8 by per capita GSDP
+                Top 8 by per capita NSDP
               </p>
               <HorizontalBarChart
                 items={topItems}
