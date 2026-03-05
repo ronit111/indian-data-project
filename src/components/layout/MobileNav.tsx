@@ -1,3 +1,4 @@
+import { type MouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -231,6 +232,14 @@ export function MobileNav() {
     return location.pathname === tabTo;
   };
 
+  // If already on the target page, scroll to top instead of navigating
+  const handleTabClick = (e: MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (location.pathname === to) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   // Hub has 12 tabs — needs horizontal scroll. Domain sub-tabs (3-6 items) fit fine.
   const needsScroll = tabs.length > 6;
 
@@ -253,6 +262,7 @@ export function MobileNav() {
               <Link
                 key={tab.to}
                 to={tab.to}
+                onClick={(e) => handleTabClick(e, tab.to)}
                 className={`relative flex flex-col items-center gap-0.5 py-1 no-underline transition-colors ${needsScroll ? 'min-w-[52px] px-2' : 'px-3'}`}
                 style={{
                   color: isActive ? 'var(--saffron)' : 'var(--text-muted)',

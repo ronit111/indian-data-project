@@ -6,6 +6,7 @@ import { MobileNav } from './MobileNav.tsx';
 import { Footer } from './Footer.tsx';
 import { SearchOverlay } from '../ui/SearchOverlay.tsx';
 import { FeedbackButton } from '../ui/FeedbackButton.tsx';
+import { BackToTop } from '../ui/BackToTop.tsx';
 import { PersonalizationBanner } from '../personalization/PersonalizationBanner.tsx';
 import { usePersonalizationStore } from '../../store/personalizationStore.ts';
 
@@ -65,6 +66,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <main id="main-content" className="flex-1 pt-16 overflow-y-auto">{children}</main>
       <Footer />
       <FeedbackButton />
+      <BackToTop />
       <MobileNav />
     </div>
   );
