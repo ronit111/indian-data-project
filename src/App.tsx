@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useNavigationType } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { PageShell } from './components/layout/PageShell.tsx';
 
@@ -200,8 +200,27 @@ const REDIRECTS = [
   { from: '/methodology', to: '/budget/methodology' },
 ] as const;
 
+// ─── Scroll position storage (sessionStorage survives refresh) ─────
+const SCROLL_KEY_PREFIX = 'sp:';
+
+function saveScrollPosition(key: string) {
+  try {
+    sessionStorage.setItem(SCROLL_KEY_PREFIX + key, String(window.scrollY));
+  } catch { /* quota exceeded — non-critical */ }
+}
+
+function getSavedScrollPosition(key: string): number | null {
+  try {
+    const val = sessionStorage.getItem(SCROLL_KEY_PREFIX + key);
+    return val !== null ? Number(val) : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function App() {
   const location = useLocation();
+  const navigationType = useNavigationType();
 
   // Global hover prefetch: start loading route chunks when the user hovers a link
   useEffect(() => {
@@ -217,12 +236,43 @@ export default function App() {
     return () => document.removeEventListener('pointerenter', handleHover, true);
   }, []);
 
-  // Scroll to top on route change (unless navigating to a hash anchor)
+  // Continuously save scroll position for the current page key so it's
+  // always fresh when the user navigates away (click or browser back).
   useEffect(() => {
-    if (!location.hash) {
-      window.scrollTo(0, 0);
+    let ticking = false;
+    const key = location.key;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        saveScrollPosition(key);
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [location.key]);
+
+  // On route change: restore scroll for POP (back/forward), scroll to top for PUSH
+  useEffect(() => {
+    // Hash navigation: let the hash scroll handler below take care of it
+    if (location.hash) return;
+
+    // Browser back/forward (POP): restore saved scroll position
+    if (navigationType === 'POP') {
+      const saved = getSavedScrollPosition(location.key);
+      if (saved !== null) {
+        // Delay so the lazy-loaded page has rendered
+        const timer = setTimeout(() => {
+          window.scrollTo(0, saved);
+        }, 100);
+        return () => clearTimeout(timer);
+      }
     }
-  }, [location.pathname]);
+
+    // Forward navigation (PUSH/REPLACE): scroll to top
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.key, location.hash, navigationType]);
 
   // Scroll to hash anchor after React renders (SPA deep link support)
   useEffect(() => {

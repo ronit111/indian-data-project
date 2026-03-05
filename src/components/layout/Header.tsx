@@ -1,11 +1,21 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { type MouseEvent } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useUIStore } from '../../store/uiStore.ts';
 
 export function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const toggleSearch = useUIStore((s) => s.toggleSearch);
   const { scrollY } = useScroll();
+
+  // If already on the target page, scroll to top instead of navigating
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (location.pathname === to) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const bgOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const borderOpacity = useTransform(scrollY, [0, 100], [0, 0.06]);
@@ -252,7 +262,11 @@ export function Header() {
               </svg>
             </Link>
           )}
-          <Link to={headerLink} className="flex items-center gap-2 no-underline">
+          <Link
+            to={headerLink}
+            onClick={(e) => handleNavClick(e, headerLink)}
+            className="flex items-center gap-2 no-underline"
+          >
             <span className={`text-lg font-bold ${isDataDomain && !isMultiplierSection ? 'gradient-text-saffron' : 'gradient-text-tricolor'}`}>
               {headerTitle}
             </span>
@@ -266,6 +280,7 @@ export function Header() {
               <Link
                 key={link.to}
                 to={link.to}
+                onClick={(e) => handleNavClick(e, link.to)}
                 className="relative px-4 py-2 text-sm font-medium no-underline rounded-lg transition-all duration-150 hover:bg-[var(--bg-raised)]"
                 style={{
                   color: isActive
