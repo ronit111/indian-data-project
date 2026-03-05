@@ -15,9 +15,10 @@ const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 function HubHero() {
   const { scrollY } = useScroll();
   const titleY = useTransform(scrollY, [0, 600], [0, -60]);
+  const subtitleOpacity = useTransform(scrollY, [200, 600], [1, 0]);
 
   return (
-    <section className="flex flex-col justify-end relative overflow-hidden px-6 sm:px-8" style={{ minHeight: 'clamp(480px, 70vh, 800px)' }}>
+    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-16">
       {/* Radial glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
@@ -30,7 +31,7 @@ function HubHero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full pb-16">
+      <div className="relative z-10 px-6 sm:px-8 max-w-7xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,6 +50,7 @@ function HubHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.5 }}
+          style={{ opacity: subtitleOpacity }}
           className="mt-8 max-w-lg"
         >
           <p
@@ -64,6 +66,15 @@ function HubHero() {
             {'Pick a story below, or search to ask a question.'}
           </p>
         </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 1.2, ease: EASE_OUT_EXPO, delay: 0.9 }}
+          className="mt-20 w-px h-20 origin-top"
+          style={{ backgroundColor: 'var(--text-muted)', opacity: 0.5 }}
+        />
       </div>
     </section>
   );
