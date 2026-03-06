@@ -168,13 +168,13 @@ export function BudgetVsActualSection({ data }: BudgetVsActualSectionProps) {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6"
           >
             <InsightCard
-              label="Highest overspend"
+              label={`Highest overspend (FY ${selectedYear})`}
               ministry={biggestOverspend.name}
               value={`+${biggestOverspend.deviation}%`}
               color={COLOR_OVERSPEND}
             />
             <InsightCard
-              label="Largest underspend"
+              label={`Largest underspend (FY ${selectedYear})`}
               ministry={biggestUnderspend.name}
               value={`${biggestUnderspend.deviation}%`}
               color={COLOR_UNDERSPEND}
@@ -218,7 +218,7 @@ function DeviationChart({ items, isVisible }: { items: DeviationItem[]; isVisibl
       <svg
         viewBox={`0 0 ${svgW} ${totalH + 16}`}
         className="w-full"
-        style={{ minWidth: 500 }}
+        style={{ minWidth: 360 }}
       >
         {/* Zero line */}
         <line

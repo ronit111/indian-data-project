@@ -16,7 +16,7 @@ export function OutlookSection({ summary }: OutlookSectionProps) {
       value: summary.projectedGrowthLow === summary.projectedGrowthHigh
         ? `${summary.projectedGrowthLow}%`
         : `${summary.projectedGrowthLow}–${summary.projectedGrowthHigh}%`,
-      note: 'FY 2025-26 advance estimate',
+      note: 'FY 2025-26 Economic Survey projection',
       color: 'var(--cyan)',
     },
     {
@@ -59,7 +59,7 @@ export function OutlookSection({ summary }: OutlookSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          Key projections from the Economic Survey for the fiscal year ahead.
+          Key numbers from the Economic Survey for FY {summary.year}.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

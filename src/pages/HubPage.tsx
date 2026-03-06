@@ -591,14 +591,14 @@ export default function HubPage() {
           to="/budget"
           sectionNumber="01"
           title="Union Budget 2025-26"
-          description="Where Rs 50 lakh crore goes. Revenue sources, ministry-wise spending, state transfers, and your personal tax share."
+          description="Where ₹50 lakh crore goes. Revenue sources, ministry-wise spending, state transfers, and your personal tax share."
           accentColor="var(--saffron)"
           accentVar="--saffron"
           ctaText="Explore the budget"
 
           stats={[
             s('Total Expenditure', summary ? formatLakhCrore(summary.totalExpenditure) : null, 'var(--saffron)'),
-            s('Per Citizen Per Day', summary ? `Rs ${summary.perCapitaDailyExpenditure.toFixed(2)}` : null, 'var(--cyan)'),
+            s('Per Citizen Per Day', summary ? `₹${summary.perCapitaDailyExpenditure.toFixed(2)}` : null, 'var(--cyan)'),
             s('Fiscal Deficit', summary ? `${summary.fiscalDeficitPercentGDP}% of GDP` : null, 'var(--gold)'),
           ]}
         >
@@ -620,7 +620,7 @@ export default function HubPage() {
           stats={[
             s('GDP Growth', economySummary ? `${economySummary.realGDPGrowth}%` : null, 'var(--cyan)'),
             s('CPI Inflation', economySummary ? `${economySummary.cpiInflation}%` : null, 'var(--saffron)'),
-            s('Per Capita GDP', economySummary ? `Rs ${formatIndianNumber(economySummary.perCapitaGDP)}` : null, 'var(--gold)'),
+            s('Per Capita GDP', economySummary ? `₹${formatIndianNumber(economySummary.perCapitaGDP)}` : null, 'var(--gold)'),
           ]}
         >
           {(isVisible) => <EconomyMiniViz summary={economySummary} isVisible={isVisible} />}

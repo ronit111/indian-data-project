@@ -49,7 +49,7 @@ export function DataTable({ data }: DataTableProps) {
   }, [data.ministries, sortKey, sortDir]);
 
   const exportCSV = useCallback(() => {
-    const headers = ['Expenditure Head', 'Budget Estimate (Rs Cr)', '% of Total', 'YoY Change %', 'Per Capita (Rs)'];
+    const headers = ['Expenditure Head', 'Budget Estimate (₹ Cr)', '% of Total', 'YoY Change %', 'Per Capita (₹)'];
     const rows = sorted.map((m) => [
       m.name, m.budgetEstimate, m.percentOfTotal, m.yoyChange ?? 'N/A', m.perCapita,
     ]);
@@ -90,7 +90,7 @@ export function DataTable({ data }: DataTableProps) {
         <table className="w-full">
           <thead className="sticky top-16 z-10" style={{ background: 'var(--bg-raised)' }}>
             <tr>
-              {([['Expenditure Head', 'name'], ['Budget (Rs Cr)', 'budgetEstimate'], ['% Total', 'percentOfTotal'], ['YoY', 'yoyChange'], ['Per Capita', 'perCapita']] as const).map(([label, field]) => (
+              {([['Expenditure Head', 'name'], ['Budget (₹ Cr)', 'budgetEstimate'], ['% Total', 'percentOfTotal'], ['YoY', 'yoyChange'], ['Per Capita', 'perCapita']] as const).map(([label, field]) => (
                 <th
                   scope="col"
                   key={field}

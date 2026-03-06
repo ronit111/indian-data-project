@@ -12,9 +12,11 @@ interface ExchangeRateSectionProps {
 export function ExchangeRateSection({ data }: ExchangeRateSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.08 });
 
-  const latestRate = data.exchangeRate.series.length > 0
-    ? data.exchangeRate.series[data.exchangeRate.series.length - 1].value.toFixed(2)
-    : '—';
+  const latestEntry = data.exchangeRate.series.length > 0
+    ? data.exchangeRate.series[data.exchangeRate.series.length - 1]
+    : null;
+  const latestRate = latestEntry ? latestEntry.value.toFixed(2) : '—';
+  const latestYear = latestEntry?.year ?? '';
 
   return (
     <section ref={ref} id="exchange-rate" className="composition" style={{ background: 'var(--bg-surface)' }}>
@@ -36,7 +38,7 @@ export function ExchangeRateSection({ data }: ExchangeRateSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India doesn't peg the rupee, but RBI actively smooths volatility through forex market interventions. The INR/USD exchange rate reflects both market forces and RBI's managed float strategy.
+          India doesn't fix the rupee to the dollar, but RBI actively smooths sharp swings through forex market interventions — buying or selling dollars. This chart shows the annual average rupees needed to buy one US dollar. A rising line means the rupee is weakening.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/exchange-rate" data={data}>
@@ -66,7 +68,7 @@ export function ExchangeRateSection({ data }: ExchangeRateSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            1 USD = ₹{latestRate}
+            1 USD = ₹{latestRate} (avg. {latestYear})
           </span>
         </motion.div>
 

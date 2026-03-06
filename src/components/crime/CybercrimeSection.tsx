@@ -58,7 +58,7 @@ function GapVisualization({ complaints, firs, isVisible }: { complaints: number;
         style={{ background: 'var(--bg-raised)', border: 'var(--border-subtle)' }}
       >
         <p className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-muted)' }}>
-          NCRB Registered FIRs
+          NCRB (National Crime Records Bureau) FIRs
         </p>
         <p className="text-3xl md:text-4xl font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
           {(firs / 1000).toFixed(1)}K
@@ -117,7 +117,7 @@ export function CybercrimeSection({ data }: CybercrimeSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {lastYear ? `${(lastYear.cases / 1000).toFixed(0)}K` : '—'} cybercrime FIRs in 2022 — {multiplier ?? '—'}x growth in {data.ncrbTrend.length - 1} years.
-          The I4C (Indian Cyber Crime Coordination Centre) portal received 22.68 lakh complaints — 34 times the number of FIRs registered.
+          The Indian Cyber Crime Coordination Centre (I4C) portal received 22.68 lakh complaints — 34 times the number of FIRs registered.
           Online fraud alone accounts for ~42% of registered cases.
         </motion.p>
 

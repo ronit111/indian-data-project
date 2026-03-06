@@ -59,7 +59,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            crimes recorded in 2022 — one every 5 seconds
+            crimes recorded in 2022 — roughly one every 5 seconds
           </p>
         </motion.div>
 

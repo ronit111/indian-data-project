@@ -92,7 +92,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
             className="font-extrabold"
           >
             <span className="gradient-text-saffron font-mono">
-              Rs {summary.perCapitaDailyExpenditure.toFixed(2)}
+              ₹{summary.perCapitaDailyExpenditure.toFixed(2)}
             </span>
           </motion.div>
 
@@ -112,7 +112,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.2 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          {`The government spends Rs ${summary.perCapitaExpenditure.toLocaleString('en-IN')} per citizen per year. Here's how a single day breaks down across the top spending areas.`}
+          {`The government spends ₹${summary.perCapitaExpenditure.toLocaleString('en-IN')} per citizen per year. Here's how a single day breaks down across the top spending areas.`}
         </motion.p>
 
         {/* Horizontal segmented bar */}
@@ -173,7 +173,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
                     {m.name}
                   </p>
                   <p className="font-mono text-sm font-bold" style={{ color: m.color }}>
-                    Rs {m.dailyPerCapita.toFixed(2)}
+                    ₹{m.dailyPerCapita.toFixed(2)}
                   </p>
                 </div>
               </motion.div>

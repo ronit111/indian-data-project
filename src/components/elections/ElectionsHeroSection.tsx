@@ -92,10 +92,10 @@ export function ElectionsHeroSection({ summary }: ElectionsHeroSectionProps) {
             Turnout {summary?.turnout2024 ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; NDA {summary?.ndaSeats2024 ?? '—'}
+            &middot; NDA (National Democratic Alliance) {summary?.ndaSeats2024 ?? '—'}
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; INDIA {summary?.indiaAllianceSeats2024 ?? '—'}
+            &middot; INDIA (Indian National Developmental Inclusive Alliance) {summary?.indiaAllianceSeats2024 ?? '—'}
           </span>
         </motion.div>
 

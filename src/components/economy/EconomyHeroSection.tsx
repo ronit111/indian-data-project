@@ -71,7 +71,7 @@ export function EconomyHeroSection({ summary }: EconomyHeroSectionProps) {
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            GDP growth
+            Real GDP growth (FY {summary.year})
           </p>
         </motion.div>
 
@@ -87,7 +87,7 @@ export function EconomyHeroSection({ summary }: EconomyHeroSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Rs {formatIndianNumber(summary.perCapitaGDP)} per capita GDP
+            ₹{formatIndianNumber(summary.perCapitaGDP)} per capita GDP
           </span>
         </motion.div>
 

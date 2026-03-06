@@ -61,7 +61,7 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          A state's total GDP can be large simply because it has a large population. Per capita NSDP adjusts for population, revealing which states actually produce more per person. Goa and Sikkim outpace much larger states.
+          A state's total GDP can be large simply because it has a large population. Per capita NSDP (Net State Domestic Product per person) adjusts for population size, revealing which states actually produce more per person. Delhi, Telangana, and Karnataka lead on this measure, well ahead of much larger states like Uttar Pradesh or Bihar.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/percapita" data={data}>

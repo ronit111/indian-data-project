@@ -82,7 +82,7 @@ export function ForestCoverSection({ data }: ForestCoverSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India has 25.17% forest cover — below the 33% policy target. Madhya Pradesh leads losses (-372 km²), followed by Andhra Pradesh and Telangana. Mizoram, Gujarat, and Odisha saw the largest gains.
+          India has 25.17% forest cover according to ISFR 2023 (India State of Forest Report) — below the 33% national policy target. Madhya Pradesh leads losses (-372 km²), followed by Andhra Pradesh and Telangana. Mizoram, Gujarat, and Odisha saw the largest gains.
         </motion.p>
 
         {forestSeries.length > 0 && (

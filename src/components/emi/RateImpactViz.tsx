@@ -47,7 +47,7 @@ export function RateImpactViz({ impact }: RateImpactVizProps) {
                 className="text-sm font-mono font-bold"
                 style={{ color: 'var(--text-primary)' }}
               >
-                Rs {formatIndianNumber(scenario.monthlyEMI)}
+                ₹{formatIndianNumber(scenario.monthlyEMI)}
               </span>
             </div>
 
@@ -84,7 +84,7 @@ export function RateImpactViz({ impact }: RateImpactVizProps) {
 
             {!isCurrent && (
               <p className="text-[10px] mt-1" style={{ color: 'var(--text-muted)' }}>
-                Total {isNegative ? 'savings' : 'extra cost'}: Rs {formatIndianNumber(Math.abs(scenario.totalDiff))} over full tenure
+                Total {isNegative ? 'savings' : 'extra cost'}: ₹{formatIndianNumber(Math.abs(scenario.totalDiff))} over full tenure
               </p>
             )}
           </div>

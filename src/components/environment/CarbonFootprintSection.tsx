@@ -63,7 +63,7 @@ export function CarbonFootprintSection({ data }: CarbonFootprintSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India emits 1.9 tonnes CO₂ per person — well below the US (14) and China (8). But with 1.4 billion people, the total ranks 3rd globally. India needs energy to develop, yet is among the most climate-vulnerable nations.
+          India emits about 1.9 tonnes of CO₂ (carbon dioxide) per person per year — well below the US (14) and China (8), as of 2022. But with 1.4 billion people, the total ranks 3rd globally. India needs energy to develop, yet is among the most climate-vulnerable nations.
         </motion.p>
 
         {/* Peer reference context */}

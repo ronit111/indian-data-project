@@ -120,7 +120,7 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
           className="text-composition mb-2"
         >
-          The demographic dividend
+          A young nation's window
         </motion.h2>
 
         <motion.p
@@ -129,7 +129,7 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India's working-age population share is near its peak. Two-thirds of the country is between 15 and 64 — a demographic window that closes around 2040. How this workforce is educated, employed, and healthy will define India's next two decades.
+          Economists call it the "demographic dividend" — a period when most of a country's population is of working age. India is in that window now. More than two-thirds of the country — about 68% — is between 15 and 64, but this window closes around 2040. How this workforce is educated, employed, and healthy will define India's next two decades.
         </motion.p>
 
         {/* Waffle: for every 100 Indians */}

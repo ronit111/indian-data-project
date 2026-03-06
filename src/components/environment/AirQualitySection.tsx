@@ -73,7 +73,7 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India's average PM2.5 is 10 times the WHO safe limit. The Indo-Gangetic Plain is the worst — Delhi, Patna, and Lucknow rarely see clean air.
+          India's average PM2.5 (fine particulate matter) level is about 10 times the WHO's 2021 safe limit of 5 μg/m³. The Indo-Gangetic Plain is the worst affected — Delhi, Patna, and Lucknow rarely see clean air.
         </motion.p>
 
         {pm25Series.length > 0 && (
@@ -122,7 +122,7 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
                 formatValue={(v) => v.toFixed(0)}
                 valueLabel="AQI"
                 accentColor="var(--negative)"
-                referenceLine={{ value: 150, label: 'Hazardous (CPCB)', color: 'var(--negative)' }}
+                referenceLine={{ value: 150, label: 'Hazardous — CPCB (Central Pollution Control Board)', color: 'var(--negative)' }}
                 highlightIds={worst5}
                 isVisible={isVisible}
               />

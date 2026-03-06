@@ -65,7 +65,7 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
         >
           {latest.womenMPs} women in a house of {latest.totalSeats} — just {latest.pct}%.
           The highest ever was {peak.pct}% in {peak.year} ({peak.womenMPs} women).
-          The 33% reservation law passed in 2023 after 27 years of failed attempts, but it won't take effect until after delimitation and a new Census.
+          The 33% reservation law passed in 2023 after 27 years of failed attempts, but it won't take effect until after delimitation (redrawing constituency boundaries so each MP represents roughly equal numbers of people) and a new Census.
           That leaves a {gap.toFixed(1)} percentage point gap to close.
         </motion.p>
 

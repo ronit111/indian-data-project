@@ -71,7 +71,7 @@ export function MapSection({ statewise }: MapSectionProps) {
                 <p className="text-caption uppercase tracking-wider mb-1">{'Largest total transfer'}</p>
                 <p className="font-semibold text-base" style={{ color: 'var(--saffron)' }}>{topState.name}</p>
                 <p className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Rs {formatIndianNumber(topState.transfer)} Cr
+                  ₹{formatIndianNumber(topState.transfer)} Cr
                 </p>
               </div>
 
@@ -79,7 +79,7 @@ export function MapSection({ statewise }: MapSectionProps) {
                 <p className="text-caption uppercase tracking-wider mb-1">{'Highest per capita'}</p>
                 <p className="font-semibold text-base" style={{ color: 'var(--cyan)' }}>{topPerCapita.name}</p>
                 <p className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Rs {formatIndianNumber(topPerCapita.perCapita)}/person
+                  ₹{formatIndianNumber(topPerCapita.perCapita)}/person
                 </p>
               </div>
             </motion.div>

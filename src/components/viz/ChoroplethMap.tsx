@@ -160,14 +160,14 @@ export function ChoroplethMap({ states, isVisible, ariaLabel }: ChoroplethMapPro
 
       {/* Continuous gradient legend */}
       <div className="flex items-center gap-2 mt-4 justify-center">
-        <span className="text-caption">Rs {formatIndianNumber(minPC)}</span>
+        <span className="text-caption">₹{formatIndianNumber(minPC)}</span>
         <div
           className="h-2 rounded-full flex-1 max-w-48"
           style={{
             background: `linear-gradient(to right, #4AEADC, #1a2230, #FF6B35)`,
           }}
         />
-        <span className="text-caption">Rs {formatIndianNumber(maxPC)}</span>
+        <span className="text-caption">₹{formatIndianNumber(maxPC)}</span>
         <span className="text-caption ml-1">(per capita)</span>
       </div>
 
@@ -177,7 +177,7 @@ export function ChoroplethMap({ states, isVisible, ariaLabel }: ChoroplethMapPro
             <>
               <TooltipTitle>{tooltip.data.topoName || tooltip.data.name}</TooltipTitle>
               <TooltipRow label="Transfer" value={formatRsCrore(tooltip.data.transfer)} />
-              <TooltipRow label="Per capita" value={`Rs ${formatIndianNumber(tooltip.data.perCapita)}`} />
+              <TooltipRow label="Per capita" value={`₹${formatIndianNumber(tooltip.data.perCapita)}`} />
               <TooltipRow label="Share" value={`${tooltip.data.percentOfTotal}%`} />
             </>
           )

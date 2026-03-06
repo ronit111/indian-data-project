@@ -76,7 +76,7 @@ function GenderGapChart({
             className="text-[10px] font-mono flex-shrink-0"
             style={{ width: '36px', color: 'var(--saffron)', textAlign: 'right' }}
           >
-            {s.genderGap.toFixed(0)}pp
+            {s.genderGap.toFixed(0)} pts
           </span>
         </motion.div>
       ))}
@@ -93,7 +93,7 @@ function GenderGapChart({
           </span>
         </div>
         <span className="text-[10px] font-mono" style={{ width: '36px', color: 'var(--text-muted)', textAlign: 'right' }}>
-          Gap
+          Gap (pts)
         </span>
       </div>
     </div>
@@ -191,7 +191,7 @@ export function LiteracySection({ data }: LiteracySectionProps) {
                 formatValue={(v) => `${v.toFixed(1)}%`}
                 legendLabel="Literacy Rate"
                 isVisible={isVisible}
-                nationalAvg={74}
+                nationalAvg={74.04}
               />
             </ChartActionsWrapper>
           </div>

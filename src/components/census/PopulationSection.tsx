@@ -65,7 +65,7 @@ export function PopulationSection({ data }: PopulationSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India overtook China as the world's most populous country in 2023. But the growth rate has been falling steadily for two decades, from over 1.7% to under 0.9%.
+          India overtook China as the world's most populous country in 2023. But the growth rate has been falling steadily — from 1.9% in 2000 to under 0.9% by 2022, before ticking up slightly.
         </motion.p>
 
         {popSeries.length > 0 && (

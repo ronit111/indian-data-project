@@ -180,8 +180,8 @@ export function LokSabha2024Section({ data }: LokSabha2024SectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          BJP won {data.parties2024[0]?.seats ?? 240} seats — {majorityMark - (data.parties2024[0]?.seats ?? 240)} short of the {majorityMark}-seat majority. The INDIA alliance won {indiaAlliance} seats, doubling Congress's 2019 tally.
-          NDA governs with {NDA} seats, relying on TDP and JD(U).
+          BJP won {data.parties2024[0]?.seats ?? 240} seats — {majorityMark - (data.parties2024[0]?.seats ?? 240)} short of the {majorityMark}-seat majority. The INDIA alliance won {indiaAlliance} seats, with Congress nearly doubling from 52 to 99.
+          NDA governs with {NDA} seats, relying on TDP (Telugu Desam Party) and JD(U) (Janata Dal United).
         </motion.p>
 
         {/* Parliament Hemicycle */}

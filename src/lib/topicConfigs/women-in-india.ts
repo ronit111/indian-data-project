@@ -118,13 +118,13 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 1,
       title: 'Political Voice',
       annotation:
-        'Women\'s representation in Lok Sabha has crawled from 4.4% in 1952 to 13.6% in 2024. At this pace, parity is over a century away — unless the 33% reservation changes the math.',
+        'Women\'s representation in Lok Sabha has crawled from 4.5% in 1957 to 13.6% in 2024. At this pace, parity is over a century away — unless the 33% reservation changes the math.',
       domains: ['elections'],
       sources: ['Election Commission of India', 'Lok Sabha Secretariat'],
       charts: [
         {
           chartType: 'line',
-          chartTitle: 'Women MPs in Lok Sabha (1952-2024)',
+          chartTitle: 'Women MPs in Lok Sabha (1957-2024)',
           unit: '%',
           accent: '#F43F5E',
           extractData: (bag) => {
@@ -154,7 +154,7 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 2,
       title: 'Economic Participation',
       annotation:
-        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent PLFS data shows a recovery to ~35%, but the gap with men (~78%) remains stark. More women are working, but mostly in agriculture and self-employment.',
+        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent data shows a recovery, but the gap with men remains stark. PLFS 2023-24 reports female LFPR at 28.8% (usual status), while ILO modeled estimates put it at ~32%. More women are working, but mostly in agriculture and self-employment.',
       domains: ['employment'],
       sources: ['PLFS (MoSPI)', 'World Bank'],
       charts: [
@@ -200,7 +200,7 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 3,
       title: 'Education & Health',
       annotation:
-        'The literacy gender gap has shrunk from 25 percentage points in 1991 to ~14 percentage points today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality (103 per lakh) and child marriage rates remind us that progress is uneven.',
+        'The literacy gender gap has shrunk from 25 percentage points in 1991 to about 13.5 percentage points today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality and child marriage rates remind us that progress is uneven.',
       domains: ['education', 'census', 'healthcare'],
       sources: ['Census of India', 'UDISE+', 'NFHS-5', 'World Bank'],
       charts: [

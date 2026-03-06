@@ -109,7 +109,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India spends about 3% of GDP on health — half the global average of ~6%. The gap translates to fewer doctors, fewer hospital beds, and families bearing nearly half the cost directly from their pockets. For context, even countries with smaller economies like Sri Lanka and Thailand spend a higher share of GDP on public health.
+          India spends about 3.3% of GDP on health — roughly half the global average of ~6.5%. The gap translates to fewer doctors, fewer hospital beds, and families bearing a large share of the cost directly from their pockets. For context, even countries with smaller economies like Sri Lanka and Thailand spend a higher share of GDP on public health.
         </motion.p>
 
         {spendingSeries.length > 0 && (
@@ -175,7 +175,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
               transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.5 }}
               className="text-annotation mb-10 max-w-xl"
             >
-              {`The government spends ₹${perCapitaINR.latest.value.toLocaleString('en-IN')} per citizen per year on health. That's less per day than what most Indians spend on a cup of chai.`}
+              {`India spends ₹${perCapitaINR.latest.value.toLocaleString('en-IN')} per citizen per year on health (public + private combined). That's less per day than what most Indians spend on a cup of chai.`}
             </motion.p>
 
             {perCapitaSeries.length > 0 && (

@@ -12,9 +12,9 @@ const LOAN_OPTIONS: { value: LoanType; label: string }[] = [
 ];
 
 function formatAmountShort(amount: number): string {
-  if (amount >= 10000000) return `Rs ${(amount / 10000000).toFixed(1)} Cr`;
-  if (amount >= 100000) return `Rs ${(amount / 100000).toFixed(1)} L`;
-  return `Rs ${formatIndianNumber(amount)}`;
+  if (amount >= 10000000) return `₹${(amount / 10000000).toFixed(1)} Cr`;
+  if (amount >= 100000) return `₹${(amount / 100000).toFixed(1)} L`;
+  return `₹${formatIndianNumber(amount)}`;
 }
 
 interface EMIInputPanelProps {

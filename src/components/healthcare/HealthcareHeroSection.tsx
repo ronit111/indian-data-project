@@ -10,7 +10,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.2 });
 
   const formattedDoctors = summary
-    ? summary.physiciansPer1000.toFixed(1)
+    ? (summary.physiciansPer1000 * 10).toFixed(0)
     : '—';
 
   return (
@@ -61,7 +61,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            doctors per 1,000 people
+            doctors per 10,000 people
           </p>
         </motion.div>
 

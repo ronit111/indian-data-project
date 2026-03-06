@@ -29,7 +29,7 @@ export function InflationImpactDisplay({
         >
           Your{' '}
           <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Rs {formatIndianNumber(result.currentTotal)}
+            ₹{formatIndianNumber(result.currentTotal)}
           </span>
           /month today
         </p>
@@ -39,7 +39,7 @@ export function InflationImpactDisplay({
         >
           would have cost only{' '}
           <span className="font-mono font-bold" style={{ color: 'var(--cyan)' }}>
-            Rs {formatIndianNumber(result.adjustedTotal)}
+            ₹{formatIndianNumber(result.adjustedTotal)}
           </span>
           {' '}in {fromYear}
         </p>
@@ -60,7 +60,7 @@ export function InflationImpactDisplay({
         />
         <StatBlock
           label="Purchasing Power Lost"
-          value={`Rs ${formatIndianNumber(result.purchasingPowerLoss)}`}
+          value={`₹${formatIndianNumber(result.purchasingPowerLoss)}`}
           subtitle="per month"
         />
       </div>
@@ -110,7 +110,7 @@ export function InflationImpactDisplay({
                       className="text-xs font-mono"
                       style={{ color: 'var(--text-muted)' }}
                     >
-                      Rs {formatIndianNumber(cat.adjustedAmount)} → Rs{' '}
+                      ₹{formatIndianNumber(cat.adjustedAmount)} → Rs{' '}
                       {formatIndianNumber(cat.currentAmount)}
                     </span>
                     <span

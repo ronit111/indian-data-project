@@ -32,18 +32,18 @@ export const democraticHealth: TopicDef = {
     { value: (bag) => { const e = elecSummary(bag); return e ? `₹${e.avgAssetsCrore} Cr` : '—'; }, label: 'Avg MP assets', sectionId: 'quality-representation' },
   ],
 
-  narrativeBridge: 'India\'s elections are the world\'s largest logistical exercise. Turnout has climbed from 46% in 1952 to 66% in 2024. But democratic health isn\'t just about showing up — it\'s about who gets elected, how much money flows through campaigns, and whether every citizen\'s vote carries equal weight.',
+  narrativeBridge: 'India\'s elections are the world\'s largest logistical exercise. Turnout has climbed from 48% in 1957 to 66% in 2024, peaking at 67% in 2019. But democratic health isn\'t just about showing up — it\'s about who gets elected, how much money flows through campaigns, and whether every citizen\'s vote carries equal weight.',
 
   sections: [
     {
       id: 'participation-arc',
       sectionNumber: 1,
       title: 'The Participation Arc',
-      annotation: 'Voter turnout has steadily increased over 7 decades, from 46% in 1952 to a peak of 67% in 2014. The 2024 election saw 65.8% turnout across 96.88 crore electors.',
+      annotation: 'Voter turnout has steadily increased over 7 decades, from 48% in 1957 to a peak of 67.4% in 2019. The 2024 election saw 65.8% turnout across 96.88 crore electors.',
       domains: ['elections'],
       sources: ['Election Commission of India'],
       charts: [{
-        chartType: 'area', chartTitle: 'Lok Sabha Turnout (1952-2024)', unit: '%', accent: '#818CF8',
+        chartType: 'area', chartTitle: 'Lok Sabha Turnout (1957-2024)', unit: '%', accent: '#818CF8',
         extractData: (bag) => {
           const d = turnout(bag);
           if (!d?.nationalTrend?.length || d.nationalTrend.length < 3) return null;

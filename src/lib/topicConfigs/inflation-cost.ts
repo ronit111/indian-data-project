@@ -97,7 +97,7 @@ export const inflationCost: TopicDef = {
       sectionNumber: 1,
       title: 'The Price Trajectory',
       annotation:
-        'India\'s CPI inflation spiked to 7.8% in April 2022, then gradually eased below 5%. Food inflation remains volatile — vegetables and pulses can swing 10-20% in a season. Core inflation (excluding food and fuel) has been more stable around 4-5%.',
+        'India\'s CPI inflation averaged 6.7% in 2022-23, with monthly peaks above 7% in mid-2022, then gradually eased below 5%. Food inflation remains volatile — vegetables and pulses can swing 10-20% in a season. Core inflation (excluding food and fuel) has been more stable around 3-5%.',
       domains: ['economy'],
       sources: ['MOSPI (CPI)', 'World Bank'],
       charts: [

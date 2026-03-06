@@ -51,7 +51,7 @@ export function EMIShareCard({ breakdown, loanType, loanAmount, tenureYears, rep
     // Loan info
     ctx.fillStyle = '#f0ece6';
     ctx.font = 'bold 24px Inter, sans-serif';
-    ctx.fillText(`${LOAN_LABELS[loanType]} · Rs ${formatIndianNumber(loanAmount)} · ${tenureYears} years`, 60, 95);
+    ctx.fillText(`${LOAN_LABELS[loanType]} · ₹${formatIndianNumber(loanAmount)} · ${tenureYears} years`, 60, 95);
 
     ctx.fillStyle = '#5c6a7e';
     ctx.font = '18px Inter, sans-serif';
@@ -60,7 +60,7 @@ export function EMIShareCard({ breakdown, loanType, loanAmount, tenureYears, rep
     // Monthly EMI — hero stat
     ctx.fillStyle = '#FFC857';
     ctx.font = 'bold 64px JetBrains Mono, monospace';
-    ctx.fillText(`Rs ${formatIndianNumber(breakdown.monthlyEMI)}/mo`, 60, 220);
+    ctx.fillText(`₹${formatIndianNumber(breakdown.monthlyEMI)}/mo`, 60, 220);
 
     // Separator
     ctx.strokeStyle = '#1a2230';
@@ -72,9 +72,9 @@ export function EMIShareCard({ breakdown, loanType, loanAmount, tenureYears, rep
 
     // Stats grid (3 columns)
     const stats = [
-      { label: 'Total Payment', value: `Rs ${formatIndianNumber(breakdown.totalPayment)}` },
-      { label: 'Total Interest', value: `Rs ${formatIndianNumber(breakdown.totalInterest)}` },
-      { label: 'Interest Ratio', value: `Rs ${breakdown.interestRatio.toFixed(2)} per Rs 1` },
+      { label: 'Total Payment', value: `₹${formatIndianNumber(breakdown.totalPayment)}` },
+      { label: 'Total Interest', value: `₹${formatIndianNumber(breakdown.totalInterest)}` },
+      { label: 'Interest Ratio', value: `₹${breakdown.interestRatio.toFixed(2)} per ₹1` },
     ];
 
     stats.forEach((stat, i) => {
@@ -142,7 +142,7 @@ export function EMIShareCard({ breakdown, loanType, loanAmount, tenureYears, rep
           await navigator.share({
             files: [file],
             title: 'EMI Impact Calculator — Indian Data Project',
-            text: `My ${LOAN_LABELS[loanType]} EMI: Rs ${formatIndianNumber(breakdown.monthlyEMI)}/month`,
+            text: `My ${LOAN_LABELS[loanType]} EMI: ₹${formatIndianNumber(breakdown.monthlyEMI)}/month`,
           });
           setStatus('shared');
           setTimeout(() => setStatus('idle'), 1500);

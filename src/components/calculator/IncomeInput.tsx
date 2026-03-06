@@ -63,8 +63,8 @@ export function IncomeInput() {
           aria-label="Annual income"
         />
         <div className="flex justify-between text-caption font-mono mt-2">
-          <span>Rs 0</span>
-          <span>Rs 10 Cr</span>
+          <span>₹0</span>
+          <span>₹10 Cr</span>
         </div>
       </div>
 

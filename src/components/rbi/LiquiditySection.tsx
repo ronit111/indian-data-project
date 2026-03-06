@@ -32,7 +32,7 @@ export function LiquiditySection({ data }: LiquiditySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          M3 is the total money circulating in the economy — cash in wallets, savings accounts, fixed deposits, everything. When RBI buys government bonds in the open market (called OMOs), it pumps money into banks. When it sells, it pulls money out. The growth rate shows how fast the money supply is expanding.
+          Broad money (M3) is the total money circulating in the economy — cash in wallets, savings accounts, fixed deposits, everything. RBI controls this by buying or selling government bonds in the open market (Open Market Operations, or OMOs). Buying bonds pumps money into banks; selling pulls it out. The growth rate shows how fast this money supply is expanding. (World Bank data available through 2021-22.)
         </motion.p>
 
         {/* M3 Growth — year-over-year pace of money creation */}

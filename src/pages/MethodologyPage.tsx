@@ -95,7 +95,7 @@ const SECTIONS = [
         <ul className="mt-4 space-y-3">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
-            <span>Standard deduction (Rs 75,000 new / Rs 50,000 old)</span>
+            <span>Standard deduction (₹75,000 new / ₹50,000 old)</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />

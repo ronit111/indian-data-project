@@ -46,7 +46,7 @@ export function FiscalSection({ fiscal }: FiscalSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Fiscal consolidation has been steady since the COVID-era peak of 9.2%.
+          Fiscal consolidation — the government's effort to reduce borrowing over time — has been steady since the COVID-era peak of over 9% of GDP in 2020-21.
           The Fiscal Responsibility and Budget Management (FRBM) Act sets a long-term target of 3% of GDP. The government is on track but not there yet.
         </motion.p>
 

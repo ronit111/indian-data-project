@@ -8,7 +8,7 @@ const enrollment = (bag: TopicDataBag) => bag['education/enrollment'] as Enrollm
 export const regionalInequality: TopicDef = {
   id: 'regional-inequality',
   title: 'Regional Inequality',
-  subtitle: 'Goa\'s per capita income is 9x Bihar\'s. What does the data reveal about India\'s geographic divide?',
+  subtitle: 'Delhi\'s per capita income is 7x Bihar\'s. What does the data reveal about India\'s geographic divide?',
   accent: '#8B5CF6',
   contributingDomains: ['states', 'budget', 'census', 'education', 'healthcare'],
   requiredData: [
@@ -28,20 +28,20 @@ export const regionalInequality: TopicDef = {
   },
 
   takeaways: [
-    { value: '36', label: 'States & UTs', sectionId: 'income-divide' },
+    { value: (bag) => { const s = statesSummary(bag); return s ? `${s.statesWithData}` : '—'; }, label: 'States with data', sectionId: 'income-divide' },
     { value: (bag) => { const s = statesSummary(bag); return s?.topGsdpState ? `₹${(s.topGsdpValue / 100000).toFixed(1)}L Cr` : '—'; }, label: `Top state GSDP`, sectionId: 'income-divide' },
     { value: (bag) => { const s = statesSummary(bag); return s ? s.growthRange : '—'; }, label: 'GSDP growth range', sectionId: 'income-divide' },
-    { value: '9x', label: 'Per capita gap: Goa vs Bihar', sectionId: 'income-divide' },
+    { value: '7x', label: 'Per capita gap: Delhi vs Bihar', sectionId: 'income-divide' },
   ],
 
-  narrativeBridge: 'India is not one economy — it\'s many. A child born in Kerala has a fundamentally different life trajectory than one born in Bihar. Per capita income, education access, healthcare infrastructure, and budget transfers all vary dramatically across states.',
+  narrativeBridge: 'India is not one economy — it\'s many. A child born in Kerala has a fundamentally different life trajectory than one born in Bihar. Per capita income, education access, healthcare infrastructure, and budget transfers all vary dramatically across the 25 states and UTs with complete data.',
 
   sections: [
     {
       id: 'income-divide',
       sectionNumber: 1,
       title: 'The Income Divide',
-      annotation: 'Per capita GSDP ranges from ₹54,000 in Bihar to nearly ₹5 lakh in Goa. Southern and western states cluster at the top; Bihar, UP, and Jharkhand lag.',
+      annotation: 'Per capita NSDP ranges from ₹69,000 in Bihar to nearly ₹5 lakh in Delhi. Southern and western states cluster at the top; Bihar, UP, and Jharkhand lag.',
       domains: ['states'],
       sources: ['RBI Handbook'],
       charts: [{
@@ -88,7 +88,7 @@ export const regionalInequality: TopicDef = {
           const s = statesSummary(bag);
           if (!s) return null;
           return [
-            { label: 'States & UTs', value: '36', accent: '#8B5CF6' },
+            { label: 'States with Data', value: `${s.statesWithData}`, accent: '#8B5CF6' },
             { label: 'Top State', value: s.topGsdpState, accent: '#4ADE80' },
             { label: 'Avg Per Capita', value: `₹${(s.averagePerCapita / 1000).toFixed(0)}K`, accent: '#FF6B35' },
             { label: 'Growth Range', value: s.growthRange, accent: '#4AEADC' },

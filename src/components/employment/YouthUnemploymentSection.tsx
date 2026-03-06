@@ -58,8 +58,7 @@ export function YouthUnemploymentSection({ data }: YouthUnemploymentSectionProps
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Youth unemployment is over 2 times the overall rate. India produces millions of graduates
-          each year, but the economy doesn't create enough quality jobs to absorb them.
+          Youth unemployment (ages 15-24) is nearly 4 times the overall rate. India produces millions of graduates each year, but the economy doesn't create enough quality jobs to absorb them.
         </motion.p>
 
         {unemploymentSeries.length > 0 && (

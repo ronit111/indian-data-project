@@ -32,7 +32,7 @@ export function CreditSection({ data }: CreditSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          This tracks total bank loans to businesses and families — home loans, business credit, personal loans. At over 50% of GDP, India's lending has deepened significantly, meaning more people and businesses have access to formal credit than a decade ago.
+          This tracks total bank loans to businesses and families — home loans, business credit, personal loans. As of 2021-22, private credit stood at 50% of GDP, meaning more people and businesses have access to formal credit than a decade ago when it was around 28%.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/credit" data={data}>

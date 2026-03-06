@@ -48,14 +48,13 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Male LFPR is about 78%. Female LFPR is around 35%. The gap is among the widest in the
-          world, though it has been narrowing since 2017.
+          Male LFPR is about 78%. Female LFPR is around 32% (ILO estimate). The gap is among the widest in the world, though it has been narrowing since 2017.
         </motion.p>
 
         {barItems.length > 0 && (
           <div className="mb-8">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              State-Level Female LFPR (%, lowest 15)
+              State-Level LFPR (%, lowest 15)
             </p>
             <ChartActionsWrapper registryKey="employment/gender-gap" data={data}>
               <HorizontalBarChart

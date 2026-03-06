@@ -27,7 +27,7 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
             Total Tax
           </p>
           <p className="text-xl md:text-2xl font-bold font-mono" style={{ color: 'var(--saffron)' }}>
-            Rs {formatIndianNumber(breakdown.totalTax)}
+            ₹{formatIndianNumber(breakdown.totalTax)}
           </p>
         </div>
         <div
@@ -60,7 +60,7 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
           <p className="text-sm" style={{ color: 'var(--positive)' }}>
             {breakdown.totalTax === 0
               ? 'Section 87A rebate applied. No tax payable.'
-              : `Marginal relief applied. Tax capped at Rs ${formatIndianNumber(breakdown.totalTax)} (income above rebate threshold).`}
+              : `Marginal relief applied. Tax capped at ₹${formatIndianNumber(breakdown.totalTax)} (income above rebate threshold).`}
           </p>
         </motion.div>
       )}
@@ -80,7 +80,7 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
           <motion.div variants={rowFade}>
             <SlabRow
               label="Standard Deduction"
-              value={`− Rs ${formatIndianNumber(breakdown.standardDeduction)}`}
+              value={`− ₹${formatIndianNumber(breakdown.standardDeduction)}`}
               valueColor="var(--cyan)"
             />
           </motion.div>
@@ -88,7 +88,7 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
             <motion.div variants={rowFade}>
               <SlabRow
                 label="Deductions (80C, 80D, etc.)"
-                value={`− Rs ${formatIndianNumber(breakdown.totalDeductions)}`}
+                value={`− ₹${formatIndianNumber(breakdown.totalDeductions)}`}
                 valueColor="var(--gold)"
               />
             </motion.div>
@@ -96,7 +96,7 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
           <motion.div variants={rowFade}>
             <SlabRow
               label="Taxable Income"
-              value={`Rs ${formatIndianNumber(breakdown.taxableIncome)}`}
+              value={`₹${formatIndianNumber(breakdown.taxableIncome)}`}
               highlight
             />
           </motion.div>
@@ -105,10 +105,10 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
               <SlabRow
                 label={
                   slab.to
-                    ? `Rs ${formatIndianNumber(slab.from)} – ${formatIndianNumber(slab.to)} @ ${slab.rate}%`
-                    : `Above Rs ${formatIndianNumber(slab.from)} @ ${slab.rate}%`
+                    ? `₹${formatIndianNumber(slab.from)} – ${formatIndianNumber(slab.to)} @ ${slab.rate}%`
+                    : `Above ₹${formatIndianNumber(slab.from)} @ ${slab.rate}%`
                 }
-                value={`Rs ${formatIndianNumber(Math.round(taxOnSlab))}`}
+                value={`₹${formatIndianNumber(Math.round(taxOnSlab))}`}
               />
             </motion.div>
           ))}
@@ -116,14 +116,14 @@ export function TaxBreakdownDisplay({ breakdown }: TaxBreakdownDisplayProps) {
             <motion.div variants={rowFade}>
               <SlabRow
                 label="Surcharge"
-                value={`Rs ${formatIndianNumber(Math.round(breakdown.surcharge))}`}
+                value={`₹${formatIndianNumber(Math.round(breakdown.surcharge))}`}
               />
             </motion.div>
           )}
           <motion.div variants={rowFade}>
             <SlabRow
               label="Health & Education Cess (4%)"
-              value={`Rs ${formatIndianNumber(Math.round(breakdown.cess))}`}
+              value={`₹${formatIndianNumber(Math.round(breakdown.cess))}`}
             />
           </motion.div>
         </motion.div>

@@ -109,7 +109,7 @@ export function SankeyDiagram({ data, width = 900, height = 600, isVisible, aria
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 600 }} role="img" aria-label={ariaLabel || 'Sankey flow diagram'}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 420 }} role="img" aria-label={ariaLabel || 'Sankey flow diagram'}>
         <defs>
           {graph.links.map((link, i) => {
             const srcColor =

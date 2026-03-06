@@ -62,9 +62,9 @@ export function DiseaseBurdenSection({ data }: DiseaseBurdenSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {hasTB && hasHIV
-            ? 'India has the world\'s highest TB burden — over 2.6 million cases per year. Meanwhile, lifestyle diseases — diabetes, heart disease, cancer — are rising as the population ages and urbanizes. These can\'t be caught from someone else, but they now cause more deaths than infections.'
+            ? 'India has the world\'s highest TB (tuberculosis) burden — over 2.6 million cases per year (WHO, 2023). Meanwhile, lifestyle diseases — diabetes, heart disease, cancer — are rising as the population ages and urbanizes. These can\'t be caught from someone else, but they now cause more deaths than infections.'
             : hasTB
-              ? 'India has the world\'s highest TB burden — over 2.6 million cases per year. Tuberculosis remains the leading infectious disease killer despite decades of public health campaigns.'
+              ? 'India has the world\'s highest TB (tuberculosis) burden — over 2.6 million cases per year (WHO, 2023). Tuberculosis remains the leading infectious disease killer despite decades of public health campaigns.'
               : 'Lifestyle diseases — diabetes, heart disease, cancer — are rising as the population ages and urbanizes. Unlike infections, these can\'t be caught from someone else, but they now cause more deaths.'}
         </motion.p>
 

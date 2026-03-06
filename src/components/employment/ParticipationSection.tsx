@@ -65,8 +65,7 @@ export function ParticipationSection({ data }: ParticipationSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India's labour force participation rate is 55.8% — one of the lowest among major
-          economies. For every 10 working-age Indians, only 5-6 are in the labour force.
+          India's Labour Force Participation Rate (LFPR) is around 56% (ILO — International Labour Organization — estimate, 2024) — one of the lowest among major economies. For every 10 working-age Indians, only 5-6 are in the labour force.
         </motion.p>
 
         {lfprSeries.length > 0 && (

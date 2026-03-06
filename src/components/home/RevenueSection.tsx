@@ -15,11 +15,10 @@ export function RevenueSection({ receipts }: RevenueSectionProps) {
   const [ref, isVisible] = useScrollTrigger({ threshold: 0.1 });
   const [hoveredCat, setHoveredCat] = useState<string | null>(null);
 
-  // "Per rupee earned" = borrowings / non-borrowing receipts (taxes + non-tax revenue).
-  // Denominator is what the govt earns, not total including borrowings.
+  // "Per rupee spent" = borrowings / total receipts (which equals total expenditure).
+  // This matches DeficitSection's framing and the waffle chart's visual proportions.
   const borrowingAmt = receipts.categories.find((c) => c.id === 'borrowings')?.amount || 0;
-  const earnedRevenue = receipts.total - borrowingAmt;
-  const borrowingPaise = earnedRevenue > 0 ? Math.round((borrowingAmt / earnedRevenue) * 100) : 0;
+  const borrowingPaise = receipts.total > 0 ? Math.round((borrowingAmt / receipts.total) * 100) : 0;
 
   return (
     <section ref={ref} id="revenue" className="composition">
@@ -55,7 +54,7 @@ export function RevenueSection({ receipts }: RevenueSectionProps) {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="text-annotation mb-6"
             >
-              {`Each square = 1%. For every rupee earned, the government borrows ${borrowingPaise} paise.`}
+              {`Each square = 1%. For every rupee spent, ${borrowingPaise} paise is borrowed.`}
             </motion.p>
 
             <motion.div

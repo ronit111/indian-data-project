@@ -22,9 +22,11 @@ export function ForexSection({ data }: ForexSectionProps) {
     },
   ], [data]);
 
-  const latestReserves = data.reservesUSD.series.length > 0
-    ? data.reservesUSD.series[data.reservesUSD.series.length - 1].value.toFixed(0)
-    : '—';
+  const latestEntry = data.reservesUSD.series.length > 0
+    ? data.reservesUSD.series[data.reservesUSD.series.length - 1]
+    : null;
+  const latestReserves = latestEntry ? latestEntry.value.toFixed(0) : '—';
+  const latestYear = latestEntry?.year ?? '';
 
   return (
     <section ref={ref} id="forex" className="composition" style={{ background: 'var(--bg-surface)' }}>
@@ -69,7 +71,7 @@ export function ForexSection({ data }: ForexSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            ${latestReserves} billion in reserves
+            ${latestReserves} billion in reserves ({latestYear})
           </span>
         </motion.div>
 

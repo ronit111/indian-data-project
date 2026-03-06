@@ -128,7 +128,7 @@ export default function FindYourSharePage() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
-                  Your tax: <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>Rs {formatIndianNumber(breakdown.totalTax)}</span>
+                  Your tax: <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>₹{formatIndianNumber(breakdown.totalTax)}</span>
                 </span>
                 <span className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
                   {formatPercent(breakdown.effectiveRate)} effective

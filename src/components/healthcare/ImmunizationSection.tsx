@@ -70,7 +70,7 @@ export function ImmunizationSection({ data }: ImmunizationSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          DPT and measles coverage have climbed above 90% nationally. But state-level variation remains wide — some states lag by 20 percentage points.
+          DPT (Diphtheria, Pertussis, Tetanus) and measles vaccination coverage now exceed 90% nationally. But state-level variation remains wide — some states lag by 20 percentage points.
         </motion.p>
 
         {immunizationSeries.length > 0 && (

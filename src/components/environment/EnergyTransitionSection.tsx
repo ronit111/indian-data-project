@@ -73,7 +73,7 @@ export function EnergyTransitionSection({ data }: EnergyTransitionSectionProps) 
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Solar capacity exploded from 3.7 GW to 82.8 GW in a decade — a 22× increase. But coal hasn't shrunk. India is adding clean energy on top of fossil fuels, not replacing them.{' '}
+          Solar capacity exploded from 3.7 GW to 82.8 GW in nine years (2015-2024) — a 22x increase. But coal hasn't shrunk. India is adding clean energy on top of fossil fuels, not replacing them.{' '}
           {latest && <span className="font-mono" style={{ color: 'var(--teal)' }}>Solar is now {solarPct}% of capacity.</span>}
         </motion.p>
 

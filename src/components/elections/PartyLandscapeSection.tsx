@@ -88,7 +88,7 @@ export function PartyLandscapeSection({ data }: PartyLandscapeSectionProps) {
           {[
             { era: '1957–1984', label: 'Congress Era', detail: 'Single-party dominance. INC averaged 325 seats across 7 elections.', color: '#00BFFF' },
             { era: '1989–2009', label: 'Coalition Era', detail: 'No single party crossed 240 seats. Regional parties held the balance.', color: '#14B8A6' },
-            { era: '2014–2024', label: 'BJP Era', detail: 'BJP crossed 240 in 3 consecutive elections. 2024: first check.', color: '#FF6B35' },
+            { era: '2014–2024', label: 'BJP Era', detail: 'BJP won 282 (2014), 303 (2019), and 240 (2024). First time below majority in a decade.', color: '#FF6B35' },
           ].map((e) => (
             <div
               key={e.era}

@@ -39,8 +39,8 @@ export function PoliceSection({ data }: PoliceSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          {data.actualStrength.toLocaleString('en-IN')} police personnel for 140 crore people — a ratio of {data.actualRatePerLakh} per lakh,
-          well below the UN-recommended {data.unRecommended}. {data.vacancyPct}% of sanctioned posts lie vacant.
+          {data.actualStrength.toLocaleString('en-IN')} police personnel for 140 crore people — a ratio of {data.actualRatePerLakh} per lakh population,
+          well below the UN-recommended {data.unRecommended} per lakh. {data.vacancyPct}% of sanctioned posts lie vacant.
           Women make up just {data.womenPolicePct}% of the force.
         </motion.p>
 

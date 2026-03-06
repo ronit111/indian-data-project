@@ -29,7 +29,7 @@ export function InflationSection({ inflation }: InflationSectionProps) {
     const all: LineSeries[] = [
       {
         id: 'cpi-headline',
-        name: 'CPI Headline',
+        name: 'Overall CPI',
         color: 'var(--saffron)',
         data: inflation.series.map((d) => ({ year: d.period, value: d.cpiHeadline })),
       },
@@ -39,7 +39,7 @@ export function InflationSection({ inflation }: InflationSectionProps) {
       all.push({ id: 'cpi-food', name: 'Food CPI', color: 'var(--gold)', data: foodData });
     }
     if (coreData.length >= MIN_POINTS) {
-      all.push({ id: 'cpi-core', name: 'Core CPI', color: 'var(--cyan)', data: coreData, dashed: true });
+      all.push({ id: 'cpi-core', name: 'Core (excl. food & fuel)', color: 'var(--cyan)', data: coreData, dashed: true });
     }
 
     return all;
@@ -68,8 +68,8 @@ export function InflationSection({ inflation }: InflationSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {hasBreakdown
-            ? 'The RBI targets CPI inflation between 2-6%. Food prices remain the most volatile component, while core inflation has been steadily declining.'
-            : 'The RBI targets CPI inflation between 2-6%. After peaking at 6.7% in 2022-23, headline inflation has moved back within the target band.'}
+            ? 'The RBI targets CPI (Consumer Price Index) inflation between 2-6%. Food prices remain the most volatile component, while core inflation (excluding food and fuel) has been steadily declining.'
+            : 'The RBI targets CPI (Consumer Price Index) inflation between 2-6%. After peaking at 6.7% in 2022-23, headline inflation has returned to 4.0% in 2025-26 — right at the target midpoint.'}
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/inflation" data={inflation}>

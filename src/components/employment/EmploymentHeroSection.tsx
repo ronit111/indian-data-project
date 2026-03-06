@@ -94,10 +94,13 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; Labour Participation {summary?.lfpr?.toFixed(1) ?? '—'}%
+            &middot; LFPR {summary?.lfpr?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; Female Participation {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
+            &middot; Female LFPR {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
+          </span>
+          <span className="text-caption" style={{ color: 'var(--text-muted)', fontSize: '0.6rem' }}>
+            (PLFS 2023-24)
           </span>
         </motion.div>
 

@@ -81,7 +81,7 @@ export function HealthSection({ data }: HealthSectionProps) {
         {choroData.length > 0 && (
           <div>
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              Infant Mortality by State — SRS 2023 (per 1,000 live births)
+              Infant Mortality by State — SRS 2022 (per 1,000 live births)
             </p>
             <ChartActionsWrapper registryKey="census/health" data={data}>
               <GenericChoropleth

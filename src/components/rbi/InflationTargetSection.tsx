@@ -49,11 +49,7 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
       };
 
       const seen = new Set<string>();
-      result.push({
-        id: 'repo',
-        name: 'Repo Rate',
-        color: 'var(--gold)',
-        data: monetaryPolicy.decisions
+      const repoData = monetaryPolicy.decisions
           .filter((d) => {
             const fy = toFiscalYear(d.date);
             if (seen.has(fy)) return false;
@@ -63,7 +59,13 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
           .map((d) => ({
             year: toFiscalYear(d.date),
             value: d.rate,
-          })),
+          }))
+          .sort((a, b) => a.year.localeCompare(b.year));
+      result.push({
+        id: 'repo',
+        name: 'Repo Rate',
+        color: 'var(--gold)',
+        data: repoData,
         dashed: true,
       });
     }

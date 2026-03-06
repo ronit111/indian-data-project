@@ -76,9 +76,9 @@ export function CrimeOverviewSection({ data }: CrimeOverviewSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          58.2 lakh cognizable crimes in 2022 — up {growth}% since 2014. Cognizable means crimes where police must register an FIR.
+          {latest ? `${(latest.total / 100000).toFixed(1)} lakh` : '—'} cognizable crimes in {latest?.year ?? '—'} — up {growth}% since {data.nationalTrend[0]?.year ?? '2014'}. Cognizable means crimes where police must register an FIR (First Information Report).
           {covidDip && <> The 2020 dip to {(covidDip.total / 100000).toFixed(1)}L reflects lockdown suppression, not safer streets.</>}
-          {' '}IPC crimes cover everyday offences (theft, assault, murder, fraud). Special & Local Laws (SLL) cover specific acts like drug offences and cybercrime. IPC makes up 61% of the total.
+          {' '}IPC (Indian Penal Code) crimes cover everyday offences (theft, assault, murder, fraud). SLL (Special & Local Laws) cover specific acts like drug offences and cybercrime. IPC makes up {latest ? Math.round(latest.ipc / latest.total * 100) : 61}% of the total. Note: IPC was replaced by BNS (Bharatiya Nyaya Sanhita) in July 2024; this data uses the IPC-era classification.
         </motion.p>
 
         {/* Trend chart */}
@@ -115,7 +115,7 @@ export function CrimeOverviewSection({ data }: CrimeOverviewSectionProps) {
         {choroData.length > 0 && (
           <div className="mt-10">
             <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-              State crime rates per lakh — Kerala leads at 1,287 (high reporting, not worse safety)
+              State crime rates per lakh population — high rates often reflect better reporting, not worse safety
             </p>
             <ChartActionsWrapper registryKey="crime/overview" data={data}>
               <GenericChoropleth

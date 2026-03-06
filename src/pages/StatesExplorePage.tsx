@@ -44,7 +44,7 @@ const fadeUp = {
 function formatIndicatorValue(value: number, unit: string): string {
   if (unit === '%' || unit === '% of GSDP') return `${value.toFixed(1)}%`;
   if (unit === 'Rs/person') return `₹${Math.round(value).toLocaleString('en-IN')}`;
-  if (unit === 'Rs crore') return `₹${Math.round(value).toLocaleString('en-IN')} Cr`;
+  if (unit === '₹crore') return `₹${Math.round(value).toLocaleString('en-IN')} Cr`;
   return value.toLocaleString('en-IN');
 }
 

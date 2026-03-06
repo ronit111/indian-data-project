@@ -80,7 +80,7 @@ export function InfrastructureSection({ data }: InfrastructureSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India has 1.6 hospital beds per 1,000 people (public and private combined). The WHO recommends 3.5 — we are less than halfway there.
+          India has about 1.6 hospital beds per 1,000 people (public and private combined, as of 2021). The WHO recommends 3.5 — we are less than halfway there.
         </motion.p>
 
         {timeSeriesSeries.length > 0 && (

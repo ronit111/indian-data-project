@@ -241,7 +241,7 @@ Conversational but precise. Use "paisa" and "rupee" framing to make abstract num
 
 ### Key principles
 
-1. **Numbers in Indian format.** Always: Rs 12,00,000 Cr. Never: Rs 12,000,00 or $1.2B.
+1. **Numbers in Indian format.** Always: ₹12,00,000 Cr. Never: ₹12,000,00 or $1.2B. Use the ₹ symbol (not "Rs") in all user-facing text.
 2. **"Crore" and "lakh" are first-class units.** Don't convert to millions/billions.
 3. **Annotations sit beside the data they describe.** Not in a separate paragraph above. The text and the visualization are one composition.
 4. **Source attribution on every composition.** Small, muted, bottom of section: "Source: Union Budget 2025-26, Receipt Budget"

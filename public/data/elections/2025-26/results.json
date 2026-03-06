@@ -996,14 +996,6 @@
       "alliance": "INDIA"
     },
     {
-      "party": "YSRCP",
-      "fullName": "YSR Congress Party",
-      "seats": 4,
-      "voteShare": 2.1,
-      "color": "#7C3AED",
-      "alliance": "—"
-    },
-    {
       "party": "AAP",
       "fullName": "Aam Aadmi Party",
       "seats": 3,
@@ -1207,7 +1199,7 @@
   "allianceTotals2024": {
     "NDA": 293,
     "INDIA": 234,
-    "Others": 20,
+    "Others": 16,
     "majorityMark": 272
   },
   "source": "ECI Official Results + TCPD Lok Dhaba"

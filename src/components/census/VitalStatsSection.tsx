@@ -69,7 +69,7 @@ export function VitalStatsSection({ data }: VitalStatsSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India crossed below replacement fertility (2.1) in 2020. Birth rates have halved over two decades while life expectancy has climbed to 70+. The country is aging slowly but surely.
+          India's fertility rate dropped below the replacement level of 2.1 children per woman in 2020. Birth rates have fallen 40% over two decades while life expectancy has climbed past 72 years. The country is aging slowly but surely.
         </motion.p>
 
         {/* Birth vs Death rate */}

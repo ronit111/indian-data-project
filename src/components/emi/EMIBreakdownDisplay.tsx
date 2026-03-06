@@ -22,7 +22,7 @@ export function EMIBreakdownDisplay({ breakdown, loanAmount }: EMIBreakdownDispl
           className="font-mono font-extrabold"
           style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--text-primary)' }}
         >
-          <span className="text-sm font-normal" style={{ color: 'var(--text-secondary)' }}>Rs </span>
+          <span className="text-sm font-normal" style={{ color: 'var(--text-secondary)' }}>₹</span>
           {formatIndianNumber(breakdown.monthlyEMI)}
         </p>
       </div>
@@ -63,13 +63,13 @@ export function EMIBreakdownDisplay({ breakdown, loanAmount }: EMIBreakdownDispl
 
       {/* Stat grid */}
       <div className="grid grid-cols-2 gap-4">
-        <StatCell label="Total Payment" value={`Rs ${formatIndianNumber(breakdown.totalPayment)}`} />
-        <StatCell label="Total Interest" value={`Rs ${formatIndianNumber(breakdown.totalInterest)}`} accent />
+        <StatCell label="Total Payment" value={`₹${formatIndianNumber(breakdown.totalPayment)}`} />
+        <StatCell label="Total Interest" value={`₹${formatIndianNumber(breakdown.totalInterest)}`} accent />
         <StatCell label="Effective Rate" value={`${breakdown.effectiveRate.toFixed(2)}%`} />
         <StatCell
-          label="Interest per Rs 1"
-          value={`Rs ${breakdown.interestRatio.toFixed(2)}`}
-          subtitle="for every Rs 1 you borrow"
+          label="Interest per ₹1"
+          value={`₹${breakdown.interestRatio.toFixed(2)}`}
+          subtitle="for every ₹1 you borrow"
           accent
         />
       </div>

@@ -113,7 +113,7 @@ export default function JournalistsPage() {
               <QuickLink
                 to="/budget"
                 label="Union Budget Story"
-                desc="Where Rs 50 lakh crore goes, visualized"
+                desc="Where ₹50 lakh crore goes, visualized"
               />
               <QuickLink
                 to="/elections"

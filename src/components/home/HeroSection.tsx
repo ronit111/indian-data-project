@@ -94,7 +94,7 @@ export function HeroSection({ summary }: HeroSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            {`That's Rs ${summary.perCapitaDailyExpenditure.toFixed(2)} per citizen per day`}
+            {`That's ₹${summary.perCapitaDailyExpenditure.toFixed(2)} per citizen per day`}
           </span>
         </motion.div>
 

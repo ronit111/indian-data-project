@@ -63,7 +63,7 @@ export function SpendingSection({ data }: SpendingSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India spends about 4.1% of GDP on education — still below the NEP 2020 target of 6%. Most major economies spend 4-6%.
+          India spent about 4.1% of GDP on education (2022) — still below the NEP 2020 target of 6%. Most major economies spend 4-6%.
         </motion.p>
 
         {spendingSeries.length > 0 && (

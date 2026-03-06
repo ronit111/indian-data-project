@@ -60,7 +60,7 @@ export const youthJobs: TopicDef = {
       id: 'participation',
       sectionNumber: 2,
       title: 'Who\'s Working?',
-      annotation: 'India\'s LFPR has improved to ~56%, but this masks a massive gender gap — male LFPR is ~78%, female is ~35%. Many who are "employed" are in agriculture or unpaid family work.',
+      annotation: 'India\'s LFPR has improved but still masks a massive gender gap. PLFS 2023-24 reports overall LFPR at 46.5% (usual status), with male at ~78% and female at just 28.8%. Many who are "employed" are in agriculture or unpaid family work.',
       domains: ['employment', 'census'],
       sources: ['PLFS (MoSPI)'],
       charts: [{

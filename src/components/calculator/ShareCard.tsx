@@ -43,11 +43,11 @@ export function ShareCard({ breakdown, regime, shares }: ShareCardProps) {
 
     ctx.fillStyle = '#f0ece6';
     ctx.font = 'bold 28px Inter, sans-serif';
-    ctx.fillText(`On Rs ${formatIndianNumber(breakdown.grossIncome)} (${formatLPA(breakdown.grossIncome)})`, 60, 100);
+    ctx.fillText(`On ₹${formatIndianNumber(breakdown.grossIncome)} (${formatLPA(breakdown.grossIncome)})`, 60, 100);
 
     ctx.fillStyle = '#FFC857';
     ctx.font = 'bold 56px JetBrains Mono, monospace';
-    ctx.fillText(`Rs ${formatIndianNumber(breakdown.totalTax)}`, 60, 175);
+    ctx.fillText(`₹${formatIndianNumber(breakdown.totalTax)}`, 60, 175);
 
     ctx.fillStyle = '#5c6a7e';
     ctx.font = '22px Inter, sans-serif';
@@ -59,7 +59,7 @@ export function ShareCard({ breakdown, regime, shares }: ShareCardProps) {
     if (breakdown.totalDeductions > 0) {
       ctx.fillStyle = '#FFC857';
       ctx.font = '20px Inter, sans-serif';
-      ctx.fillText(`Rs ${formatIndianNumber(breakdown.totalDeductions)} in deductions`, 60, 250);
+      ctx.fillText(`₹${formatIndianNumber(breakdown.totalDeductions)} in deductions`, 60, 250);
     }
 
     // Right column — top spending categories
@@ -111,7 +111,7 @@ export function ShareCard({ breakdown, regime, shares }: ShareCardProps) {
 
         ctx.fillStyle = '#5c6a7e';
         ctx.font = '14px JetBrains Mono, monospace';
-        const amountText = `Rs ${formatIndianNumber(amount)}`;
+        const amountText = `₹${formatIndianNumber(amount)}`;
         const amountWidth = ctx.measureText(amountText).width;
         ctx.fillText(amountText, 1140 - amountWidth, y + 44);
       });
@@ -148,7 +148,7 @@ export function ShareCard({ breakdown, regime, shares }: ShareCardProps) {
           await navigator.share({
             files: [file],
             title: 'My Tax Share — Indian Data Project',
-            text: `I pay Rs ${formatIndianNumber(breakdown.totalTax)} in taxes. See where your money goes:`,
+            text: `I pay ₹${formatIndianNumber(breakdown.totalTax)} in taxes. See where your money goes:`,
           });
           setStatus('shared');
           setTimeout(() => setStatus('idle'), 1500);

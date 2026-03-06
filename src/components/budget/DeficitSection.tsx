@@ -56,7 +56,7 @@ export function DeficitSection({ summary }: DeficitSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.25 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          {`The fiscal deficit stands at ${summary.fiscalDeficitPercentGDP}% of GDP. For every rupee the government spends, it earns ${paisaEarned} paise from taxes and other revenue. The rest is debt.`}
+          {`The fiscal deficit \u2014 the gap between what the government earns and what it spends \u2014 stands at ${summary.fiscalDeficitPercentGDP}% of GDP. For every rupee spent, ${paisaEarned} paise comes from taxes and other revenue. The rest is debt.`}
         </motion.p>
 
         {/* Rupee bar visualization */}

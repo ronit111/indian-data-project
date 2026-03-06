@@ -91,7 +91,7 @@ export function EducationHeroSection({ summary }: EducationHeroSectionProps) {
             style={{ backgroundColor: 'var(--blue)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Enrollment {summary?.gerPrimary?.toFixed(0) ?? '—'}%
+            Primary GER (Gross Enrolment Ratio) {summary?.gerPrimary?.toFixed(0) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; Pupil-Teacher Ratio {summary?.ptrNational?.toFixed(0) ?? '—'}

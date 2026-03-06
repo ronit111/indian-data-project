@@ -59,7 +59,7 @@ export function EnvironmentHeroSection({ summary }: EnvironmentHeroSectionProps)
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            μg/m³ PM2.5 — 10× the WHO safe limit
+            micrograms per m³ of PM2.5 — tiny lung-damaging particles, 10× the WHO safe limit
           </p>
         </motion.div>
 
@@ -95,7 +95,7 @@ export function EnvironmentHeroSection({ summary }: EnvironmentHeroSectionProps)
             &middot; Renewables {summary?.renewablesPct?.toFixed(1) ?? '—'}% (capacity)
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; CO₂ {summary?.co2PerCapita?.toFixed(1) ?? '—'}t/capita
+            &middot; CO₂ {summary?.co2PerCapita?.toFixed(1) ?? '—'} tonnes/person
           </span>
         </motion.div>
 

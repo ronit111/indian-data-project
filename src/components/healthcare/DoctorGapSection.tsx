@@ -41,7 +41,7 @@ export function DoctorGapSection({ data }: DoctorGapSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          State-level variation in doctor availability is extreme. Kerala has 10x more doctors per capita than Bihar. Rural areas are severely underserved.
+          State-level variation in doctor availability is extreme. Kerala has nearly 8x more doctors per capita than Bihar. Rural areas are severely underserved.
         </motion.p>
 
         {choroData.length > 0 && (

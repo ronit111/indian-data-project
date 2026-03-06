@@ -40,7 +40,7 @@ export const healthOutcomes: TopicDef = {
       id: 'child-health',
       sectionNumber: 1,
       title: 'Child Survival',
-      annotation: 'India\'s infant mortality rate has dropped from 68 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
+      annotation: 'India\'s infant mortality rate has dropped from 66 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
       domains: ['healthcare', 'census'],
       sources: ['SRS 2022', 'NFHS-5', 'World Bank'],
       charts: [{
@@ -57,7 +57,7 @@ export const healthOutcomes: TopicDef = {
       id: 'infrastructure-gap',
       sectionNumber: 2,
       title: 'Infrastructure Gap',
-      annotation: 'With 1.6 beds (mostly private) and ~1 doctor per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
+      annotation: 'With 1.6 beds (mostly private) and 0.7 doctors per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
       domains: ['healthcare'],
       sources: ['NHP 2022 (CBHI)'],
       charts: [{

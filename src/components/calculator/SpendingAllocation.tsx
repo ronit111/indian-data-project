@@ -43,7 +43,7 @@ export function SpendingAllocation({ totalTax, shares }: SpendingAllocationProps
   return (
     <div className="space-y-3">
       <p className="text-annotation mb-4">
-        Your Rs {formatIndianNumber(totalTax)} in taxes funds:
+        Your ₹{formatIndianNumber(totalTax)} in taxes funds:
       </p>
 
       {shares.shares.map((share, i) => {
@@ -58,7 +58,7 @@ export function SpendingAllocation({ totalTax, shares }: SpendingAllocationProps
                 {share.name}
               </span>
               <span className="font-mono text-xs" style={{ color: 'var(--text-primary)' }}>
-                Rs {formatIndianNumber(amount)}
+                ₹{formatIndianNumber(amount)}
               </span>
             </div>
 

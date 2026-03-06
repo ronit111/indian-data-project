@@ -144,7 +144,7 @@ export const fiscalHealth: TopicDef = {
       sectionNumber: 2,
       title: 'Spending vs Borrowing',
       annotation:
-        'The fiscal deficit tells you how much the government borrows to fund its spending. India has been on a consolidation path — from 9.2% during COVID to a target of 4.4% in 2025-26 — but the absolute deficit is still ₹15.7 lakh crore.',
+        'The fiscal deficit tells you how much the government borrows to fund its spending. India has been on a consolidation path — from 9.2% during COVID to a target of 4.4% in 2025-26 — but the absolute deficit is still ₹15.69 lakh crore.',
       domains: ['budget', 'economy'],
       sources: ['Union Budget 2025-26', 'Economic Survey'],
       charts: [

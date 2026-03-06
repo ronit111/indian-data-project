@@ -46,7 +46,7 @@ export function InformalitySection({ data }: InformalitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          8 of every 10 Indian workers are in informal work — no written contract, no provident fund, no ESI health cover, no paid leave. If work stops, income stops. There is no safety net.
+          About 8 of every 10 Indian workers are in informal work — no written contract, no provident fund (retirement savings), no ESI (Employees' State Insurance) health cover, no paid leave. Agriculture and construction, which together employ over half the workforce, are almost entirely informal.
         </motion.p>
 
         {barItems.length > 0 && (

@@ -18,7 +18,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
   const funnelStages: FunnelStage[] = useMemo(() => [
     { label: 'Cases for Investigation', value: data.funnel.totalForInvestigation },
     { label: 'Investigated', value: data.funnel.investigated },
-    { label: 'Chargesheeted', value: data.funnel.chargesheeted },
+    { label: 'Chargesheeted (accused in court filing)', value: data.funnel.chargesheeted },
     { label: 'Trial Completed', value: data.funnel.trialCompleted },
     { label: 'Convicted', value: data.funnel.convicted },
   ], [data]);
@@ -44,8 +44,8 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           Of every 100 crimes reported, only 13 end in conviction. The funnel narrows at every stage:
-          investigation backlogs, low chargesheet rates, trial delays averaging {data.trialDuration.avgYears} years,
-          and a conviction rate of just {data.funnel.convictionRate}%. {data.trialDuration.casesOver5Years}% of cases
+          investigation backlogs, low chargesheet rates, and trial delays averaging {data.trialDuration.avgYears} years.
+          Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. {data.trialDuration.casesOver5Years}% of cases
           have been pending for over 5 years.
         </motion.p>
 

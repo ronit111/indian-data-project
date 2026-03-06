@@ -30,7 +30,7 @@ export function ExternalSection({ external }: ExternalSectionProps) {
 
   const overlay: OverlayLine = useMemo(() => ({
     id: 'cad',
-    name: 'CAD',
+    name: 'Current Account Deficit',
     color: 'var(--gold)',
     data: external.series.map((d) => ({ year: d.year, value: d.cadPctGDP })),
     unit: '% GDP',
@@ -81,7 +81,7 @@ export function ExternalSection({ external }: ExternalSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Forex reserves: ${external.series[external.series.length - 1]?.forexReserves ?? '—'} billion
+            Forex reserves: ${external.series[external.series.length - 1]?.forexReserves ?? '—'} billion ({external.series[external.series.length - 1]?.year})
           </span>
         </motion.div>
 

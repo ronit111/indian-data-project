@@ -127,7 +127,7 @@ export function LineChart({
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }} role="img" aria-label={ariaLabel || `Line chart: ${series.map(s => s.name).join(', ')}`}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 300 }} role="img" aria-label={ariaLabel || `Line chart: ${series.map(s => s.name).join(', ')}`}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
           {/* Band overlay (e.g. RBI target range) */}
           {band && (

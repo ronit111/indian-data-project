@@ -168,7 +168,7 @@ export function AreaChart({
 
   return (
     <div className="w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 400 }} role="img" aria-label={ariaLabel || `Area chart: ${series.map(s => s.name).join(', ')}`}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 300 }} role="img" aria-label={ariaLabel || `Area chart: ${series.map(s => s.name).join(', ')}`}>
         <defs>
           {series.map((s) => (
             <linearGradient key={s.id} id={`area-grad-${s.id}`} x1="0" y1="0" x2="0" y2="1">

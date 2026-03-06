@@ -72,7 +72,7 @@ export function CensusHeroSection({ summary }: CensusHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          The world's most populous nation. One in six humans is Indian.
+          The world's most populous nation. Nearly one in six humans is Indian.
         </motion.p>
 
         {/* Stat badges */}
@@ -97,7 +97,7 @@ export function CensusHeroSection({ summary }: CensusHeroSectionProps) {
             &middot; Literacy {summary?.literacyRate?.toFixed(0) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; Sex ratio {summary?.sexRatio ?? '—'}
+            &middot; Sex ratio {summary?.sexRatio ?? '—'} per 1,000 males
           </span>
         </motion.div>
 

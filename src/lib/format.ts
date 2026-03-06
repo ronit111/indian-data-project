@@ -19,20 +19,20 @@ export function formatIndianNumber(num: number): string {
 }
 
 /**
- * Format Rs in crore with Indian grouping.
- * e.g., 5021536 → "Rs 50,21,536 Cr"
+ * Format ₹ in crore with Indian grouping.
+ * e.g., 5021536 → "₹50,21,536 Cr"
  */
 export function formatRsCrore(crore: number): string {
-  return `Rs ${formatIndianNumber(crore)} Cr`;
+  return `₹${formatIndianNumber(crore)} Cr`;
 }
 
 /**
  * Format large crore values in lakh crore for readability.
- * e.g., 5021536 → "Rs 50.22 lakh crore"
+ * e.g., 5021536 → "₹50.22 lakh crore"
  */
 export function formatLakhCrore(crore: number): string {
   const lakhCrore = crore / 100000;
-  return `Rs ${lakhCrore.toFixed(2)} lakh crore`;
+  return `₹${lakhCrore.toFixed(2)} lakh crore`;
 }
 
 /**
@@ -64,7 +64,7 @@ export function formatYoYChange(value: number | null): {
  * Format per-capita amount.
  */
 export function formatPerCapita(amount: number): string {
-  return `Rs ${formatIndianNumber(Math.round(amount))}`;
+  return `₹${formatIndianNumber(Math.round(amount))}`;
 }
 
 /**
@@ -80,7 +80,7 @@ export function paisaPerRupee(percentOfTotal: number): string {
  */
 export function formatLPA(amount: number): string {
   const lpa = amount / 100000;
-  if (lpa >= 100) return `Rs ${(lpa / 100).toFixed(0)} Cr`;
-  if (lpa >= 10) return `Rs ${lpa.toFixed(0)} LPA`;
-  return `Rs ${lpa.toFixed(1)} LPA`;
+  if (lpa >= 100) return `₹${(lpa / 100).toFixed(0)} Cr`;
+  if (lpa >= 10) return `₹${lpa.toFixed(0)} LPA`;
+  return `₹${lpa.toFixed(1)} LPA`;
 }

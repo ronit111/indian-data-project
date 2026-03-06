@@ -47,8 +47,7 @@ export function RuralUrbanSection({ data }: RuralUrbanSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Rural unemployment is 4% but masks massive underemployment in agriculture. Urban
-          unemployment runs higher at 6.7%, but urban jobs pay significantly more.
+          Unemployment varies enormously across states — from about 1% in Gujarat and Madhya Pradesh to over 8% in Goa and 7% in Kerala. Lower headline rates in rural states often mask massive underemployment in agriculture.
         </motion.p>
 
         {barItems.length > 0 && (

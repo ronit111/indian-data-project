@@ -43,12 +43,12 @@ export function CostShareCard({ result, fromYear, toYear }: CostShareCardProps) 
     // Title
     ctx.fillStyle = '#f0ece6';
     ctx.font = 'bold 28px Inter, sans-serif';
-    ctx.fillText(`Your Rs ${formatIndianNumber(result.currentTotal)}/month in ${toYear}`, 60, 100);
+    ctx.fillText(`Your ₹${formatIndianNumber(result.currentTotal)}/month in ${toYear}`, 60, 100);
 
     // "Then vs Now" hero
     ctx.fillStyle = '#4AEADC';
     ctx.font = 'bold 56px JetBrains Mono, monospace';
-    ctx.fillText(`was Rs ${formatIndianNumber(Math.round(result.adjustedTotal))} in ${fromYear}`, 60, 180);
+    ctx.fillText(`was ₹${formatIndianNumber(Math.round(result.adjustedTotal))} in ${fromYear}`, 60, 180);
 
     // Separator
     ctx.strokeStyle = '#1a2230';
@@ -62,7 +62,7 @@ export function CostShareCard({ result, fromYear, toYear }: CostShareCardProps) 
     const stats = [
       { label: 'Cumulative Inflation', value: `${result.cumulativeInflation.toFixed(1)}%`, color: '#F43F5E' },
       { label: 'Annualized Rate', value: `${result.annualizedRate.toFixed(1)}%/yr`, color: '#FFC857' },
-      { label: 'Purchasing Power Lost', value: `Rs ${formatIndianNumber(Math.round(result.purchasingPowerLoss))}/mo`, color: '#F43F5E' },
+      { label: 'Purchasing Power Lost', value: `₹${formatIndianNumber(Math.round(result.purchasingPowerLoss))}/mo`, color: '#F43F5E' },
     ];
 
     stats.forEach((stat, i) => {
@@ -137,7 +137,7 @@ export function CostShareCard({ result, fromYear, toYear }: CostShareCardProps) 
           await navigator.share({
             files: [file],
             title: 'Cost of Living — Indian Data Project',
-            text: `My Rs ${formatIndianNumber(result.currentTotal)}/month would have cost Rs ${formatIndianNumber(Math.round(result.adjustedTotal))} in ${fromYear}`,
+            text: `My ₹${formatIndianNumber(result.currentTotal)}/month would have cost ₹${formatIndianNumber(Math.round(result.adjustedTotal))} in ${fromYear}`,
           });
           setStatus('shared');
           setTimeout(() => setStatus('idle'), 1500);

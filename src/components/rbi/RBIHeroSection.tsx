@@ -15,6 +15,14 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
       ? 'var(--gold)'
       : 'var(--saffron)';
 
+  const stanceExplain = summary?.stance === 'Accommodative'
+    ? 'Leaning toward lower rates to support growth'
+    : summary?.stance === 'Neutral'
+      ? 'Watching both inflation and growth before deciding'
+      : summary?.stance === 'Withdrawal of Accommodation'
+        ? 'Gradually pulling back support to control inflation'
+        : 'Leaning toward higher rates to control inflation';
+
   return (
     <section
       ref={ref}
@@ -78,6 +86,12 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
           >
             Repo rate
           </p>
+          <p
+            className="text-sm mt-1"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            the interest rate at which RBI lends to banks
+          </p>
         </motion.div>
 
         {/* Stance badge */}
@@ -104,6 +118,14 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
             </span>
           )}
         </motion.div>
+        {summary?.stance && (
+          <p
+            className="mt-2 text-sm"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            {stanceExplain}
+          </p>
+        )}
 
         {/* Scroll indicator */}
         <motion.div

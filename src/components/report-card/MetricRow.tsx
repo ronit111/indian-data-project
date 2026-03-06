@@ -9,8 +9,8 @@ interface MetricRowProps {
 }
 
 function formatMetricValue(value: number, unit: string): string {
-  if (unit === 'Rs' && value >= 100000) return `Rs ${formatIndianNumber(value)}`;
-  if (unit === 'Rs Cr' && value >= 100) return `Rs ${formatIndianNumber(Math.round(value))} Cr`;
+  if (unit === '₹' && value >= 100000) return `₹${formatIndianNumber(value)}`;
+  if (unit === '₹Cr' && value >= 100) return `₹${formatIndianNumber(Math.round(value))} Cr`;
   if (unit === '%' || unit === '% GSDP' || unit === 'pp') return `${value.toFixed(1)}${unit}`;
   if (unit === '/sq km') return `${formatIndianNumber(Math.round(value))}/sq km`;
   if (unit === 'per lakh' || unit === 'per 10K' || unit === 'per 1000') return `${value.toFixed(1)} ${unit}`;
