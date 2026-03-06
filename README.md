@@ -30,7 +30,7 @@ Each domain has a scrollytelling narrative, interactive explorer, methodology pa
 
 ### Additional Features
 
-- **12 cross-domain topics** weaving data across multiple domains into thematic narratives (`/topics`)
+- **11 cross-domain topics** weaving data across multiple domains into thematic narratives (`/topics`)
 - **3 personalization calculators** — tax breakdown, EMI impact, cost-of-living deflator
 - **State report card** — your state ranked across 28 metrics from 12 domains (`/states/your-state`)
 - **161 citizen questions** searchable via Cmd+K ("Why are prices rising?", "How safe is my city?")

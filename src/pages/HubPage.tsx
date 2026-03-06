@@ -497,7 +497,7 @@ function CrossDomainInsights({ summaryBag }: { summaryBag: TopicDataBag }) {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium no-underline transition-colors hover:bg-[var(--bg-raised)]"
           style={{ color: 'var(--saffron)' }}
         >
-          View all 12 topics
+          View all 11 topics
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M6 3l5 5-5 5" />
           </svg>

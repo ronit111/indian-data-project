@@ -119,7 +119,7 @@ export function SearchOverlay() {
     }
     // Pages
     items.push(
-      { type: 'page', id: 'topics', name: 'Cross-Domain Topics', subtitle: '12 topics weaving data across domains', route: '/topics' },
+      { type: 'page', id: 'topics', name: 'Cross-Domain Topics', subtitle: '11 topics weaving data across domains', route: '/topics' },
       { type: 'page', id: 'topic-women', name: 'Women in India', subtitle: 'Political voice, economic participation, education & health', route: '/topics/women-in-india' },
       { type: 'page', id: 'topic-fiscal', name: "India's Fiscal Health", subtitle: 'Growth engine, spending vs borrowing, monetary lever', route: '/topics/fiscal-health' },
       { type: 'page', id: 'topic-inflation', name: 'Inflation & Cost of Living', subtitle: 'Price trajectory, RBI response, fiscal connection', route: '/topics/inflation-cost' },

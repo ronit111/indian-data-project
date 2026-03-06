@@ -179,7 +179,7 @@ const VARIANTS = [
   {
     filename: 'og-topics.png',
     title: 'Cross-Domain Insights',
-    tagline: '12 topics weaving data across domains — from women in India to the water crisis',
+    tagline: '11 topics weaving data across domains — from women in India to the water crisis',
     accentFrom: '#A78BFA',
     accentTo: '#818CF8',
     cornerTL: 'rgba(167,139,250,0.25)',

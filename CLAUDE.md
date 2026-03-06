@@ -14,7 +14,7 @@ React 19 + TypeScript + Vite 7 + Tailwind v4. Zustand (state), Framer Motion (an
 - **Methodology** (`/{domain}/methodology`) — data sources, computation methods, limitations
 - **Glossary** (`/{domain}/glossary`) — plain-language term definitions
 
-Additional routes: `/topics` (12 cross-domain narratives), `/open-data` (80 JSON endpoints), `/for-journalists` (chart gallery, story kits, embed builder), `/for-teachers` (lesson plans, classroom mode), `/contribute`, `/embed/{domain}/{section}` (standalone charts for iframes).
+Additional routes: `/topics` (11 cross-domain narratives), `/open-data` (80 JSON endpoints), `/for-journalists` (chart gallery, story kits, embed builder), `/for-teachers` (lesson plans, classroom mode), `/contribute`, `/embed/{domain}/{section}` (standalone charts for iframes).
 
 **Header is context-aware**: hub title on `/`, domain title + sub-nav tabs inside domains, section titles on multiplier pages. Back links point to `/#stories`.
 

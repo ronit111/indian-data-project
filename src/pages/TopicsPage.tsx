@@ -19,7 +19,7 @@ export default function TopicsPage() {
     <>
       <SEOHead
         title="Cross-Domain Topics — Indian Data Project"
-        description="12 curated topics that weave data from multiple domains into coherent stories about India's biggest challenges and opportunities."
+        description="11 curated topics that weave data from multiple domains into coherent stories about India's biggest challenges and opportunities."
         path="/topics"
         image="/og-topics.png"
       />
@@ -42,7 +42,7 @@ export default function TopicsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: EASE_OUT_EXPO }}
         >
-          India's biggest questions don't fit inside one dataset. These 12 topics weave data
+          India's biggest questions don't fit inside one dataset. These 11 topics weave data
           from multiple domains into stories that connect the dots.
         </motion.p>
       </section>

@@ -347,7 +347,7 @@ const ROUTES = [
   {
     path: '/topics',
     title: 'Cross-Domain Topics — Indian Data Project',
-    description: "12 curated topics that weave data from multiple domains into coherent stories about India's biggest challenges and opportunities.",
+    description: "11 curated topics that weave data from multiple domains into coherent stories about India's biggest challenges and opportunities.",
     image: '/og-topics.png',
   },
   {
