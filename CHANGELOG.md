@@ -2,6 +2,24 @@
 
 All notable changes to the Indian Data Project.
 
+## [0.22.0] - 2026-03-06
+
+### Narrative Arc Overhaul
+
+- Restructured all 11 domain pages with deliberate top-down narrative arcs (outlines first, then code)
+- Budget: inverted section order — per-capita (₹96/day) opens, traces backward to revenue, forward to spending
+- RBI: complete rebuild — cause-chain from repo rate to rupee, all jargon translated for citizens
+- Economy: contradiction hook ("GDP crossed ₹300L Cr. Your salary didn't notice.")
+- Education: triumph-first arc (enrollment success → ASER learning crisis)
+- All 68 NarrativeBridge texts rewritten with forward momentum and causal logic
+- KeyTakeaway pill labels rewritten for citizen clarity across all domains
+- Merged urban-rural topic into Regional Inequality (Beat 3: city-village access gap)
+- Expanded Democratic Health topic with Budget accountability gap (Beat 3)
+- Added "coal generates 70%+ of actual electricity" caveat to all energy capacity references
+- Topic roster: 12 → 11 (urban-rural merged, not removed — content preserved)
+- Fixed NarrativeBridge highlight keys (multi-word → single-word, lowercase)
+- Zero data or chart changes — narrative text only
+
 ## [0.21.2] - 2026-03-05
 
 ### Bug Fix
@@ -112,7 +130,7 @@ All notable changes to the Indian Data Project.
 
 ### Cross-Domain Topics
 
-- 12 curated topics composing data across multiple domains (Women in India, Fiscal Health, Water Crisis, etc.)
+- 12 curated topics composing data across multiple domains (later reduced to 11 — urban-rural merged into regional-inequality in v0.22.0) (Women in India, Fiscal Health, Water Crisis, etc.)
 - Config-driven architecture with `TopicDef`, `extractData`, `useTopicData`
 - `RelatedTopics` pills wired into 28 section components
 
