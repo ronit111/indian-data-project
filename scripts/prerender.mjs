@@ -37,7 +37,7 @@ const ROUTES = [
   '/topics',
   '/topics/women-in-india', '/topics/fiscal-health', '/topics/inflation-cost',
   '/topics/education-employment', '/topics/health-outcomes', '/topics/regional-inequality',
-  '/topics/climate-energy', '/topics/youth-jobs', '/topics/urban-rural',
+  '/topics/climate-energy', '/topics/youth-jobs',
   '/topics/democratic-health', '/topics/agriculture-food', '/topics/water-crisis',
   // Open resources and audience pages
   '/open-data',

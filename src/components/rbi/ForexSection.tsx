@@ -39,7 +39,7 @@ export function ForexSection({ data }: ForexSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          The reserves buffer
+          The war chest
         </motion.h2>
 
         <motion.p
@@ -48,7 +48,7 @@ export function ForexSection({ data }: ForexSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Forex reserves are India's emergency savings in foreign currency. They keep the rupee stable, ensure we can pay for oil and essential imports, and prevent currency crises that would make petrol, electronics, and imported goods more expensive overnight. The reserves include foreign currency assets, gold, and IMF holdings.
+          Forex reserves — foreign currency assets, gold, and IMF holdings — are India's insurance policy against the world. At current levels they cover roughly 10 months of imports: meaning even if India earned nothing from exports for 10 months, it could still pay for oil, electronics, and essentials. These reserves exist because of 1991, when India ran out of foreign currency and had to pledge its gold to the Bank of England to avoid default. That crisis built the institutional determination to never be that exposed again.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/forex" data={data}>

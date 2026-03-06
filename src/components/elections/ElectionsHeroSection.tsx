@@ -70,7 +70,7 @@ export function ElectionsHeroSection({ summary }: ElectionsHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Turnout, party shifts, candidate profiles, and who represents you in Parliament.
+          The world's largest democracy. It works at the ballot box — and struggles everywhere else.
         </motion.p>
 
         {/* Stat badges */}

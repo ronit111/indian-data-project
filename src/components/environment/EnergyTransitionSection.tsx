@@ -74,7 +74,7 @@ export function EnergyTransitionSection({ data }: EnergyTransitionSectionProps) 
           className="text-annotation mb-8 max-w-xl"
         >
           Solar capacity exploded from 3.7 GW to 82.8 GW in nine years (2015-2024) — a 22x increase. But coal hasn't shrunk. India is adding clean energy on top of fossil fuels, not replacing them.{' '}
-          {latest && <span className="font-mono" style={{ color: 'var(--teal)' }}>Solar is now {solarPct}% of capacity.</span>}
+          {latest && <span className="font-mono" style={{ color: 'var(--teal)' }}>Solar is now {solarPct}% of <em>installed capacity</em> — but coal still generates over 70% of actual electricity.</span>}
         </motion.p>
 
         {capacitySeries.length > 0 && (

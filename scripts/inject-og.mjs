@@ -399,15 +399,9 @@ const ROUTES = [
     image: '/og-topics.png',
   },
   {
-    path: '/topics/urban-rural',
-    title: 'Urban vs Rural Divide — Indian Data Project',
-    description: 'Two-thirds of India lives in villages. How different are outcomes for urban and rural citizens?',
-    image: '/og-topics.png',
-  },
-  {
     path: '/topics/democratic-health',
     title: "India's Democratic Health — Indian Data Project",
-    description: "The world's largest democracy elected 543 MPs in 2024. How healthy is the process?",
+    description: "Turnout has risen for 70 years. But nearly half of elected MPs face criminal charges. How healthy is India's democracy?",
     image: '/og-topics.png',
   },
   {

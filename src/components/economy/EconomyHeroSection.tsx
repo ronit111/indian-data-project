@@ -55,7 +55,7 @@ export function EconomyHeroSection({ summary }: EconomyHeroSectionProps) {
           className="text-lg md:text-xl mb-6"
           style={{ color: 'var(--text-secondary)' }}
         >
-          India's economic report card
+          India's GDP crossed ₹300 lakh crore. Your salary didn't notice.
         </motion.p>
 
         {/* Hero GDP growth number */}

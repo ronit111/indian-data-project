@@ -125,11 +125,10 @@ This is an independent civic project built by one person, not affiliated with or
 - /topics/inflation-cost — Inflation & Cost of Living: CPI price trajectory, RBI rate response, fiscal connection. Domains: Economy, RBI, Budget.
 - /topics/education-employment — Education to Employment Pipeline: enrollment scale (secondary GER), jobs gap (unemployment rate), education spending. Domains: Education, Employment, Census, Budget.
 - /topics/health-outcomes — Health Outcomes: child health (IMR trends), infrastructure gap (hospital beds, doctors), health spending (% GDP). Domains: Healthcare, Census, Budget, States.
-- /topics/regional-inequality — Regional Inequality: income divide (per capita NSDP by state), education disparity, fiscal transfer mechanisms. Domains: States, Budget, Census, Education, Healthcare.
-- /topics/climate-energy — Climate & Energy Transition: energy mix (renewables growth), carbon footprint, forest cover by state. Domains: Environment, Economy, Budget.
+- /topics/regional-inequality — Regional Inequality: income divide (per capita NSDP by state), education disparity, city-village access gap (hospital beds, literacy), fiscal transfer mechanisms. Domains: States, Budget, Census, Education, Healthcare.
+- /topics/climate-energy — Climate & Energy Transition: energy mix (renewables capacity growth, coal dominates generation), carbon footprint, forest cover by state. Domains: Environment, Economy, Budget.
 - /topics/youth-jobs — Youth & Jobs: youth unemployment (3x national rate), structural shift (sectoral employment), quality of work. Domains: Employment, Education, Census, Economy.
-- /topics/urban-rural — Urban vs Rural Divide: urbanization wave (population growth rate), access gap (healthcare, literacy). Domains: Census, Employment, Healthcare, Environment, Education.
-- /topics/democratic-health — India's Democratic Health: turnout arc (1952-2024), quality of representation (criminal cases, women MPs, assets). Domains: Elections, Census, Education.
+- /topics/democratic-health — India's Democratic Health: turnout arc (1952-2024), quality of representation (criminal cases, women MPs, assets), accountability gap (budget underspending). Domains: Elections, Census, Education, Budget, Crime.
 - /topics/agriculture-food — Agriculture & Food Security: productivity paradox (42% workforce, 15% GDP), food-inflation link, sustainability pressures. Domains: Budget, Economy, Employment, Environment.
 - /topics/water-crisis — Water Crisis: groundwater stress by state, depletion facts, water-health connection. Domains: Environment, Census, Healthcare.
 

@@ -22,12 +22,12 @@ export const climateEnergy: TopicDef = {
       const e = envSummary(bag);
       return e ? `${e.renewablesPct}%` : '—';
     },
-    label: 'Renewable Energy Share',
-    context: 'Share of installed electricity capacity from renewables (solar, wind, hydro)',
+    label: 'Renewable Installed Capacity Share',
+    context: 'Share of installed electricity capacity from renewables — coal still generates 70%+ of actual electricity',
   },
 
   takeaways: [
-    { value: (bag) => { const e = envSummary(bag); return e ? `${e.renewablesPct}%` : '—'; }, label: 'Renewable share', sectionId: 'energy-mix' },
+    { value: (bag) => { const e = envSummary(bag); return e ? `${e.renewablesPct}%` : '—'; }, label: 'Renewable capacity (not generation)', sectionId: 'energy-mix' },
     { value: (bag) => { const e = envSummary(bag); return e ? `${e.co2PerCapita} t` : '—'; }, label: 'CO₂ per capita', sectionId: 'carbon-footprint' },
     { value: (bag) => { const e = envSummary(bag); return e ? `${e.forestPct}%` : '—'; }, label: 'Forest cover', sectionId: 'green-cover' },
     { value: (bag) => { const e = envSummary(bag); return e ? `${e.coalPct}%` : '—'; }, label: 'Coal dependence', sectionId: 'energy-mix' },
@@ -40,7 +40,7 @@ export const climateEnergy: TopicDef = {
       id: 'energy-mix',
       sectionNumber: 1,
       title: 'The Energy Mix',
-      annotation: 'Renewables (including hydro) now exceed 43% of installed capacity. But capacity ≠ generation — coal plants run at higher utilization, so coal still dominates actual electricity output.',
+      annotation: 'Renewables (including hydro) now exceed 43% of installed capacity — but capacity is not generation. Coal plants run at higher utilisation, so coal still produces 70%+ of actual electricity. The transition looks further along than it is.',
       domains: ['environment'],
       sources: ['CEA', 'World Bank'],
       charts: [{

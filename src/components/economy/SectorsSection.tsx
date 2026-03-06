@@ -49,7 +49,7 @@ export function SectorsSection({ sectors }: SectorsSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Services dominate India's economy at half of GDP by value added. Construction leads growth this year, while manufacturing is outpacing its 5-year average. Industry includes both manufacturing and construction as sub-sectors.
+          Services dominate at roughly half of GDP — strength in IT and financial services, but a vulnerability too: services employ fewer people per unit of GDP than manufacturing. Construction leads growth this year; manufacturing is gaining. The structural shift to a factory economy — the kind that created mass employment in China and Korea — hasn't happened yet.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/sectors" data={sectors}>

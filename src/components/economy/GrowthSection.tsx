@@ -33,7 +33,7 @@ export function GrowthSection({ gdp }: GrowthSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Real GDP growth measures how much more the economy produced this year compared to last, adjusted for inflation — more goods, more services, more jobs. From the 8% pre-pandemic boom (2015-17) through the sharpest contraction in India's history at -5.8% (2020-21) to a strong recovery, this is the headline number that shapes the economic mood.
+          Real GDP growth (adjusted for inflation) tells you how much more the economy produced — more goods, more services, more jobs. India grew at 7%+. But per-capita GDP grew slower because of population growth, and most gains concentrated in services. From the 8% pre-pandemic peak through the -5.8% COVID collapse to the recovery, here is the headline number — and what it leaves unsaid.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/growth" data={gdp}>

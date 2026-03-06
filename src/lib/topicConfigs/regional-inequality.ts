@@ -1,14 +1,15 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { StatesSummary, GSDPData, EnrollmentData } from '../data/schema.ts';
+import type { StatesSummary, GSDPData, EnrollmentData, CensusSummary, HealthcareSummary } from '../data/schema.ts';
 
 const statesSummary = (bag: TopicDataBag) => bag['states/summary'] as StatesSummary | undefined;
 const gsdp = (bag: TopicDataBag) => bag['states/gsdp'] as GSDPData | undefined;
 const enrollment = (bag: TopicDataBag) => bag['education/enrollment'] as EnrollmentData | undefined;
+const censusSummary = (bag: TopicDataBag) => bag['census/summary'] as CensusSummary | undefined;
 
 export const regionalInequality: TopicDef = {
   id: 'regional-inequality',
   title: 'Regional Inequality',
-  subtitle: 'Delhi\'s per capita income is 7x Bihar\'s. What does the data reveal about India\'s geographic divide?',
+  subtitle: 'Delhi\'s per capita income is 7x Bihar\'s — and within each state, the city-village gap adds another layer to the divide.',
   accent: '#8B5CF6',
   contributingDomains: ['states', 'budget', 'census', 'education', 'healthcare'],
   requiredData: [
@@ -34,7 +35,7 @@ export const regionalInequality: TopicDef = {
     { value: '7x', label: 'Per capita gap: Delhi vs Bihar', sectionId: 'income-divide' },
   ],
 
-  narrativeBridge: 'India is not one economy — it\'s many. A child born in Kerala has a fundamentally different life trajectory than one born in Bihar. Per capita income, education access, healthcare infrastructure, and budget transfers all vary dramatically across the 25 states and UTs with complete data.',
+  narrativeBridge: 'India is not one economy — it is many. A child born in Kerala has a fundamentally different life trajectory than one born in Bihar. Per capita income, education access, healthcare infrastructure, and the city-village divide within each state all compound to make "India\'s average" a fiction that obscures more than it reveals.',
 
   sections: [
     {
@@ -76,10 +77,36 @@ export const regionalInequality: TopicDef = {
       deepLinks: [{ label: 'Education by state', route: '/education#enrollment', domain: 'education' }],
     },
     {
-      id: 'transfer-mechanism',
+      id: 'urban-rural-access',
       sectionNumber: 3,
+      title: 'Within States: The City-Village Gap',
+      annotation: 'The state-level divide is only half the story. Within each state, urban areas have roughly 3x more hospital beds per capita than rural areas. A citizen in rural Bihar faces a double disadvantage — the poorest state, and the rural side of it. Urbanisation is not solving this gap; it is shifting its location.',
+      domains: ['census', 'healthcare'],
+      sources: ['NHP 2022', 'Census 2011'],
+      charts: [{
+        chartType: 'stat-row', chartTitle: 'Urban vs Rural Snapshot',
+        extractData: (bag) => {
+          const c = censusSummary(bag);
+          const h = bag['healthcare/summary'] as HealthcareSummary | undefined;
+          if (!c && !h) return null;
+          return [
+            { label: 'Urban Share', value: c ? `${c.urbanizationRate}%` : '—', accent: '#6366F1' },
+            { label: 'Rural Share', value: c ? `${(100 - c.urbanizationRate).toFixed(1)}%` : '—', accent: '#8B5CF6' },
+            { label: 'Hospital Beds / 1,000', value: h ? `${h.hospitalBedsPer1000}` : '—', accent: '#F43F5E' },
+            { label: 'Literacy Rate', value: c ? `${c.literacyRate}%` : '—', accent: '#4ADE80' },
+          ];
+        },
+      }],
+      deepLinks: [
+        { label: 'Healthcare infrastructure', route: '/healthcare#infrastructure', domain: 'healthcare' },
+        { label: 'Census data', route: '/census#population', domain: 'census' },
+      ],
+    },
+    {
+      id: 'transfer-mechanism',
+      sectionNumber: 4,
       title: 'Fiscal Transfers',
-      annotation: 'The Finance Commission is the primary mechanism for redistribution — poorer states receive more per capita from the central budget. But does the money reach where it\'s needed?',
+      annotation: 'The Finance Commission is the primary mechanism for redistribution — poorer states receive more per capita from the central budget. But the mechanism is slow and formulaic. Money flows, but the administrative capacity to spend it well does not automatically follow.',
       domains: ['budget', 'states'],
       sources: ['Union Budget', 'Finance Commission'],
       charts: [{
@@ -107,6 +134,7 @@ export const regionalInequality: TopicDef = {
     { domain: 'states', sectionId: 'fiscal-health' },
     { domain: 'budget', sectionId: 'statewise' },
     { domain: 'census', sectionId: 'literacy' },
+    { domain: 'census', sectionId: 'population' },
     { domain: 'education', sectionId: 'enrollment' },
     { domain: 'healthcare', sectionId: 'infrastructure' },
   ],

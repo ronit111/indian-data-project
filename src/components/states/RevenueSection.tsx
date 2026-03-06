@@ -50,7 +50,7 @@ export function RevenueSection({ data }: RevenueSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Some states raise most of their revenue from their own taxes. Others depend heavily on the Centre for transfers. This ratio shapes a state's fiscal independence.
+          Fiscal independence determines a state's agency. Maharashtra, Tamil Nadu, and Karnataka raise most of their own revenue — they can invest where they choose. Bihar, UP, and Jharkhand depend heavily on central transfers. They cannot set their own priorities without Delhi's approval. Some bars here are almost entirely cyan. That's not a color choice — it's a power dynamic.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/revenue" data={data}>

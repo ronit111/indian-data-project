@@ -56,7 +56,7 @@ export function PopulationSection({ data }: PopulationSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          1.45 billion and counting
+          1.45 billion and slowing
         </motion.h2>
 
         <motion.p
@@ -65,7 +65,7 @@ export function PopulationSection({ data }: PopulationSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India overtook China as the world's most populous country in 2023. But the growth rate has been falling steadily — from 1.9% in 2000 to under 0.9% by 2022, before ticking up slightly.
+          India overtook China as the world's most populous country in 2023. But India is not growing fast anymore — the growth rate has halved in two decades, from 1.9% in 2000 to under 0.9% today. The real story is not the size of the population. It's the shape: who these 1.45 billion people are, and how old they are.
         </motion.p>
 
         {popSeries.length > 0 && (

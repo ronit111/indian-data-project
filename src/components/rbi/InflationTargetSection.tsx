@@ -84,7 +84,7 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          Is RBI hitting its inflation target?
+          The target the RBI answers to
         </motion.h2>
 
         <motion.p
@@ -93,7 +93,7 @@ export function InflationTargetSection({ monetaryPolicy }: InflationTargetSectio
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          The MPC — a committee of 6 experts — votes on interest rates every 2 months. Their job: keep price rises between 2-6% per year, targeting 4%. Below 2% signals a sluggish economy. Above 6% means your grocery bill is rising too fast. The dashed line shows how the repo rate tracks against actual CPI inflation.
+          The MPC — six experts voting on rates every two months — is legally bound to keep CPI inflation (how much prices are rising) between 2–6%, targeting 4%. Below 2% signals a sluggish economy; above 6% means your grocery bill is rising too fast and RBI has failed its mandate. The dashed line shows how the repo rate tracks — and responds to — actual inflation. Inside the band is calm. Outside it is crisis.
         </motion.p>
 
         {series.length > 0 && (

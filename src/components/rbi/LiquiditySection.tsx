@@ -23,7 +23,7 @@ export function LiquiditySection({ data }: LiquiditySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          How much money flows through the system
+          The money supply tap
         </motion.h2>
 
         <motion.p
@@ -32,7 +32,7 @@ export function LiquiditySection({ data }: LiquiditySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Broad money (M3) is the total money circulating in the economy — cash in wallets, savings accounts, fixed deposits, everything. RBI controls this by buying or selling government bonds in the open market (Open Market Operations, or OMOs). Buying bonds pumps money into banks; selling pulls it out. The growth rate shows how fast this money supply is expanding. (World Bank data available through 2021-22.)
+          M3 — broad money — is the total money in the economy: cash in wallets, savings accounts, fixed deposits, everything. RBI controls the tap through OMOs (Open Market Operations — buying bonds to pump money in, selling to pull it out), CRR (locking a fraction of every deposit with RBI), and SLR (forcing banks to park a fraction in government bonds). When M3 grows faster than GDP, there's too much money chasing too few goods — inflation. When it grows slower, the economy starves for credit.
         </motion.p>
 
         {/* M3 Growth — year-over-year pace of money creation */}

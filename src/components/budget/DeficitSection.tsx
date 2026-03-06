@@ -26,7 +26,7 @@ export function DeficitSection({ summary }: DeficitSectionProps) {
   return (
     <section ref={ref} id="deficit" className="composition">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={2} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={3} className="mb-6 block" isVisible={isVisible} />
 
         {/* Hero number — the deficit paise, physically large */}
         <div className="mb-8">
@@ -56,7 +56,7 @@ export function DeficitSection({ summary }: DeficitSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.25 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          {`The fiscal deficit \u2014 the gap between what the government earns and what it spends \u2014 stands at ${summary.fiscalDeficitPercentGDP}% of GDP. For every rupee spent, ${paisaEarned} paise comes from taxes and other revenue. The rest is debt.`}
+          {`The fiscal deficit \u2014 the gap between what the government earns and what it spends \u2014 stands at ${summary.fiscalDeficitPercentGDP}% of GDP. For every rupee spent, ${paisaEarned} paise comes from taxes and other earned revenue. The remaining ${paisaBorrowed} paise is debt: the government's bet that today's borrowing pays for tomorrow's growth.`}
         </motion.p>
 
         {/* Rupee bar visualization */}

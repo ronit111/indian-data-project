@@ -129,7 +129,7 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Economists call it the "demographic dividend" — a period when most of a country's population is of working age. India is in that window now. More than two-thirds of the country — about 68% — is between 15 and 64, but this window closes around 2040. How this workforce is educated, employed, and healthy will define India's next two decades.
+          Economists call it the "demographic dividend" — a period when the working-age share of the population is at its peak, and the dependency burden is lowest. India is in that window now: about 68 of every 100 Indians are between 15 and 64. But this is a countdown, not a celebration. The working-age share peaks around 2035 and then the elderly share starts climbing — permanently. The states that fail to educate, employ, and keep healthy their working-age population over the next decade will miss the window entirely.
         </motion.p>
 
         {/* Waffle: for every 100 Indians */}

@@ -56,9 +56,7 @@ export function MoneyMuscleSection({ data }: MoneyMuscleSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          {criminal.pctAny}% of your MPs have declared criminal cases. {criminal.pctSerious}% face serious charges — murder, attempt to murder, kidnapping.
-          The average MP is worth ₹{assets.avgCrore.toFixed(0)} crore (median: ₹{assets.medianCrore.toFixed(0)} crore).
-          These are self-declared figures from sworn affidavits filed with the Election Commission.
+          These numbers come from the candidates themselves. Not allegations. Not media reports. Sworn affidavits filed under oath with the Election Commission of India. {criminal.pctAny}% of elected MPs declared criminal cases. {criminal.pctSerious}% face serious charges — murder, attempt to murder, kidnapping, rape. The average MP declared assets of ₹{assets.avgCrore.toFixed(0)} crore. The 64 crore people who showed up chose this Parliament.
         </motion.p>
 
         {/* Summary stat cards */}

@@ -23,7 +23,7 @@ export function CreditSection({ data }: CreditSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          Where bank lending goes
+          Where the money lands
         </motion.h2>
 
         <motion.p
@@ -32,7 +32,7 @@ export function CreditSection({ data }: CreditSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          This tracks total bank loans to businesses and families — home loans, business credit, personal loans. As of 2021-22, private credit stood at 50% of GDP, meaning more people and businesses have access to formal credit than a decade ago when it was around 28%.
+          Credit growth is the real-economy consequence of monetary policy. When the repo rate drops, banks lend more. Private credit as a share of GDP has more than doubled over two decades — meaning more Indians now have access to formal home loans, business capital, and personal credit than ever before. But retail loans (home, car, personal) have surged while agricultural credit has lagged, revealing who actually benefits from cheap money.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/credit" data={data}>

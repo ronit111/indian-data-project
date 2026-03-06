@@ -65,7 +65,7 @@ export function EnrollmentSection({ data }: EnrollmentSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India's primary Gross Enrollment Ratio (GER) has crossed 100%, meaning more children are enrolled than the official age group — a sign of near-universal access. GER can exceed 100% when over-age or under-age students enroll. The real revolution is in secondary and tertiary education, where enrollment has nearly tripled in two decades.
+          India's primary Gross Enrollment Ratio (GER) has crossed 100% — a sign of near-universal access. (GER can exceed 100% when over-age or under-age students enroll.) Getting nearly every child into a classroom in a country this large and this poor is a genuine civilizational achievement. The revolution is real: secondary enrollment nearly tripled in two decades, tertiary enrollment climbed from 10% to nearly 30%. Let the triumph land before asking what happens next.
         </motion.p>
 
         {enrollmentSeries.length > 0 && (

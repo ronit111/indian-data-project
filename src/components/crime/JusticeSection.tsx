@@ -43,10 +43,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Of every 100 crimes reported, only 13 end in conviction. The funnel narrows at every stage:
-          investigation backlogs, low chargesheet rates, and trial delays averaging {data.trialDuration.avgYears} years.
-          Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. {data.trialDuration.casesOver5Years}% of cases
-          have been pending for over 5 years.
+          13 out of 100. That is the number you should carry with you. Of every 100 crimes reported, 13 end in conviction. The funnel narrows at every stage: investigation backlogs, low chargesheet rates, and trials averaging {data.trialDuration.avgYears} years. Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. For most victims, filing a complaint leads to years of waiting and, statistically, no outcome. {data.trialDuration.casesOver5Years}% of cases have been pending for over 5 years.
         </motion.p>
 
         {/* Justice funnel */}
@@ -140,7 +137,17 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
           className="text-annotation mt-8 max-w-xl"
         >
-          For context, conviction rates in the UK and Japan exceed 70%. India is expanding fast-track courts, e-FIRs, and virtual hearings to clear the backlog — but with just {data.trialDuration.judgesPerMillion} judges per million citizens (global average: ~50), the system needs fundamental expansion, not just efficiency tweaks.
+          Conviction rates in the UK and Japan exceed 70%. India is expanding fast-track courts, e-FIRs, and virtual hearings — but with just {data.trialDuration.judgesPerMillion} judges per million citizens (global average: ~50), the system needs fundamental expansion, not efficiency tweaks.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
+          className="text-annotation mt-6 max-w-xl"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          58 lakh crimes. 4.45 lakh against women. 1.68 lakh dead on roads. 22 lakh cybercrime complaints. 155 police per lakh people. 13 out of 100 end in conviction. These numbers are not an indictment of Indian society — they are a measure of the gap between the problem and the response. The data makes the gap visible. Visibility is the first step toward closing it.
         </motion.p>
 
         <RelatedTopics sectionId="justice-pipeline" domain="crime" />

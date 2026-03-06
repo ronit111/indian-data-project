@@ -54,7 +54,7 @@ export function StatesHeroSection({ summary }: StatesHeroSectionProps) {
           className="text-lg md:text-xl mb-6"
           style={{ color: 'var(--text-secondary)' }}
         >
-          28 states and 8 union territories, one economy
+          One Constitution. 36 wildly unequal economies.
         </motion.p>
 
         {/* Hero number */}

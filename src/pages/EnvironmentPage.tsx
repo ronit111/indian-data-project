@@ -62,7 +62,7 @@ export default function EnvironmentPage() {
         pills={[
           { value: `${summary?.pm25?.toFixed(0) ?? '—'} μg/m³`, label: 'PM2.5 — 10× the WHO safe limit', sectionId: 'air-quality' },
           { value: `${summary?.forestPct?.toFixed(1) ?? '—'}%`, label: 'Forest cover (target: 33%)', sectionId: 'forest-cover' },
-          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: 'Energy from renewables', sectionId: 'energy-transition' },
+          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: 'Renewable installed capacity (coal generates 70%+ of electricity)', sectionId: 'energy-transition' },
           { value: `${summary?.co2PerCapita?.toFixed(1) ?? '—'}t`, label: 'CO₂ per capita (US: 14t)', sectionId: 'carbon-footprint' },
         ]}
       />
@@ -70,12 +70,11 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's environmental story is one of contradictions. The air is toxic, natural forests in the northeast are disappearing, but the energy transition is accelerating faster than almost anywhere on earth."
+        text="Every breath a Delhi resident takes in winter contains 10× the safe limit. The invisible crisis is worse."
         highlights={{
-          'toxic': 'var(--negative)',
-          'disappearing': 'var(--saffron)',
-          'accelerating': 'var(--teal)',
-          'energy': 'var(--teal)',
+          '10×': 'var(--negative)',
+          'invisible': 'var(--saffron)',
+          'worse': 'var(--saffron)',
         }}
       />
 
@@ -86,12 +85,10 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="While the air gets worse, India's forests provide a vital shield. But the national average hides wide variation: Madhya Pradesh lost 372 km² while Mizoram gained 242 km² between 2021 and 2023."
+        text="But India's environmental story is not all deterioration. Beneath the smog, forests are neither a clear win nor a clear loss."
         highlights={{
+          'deterioration': 'var(--negative)',
           'forests': 'var(--teal)',
-          'shield': 'var(--teal)',
-          'lost': 'var(--negative)',
-          'gained': 'var(--positive)',
         }}
       />
 
@@ -102,12 +99,12 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Energy is where India's transformation is most visible. Solar capacity has grown 22× in a decade. But coal isn't going away — demand is growing too fast for clean energy alone."
+        text="If forests are the ground-level balance sheet, energy is the industrial one. India's transformation is unmistakable — solar capacity 22× in a decade. But coal has not shrunk. India is adding clean on top of dirty."
         highlights={{
-          'Solar': 'var(--teal)',
+          'unmistakable': 'var(--teal)',
           '22×': 'var(--teal)',
-          'coal': 'var(--text-muted)',
-          'growing': 'var(--saffron)',
+          'shrunk': 'var(--saffron)',
+          'dirty': 'var(--saffron)',
         }}
       />
 
@@ -122,12 +119,13 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Beneath the surface, the most existential crisis is underfoot. India is the world's largest groundwater user, and many states are pumping faster than nature can replenish."
+        text="All this energy comes at a cost — India ranks 3rd globally in total emissions. But the most existential crisis is invisible. It is underfoot."
         highlights={{
-          'groundwater': 'var(--teal)',
+          '3rd': 'var(--saffron)',
+          'globally': 'var(--saffron)',
           'existential': 'var(--negative)',
-          'pumping': 'var(--saffron)',
-          'replenish': 'var(--teal)',
+          'invisible': 'var(--negative)',
+          'underfoot': 'var(--negative)',
         }}
       />
 

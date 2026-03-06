@@ -59,7 +59,7 @@ export function OutlookSection({ summary }: OutlookSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          Key numbers from the Economic Survey for FY {summary.year}.
+          Growth is projected to stay fast by global standards. But the question isn't whether India grows. It's whether growth reaches the 60% of Indians in rural areas, the 45% still in agriculture, and the young people entering the workforce at 1.2 crore a year. These are the four numbers that set the challenge.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -57,7 +57,7 @@ export function HealthSection({ data }: HealthSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India's infant mortality rate has dropped dramatically — from 66 per 1,000 live births in 2000 to under 25 today. But the gap between states tells a different story: Kerala's IMR is at developed-country levels while some northern states lag by a full generation.
+          India's infant mortality rate has dropped dramatically — from 66 per 1,000 live births in 2000 to under 25 today. That is real progress. But the gradient on the map below tells the deeper story: the states at developed-country levels (Kerala, Goa) and the states that lag by a full generation (MP, UP, Assam) coexist inside the same national border. The inequality is not natural. It is a policy choice.
         </motion.p>
 
         {/* National IMR trend */}

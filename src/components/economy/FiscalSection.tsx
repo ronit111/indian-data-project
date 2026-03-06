@@ -37,7 +37,7 @@ export function FiscalSection({ fiscal }: FiscalSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          The fiscal picture
+          The government's IOUs
         </motion.h2>
 
         <motion.p
@@ -46,8 +46,7 @@ export function FiscalSection({ fiscal }: FiscalSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Fiscal consolidation — the government's effort to reduce borrowing over time — has been steady since the COVID-era peak of over 9% of GDP in 2020-21.
-          The Fiscal Responsibility and Budget Management (FRBM) Act sets a long-term target of 3% of GDP. The government is on track but not there yet.
+          The fiscal deficit peaked at over 9% of GDP during COVID — a deliberate spend-to-survive choice. The path back to 3% (the FRBM Act target) is a deliberate trade-off: less government borrowing today means cheaper loans for businesses and homebuyers tomorrow. The government is on the path. It isn't there yet.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/fiscal" data={fiscal}>

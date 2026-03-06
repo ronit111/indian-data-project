@@ -61,7 +61,7 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          A state's total GDP can be large simply because it has a large population. Per capita NSDP (Net State Domestic Product per person) adjusts for population size, revealing which states actually produce more per person. Delhi, Telangana, and Karnataka lead on this measure, well ahead of much larger states like Uttar Pradesh or Bihar.
+          This is the punchline. When you divide by population, the hierarchy reshuffles — Delhi and Telangana leap ahead, while Uttar Pradesh, a political powerhouse, sits near the bottom. The Goa-Bihar gap is 8-9x. A worker in Goa produces in one month what a worker in Bihar produces in eight. Same country, different reality. The Constitution promises equality of opportunity. The data shows that the single biggest determinant of your economic life is which state you were born in.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/percapita" data={data}>
@@ -90,6 +90,16 @@ export function PerCapitaSection({ data }: PerCapitaSectionProps) {
             </div>
           </div>
         </ChartActionsWrapper>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+          className="text-annotation mt-10 max-w-xl"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          The mosaic is beautiful in theory. For the 22 crore people in Bihar — India's most populous laggard — it is the daily texture of constraint. Links to the Fiscal Federalism and Regional Inequality topics explore how redistribution works, and where it falls short.
+        </motion.p>
 
         <p className="source-attribution">
           Source: {data.source} ({data.year})

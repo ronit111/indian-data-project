@@ -84,9 +84,9 @@ registerChart({
     const total = latest.coal + latest.gas + latest.nuclear + latest.hydro + latest.solar + latest.wind + latest.biomass + latest.smallHydro;
     const renewableShare = ((latest.solar + latest.wind + latest.hydro + latest.biomass + latest.smallHydro) / total * 100);
     return {
-      label: 'Renewable Capacity Share',
+      label: 'Renewable Installed Capacity Share',
       value: `${renewableShare.toFixed(1)}%`,
-      context: `Share of India's installed electricity capacity from renewable sources (${latest.year}).`,
+      context: `Share of India's installed electricity capacity from renewable sources (${latest.year}). Coal still generates 70%+ of actual electricity.`,
     };
   },
 });

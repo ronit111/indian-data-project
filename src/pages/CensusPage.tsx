@@ -61,22 +61,22 @@ export default function CensusPage() {
       {summary && <KeyTakeaways
         accent="#8B5CF6"
         pills={[
+          { value: '68 of 100', label: 'Indians are working-age — the dividend window peaks around 2035', sectionId: 'age' },
           { value: String(summary.sexRatio), label: 'Girls per 1,000 boys — 57 are "missing"', sectionId: 'health' },
           { value: '1 in 4', label: "Indians who can't read or write", sectionId: 'literacy' },
           { value: `${summary.populationGrowthRate}%`, label: 'Population growth — at a historic low', sectionId: 'population' },
-          { value: `${Math.round(summary.urbanizationRate)}%`, label: 'Only 1 in 3 Indians lives in a city', sectionId: 'urbanization' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's population story is not just about size. It's about structure — who is young, who is working, who needs care. The numbers reveal a nation at a demographic crossroads."
+        text="For every 100 Indians, 68 are of working age. That ratio peaks around 2035 — then it starts falling, permanently. What India does in the next decade decides the next century."
         highlights={{
-          'structure': 'var(--violet)',
-          'young': 'var(--violet)',
-          'working': 'var(--violet)',
-          'crossroads': 'var(--violet)',
+          '2035': 'var(--violet)',
+          'permanently': 'var(--saffron)',
+          'decade': 'var(--violet)',
+          'century': 'var(--violet)',
         }}
       />
 
@@ -87,11 +87,11 @@ export default function CensusPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India has the largest working-age population on Earth. For every dependent — child or elderly — there are nearly three workers. This demographic dividend is a one-time window."
+        text="The growth is slowing. But who are these 1.45 billion people? That's where the story gets interesting — and urgent."
         highlights={{
-          'working-age': 'var(--violet)',
-          'dividend': 'var(--violet)',
-          'window': 'var(--violet)',
+          'slowing': 'var(--saffron)',
+          'interesting': 'var(--violet)',
+          'urgent': 'var(--saffron)',
         }}
       />
 
@@ -102,11 +102,11 @@ export default function CensusPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Families are getting smaller. Indians are living longer. Both trends are accelerating — but they're not happening evenly across states."
+        text="The dividend only pays off if the population is healthy and educated. Families are getting smaller. People are living longer. India has already completed most of its demographic transition — and that is the mechanism behind the closing window."
         highlights={{
+          'dividend': 'var(--violet)',
           'smaller': 'var(--violet)',
-          'longer': 'var(--violet)',
-          'evenly': 'var(--saffron)',
+          'closing': 'var(--saffron)',
         }}
       />
 
@@ -117,12 +117,12 @@ export default function CensusPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="A child born in Kerala today has nearly the same survival odds as one born in Western Europe. A child born in some northern states faces odds comparable to sub-Saharan Africa. Same country, two realities."
+        text="But national averages mask a split so dramatic it's hard to believe these are the same country. A child born in Kerala has survival odds matching Western Europe. A child in some northern states faces odds comparable to sub-Saharan Africa."
         highlights={{
-          'Kerala': 'var(--violet)',
-          'Western Europe': 'var(--violet)',
-          'sub-Saharan Africa': 'var(--saffron)',
-          'realities': 'var(--saffron)',
+          'kerala': 'var(--violet)',
+          'europe': 'var(--violet)',
+          'africa': 'var(--saffron)',
+          'dramatic': 'var(--saffron)',
         }}
       />
 
@@ -133,10 +133,11 @@ export default function CensusPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Literacy defines opportunity. The gender gap in literacy has narrowed over decades, but in some states it remains a canyon — 20 percentage points or more between men and women."
+        text="Survival is step one. The next question: can these children read? Literacy is the gateway to every other opportunity — and the gender gap is still a canyon in some states."
         highlights={{
-          'Literacy': 'var(--violet)',
-          'gender gap': 'var(--violet)',
+          'survival': 'var(--violet)',
+          'read': 'var(--violet)',
+          'gateway': 'var(--violet)',
           'canyon': 'var(--saffron)',
         }}
       />
@@ -148,11 +149,11 @@ export default function CensusPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India is urbanizing — but slowly compared to China or Brazil. Rural India is still home to two in three Indians. The urban story is really a story of a dozen mega-cities growing while thousands of small towns stand still."
+        text="And where these literate, healthy, working-age Indians live matters enormously. Urban areas create most formal-sector jobs. India is 35% urban — far below the global average of 56%."
         highlights={{
-          'urbanizing': 'var(--violet)',
-          'Rural': 'var(--violet)',
-          'mega-cities': 'var(--violet)',
+          'live': 'var(--violet)',
+          'urban': 'var(--violet)',
+          '35%': 'var(--saffron)',
         }}
       />
 

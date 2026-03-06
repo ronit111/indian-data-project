@@ -68,7 +68,7 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
           className="text-lg md:text-xl mb-6"
           style={{ color: 'var(--text-secondary)' }}
         >
-          The price of money in India
+          One committee. One number. Two opposite effects on your life.
         </motion.p>
 
         {/* Hero repo rate number */}
@@ -90,7 +90,7 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
             className="text-sm mt-1"
             style={{ color: 'var(--text-muted)' }}
           >
-            the interest rate at which RBI lends to banks
+            the interest rate at which RBI lends to banks — which flows into every home loan, FD, and business loan
           </p>
         </motion.div>
 

@@ -75,7 +75,7 @@ export function BudgetVsActualSection({ data }: BudgetVsActualSectionProps) {
   return (
     <section ref={ref} id="budget-vs-actual" className="composition">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={4} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={5} className="mb-6 block" isVisible={isVisible} />
 
         <div className="mb-8">
           <motion.div

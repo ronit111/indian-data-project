@@ -62,20 +62,20 @@ export default function ElectionsPage() {
         pills={[
           { value: `${summary.turnout2024}%`, label: 'Turnout in 2024 — 64 crore voted', sectionId: 'turnout' },
           { value: `${summary.bjpSeats2024}`, label: 'BJP seats — 32 short of majority', sectionId: 'lok-sabha-2024' },
-          { value: `${summary.criminalPct}%`, label: 'MPs with criminal cases', sectionId: 'money-muscle' },
-          { value: `${summary.womenMPsPct2024}%`, label: 'Women in Parliament — half the global avg', sectionId: 'gender-gap' },
+          { value: `${summary.criminalPct}%`, label: 'MPs with criminal cases — from their own sworn affidavits', sectionId: 'money-muscle' },
+          { value: `${summary.womenMPsPct2024}%`, label: 'Women in Parliament — half the global average', sectionId: 'gender-gap' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Nearly 97 crore Indians were eligible to vote in 2024. That's more people than Europe's entire population. But how many actually showed up?"
+        text="96.88 crore eligible voters. More people than Europe's entire population. In 2024, nearly two-thirds walked to a polling booth, waited in line, and pressed a button. This is the most staggering act of collective civic faith on the planet. But faith in what?"
         highlights={{
-          '97': 'var(--indigo)',
-          'crore': 'var(--indigo)',
-          'Europe': 'var(--indigo)',
-          'showed': 'var(--indigo-light)',
+          'civic': 'var(--indigo)',
+          'faith': 'var(--indigo)',
+          'planet': 'var(--indigo-light)',
+          'what': 'var(--gold)',
         }}
       />
 
@@ -86,12 +86,11 @@ export default function ElectionsPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's political map has been redrawn three times. Congress dominance gave way to coalition chaos, then BJP reshaped the landscape. 2024 wrote a new chapter."
+        text="Those 64 crore people chose. India's political map has been redrawn three times in 67 years — Congress dominance, coalition fragmentation, then BJP's ascent. 2024 was the first turn: BJP fell below majority for the first time in a decade."
         highlights={{
-          'Congress': 'var(--indigo)',
-          'coalition': 'var(--indigo)',
-          'BJP': 'var(--saffron)',
-          '2024': 'var(--indigo-light)',
+          'congress': 'var(--indigo)',
+          'majority': 'var(--gold)',
+          'turn': 'var(--indigo-light)',
         }}
       />
 
@@ -106,12 +105,12 @@ export default function ElectionsPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Who are these 543 people who represent you? Their sworn affidavits reveal a Parliament of crorepatis and criminal records."
+        text="The ballot box delivered 543 representatives. Not what they promise on the campaign trail matters here. What their own sworn affidavits — filed under oath with the Election Commission — actually reveal."
         highlights={{
           '543': 'var(--indigo)',
-          'crorepatis': 'var(--gold)',
-          'criminal': 'var(--negative)',
-          'affidavits': 'var(--indigo)',
+          'sworn': 'var(--negative)',
+          'oath': 'var(--negative)',
+          'reveal': 'var(--gold)',
         }}
       />
 
@@ -122,12 +121,12 @@ export default function ElectionsPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Half the population is women. Yet only 1 in 7 MPs is a woman. The 33% reservation law passed, but when will it take effect?"
+        text="It gets worse. Not only are many representatives wealthy and facing criminal charges — half the population is systematically excluded from the room where laws are made."
         highlights={{
-          'women': 'var(--indigo)',
-          '1 in 7': 'var(--indigo-light)',
-          '33%': 'var(--indigo)',
-          'reservation': 'var(--indigo)',
+          'worse': 'var(--negative)',
+          'excluded': 'var(--negative)',
+          'systematically': 'var(--negative)',
+          'laws': 'var(--indigo)',
         }}
       />
 

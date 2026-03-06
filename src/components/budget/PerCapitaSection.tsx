@@ -80,7 +80,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
   return (
     <section ref={ref} id="percapita" className="composition" style={{ background: 'var(--bg-surface)' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={8} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={1} className="mb-6 block" isVisible={isVisible} />
 
         {/* Hero treatment — the daily amount, large and personal */}
         <div className="mb-3">
@@ -102,7 +102,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
             transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.12 }}
             className="text-composition mt-2"
           >
-            {'on you, every day'}
+            {'the government spends on you, every day'}
           </motion.p>
         </div>
 
@@ -112,7 +112,7 @@ export function PerCapitaSection({ summary, expenditure }: PerCapitaSectionProps
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.2 }}
           className="text-annotation mb-10 max-w-xl"
         >
-          {`The government spends ₹${summary.perCapitaExpenditure.toLocaleString('en-IN')} per citizen per year. Here's how a single day breaks down across the top spending areas.`}
+          {`₹${summary.perCapitaExpenditure.toLocaleString('en-IN')} per citizen per year — broken down across every major area the government spends on. Below is how a single day of that budget lands across the top spending heads.`}
         </motion.p>
 
         {/* Horizontal segmented bar */}

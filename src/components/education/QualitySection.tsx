@@ -36,7 +36,7 @@ export function QualitySection({ data }: QualitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          The quality gap
+          Enrollment is not learning
         </motion.h2>
 
         <motion.p
@@ -45,7 +45,7 @@ export function QualitySection({ data }: QualitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          The ASER (Annual Status of Education Report) 2024 survey tested children across India. The finding: roughly 1 in 5 children in Std III (Class 3) can read a Std II (Class 2) textbook. Enrollment is nearly universal, but learning has not kept pace — children are in school, yet many cannot read or do basic math at their grade level.
+          1 in 5 children in Class 3 can read a Class 2 textbook. That is the finding of ASER 2024, India's largest rural education survey. The enrollment numbers are real — nearly every child is in school. But being in school and learning to read are not the same thing. The system has solved the access problem and stumbled on the outcome. The map below makes the state variation visceral: some states are below 15%, others above 40%. These are children in the same grade, in the same country.
         </motion.p>
 
         {choroData.length > 0 && (

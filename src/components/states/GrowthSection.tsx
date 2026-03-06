@@ -58,7 +58,7 @@ export function GrowthSection({ data }: GrowthSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Each dot is a state. Growth rates reveal a different picture than absolute size — some smaller states are growing faster than the giants, narrowing the gap year by year. The dashed line marks the national median.
+          Each dot is a state. If the laggards were growing fastest, they'd close the gap — that would be convergence. If they're stuck near or below the median, the gap widens. The critical question: are Bihar, UP, and Jharkhand — home to 40 crore people — above or below the line?
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/growth" data={data}>

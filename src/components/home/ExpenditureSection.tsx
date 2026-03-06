@@ -15,7 +15,7 @@ export function ExpenditureSection({ treemap }: ExpenditureSectionProps) {
   return (
     <section ref={ref} id="expenditure" className="composition" style={{ background: 'var(--bg-surface)' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={5} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={6} className="mb-6 block" isVisible={isVisible} />
 
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

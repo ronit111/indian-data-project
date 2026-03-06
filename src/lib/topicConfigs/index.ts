@@ -12,10 +12,11 @@ import { healthOutcomes } from './health-outcomes.ts';
 import { regionalInequality } from './regional-inequality.ts';
 import { climateEnergy } from './climate-energy.ts';
 import { youthJobs } from './youth-jobs.ts';
-import { urbanRural } from './urban-rural.ts';
 import { democraticHealth } from './democratic-health.ts';
 import { agricultureFood } from './agriculture-food.ts';
 import { waterCrisis } from './water-crisis.ts';
+
+// NOTE: 'urban-rural' has been merged into 'regional-inequality' (Beat 3: city-village access gap).
 
 export const TOPIC_CONFIGS: Record<string, TopicDef> = {
   'women-in-india': womenInIndia,
@@ -26,7 +27,6 @@ export const TOPIC_CONFIGS: Record<string, TopicDef> = {
   'regional-inequality': regionalInequality,
   'climate-energy': climateEnergy,
   'youth-jobs': youthJobs,
-  'urban-rural': urbanRural,
   'democratic-health': democraticHealth,
   'agriculture-food': agricultureFood,
   'water-crisis': waterCrisis,

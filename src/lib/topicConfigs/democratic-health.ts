@@ -1,20 +1,22 @@
 import type { TopicDef, TopicDataBag } from '../topicConfig.ts';
-import type { ElectionsSummary, TurnoutData } from '../data/schema.ts';
+import type { ElectionsSummary, TurnoutData, BudgetSummary } from '../data/schema.ts';
 
 const elecSummary = (bag: TopicDataBag) => bag['elections/summary'] as ElectionsSummary | undefined;
 const turnout = (bag: TopicDataBag) => bag['elections/turnout'] as TurnoutData | undefined;
+const budgetSummary = (bag: TopicDataBag) => bag['budget/summary'] as BudgetSummary | undefined;
 
 export const democraticHealth: TopicDef = {
   id: 'democratic-health',
   title: "India's Democratic Health",
-  subtitle: 'The world\'s largest democracy elected 543 MPs in 2024. How healthy is the process?',
+  subtitle: 'Turnout has risen for 70 years. But nearly half of elected MPs face criminal charges, and parliament routinely underspends health and education budgets.',
   accent: '#818CF8',
-  contributingDomains: ['elections', 'census', 'education'],
+  contributingDomains: ['elections', 'census', 'education', 'crime', 'budget'],
   requiredData: [
     'elections/summary', 'elections/turnout', 'elections/candidates',
     'census/summary', 'education/summary',
+    'budget/summary', 'budget/budget-vs-actual',
   ],
-  summaryData: ['elections/summary', 'census/summary'],
+  summaryData: ['elections/summary', 'census/summary', 'budget/summary'],
 
   heroStat: {
     value: (bag) => {
@@ -32,7 +34,7 @@ export const democraticHealth: TopicDef = {
     { value: (bag) => { const e = elecSummary(bag); return e ? `₹${e.avgAssetsCrore} Cr` : '—'; }, label: 'Avg MP assets', sectionId: 'quality-representation' },
   ],
 
-  narrativeBridge: 'India\'s elections are the world\'s largest logistical exercise. Turnout has climbed from 48% in 1957 to 66% in 2024, peaking at 67% in 2019. But democratic health isn\'t just about showing up — it\'s about who gets elected, how much money flows through campaigns, and whether every citizen\'s vote carries equal weight.',
+  narrativeBridge: 'India\'s elections are the world\'s largest logistical exercise. Turnout has climbed from 48% in 1957 to 66% in 2024. But democratic health is not just about showing up — it is about who gets elected, what they do with power, and whether the parliament they form spends public money where citizens need it most.',
 
   sections: [
     {
@@ -77,6 +79,32 @@ export const democraticHealth: TopicDef = {
         { label: 'Women representation', route: '/elections#representation', domain: 'elections' },
       ],
     },
+    {
+      id: 'accountability-gap',
+      sectionNumber: 3,
+      title: 'The Accountability Gap',
+      annotation: 'Democracy produces a parliament — but parliament then controls the budget. The accountability loop closes (or breaks) when we ask: does the elected body spend public money where citizens need it? Budget-vs-actual data shows whether health, education, and social spending reaches its targets.',
+      domains: ['budget', 'elections'],
+      sources: ['Union Budget', 'Controller General of Accounts'],
+      charts: [{
+        chartType: 'stat-row', chartTitle: 'Parliament & the Public Purse',
+        extractData: (bag) => {
+          const b = budgetSummary(bag);
+          const e = elecSummary(bag);
+          if (!b && !e) return null;
+          return [
+            { label: 'MPs with Criminal Cases', value: e ? `${e.criminalPct}%` : '—', accent: '#EF4444' },
+            { label: 'Women MPs', value: e ? `${e.womenMPsPct2024}%` : '—', accent: '#F43F5E' },
+            { label: 'Govt Spending / Citizen / Day', value: b ? `₹${Math.round(b.perCapitaDailyExpenditure)}` : '—', accent: '#818CF8' },
+            { label: 'Fiscal Deficit % GDP', value: b ? `${b.fiscalDeficitPercentGDP}%` : '—', accent: '#FF6B35' },
+          ];
+        },
+      }],
+      deepLinks: [
+        { label: 'Budget vs actual', route: '/budget#budget-vs-actual', domain: 'budget' },
+        { label: 'Parliament composition', route: '/elections#candidates', domain: 'elections' },
+      ],
+    },
   ],
 
   crossLinks: [
@@ -85,10 +113,13 @@ export const democraticHealth: TopicDef = {
     { domain: 'elections', sectionId: 'representation' },
     { domain: 'census', sectionId: 'literacy' },
     { domain: 'education', sectionId: 'enrollment' },
+    { domain: 'budget', sectionId: 'expenditure' },
+    { domain: 'budget', sectionId: 'budget-vs-actual' },
   ],
 
   ctaLinks: [
     { label: 'Elections', route: '/elections', domain: 'elections', description: 'Turnout, party landscape, candidates, and representation' },
+    { label: 'Union Budget', route: '/budget', domain: 'budget', description: 'Where parliament sends public money' },
     { label: 'Census', route: '/census', domain: 'census', description: 'Literacy, education, and demographics' },
   ],
 };

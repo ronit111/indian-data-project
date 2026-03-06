@@ -37,7 +37,7 @@ export function InformalitySection({ data }: InformalitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          The informality challenge
+          No contract, no safety net
         </motion.h2>
 
         <motion.p
@@ -46,7 +46,7 @@ export function InformalitySection({ data }: InformalitySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          About 8 of every 10 Indian workers are in informal work — no written contract, no provident fund (retirement savings), no ESI (Employees' State Insurance) health cover, no paid leave. Agriculture and construction, which together employ over half the workforce, are almost entirely informal.
+          58% of Indian workers are self-employed. "Self-employed" sounds like entrepreneurship. In India, it mostly means subsistence — a farmer tilling a 2-acre plot, a street vendor, an unpaid family worker. About 8 of every 10 workers overall are informal: no written contract, no provident fund, no ESI health cover, no paid leave. The unemployment rate of 3-4% looks low only because most Indians cannot afford to be unemployed. They work — but often for very little.
         </motion.p>
 
         {barItems.length > 0 && (

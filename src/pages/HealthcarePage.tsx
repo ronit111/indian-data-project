@@ -61,23 +61,22 @@ export default function HealthcarePage() {
       {summary && <KeyTakeaways
         accent="#F43F5E"
         pills={[
-          { value: `${summary.outOfPocketPct}%`, label: 'Of every medical bill comes from your pocket', sectionId: 'oop' },
-          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Hospital beds per 1,000 (WHO says 3.5)', sectionId: 'infrastructure' },
-          { value: `${summary.healthExpGDP}% of GDP`, label: 'What India spends on your health', sectionId: 'spending' },
-          { value: `${summary.tbIncidence}/lakh`, label: 'TB cases — highest burden in the world', sectionId: 'disease' },
+          { value: '₹19/day', label: 'Per-capita health spending — less than a cup of chai', sectionId: 'spending' },
+          { value: `${summary.outOfPocketPct} paise`, label: 'Of every health rupee from your pocket — not the government', sectionId: 'oop' },
+          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Hospital beds per 1,000 people — WHO recommends 3.5', sectionId: 'infrastructure' },
+          { value: `${summary.healthExpGDP}% GDP`, label: 'India spends on health — roughly half the global average', sectionId: 'spending' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's healthcare system serves 1.4 billion people with a fraction of the resources that most countries take for granted. The numbers tell a stark story."
+        text="7 doctors per 10,000 people. That's what stands between 1.4 billion Indians and illness. The WHO recommends 10. India is 30% short. In Bihar, it's closer to 1."
         highlights={{
-          'healthcare': 'var(--rose)',
-          '1.4': 'var(--rose)',
-          'billion': 'var(--rose)',
-          'fraction': 'var(--saffron)',
-          'stark': 'var(--saffron)',
+          '7': 'var(--rose)',
+          '30%': 'var(--saffron)',
+          'bihar': 'var(--saffron)',
+          'illness': 'var(--rose)',
         }}
       />
 
@@ -88,12 +87,11 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The spending gap explains the infrastructure gap. India's health budget is among the lowest in the world as a share of GDP."
+        text="Why is the infrastructure so thin? Follow the money. India spends roughly 19 rupees per citizen per day on health. Less than a cup of chai. This is not an inevitability; it is a choice."
         highlights={{
-          'spending': 'var(--rose)',
-          'infrastructure': 'var(--rose)',
-          'lowest': 'var(--saffron)',
-          'gdp': 'var(--rose)',
+          '19': 'var(--rose)',
+          'chai': 'var(--saffron)',
+          'choice': 'var(--saffron)',
         }}
       />
 
@@ -108,11 +106,11 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Despite the challenges, India has made remarkable progress in public health. Immunization coverage has reached historic highs."
+        text="When the government doesn't pay, families do. 44 paise of every health rupee comes from patients' own pockets. One medical emergency can push a family into poverty. But the story is not all deficit. When India commits resources and political will, the results are extraordinary."
         highlights={{
-          'progress': 'var(--rose)',
-          'immunization': 'var(--rose)',
-          'historic': 'var(--rose)',
+          '44': 'var(--saffron)',
+          'poverty': 'var(--saffron)',
+          'extraordinary': 'var(--rose)',
         }}
       />
 
@@ -127,12 +125,11 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The variation between states is wide. Some states match European health outcomes. Others lag decades behind."
+        text="Immunization proves the system can deliver. But the national averages hide the sharpest inequality of all. The states with the fewest doctors have the most deaths. Geography is destiny in Indian healthcare."
         highlights={{
-          'variation': 'var(--rose)',
-          'wide': 'var(--saffron)',
-          'european': 'var(--rose)',
-          'decades': 'var(--saffron)',
+          'deliver': 'var(--rose)',
+          'destiny': 'var(--saffron)',
+          'fewest': 'var(--saffron)',
         }}
       />
 

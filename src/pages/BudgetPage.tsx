@@ -98,33 +98,43 @@ export default function BudgetPage() {
         })()}
       />
 
-      {/* 01 Revenue — where money comes from */}
+      {/* 01 Per Capita — open with the personal hook */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="The government raises revenue from taxes, borrowings, and non-tax sources. Let's see where each rupee comes from."
-        highlights={{ taxes: 'var(--saffron)', borrowings: 'var(--cyan)', rupee: 'var(--gold)' }}
+        text={`The government spends ₹${Math.round(summary.perCapitaDailyExpenditure)} on every Indian, every single day. That's more than the daily wage of a rural labourer. This is your money story.`}
+        highlights={{ [`₹${Math.round(summary.perCapitaDailyExpenditure)}`]: 'var(--saffron)', wage: 'var(--gold)', money: 'var(--cyan)' }}
+      />
+      <div className="composition-divider" />
+
+      <PerCapitaSection summary={summary} expenditure={expenditure} />
+
+      {/* 02 Revenue — where money comes from */}
+      <div className="composition-divider" />
+      <NarrativeBridge
+        text="But where does this money come from? Trace the rupee backward — from your pocket to the treasury."
+        highlights={{ rupee: 'var(--gold)', pocket: 'var(--saffron)', treasury: 'var(--cyan)' }}
       />
       <div className="composition-divider" />
 
       <RevenueSection receipts={receipts} />
 
-      {/* 02 Deficit — the borrowing gap */}
+      {/* 03 Deficit — the borrowing gap */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="But revenue alone doesn't cover the bill. The government borrows to bridge the gap."
-        highlights={{ borrows: 'var(--cyan)', gap: 'var(--saffron)' }}
+        text="Taxes and non-tax income cover most of it. But for every rupee spent, the government still has to borrow the rest."
+        highlights={{ borrow: 'var(--cyan)', rupee: 'var(--saffron)' }}
       />
       <div className="composition-divider" />
 
       <DeficitSection summary={summary} />
 
-      {/* 03 Trends — 20-year perspective */}
+      {/* 04 Trends — 20-year perspective */}
       {trends && (
         <>
           <div className="composition-divider" />
           <NarrativeBridge
-            text="This borrowing pattern isn't new. Zoom out to see two decades of budgets and how the gap has evolved."
-            highlights={{ decades: 'var(--saffron)', gap: 'var(--cyan)', evolved: 'var(--gold)' }}
+            text="This borrowing gap isn't new — and it isn't random. Zoom out two decades and you see it's been a feature, not a bug. Except when it explodes."
+            highlights={{ decades: 'var(--saffron)', explodes: 'var(--cyan)' }}
           />
           <div className="composition-divider" />
 
@@ -132,13 +142,13 @@ export default function BudgetPage() {
         </>
       )}
 
-      {/* 04 Budget vs Actual — execution accountability */}
+      {/* 05 Budget vs Actual — execution accountability */}
       {budgetVsActual && (
         <>
           <div className="composition-divider" />
           <NarrativeBridge
-            text="Planning a budget is one thing. Executing it is another. How well do ministries stick to their plans?"
-            highlights={{ plans: 'var(--gold)', ministries: 'var(--saffron)' }}
+            text="So the government plans to borrow. But does it stick to the plan? Ministries are notorious for over- or under-spending. The gap between estimate and actual is where political will meets bureaucratic capacity."
+            highlights={{ plan: 'var(--gold)', over: 'var(--saffron)', under: 'var(--cyan)' }}
           />
           <div className="composition-divider" />
 
@@ -146,45 +156,35 @@ export default function BudgetPage() {
         </>
       )}
 
-      {/* 05 Expenditure — where money goes */}
+      {/* 06 Expenditure — where money goes */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Now let's trace where this money goes. Every ministry, every scheme, every crore."
-        highlights={{ ministry: 'var(--saffron)', scheme: 'var(--gold)', crore: 'var(--cyan)' }}
+        text="Now we know where it comes from and whether plans hold. Follow the money out — every crore, every ministry, every scheme."
+        highlights={{ crore: 'var(--saffron)', ministry: 'var(--gold)' }}
       />
       <div className="composition-divider" />
 
       <ExpenditureSection treemap={treemap} />
 
-      {/* 06 Flow — the complete picture */}
+      {/* 07 Flow — the complete picture */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Follow the flow from your pocket through the Central Government to the spending that shapes the country."
-        highlights={{ flow: 'var(--cyan)', pocket: 'var(--gold)', spending: 'var(--saffron)' }}
+        text="The treemap shows categories. But money doesn't sit in categories — it flows. Here's the full river from source to destination."
+        highlights={{ flows: 'var(--cyan)', river: 'var(--gold)', source: 'var(--saffron)' }}
       />
       <div className="composition-divider" />
 
       <FlowSection sankey={sankey} />
 
-      {/* 07 Map — where it lands geographically */}
+      {/* 08 Map — where it lands geographically */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Nearly one in four rupees flows directly to states and union territories. Here's where it lands."
-        highlights={{ states: 'var(--cyan)', rupees: 'var(--gold)' }}
+        text="Finally, this money doesn't stay in Delhi. Nearly one in four rupees flows directly to states — and where it lands is far from uniform."
+        highlights={{ delhi: 'var(--saffron)', states: 'var(--cyan)', uniform: 'var(--gold)' }}
       />
       <div className="composition-divider" />
 
       <MapSection statewise={statewise} />
-
-      {/* 08 Per Capita — what it means for you */}
-      <div className="composition-divider" />
-      <NarrativeBridge
-        text="What does all this mean for a single citizen? Here's what the government spends on you every day."
-        highlights={{ citizen: 'var(--gold)', spends: 'var(--saffron)' }}
-      />
-      <div className="composition-divider" />
-
-      <PerCapitaSection summary={summary} expenditure={expenditure} />
 
       {/* 09 CTA — go deeper */}
       <div className="composition-divider" />

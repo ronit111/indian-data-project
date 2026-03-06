@@ -61,21 +61,21 @@ export default function EmploymentPage() {
       {summary && <KeyTakeaways
         accent="#F59E0B"
         pills={[
-          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — over 2× the national rate', sectionId: 'youth' },
-          { value: `${summary.selfEmployedPct}%`, label: 'Self-employed — most Indians are their own boss', sectionId: 'informality' },
-          { value: `${summary.femaleLfpr}%`, label: 'Only 1 in 3 women in the workforce', sectionId: 'gender-gap' },
-          { value: `${summary.workforceTotal} Cr`, label: "India's total workforce", sectionId: 'participation' },
+          { value: `${summary.selfEmployedPct}%`, label: 'Self-employed — most are subsistence, not enterprise', sectionId: 'informality' },
+          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — nearly 4× the national rate', sectionId: 'youth' },
+          { value: `${summary.femaleLfpr}%`, label: 'Female LFPR — lower than Bangladesh and Sri Lanka', sectionId: 'gender-gap' },
+          { value: `${summary.workforceTotal} Cr`, label: 'Workers — but most survive rather than thrive', sectionId: 'participation' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India has one of the largest workforces on Earth. But how many are actually working — and in what?"
+        text="57 crore Indians work. The economy grows at 7% a year. Unemployment is only 3-4%. Sounds like a success story — until you ask what kind of work those 57 crore people actually do."
         highlights={{
-          'largest': 'var(--amber)',
-          'working': 'var(--amber)',
-          'what?': 'var(--amber)',
+          'success': 'var(--amber)',
+          'kind': 'var(--saffron)',
+          'actually': 'var(--saffron)',
         }}
       />
 
@@ -86,12 +86,11 @@ export default function EmploymentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The economy is transforming underneath people's feet. Agriculture is shrinking, services are booming. For millions, the question is: can they make the jump?"
+        text="The economy is transforming underneath people's feet. Agriculture is shrinking. Services are booming. But one line stays stubbornly flat: industry. India is skipping the manufacturing phase that powered China, South Korea, and Japan."
         highlights={{
           'transforming': 'var(--amber)',
-          'shrinking,': 'var(--amber)',
-          'booming.': 'var(--amber)',
-          'jump?': 'var(--saffron)',
+          'flat': 'var(--saffron)',
+          'skipping': 'var(--saffron)',
         }}
       />
 
@@ -102,12 +101,11 @@ export default function EmploymentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The young bear the heaviest burden. India's demographic dividend becomes a demographic disaster without jobs."
+        text="The young bear the heaviest cost. India adds over 1 crore people to the workforce each year. The economy does not create enough quality jobs to absorb them. Youth unemployment runs at nearly 4 times the overall rate. The demographic dividend becomes a demographic disaster without work."
         highlights={{
           'young': 'var(--amber)',
-          'dividend': 'var(--amber)',
+          'times': 'var(--saffron)',
           'disaster': 'var(--saffron)',
-          'jobs.': 'var(--saffron)',
         }}
       />
 
@@ -122,12 +120,11 @@ export default function EmploymentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Most Indian workers have no contract, no benefits, no safety net. The informal economy is the real economy."
+        text="And for those who do work — men or women — the nature of that work is the problem. 58% are self-employed. Most of that is subsistence: a farmer on 2 acres, a street vendor, a gig worker without a contract."
         highlights={{
-          'contract,': 'var(--amber)',
-          'benefits,': 'var(--amber)',
-          'informal': 'var(--saffron)',
-          'real': 'var(--saffron)',
+          '58%': 'var(--saffron)',
+          'self-employed': 'var(--saffron)',
+          'subsistence': 'var(--saffron)',
         }}
       />
 

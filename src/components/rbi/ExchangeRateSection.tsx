@@ -29,7 +29,7 @@ export function ExchangeRateSection({ data }: ExchangeRateSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          The rupee's managed float
+          The rupee's tightrope
         </motion.h2>
 
         <motion.p
@@ -38,7 +38,7 @@ export function ExchangeRateSection({ data }: ExchangeRateSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India doesn't fix the rupee to the dollar, but RBI actively smooths sharp swings through forex market interventions — buying or selling dollars. This chart shows the annual average rupees needed to buy one US dollar. A rising line means the rupee is weakening.
+          India runs a "dirty float" — the rupee is not fixed, but RBI intervenes to prevent sharp swings. A weaker rupee (rising line) makes imports more expensive but exports more competitive. A stronger rupee does the opposite. The long-term weakening from ₹45 to ₹85 per dollar reflects India's higher inflation relative to the US — a mathematical reality, not mismanagement. The RBI's job is to prevent panic, not to target a specific level.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/exchange-rate" data={data}>

@@ -41,7 +41,7 @@ interface CrossDomainLinkDef {
   tier: 1 | 2;
 }
 
-// ─── All 34 Directional Entries ─────────────────────────────────────
+// ─── All 38 Directional Entries ─────────────────────────────────────
 
 const LINKS: CrossDomainLinkDef[] = [
   // #1  Economy ↔ RBI (inflation)
@@ -109,6 +109,18 @@ const LINKS: CrossDomainLinkDef[] = [
   // #17 Elections ↔ Census (turnout demographics)
   { fromDomain: 'elections',   fromSection: 'turnout',          toDomain: 'census',      toSection: 'age',              label: "Who's turning out to vote?",                       tier: 2 },
   { fromDomain: 'census',      fromSection: 'age',              toDomain: 'elections',   toSection: 'turnout',          label: "Does India's youngest generation vote?",           tier: 2 },
+
+  // #18 Environment Energy → Economy (solar as industrial policy)
+  { fromDomain: 'environment', fromSection: 'energy-transition', toDomain: 'economy',    toSection: 'sectors',          label: "India's solar boom is also a manufacturing story", tier: 2 },
+
+  // #19 Environment Carbon → Budget (climate spending)
+  { fromDomain: 'environment', fromSection: 'carbon-footprint', toDomain: 'budget',      toSection: 'expenditure',      label: 'How much is the budget spending on climate?',      tier: 2 },
+
+  // #20 Environment Water → States (groundwater by state)
+  { fromDomain: 'environment', fromSection: 'water-stress',     toDomain: 'states',      toSection: 'percapita',        label: 'Groundwater stress varies dramatically by state',  tier: 2 },
+
+  // #21 Environment Water → Census (population pressure on water)
+  { fromDomain: 'environment', fromSection: 'water-stress',     toDomain: 'census',      toSection: 'population',       label: 'Population growth driving water demand',           tier: 2 },
 ];
 
 // ─── Lookup ─────────────────────────────────────────────────────────

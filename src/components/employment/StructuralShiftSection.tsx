@@ -66,8 +66,7 @@ export function StructuralShiftSection({ data }: StructuralShiftSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Agriculture employed 60% of Indians in 2000. Today it's under 45%. Services have surged
-          past 30%. India is in the middle of a once-in-a-century economic transformation.
+          Agriculture employed 60% of Indians in 2000. Today it's under 45%. Services have surged past 30%. But look at the industry line. It barely moves. India is moving workers directly from farms to services — skipping the manufacturing phase that powered China, South Korea, and Japan. That flat line is the structural problem hiding inside India's transformation story.
         </motion.p>
 
         {sectorSeries.length > 0 && (

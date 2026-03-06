@@ -61,22 +61,21 @@ export default function EducationPage() {
       {summary && <KeyTakeaways
         accent="#3B82F6"
         pills={[
-          { value: `${(summary.totalStudents / 10000000).toFixed(1)} Cr`, label: "Students — more than Brazil's population", sectionId: 'enrollment' },
-          { value: `${summary.ptrNational}:1`, label: 'Students per teacher, in every classroom', sectionId: 'teacher' },
-          { value: `${summary.gerSecondary?.toFixed(0) ?? '—'}%`, label: 'Secondary enrollment — 1 in 5 teens not in school', sectionId: 'dropout' },
-          { value: `${summary.educationSpendGDP}% of GDP`, label: 'What India spends on education', sectionId: 'spending' },
+          { value: `${(summary.totalStudents / 10000000).toFixed(1)} Cr`, label: "Students — India solved the access problem", sectionId: 'enrollment' },
+          { value: '1 in 5', label: 'Class 3 students who can read a Class 2 textbook — the learning crisis', sectionId: 'quality' },
+          { value: `${summary.ptrNational}:1`, label: 'Students per teacher — a root cause', sectionId: 'teacher' },
+          { value: `${summary.educationSpendGDP}% of GDP`, label: 'Spent on education — vs 6% target in NEP 2020', sectionId: 'spending' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="But enrollment is not learning. Getting children into classrooms was the easy part. What happens inside them tells a different story."
+        text="India runs the largest school system on Earth. 248 million students. Primary enrollment above 100%. By any access metric, it's a success story."
         highlights={{
-          'enrollment': 'var(--blue)',
-          'learning': 'var(--blue)',
-          'classrooms': 'var(--blue)',
-          'story': 'var(--blue)',
+          'largest': 'var(--blue)',
+          '248': 'var(--blue)',
+          'success': 'var(--blue)',
         }}
       />
 
@@ -87,12 +86,11 @@ export default function EducationPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Girls now match boys in enrollment. But the funnel narrows sharply after primary school."
+        text="Girls now nearly match boys in secondary enrollment — a quiet revolution. But the funnel narrows sharply after primary school. Getting in is not the same as staying in."
         highlights={{
-          'girls': 'var(--blue)',
-          'boys': 'var(--blue)',
+          'revolution': 'var(--blue)',
           'narrows': 'var(--saffron)',
-          'primary': 'var(--blue)',
+          'staying': 'var(--saffron)',
         }}
       />
 
@@ -107,11 +105,11 @@ export default function EducationPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The teacher at the front of the classroom matters more than any policy document."
+        text="The students who stay are not necessarily learning. ASER tested children across India with one simple question: can a third-grader read a second-grade textbook? The answer collapsed the access triumph."
         highlights={{
-          'teacher': 'var(--blue)',
-          'classroom': 'var(--blue)',
-          'policy': 'var(--blue)',
+          'necessarily': 'var(--saffron)',
+          'collapsed': 'var(--saffron)',
+          'triumph': 'var(--blue)',
         }}
       />
 
@@ -121,16 +119,27 @@ export default function EducationPage() {
 
       <div className="composition-divider" />
 
+      <NarrativeBridge
+        text="The teacher at the front of the classroom matters more than any policy document. The national average pupil-teacher ratio masks extremes: 8 students per teacher in Sikkim, 35 in Jharkhand."
+        highlights={{
+          'teacher': 'var(--blue)',
+          'extremes': 'var(--saffron)',
+          'jharkhand': 'var(--saffron)',
+        }}
+      />
+
+      <div className="composition-divider" />
+
       {quality && <TeacherSection data={quality} />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India spends less on education than most major economies. The question: is it enough?"
+        text="Teachers need support. Schools need infrastructure. Both need money. India spends 4% of GDP on education. The NEP 2020 target is 6%. That gap funds everything upstream: larger classes, fewer trained teachers, crumbling buildings."
         highlights={{
-          'spends': 'var(--blue)',
-          'education': 'var(--blue)',
-          'enough': 'var(--saffron)',
+          'money': 'var(--saffron)',
+          '4%': 'var(--saffron)',
+          '6%': 'var(--blue)',
         }}
       />
 

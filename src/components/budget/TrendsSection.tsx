@@ -71,7 +71,7 @@ export function TrendsSection({ trends }: TrendsSectionProps) {
   return (
     <section ref={ref} id="trends" className="composition">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={3} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={4} className="mb-6 block" isVisible={isVisible} />
 
         <div className="mb-8">
           <motion.div

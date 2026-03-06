@@ -63,10 +63,7 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          {latest.womenMPs} women in a house of {latest.totalSeats} — just {latest.pct}%.
-          The highest ever was {peak.pct}% in {peak.year} ({peak.womenMPs} women).
-          The 33% reservation law passed in 2023 after 27 years of failed attempts, but it won't take effect until after delimitation (redrawing constituency boundaries so each MP represents roughly equal numbers of people) and a new Census.
-          That leaves a {gap.toFixed(1)} percentage point gap to close.
+          Half the voters. {latest.womenMPs} out of {latest.totalSeats} MPs — just {latest.pct}%. The line on this chart is nearly flat across 67 years of elections. The highest was {peak.pct}% in {peak.year}. The 33% reservation law passed in 2023 after 27 years of failed attempts — but it won't take effect until after delimitation and a new Census, conditions that may not be met for a decade. The dashed line at 33% sits {gap.toFixed(1)} percentage points above where India actually is. That distance is not a gap. It is a structural failure.
         </motion.p>
 
         <div className="mb-8">
@@ -102,9 +99,18 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
           </p>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+          className="text-annotation mt-8 max-w-xl"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          96.88 crore people are eligible to choose their representatives. They show up in extraordinary numbers. What they get in return — a Parliament where 1 in 3 members faces criminal charges and 6 in 7 are men — is the gap between India's democratic ambition and its democratic reality. The ballot box works. Everything around it needs work.
+        </motion.p>
+
         <RelatedTopics sectionId="representation" domain="elections" />
         <CrossDomainLink domain="elections" sectionId="gender-gap" />
-
 
         <p className="source-attribution">
           Source: {data.source}

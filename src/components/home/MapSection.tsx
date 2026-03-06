@@ -38,7 +38,7 @@ export function MapSection({ statewise }: MapSectionProps) {
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={7} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={8} className="mb-6 block" isVisible={isVisible} />
 
         <div className="grid md:grid-cols-[1fr_2.2fr] gap-12 items-start">
           {/* Annotation panel */}

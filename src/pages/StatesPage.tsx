@@ -61,22 +61,22 @@ export default function StatesPage() {
       {summary && <KeyTakeaways
         accent="#4ADE80"
         pills={[
-          { value: `₹${formatIndianNumber(summary.averagePerCapita)}`, label: 'Average state income per person', sectionId: 'percapita' },
+          { value: `₹${formatIndianNumber(summary.averagePerCapita)}`, label: 'Average income per person — but the gap between states is 8-9x', sectionId: 'percapita' },
           { value: summary.growthRange, label: 'Growth gap: slowest to fastest state', sectionId: 'growth' },
-          { value: `₹${summary.topGsdpValue}L Cr`, label: 'Maharashtra alone, bigger than many nations', sectionId: 'gsdp' },
-          { value: '36', label: 'States and UTs — 36 different economies', sectionId: 'fiscal-health' },
+          { value: `₹${summary.topGsdpValue}L Cr`, label: 'Maharashtra alone — more than most nations', sectionId: 'gsdp' },
+          { value: '36', label: 'Economies sharing one Constitution', sectionId: 'fiscal-health' },
         ]}
       />}
 
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India's economy is not one story but many. Each state has its own growth trajectory, revenue base, and fiscal discipline. Together they form a mosaic of starkly different economic realities."
+        text="A child born in Goa today inherits a different country than a child born in Bihar. Same Constitution. Same anthem. Same central government. But the same country, two radically different economic realities."
         highlights={{
-          'mosaic': 'var(--emerald)',
-          'growth': 'var(--emerald)',
-          'revenue': 'var(--emerald)',
-          'fiscal': 'var(--emerald)',
+          'goa': 'var(--emerald)',
+          'bihar': 'var(--saffron)',
+          'different': 'var(--emerald)',
+          'realities': 'var(--emerald)',
         }}
       />
 
@@ -87,10 +87,12 @@ export default function StatesPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Size is not destiny. Some of India's fastest-growing states are among the smallest. Growth rates reveal who is catching up and who is falling behind."
+        text="Maybe large economies just need large populations. If poorer states were growing faster, they'd close the gap. They aren't. The mosaic is hardening, not blurring. Bihar and UP — home to 40 crore people — grow at middling rates."
         highlights={{
-          'fastest-growing': 'var(--emerald)',
-          'catching': 'var(--emerald)',
+          'aren\'t': 'var(--saffron)',
+          'hardening': 'var(--saffron)',
+          'blurring': 'var(--emerald)',
+          'mosaic': 'var(--emerald)',
         }}
       />
 
@@ -101,11 +103,12 @@ export default function StatesPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Where does the money come from? Some states raise most of their revenue from their own taxes. Others depend heavily on the Centre. This fiscal independence shapes what a state can do for its citizens."
+        text="Growth depends on agency. States that raise their own revenue can invest where they choose — schools, roads, hospitals. States dependent on Delhi must wait for a cheque before they can set their own priorities. This is the fairness question at the heart of Indian federalism."
         highlights={{
-          'revenue': 'var(--emerald)',
-          'taxes': 'var(--emerald)',
-          'independence': 'var(--emerald)',
+          'agency': 'var(--emerald)',
+          'fairness': 'var(--emerald)',
+          'dependent': 'var(--saffron)',
+          'wait': 'var(--saffron)',
         }}
       />
 
@@ -116,11 +119,12 @@ export default function StatesPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Spending beyond your means leaves a debt trail. The FRBM Act says states should keep fiscal deficits below 3% of GSDP — but not all states listen."
+        text="Dependence is one thing. Debt is another. High debt leads to high interest payments, which crowd out schools and hospitals, which keeps a state poor, which keeps it borrowing. Some states are caught in this loop."
         highlights={{
           'debt': 'var(--saffron)',
-          'FRBM': 'var(--saffron)',
-          '3%': 'var(--saffron)',
+          'interest': 'var(--saffron)',
+          'poor': 'var(--saffron)',
+          'borrowing': 'var(--saffron)',
         }}
       />
 
@@ -131,11 +135,12 @@ export default function StatesPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Total GDP can be misleading — a large population inflates the number. Per capita NSDP reveals which states actually produce more per person. The answers may surprise you."
+        text="Output, growth, revenue, debt — all matter to economists. For a citizen, only one number matters: how much reaches me? Per capita income strips away every abstraction. A worker in Goa produces in one month what a worker in Bihar produces in eight."
         highlights={{
-          'per capita': 'var(--emerald)',
-          'Per capita': 'var(--emerald)',
-          'per person': 'var(--emerald)',
+          'citizen': 'var(--emerald)',
+          'goa': 'var(--emerald)',
+          'bihar': 'var(--saffron)',
+          'eight': 'var(--saffron)',
         }}
       />
 

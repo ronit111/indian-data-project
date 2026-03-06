@@ -72,7 +72,7 @@ export function CensusHeroSection({ summary }: CensusHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          The world's most populous nation. Nearly one in six humans is Indian.
+          The world's most populous nation. And the demographic window for converting that scale into prosperity is open — but not for long.
         </motion.p>
 
         {/* Stat badges */}

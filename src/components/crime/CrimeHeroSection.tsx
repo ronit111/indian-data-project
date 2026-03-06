@@ -70,7 +70,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Crime trends, women's safety, road fatalities, cybercrime, policing gaps, and the justice pipeline.
+          Of every 100 crimes reported, 13 end in conviction. This is that story.
         </motion.p>
 
         {/* Stat badges */}

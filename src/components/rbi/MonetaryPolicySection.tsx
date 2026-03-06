@@ -67,7 +67,7 @@ export function MonetaryPolicySection({ data }: MonetaryPolicySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          A decade of rate decisions
+          The price of money
         </motion.h2>
 
         <motion.p
@@ -76,7 +76,7 @@ export function MonetaryPolicySection({ data }: MonetaryPolicySectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          When prices rise too fast, RBI raises the repo rate — the interest rate at which banks borrow from RBI — making loans expensive and cooling the economy. When growth slows, it cuts rates to boost lending. The CRR (Cash Reserve Ratio) controls how much of your bank deposit stays locked with RBI instead of being lent out.
+          The repo rate is the wholesale price of money: when RBI lends to banks at 6%, banks lend to you at 9–10%. When RBI cuts to 5%, your loan gets cheaper — but your savings earn less. The CRR (Cash Reserve Ratio — how much of your deposit stays locked with RBI instead of being lent out) is the secondary lever. Annotated below: the 2019–20 easing cycle, the COVID emergency cut to 4%, the 2022–23 tightening to fight inflation, and the recent cuts.
         </motion.p>
 
         <ChartActionsWrapper registryKey="rbi/monetary-policy" data={data}>

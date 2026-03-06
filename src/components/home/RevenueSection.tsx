@@ -23,7 +23,7 @@ export function RevenueSection({ receipts }: RevenueSectionProps) {
   return (
     <section ref={ref} id="revenue" className="composition">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <SectionNumber number={1} className="mb-6 block" isVisible={isVisible} />
+        <SectionNumber number={2} className="mb-6 block" isVisible={isVisible} />
 
         <div className="grid md:grid-cols-[1fr_1.5fr] gap-12 items-start">
           {/* Annotation panel */}
@@ -54,7 +54,7 @@ export function RevenueSection({ receipts }: RevenueSectionProps) {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="text-annotation mb-6"
             >
-              {`Each square = 1%. For every rupee spent, ${borrowingPaise} paise is borrowed.`}
+              {`Each square = 1% of every rupee spent. Taxes and non-tax revenue cover most of it — but ${borrowingPaise} paise of every rupee spent comes from borrowings.`}
             </motion.p>
 
             <motion.div

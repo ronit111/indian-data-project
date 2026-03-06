@@ -90,61 +90,61 @@ export default function EconomyPage() {
         ]}
       />
 
-      {/* 01 Growth — the GDP story */}
+      {/* 01 Growth — the GDP headline vs your headline */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="How fast is India growing? A decade of GDP data tells the story of booms, a pandemic shock, and a resilient recovery."
-        highlights={{ growing: 'var(--cyan)', pandemic: 'var(--saffron)', recovery: 'var(--gold)' }}
+        text="India's GDP crossed ₹300 lakh crore. Your salary didn't notice. 7% growth is real — but per-capita income grows slower because population grows too, and gains concentrate in specific sectors and geographies."
+        highlights={{ gdp: 'var(--cyan)', salary: 'var(--saffron)', 'per-capita': 'var(--gold)' }}
       />
       <div className="composition-divider" />
 
       <GrowthSection gdp={gdpGrowth} />
 
-      {/* 02 Inflation — price stability */}
+      {/* 02 Inflation — the invisible tax on growth */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Growth means little if prices run away. The RBI walks a tightrope between supporting growth and keeping inflation within its target band."
-        highlights={{ prices: 'var(--saffron)', inflation: 'var(--gold)', target: 'var(--cyan)' }}
+        text="If growth is real, why doesn't it feel real? Because prices eat into it. When GDP grows 7% and inflation runs at 5%, your real gain is only 2% — and food inflation hits the poorest hardest."
+        highlights={{ prices: 'var(--saffron)', gain: 'var(--gold)', inflation: 'var(--cyan)' }}
       />
       <div className="composition-divider" />
 
       <InflationSection inflation={inflation} />
 
-      {/* 03 Fiscal — the deficit path */}
+      {/* 03 Fiscal — the government's IOUs */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="The government borrows to invest. But how much is too much? The fiscal deficit tells us how far the gap has narrowed."
-        highlights={{ borrows: 'var(--saffron)', deficit: 'var(--gold)', narrowed: 'var(--cyan)' }}
+        text="Inflation is one leak. The government's own borrowing is another — when it borrows heavily, it competes with businesses for bank funds, pushing up interest rates for everyone."
+        highlights={{ borrowing: 'var(--saffron)', rates: 'var(--cyan)', businesses: 'var(--gold)' }}
       />
       <div className="composition-divider" />
 
       <FiscalSection fiscal={fiscal} />
 
-      {/* 04 External — trade and reserves */}
+      {/* 04 External — India and the world */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="India trades with the world but imports more than it exports. Forex reserves provide a buffer against external shocks."
-        highlights={{ exports: 'var(--cyan)', imports: 'var(--saffron)', reserves: 'var(--gold)' }}
+        text="The domestic picture is one half. India's position in the world — what it buys, what it sells, what it holds in foreign currency — is the other half. A persistent trade deficit means your petrol price is set in Houston as much as New Delhi."
+        highlights={{ deficit: 'var(--saffron)', petrol: 'var(--gold)', currency: 'var(--cyan)' }}
       />
       <div className="composition-divider" />
 
       <ExternalSection external={external} />
 
-      {/* 05 Sectors — the economic mix */}
+      {/* 05 Sectors — what India makes, sells, and grows */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Services power nearly half the economy. But manufacturing and construction are gaining ground, shifting the sectoral balance."
-        highlights={{ services: 'var(--cyan)', manufacturing: 'var(--saffron)', construction: 'var(--gold)' }}
+        text="So India imports more than it exports. But what does India actually produce? The composition of the economy tells you where the jobs and growth are really coming from — and why services-led growth employs fewer people than manufacturing would."
+        highlights={{ services: 'var(--cyan)', manufacturing: 'var(--saffron)', jobs: 'var(--gold)' }}
       />
       <div className="composition-divider" />
 
       <SectorsSection sectors={sectors} />
 
-      {/* 06 Outlook — what lies ahead */}
+      {/* 06 Outlook — the road ahead */}
       <div className="composition-divider" />
       <NarrativeBridge
-        text="Where does the economy go from here? The Survey lays out projections for the year ahead."
-        highlights={{ projections: 'var(--cyan)' }}
+        text="The macro is promising. The micro is the test. Growth is projected to stay fast by global standards — but whether it reaches the 60% of Indians in rural areas and the 1.2 crore young people entering the workforce each year is the real question."
+        highlights={{ rural: 'var(--saffron)', workforce: 'var(--gold)', projected: 'var(--cyan)' }}
       />
       <div className="composition-divider" />
 

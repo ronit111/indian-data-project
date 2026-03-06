@@ -55,7 +55,7 @@ export function FiscalHealthSection({ data }: FiscalHealthSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Each dot is a state. States to the right borrow more, states higher up carry more debt. The FRBM (Fiscal Responsibility and Budget Management) Act caps state borrowing at 3% of GSDP. Punjab, for instance, carries debt equal to 47% of its annual output. High-debt states spend more on interest payments than on schools or hospitals. Green dots are running a surplus.
+          Each dot is a state. The FRBM (Fiscal Responsibility and Budget Management) Act caps state borrowing at 3% of GSDP — that vertical line. States to the right ignore it. States high up carry crushing debt loads: Punjab at 47% debt-to-GSDP spends more on interest payments than on schools or hospitals. That crowding-out creates a doom loop: high debt → high interest → less public investment → slower growth → more borrowing. Green dots are running a surplus — but they are the exception.
         </motion.p>
 
         <ChartActionsWrapper registryKey="states/fiscal-health" data={data}>
