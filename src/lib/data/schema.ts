@@ -1168,6 +1168,7 @@ export interface CrimeSummary {
   totalCrimes: number;
   crimeRate: number;
   roadDeaths: number;
+  chargesheetRatePct: number;
   convictionRatePct: number;
   womenCrimes: number;
   cybercrimes: number;

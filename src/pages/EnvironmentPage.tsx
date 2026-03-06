@@ -102,7 +102,7 @@ export default function EnvironmentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Energy is where India's transformation is most visible. Solar capacity has grown 22× in 9 years. But coal isn't going away — demand is growing too fast for clean energy alone."
+        text="Energy is where India's transformation is most visible. Solar capacity has grown 22× in a decade. But coal isn't going away — demand is growing too fast for clean energy alone."
         highlights={{
           'Solar': 'var(--teal)',
           '22×': 'var(--teal)',

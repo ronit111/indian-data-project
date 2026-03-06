@@ -366,6 +366,7 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               placeholder={`Filter ${terms.length} terms...`}
+              aria-label="Filter glossary terms"
               className="w-full pl-9 pr-4 py-2.5 rounded-lg text-sm bg-transparent outline-none transition-colors"
               style={{
                 color: 'var(--text-primary)',

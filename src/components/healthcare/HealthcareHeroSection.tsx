@@ -40,14 +40,14 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
       />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.p
+        <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-section-num tracking-[0.2em] uppercase mb-8"
         >
           Healthcare
-        </motion.p>
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          The world's most populous nation, stretched thin on healthcare.
+          The world's most populous nation, with one of the lowest doctor-to-population ratios.
         </motion.p>
 
         {/* Stat badges */}
@@ -97,7 +97,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
             &middot; Health Exp {summary?.healthExpGDP?.toFixed(1) ?? '—'}% GDP
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; OOP {summary?.outOfPocketPct?.toFixed(0) ?? '—'}%
+            &middot; Out-of-Pocket {summary?.outOfPocketPct?.toFixed(0) ?? '—'}%
           </span>
         </motion.div>
 

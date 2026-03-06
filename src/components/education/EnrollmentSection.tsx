@@ -78,7 +78,7 @@ export function EnrollmentSection({ data }: EnrollmentSectionProps) {
               series={enrollmentSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

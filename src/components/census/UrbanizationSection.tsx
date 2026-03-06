@@ -70,7 +70,7 @@ export function UrbanizationSection({ data }: UrbanizationSectionProps) {
                 series={urbanSeries}
                 isVisible={isVisible}
                 formatValue={(v) => `${v.toFixed(1)}%`}
-                unit="%"
+                unit=""
               />
             </ChartActionsWrapper>
           </div>

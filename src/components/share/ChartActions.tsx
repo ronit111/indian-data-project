@@ -114,6 +114,7 @@ function ActionButton({
     <button
       onClick={onClick}
       title={title}
+      aria-label={title}
       className="p-1.5 rounded-md transition-colors duration-150 cursor-pointer"
       style={{
         color: 'var(--text-muted)',

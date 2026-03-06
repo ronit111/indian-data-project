@@ -136,6 +136,7 @@ export default function ChartGalleryPage() {
             <input
               type="text"
               placeholder="Search charts..."
+              aria-label="Search charts"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="ml-auto w-full sm:w-56 rounded-lg px-3 py-1.5 text-xs"

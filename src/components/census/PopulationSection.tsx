@@ -78,7 +78,7 @@ export function PopulationSection({ data }: PopulationSectionProps) {
               series={popSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(2)}B`}
-              unit="billion"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>
@@ -94,7 +94,7 @@ export function PopulationSection({ data }: PopulationSectionProps) {
               series={growthSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(2)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

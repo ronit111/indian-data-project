@@ -76,7 +76,7 @@ export function SpendingSection({ data }: SpendingSectionProps) {
               series={spendingSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="% of GDP"
+              unit=""
               referenceLine={6}
             />
             </ChartActionsWrapper>
@@ -93,7 +93,7 @@ export function SpendingSection({ data }: SpendingSectionProps) {
               series={govtSpendSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

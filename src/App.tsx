@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route, Navigate, useLocation, useNavigationType } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useLocation, useNavigationType } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { PageShell } from './components/layout/PageShell.tsx';
 
@@ -128,6 +128,22 @@ function prefetchRoute(path: string) {
 // ─── Suspense fallback (matches dark theme) ──────────────────────────
 const PageFallback = () => (
   <div style={{ background: '#06080f', minHeight: '100vh' }} />
+);
+
+const NotFoundFallback = () => (
+  <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+    <p className="text-6xl font-mono font-bold mb-4" style={{ color: 'var(--text-muted)' }}>404</p>
+    <p className="text-lg mb-6" style={{ color: 'var(--text-secondary)' }}>
+      This page doesn't exist.
+    </p>
+    <Link
+      to="/"
+      className="px-6 py-3 rounded-xl font-medium text-sm transition-colors duration-150"
+      style={{ background: 'var(--saffron)', color: '#fff' }}
+    >
+      Back to Home
+    </Link>
+  </div>
 );
 
 // ─── Route table ─────────────────────────────────────────────────────
@@ -313,6 +329,9 @@ export default function App() {
                 element={<Navigate to={r.to} replace />}
               />
             ))}
+
+            {/* 404 catch-all */}
+            <Route path="*" element={<NotFoundFallback />} />
           </Routes>
         </AnimatePresence>
       </Suspense>

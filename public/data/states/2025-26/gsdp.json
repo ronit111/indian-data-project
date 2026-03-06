@@ -8,7 +8,7 @@
       "gsdp": 4531518.42,
       "gsdpConstant": 2612263.1,
       "growthRate": 11.73,
-      "perCapitaGsdp": 309340,
+      "perCapitaNsdp": 309340,
       "population": 1464.9
     },
     {
@@ -17,7 +17,7 @@
       "gsdp": 3118590.3,
       "gsdpConstant": 1732188.58,
       "growthRate": 15.98,
-      "perCapitaGsdp": 361619,
+      "perCapitaNsdp": 361619,
       "population": 862.4
     },
     {
@@ -26,7 +26,7 @@
       "gsdp": 2978223.51,
       "gsdpConstant": 1582636.09,
       "growthRate": 12.69,
-      "perCapitaGsdp": 108572,
+      "perCapitaNsdp": 108572,
       "population": 2743.09
     },
     {
@@ -35,7 +35,7 @@
       "gsdp": 2883903.23,
       "gsdpConstant": 1570297.77,
       "growthRate": 12.77,
-      "perCapitaGsdp": 380906,
+      "perCapitaNsdp": 380906,
       "population": 757.12
     },
     {
@@ -44,7 +44,7 @@
       "gsdp": 1815009.91,
       "gsdpConstant": 941853.72,
       "growthRate": 9.91,
-      "perCapitaGsdp": 163467,
+      "perCapitaNsdp": 163467,
       "population": 1110.32
     },
     {
@@ -53,7 +53,7 @@
       "gsdp": 1704338.55,
       "gsdpConstant": 906293.67,
       "growthRate": 12.02,
-      "perCapitaGsdp": 185053,
+      "perCapitaNsdp": 185053,
       "population": 921.0
     },
     {
@@ -62,7 +62,7 @@
       "gsdp": 1640901.43,
       "gsdpConstant": 835099.62,
       "growthRate": 12.25,
-      "perCapitaGsdp": 387623,
+      "perCapitaNsdp": 387623,
       "population": 423.32
     },
     {
@@ -71,7 +71,7 @@
       "gsdp": 1593061.98,
       "gsdpConstant": 865013.23,
       "growthRate": 12.02,
-      "perCapitaGsdp": 266240,
+      "perCapitaNsdp": 266240,
       "population": 598.36
     },
     {
@@ -80,7 +80,7 @@
       "gsdp": 1503395.4,
       "gsdpConstant": 712260.44,
       "growthRate": 11.05,
-      "perCapitaGsdp": 152615,
+      "perCapitaNsdp": 152615,
       "population": 985.09
     },
     {
@@ -89,7 +89,7 @@
       "gsdp": 1248533.01,
       "gsdpConstant": 685283.16,
       "growthRate": 9.97,
-      "perCapitaGsdp": 308338,
+      "perCapitaNsdp": 308338,
       "population": 404.92
     },
     {
@@ -98,7 +98,7 @@
       "gsdp": 1215003.05,
       "gsdpConstant": 711485.67,
       "growthRate": 9.17,
-      "perCapitaGsdp": 493024,
+      "perCapitaNsdp": 493024,
       "population": 246.44
     },
     {
@@ -107,7 +107,7 @@
       "gsdp": 1213951.04,
       "gsdpConstant": 677033.25,
       "growthRate": 11.83,
-      "perCapitaGsdp": 353182,
+      "perCapitaNsdp": 353182,
       "population": 343.72
     },
     {
@@ -116,7 +116,7 @@
       "gsdp": 991997.21,
       "gsdpConstant": 531371.72,
       "growthRate": 13.09,
-      "perCapitaGsdp": 69321,
+      "perCapitaNsdp": 69321,
       "population": 1431.02
     },
     {
@@ -125,7 +125,7 @@
       "gsdp": 890037.54,
       "gsdpConstant": 516575.46,
       "growthRate": 11.4,
-      "perCapitaGsdp": 168966,
+      "perCapitaNsdp": 168966,
       "population": 526.76
     },
     {
@@ -134,7 +134,7 @@
       "gsdp": 838636.61,
       "gsdpConstant": 528239.45,
       "growthRate": 8.67,
-      "perCapitaGsdp": 221197,
+      "perCapitaNsdp": 221197,
       "population": 379.14
     },
     {
@@ -143,7 +143,7 @@
       "gsdp": 643666.69,
       "gsdpConstant": 349814.26,
       "growthRate": 13.07,
-      "perCapitaGsdp": 159185,
+      "perCapitaNsdp": 159185,
       "population": 404.35
     },
     {
@@ -152,7 +152,7 @@
       "gsdp": 567880.43,
       "gsdpConstant": 329752.31,
       "growthRate": 10.89,
-      "perCapitaGsdp": 162870,
+      "perCapitaNsdp": 162870,
       "population": 348.67
     },
     {
@@ -161,7 +161,7 @@
       "gsdp": 516255.36,
       "gsdpConstant": 303178.23,
       "growthRate": 10.87,
-      "perCapitaGsdp": 116663,
+      "perCapitaNsdp": 116663,
       "population": 442.52
     },
     {
@@ -170,7 +170,7 @@
       "gsdp": 378244.53,
       "gsdpConstant": 217816.81,
       "growthRate": 13.59,
-      "perCapitaGsdp": 274064,
+      "perCapitaNsdp": 274064,
       "population": 138.01
     },
     {
@@ -179,7 +179,7 @@
       "gsdp": 262458.07,
       "gsdpConstant": 143648.87,
       "growthRate": 11.18,
-      "perCapitaGsdp": 154826,
+      "perCapitaNsdp": 154826,
       "population": 169.52
     },
     {
@@ -188,7 +188,7 @@
       "gsdp": 231690.31,
       "gsdpConstant": 145206.69,
       "growthRate": 9.2,
-      "perCapitaGsdp": 256137,
+      "perCapitaNsdp": 256137,
       "population": 90.46
     },
     {
@@ -197,7 +197,7 @@
       "gsdp": 89681.81,
       "gsdpConstant": 50261.63,
       "growthRate": 12.9,
-      "perCapitaGsdp": 192842,
+      "perCapitaNsdp": 192842,
       "population": 46.51
     },
     {
@@ -206,7 +206,7 @@
       "gsdp": 59625.63,
       "gsdpConstant": 33066.54,
       "growthRate": 12.03,
-      "perCapitaGsdp": 157141,
+      "perCapitaNsdp": 157141,
       "population": 37.94
     },
     {
@@ -215,7 +215,7 @@
       "gsdp": 52162.67,
       "gsdpConstant": 29316.44,
       "growthRate": 11.11,
-      "perCapitaGsdp": 281478,
+      "perCapitaNsdp": 281478,
       "population": 18.53
     },
     {
@@ -224,7 +224,7 @@
       "gsdp": 44228.69,
       "gsdpConstant": 22423.31,
       "growthRate": 14.69,
-      "perCapitaGsdp": 246813,
+      "perCapitaNsdp": 246813,
       "population": 17.92
     },
     {
@@ -233,7 +233,7 @@
       "gsdp": 0,
       "gsdpConstant": 0,
       "growthRate": 0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -242,7 +242,7 @@
       "gsdp": 0,
       "gsdpConstant": 0,
       "growthRate": 0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -251,7 +251,7 @@
       "gsdp": 0,
       "gsdpConstant": 0,
       "growthRate": 0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -260,7 +260,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -269,7 +269,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -278,7 +278,7 @@
       "gsdp": 0,
       "gsdpConstant": 0,
       "growthRate": 0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -287,7 +287,7 @@
       "gsdp": 0,
       "gsdpConstant": 0,
       "growthRate": 0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -296,7 +296,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -305,7 +305,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -314,7 +314,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     },
     {
@@ -323,7 +323,7 @@
       "gsdp": 0.0,
       "gsdpConstant": 0.0,
       "growthRate": 0.0,
-      "perCapitaGsdp": 0,
+      "perCapitaNsdp": 0,
       "population": 0
     }
   ],

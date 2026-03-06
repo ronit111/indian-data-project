@@ -68,15 +68,26 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
     >
       {children}
 
-      {/* Desktop: hover overlay */}
+      {/* Desktop: hover/focus overlay */}
       <div
         className="absolute top-2 right-2 z-10 hidden md:flex items-center gap-1 rounded-lg px-1.5 py-1 transition-opacity duration-200"
         style={{
-          pointerEvents: 'none',
+          pointerEvents: hovered ? 'auto' : 'none',
           opacity: hovered ? 1 : 0,
           background: 'rgba(6, 8, 15, 0.85)',
           backdropFilter: 'blur(8px)',
           border: '1px solid rgba(255, 255, 255, 0.06)',
+        }}
+        onFocus={() => {
+          if (!svgRef.current && containerRef.current) {
+            svgRef.current = containerRef.current.querySelector('svg');
+          }
+          setHovered(true);
+        }}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+            setHovered(false);
+          }
         }}
       >
         <ChartActions entry={entry} data={data} svgRef={svgRef} />
@@ -86,14 +97,14 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
       {showMobileActions && (
         <button
           onClick={handleMobileShare}
-          className="absolute top-2 right-2 z-10 md:hidden p-2 rounded-lg cursor-pointer"
+          className="absolute top-2 right-2 z-10 md:hidden p-3 rounded-lg cursor-pointer"
           style={{
             background: 'rgba(6, 8, 15, 0.85)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.06)',
             color: 'var(--text-muted)',
           }}
-          title="Share chart"
+          aria-label="Share chart"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 8v5a1 1 0 001 1h6a1 1 0 001-1V8" />

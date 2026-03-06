@@ -83,7 +83,7 @@ export function ImmunizationSection({ data }: ImmunizationSectionProps) {
               series={immunizationSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

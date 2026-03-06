@@ -30,6 +30,13 @@ export function AnimatedCounter({
     if (!trigger || hasAnimated.current || !spanRef.current) return;
     hasAnimated.current = true;
 
+    // Skip animation for users who prefer reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      spanRef.current.textContent = `${prefix}${formatIndianNumber(target)}${suffix}`;
+      return;
+    }
+
     const durationMs = duration * 1000;
     const start = performance.now();
     let rafId: number;

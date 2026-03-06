@@ -154,6 +154,7 @@ export default function OpenDataPage() {
           <input
             type="text"
             placeholder="Search endpoints..."
+            aria-label="Search data endpoints"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full sm:w-80 rounded-lg px-4 py-2.5 text-sm mb-6"

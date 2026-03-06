@@ -40,14 +40,14 @@ export function EducationHeroSection({ summary }: EducationHeroSectionProps) {
       />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.p
+        <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-section-num tracking-[0.2em] uppercase mb-8"
         >
           Education
-        </motion.p>
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -91,10 +91,10 @@ export function EducationHeroSection({ summary }: EducationHeroSectionProps) {
             style={{ backgroundColor: 'var(--blue)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            GER {summary?.gerPrimary?.toFixed(0) ?? '—'}%
+            Enrollment {summary?.gerPrimary?.toFixed(0) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; PTR {summary?.ptrNational?.toFixed(0) ?? '—'}
+            &middot; Pupil-Teacher Ratio {summary?.ptrNational?.toFixed(0) ?? '—'}
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; {summary?.educationSpendGDP?.toFixed(1) ?? '—'}% GDP

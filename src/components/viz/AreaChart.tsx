@@ -372,21 +372,23 @@ export function AreaChart({
         y={tooltip.position.y}
       />
 
-      {/* Legend */}
-      <div className="flex flex-wrap gap-4 mt-3 px-2">
-        {series.map((s) => (
-          <div key={s.id} className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-2 rounded-sm" style={{ background: s.color, opacity: 0.7 }} />
-            <span className="text-caption">{s.name}</span>
-          </div>
-        ))}
-        {overlay && (
-          <div className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-0.5 rounded-full" style={{ background: overlay.color }} />
-            <span className="text-caption">{overlay.name}</span>
-          </div>
-        )}
-      </div>
+      {/* Legend — hide for single-series without overlay */}
+      {(series.length > 1 || overlay) && (
+        <div className="flex flex-wrap gap-4 mt-3 px-2">
+          {series.map((s) => (
+            <div key={s.id} className="flex items-center gap-1.5">
+              <span className="inline-block w-3 h-2 rounded-sm" style={{ background: s.color, opacity: 0.7 }} />
+              <span className="text-caption">{s.name}</span>
+            </div>
+          ))}
+          {overlay && (
+            <div className="flex items-center gap-1.5">
+              <span className="inline-block w-3 h-0.5 rounded-full" style={{ background: overlay.color }} />
+              <span className="text-caption">{overlay.name}</span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

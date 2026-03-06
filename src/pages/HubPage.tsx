@@ -105,10 +105,9 @@ function RBIMiniViz({ summary, isVisible }: { summary: RBISummary | null; isVisi
     if (!summary) return [];
     return [
       { label: 'May 20', rate: 4.00 },
+      { label: 'May 22', rate: 4.40 },
       { label: 'Feb 23', rate: 6.50 },
       { label: 'Feb 25', rate: 6.25 },
-      { label: 'Jun 25', rate: 5.50 },
-      { label: 'Feb 26', rate: 5.25 },
     ];
   }, [summary]);
 
@@ -154,11 +153,11 @@ function StatesMiniViz({ summary, isVisible }: { summary: StatesSummary | null; 
   const topStates = useMemo(() => {
     if (!summary) return [];
     return [
-      { name: 'MH', value: 35.28 },
-      { name: 'TN', value: 24.81 },
-      { name: 'KA', value: 22.26 },
-      { name: 'GJ', value: 20.84 },
-      { name: 'UP', value: 21.73 },
+      { name: 'MH', value: 45.32 },
+      { name: 'TN', value: 28.27 },
+      { name: 'KA', value: 26.32 },
+      { name: 'GJ', value: 24.53 },
+      { name: 'UP', value: 24.40 },
     ];
   }, [summary]);
 
@@ -425,7 +424,7 @@ function CrimeMiniViz({ summary, isVisible }: { summary: CrimeSummary | null; is
     if (!summary) return null;
     return [
       { label: 'Reported', pct: 100 },
-      { label: 'Chargesheeted', pct: 74.6 },
+      { label: 'Chargesheeted', pct: summary.chargesheetRatePct },
       { label: 'Convicted', pct: summary.convictionRatePct },
     ];
   }, [summary]);
@@ -780,7 +779,7 @@ export default function HubPage() {
           to="/elections"
           sectionNumber="10"
           title="Elections"
-          description={`${electionsSummary ? `${electionsSummary.totalElectorsCrore} crore` : '...'} voters, 543 seats, 67 years of democracy. Turnout trends, party shifts, and who your MP really is — criminal records, wealth, and all.`}
+          description={`${electionsSummary ? `${electionsSummary.totalElectorsCrore} crore` : '...'} voters, 543 seats, 7 decades of democracy. Turnout trends, party shifts, and who your MP really is — criminal records, wealth, and all.`}
           accentColor="var(--indigo)"
           accentVar="--indigo"
           ctaText="Explore elections"

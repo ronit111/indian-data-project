@@ -48,7 +48,7 @@ export function OutOfPocketSection({ data }: OutOfPocketSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          For every Rs 100 spent on healthcare in India, about Rs 45 comes from the patient's own pocket — among the highest rates in the world. This means families often skip treatment or sell assets to pay medical bills. About 5.5 crore Indians are pushed into poverty every year by healthcare costs alone. Ayushman Bharat covers hospitalization for 55 crore citizens, but outpatient costs — the everyday doctor visits and medicines — remain largely uncovered.
+          For every ₹100 spent on healthcare in India, about ₹45 comes from the patient's own pocket — among the highest rates in the world. This means families often skip treatment or sell assets to pay medical bills. About 5.5 crore Indians are pushed into poverty every year by healthcare costs alone. Ayushman Bharat covers hospitalization for 55 crore citizens, but outpatient costs — the everyday doctor visits and medicines — remain largely uncovered.
         </motion.p>
 
         {oopSeries.length > 0 && (
@@ -61,7 +61,7 @@ export function OutOfPocketSection({ data }: OutOfPocketSectionProps) {
               series={oopSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

@@ -37,7 +37,7 @@ export function ForexSection({ data }: ForexSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          India's war chest
+          The reserves buffer
         </motion.h2>
 
         <motion.p

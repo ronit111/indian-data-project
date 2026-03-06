@@ -80,7 +80,7 @@ export function StructuralShiftSection({ data }: StructuralShiftSectionProps) {
               series={sectorSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

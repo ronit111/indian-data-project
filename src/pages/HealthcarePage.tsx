@@ -127,10 +127,10 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The variation between states is staggering. Some states match European health outcomes. Others lag decades behind."
+        text="The variation between states is wide. Some states match European health outcomes. Others lag decades behind."
         highlights={{
           'variation': 'var(--rose)',
-          'staggering': 'var(--saffron)',
+          'wide': 'var(--saffron)',
           'european': 'var(--rose)',
           'decades': 'var(--saffron)',
         }}

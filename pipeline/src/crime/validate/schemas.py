@@ -36,6 +36,7 @@ class CrimeSummary(BaseModel):
     totalCrimes: int
     crimeRate: float
     roadDeaths: int
+    chargesheetRatePct: float
     convictionRatePct: float
     womenCrimes: int
     cybercrimes: int

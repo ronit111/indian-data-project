@@ -85,10 +85,10 @@ const SECTIONS = [
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
-                <th className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
+                <th scope="col" className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
               </tr>
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
@@ -117,10 +117,10 @@ const SECTIONS = [
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>WB Code</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
-                <th className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>WB Code</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
+                <th scope="col" className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
               </tr>
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
@@ -148,10 +148,10 @@ const SECTIONS = [
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
-                <th className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Indicator</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Vintage</th>
+                <th scope="col" className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Unit</th>
               </tr>
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
@@ -181,10 +181,10 @@ const SECTIONS = [
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Data Year</th>
-                <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Level</th>
-                <th className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Coverage</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Source</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Data Year</th>
+                <th scope="col" className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--text-primary)' }}>Level</th>
+                <th scope="col" className="text-left py-2 font-medium" style={{ color: 'var(--text-primary)' }}>Coverage</th>
               </tr>
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>

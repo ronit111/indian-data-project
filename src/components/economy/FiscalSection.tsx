@@ -47,7 +47,7 @@ export function FiscalSection({ fiscal }: FiscalSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           Fiscal consolidation has been steady since the COVID-era peak of 9.2%.
-          The FRBM Act sets a long-term target of 3% of GDP. The government is on track but not there yet.
+          The Fiscal Responsibility and Budget Management (FRBM) Act sets a long-term target of 3% of GDP. The government is on track but not there yet.
         </motion.p>
 
         <ChartActionsWrapper registryKey="economy/fiscal" data={fiscal}>

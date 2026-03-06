@@ -109,7 +109,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
           transition={{ duration: 0.6, ease: EASE_OUT_EXPO, delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          India spends about 3% of GDP on health — half the global average of ~6%. The gap translates to fewer doctors, fewer hospital beds, and families bearing over half the cost directly from their pockets. For context, even countries with smaller economies like Sri Lanka and Thailand spend a higher share of GDP on public health.
+          India spends about 3% of GDP on health — half the global average of ~6%. The gap translates to fewer doctors, fewer hospital beds, and families bearing nearly half the cost directly from their pockets. For context, even countries with smaller economies like Sri Lanka and Thailand spend a higher share of GDP on public health.
         </motion.p>
 
         {spendingSeries.length > 0 && (
@@ -122,7 +122,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
               series={spendingSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>
@@ -187,7 +187,7 @@ export function SpendingSection({ data, forex }: SpendingSectionProps) {
                   series={perCapitaSeries}
                   isVisible={isVisible}
                   formatValue={(v) => `₹${Math.round(v).toLocaleString('en-IN')}`}
-                  unit="₹"
+                  unit=""
                 />
                 <p className="text-xs mt-3 max-w-lg" style={{ color: 'var(--text-muted)' }}>
                   {`From ₹${perCapitaINR.earliest.value.toLocaleString('en-IN')} in ${perCapitaINR.earliest.year} to ₹${perCapitaINR.latest.value.toLocaleString('en-IN')} in ${perCapitaINR.latest.year} — a ${perCapitaINR.growthPct}% increase. USD values converted at annual average INR/USD exchange rates from the RBI.`}

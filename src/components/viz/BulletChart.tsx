@@ -29,7 +29,7 @@ export function BulletChart({
   height = 32,
   ariaLabel,
 }: BulletChartProps) {
-  const maxVal = ranges?.max ?? Math.max(value, target ?? value) * 1.2;
+  const maxVal = ranges?.max ?? Math.max(value, target ?? value, 1) * 1.2;
   const barH = height * 0.45;
   const rangeH = height * 0.7;
   const midY = height / 2;

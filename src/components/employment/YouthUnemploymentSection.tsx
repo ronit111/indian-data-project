@@ -72,7 +72,7 @@ export function YouthUnemploymentSection({ data }: YouthUnemploymentSectionProps
               series={unemploymentSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

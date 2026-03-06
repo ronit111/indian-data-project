@@ -211,7 +211,7 @@
     "id": "rbi-repo-rate",
     "domain": "rbi",
     "question": "What is the current repo rate?",
-    "answer": "The RBI repo rate is 5.25% with a neutral monetary policy stance.",
+    "answer": "The RBI repo rate is 6.25% with a neutral monetary policy stance.",
     "sectionId": "monetary-policy",
     "route": "/rbi#monetary-policy"
   },
@@ -259,7 +259,7 @@
     "id": "rbi-crr",
     "domain": "rbi",
     "question": "What is CRR and why does it matter?",
-    "answer": "Banks must keep 3.0% of deposits with RBI \u2014 this controls money supply.",
+    "answer": "Banks must keep 4.0% of deposits with RBI \u2014 this controls money supply.",
     "sectionId": "liquidity",
     "route": "/rbi#liquidity"
   },
@@ -315,7 +315,7 @@
     "id": "states-richest",
     "domain": "states",
     "question": "Which is the richest state in India?",
-    "answer": "Maharashtra has the highest GSDP at \u20b935.28 lakh crore.",
+    "answer": "Maharashtra has the highest GSDP at \u20b945.32 lakh crore.",
     "sectionId": "gsdp",
     "route": "/states#gsdp"
   },
@@ -331,7 +331,7 @@
     "id": "states-fastest-growing",
     "domain": "states",
     "question": "Which states are growing the fastest?",
-    "answer": "State growth rates range from 2.9% to 25.4% \u2014 see which ones are leading.",
+    "answer": "State growth rates range from 8.7% to 16.0% \u2014 see which ones are leading.",
     "sectionId": "growth",
     "route": "/states#growth"
   },
@@ -363,7 +363,7 @@
     "id": "states-per-capita",
     "domain": "states",
     "question": "What is per capita income in my state?",
-    "answer": "Average per capita NSDP is \u20b91.72 lakh, but varies from \u20b950K to \u20b95L+.",
+    "answer": "Average per capita NSDP is \u20b92.08 lakh, but varies widely across states.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },
@@ -723,7 +723,7 @@
     "id": "healthcare-beds",
     "domain": "healthcare",
     "question": "How many hospital beds does India have?",
-    "answer": "India has only 0.5 beds per 1,000 people \u2014 WHO recommends 3 per 1,000.",
+    "answer": "India has 1.6 beds per 1,000 people (public + private) \u2014 WHO recommends 3.5 per 1,000.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -771,7 +771,7 @@
     "id": "healthcare-crowded",
     "domain": "healthcare",
     "question": "Why are government hospitals so crowded?",
-    "answer": "With 0.5 beds per 1,000 and concentrated urban facilities, demand far exceeds supply.",
+    "answer": "With 1.6 beds per 1,000 (mostly private) and concentrated urban facilities, demand far exceeds supply.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },

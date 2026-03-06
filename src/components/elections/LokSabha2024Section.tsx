@@ -243,7 +243,7 @@ export function LokSabha2024Section({ data }: LokSabha2024SectionProps) {
                 items={partyBarItems}
                 isVisible={isVisible}
                 formatValue={(v) => `${v}`}
-                unit=" seats"
+                unit="seats"
                 labelWidth={80}
                 barHeight={22}
               />

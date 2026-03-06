@@ -33,7 +33,7 @@ export const climateEnergy: TopicDef = {
     { value: (bag) => { const e = envSummary(bag); return e ? `${e.coalPct}%` : '—'; }, label: 'Coal dependence', sectionId: 'energy-mix' },
   ],
 
-  narrativeBridge: 'India committed to net-zero by 2070 and 500 GW non-fossil capacity by 2030. Solar capacity has grown 30x in a decade, but coal still generates over 70% of electricity. The transition is real but the timeline is tight.',
+  narrativeBridge: 'India committed to net-zero by 2070 and 500 GW non-fossil capacity by 2030. Solar capacity has grown over 22x in a decade, but coal still generates over 70% of electricity. The transition is real but the timeline is tight.',
 
   sections: [
     {

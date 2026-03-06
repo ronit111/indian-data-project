@@ -19,6 +19,9 @@ export function ClassroomModeToggle() {
           </p>
         </div>
         <button
+          role="switch"
+          aria-checked={classroomMode}
+          aria-label="Toggle classroom mode"
           onClick={() => setClassroomMode(!classroomMode)}
           className="relative w-12 h-7 rounded-full cursor-pointer transition-colors duration-200"
           style={{

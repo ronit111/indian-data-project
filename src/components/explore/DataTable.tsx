@@ -92,6 +92,7 @@ export function DataTable({ data }: DataTableProps) {
             <tr>
               {([['Expenditure Head', 'name'], ['Budget (Rs Cr)', 'budgetEstimate'], ['% Total', 'percentOfTotal'], ['YoY', 'yoyChange'], ['Per Capita', 'perCapita']] as const).map(([label, field]) => (
                 <th
+                  scope="col"
                   key={field}
                   className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider"
                   aria-sort={sortKey === field ? (sortDir === 'asc' ? 'ascending' : 'descending') : undefined}

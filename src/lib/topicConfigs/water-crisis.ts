@@ -28,8 +28,7 @@ export const waterCrisis: TopicDef = {
     { value: '4%', label: 'Share of global freshwater', sectionId: 'water-stress' },
     { value: (bag) => { const c = censusSummary(bag); return c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—'; }, label: 'Population dependent on it', sectionId: 'water-stress' },
     { value: '~80%', label: 'Freshwater used by agriculture', sectionId: 'groundwater-depletion' },
-    // TODO: PM2.5 is an air quality metric, not water-specific. Consider replacing with waterborne disease deaths or Jal Jeevan Mission coverage when data is available.
-    { value: (bag) => { const e = envSummary(bag); return e ? `${e.pm25} µg/m³` : '—'; }, label: 'Air pollution (PM2.5)', sectionId: 'health-link' },
+    { value: (bag) => { const h = bag['healthcare/summary'] as { hospitalBedsPer1000: number } | undefined; return h ? `${h.hospitalBedsPer1000}/1K` : '—'; }, label: 'Hospital beds per 1,000', sectionId: 'health-link' },
   ],
 
   narrativeBridge: 'India\'s water crisis is not just about scarcity — it\'s about distribution, contamination, and governance. Some states are mining groundwater faster than it recharges. Rivers are polluted. Agriculture consumes 80% of freshwater. And climate change is making rainfall more erratic.',
@@ -94,8 +93,7 @@ export const waterCrisis: TopicDef = {
           if (!c && !e && !h) return null;
           return [
             { label: 'Population', value: c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—', accent: '#8B5CF6' },
-            // TODO: PM2.5 is air quality, not water-related. Swap for water-specific stat (e.g. safe drinking water coverage) when available.
-            { label: 'PM2.5', value: e ? `${e.pm25} µg/m³` : '—', accent: '#F43F5E' },
+            { label: 'Freshwater use', value: '~80% agriculture', accent: '#F43F5E' },
             { label: 'Hospital Beds', value: h ? `${h.hospitalBedsPer1000} / 1K` : '—', accent: '#EC4899' },
             { label: 'Out-of-Pocket', value: h ? `${h.outOfPocketPct}%` : '—', accent: '#F59E0B' },
           ];

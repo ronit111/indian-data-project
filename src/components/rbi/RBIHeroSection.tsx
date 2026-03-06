@@ -43,14 +43,14 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Overline */}
-        <motion.p
+        <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-section-num tracking-[0.2em] uppercase mb-8"
         >
           India's Central Banker
-        </motion.p>
+        </motion.h1>
 
         {/* Tagline */}
         <motion.p

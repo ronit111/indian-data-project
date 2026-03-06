@@ -69,7 +69,7 @@ export function GenderSection({ data }: GenderSectionProps) {
               series={genderSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

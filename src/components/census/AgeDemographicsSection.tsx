@@ -160,7 +160,7 @@ export function AgeDemographicsSection({ data }: AgeDemographicsSectionProps) {
               series={ageSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

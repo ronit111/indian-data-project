@@ -40,14 +40,14 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
       />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.p
+        <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-section-num tracking-[0.2em] uppercase mb-8"
         >
           Employment & Labour
-        </motion.p>
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          The world's largest working-age population. But how many have real jobs?
+          The world's largest working-age population. But what kind of work do they do?
         </motion.p>
 
         {/* Stat badges */}
@@ -91,13 +91,13 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             style={{ backgroundColor: 'var(--amber)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            UR {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
+            Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; LFPR {summary?.lfpr?.toFixed(1) ?? '—'}%
+            &middot; Labour Participation {summary?.lfpr?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
-            &middot; Female LFPR {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
+            &middot; Female Participation {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
           </span>
         </motion.div>
 

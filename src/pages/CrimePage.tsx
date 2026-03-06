@@ -135,7 +135,7 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Who fights this? India's police force is 18% understaffed. Bihar has 77 police per lakh — Delhi has 492. Women are 11.7% of the force."
+        text="Who fights this? India's police force is 22% understaffed. Bihar has 77 police per lakh — Delhi has 492. Women are 11.7% of the force."
         highlights={{
           '18%': 'var(--crimson)',
           'Bihar': 'var(--crimson-light)',

@@ -79,7 +79,7 @@ export function ParticipationSection({ data }: ParticipationSectionProps) {
               series={lfprSeries}
               isVisible={isVisible}
               formatValue={(v) => `${v.toFixed(1)}%`}
-              unit="%"
+              unit=""
             />
             </ChartActionsWrapper>
           </div>

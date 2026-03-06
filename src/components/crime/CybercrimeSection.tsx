@@ -117,8 +117,8 @@ export function CybercrimeSection({ data }: CybercrimeSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {lastYear ? `${(lastYear.cases / 1000).toFixed(0)}K` : '—'} cybercrime FIRs in 2022 — {multiplier ?? '—'}x growth in {data.ncrbTrend.length - 1} years.
-          But the real scale is staggering: 22.68 lakh complaints were filed on the I4C portal.
-          Online fraud alone accounts for 42% of registered cases.
+          The I4C (Indian Cyber Crime Coordination Centre) portal received 22.68 lakh complaints — 34 times the number of FIRs registered.
+          Online fraud alone accounts for ~42% of registered cases.
         </motion.p>
 
         {/* NCRB FIR trend */}

@@ -30,7 +30,7 @@ export default function CostOfLivingPage() {
     loadInflation('2025-26').then((data) => {
       setInflation(data);
       setLoading(false);
-    });
+    }).catch(() => setLoading(false));
   }, []);
 
   const availableYears = useMemo(

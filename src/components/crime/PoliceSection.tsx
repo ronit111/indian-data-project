@@ -40,7 +40,7 @@ export function PoliceSection({ data }: PoliceSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {data.actualStrength.toLocaleString('en-IN')} police personnel for 140 crore people — a ratio of {data.actualRatePerLakh} per lakh,
-          well below the UN-recommended {data.unRecommended}. 17.8% of sanctioned posts lie vacant.
+          well below the UN-recommended {data.unRecommended}. {data.vacancyPct}% of sanctioned posts lie vacant.
           Women make up just {data.womenPolicePct}% of the force.
         </motion.p>
 

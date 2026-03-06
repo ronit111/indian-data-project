@@ -134,7 +134,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /topics/water-crisis — Water Crisis: groundwater stress by state, depletion facts, water-health connection. Domains: Environment, Census, Healthcare.
 
 ### Personalization Calculators
-- /rbi/calculator — EMI Impact Calculator: See how repo rate changes affect your monthly EMI. Choose home/car/personal loan, set amount and tenure, view rate impact at ±25/50 bps scenarios. Uses live repo rate (currently 5.25%) and bank spreads (SBI EBLR).
+- /rbi/calculator — EMI Impact Calculator: See how repo rate changes affect your monthly EMI. Choose home/car/personal loan, set amount and tenure, view rate impact at ±25/50 bps scenarios. Uses live repo rate (currently 6.25%) and bank spreads (SBI EBLR).
 - /economy/calculator — Cost-of-Living Calculator: Input your monthly expenses by category (rent, groceries, transport, education, healthcare, utilities). Compare against any year from 2014+. Uses category-specific CPI by COICOP division (food, housing, health, transport, education) where available, headline CPI as fallback.
 - /states/your-state — State Report Card: Select any Indian state to see performance across 6 domains (Economy, Budget, Census, Education, Employment, Healthcare). ~25 metrics with ranks, quartile badges (top/middle/bottom 25%), and national average comparison.
 
@@ -156,8 +156,8 @@ This is an independent civic project built by one person, not affiliated with or
 - Per capita GDP: Rs 2,44,507
 
 ### RBI Data (2025-26)
-- Repo rate: 5.25% (Neutral stance, as of February 6, 2026)
-- CRR: 3.00%, SLR: 18.00%
+- Repo rate: 6.25% (Neutral stance, as of February 7, 2025)
+- CRR: 4.00%, SLR: 18.00%
 - CPI inflation (World Bank latest): 4.95%
 - Forex reserves: $643 billion (World Bank latest; RBI weekly: $724B as of Feb 2026)
 - Broad money (M3) growth: 11.3%
@@ -165,11 +165,11 @@ This is an independent civic project built by one person, not affiliated with or
 - 30 repo rate decisions tracked from 2014 onward
 
 ### State Finances (FY 2022-23)
-- Top GSDP: Maharashtra Rs 35.28 lakh crore
-- National combined state GDP: Rs 280.73 lakh crore
-- Growth range: 2.9% to 25.4% (constant prices)
-- Data across 31 of 36 states/UTs (5 small UTs have incomplete accounts)
-- Average per capita NSDP: Rs 1,71,687
+- Top GSDP: Maharashtra Rs 45.32 lakh crore
+- National combined state GDP: Rs 310.13 lakh crore
+- Growth range: 8.7% to 16.0% (constant prices)
+- Data across 25 of 36 states/UTs (remaining UTs have incomplete accounts)
+- Average per capita NSDP: Rs 2,07,973
 - Data source: RBI Handbook of Statistics on Indian States
 
 ### Census & Demographics
@@ -200,7 +200,7 @@ This is an independent civic project built by one person, not affiliated with or
 - Data sources: PLFS Quarterly Bulletin, PLFS Annual Report 2023-24, World Bank, RBI KLEMS
 
 ### Healthcare
-- Hospital beds: 0.5 per 1,000 (WHO recommends 3.5)
+- Hospital beds: 1.6 per 1,000 (WHO recommends 3.5)
 - Physicians: 0.7 per 1,000
 - Health expenditure: 3.3% of GDP (global average ~6%)
 - Out-of-pocket spending: 45.1% of total health expenditure (World Bank 2021, declining from 62% in 2014)
@@ -370,8 +370,8 @@ Every story page has a "Key Takeaways" strip between the hero section and the fi
 Examples:
 - Budget: "₹96/day — What govt. spends on you, daily", "31 paise — Of every rupee spent, borrowed"
 - Economy: "6.5% — How fast the economy grew", "4.0% — How much prices rose (inflation)"
-- RBI: "5.25% — The rate that decides your EMI", "$643B — India's forex safety net"
-- States: "₹1.72L — Average state income per person", "36 — States and UTs, 36 different economies"
+- RBI: "6.25% — The rate that decides your EMI", "$643B — India's forex safety net"
+- States: "₹2.08L — Average state income per person", "36 — States and UTs, 36 different economies"
 - Census: "943 — Girls per 1,000 boys, 57 are 'missing'", "1 in 4 — Indians who can't read or write"
 - Education: "24.8 Cr — Students, more than Brazil's population", "26:1 — Students per teacher"
 - Employment: "~13% — Youth unemployment, 3× the national rate", "~35% — Only 1 in 3 women in workforce"
