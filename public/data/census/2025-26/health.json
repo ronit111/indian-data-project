@@ -15,63 +15,63 @@
     },
     {
       "year": "2003",
-      "value": 60.5
+      "value": 60.4
     },
     {
       "year": "2004",
-      "value": 58.6
+      "value": 58.5
     },
     {
       "year": "2005",
-      "value": 56.7
+      "value": 56.5
     },
     {
       "year": "2006",
-      "value": 54.8
+      "value": 54.5
     },
     {
       "year": "2007",
-      "value": 52.8
+      "value": 52.5
     },
     {
       "year": "2008",
-      "value": 50.8
+      "value": 50.5
     },
     {
       "year": "2009",
-      "value": 48.7
+      "value": 48.4
     },
     {
       "year": "2010",
-      "value": 46.7
+      "value": 46.3
     },
     {
       "year": "2011",
-      "value": 44.6
+      "value": 44.2
     },
     {
       "year": "2012",
-      "value": 42.5
+      "value": 42.2
     },
     {
       "year": "2013",
-      "value": 40.5
+      "value": 40.1
     },
     {
       "year": "2014",
-      "value": 38.5
+      "value": 38.2
     },
     {
       "year": "2015",
-      "value": 36.6
+      "value": 36.3
     },
     {
       "year": "2016",
-      "value": 34.7
+      "value": 34.6
     },
     {
       "year": "2017",
-      "value": 33
+      "value": 32.9
     },
     {
       "year": "2018",
@@ -79,23 +79,27 @@
     },
     {
       "year": "2019",
-      "value": 29.7
+      "value": 29.8
     },
     {
       "year": "2020",
-      "value": 28.2
+      "value": 28.3
     },
     {
       "year": "2021",
-      "value": 26.8
+      "value": 27
     },
     {
       "year": "2022",
-      "value": 25.6
+      "value": 25.7
     },
     {
       "year": "2023",
       "value": 24.5
+    },
+    {
+      "year": "2024",
+      "value": 23.3
     }
   ],
   "mmr": [
@@ -199,15 +203,15 @@
   "under5": [
     {
       "year": "2000",
-      "value": 91.6
+      "value": 91.8
     },
     {
       "year": "2001",
-      "value": 88
+      "value": 88.1
     },
     {
       "year": "2002",
-      "value": 84.5
+      "value": 84.6
     },
     {
       "year": "2003",
@@ -219,27 +223,27 @@
     },
     {
       "year": "2005",
-      "value": 74.4
+      "value": 74.3
     },
     {
       "year": "2006",
-      "value": 71.1
+      "value": 71
     },
     {
       "year": "2007",
-      "value": 67.9
+      "value": 67.8
     },
     {
       "year": "2008",
-      "value": 64.6
+      "value": 64.5
     },
     {
       "year": "2009",
-      "value": 61.4
+      "value": 61.2
     },
     {
       "year": "2010",
-      "value": 58.2
+      "value": 58.1
     },
     {
       "year": "2011",
@@ -255,43 +259,47 @@
     },
     {
       "year": "2014",
-      "value": 46.3
+      "value": 46.4
     },
     {
       "year": "2015",
-      "value": 43.6
+      "value": 43.7
     },
     {
       "year": "2016",
-      "value": 41.1
+      "value": 41.3
     },
     {
       "year": "2017",
-      "value": 38.7
+      "value": 39
     },
     {
       "year": "2018",
-      "value": 36.4
+      "value": 36.9
     },
     {
       "year": "2019",
-      "value": 34.3
+      "value": 34.9
     },
     {
       "year": "2020",
-      "value": 32.4
+      "value": 33
     },
     {
       "year": "2021",
-      "value": 30.6
+      "value": 31.2
     },
     {
       "year": "2022",
-      "value": 29.1
+      "value": 29.5
     },
     {
       "year": "2023",
-      "value": 27.7
+      "value": 28
+    },
+    {
+      "year": "2024",
+      "value": 26.6
     }
   ],
   "lifeExpectancy": [
@@ -390,6 +398,10 @@
     {
       "year": "2023",
       "value": 72.0
+    },
+    {
+      "year": "2024",
+      "value": 72.23
     }
   ],
   "fertilityRate": [
@@ -488,6 +500,10 @@
     {
       "year": "2023",
       "value": 1.98
+    },
+    {
+      "year": "2024",
+      "value": 1.96
     }
   ],
   "stateImr": [
