@@ -373,7 +373,7 @@
     },
     {
       "year": "2023",
-      "value": 754.18
+      "value": 763.2
     }
   ],
   "co2PerCapitaTimeSeries": [],
@@ -491,34 +491,5 @@
       "smallHydro": 5011
     }
   ],
-  "energySupply": [
-    {
-      "commodity": "Coal",
-      "commodityCode": "coal",
-      "year": "2023-24",
-      "production": 403799.5,
-      "imports": 141638.8,
-      "totalSupply": 534098.3,
-      "unit": "KToE"
-    },
-    {
-      "commodity": "Natural Gas",
-      "commodityCode": "gas",
-      "year": "2023-24",
-      "production": 33704.7,
-      "imports": 29410.3,
-      "totalSupply": 63115.0,
-      "unit": "KToE"
-    },
-    {
-      "commodity": "Lignite",
-      "commodityCode": "lignite",
-      "year": "2023-24",
-      "production": 9786.1,
-      "imports": 11.9,
-      "totalSupply": 9723.0,
-      "unit": "KToE"
-    }
-  ],
-  "source": "MOSPI Energy API (api.mospi.gov.in) + World Bank + CEA Installed Capacity Reports"
+  "source": "World Bank + CEA Installed Capacity Reports"
 }
