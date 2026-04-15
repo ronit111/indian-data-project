@@ -35,7 +35,7 @@
     },
     {
       "year": "2011",
-      "value": 110.08
+      "value": 109.71
     },
     {
       "year": "2012",
@@ -43,51 +43,55 @@
     },
     {
       "year": "2013",
-      "value": 114.29
+      "value": 106.1
     },
     {
       "year": "2014",
-      "value": 112.36
+      "value": 103.56
     },
     {
       "year": "2015",
-      "value": 113.54
+      "value": 104.22
     },
     {
       "year": "2016",
-      "value": 119.99
+      "value": 103.74
     },
     {
       "year": "2017",
-      "value": 118.32
+      "value": 101.89
     },
     {
       "year": "2018",
-      "value": 101.44
+      "value": 101.1
     },
     {
       "year": "2019",
-      "value": 99.91
+      "value": 99.5
     },
     {
       "year": "2020",
-      "value": 102.04
+      "value": 101.29
     },
     {
       "year": "2021",
-      "value": 103.2
+      "value": 102.32
     },
     {
       "year": "2022",
-      "value": 112.07
+      "value": 111.08
     },
     {
       "year": "2023",
-      "value": 113.16
+      "value": 112.03
     },
     {
       "year": "2024",
       "value": 120.52
+    },
+    {
+      "year": "2025",
+      "value": 111.03
     }
   ],
   "secondaryTimeSeries": [
@@ -173,23 +177,27 @@
     },
     {
       "year": "2020",
-      "value": 77.98
+      "value": 77.63
     },
     {
       "year": "2021",
-      "value": 80.84
+      "value": 80.62
     },
     {
       "year": "2022",
-      "value": 81.66
+      "value": 81.18
     },
     {
       "year": "2023",
-      "value": 79.33
+      "value": 78.86
     },
     {
       "year": "2024",
       "value": 78.11
+    },
+    {
+      "year": "2025",
+      "value": 79.59
     }
   ],
   "tertiaryTimeSeries": [
@@ -235,63 +243,67 @@
     },
     {
       "year": "2010",
-      "value": 18.54
+      "value": 18.7
     },
     {
       "year": "2011",
-      "value": 23.27
+      "value": 23.83
     },
     {
       "year": "2012",
-      "value": 24.73
+      "value": 24.94
     },
     {
       "year": "2013",
-      "value": 24.16
+      "value": 24.39
     },
     {
       "year": "2014",
-      "value": 25.75
+      "value": 25.99
     },
     {
       "year": "2015",
-      "value": 27.06
+      "value": 27.28
     },
     {
       "year": "2016",
-      "value": 27.09
+      "value": 27.3
     },
     {
       "year": "2017",
-      "value": 27.73
+      "value": 27.91
     },
     {
       "year": "2018",
-      "value": 28.35
+      "value": 28.53
     },
     {
       "year": "2019",
-      "value": 28.8
+      "value": 29.02
     },
     {
       "year": "2020",
-      "value": 29.56
+      "value": 29.82
     },
     {
       "year": "2021",
-      "value": 31.32
+      "value": 31.57
     },
     {
       "year": "2022",
-      "value": 32.45
+      "value": 32.67
     },
     {
       "year": "2023",
-      "value": 34.01
+      "value": 34.24
     },
     {
       "year": "2024",
       "value": 34.42
+    },
+    {
+      "year": "2025",
+      "value": 34.45
     }
   ],
   "femaleSecondary": [
@@ -377,23 +389,27 @@
     },
     {
       "year": "2020",
-      "value": 76.9
+      "value": 76.55
     },
     {
       "year": "2021",
-      "value": 78.68
+      "value": 78.45
     },
     {
       "year": "2022",
-      "value": 80.92
+      "value": 80.45
     },
     {
       "year": "2023",
-      "value": 79.21
+      "value": 78.75
     },
     {
       "year": "2024",
       "value": 78.72
+    },
+    {
+      "year": "2025",
+      "value": 81.02
     }
   ],
   "maleSecondary": [
@@ -479,23 +495,27 @@
     },
     {
       "year": "2020",
-      "value": 78.96
+      "value": 78.61
     },
     {
       "year": "2021",
-      "value": 82.81
+      "value": 82.61
     },
     {
       "year": "2022",
-      "value": 82.33
+      "value": 81.84
     },
     {
       "year": "2023",
-      "value": 79.43
+      "value": 78.97
     },
     {
       "year": "2024",
       "value": 77.55
+    },
+    {
+      "year": "2025",
+      "value": 78.29
     }
   ],
   "primaryCompletion": [
@@ -525,27 +545,27 @@
     },
     {
       "year": "2011",
-      "value": 93.3
+      "value": 95.89
     },
     {
       "year": "2013",
-      "value": 97.39
+      "value": 96.97
     },
     {
       "year": "2014",
-      "value": 99.56
+      "value": 99.03
     },
     {
       "year": "2015",
-      "value": 100.72
+      "value": 99.9
     },
     {
       "year": "2016",
-      "value": 100.44
+      "value": 99.31
     },
     {
       "year": "2017",
-      "value": 99.37
+      "value": 98.59
     },
     {
       "year": "2019",
@@ -557,15 +577,19 @@
     },
     {
       "year": "2021",
-      "value": 99.41
+      "value": 99.09
     },
     {
       "year": "2023",
-      "value": 93.82
+      "value": 93.49
     },
     {
       "year": "2024",
       "value": 94.49
+    },
+    {
+      "year": "2025",
+      "value": 90.26
     }
   ],
   "states": [
