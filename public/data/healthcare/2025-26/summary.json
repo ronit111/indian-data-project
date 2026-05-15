@@ -1,11 +1,11 @@
 {
   "year": "2025-26",
-  "hospitalBedsPer1000": 1.6,
+  "hospitalBedsPer1000": 0.5,
   "physiciansPer1000": 0.7,
   "healthExpGDP": 3.3,
   "outOfPocketPct": 45.1,
   "dptImmunization": 91.0,
   "tbIncidence": 199.0,
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-05-15",
   "source": "World Bank + National Health Profile 2022 + NFHS-5"
 }
