@@ -36,7 +36,7 @@ jobs:
       - name: Install pipeline dependencies
         run: |
           cd pipeline
-          pip install -r requirements.txt
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Run data pipeline
         env:
@@ -106,7 +106,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd pipeline
-          pip install -r requirements.txt
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Poll for new budget documents
         env:

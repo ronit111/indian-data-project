@@ -43,7 +43,7 @@ jobs:
       - name: Install pipeline dependencies
         run: |
           cd pipeline
-          pip install requests pydantic
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Run states pipeline
         run: |
