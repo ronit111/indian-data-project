@@ -50,6 +50,9 @@ jobs:
           cd pipeline
           python src/states/main.py
 
+      - name: Data diff guard (fail-closed — no commit on structural change)
+        run: python pipeline/src/common/diff_guard.py public/data/states
+
       - name: Check for data changes
         id: changes
         run: |
