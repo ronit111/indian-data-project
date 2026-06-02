@@ -66,18 +66,28 @@ REPO_RATE_DECISIONS = [
     # Source: RBI MPC statements Oct 2024, Feb 2025
     {"date": "2024-10-09", "rate": 6.50, "change": 0.0,   "stance": "Neutral"},  # stance change only
     {"date": "2025-02-07", "rate": 6.25, "change": -0.25, "stance": "Neutral"},
+
+    # 2025-26 easing cycle — cumulative 125 bps of cuts since Feb 2025;
+    # neutral stance adopted June 2025. Current rate (5.25%) and the Dec-2025
+    # cut are primary-confirmed from the RBI Monetary Policy Report, April 2026
+    # (Section I.3 / Executive Summary). Apr/Jun 2025 announcement dates per
+    # RBI's published MPC meeting schedule. Holds (Aug/Oct 2025, Feb/Apr 2026)
+    # left the rate at the prior level and are omitted.
+    {"date": "2025-04-09", "rate": 6.00, "change": -0.25, "stance": "Neutral"},
+    {"date": "2025-06-06", "rate": 5.50, "change": -0.50, "stance": "Neutral"},
+    {"date": "2025-12-05", "rate": 5.25, "change": -0.25, "stance": "Neutral"},
 ]
 
 
 # ── Current policy rates ─────────────────────────────────────────────────
-# Source: RBI Current Rates — https://www.rbi.org.in/Scripts/BS_NSDPDisplay.aspx
-# As of February 7, 2025 MPC decision
+# Source: RBI Monetary Policy Report, April 2026 + RBI Current Rates page.
+# As of the April 8, 2026 MPC decision (repo held at 5.25%; neutral stance).
 CURRENT_RATES = {
-    "repo_rate": 6.25,         # Policy rate (Feb 2025 cut)
-    "sdf_rate": 6.00,          # Standing Deposit Facility (repo - 25bps)
-    "msf_rate": 6.50,          # Marginal Standing Facility (repo + 25bps)
-    "bank_rate": 6.50,         # Same as MSF
-    "crr": 4.00,               # Cash Reserve Ratio (Dec 2024 cut to 4.0%)
+    "repo_rate": 5.25,         # Policy rate (cut to 5.25% on Dec 5, 2025; held Feb & Apr 2026)
+    "sdf_rate": 5.00,          # Standing Deposit Facility (repo - 25bps)
+    "msf_rate": 5.50,          # Marginal Standing Facility (repo + 25bps)
+    "bank_rate": 5.50,         # Same as MSF
+    "crr": 3.00,               # Cash Reserve Ratio (cut 100bps to 3.0%, staggered Sep-Nov 2025)
     "slr": 18.00,              # Statutory Liquidity Ratio
 }
 
