@@ -34,7 +34,10 @@ permissions:
 jobs:
   update-economy-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # 30-min backstop. The real fix for the prior 15-min overrun is the MOSPI
+    # TLS fix + circuit breaker in src/common/mospi_client.py; this is defence
+    # in depth in case MOSPI is slow rather than down.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
