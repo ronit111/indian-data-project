@@ -113,9 +113,9 @@ CPCB_AQI_CITIES = [
 # Verified 2026-03-05 by reading every state chapter from the 382-page PDF.
 
 FSI_FOREST_STATES = [
-    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.11, "changeKm2": -371.54},
+    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.00, "changeKm2": -371.54},
     {"id": "AR", "name": "Arunachal Pradesh", "forestCoverKm2": 65882, "pctGeographicArea": 78.67, "changeKm2": -91.17},
-    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55812, "pctGeographicArea": 41.21, "changeKm2": -19.13},
+    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55812, "pctGeographicArea": 41.28, "changeKm2": -19.13},
     {"id": "MH", "name": "Maharashtra", "forestCoverKm2": 50859, "pctGeographicArea": 16.53, "changeKm2": -54.47},
     {"id": "OD", "name": "Odisha", "forestCoverKm2": 52434, "pctGeographicArea": 33.68, "changeKm2": 151.89},
     {"id": "KA", "name": "Karnataka", "forestCoverKm2": 39254, "pctGeographicArea": 20.47, "changeKm2": 147.70},
@@ -199,8 +199,8 @@ CEA_ENERGY_MIX = [
     },
     {
         "year": "2024",
-        "coal": 213950, "gas": 24824, "nuclear": 7480, "hydro": 47073,
-        "solar": 82788, "wind": 46160, "biomass": 10544, "smallHydro": 5011,
+        "coal": 210969, "gas": 25038, "nuclear": 8180, "hydro": 46928,
+        "solar": 81814, "wind": 46160, "biomass": 10544, "smallHydro": 5011,
     },
 ]
 
@@ -269,9 +269,9 @@ CGWB_GROUNDWATER_STATES = [
 
 NATIONAL_TOTALS = {
     "co2PerCapita": 1.9,                # tonnes, World Bank 2021
-    "forestPct": 25.17,                  # ISFR 2023
+    "forestPct": 21.76,                  # ISFR 2023 forest cover (7,15,343 km2). NOTE: 25.17% is forest+TREE cover; forest cover alone is 21.76%.
     "renewablesPct": 43.4,              # CEA Mar 2024 (solar+wind+hydro+bio+smallHydro / total)
     "pm25": 53.3,                        # μg/m3, World Bank 2021
-    "coalPct": 48.8,                    # CEA Mar 2024 (coal / total installed capacity)
+    "coalPct": 47.73,                   # CEA 31.03.2024 (coal-only / 441,970 MW grand total)
     "ghgTotal": 3347.9,                 # Mt CO2e, World Bank 2021
 }

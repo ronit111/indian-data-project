@@ -481,11 +481,11 @@
     },
     {
       "year": "2024",
-      "coal": 213950,
-      "gas": 24824,
-      "nuclear": 7480,
-      "hydro": 47073,
-      "solar": 82788,
+      "coal": 210969,
+      "gas": 25038,
+      "nuclear": 8180,
+      "hydro": 46928,
+      "solar": 81814,
       "wind": 46160,
       "biomass": 10544,
       "smallHydro": 5011
