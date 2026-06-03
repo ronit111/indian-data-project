@@ -6,7 +6,7 @@
  * - Mobile: tap chart to reveal share button, auto-hides after 3s
  * - pointer-events: none on overlay, auto on buttons only
  */
-import { useRef, useState, useCallback, useEffect, type ReactNode } from 'react';
+import { useRef, useState, useCallback, useEffect, useMemo, type ReactNode } from 'react';
 import { getChartEntry } from '../../lib/chartRegistry.ts';
 import { ChartActions } from './ChartActions.tsx';
 import { ShareBottomSheet } from './ShareBottomSheet.tsx';
@@ -48,6 +48,38 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   }, []);
 
   const entry = getChartEntry(registryKey);
+
+  // Accessibility: build a screen-reader data table from the same toTabular()
+  // that powers CSV export, so the data behind every chart is reachable by
+  // assistive tech and crawlers — not just sighted users. (On-mission: a
+  // public-data portal's data should be reachable by everyone.)
+  const accessibleTable = useMemo(() => {
+    if (!entry) return null;
+    try {
+      const t = entry.toTabular(data);
+      return t && t.rows?.length ? t : null;
+    } catch {
+      return null;
+    }
+  }, [entry, data]);
+
+  // Collapse the SVG's jumbled internal text nodes into one labeled image for
+  // screen readers; the full detail lives in the adjacent sr-only table.
+  useEffect(() => {
+    const svg = containerRef.current?.querySelector('svg');
+    if (!svg || !entry) return;
+    let summary = '';
+    if (entry.heroStat) {
+      try {
+        const h = entry.heroStat(data);
+        if (h) summary = `. ${h.value} ${h.label}`;
+      } catch { /* heroStat is optional */ }
+    }
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `${entry.title}${summary}`);
+    svg.setAttribute('focusable', 'false');
+  }, [entry, data]);
+
   if (!entry) return <>{children}</>;
 
   const handleMouseEnter = () => {
@@ -67,6 +99,34 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
       onTouchStart={handleMobileTap}
     >
       {children}
+
+      {/* Screen-reader-only data table: the chart's data made accessible to
+          assistive tech and crawlers. Built from the registry's toTabular(). */}
+      {accessibleTable && (
+        <table className="sr-only">
+          <caption>{entry.title} — data table. Source: {entry.source}</caption>
+          <thead>
+            <tr>
+              {accessibleTable.headers.map((h, i) => (
+                <th key={i} scope="col">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {accessibleTable.rows.map((row, ri) => (
+              <tr key={ri}>
+                {row.map((cell, ci) =>
+                  ci === 0 ? (
+                    <th key={ci} scope="row">{cell}</th>
+                  ) : (
+                    <td key={ci}>{cell}</td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
 
       {/* Desktop: hover/focus overlay */}
       <div
