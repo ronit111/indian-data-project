@@ -1092,7 +1092,6 @@ export interface CriminalBreakdown {
 
 export interface AssetsBreakdown {
   avgCrore: number;
-  medianCrore: number;
 }
 
 export interface EducationBreakdown {
