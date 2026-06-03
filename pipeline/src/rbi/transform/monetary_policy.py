@@ -108,6 +108,7 @@ CRR_HISTORY = [
     {"year": "2022-23", "value": 4.50},   # Hiked May 2022
     {"year": "2023-24", "value": 4.50},
     {"year": "2024-25", "value": 4.00},   # Cut 50bps Dec 2024
+    {"year": "2025-26", "value": 3.00},   # Cut 100bps to 3.0% (announced Jun 6 2025, phased Sep-Nov 2025)
 ]
 
 
