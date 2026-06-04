@@ -181,6 +181,7 @@ def _build_summary() -> dict:
         "totalCrimes": NATIONAL_TOTALS["totalCrimes2022"],
         "crimeRate": NATIONAL_TOTALS["crimeRate2022"],
         "roadDeaths": NATIONAL_TOTALS["roadDeaths2022"],
+        "chargesheetRatePct": NATIONAL_TOTALS["chargesheetRatePct"],
         "convictionRatePct": NATIONAL_TOTALS["convictionRatePct"],
         "womenCrimes": NATIONAL_TOTALS["womenCrimes2022"],
         "cybercrimes": NATIONAL_TOTALS["cybercrimes2022"],
