@@ -42,7 +42,7 @@ export const healthOutcomes: TopicDef = {
       title: 'Child Survival',
       annotation: 'India\'s infant mortality rate has dropped from 66 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
       domains: ['healthcare', 'census'],
-      sources: ['SRS 2022', 'NFHS-5', 'World Bank'],
+      sources: ['SRS 2024', 'NFHS-5', 'World Bank'],
       charts: [{
         chartType: 'line', chartTitle: 'Infant Mortality Rate (per 1,000 live births)', unit: 'per 1,000', accent: '#EC4899',
         extractData: (bag) => {

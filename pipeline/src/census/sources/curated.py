@@ -9,8 +9,8 @@ Sources:
     https://nhm.gov.in/New_Updates_2018/Report_Population_Projection_2019.pdf
   - NFHS-5 (2019-21): National Family Health Survey State Factsheets
     https://rchiips.org/nfhs/NFHS-5Reports/NFHS-5_INDIA_REPORT.pdf
-  - SRS 2022 (Sample Registration System): Registrar General of India
-    https://censusindia.gov.in/nada/index.php/catalog/44457
+  - SRS 2024 (Sample Registration System): Registrar General of India
+    https://censusindia.gov.in/nada/index.php/catalog/47152
 
 Data notes:
   - Census 2011 state boundaries: AP shown as undivided (includes present-day Telangana).
@@ -20,7 +20,7 @@ Data notes:
     to match Census 2011 undivided J&K. DNH + DD split proportionally by
     Census 2011 population share (merged into single UT in Jan 2020).
   - NFHS-5 uses current (2019-21) state/UT boundaries.
-  - SRS data uses current state boundaries. Latest available: SRS 2022.
+  - SRS data uses current state boundaries. Latest available: SRS 2024.
 
 IMPORTANT: Every number must be cross-checked against primary source documents.
 This file is manually curated.
@@ -165,32 +165,39 @@ NFHS5_STATE_HEALTH = [
 ]
 
 
-# ── SRS 2022 State IMR ───────────────────────────────────────────────
-# Source: Sample Registration System Statistical Report 2022
-# Registrar General of India (latest available with state breakdown)
-# IMR = Infant Mortality Rate per 1000 live births
+# ── SRS 2024 State IMR ───────────────────────────────────────────────
+# Source: Sample Registration System Statistical Report 2024
+# Office of the Registrar General of India (released May 2026; latest with
+# state breakdown). Table 46: "Infant Mortality Rate by Sex and Residence,
+# India and States/UTs, 2024" — Total (combined) column.
+# IMR = Infant Mortality Rate per 1000 live births.
+# Set = the 22 bigger States/UTs with annual 2024 estimates (national IMR 24).
+# Smaller States/UTs are published by SRS only on a 3-year (2022-24) basis and
+# are intentionally excluded here for single-year comparability.
+# Refresh 2026-06: was mislabeled "SRS 2022" with older values; updated to the
+# verified SRS-2024 annual figures.
 
 SRS_STATE_IMR = [
+    {"id": "CG", "name": "Chhattisgarh", "value": 36},
     {"id": "MP", "name": "Madhya Pradesh", "value": 35},
-    {"id": "UP", "name": "Uttar Pradesh", "value": 33},
-    {"id": "CG", "name": "Chhattisgarh", "value": 32},
-    {"id": "OD", "name": "Odisha", "value": 30},
-    {"id": "AS", "name": "Assam", "value": 30},
-    {"id": "RJ", "name": "Rajasthan", "value": 29},
-    {"id": "BR", "name": "Bihar", "value": 27},
-    {"id": "JH", "name": "Jharkhand", "value": 25},
+    {"id": "UP", "name": "Uttar Pradesh", "value": 35},
+    {"id": "AS", "name": "Assam", "value": 29},
+    {"id": "OD", "name": "Odisha", "value": 28},
+    {"id": "RJ", "name": "Rajasthan", "value": 28},
+    {"id": "JH", "name": "Jharkhand", "value": 27},
     {"id": "HR", "name": "Haryana", "value": 24},
-    {"id": "GJ", "name": "Gujarat", "value": 23},
-    {"id": "AP", "name": "Andhra Pradesh", "value": 21},
-    {"id": "WB", "name": "West Bengal", "value": 19},
+    {"id": "BR", "name": "Bihar", "value": 23},
+    {"id": "GJ", "name": "Gujarat", "value": 19},
     {"id": "UK", "name": "Uttarakhand", "value": 19},
-    {"id": "PB", "name": "Punjab", "value": 18},
+    {"id": "AP", "name": "Andhra Pradesh", "value": 18},
     {"id": "TS", "name": "Telangana", "value": 17},
-    {"id": "MH", "name": "Maharashtra", "value": 15},
+    {"id": "PB", "name": "Punjab", "value": 16},
+    {"id": "WB", "name": "West Bengal", "value": 16},
     {"id": "KA", "name": "Karnataka", "value": 15},
     {"id": "JK", "name": "Jammu & Kashmir", "value": 14},
-    {"id": "HP", "name": "Himachal Pradesh", "value": 14},
-    {"id": "TN", "name": "Tamil Nadu", "value": 12},
+    {"id": "MH", "name": "Maharashtra", "value": 13},
     {"id": "DL", "name": "Delhi", "value": 11},
-    {"id": "KL", "name": "Kerala", "value": 5},
+    {"id": "HP", "name": "Himachal Pradesh", "value": 11},
+    {"id": "TN", "name": "Tamil Nadu", "value": 11},
+    {"id": "KL", "name": "Kerala", "value": 8},
 ]
