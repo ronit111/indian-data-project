@@ -129,7 +129,7 @@ export default function CensusExplorePage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Select a category and indicator to compare states. Data from Census 2011, NFHS-5 (2019-21), SRS 2023, and World Bank.
+          Select a category and indicator to compare states. Data from Census 2011, NFHS-6 (2023-24), SRS 2023, and World Bank.
         </motion.p>
 
         <motion.div variants={fadeUp}>

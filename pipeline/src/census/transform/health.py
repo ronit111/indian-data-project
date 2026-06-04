@@ -58,5 +58,5 @@ def build_health(
         "fertilityRate": fertility,
         "stateImr": state_imr,
         "stateHealth": state_health,
-        "source": "World Bank Development Indicators + SRS 2022 + NFHS-5 (2019-21)",
+        "source": "World Bank Development Indicators + SRS 2022 + NFHS-6 (2023-24)",
     }

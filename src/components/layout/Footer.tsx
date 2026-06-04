@@ -171,7 +171,7 @@ export function Footer() {
               className="link-hover"
               style={{ color: 'var(--text-muted)' }}
             >
-              NFHS-5
+              NFHS-6
             </a>
             {' '}&middot; Not affiliated with GoI
           </p>
@@ -253,7 +253,7 @@ export function Footer() {
               className="link-hover"
               style={{ color: 'var(--text-muted)' }}
             >
-              NFHS-5
+              NFHS-6
             </a>
             {' '}&middot;{' '}
             <a
