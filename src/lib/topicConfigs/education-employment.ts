@@ -51,7 +51,7 @@ export const educationEmployment: TopicDef = {
       title: 'The Enrollment Story',
       annotation: 'India enrolls 248 million students — more than most countries\' total population. Primary enrollment is near universal, but secondary and higher education still lose millions to dropouts.',
       domains: ['education'],
-      sources: ['UDISE+ 2023-24', 'World Bank'],
+      sources: ['UDISE+ 2024-25', 'World Bank'],
       charts: [{
         chartType: 'line', chartTitle: 'Gross Enrollment Ratio — Secondary', unit: '%', accent: '#3B82F6',
         extractData: (bag) => {

@@ -104,7 +104,7 @@
     {
       "id": "UP",
       "name": "Uttar Pradesh",
-      "ptr": 27,
+      "ptr": 26,
       "schoolsWithComputers": 40.2,
       "schoolsWithInternet": 38.6,
       "girlsToilets": 96.2
@@ -112,7 +112,7 @@
     {
       "id": "MH",
       "name": "Maharashtra",
-      "ptr": 29,
+      "ptr": 28,
       "schoolsWithComputers": 81.4,
       "schoolsWithInternet": 67.6,
       "girlsToilets": 98.7
@@ -120,7 +120,7 @@
     {
       "id": "BR",
       "name": "Bihar",
-      "ptr": 32,
+      "ptr": 30,
       "schoolsWithComputers": 19.9,
       "schoolsWithInternet": 18.4,
       "girlsToilets": 92.1
@@ -128,7 +128,7 @@
     {
       "id": "MP",
       "name": "Madhya Pradesh",
-      "ptr": 24,
+      "ptr": 21,
       "schoolsWithComputers": 49.0,
       "schoolsWithInternet": 43.4,
       "girlsToilets": 93.8
@@ -136,7 +136,7 @@
     {
       "id": "RJ",
       "name": "Rajasthan",
-      "ptr": 22,
+      "ptr": 21,
       "schoolsWithComputers": 51.5,
       "schoolsWithInternet": 46.4,
       "girlsToilets": 96.5
@@ -144,7 +144,7 @@
     {
       "id": "WB",
       "name": "West Bengal",
-      "ptr": 31,
+      "ptr": 29,
       "schoolsWithComputers": 22.3,
       "schoolsWithInternet": 17.5,
       "girlsToilets": 99.3
@@ -152,7 +152,7 @@
     {
       "id": "TN",
       "name": "Tamil Nadu",
-      "ptr": 24,
+      "ptr": 23,
       "schoolsWithComputers": 72.6,
       "schoolsWithInternet": 68.0,
       "girlsToilets": 98.9
@@ -160,7 +160,7 @@
     {
       "id": "KA",
       "name": "Karnataka",
-      "ptr": 27,
+      "ptr": 26,
       "schoolsWithComputers": 52.9,
       "schoolsWithInternet": 46.9,
       "girlsToilets": 99.0
@@ -168,7 +168,7 @@
     {
       "id": "GJ",
       "name": "Gujarat",
-      "ptr": 29,
+      "ptr": 30,
       "schoolsWithComputers": 98.3,
       "schoolsWithInternet": 94.1,
       "girlsToilets": 96.5
@@ -176,7 +176,7 @@
     {
       "id": "AP",
       "name": "Andhra Pradesh",
-      "ptr": 26,
+      "ptr": 25,
       "schoolsWithComputers": 87.3,
       "schoolsWithInternet": 58.0,
       "girlsToilets": 98.2
@@ -192,7 +192,7 @@
     {
       "id": "OD",
       "name": "Odisha",
-      "ptr": 23,
+      "ptr": 22,
       "schoolsWithComputers": 59.3,
       "schoolsWithInternet": 49.1,
       "girlsToilets": 99.4
@@ -200,7 +200,7 @@
     {
       "id": "KL",
       "name": "Kerala",
-      "ptr": 22,
+      "ptr": 21,
       "schoolsWithComputers": 99.4,
       "schoolsWithInternet": 92.1,
       "girlsToilets": 99.8
@@ -208,7 +208,7 @@
     {
       "id": "JH",
       "name": "Jharkhand",
-      "ptr": 35,
+      "ptr": 36,
       "schoolsWithComputers": 75.3,
       "schoolsWithInternet": 52.7,
       "girlsToilets": 98.6
@@ -216,7 +216,7 @@
     {
       "id": "AS",
       "name": "Assam",
-      "ptr": 20,
+      "ptr": 21,
       "schoolsWithComputers": 68.1,
       "schoolsWithInternet": 26.3,
       "girlsToilets": 92.3
@@ -232,7 +232,7 @@
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "ptr": 21,
+      "ptr": 20,
       "schoolsWithComputers": 67.3,
       "schoolsWithInternet": 61.2,
       "girlsToilets": 97.4
@@ -304,7 +304,7 @@
     {
       "id": "GA",
       "name": "Goa",
-      "ptr": 21,
+      "ptr": 20,
       "schoolsWithComputers": 56.2,
       "schoolsWithInternet": 93.5,
       "girlsToilets": 99.3
@@ -320,7 +320,7 @@
     {
       "id": "MZ",
       "name": "Mizoram",
-      "ptr": 13,
+      "ptr": 11,
       "schoolsWithComputers": 46.5,
       "schoolsWithInternet": 42.6,
       "girlsToilets": 89.8
@@ -344,7 +344,7 @@
     {
       "id": "PY",
       "name": "Puducherry",
-      "ptr": 19,
+      "ptr": 18,
       "schoolsWithComputers": 100.0,
       "schoolsWithInternet": 100.0,
       "girlsToilets": 96.5
@@ -352,7 +352,7 @@
     {
       "id": "CH",
       "name": "Chandigarh",
-      "ptr": 26,
+      "ptr": 25,
       "schoolsWithComputers": 100.0,
       "schoolsWithInternet": 100.0,
       "girlsToilets": 100.0

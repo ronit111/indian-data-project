@@ -1,34 +1,34 @@
 {
   "year": "2025-26",
-  "totalStudents": 248045828,
-  "totalSchools": 1471891,
-  "totalTeachers": 9807600,
-  "gerPrimary": 93.0,
-  "gerSecondary": 77.4,
-  "ptrNational": 25,
+  "totalStudents": 246932680,
+  "totalSchools": 1471473,
+  "totalTeachers": 10122420,
+  "gerPrimary": 90.9,
+  "gerSecondary": 78.7,
+  "ptrNational": 24,
   "educationSpendGDP": 4.1,
   "topEnrolledStates": [
     {
       "name": "Uttar Pradesh",
-      "students": 41662794
+      "students": 42789347
     },
     {
       "name": "Maharashtra",
-      "students": 21375970
+      "students": 21272611
     },
     {
       "name": "Bihar",
-      "students": 21348149
+      "students": 21133228
     },
     {
       "name": "West Bengal",
-      "students": 18015525
+      "students": 17081511
     },
     {
       "name": "Rajasthan",
-      "students": 16786065
+      "students": 16364187
     }
   ],
-  "lastUpdated": "2026-04-15",
-  "source": "UDISE+ 2023-24 + World Bank + ASER 2024"
+  "lastUpdated": "2026-06-04",
+  "source": "UDISE+ 2024-25 + World Bank + ASER 2024"
 }

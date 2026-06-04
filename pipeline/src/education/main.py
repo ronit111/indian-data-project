@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.education.sources.world_bank import fetch_multiple
 from src.education.sources.curated import (
-    UDISE_2023_24_STATES,
+    UDISE_2024_25_STATES,
     ASER_2024_STATES,
     NATIONAL_TOTALS,
 )
@@ -60,17 +60,17 @@ def run_education_pipeline():
     wb_data = fetch_multiple()
 
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
-    logger.info(f"  Curated: {len(UDISE_2023_24_STATES)} UDISE+ states")
+    logger.info(f"  Curated: {len(UDISE_2024_25_STATES)} UDISE+ states")
     logger.info(f"  Curated: {len(ASER_2024_STATES)} ASER states")
 
     # ── Stage 2: TRANSFORM ──────────────────────────────────────────
     logger.info("Stage 2: TRANSFORM")
 
-    enrollment_data = build_enrollment(wb_data, UDISE_2023_24_STATES, SURVEY_YEAR)
-    quality_data = build_quality(wb_data, UDISE_2023_24_STATES, ASER_2024_STATES, SURVEY_YEAR)
+    enrollment_data = build_enrollment(wb_data, UDISE_2024_25_STATES, SURVEY_YEAR)
+    quality_data = build_quality(wb_data, UDISE_2024_25_STATES, ASER_2024_STATES, SURVEY_YEAR)
     spending_data = build_spending(wb_data, SURVEY_YEAR)
     summary_data = _build_summary(wb_data)
-    indicators_data = _build_indicators(UDISE_2023_24_STATES, ASER_2024_STATES)
+    indicators_data = _build_indicators(UDISE_2024_25_STATES, ASER_2024_STATES)
     glossary_data = _build_glossary()
 
     # ── Stage 3: VALIDATE ───────────────────────────────────────────
@@ -124,7 +124,7 @@ def _build_summary(wb_data: dict) -> dict:
     edu_spend_ts = wb_data.get("edu_spend_gdp", [])
     latest_spend = edu_spend_ts[-1]["value"] if edu_spend_ts else 3.5
 
-    sorted_states = sorted(UDISE_2023_24_STATES, key=lambda s: s["totalStudents"], reverse=True)
+    sorted_states = sorted(UDISE_2024_25_STATES, key=lambda s: s["totalStudents"], reverse=True)
     top5 = [{"name": s["name"], "students": s["totalStudents"]} for s in sorted_states[:5]]
 
     return {
@@ -138,7 +138,7 @@ def _build_summary(wb_data: dict) -> dict:
         "educationSpendGDP": round(latest_spend, 1),
         "topEnrolledStates": top5,
         "lastUpdated": date.today().isoformat(),
-        "source": "UDISE+ 2023-24 + World Bank + ASER 2024",
+        "source": "UDISE+ 2024-25 + World Bank + ASER 2024",
     }
 
 
@@ -153,7 +153,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerPrimary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "ger_secondary",
@@ -161,7 +161,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerSecondary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "ger_higher_sec",
@@ -169,7 +169,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerHigherSec"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "dropout_primary",
@@ -177,7 +177,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dropoutPrimary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "dropout_secondary",
@@ -185,7 +185,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dropoutSecondary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     # Quality category
@@ -212,7 +212,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["ptr"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "schools_computers",
@@ -220,7 +220,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["schoolsWithComputers"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "schools_internet",
@@ -228,7 +228,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["schoolsWithInternet"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "girls_toilets",
@@ -236,7 +236,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["girlsToilets"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     # Spending category
@@ -246,7 +246,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "spending",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["totalStudents"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "total_teachers",
@@ -254,7 +254,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "spending",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["totalTeachers"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     return {
@@ -273,8 +273,8 @@ def _build_glossary() -> dict:
                 "id": "ger",
                 "term": "Gross Enrollment Ratio (GER)",
                 "simple": "The total number of students enrolled at a level, as a percentage of the age-appropriate population.",
-                "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~93% (UDISE+ 2023-24, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~77% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
-                "inContext": "India's primary GER: ~93% (UDISE+ 2023-24, post-SDMIS). Secondary: ~77%. Higher secondary: ~57%.",
+                "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~91% (UDISE+ 2024-25, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~79% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
+                "inContext": "India's primary GER: ~91% (UDISE+ 2024-25, post-SDMIS). Secondary: ~79%. Higher secondary: ~58%.",
                 "relatedTerms": ["ner", "dropout-rate", "udise"],
             },
             {
@@ -338,7 +338,7 @@ def _build_glossary() -> dict:
                 "term": "UDISE+ (Unified District Information System for Education Plus)",
                 "simple": "India's comprehensive school census, covering every school from pre-primary to higher secondary.",
                 "detail": "UDISE+ collects data from 14.89 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
-                "inContext": "UDISE+ 2023-24: 14.72 lakh schools, 98.08 lakh teachers, 24.80 crore students",
+                "inContext": "UDISE+ 2024-25: 14.71 lakh schools, 1.01 crore teachers, 24.69 crore students",
                 "relatedTerms": ["ger", "ptr", "rte"],
             },
             {
