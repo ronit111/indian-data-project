@@ -98,12 +98,47 @@ def fetch_handbook_gsdp() -> tuple[list[dict[str, Any]], list[dict[str, Any]], s
     if not all_years:
         return None
 
-    # Find latest year available (sort fiscal years)
+    # Pick the latest year with COMPLETE coverage of the core states, not merely the
+    # newest year. RBI's newest column (e.g. 2024-25) is sparsely populated — many
+    # states show "-" — and naively taking sorted_years[-1] zeroed out Goa, Sikkim,
+    # Gujarat, Manipur, Mizoram, Nagaland (no GSDP/per-capita for that year), dropping
+    # them from the domain and the per-capita ranking. Instead choose the most recent
+    # year where every recognized core state (excluding the zero-data UTs) has BOTH a
+    # GSDP (Table 21) and a per-capita NSDP (Table 19) value. This resolves to the
+    # latest fully-populated year (currently 2022-23) and auto-advances to 2023-24 /
+    # 2024-25 once RBI fills those columns in a future edition. No value is fabricated.
     sorted_years = sorted(all_years)
-    latest_year = sorted_years[-1]
-    prev_year = sorted_years[-2] if len(sorted_years) >= 2 else None
+    core_states = [
+        d["state"] for d in gsdp_current
+        if _STATE_TO_RTO.get(d["state"]) and _STATE_TO_RTO[d["state"]] not in _ZERO_UTS
+    ]
 
-    logger.info(f"  Handbook GSDP: latest year = {latest_year}, {len(gsdp_current)} states")
+    def _coverage(year: str) -> int:
+        return sum(
+            1 for d in gsdp_current
+            if d["state"] in core_states
+            and d["years"].get(year, 0)
+            and percapita_by_state.get(d["state"], {}).get(year, 0)
+        )
+
+    n_core = len(set(core_states))
+    complete_years = [y for y in sorted_years if _coverage(y) >= n_core]
+    if complete_years:
+        latest_year = complete_years[-1]
+    else:
+        # No fully-complete year — fall back to the best-covered (latest on ties) year.
+        latest_year = max(sorted_years, key=lambda y: (_coverage(y), y))
+        logger.warning(
+            f"  Handbook GSDP: no year has full coverage of {n_core} core states; "
+            f"using best-covered year {latest_year} ({_coverage(latest_year)}/{n_core})"
+        )
+    li = sorted_years.index(latest_year)
+    prev_year = sorted_years[li - 1] if li > 0 else None
+
+    logger.info(
+        f"  Handbook GSDP: data year = {latest_year} "
+        f"(coverage {_coverage(latest_year)}/{n_core} core states), {len(gsdp_current)} rows"
+    )
 
     # Build gsdp_data list
     gsdp_data: list[dict[str, Any]] = []
