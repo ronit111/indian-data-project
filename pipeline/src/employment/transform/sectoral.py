@@ -1,5 +1,5 @@
 """
-Transform World Bank sectoral data + RBI KLEMS into sectoral.json.
+Transform World Bank sectoral data + PLFS broad-industry shares into sectoral.json.
 """
 
 import logging
@@ -21,5 +21,5 @@ def build_sectoral(wb_data: dict, sectors: list[dict], year: str) -> dict:
         "selfEmployedTimeSeries": wb_data.get("emp_self", []),
         "vulnerableTimeSeries": wb_data.get("vulnerable_emp", []),
         "currentSectors": sectors,
-        "source": "World Bank (ILO modelled) + RBI KLEMS Database",
+        "source": "World Bank (ILO modelled) + PLFS Annual Report 2025",
     }

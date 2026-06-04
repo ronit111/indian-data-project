@@ -7,8 +7,8 @@ Sources:
     https://mospi.gov.in/publication/annual-report-plfs-2023-24
   - PLFS Quarterly Bulletin Oct-Dec 2025
     https://mospi.gov.in/publication/plfs-quarterly-bulletin
-  - RBI KLEMS Database (sectoral employment)
-    https://rbi.org.in/Scripts/KLEMS.aspx
+  - PLFS Annual Report 2025, Statement 8 (broad-industry employment shares)
+    https://mospi.gov.in/publication/annual-report-plfs
 
 Data notes:
   - PLFS uses "Usual Status" (principal + subsidiary) for annual estimates.
@@ -18,8 +18,8 @@ Data notes:
   - Self-employed includes own-account workers + unpaid family workers.
   - India's ILO-modelled estimates (World Bank) differ from PLFS national estimates.
     We display both — WB for time series consistency, PLFS for latest granular data.
-  - Sectoral shares from RBI KLEMS are at basic prices and may differ from
-    World Bank ILO-modelled estimates slightly.
+  - Sectoral shares (PLFS Statement 8) are by broad NIC-2008 industry division;
+    they may differ from World Bank ILO-modelled sector estimates slightly.
 
 IMPORTANT: Every number must be cross-checked against primary source documents.
 This file is manually curated.
@@ -84,17 +84,25 @@ PLFS_STATE_DATA = [
     {"id": "AR", "name": "Arunachal Pradesh", "lfpr": 71.3, "lfprMale": 80.5, "lfprFemale": 61.7, "unemploymentRate": 6.6, "wpr": 66.6, "selfEmployed": 71.8},
 ]
 
-# ── Sectoral Employment (RBI KLEMS + PLFS) ─────────────────────────
-# Source: RBI KLEMS Database + PLFS Annual Report 2023-24
-# Employment shares for 2023-24 (latest available)
+# ── Sectoral Employment (PLFS 2025, Statement 8) ───────────────────
+# Source: PLFS Annual Report 2025 (Jan–Dec 2025), Statement 8 — percentage
+# distribution of workers in usual status (ps+ss) by broad industry division
+# (NIC-2008), all-India, rural+urban, persons. Shares sum to ~100.
+# Note: PLFS reports services as a single "other services" division (NIC
+# sections K–U: finance/insurance, real estate, professional, public admin &
+# defence, education, health, etc.) and does not split it further at the broad-
+# division level. The earlier finance / public-admin / other split came from
+# the RBI KLEMS database (a different source and methodology); it has been
+# dropped so the whole employment domain is single-source PLFS 2025.
 SECTORAL_EMPLOYMENT = [
-    {"id": "agriculture", "name": "Agriculture & Allied", "employmentShare": 46.1},  # PLFS 2023-24 (was 45.8)
-    {"id": "manufacturing", "name": "Manufacturing", "employmentShare": 11.4},
-    {"id": "construction", "name": "Construction", "employmentShare": 12.0},  # PLFS 2023-24 (was 12.1)
-    {"id": "trade", "name": "Trade, Hotels & Transport", "employmentShare": 13.8},
-    {"id": "finance", "name": "Finance & Business Services", "employmentShare": 4.2},
-    {"id": "public_admin", "name": "Public Administration & Defence", "employmentShare": 3.8},
-    {"id": "other_services", "name": "Other Services", "employmentShare": 8.9},
+    {"id": "agriculture", "name": "Agriculture & Allied", "employmentShare": 43.0},
+    {"id": "other_services", "name": "Other Services", "employmentShare": 13.1},
+    {"id": "trade_hotel", "name": "Trade, Hotel & Restaurant", "employmentShare": 12.9},
+    {"id": "manufacturing", "name": "Manufacturing", "employmentShare": 12.1},
+    {"id": "construction", "name": "Construction", "employmentShare": 12.0},
+    {"id": "transport_comm", "name": "Transport, Storage & Communications", "employmentShare": 5.8},
+    {"id": "utilities", "name": "Electricity, Water & Utilities", "employmentShare": 0.7},
+    {"id": "mining", "name": "Mining & Quarrying", "employmentShare": 0.3},
 ]
 
 # ── National headline numbers ──────────────────────────────────────

@@ -2,7 +2,7 @@
 Employment Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — MOSPI PLFS API (primary) + World Bank API + curated PLFS/KLEMS data (fallback)
+  1. FETCH   — MOSPI PLFS API (primary) + World Bank API + curated PLFS data (fallback)
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/employment/
@@ -11,7 +11,7 @@ Data source priority:
   - State-level employment: MOSPI PLFS API (primary) → curated PLFS data (fallback)
   - National totals: MOSPI PLFS API (primary) → curated (fallback)
   - Time series: World Bank ILO-modelled estimates (primary for historical trends)
-  - Sectoral: RBI KLEMS (curated, no API)
+  - Sectoral: PLFS Annual Report 2025 Statement 8 (curated, no API)
 """
 
 import logging
@@ -81,7 +81,7 @@ def run_employment_pipeline():
     logger.info("  Fetching 17 indicators from World Bank API...")
     wb_data = fetch_multiple()
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
-    logger.info(f"  Curated: {len(SECTORAL_EMPLOYMENT)} KLEMS sectors")
+    logger.info(f"  Curated: {len(SECTORAL_EMPLOYMENT)} PLFS sectors")
 
     # ── Stage 2: TRANSFORM ──────────────────────────────────────────
     logger.info("Stage 2: TRANSFORM")
