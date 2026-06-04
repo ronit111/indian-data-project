@@ -15,7 +15,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--crimson)' }} />
             <span>
-              <strong style={{ color: 'var(--crimson)' }}>National Crime Records Bureau (NCRB)</strong> — Crime in India 2022.{' '}
+              <strong style={{ color: 'var(--crimson)' }}>National Crime Records Bureau (NCRB)</strong> — Crime in India 2023.{' '}
               <a href="https://ncrb.gov.in/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--crimson)' }}>
                 ncrb.gov.in
               </a>{' '}
@@ -25,7 +25,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--crimson)' }} />
             <span>
-              <strong style={{ color: 'var(--crimson)' }}>Ministry of Road Transport &amp; Highways (MoRTH)</strong> — Road Accidents in India 2022.{' '}
+              <strong style={{ color: 'var(--crimson)' }}>Ministry of Road Transport &amp; Highways (MoRTH)</strong> — Road Accidents in India 2023.{' '}
               <a href="https://morth.nic.in/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--crimson)' }}>
                 morth.nic.in
               </a>{' '}
@@ -35,7 +35,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--crimson)' }} />
             <span>
-              <strong style={{ color: 'var(--crimson)' }}>Bureau of Police Research &amp; Development (BPRD)</strong> — Data on Police Organisations 2022.{' '}
+              <strong style={{ color: 'var(--crimson)' }}>Bureau of Police Research &amp; Development (BPRD)</strong> — Data on Police Organisations (as on 01.01.2023).{' '}
               <a href="https://bprd.nic.in/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--crimson)' }}>
                 bprd.nic.in
               </a>{' '}
@@ -74,7 +74,7 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--crimson)' }} />
-            <span><strong>Two crime categories</strong> — IPC crimes (Indian Penal Code, now Bharatiya Nyaya Sanhita) and SLL crimes (Special &amp; Local Laws like NDPS, Arms Act, POCSO). Our data uses the 2022 IPC classification since BNS took effect only in July 2024.</span>
+            <span><strong>Two crime categories</strong> — IPC crimes (Indian Penal Code, now Bharatiya Nyaya Sanhita) and SLL crimes (Special &amp; Local Laws like NDPS, Arms Act, POCSO). Our data uses the 2023 IPC classification since BNS took effect only in July 2024.</span>
           </li>
         </ul>
       </>
@@ -85,12 +85,12 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          Kerala consistently records India's highest crime rate (~1,287 per lakh in 2022, 3x the national average), yet ranks among the safest states in citizen surveys. This "paradox" is well-documented:
+          Kerala consistently records India's highest crime rate (~1,631 per lakh in 2023, 3x the national average), yet ranks among the safest states in citizen surveys. This "paradox" is well-documented:
         </p>
         <ul className="mt-4 space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span><strong>Better reporting</strong> — Higher literacy and awareness leads to more crimes being reported. Kerala's police-population ratio (188 per lakh) is well above the national average (151).</span>
+            <span><strong>Better reporting</strong> — Higher literacy and awareness leads to more crimes being reported. Kerala's police-population ratio (151 per lakh) is near the national average (155), and a low barrier to filing FIRs means more crimes get recorded.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
@@ -111,19 +111,19 @@ const SECTIONS = [
         <ul className="space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>NCRB Crime in India: <strong>2022</strong> (published December 2023). National trend data from 2014 to 2022 (9 data points). This is the latest available edition.</span>
+            <span>NCRB Crime in India: <strong>2023</strong> (published October 2025). National trend data from 2014 to 2023 (10 data points). This is the latest available edition.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>MoRTH Road Accidents: <strong>2022</strong>. National trend from 2014 to 2022. State fatality rates for 2022.</span>
+            <span>MoRTH Road Accidents: <strong>2023</strong>. National trend from 2014 to 2023. State fatality rates for 2023.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>BPRD Police Data: <strong>2022</strong>. Sanctioned and actual police strength, state-wise ratios, women in police.</span>
+            <span>BPRD Police Data: <strong>as on 01.01.2023</strong>. Sanctioned and actual police strength, state-wise ratios, women in police.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>Cybercrime: NCRB FIR data from 2017-2022. I4C portal data for 2022 complaints and financial losses.</span>
+            <span>Cybercrime: NCRB FIR data from 2017-2023. I4C portal data for 2022 complaints and financial losses.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
@@ -152,11 +152,11 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
-            <span><strong>COVID-19 effect</strong> — The 2020 dip in crime data reflects lockdown restrictions suppressing both crime and reporting, not a genuine improvement in safety. 2021-22 figures include a "catch-up" effect.</span>
+            <span><strong>COVID-19 effect</strong> — The 2020 total was inflated by a surge in SLL registrations (lockdown and disaster-management violations) even as some conventional IPC offences fell, so the headline spike does not mean conventional crime rose. Totals normalised through 2021–2023.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
-            <span><strong>Cybercrime gap</strong> — The 34x gap between I4C complaints (22.68L) and NCRB FIRs (65.9K) means formal crime data severely understates cybercrime. Most online fraud victims file portal complaints but few become investigated FIRs.</span>
+            <span><strong>Cybercrime gap</strong> — The 26x gap between I4C complaints (22.68L) and NCRB FIRs (86.4K) means formal crime data severely understates cybercrime. Most online fraud victims file portal complaints but few become investigated FIRs.</span>
           </li>
         </ul>
       </>

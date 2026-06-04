@@ -279,9 +279,9 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 4,
       title: 'Safety & Violence',
       annotation:
-        '4.45 lakh crimes against women were registered in 2022 — cruelty by husband, kidnapping, and assault lead the categories. The reported number is widely believed to be a fraction of the actual incidence due to stigma and institutional barriers to filing complaints.',
+        '4.48 lakh crimes against women were registered in 2023 — cruelty by husband, kidnapping, and assault lead the categories. The reported number is widely believed to be a fraction of the actual incidence due to stigma and institutional barriers to filing complaints.',
       domains: ['crime'],
-      sources: ['NCRB "Crime in India" 2022'],
+      sources: ['NCRB "Crime in India" 2023'],
       charts: [
         {
           chartType: 'line',
@@ -305,7 +305,7 @@ export const womenInIndia: TopicDef = {
         },
         {
           chartType: 'horizontal-bar',
-          chartTitle: 'Crime Types Against Women (2022)',
+          chartTitle: 'Crime Types Against Women (2023)',
           unit: '%',
           accent: '#DC2626',
           extractData: (bag) => {
@@ -359,7 +359,7 @@ export const womenInIndia: TopicDef = {
       label: 'Crime & Safety',
       route: '/crime',
       domain: 'crime',
-      description: 'Crimes against women — 4.45 lakh cases in 2022',
+      description: 'Crimes against women — 4.48 lakh cases in 2023',
     },
   ],
 };

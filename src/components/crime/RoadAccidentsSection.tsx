@@ -74,15 +74,15 @@ export function RoadAccidentsSection({ data }: RoadAccidentsSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          {latest ? `${(latest.killed / 1000).toFixed(1)}K` : '—'} dead on Indian roads in 2022 — {perDay ?? '—'} every day.
+          {latest ? `${(latest.killed / 1000).toFixed(1)}K` : '—'} dead on Indian roads in 2023 — {perDay ?? '—'} every day.
           India has 1% of the world's vehicles but 11% of global road deaths.
-          Over-speeding alone causes 72% of fatal accidents.
+          Over-speeding alone causes 68% of accidents.
         </motion.p>
 
         {/* Killed + Injured trend */}
         <div className="mb-10">
           <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-            Road accident deaths and injuries, 2014–2022
+            Road accident deaths and injuries, 2014–2023
           </p>
           <ChartActionsWrapper registryKey="crime/road-accidents" data={data}>
             <AreaChart

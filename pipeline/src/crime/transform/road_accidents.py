@@ -53,5 +53,5 @@ def build_road_accidents(
         "nationalTrend": national_trend,
         "causes": cause_breakdown,
         "stateFatalities": states,
-        "source": "MoRTH Road Accidents in India 2022",
+        "source": "MoRTH Road Accidents in India 2023",
     }

@@ -57,5 +57,5 @@ def build_overview(
         "ipcComposition": composition,
         "stateRates": states,
         "homicideRate": homicide_trend,
-        "source": "NCRB Crime in India 2022 + World Bank",
+        "source": "NCRB Crime in India 2023 + World Bank",
     }

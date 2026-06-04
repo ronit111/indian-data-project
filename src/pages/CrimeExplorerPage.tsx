@@ -136,7 +136,7 @@ export default function CrimeExplorerPage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Compare state-wise crime, safety, and policing data from NCRB, MoRTH, and BPRD. All data for 2022.
+          Compare state-wise crime, safety, and policing data from NCRB, MoRTH, and BPRD. All data for 2023.
         </motion.p>
 
         {/* Category pills */}

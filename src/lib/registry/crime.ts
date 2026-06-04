@@ -17,8 +17,8 @@ const base = `/data/crime/${YEAR}`;
 registerChart({
   domain: DOMAIN,
   sectionId: 'overview',
-  title: 'Crime Overview — IPC & SLL Trends 2014–2022',
-  source: 'NCRB Crime in India 2022',
+  title: 'Crime Overview — IPC & SLL Trends 2014–2023',
+  source: 'NCRB Crime in India 2023',
   accentColor: ACCENT,
   dataFiles: [`${base}/overview.json`],
   chartType: 'line',
@@ -34,7 +34,7 @@ registerChart({
     const latest = d.nationalTrend[d.nationalTrend.length - 1];
     if (!latest) return null;
     return {
-      label: 'Total Crimes 2022',
+      label: 'Total Crimes 2023',
       value: `${(latest.total / 100000).toFixed(1)}L`,
       context: `Crime rate: ${latest.rate} per lakh population. IPC: ${(latest.ipc / 100000).toFixed(1)}L, SLL: ${(latest.sll / 100000).toFixed(1)}L.`,
     };
@@ -45,7 +45,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'crimes-against-women',
   title: 'Crimes Against Women — Types & State Rates',
-  source: 'NCRB Crime in India 2022',
+  source: 'NCRB Crime in India 2023',
   accentColor: ACCENT,
   dataFiles: [`${base}/women-safety.json`],
   chartType: 'horizontal-bar',
@@ -72,7 +72,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'road-accidents',
   title: 'Road Accident Deaths & Causes',
-  source: 'MoRTH Annual Report 2022',
+  source: 'MoRTH Road Accidents in India 2023',
   accentColor: ACCENT,
   dataFiles: [`${base}/road-accidents.json`],
   chartType: 'area',
@@ -88,9 +88,9 @@ registerChart({
     const latest = d.nationalTrend[d.nationalTrend.length - 1];
     if (!latest) return null;
     return {
-      label: 'Road Deaths 2022',
+      label: 'Road Deaths 2023',
       value: `${(latest.killed / 1000).toFixed(1)}K`,
-      context: `${Math.round(latest.killed / 365)} deaths per day. Over-speeding causes 69% of fatal accidents.`,
+      context: `${Math.round(latest.killed / 365)} deaths per day. Over-speeding causes 68% of accidents.`,
     };
   },
 });
@@ -126,7 +126,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'police',
   title: 'Police Infrastructure — Strength & Ratios',
-  source: 'BPRD Data on Police Organisations 2022',
+  source: 'BPRD Data on Police Organisations (as on 01.01.2023)',
   accentColor: ACCENT,
   dataFiles: [`${base}/police.json`],
   chartType: 'horizontal-bar',
@@ -151,7 +151,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'justice',
   title: 'Justice Pipeline — FIR to Conviction',
-  source: 'NCRB Crime in India 2022',
+  source: 'NCRB Crime in India 2023',
   accentColor: ACCENT,
   dataFiles: [`${base}/justice.json`],
   chartType: 'horizontal-bar',
@@ -173,7 +173,7 @@ registerChart({
     return {
       label: 'Conviction Rate',
       value: `${d.funnel.convictionRate}%`,
-      context: `Of every 100 cases, only ~13 end in conviction. Average trial: ${d.trialDuration.avgYears} years.`,
+      context: `Of every 100 cases, only ~17 end in conviction. Average trial: ${d.trialDuration.avgYears} years.`,
     };
   },
 });

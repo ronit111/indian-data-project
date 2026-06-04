@@ -40,5 +40,5 @@ def build_cybercrime(
         "i4cComplaints": i4c_context["complaints2022"],
         "i4cFinancialLossCrore": i4c_context["financialLossCrore"],
         "i4cNote": i4c_context["note"],
-        "source": "NCRB Crime in India 2022 + I4C / cybercrime.gov.in",
+        "source": "NCRB Crime in India 2023 + I4C / cybercrime.gov.in",
     }
