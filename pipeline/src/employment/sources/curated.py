@@ -41,43 +41,47 @@ PLFS_QUARTERLY_2025 = {
     "wprTotal": 53.1,                     # PLFS Oct-Dec 2025 CWS (was 52.2 in Jul-Sep 2025)
 }
 
-# ── PLFS State-Level Data (Annual Report 2023-24) ─────────────────
-# All values verified against PLFS Annual Report 2023-24, Appendix A:
-#   - LFPR: Table 16, age group 15 years and above, usual status (ps+ss), rural+urban
-#   - WPR:  Table 17, age group 15 years and above, usual status (ps+ss), rural+urban
-#   - UR:   Table 18, age group 15 years and above, usual status (ps+ss), rural+urban
-#   - Self-employed: Table 19, rural+urban, persons, column "all self employed"
+# ── PLFS State-Level Data (Annual Report 2025) ────────────────────
+# Refreshed 2026-06 to PLFS Annual Report 2025 (survey period Jan–Dec 2025),
+# usual status (ps+ss), age 15 years and above, rural+urban combined.
+# LFPR / lfprMale / lfprFemale / WPR / UR: sourced from the MOSPI eSankhyiki
+#   PLFS API (api.mospi.gov.in, year=2025), the same machine-readable source
+#   behind the report. National aggregates cross-verified against the printed
+#   report (LFPR 59.3, WPR 57.4, UR 3.1, female-LFPR 40.0, youth-UR 9.9 — all match).
+# selfEmployed: PLFS 2025 report Table 19 ("all self employed", rural+urban,
+#   persons); the table instance was anchor-validated to the all-India 56.2 and
+#   every state row was checked to sum to 100 (all-self + regular + casual).
 PLFS_STATE_DATA = [
-    {"id": "UP", "name": "Uttar Pradesh", "lfpr": 56.9, "lfprMale": 79.5, "lfprFemale": 34.5, "unemploymentRate": 3.0, "wpr": 55.1, "selfEmployed": 72.7},
-    {"id": "MH", "name": "Maharashtra", "lfpr": 59.0, "lfprMale": 77.2, "lfprFemale": 41.0, "unemploymentRate": 3.3, "wpr": 57.0, "selfEmployed": 47.0},
-    {"id": "BR", "name": "Bihar", "lfpr": 53.2, "lfprMale": 75.8, "lfprFemale": 30.5, "unemploymentRate": 3.0, "wpr": 51.6, "selfEmployed": 67.5},
-    {"id": "WB", "name": "West Bengal", "lfpr": 61.1, "lfprMale": 82.4, "lfprFemale": 40.4, "unemploymentRate": 2.5, "wpr": 59.6, "selfEmployed": 56.5},
-    {"id": "MP", "name": "Madhya Pradesh", "lfpr": 68.9, "lfprMale": 85.0, "lfprFemale": 52.3, "unemploymentRate": 1.0, "wpr": 68.3, "selfEmployed": 68.2},
-    {"id": "TN", "name": "Tamil Nadu", "lfpr": 58.8, "lfprMale": 75.7, "lfprFemale": 43.2, "unemploymentRate": 3.5, "wpr": 56.8, "selfEmployed": 34.2},
-    {"id": "RJ", "name": "Rajasthan", "lfpr": 64.4, "lfprMale": 78.2, "lfprFemale": 50.9, "unemploymentRate": 4.2, "wpr": 61.7, "selfEmployed": 68.7},
-    {"id": "KA", "name": "Karnataka", "lfpr": 56.8, "lfprMale": 75.5, "lfprFemale": 38.0, "unemploymentRate": 2.7, "wpr": 55.2, "selfEmployed": 51.1},
-    {"id": "GJ", "name": "Gujarat", "lfpr": 64.6, "lfprMale": 82.4, "lfprFemale": 46.0, "unemploymentRate": 1.1, "wpr": 63.9, "selfEmployed": 56.1},
-    {"id": "AP", "name": "Andhra Pradesh", "lfpr": 60.2, "lfprMale": 76.7, "lfprFemale": 44.8, "unemploymentRate": 4.1, "wpr": 57.8, "selfEmployed": 49.1},
-    {"id": "TS", "name": "Telangana", "lfpr": 62.2, "lfprMale": 78.5, "lfprFemale": 46.7, "unemploymentRate": 4.8, "wpr": 59.2, "selfEmployed": 55.9},
-    {"id": "OD", "name": "Odisha", "lfpr": 64.9, "lfprMale": 81.7, "lfprFemale": 49.4, "unemploymentRate": 3.1, "wpr": 62.9, "selfEmployed": 62.0},
-    {"id": "KL", "name": "Kerala", "lfpr": 56.2, "lfprMale": 74.4, "lfprFemale": 40.8, "unemploymentRate": 7.2, "wpr": 52.2, "selfEmployed": 41.1},
-    {"id": "JH", "name": "Jharkhand", "lfpr": 63.8, "lfprMale": 78.3, "lfprFemale": 49.8, "unemploymentRate": 1.3, "wpr": 63.0, "selfEmployed": 68.0},
-    {"id": "AS", "name": "Assam", "lfpr": 66.9, "lfprMale": 83.3, "lfprFemale": 50.2, "unemploymentRate": 3.9, "wpr": 64.3, "selfEmployed": 61.4},
-    {"id": "PB", "name": "Punjab", "lfpr": 55.7, "lfprMale": 79.8, "lfprFemale": 31.1, "unemploymentRate": 5.5, "wpr": 52.7, "selfEmployed": 46.6},
-    {"id": "CG", "name": "Chhattisgarh", "lfpr": 71.5, "lfprMale": 83.4, "lfprFemale": 59.5, "unemploymentRate": 2.5, "wpr": 69.7, "selfEmployed": 65.6},
-    {"id": "HR", "name": "Haryana", "lfpr": 49.5, "lfprMale": 72.7, "lfprFemale": 24.2, "unemploymentRate": 3.4, "wpr": 47.8, "selfEmployed": 46.6},
-    {"id": "UK", "name": "Uttarakhand", "lfpr": 60.7, "lfprMale": 76.4, "lfprFemale": 45.6, "unemploymentRate": 4.3, "wpr": 58.1, "selfEmployed": 61.5},
-    {"id": "JK", "name": "Jammu & Kashmir", "lfpr": 64.3, "lfprMale": 75.7, "lfprFemale": 52.1, "unemploymentRate": 6.1, "wpr": 60.4, "selfEmployed": 66.7},
-    {"id": "HP", "name": "Himachal Pradesh", "lfpr": 74.4, "lfprMale": 81.7, "lfprFemale": 67.6, "unemploymentRate": 5.5, "wpr": 70.3, "selfEmployed": 66.2},
-    {"id": "DL", "name": "Delhi", "lfpr": 46.4, "lfprMale": 70.1, "lfprFemale": 18.5, "unemploymentRate": 2.1, "wpr": 45.5, "selfEmployed": 37.8},
-    {"id": "GA", "name": "Goa", "lfpr": 51.8, "lfprMale": 74.1, "lfprFemale": 29.3, "unemploymentRate": 8.5, "wpr": 47.4, "selfEmployed": 36.8},
-    {"id": "TR", "name": "Tripura", "lfpr": 63.0, "lfprMale": 78.9, "lfprFemale": 47.1, "unemploymentRate": 1.7, "wpr": 62.0, "selfEmployed": 61.6},
-    {"id": "MN", "name": "Manipur", "lfpr": 59.6, "lfprMale": 70.8, "lfprFemale": 48.7, "unemploymentRate": 6.1, "wpr": 56.0, "selfEmployed": 72.6},
-    {"id": "ML", "name": "Meghalaya", "lfpr": 76.9, "lfprMale": 82.3, "lfprFemale": 71.8, "unemploymentRate": 6.2, "wpr": 72.1, "selfEmployed": 52.6},
-    {"id": "NL", "name": "Nagaland", "lfpr": 73.3, "lfprMale": 82.4, "lfprFemale": 64.3, "unemploymentRate": 7.1, "wpr": 68.1, "selfEmployed": 66.3},
-    {"id": "MZ", "name": "Mizoram", "lfpr": 54.2, "lfprMale": 66.1, "lfprFemale": 41.7, "unemploymentRate": 2.3, "wpr": 53.0, "selfEmployed": 68.5},
-    {"id": "SK", "name": "Sikkim", "lfpr": 76.2, "lfprMale": 83.4, "lfprFemale": 68.2, "unemploymentRate": 2.3, "wpr": 74.4, "selfEmployed": 61.3},
-    {"id": "AR", "name": "Arunachal Pradesh", "lfpr": 73.0, "lfprMale": 79.2, "lfprFemale": 66.5, "unemploymentRate": 6.1, "wpr": 68.5, "selfEmployed": 78.0},
+    {"id": "UP", "name": "Uttar Pradesh", "lfpr": 55.2, "lfprMale": 78.9, "lfprFemale": 32.4, "unemploymentRate": 2.7, "wpr": 53.7, "selfEmployed": 67.4},
+    {"id": "MH", "name": "Maharashtra", "lfpr": 59.5, "lfprMale": 78.4, "lfprFemale": 39.9, "unemploymentRate": 2.4, "wpr": 58.0, "selfEmployed": 46.9},
+    {"id": "BR", "name": "Bihar", "lfpr": 49.3, "lfprMale": 75.7, "lfprFemale": 24.7, "unemploymentRate": 3.8, "wpr": 47.4, "selfEmployed": 64.7},
+    {"id": "WB", "name": "West Bengal", "lfpr": 59.1, "lfprMale": 82.3, "lfprFemale": 37.5, "unemploymentRate": 2.8, "wpr": 57.4, "selfEmployed": 55.4},
+    {"id": "MP", "name": "Madhya Pradesh", "lfpr": 65.1, "lfprMale": 83.5, "lfprFemale": 46.1, "unemploymentRate": 1.5, "wpr": 64.1, "selfEmployed": 66.1},
+    {"id": "TN", "name": "Tamil Nadu", "lfpr": 62.3, "lfprMale": 78.3, "lfprFemale": 47.3, "unemploymentRate": 3.4, "wpr": 60.1, "selfEmployed": 36.2},
+    {"id": "RJ", "name": "Rajasthan", "lfpr": 64.5, "lfprMale": 77.0, "lfprFemale": 52.3, "unemploymentRate": 4.3, "wpr": 61.7, "selfEmployed": 68.3},
+    {"id": "KA", "name": "Karnataka", "lfpr": 59.4, "lfprMale": 79.4, "lfprFemale": 39.8, "unemploymentRate": 2.3, "wpr": 58.0, "selfEmployed": 47.5},
+    {"id": "GJ", "name": "Gujarat", "lfpr": 65.2, "lfprMale": 83.4, "lfprFemale": 46.2, "unemploymentRate": 0.9, "wpr": 64.6, "selfEmployed": 56.9},
+    {"id": "AP", "name": "Andhra Pradesh", "lfpr": 60.9, "lfprMale": 78.3, "lfprFemale": 44.8, "unemploymentRate": 4.2, "wpr": 58.3, "selfEmployed": 46.6},
+    {"id": "TS", "name": "Telangana", "lfpr": 61.4, "lfprMale": 77.1, "lfprFemale": 46.4, "unemploymentRate": 5.0, "wpr": 58.3, "selfEmployed": 52.1},
+    {"id": "OD", "name": "Odisha", "lfpr": 63.2, "lfprMale": 80.6, "lfprFemale": 47.3, "unemploymentRate": 2.9, "wpr": 61.3, "selfEmployed": 61.1},
+    {"id": "KL", "name": "Kerala", "lfpr": 57.4, "lfprMale": 75.8, "lfprFemale": 41.2, "unemploymentRate": 4.4, "wpr": 54.9, "selfEmployed": 37.6},
+    {"id": "JH", "name": "Jharkhand", "lfpr": 59.8, "lfprMale": 77.0, "lfprFemale": 43.7, "unemploymentRate": 2.7, "wpr": 58.2, "selfEmployed": 68.0},
+    {"id": "AS", "name": "Assam", "lfpr": 61.9, "lfprMale": 81.7, "lfprFemale": 42.8, "unemploymentRate": 3.7, "wpr": 59.6, "selfEmployed": 59.8},
+    {"id": "PB", "name": "Punjab", "lfpr": 55.2, "lfprMale": 79.2, "lfprFemale": 30.2, "unemploymentRate": 5.3, "wpr": 52.3, "selfEmployed": 44.5},
+    {"id": "CG", "name": "Chhattisgarh", "lfpr": 71.6, "lfprMale": 83.5, "lfprFemale": 59.8, "unemploymentRate": 2.3, "wpr": 70.0, "selfEmployed": 63.3},
+    {"id": "HR", "name": "Haryana", "lfpr": 50.4, "lfprMale": 75.0, "lfprFemale": 23.8, "unemploymentRate": 4.5, "wpr": 48.1, "selfEmployed": 44.0},
+    {"id": "UK", "name": "Uttarakhand", "lfpr": 56.3, "lfprMale": 75.5, "lfprFemale": 37.8, "unemploymentRate": 5.1, "wpr": 53.4, "selfEmployed": 57.6},
+    {"id": "JK", "name": "Jammu & Kashmir", "lfpr": 64.9, "lfprMale": 76.3, "lfprFemale": 53.1, "unemploymentRate": 4.9, "wpr": 61.7, "selfEmployed": 64.7},
+    {"id": "HP", "name": "Himachal Pradesh", "lfpr": 73.2, "lfprMale": 82.5, "lfprFemale": 64.7, "unemploymentRate": 4.5, "wpr": 69.9, "selfEmployed": 67.6},
+    {"id": "DL", "name": "Delhi", "lfpr": 44.2, "lfprMale": 71.5, "lfprFemale": 13.1, "unemploymentRate": 5.9, "wpr": 41.6, "selfEmployed": 39.1},
+    {"id": "GA", "name": "Goa", "lfpr": 51.2, "lfprMale": 73.4, "lfprFemale": 27.4, "unemploymentRate": 8.3, "wpr": 46.9, "selfEmployed": 35.4},
+    {"id": "TR", "name": "Tripura", "lfpr": 62.1, "lfprMale": 78.9, "lfprFemale": 46.3, "unemploymentRate": 2.7, "wpr": 60.4, "selfEmployed": 55.8},
+    {"id": "MN", "name": "Manipur", "lfpr": 63.1, "lfprMale": 74.1, "lfprFemale": 52.6, "unemploymentRate": 5.2, "wpr": 59.8, "selfEmployed": 67.2},
+    {"id": "ML", "name": "Meghalaya", "lfpr": 72.3, "lfprMale": 80.6, "lfprFemale": 64.3, "unemploymentRate": 4.8, "wpr": 68.9, "selfEmployed": 44.9},
+    {"id": "NL", "name": "Nagaland", "lfpr": 72.1, "lfprMale": 79.7, "lfprFemale": 64.5, "unemploymentRate": 6.7, "wpr": 67.3, "selfEmployed": 67.3},
+    {"id": "MZ", "name": "Mizoram", "lfpr": 53.9, "lfprMale": 67.8, "lfprFemale": 38.0, "unemploymentRate": 2.4, "wpr": 52.6, "selfEmployed": 64.6},
+    {"id": "SK", "name": "Sikkim", "lfpr": 74.7, "lfprMale": 81.3, "lfprFemale": 66.7, "unemploymentRate": 3.2, "wpr": 72.3, "selfEmployed": 49.0},
+    {"id": "AR", "name": "Arunachal Pradesh", "lfpr": 71.3, "lfprMale": 80.5, "lfprFemale": 61.7, "unemploymentRate": 6.6, "wpr": 66.6, "selfEmployed": 71.8},
 ]
 
 # ── Sectoral Employment (RBI KLEMS + PLFS) ─────────────────────────
@@ -94,12 +98,14 @@ SECTORAL_EMPLOYMENT = [
 ]
 
 # ── National headline numbers ──────────────────────────────────────
-# Source: PLFS Annual Report 2023-24 + Quarterly Bulletin Oct-Dec 2025
+# Source: PLFS Annual Report 2025 (Jan–Dec 2025) + Quarterly Bulletin Oct-Dec 2025
+# Annual figures refreshed 2026-06; each cross-verified between the MOSPI PLFS API
+# (year=2025) and the printed PLFS 2025 report (Statements 1, 2 & 7).
 NATIONAL_TOTALS = {
-    "unemploymentRate": 3.2,        # PLFS Annual Report 2023-24, usual status (ps+ss), 15+ (national)
-    "lfpr": 60.1,                   # PLFS Annual Report 2023-24, usual status (ps+ss), 15+
-    "youthUnemployment": 10.2,      # PLFS Annual Report 2023-24 (usual status, 15-29 age group)
-    "femaleLfpr": 41.7,             # PLFS Annual Report 2023-24, usual status (ps+ss), 15+ female
+    "unemploymentRate": 3.1,        # PLFS 2025, usual status (ps+ss), 15+ (national)
+    "lfpr": 59.3,                   # PLFS 2025, usual status (ps+ss), 15+
+    "youthUnemployment": 9.9,       # PLFS 2025, usual status (ps+ss), 15-29 age group
+    "femaleLfpr": 40.0,             # PLFS 2025, usual status (ps+ss), 15+ female (rural+urban)
     "workforceTotal": 57.4,         # crores (PLFS Oct-Dec 2025 quarterly)
-    "selfEmployedPct": 58.4,        # PLFS Annual Report 2023-24 (usual status, ps+ss)
+    "selfEmployedPct": 56.2,        # PLFS 2025, Statement 7 (all self-employed, ps+ss, rural+urban, person)
 }

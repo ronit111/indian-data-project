@@ -100,7 +100,7 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             &middot; Female LFPR {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)', fontSize: '0.6rem' }}>
-            (PLFS 2023-24)
+            (PLFS 2025)
           </span>
         </motion.div>
 
