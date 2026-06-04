@@ -169,7 +169,7 @@ export function ReportShareCard({ report }: ReportShareCardProps) {
       <canvas ref={canvasRef} className="hidden" />
       <button
         onClick={handleShare}
-        className="py-2 px-4 rounded-lg text-sm font-medium cursor-pointer transition-all duration-150 whitespace-nowrap hover:border-[var(--positive)] hover:bg-[rgba(74,222,128,0.08)]"
+        className="py-2 px-4 rounded-lg text-sm font-medium cursor-pointer transition-colors duration-150 whitespace-nowrap hover:border-[var(--positive)] hover:bg-[rgba(74,222,128,0.08)]"
         style={{
           background: status !== 'idle' ? 'var(--positive-dim)' : 'transparent',
           color: status !== 'idle' ? 'var(--positive)' : 'var(--text-secondary)',

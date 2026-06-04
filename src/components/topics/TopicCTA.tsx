@@ -34,7 +34,7 @@ export function TopicCTA({ links, accent }: TopicCTAProps) {
             >
               <Link
                 to={link.route}
-                className="block h-full rounded-xl p-5 no-underline transition-all duration-200 hover:brightness-125"
+                className="block h-full rounded-xl p-5 no-underline transition-[filter] duration-200 hover:brightness-125"
                 style={{
                   background: 'var(--bg-raised)',
                   borderLeft: `3px solid ${domainAccent}`,

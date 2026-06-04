@@ -121,7 +121,7 @@ export function CategoryNav({ sentinelId }: CategoryNavProps) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky z-40 transition-all duration-300 hidden md:block"
+      className="sticky z-40 transition-[backdrop-filter,background-color,border-color] duration-300 hidden md:block"
       style={{
         top: '56px', // below header
         backdropFilter: isStuck ? 'blur(16px)' : 'none',
@@ -150,7 +150,7 @@ export function CategoryNav({ sentinelId }: CategoryNavProps) {
                   <button
                     key={domainId}
                     onClick={() => scrollToDomain(domainId)}
-                    className="shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-all duration-200"
+                    className="shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200"
                     style={{
                       background: isActive ? `color-mix(in srgb, ${accent} 15%, transparent)` : 'transparent',
                       color: isActive ? accent : 'var(--text-muted)',

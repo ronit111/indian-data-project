@@ -174,7 +174,7 @@ export function ShareCard({ breakdown, regime, shares }: ShareCardProps) {
       <canvas ref={canvasRef} className="hidden" />
       <button
         onClick={handleShare}
-        className="py-2 px-4 rounded-lg text-sm font-medium cursor-pointer transition-all duration-150 whitespace-nowrap hover:border-[var(--cyan)] hover:bg-[var(--cyan-dim)]"
+        className="py-2 px-4 rounded-lg text-sm font-medium cursor-pointer transition-colors duration-150 whitespace-nowrap hover:border-[var(--cyan)] hover:bg-[var(--cyan-dim)]"
         style={{
           background: status !== 'idle' ? 'var(--positive-dim)' : 'transparent',
           color: status !== 'idle' ? 'var(--positive)' : 'var(--text-secondary)',
