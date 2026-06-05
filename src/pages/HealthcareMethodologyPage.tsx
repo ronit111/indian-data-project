@@ -57,9 +57,9 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--rose)' }} />
             <span>
-              <strong style={{ color: 'var(--rose)' }}>Tier 2 — NFHS-5</strong> (state-level immunization, 2019-21, curated).{' '}
+              <strong style={{ color: 'var(--rose)' }}>Tier 2 — NFHS-6</strong> (state-level immunization, 2023-24, curated).{' '}
               <a
-                href="https://rchiips.org/nfhs/NFHS-5Reports/NFHS-5_INDIA_REPORT.pdf"
+                href="https://www.nfhsiips.in/nfhsuser/nfhs6.php"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium link-hover"
@@ -67,7 +67,7 @@ const SECTIONS = [
               >
                 rchiips.org/nfhs
               </a>{' '}
-              — State-level full immunization, BCG, measles, and DPT3 coverage rates from the National Family Health Survey (2019-21). Conducted by IIPS under MoHFW.
+              — State-level full immunization, BCG, measles, and DPT3 coverage rates from the National Family Health Survey (2023-24). Conducted by IIPS under MoHFW.
             </span>
           </li>
         </ul>
@@ -142,7 +142,7 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          Disease and immunization data combines World Bank national time series with NFHS-5 state-level survey data:
+          Disease and immunization data combines World Bank national time series with NFHS-6 state-level survey data:
         </p>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
@@ -160,10 +160,10 @@ const SECTIONS = [
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">TB Incidence (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000-2022</td><td className="py-2">per 100K</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">HIV Prevalence (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000-2023</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Births Attended by Skilled Staff</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000-2021</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Full Immunization (state)</td><td className="py-2 pr-4 text-xs">NFHS-5</td><td className="py-2 pr-4 text-xs">2019-21</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">BCG Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-5</td><td className="py-2 pr-4 text-xs">2019-21</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Measles Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-5</td><td className="py-2 pr-4 text-xs">2019-21</td><td className="py-2">%</td></tr>
-              <tr><td className="py-2 pr-4">DPT3 Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-5</td><td className="py-2 pr-4 text-xs">2019-21</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Full Immunization (state)</td><td className="py-2 pr-4 text-xs">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">BCG Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Measles Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr><td className="py-2 pr-4">DPT3 Coverage (state)</td><td className="py-2 pr-4 text-xs">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
         </div>
@@ -190,12 +190,12 @@ const SECTIONS = [
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">World Bank API</td><td className="py-2 pr-4 text-xs">2000-2023</td><td className="py-2 pr-4 text-xs">National</td><td className="py-2">Time series trends (12 indicators)</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">NHP 2022</td><td className="py-2 pr-4 text-xs">2022</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Infrastructure (beds, PHCs, CHCs, doctors)</td></tr>
-              <tr><td className="py-2 pr-4">NFHS-5</td><td className="py-2 pr-4 text-xs">2019-21</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Immunization coverage</td></tr>
+              <tr><td className="py-2 pr-4">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Immunization coverage</td></tr>
             </tbody>
           </table>
         </div>
         <p className="mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
-          World Bank data typically has a ~1 year lag. NHP 2022 is the latest National Health Profile. NFHS-5 (2019-21) is the most recent family health survey; NFHS-6 is expected around 2026-27.
+          World Bank data typically has a ~1 year lag. NHP 2022 is the latest National Health Profile. NFHS-6 (2023-24) is the most recent family health survey; its provisional fact sheets were released in 2026.
         </p>
       </>
     ),
@@ -247,7 +247,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
             <span>
-              <strong>NFHS-5 is 5 years old.</strong> The immunization data (2019-21) may not reflect current coverage, particularly post-COVID changes to routine immunization programmes. Universal Immunization Programme data from MoHFW may be more current but is not structured for cross-state comparison.
+              <strong>NFHS-6 fact sheets are provisional.</strong> The immunization data (2023-24) is the latest survey-based coverage, but fact sheet figures are provisional and may be revised in the full report. <strong>Manipur was not surveyed in NFHS-6</strong>, so its four immunization values are retained from NFHS-5 (2019-21). Universal Immunization Programme administrative data from MoHFW may be more current but is not structured for cross-state comparison.
             </span>
           </li>
           <li className="flex gap-3 items-start">
@@ -327,7 +327,7 @@ export default function HealthcareMethodologyPage() {
     >
       <SEOHead
         title="Methodology — Healthcare — Indian Data Project"
-        description="Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-5."
+        description="Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-6."
         path="/healthcare/methodology"
         image="/og-healthcare.png"
       />

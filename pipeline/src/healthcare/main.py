@@ -10,7 +10,7 @@ Stages:
 Data sources:
   - World Bank Development Indicators (hospital beds, physicians, health spending, immunization, TB/HIV)
   - National Health Profile 2022 — CBHI (state-level infrastructure)
-  - NFHS-5 2019-21 (state-level immunization coverage)
+  - NFHS-6 2023-24 (state-level immunization coverage)
 
 Note: This domain focuses on infrastructure + spending + disease burden.
 Mortality (IMR, MMR, U5MR) and life expectancy are in the Census domain.
@@ -132,7 +132,7 @@ def _build_summary() -> dict:
         "dptImmunization": NATIONAL_TOTALS["dptImmunization"],
         "tbIncidence": NATIONAL_TOTALS["tbIncidence"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + National Health Profile 2022 + NFHS-5",
+        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24)",
     }
 
 
@@ -188,7 +188,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["fullImmunization"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "bcg_coverage",
@@ -196,7 +196,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["bcg"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "measles_coverage",
@@ -204,7 +204,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["measles"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "dpt3_coverage",
@@ -212,7 +212,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dpt3"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
 
     return {
@@ -302,8 +302,8 @@ def _build_glossary() -> dict:
                 "id": "immunization",
                 "term": "Universal Immunization Programme (UIP)",
                 "simple": "India's national programme providing free vaccines to all children and pregnant women.",
-                "detail": "UIP covers 12 vaccines for children (BCG, OPV, DPT, hepatitis B, measles, JE, pneumococcal, rotavirus, etc.) and 2 for pregnant women (tetanus). India is the world's largest vaccine producer and consumer. Full immunization coverage (all scheduled doses) has risen from 44% (NFHS-4, 2015-16) to 76% (NFHS-5, 2019-21). Mission Indradhanush (2014) intensified coverage in low-performing districts.",
-                "inContext": "Full immunization: 76% nationally (NFHS-5). Range: 58% (Nagaland) to 91% (Odisha).",
+                "detail": "UIP covers 12 vaccines for children (BCG, OPV, DPT, hepatitis B, measles, JE, pneumococcal, rotavirus, etc.) and 2 for pregnant women (tetanus). India is the world's largest vaccine producer and consumer. Full immunization coverage (all scheduled doses) has risen from 44% (NFHS-4, 2015-16) to 76% (NFHS-5, 2019-21) and 83% (NFHS-6, 2023-24). Mission Indradhanush (2014) intensified coverage in low-performing districts.",
+                "inContext": "Full immunization: 83% nationally (NFHS-6). Range: 64% (Nagaland) to 94% (Goa).",
                 "relatedTerms": ["phc", "disease-burden"],
             },
             {
@@ -326,8 +326,8 @@ def _build_glossary() -> dict:
                 "id": "nfhs",
                 "term": "NFHS (National Family Health Survey)",
                 "simple": "India's largest household health survey, covering reproductive health, nutrition, and immunization across all states.",
-                "detail": "NFHS is conducted by IIPS (Mumbai) with support from ICF International. NFHS-5 (2019-21) surveyed 6.4 lakh households across all states/UTs. It's the gold standard for district-level health data in India — used for planning, monitoring, and international comparisons (part of the global DHS programme). Data covers fertility, family planning, infant/child mortality, nutrition, immunization, HIV, and domestic violence.",
-                "inContext": "NFHS-5: 6.4 lakh households. Provides district-level health data for all India.",
+                "detail": "NFHS is conducted by IIPS (Mumbai) with support from ICF International. NFHS-6 (2023-24) surveyed about 6.7 lakh households across all states/UTs except Manipur. It's the gold standard for district-level health data in India — used for planning, monitoring, and international comparisons (part of the global DHS programme). Data covers fertility, family planning, infant/child mortality, nutrition, immunization, HIV, and domestic violence.",
+                "inContext": "NFHS-6: 6.7 lakh households. Provides district-level health data for all India (Manipur not surveyed).",
                 "relatedTerms": ["immunization", "disease-burden"],
             },
         ],
