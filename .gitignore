@@ -10,3 +10,6 @@ __pycache__/
 *.pyc
 *.egg-info/
 pipeline/reference-pdfs/
+
+# Lighthouse CI output
+.lighthouseci/
