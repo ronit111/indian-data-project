@@ -458,7 +458,7 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
                 : domain === 'states'
                   ? 'RBI Handbook, Finance Commission'
                   : domain === 'education'
-                    ? 'UDISE+ 2023-24, ASER 2024, World Bank'
+                    ? 'UDISE+ 2024-25, ASER 2024, World Bank'
                     : domain === 'employment'
                       ? 'PLFS 2023-24, RBI KLEMS, World Bank'
                       : domain === 'healthcare'
