@@ -60,7 +60,7 @@ export const youthJobs: TopicDef = {
       id: 'participation',
       sectionNumber: 2,
       title: 'Who\'s Working?',
-      annotation: 'India\'s LFPR has improved but still masks a massive gender gap. PLFS 2023-24 reports overall LFPR at 46.5% (usual status), with male at ~78% and female at just 28.8%. Many who are "employed" are in agriculture or unpaid family work.',
+      annotation: 'India\'s LFPR has improved but still masks a massive gender gap. PLFS 2025 reports overall LFPR at 59.3% (usual status, 15+), with male at 79.1% and female at just 40.0%. Many who are "employed" are in agriculture or unpaid family work.',
       domains: ['employment', 'census'],
       sources: ['PLFS (MoSPI)'],
       charts: [{
@@ -84,7 +84,7 @@ export const youthJobs: TopicDef = {
       title: 'Quality of Work',
       annotation: 'Over half the workforce is self-employed, mostly in agriculture. Manufacturing\'s share has stagnated around 12%. The "good jobs" challenge is structural, not cyclical.',
       domains: ['employment', 'economy'],
-      sources: ['PLFS', 'RBI KLEMS'],
+      sources: ['PLFS (MoSPI)'],
       charts: [{
         chartType: 'area', chartTitle: 'Sectoral Employment Shifts', unit: '% of workforce', accent: '#3B82F6',
         extractData: (bag) => {

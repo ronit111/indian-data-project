@@ -154,7 +154,7 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 2,
       title: 'Economic Participation',
       annotation:
-        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent data shows a recovery, but the gap with men remains stark. PLFS 2023-24 reports female LFPR at 28.8% (usual status), while ILO modeled estimates put it at ~32%. More women are working, but mostly in agriculture and self-employment.',
+        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent data shows a recovery, but the gap with men remains stark. PLFS 2025 reports female LFPR at 40.0% (usual status, 15+), up from 28.8% three years earlier, while male LFPR (79.1%) remains nearly double. More women are working, but mostly in agriculture and self-employment.',
       domains: ['employment'],
       sources: ['PLFS (MoSPI)', 'World Bank'],
       charts: [
