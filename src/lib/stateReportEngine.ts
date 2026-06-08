@@ -112,8 +112,8 @@ const METRIC_DEFS: MetricDef[] = [
   { key: 'imr', label: 'Infant Mortality (SRS)', unit: 'per 1000', higherIsBetter: false, domain: 'health' },
   { key: 'fullImmunization', label: 'Full Immunization', unit: '%', higherIsBetter: true, domain: 'health' },
   { key: 'stunting', label: 'Stunting', unit: '%', higherIsBetter: false, domain: 'health' },
-  // Environment (from air-quality.json, forest.json, water.json)
-  { key: 'stateAqi', label: 'AQI Average', unit: '', higherIsBetter: false, domain: 'environment' },
+  // Environment (from forest.json, water.json)
+  // Note: state AQI removed — CPCB publishes no annual state-level AQI (untraceable source).
   { key: 'forestCoverPct', label: 'Forest Cover', unit: '% area', higherIsBetter: true, domain: 'environment' },
   { key: 'groundwaterSafe', label: 'Groundwater Stage', unit: '%', higherIsBetter: false, domain: 'environment' },
   // Elections (from turnout.json)

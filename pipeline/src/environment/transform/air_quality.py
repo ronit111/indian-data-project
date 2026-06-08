@@ -34,5 +34,5 @@ def build_air_quality(wb_data: dict, cpcb_states: list[dict], cpcb_cities: list[
         "pm25TimeSeries": wb_data.get("pm25", []),
         "stateAQI": state_aqi,
         "cityAQI": city_aqi,
-        "source": "World Bank + CPCB NAQI 2023",
+        "source": "World Bank (PM2.5 annual mean)",
     }
