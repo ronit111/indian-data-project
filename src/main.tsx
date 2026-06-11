@@ -3,6 +3,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { MotionConfig } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 import './lib/registry/index.ts'; // Register all chart entries for sharing/embedding
 import './index.css';
@@ -16,6 +17,7 @@ const app = (
       <HelmetProvider>
         <BrowserRouter>
           <App />
+          <Analytics />
         </BrowserRouter>
       </HelmetProvider>
     </MotionConfig>
