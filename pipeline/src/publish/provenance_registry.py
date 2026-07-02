@@ -433,12 +433,12 @@ def healthcare_figures(files: dict[str, dict]) -> dict[str, dict]:
                    == f["summary.json"]["outOfPocketPct"])])
     _figure(figures, files, "summary.tbIncidence", "Tuberculosis incidence", "per 100,000",
             s["tbIncidence"],
-            [doc("WHO Global Tuberculosis Report 2023", "World Health Organization",
-                 "https://www.who.int/teams/global-tuberculosis-programme/tb-reports"),
-             curation("Curated from the WHO report; double-confirmed across two "
-                      "independent verification passes (June 2026)", published)],
-            [Check("Positive and within global plausibility",
-                   lambda f: 0 < f["summary.json"]["tbIncidence"] < 1000)])
+            [WB_API(), curation("WHO-derived World Bank estimates (SH.TBS.INCD); "
+                                "headline pinned to the latest published series point "
+                                "(July 2026)", published)],
+            [Check("Equals the latest point of the published TB incidence series",
+                   lambda f: f["disease.json"]["tbIncidenceTimeSeries"][-1]["value"]
+                   == f["summary.json"]["tbIncidence"])])
     _figure(figures, files, "summary.physiciansPer1000", "Physician density",
             "per 1,000 people", s["physiciansPer1000"],
             [WB_API(), curation("Curated from the World Bank series; latest "
@@ -506,7 +506,7 @@ DOMAIN_REGISTRIES: dict[str, tuple[list[str], Callable]] = {
     "education": (["summary.json", "spending.json"], education_figures),
     "employment": (["summary.json", "unemployment.json", "participation.json",
                     "sectoral.json"], employment_figures),
-    "healthcare": (["summary.json", "spending.json", "infrastructure.json"],
+    "healthcare": (["summary.json", "spending.json", "infrastructure.json", "disease.json"],
                    healthcare_figures),
     "environment": (["summary.json", "forest.json", "air-quality.json"],
                     environment_figures),

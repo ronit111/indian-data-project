@@ -136,7 +136,7 @@ def _build_summary() -> dict:
         "dptImmunization": NATIONAL_TOTALS["dptImmunization"],
         "tbIncidence": NATIONAL_TOTALS["tbIncidence"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24) + WHO Global TB Report 2023",
+        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24)",
     }
 
 
@@ -282,8 +282,8 @@ def _build_glossary() -> dict:
                 "id": "tb-incidence",
                 "term": "TB Incidence",
                 "simple": "The number of new tuberculosis cases per 100,000 people per year.",
-                "detail": "India accounts for 27% of global TB cases — the highest burden of any country. Incidence: ~199 per 100,000 (2023). The National TB Elimination Programme targets elimination by 2025 (5 years ahead of the global SDG target of 2030). Despite this ambitious target, India still reports ~28 lakh new cases annually. Multi-drug resistant TB (MDR-TB) is an additional challenge at ~1.2 lakh cases/year.",
-                "inContext": "India: ~199 TB cases per 100K. 27% of global burden. Target: elimination by 2025.",
+                "detail": "India accounts for 27% of global TB cases — the highest burden of any country. Incidence: ~187 per 100,000 (2024, WHO-derived World Bank series). The National TB Elimination Programme targets elimination by 2025 (5 years ahead of the global SDG target of 2030). Despite this ambitious target, India still reports ~28 lakh new cases annually. Multi-drug resistant TB (MDR-TB) is an additional challenge at ~1.2 lakh cases/year.",
+                "inContext": "India: ~187 TB cases per 100K (2024). 27% of global burden. Target: elimination by 2025.",
                 "relatedTerms": ["disease-burden"],
             },
             {

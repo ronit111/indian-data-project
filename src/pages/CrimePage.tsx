@@ -119,10 +119,10 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="While roads kill in the physical world, a new frontier of crime is exploding in the digital one. Cybercrime FIRs tripled in 5 years. But of 22.68 lakh complaints filed online, barely 3% became FIRs. The digital economy grew faster than digital policing."
+        text="While roads kill in the physical world, a new frontier of crime is exploding in the digital one. Cybercrime FIRs tripled in 5 years. But of 22.68 lakh complaints filed online, under 4% became FIRs. The digital economy grew faster than digital policing."
         highlights={{
           'tripled': 'var(--crimson)',
-          '3%': 'var(--crimson)',
+          '4%': 'var(--crimson)',
           'grew': 'var(--crimson-light)',
           'faster': 'var(--crimson-light)',
         }}

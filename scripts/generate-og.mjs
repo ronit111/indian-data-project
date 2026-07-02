@@ -19,7 +19,7 @@ const VARIANTS = [
   {
     filename: 'og-open-data.png',
     title: 'Open Data',
-    tagline: '71 JSON endpoints, no API key',
+    tagline: '80 JSON endpoints, no API key',
     accentFrom: '#06B6D4',
     accentTo: '#22D3EE',
     cornerTL: 'rgba(6,182,212,0.25)',
@@ -99,7 +99,7 @@ const VARIANTS = [
   {
     filename: 'og-education.png',
     title: 'Education',
-    tagline: '248 million students — enrollment, quality, spending, and the learning gap',
+    tagline: '247 million students — enrollment, quality, spending, and the learning gap',
     accentFrom: '#3B82F6',
     accentTo: '#60A5FA',
     cornerTL: 'rgba(59,130,246,0.25)',
@@ -149,7 +149,7 @@ const VARIANTS = [
   {
     filename: 'og-crime.png',
     title: 'Crime & Safety',
-    tagline: '58.2 lakh crimes, 39% conviction rate, 461 road deaths daily',
+    tagline: '62.4 lakh crimes, 15 convictions per 100, 474 road deaths daily',
     accentFrom: '#DC2626',
     accentTo: '#EF4444',
     cornerTL: 'rgba(220,38,38,0.25)',

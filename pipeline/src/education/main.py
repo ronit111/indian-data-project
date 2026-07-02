@@ -365,8 +365,8 @@ def _build_glossary() -> dict:
                 "id": "education-spending",
                 "term": "Education Spending (% of GDP)",
                 "simple": "How much of the country's total economic output is spent on education by the government.",
-                "detail": "India spends about 3.5% of GDP on education — below the NEP 2020 target of 6% and below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
-                "inContext": "India: ~3.5% GDP. NEP target: 6%. Global average: ~4.3%.",
+                "detail": "India spends about 4.1% of GDP on education — below the NEP 2020 target of 6% and just below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
+                "inContext": "India: ~4.1% GDP. NEP target: 6%. Global average: ~4.3%.",
                 "relatedTerms": ["nep", "ptr", "udise"],
             },
             {

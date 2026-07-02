@@ -171,7 +171,7 @@
     "id": "economy-agriculture-gdp",
     "domain": "economy",
     "question": "What percentage of GDP comes from agriculture?",
-    "answer": "Agriculture contributes about 16% of GDP but employs over 43% of workers.",
+    "answer": "Agriculture contributes about 17% of GVA but employs over 43% of workers.",
     "sectionId": "sectors",
     "route": "/economy#sectors"
   },
@@ -211,7 +211,7 @@
     "id": "rbi-repo-rate",
     "domain": "rbi",
     "question": "What is the current repo rate?",
-    "answer": "The RBI repo rate is 6.25% with a neutral monetary policy stance.",
+    "answer": "The RBI repo rate is 5.25% with a neutral monetary policy stance.",
     "sectionId": "monetary-policy",
     "route": "/rbi#monetary-policy"
   },
@@ -259,7 +259,7 @@
     "id": "rbi-crr",
     "domain": "rbi",
     "question": "What is CRR and why does it matter?",
-    "answer": "Banks must keep 4.0% of deposits with RBI — this controls money supply.",
+    "answer": "Banks must keep 3.0% of deposits with RBI — this controls money supply.",
     "sectionId": "liquidity",
     "route": "/rbi#liquidity"
   },
@@ -315,7 +315,7 @@
     "id": "states-richest",
     "domain": "states",
     "question": "Which is the richest state in India?",
-    "answer": "Maharashtra has the highest GSDP at ₹45.32 lakh crore.",
+    "answer": "Maharashtra has the highest GSDP at ₹36.42 lakh crore (FY2022-23).",
     "sectionId": "gsdp",
     "route": "/states#gsdp"
   },
@@ -331,7 +331,7 @@
     "id": "states-fastest-growing",
     "domain": "states",
     "question": "Which states are growing the fastest?",
-    "answer": "State growth rates range from 8.7% to 16.0% — see which ones are leading.",
+    "answer": "State growth rates range from 2.8% to 18.1% — see which ones are leading.",
     "sectionId": "growth",
     "route": "/states#growth"
   },
@@ -363,7 +363,7 @@
     "id": "states-per-capita",
     "domain": "states",
     "question": "What is per capita income in my state?",
-    "answer": "Average per capita NSDP is ₹2.08 lakh, but varies widely across states.",
+    "answer": "Average per capita NSDP is ₹1.74 lakh, but varies widely across states.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },
@@ -603,7 +603,7 @@
     "id": "education-total-schools",
     "domain": "education",
     "question": "How many schools are there in India?",
-    "answer": "Over 15 lakh schools serve India's children — explore enrollment data by level.",
+    "answer": "About 14.7 lakh schools serve India's children (UDISE+ 2024-25) — explore enrollment data by level.",
     "sectionId": "enrollment",
     "route": "/education#enrollment"
   },
@@ -651,7 +651,7 @@
     "id": "employment-formal-informal",
     "domain": "employment",
     "question": "Are most Indians in formal or informal jobs?",
-    "answer": "About 8 out of 10 Indian workers are in informal employment without social security.",
+    "answer": "PLFS 2025 shows 73% of non-farm workers are in informal-sector enterprises; counting agriculture, more than 8 out of 10 Indian workers are informal, without social security.",
     "sectionId": "informality",
     "route": "/employment#informality"
   },
@@ -699,7 +699,7 @@
     "id": "employment-top-sectors",
     "domain": "employment",
     "question": "What sectors employ the most people?",
-    "answer": "Agriculture, trade, construction, and manufacturing are the top employment sectors.",
+    "answer": "Agriculture, trade, manufacturing, and construction are the top employment sectors.",
     "sectionId": "structural",
     "route": "/employment#structural"
   },
@@ -723,7 +723,7 @@
     "id": "healthcare-beds",
     "domain": "healthcare",
     "question": "How many hospital beds does India have?",
-    "answer": "India has 1.6 beds per 1,000 people (public + private) — WHO recommends 3.5 per 1,000.",
+    "answer": "India has 0.5 hospital beds per 1,000 people in government hospitals (~1.9 including private) — WHO recommends 3.5 per 1,000.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -731,7 +731,7 @@
     "id": "healthcare-spending",
     "domain": "healthcare",
     "question": "How much does India spend on healthcare?",
-    "answer": "Government health spending is about 2.1% of GDP — among the lowest globally.",
+    "answer": "Government health spending is about 1.3% of GDP — among the lowest globally. The NHP 2017 target is 2.5%.",
     "sectionId": "spending",
     "route": "/healthcare#spending"
   },
@@ -771,7 +771,7 @@
     "id": "healthcare-crowded",
     "domain": "healthcare",
     "question": "Why are government hospitals so crowded?",
-    "answer": "With 1.6 beds per 1,000 (mostly private) and concentrated urban facilities, demand far exceeds supply.",
+    "answer": "With 0.5 government beds per 1,000 (~1.9 including private) and facilities concentrated in cities, demand far exceeds supply.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -787,7 +787,7 @@
     "id": "healthcare-global-compare",
     "domain": "healthcare",
     "question": "How does India's healthcare compare to other countries?",
-    "answer": "India spends 2.1% of GDP on health vs. 5-10% in peer countries.",
+    "answer": "India's total health spend is ~3.3% of GDP vs ~12% in the UK and ~18% in the US.",
     "sectionId": "spending",
     "route": "/healthcare#spending"
   },
@@ -867,7 +867,7 @@
     "id": "env-coal-dependency",
     "domain": "environment",
     "question": "Is India still dependent on coal?",
-    "answer": "Coal still generates about 49% of India's electricity, though its share is declining as solar grows.",
+    "answer": "Coal is about 48% of installed capacity but still generated roughly three-quarters of India's electricity in 2023. Its capacity share is declining as solar grows.",
     "sectionId": "energy-transition",
     "route": "/environment#energy-transition"
   },
@@ -875,7 +875,7 @@
     "id": "env-solar-growth",
     "domain": "environment",
     "question": "How fast is India's solar capacity growing?",
-    "answer": "Solar capacity has grown from 3,744 MW in 2015 to over 90,000 MW in 2024 — a 25x increase.",
+    "answer": "Solar capacity has grown from 3,744 MW in 2015 to about 82,000 MW in 2024 — a 22x increase.",
     "sectionId": "energy-transition",
     "route": "/environment#energy-transition"
   },
@@ -1027,7 +1027,7 @@
     "id": "crime-how-much",
     "domain": "crime",
     "question": "How much crime happens in India?",
-    "answer": "India recorded 58.2 lakh cognizable crimes in 2022 — one every 5 seconds.",
+    "answer": "India recorded 62.4 lakh cognizable crimes in 2023 — one every 5 seconds.",
     "sectionId": "crime-overview",
     "route": "/crime#crime-overview"
   },
@@ -1035,7 +1035,7 @@
     "id": "crime-women-safe",
     "domain": "crime",
     "question": "Are women safe in India?",
-    "answer": "4.45 lakh crimes against women were reported in 2022 — cruelty and kidnapping lead.",
+    "answer": "4.48 lakh crimes against women were reported in 2023 — cruelty by husband and kidnapping lead.",
     "sectionId": "women-safety",
     "route": "/crime#women-safety"
   },
@@ -1051,7 +1051,7 @@
     "id": "crime-road-deaths",
     "domain": "crime",
     "question": "What is India's road accident death toll?",
-    "answer": "1.68 lakh people died in road accidents in 2022 — 461 deaths every day.",
+    "answer": "1.73 lakh people died in road accidents in 2023 — 474 deaths every day.",
     "sectionId": "road-accidents",
     "route": "/crime#road-accidents"
   },
@@ -1059,7 +1059,7 @@
     "id": "crime-conviction-rate",
     "domain": "crime",
     "question": "What percentage of crimes lead to conviction?",
-    "answer": "Only 39.1% of trials result in conviction — the justice pipeline loses most cases.",
+    "answer": "54% of completed trials end in conviction — but courts deliver only ~15 convictions per 100 crimes reported in the same year.",
     "sectionId": "justice-pipeline",
     "route": "/crime#justice-pipeline"
   },
@@ -1067,7 +1067,7 @@
     "id": "crime-police-ratio",
     "domain": "crime",
     "question": "How many police per person does India have?",
-    "answer": "India has 151 police per lakh population — 32% below the UN recommended 222.",
+    "answer": "India has 155 police per lakh population — 30% below the UN recommended 222.",
     "sectionId": "police",
     "route": "/crime#police"
   },
@@ -1075,7 +1075,7 @@
     "id": "crime-cybercrime-growing",
     "domain": "crime",
     "question": "Is cybercrime growing in India?",
-    "answer": "Cybercrime FIRs tripled from 2017 to 2022. Only 3% of complaints become FIRs.",
+    "answer": "Cybercrime FIRs nearly quadrupled from 2017 to 2023. Under 4% of complaints become FIRs.",
     "sectionId": "cybercrime",
     "route": "/crime#cybercrime"
   },
@@ -1091,7 +1091,7 @@
     "id": "crime-common-types",
     "domain": "crime",
     "question": "Which types of crime are most common?",
-    "answer": "Theft, hurt, and cruelty by husband are the three most-registered IPC crimes.",
+    "answer": "Theft, causing hurt, and cheating/fraud are the three most-registered IPC crime heads.",
     "sectionId": "crime-overview",
     "route": "/crime#crime-overview"
   },
@@ -1099,7 +1099,7 @@
     "id": "crime-chargesheet",
     "domain": "crime",
     "question": "What is a chargesheet?",
-    "answer": "A chargesheet is the police's formal accusation filed in court after investigation — 74.6% of cases get one.",
+    "answer": "A chargesheet is the police's formal accusation filed in court after investigation — 72.7% of completed investigations end in one.",
     "sectionId": "justice-pipeline",
     "route": "/crime#justice-pipeline"
   },
@@ -1107,7 +1107,7 @@
     "id": "crime-trial-duration",
     "domain": "crime",
     "question": "How long do criminal trials take?",
-    "answer": "Average trial duration is 3.5 years. Over 4.5 crore cases are pending across Indian courts.",
+    "answer": "Average trial duration is 3.5 years. Nearly 1.6 crore criminal cases are pending trial (NCRB 2023).",
     "sectionId": "justice-pipeline",
     "route": "/crime#justice-pipeline"
   },
@@ -1123,7 +1123,7 @@
     "id": "crime-women-reported",
     "domain": "crime",
     "question": "How many crimes against women are reported each year?",
-    "answer": "4.45 lakh in 2022 — a rate of 66.4 per lakh women. Cruelty by husband is the top category.",
+    "answer": "4.48 lakh in 2023 — a rate of 66.2 per lakh women. Cruelty by husband is the top category.",
     "sectionId": "women-safety",
     "route": "/crime#women-safety"
   },
@@ -1155,7 +1155,7 @@
     "id": "employment-informal-meaning",
     "domain": "employment",
     "question": "What is informal work and why does it matter?",
-    "answer": "80% of Indian workers have no contract, no PF, no health cover. If work stops, income stops — no safety net.",
+    "answer": "More than 8 out of 10 Indian workers are informal (PLFS 2025) — no contract, no PF, no health cover. If work stops, income stops — no safety net.",
     "sectionId": "informality",
     "route": "/employment#informality"
   },
@@ -1203,7 +1203,7 @@
     "id": "healthcare-spend-per-person",
     "domain": "healthcare",
     "question": "How much does India spend on healthcare per person?",
-    "answer": "About ₹19 per day per citizen (₹7,000/year). That's less than the cost of one OPD visit at a private hospital.",
+    "answer": "Total health spending works out to about ₹21 per citizen per day (~₹7,900/year) — and the government's share is roughly ₹8 of it. 45% comes from families' own pockets.",
     "sectionId": "spending",
     "route": "/healthcare#spending"
   },
@@ -1219,7 +1219,7 @@
     "id": "employment-farming-share",
     "domain": "employment",
     "question": "What percentage of Indians work in farming?",
-    "answer": "About 43% of India's workforce is in agriculture, but farming contributes only ~16% of GDP — a lot of people sharing a small pie.",
+    "answer": "About 43% of India's workforce is in agriculture, but farming contributes only ~17% of GVA — a lot of people sharing a small pie.",
     "sectionId": "sectoral",
     "route": "/employment#sectoral"
   },
@@ -1259,7 +1259,7 @@
     "id": "crime-police-per-person",
     "domain": "crime",
     "question": "How many police officers does India have per person?",
-    "answer": "India has about 151 police per lakh population — 32% below the UN-recommended 222. That's roughly 1 officer for every 660 citizens.",
+    "answer": "India has about 155 police per lakh population — 30% below the UN-recommended 222. That's roughly 1 officer for every 646 citizens.",
     "sectionId": "police-infrastructure",
     "route": "/crime#police-infrastructure"
   },
@@ -1283,7 +1283,7 @@
     "id": "states-richest-state",
     "domain": "states",
     "question": "Which is the richest state in India?",
-    "answer": "Maharashtra has the largest economy by GSDP (₹35+ lakh crore). But per person, Goa is the richest — size vs. prosperity are different things.",
+    "answer": "Maharashtra has the largest economy by GSDP (₹36.4 lakh crore). But per person, Goa is the richest — size vs. prosperity are different things.",
     "sectionId": "gsdp",
     "route": "/states#gsdp"
   }

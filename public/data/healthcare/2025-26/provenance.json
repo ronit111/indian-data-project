@@ -1,7 +1,7 @@
 {
   "domain": "healthcare",
   "year": "2025-26",
-  "generated": "2026-07-02",
+  "generated": "2026-07-03",
   "spec": 1,
   "figures": {
     "summary.outOfPocketPct": {
@@ -29,25 +29,25 @@
       ]
     },
     "summary.tbIncidence": {
-      "value": 195.0,
+      "value": 187.0,
       "unit": "per 100,000",
       "label": "Tuberculosis incidence",
       "chain": [
         {
-          "kind": "document",
-          "name": "WHO Global Tuberculosis Report 2023",
-          "publisher": "World Health Organization",
-          "url": "https://www.who.int/teams/global-tuberculosis-programme/tb-reports"
+          "kind": "api",
+          "name": "World Bank Development Indicators API",
+          "publisher": "World Bank",
+          "url": "https://api.worldbank.org/"
         },
         {
           "kind": "curation",
-          "name": "Curated from the WHO report; double-confirmed across two independent verification passes (June 2026)",
+          "name": "WHO-derived World Bank estimates (SH.TBS.INCD); headline pinned to the latest published series point (July 2026)",
           "publisher": "Indian Data Project pipeline",
           "published": "2026-06-05"
         },
         {
           "kind": "check",
-          "name": "Positive and within global plausibility",
+          "name": "Equals the latest point of the published TB incidence series",
           "status": "pass"
         }
       ]
