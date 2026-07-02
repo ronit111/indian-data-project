@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { EmploymentSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface EmploymentHeroSectionProps {
   summary: EmploymentSummary | null;
@@ -91,7 +92,14 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             style={{ backgroundColor: 'var(--amber)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
+            <SourceChain
+              domain="employment"
+              year={summary?.year ?? ''}
+              figureKey="summary.unemploymentRate"
+              placement="bottom"
+            >
+              Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
+            </SourceChain>
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; LFPR {summary?.lfpr?.toFixed(1) ?? '—'}%

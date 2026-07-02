@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { EducationSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface EducationHeroSectionProps {
   summary: EducationSummary | null;
@@ -55,7 +56,14 @@ export function EducationHeroSection({ summary }: EducationHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-blue">
-            {formattedStudents}M
+            <SourceChain
+              domain="education"
+              year={summary?.year ?? ''}
+              figureKey="summary.totalStudents"
+              placement="bottom"
+            >
+              <span className="gradient-text-blue">{formattedStudents}M</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"

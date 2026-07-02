@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { HealthcareSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface HealthcareHeroSectionProps {
   summary: HealthcareSummary | null;
@@ -55,7 +56,14 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-rose">
-            {formattedDoctors}
+            <SourceChain
+              domain="healthcare"
+              year={summary?.year ?? ''}
+              figureKey="summary.physiciansPer1000"
+              placement="bottom"
+            >
+              <span className="gradient-text-rose">{formattedDoctors}</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"
