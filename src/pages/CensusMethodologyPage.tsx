@@ -257,7 +257,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--violet)' }} />
             <span>
-              <strong>NFHS data</strong> — Updated when a new round is published. NFHS-6 fieldwork is expected around 2026-27.
+              <strong>NFHS data</strong> — Updated when a new round is published. NFHS-6 (2023-24) is the current round; NFHS-7 timing is not yet announced.
             </span>
           </li>
           <li className="flex gap-3 items-start">

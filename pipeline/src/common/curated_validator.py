@@ -119,7 +119,7 @@ def validate_education() -> list[Finding]:
 
     try:
         from pipeline.src.education.sources.curated import (
-            UDISE_2023_24_STATES,
+            UDISE_2024_25_STATES,
             NATIONAL_TOTALS,
         )
     except ImportError:
@@ -132,44 +132,44 @@ def validate_education() -> list[Finding]:
         )
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        UDISE_2023_24_STATES = mod.UDISE_2023_24_STATES
+        UDISE_2024_25_STATES = mod.UDISE_2024_25_STATES
         NATIONAL_TOTALS = mod.NATIONAL_TOTALS
 
     label = "Education"
 
     # Structure
-    findings += check_no_duplicate_ids(UDISE_2023_24_STATES, label)
+    findings += check_no_duplicate_ids(UDISE_2024_25_STATES, label)
     findings += check_required_fields(
-        UDISE_2023_24_STATES,
+        UDISE_2024_25_STATES,
         ["id", "name", "totalSchools", "totalTeachers", "totalStudents", "ptr"],
         label,
     )
 
     # PTR consistency: stored PTR should ≈ students/teachers
-    findings += check_ptr_consistency(UDISE_2023_24_STATES, label)
+    findings += check_ptr_consistency(UDISE_2024_25_STATES, label)
 
     # State sums should ≈ national totals
     findings += check_sum_approx(
-        UDISE_2023_24_STATES, "totalSchools",
+        UDISE_2024_25_STATES, "totalSchools",
         NATIONAL_TOTALS["totalSchools"], f"{label} schools", tolerance_pct=3,
     )
     findings += check_sum_approx(
-        UDISE_2023_24_STATES, "totalTeachers",
+        UDISE_2024_25_STATES, "totalTeachers",
         NATIONAL_TOTALS["totalTeachers"], f"{label} teachers", tolerance_pct=5,
     )
     findings += check_sum_approx(
-        UDISE_2023_24_STATES, "totalStudents",
+        UDISE_2024_25_STATES, "totalStudents",
         NATIONAL_TOTALS["totalStudents"], f"{label} students", tolerance_pct=5,
     )
 
     # Percentages in range (GER can exceed 100% in small NE states like Meghalaya 176.5%)
     findings += check_percentage_range(
-        UDISE_2023_24_STATES,
+        UDISE_2024_25_STATES,
         ["gerPrimary", "gerSecondary", "gerHigherSec"],
         label, max_val=200,
     )
     findings += check_percentage_range(
-        UDISE_2023_24_STATES,
+        UDISE_2024_25_STATES,
         ["dropoutPrimary", "dropoutSecondary",
          "schoolsWithComputers", "schoolsWithInternet", "girlsToilets"],
         label,
