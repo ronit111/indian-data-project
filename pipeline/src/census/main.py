@@ -11,7 +11,7 @@ Data sources:
   - World Bank Development Indicators (population, demographics, health, literacy)
   - Census of India 2011 (state-level population, literacy, sex ratio)
   - NFHS-5 2019-21 (state-level health and nutrition indicators)
-  - SRS 2022 (state-level infant mortality rates)
+  - SRS 2024 (state-level infant mortality rates)
 """
 
 import logging
@@ -259,7 +259,7 @@ def _build_indicators(
     # Health category
     indicators.append({
         "id": "imr_srs",
-        "name": "Infant Mortality Rate (SRS 2022)",
+        "name": "Infant Mortality Rate (SRS 2024)",
         "category": "health",
         "unit": "per 1000 live births",
         "states": [{"id": s["id"], "name": s["name"], "value": s["value"]} for s in srs_states],
@@ -346,8 +346,8 @@ def _build_glossary() -> dict:
                 "id": "infant-mortality-rate",
                 "term": "Infant Mortality Rate (IMR)",
                 "simple": "The number of babies (under age 1) who die per 1,000 live births in a year.",
-                "detail": "IMR is one of the most sensitive indicators of a country's healthcare quality and social development. India's IMR has dropped dramatically: from 66 per 1,000 in 2000 to about 25 in 2022 (SRS). But the interstate gap tells the real story: Kerala's IMR is 5 while Madhya Pradesh's is 35 \u2014 a baby born in MP is 7 times more likely to die before age 1 than one born in Kerala.",
-                "inContext": "National IMR: ~25 per 1000 (SRS 2022). Kerala: 5. Madhya Pradesh: 35.",
+                "detail": "IMR is one of the most sensitive indicators of a country's healthcare quality and social development. India's IMR has dropped dramatically: from 66 per 1,000 in 2000 to 24 in 2024 (SRS). But the interstate gap tells the real story: Kerala's IMR is 8 while Chhattisgarh's is 36 \u2014 a baby born in Chhattisgarh is about four to five times more likely to die before age 1 than one born in Kerala.",
+                "inContext": "National IMR: 24 per 1000 (SRS 2024). Kerala: 8. Chhattisgarh: 36.",
                 "relatedTerms": ["under-5-mortality", "maternal-mortality-ratio", "total-fertility-rate"],
             },
             {
@@ -411,7 +411,7 @@ def _build_glossary() -> dict:
                 "term": "Sample Registration System (SRS)",
                 "simple": "A continuous survey that tracks births and deaths across India between census years.",
                 "detail": "Since India conducts a census only every 10 years, the SRS fills the gap by continuously recording vital events (births, deaths) in a representative sample of villages and urban blocks. It provides annual estimates of birth rate, death rate, IMR, and fertility rate at state and national levels. The SRS is run by the Registrar General of India and is the primary source for inter-censal vital statistics.",
-                "inContext": "SRS 2022 reported a national IMR of 25 per 1000 live births",
+                "inContext": "SRS 2024 reported a national IMR of 24 per 1000 live births",
                 "relatedTerms": ["census", "infant-mortality-rate", "total-fertility-rate"],
             },
         ],
