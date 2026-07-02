@@ -125,7 +125,7 @@ export default function EducationExplorePage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Select a category and indicator to compare states. Data from UDISE+ 2023-24, ASER 2024, and World Bank.
+          Select a category and indicator to compare states. Data from UDISE+ 2024-25, ASER 2024, and World Bank.
         </motion.p>
 
         <motion.div variants={fadeUp}>
