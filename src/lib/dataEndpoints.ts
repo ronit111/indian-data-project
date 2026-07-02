@@ -599,7 +599,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     file: 'air-quality.json',
     path: '/data/environment/2025-26/air-quality.json',
     description:
-      'Air-quality trends as PM2.5 annual-mean history (World Bank series). Live city AQI is on CPCB's National AQI portal.',
+      "Air-quality trends as PM2.5 annual-mean history (World Bank series). Live city AQI is on CPCB's National AQI portal.",
     schema: 'AirQualityData',
     source: 'World Bank (PM2.5 annual mean)',
     sourceUrl: 'https://data.worldbank.org',
