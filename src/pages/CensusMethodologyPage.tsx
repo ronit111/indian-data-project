@@ -83,7 +83,7 @@ const SECTIONS = [
               >
                 Sample Registration System
               </a>{' '}
-              — Annual vital statistics from the Office of the Registrar General. Provides the most current state-level birth rates, death rates, IMR, and TFR (2023 data).
+              — Annual vital statistics from the Office of the Registrar General. Provides the most current state-level infant mortality rates (SRS 2024 data).
             </span>
           </li>
           <li className="flex gap-3 items-start">
