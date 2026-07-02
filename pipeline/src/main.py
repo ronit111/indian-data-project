@@ -409,6 +409,11 @@ def run_pipeline():
     paths = publish_all(outputs)
     logger.info(f"Published {len(paths)} files")
 
+    # Provenance sidecar: recomputes integrity checks against the JSONs
+    # just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("budget", YEAR)
+
     logger.info("=" * 60)
     logger.info("Pipeline complete!")
     logger.info("=" * 60)
