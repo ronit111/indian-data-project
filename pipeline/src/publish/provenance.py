@@ -22,7 +22,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Callable
 
-from src.publish.writer import PROJECT_ROOT, write_json
+from src.publish.writer import PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 
@@ -55,17 +55,13 @@ class Check:
 # Chains reference documents by stable ids so the UI can dedupe/link them.
 
 BUDGET_DOCUMENTS = {
+    # Year-scoped archive URL: the unscoped /doc/AFS/ path is overwritten
+    # every Budget Day with the newest year's document.
     "afs": {
         "kind": "document",
         "name": "Union Budget 2025-26 — Annual Financial Statement",
         "publisher": "Ministry of Finance, Government of India",
-        "url": "https://www.indiabudget.gov.in/doc/AFS/allafs.pdf",
-    },
-    "obi": {
-        "kind": "api",
-        "name": "Open Budgets India (CKAN API)",
-        "publisher": "CivicDataLab",
-        "url": "https://openbudgetsindia.org/",
+        "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf",
     },
 }
 
@@ -73,19 +69,27 @@ BUDGET_DOCUMENTS = {
 def _budget_figures(files: dict[str, dict]) -> dict[str, dict]:
     """Declarative figure registry for the budget domain."""
     summary = files["summary.json"]
-    retrieved = summary.get("lastUpdated")
+    published = summary.get("lastUpdated")
 
-    def api_step() -> dict:
-        step = dict(BUDGET_DOCUMENTS["obi"])
-        if retrieved:
-            step["retrieved"] = retrieved
+    # HONESTY NOTE: the budget pipeline publishes CURATED values transcribed
+    # from official budget documents (src/extract/csv_parser.py). The OBI
+    # CKAN fetch in main.py is informational only and does not feed the
+    # published JSONs — so the chain must NOT claim API provenance.
+    def curation_step() -> dict:
+        step = {
+            "kind": "curation",
+            "name": "Curated by this pipeline from the official document",
+            "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+        }
+        if published:
+            step["published"] = published
         return step
 
     figures: dict[str, dict] = {}
 
     def figure(key: str, label: str, unit: str, value: Any,
                checks: list[Check], basis: str | None = None) -> None:
-        chain: list[dict] = [dict(BUDGET_DOCUMENTS["afs"]), api_step()]
+        chain: list[dict] = [dict(BUDGET_DOCUMENTS["afs"]), curation_step()]
         chain += [c.run(files) for c in checks]
         entry: dict[str, Any] = {
             "value": value, "unit": unit, "label": label, "chain": chain,
@@ -214,10 +218,17 @@ def build_provenance(domain: str, year: str) -> dict:
 
 
 def publish_provenance(domain: str, year: str) -> Path:
-    """Generate and write the provenance sidecar. Fail-closed on bad checks."""
+    """Generate and write the provenance sidecar. Fail-closed on bad checks.
+
+    Written directly (NOT via write_json): the writer's empty-list
+    preservation could otherwise mutate the sidecar after its checks
+    passed, breaking the guarantee that the file equals the checked object.
+    """
     sidecar = build_provenance(domain, year)
     rel_path = f"{domain}/{year}/provenance.json"
-    path = write_json(sidecar, rel_path)
+    path = DATA_DIR / rel_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(sidecar, ensure_ascii=False, indent=2) + "\n")
     logger.info(
         f"Provenance sidecar written: {rel_path} "
         f"({len(sidecar['figures'])} figures, all checks passed)"

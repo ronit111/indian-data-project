@@ -14,7 +14,8 @@ interface SourceChainProps {
 }
 
 function stepDetail(step: ProvenanceStep): string | null {
-  if (step.kind === 'api' && step.retrieved) return `retrieved ${step.retrieved}`;
+  if (step.retrieved) return `retrieved ${step.retrieved}`;
+  if (step.published) return `published ${step.published}`;
   if (step.publisher) return step.publisher;
   return null;
 }
@@ -85,6 +86,7 @@ export function SourceChain({
       <span
         id={popId}
         role="tooltip"
+        aria-hidden={!pinned}
         className={`source-chain-pop pointer-events-none absolute left-1/2 z-30 w-80 -translate-x-1/2 rounded-xl px-5 py-4 text-left opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 ${
           pinned ? 'pointer-events-auto opacity-100' : ''
         } ${placement === 'top' ? 'bottom-full mb-3' : 'top-full mt-3'}`}
@@ -169,6 +171,7 @@ export function SourceChain({
               href={documentStep.url}
               target="_blank"
               rel="noopener noreferrer"
+              tabIndex={pinned ? 0 : -1}
               className="text-xs hover:underline"
               style={{ color: 'var(--cyan)' }}
               onClick={(e) => e.stopPropagation()}

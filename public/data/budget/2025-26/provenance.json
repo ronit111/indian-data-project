@@ -13,14 +13,13 @@
           "kind": "document",
           "name": "Union Budget 2025-26 — Annual Financial Statement",
           "publisher": "Ministry of Finance, Government of India",
-          "url": "https://www.indiabudget.gov.in/doc/AFS/allafs.pdf"
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
         },
         {
-          "kind": "api",
-          "name": "Open Budgets India (CKAN API)",
-          "publisher": "CivicDataLab",
-          "url": "https://openbudgetsindia.org/",
-          "retrieved": "2026-06-02"
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "published": "2026-06-02"
         },
         {
           "kind": "check",
@@ -44,14 +43,13 @@
           "kind": "document",
           "name": "Union Budget 2025-26 — Annual Financial Statement",
           "publisher": "Ministry of Finance, Government of India",
-          "url": "https://www.indiabudget.gov.in/doc/AFS/allafs.pdf"
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
         },
         {
-          "kind": "api",
-          "name": "Open Budgets India (CKAN API)",
-          "publisher": "CivicDataLab",
-          "url": "https://openbudgetsindia.org/",
-          "retrieved": "2026-06-02"
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "published": "2026-06-02"
         },
         {
           "kind": "check",
@@ -69,14 +67,13 @@
           "kind": "document",
           "name": "Union Budget 2025-26 — Annual Financial Statement",
           "publisher": "Ministry of Finance, Government of India",
-          "url": "https://www.indiabudget.gov.in/doc/AFS/allafs.pdf"
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
         },
         {
-          "kind": "api",
-          "name": "Open Budgets India (CKAN API)",
-          "publisher": "CivicDataLab",
-          "url": "https://openbudgetsindia.org/",
-          "retrieved": "2026-06-02"
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "published": "2026-06-02"
         },
         {
           "kind": "check",
@@ -94,14 +91,13 @@
           "kind": "document",
           "name": "Union Budget 2025-26 — Annual Financial Statement",
           "publisher": "Ministry of Finance, Government of India",
-          "url": "https://www.indiabudget.gov.in/doc/AFS/allafs.pdf"
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
         },
         {
-          "kind": "api",
-          "name": "Open Budgets India (CKAN API)",
-          "publisher": "CivicDataLab",
-          "url": "https://openbudgetsindia.org/",
-          "retrieved": "2026-06-02"
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "published": "2026-06-02"
         },
         {
           "kind": "check",

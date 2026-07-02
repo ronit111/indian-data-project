@@ -14,11 +14,12 @@
 import { useEffect, useState } from 'react';
 
 export interface ProvenanceStep {
-  kind: 'document' | 'api' | 'check';
+  kind: 'document' | 'api' | 'curation' | 'check';
   name: string;
   publisher?: string;
   url?: string;
   retrieved?: string;
+  published?: string;
   status?: 'pass';
 }
 

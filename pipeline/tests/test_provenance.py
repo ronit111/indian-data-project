@@ -49,7 +49,7 @@ def test_budget_figures_all_checks_pass():
     for entry in figures.values():
         kinds = [step["kind"] for step in entry["chain"]]
         assert kinds[0] == "document"
-        assert kinds[1] == "api"
+        assert kinds[1] == "curation"
         assert all(k == "check" for k in kinds[2:])
         assert all(
             step["status"] == "pass"
@@ -64,10 +64,23 @@ def test_values_come_from_published_data_not_registry():
     assert figures["summary.totalReceipts"]["value"] == files["summary.json"]["totalReceipts"]
 
 
-def test_retrieved_date_propagates_from_last_updated():
+def test_published_date_propagates_from_last_updated():
     figures = prov._budget_figures(_files())
-    api_step = figures["summary.totalExpenditure"]["chain"][1]
-    assert api_step["retrieved"] == GOOD_SUMMARY["lastUpdated"]
+    curation_step = figures["summary.totalExpenditure"]["chain"][1]
+    assert curation_step["published"] == GOOD_SUMMARY["lastUpdated"]
+
+
+def test_chain_never_claims_api_provenance():
+    # The budget pipeline publishes curated values; the OBI CKAN fetch is
+    # informational only. A chain claiming 'api' would be fabricated.
+    figures = prov._budget_figures(_files())
+    for entry in figures.values():
+        assert all(step["kind"] != "api" for step in entry["chain"])
+
+
+def test_afs_url_is_year_scoped():
+    # The unscoped /doc/AFS/ URL is overwritten every Budget Day.
+    assert "budget2025-26" in prov.BUDGET_DOCUMENTS["afs"]["url"]
 
 
 def test_failing_invariant_aborts_generation():
