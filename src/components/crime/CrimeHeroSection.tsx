@@ -70,7 +70,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Of every 100 crimes reported, 17 end in conviction. This is that story.
+          For every 100 crimes reported in 2023, courts delivered 15 convictions that same year. This is that story.
         </motion.p>
 
         {/* Stat badges */}

@@ -88,7 +88,7 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
-            <span><strong>AQI</strong> — Composite index (0-500) based on 8 pollutants. CPCB NAQI data. State averages are mean of monitoring station annual averages.</span>
+            <span><strong>AQI</strong> — Composite index (0-500) based on 8 pollutants, published live on CPCB's National AQI portal. This site does not republish AQI averages — air-quality charts here use the PM2.5 series above.</span>
           </li>
         </ul>
       </>

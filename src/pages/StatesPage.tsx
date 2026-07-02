@@ -64,7 +64,7 @@ export default function StatesPage() {
           { value: `₹${formatIndianNumber(summary.averagePerCapita)}`, label: 'Average income per person — but the gap between states is 8-9x', sectionId: 'percapita' },
           { value: summary.growthRange, label: 'Growth gap: slowest to fastest state', sectionId: 'growth' },
           { value: `₹${summary.topGsdpValue}L Cr`, label: 'Maharashtra alone — more than most nations', sectionId: 'gsdp' },
-          { value: '36', label: 'Economies sharing one Constitution', sectionId: 'fiscal-health' },
+          { value: `${summary.totalStatesAndUTs}`, label: 'Economies sharing one Constitution', sectionId: 'fiscal-health' },
         ]}
       />}
 

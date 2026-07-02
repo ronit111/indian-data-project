@@ -108,6 +108,8 @@ function RBIMiniViz({ summary, isVisible }: { summary: RBISummary | null; isVisi
       { label: 'May 22', rate: 4.40 },
       { label: 'Feb 23', rate: 6.50 },
       { label: 'Feb 25', rate: 6.25 },
+      { label: 'Jun 25', rate: 5.50 },
+      { label: 'Dec 25', rate: 5.25 },
     ];
   }, [summary]);
 
@@ -695,7 +697,7 @@ export default function HubPage() {
           to="/education"
           sectionNumber="06"
           title="Education"
-          description="248 million students. Enrollment triumphs, quality gaps, the dropout cliff, and spending challenges across India's education system."
+          description="247 million students. Enrollment triumphs, quality gaps, the dropout cliff, and spending challenges across India's education system."
           accentColor="var(--blue)"
           accentVar="--blue"
           ctaText="Explore education"

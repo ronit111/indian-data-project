@@ -42,7 +42,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'structural',
   title: 'Sectoral Employment Shifts',
-  source: 'World Bank, RBI KLEMS',
+  source: 'World Bank (ILO modelled) + PLFS',
   accentColor: ACCENT,
   dataFiles: [`${base}/sectoral.json`],
   chartType: 'area',

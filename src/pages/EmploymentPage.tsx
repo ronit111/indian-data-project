@@ -51,7 +51,7 @@ export default function EmploymentPage() {
     >
       <SEOHead
         title="Employment — 57 Crore Workers | Indian Data Project"
-        description="Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS, World Bank, and RBI KLEMS data."
+        description="Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS and World Bank data."
         path="/employment"
         image="/og-employment.png"
       />

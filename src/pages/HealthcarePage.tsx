@@ -106,9 +106,9 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="When the government doesn't pay, families do. 44 paise of every health rupee comes from patients' own pockets. One medical emergency can push a family into poverty. But the story is not all deficit. When India commits resources and political will, the results are extraordinary."
+        text="When the government doesn't pay, families do. 45 paise of every health rupee comes from patients' own pockets. One medical emergency can push a family into poverty. But the story is not all deficit. When India commits resources and political will, the results are extraordinary."
         highlights={{
-          '44': 'var(--saffron)',
+          '45': 'var(--saffron)',
           'poverty': 'var(--saffron)',
           'extraordinary': 'var(--rose)',
         }}

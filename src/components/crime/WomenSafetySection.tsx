@@ -68,7 +68,7 @@ export function WomenSafetySection({ data }: WomenSafetySectionProps) {
         >
           {latest ? `${(latest.total / 1000).toFixed(0)}K` : '—'} reported cases in 2023 — {perDay ?? '—'} every day.
           Cruelty by husband or relatives accounts for 1 in 3 cases.
-          The rate climbed from 56 to 66 per lakh women in 8 years — rising awareness or rising violence, likely both.
+          The rate climbed from 56 to 66 per lakh women in 9 years — rising awareness or rising violence, likely both.
         </motion.p>
 
         {/* National trend */}

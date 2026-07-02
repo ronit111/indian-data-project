@@ -45,7 +45,7 @@ export const agricultureFood: TopicDef = {
       title: 'The Productivity Paradox',
       annotation: 'Agriculture employs the most people but produces the least value per worker. As industry and services grow, the structural shift should pull workers out of agriculture — but that requires jobs in other sectors.',
       domains: ['employment', 'economy'],
-      sources: ['PLFS', 'RBI KLEMS', 'NSO'],
+      sources: ['PLFS', 'World Bank (ILO)', 'NSO'],
       charts: [{
         chartType: 'area', chartTitle: 'Sectoral Employment Shares', unit: '% of workforce', accent: '#22C55E',
         extractData: (bag) => {

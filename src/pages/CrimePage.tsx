@@ -61,7 +61,7 @@ export default function CrimePage() {
       {summary && <KeyTakeaways
         accent="#DC2626"
         pills={[
-          { value: '17 out of 100', label: 'crimes that end in conviction — the pipeline leaks at every stage', sectionId: 'justice-pipeline' },
+          { value: '15 out of 100', label: 'convictions per 100 crimes reported the same year — the pipeline leaks at every stage', sectionId: 'justice-pipeline' },
           { value: `${(summary.totalCrimes / 100000).toFixed(1)}L`, label: `crimes reported in 2023 — one every 5 seconds`, sectionId: 'crime-overview' },
           { value: `${(summary.womenCrimes / 1000).toFixed(0)}K`, label: 'crimes against women — one case every 71 seconds', sectionId: 'women-safety' },
           { value: `${Math.round(summary.roadDeaths / 365)}`, label: 'road deaths per day — more than all violent crime combined', sectionId: 'road-accidents' },
@@ -135,10 +135,10 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Four categories of crime. Four systems stretched thin. Who handles all of this? India has 155 police per lakh people — against a UN recommendation of 222. 22% of sanctioned posts sit vacant. Bihar has 77 police per lakh. Delhi has 492. Same country, different reality."
+        text="Four categories of crime. Four systems stretched thin. Who handles all of this? India has 155 police per lakh people — against a UN recommendation of 222. 21% of sanctioned posts sit vacant. Bihar has 81 police per lakh. Delhi has 380. Same country, different reality."
         highlights={{
           '155': 'var(--crimson)',
-          '22%': 'var(--crimson)',
+          '21%': 'var(--crimson)',
           'vacant': 'var(--crimson)',
           'reality': 'var(--crimson-light)',
         }}
@@ -151,9 +151,9 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Understaffed police feed an understaffed court system. Of every 100 crimes reported, 17 end in conviction. The funnel narrows at every stage. 1.59 crore cases are waiting. 21 judges per million citizens. The system does not need efficiency tweaks — it needs fundamental expansion."
+        text="Understaffed police feed an understaffed court system. For every 100 crimes reported in 2023, courts delivered 15 convictions that same year. The funnel narrows at every stage. 1.59 crore cases are waiting. 21 judges per million citizens. The system does not need efficiency tweaks — it needs fundamental expansion."
         highlights={{
-          '17': 'var(--crimson)',
+          '15': 'var(--crimson)',
           'narrows': 'var(--crimson)',
           '159': 'var(--crimson)',
           'fundamental': 'var(--crimson-light)',

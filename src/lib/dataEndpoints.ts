@@ -591,18 +591,18 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Environmental snapshot with CO2 emissions, forest cover, renewable share, PM2.5 exposure, and coal dependence.',
     schema: 'EnvironmentSummary',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB',
+    sourceUrl: 'https://data.worldbank.org',
   },
   {
     domain: 'environment',
     file: 'air-quality.json',
     path: '/data/environment/2025-26/air-quality.json',
     description:
-      'Air-quality trends including PM2.5 history plus state and city AQI benchmarks.',
+      'Air-quality trends as PM2.5 annual-mean history (World Bank series). Live city AQI is on CPCB's National AQI portal.',
     schema: 'AirQualityData',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'World Bank (PM2.5 annual mean)',
+    sourceUrl: 'https://data.worldbank.org',
   },
   {
     domain: 'environment',
@@ -611,8 +611,8 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Forest cover trends in percent and area with protected-area share and state coverage.',
     schema: 'ForestData',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'World Bank + ISFR 2023 (FSI)',
+    sourceUrl: 'https://fsi.nic.in',
   },
   {
     domain: 'environment',
@@ -621,8 +621,8 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Energy and emissions mix covering renewables, coal electricity, per-capita energy use, and GHG series.',
     schema: 'EnergyData',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'MOSPI Energy API + World Bank + CEA Installed Capacity Reports',
+    sourceUrl: 'https://api.mospi.gov.in',
   },
   {
     domain: 'environment',
@@ -631,8 +631,8 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Water security indicators including reservoir storage and groundwater stress stage.',
     schema: 'WaterData',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'CWC Reservoir Bulletin + CGWB Assessment 2023',
+    sourceUrl: 'https://cwc.gov.in',
   },
   {
     domain: 'environment',
@@ -641,8 +641,8 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Headline climate and environment indicators assembled for quick tracking.',
     schema: 'EnvironmentIndicatorsData',
-    source: 'CPCB + World Bank',
-    sourceUrl: 'https://cpcb.nic.in',
+    source: 'World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB',
+    sourceUrl: 'https://data.worldbank.org',
   },
   {
     domain: 'environment',
@@ -651,7 +651,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Definitions of environmental, emissions, and energy-transition terms used in this domain.',
     schema: 'GlossaryData',
-    source: 'CPCB + World Bank',
+    source: 'CPCB + FSI + World Bank',
     sourceUrl: 'https://cpcb.nic.in',
   },
 

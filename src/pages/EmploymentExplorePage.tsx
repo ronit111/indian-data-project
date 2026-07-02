@@ -121,7 +121,7 @@ export default function EmploymentExplorePage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Select a category and indicator to compare states. Data from PLFS 2025, World Bank, and RBI KLEMS.
+          Select a category and indicator to compare states. Data from PLFS 2025 and World Bank.
         </motion.p>
 
         <motion.div variants={fadeUp}>

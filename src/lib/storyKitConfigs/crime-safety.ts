@@ -3,7 +3,7 @@ import type { StoryKitDef } from '../multiplierTypes.ts';
 export const CRIME_SAFETY: StoryKitDef = {
   id: 'crime-safety',
   title: "Crime & Safety: India's Justice Gap",
-  subtitle: "From FIR to conviction — 62 lakh crimes, 54% conviction rate, and a police force 18% understaffed.",
+  subtitle: "From FIR to conviction — 62 lakh crimes, 54% conviction rate, and a police force 21% understaffed.",
   accent: '#DC2626',
   narrativeContext: `India recorded 62.4 lakh cognizable crimes in 2023 — one every 5 seconds. But the real story isn't the crime rate — it's what happens after. Only 72.7% of cases get a chargesheet. Of those that reach trial, just 54.0% end in conviction. Average trial duration: 3.5 years. Meanwhile, roads kill 474 people daily — more than all violent crime combined — and cybercrime has tripled in 5 years with barely 3% of complaints becoming FIRs. This kit gives journalists the data foundation to tell the justice gap story.`,
   charts: [

@@ -159,7 +159,7 @@ export function SearchOverlay() {
       { type: 'page', id: 'education-glossary', name: 'Education Glossary', subtitle: 'Education terms in plain language', route: '/education/glossary' },
       { type: 'page', id: 'employment', name: 'Employment', subtitle: 'Labour participation, unemployment, sectoral shift', route: '/employment' },
       { type: 'page', id: 'employment-explore', name: 'Employment Explorer', subtitle: 'Browse labour market indicators by state', route: '/employment/explore' },
-      { type: 'page', id: 'employment-methodology', name: 'Employment Methodology', subtitle: 'PLFS, World Bank, RBI KLEMS sources', route: '/employment/methodology' },
+      { type: 'page', id: 'employment-methodology', name: 'Employment Methodology', subtitle: 'PLFS and World Bank sources', route: '/employment/methodology' },
       { type: 'page', id: 'employment-glossary', name: 'Employment Glossary', subtitle: 'Labour market terms in plain language', route: '/employment/glossary' },
       { type: 'page', id: 'healthcare', name: 'Healthcare', subtitle: 'Infrastructure, spending, immunization, disease', route: '/healthcare' },
       { type: 'page', id: 'healthcare-explore', name: 'Healthcare Explorer', subtitle: 'Browse health indicators by state', route: '/healthcare/explore' },

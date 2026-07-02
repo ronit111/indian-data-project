@@ -460,7 +460,7 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
                   : domain === 'education'
                     ? 'UDISE+ 2024-25, ASER 2024, World Bank'
                     : domain === 'employment'
-                      ? 'PLFS 2025, RBI KLEMS, World Bank'
+                      ? 'PLFS 2025, World Bank'
                       : domain === 'healthcare'
                         ? 'NHP 2022, NFHS-6, World Bank'
                         : 'RBI, World Bank'}

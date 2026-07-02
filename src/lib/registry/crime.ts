@@ -173,7 +173,7 @@ registerChart({
     return {
       label: 'Conviction Rate',
       value: `${d.funnel.convictionRate}%`,
-      context: `Of every 100 cases, only ~17 end in conviction. Average trial: ${d.trialDuration.avgYears} years.`,
+      context: `For every 100 crimes reported in 2023, courts delivered ~15 same-year convictions. Average trial: ${d.trialDuration.avgYears} years.`,
     };
   },
 });
