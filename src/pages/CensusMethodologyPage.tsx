@@ -73,7 +73,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--violet)' }} />
             <span>
-              <strong style={{ color: 'var(--violet)' }}>Tier 2 — SRS 2023</strong> (state-level, 2023, curated).{' '}
+              <strong style={{ color: 'var(--violet)' }}>Tier 2 — SRS 2024</strong> (state-level, 2024, curated).{' '}
               <a
                 href="https://censusindia.gov.in/nada/index.php/catalog/46172"
                 target="_blank"
@@ -143,7 +143,7 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          Health data blends three sources: World Bank for national trends, SRS 2023 for the most current state-level vital stats, and NFHS-6 for health survey indicators:
+          Health data blends three sources: World Bank for national trends, SRS 2024 for the most current state-level infant mortality, and NFHS-6 for health survey indicators:
         </p>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
@@ -157,7 +157,7 @@ const SECTIONS = [
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">IMR (national trend)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2024</td><td className="py-2">per 1000 births</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">IMR (state-level)</td><td className="py-2 pr-4 text-xs">SRS 2023</td><td className="py-2 pr-4 text-xs">2023</td><td className="py-2">per 1000 births</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">IMR (state-level)</td><td className="py-2 pr-4 text-xs">SRS 2024</td><td className="py-2 pr-4 text-xs">2024</td><td className="py-2">per 1000 births</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">MMR (national trend)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2020</td><td className="py-2">per 100K births</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Under-5 Mortality</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2024</td><td className="py-2">per 1000 births</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">TFR (state-level)</td><td className="py-2 pr-4 text-xs">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">children/woman</td></tr>
@@ -222,7 +222,7 @@ const SECTIONS = [
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">World Bank API</td><td className="py-2 pr-4 text-xs">2000–2024</td><td className="py-2 pr-4 text-xs">National</td><td className="py-2">Time series trends</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">NPC Projections</td><td className="py-2 pr-4 text-xs">2026 (projected)</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">State population estimates</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">SRS 2023</td><td className="py-2 pr-4 text-xs">2023</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Vital stats (CBR, CDR, IMR, TFR)</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">SRS 2024</td><td className="py-2 pr-4 text-xs">2024</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Infant mortality rate (IMR)</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">NFHS-6</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Health, nutrition, gender</td></tr>
               <tr><td className="py-2 pr-4">Census 2011</td><td className="py-2 pr-4 text-xs">2011</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Literacy, density, sex ratio, urbanization</td></tr>
             </tbody>
@@ -370,7 +370,7 @@ export default function CensusMethodologyPage() {
     >
       <SEOHead
         title="Methodology — Census & Demographics — Indian Data Project"
-        description="Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-6, SRS 2023, World Bank."
+        description="Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-6, SRS 2024, World Bank."
         path="/census/methodology"
         image="/og-census.png"
       />

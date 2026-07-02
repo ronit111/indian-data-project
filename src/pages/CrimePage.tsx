@@ -75,8 +75,8 @@ export default function CrimePage() {
         highlights={{
           '62': 'var(--crimson)',
           'reported': 'var(--crimson-light)',
-          '3.5': 'var(--crimson)',
-          '31': 'var(--crimson)',
+          '35': 'var(--crimson)',
+          '159': 'var(--crimson)',
         }}
       />
 
@@ -153,9 +153,9 @@ export default function CrimePage() {
       <NarrativeBridge
         text="Understaffed police feed an understaffed court system. Of every 100 crimes reported, 17 end in conviction. The funnel narrows at every stage. 1.59 crore cases are waiting. 21 judges per million citizens. The system does not need efficiency tweaks — it needs fundamental expansion."
         highlights={{
-          '13': 'var(--crimson)',
+          '17': 'var(--crimson)',
           'narrows': 'var(--crimson)',
-          '31': 'var(--crimson)',
+          '159': 'var(--crimson)',
           'fundamental': 'var(--crimson-light)',
         }}
       />

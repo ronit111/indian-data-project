@@ -18,7 +18,7 @@ def build_health(
 
     Args:
         wb_data: World Bank indicator data keyed by indicator name
-        srs_state_imr: SRS 2022 state-level IMR entries
+        srs_state_imr: SRS 2024 state-level IMR entries
         nfhs_state_health: NFHS-5 state-level health entries
         year: Output year string (e.g. "2025-26")
     """
@@ -58,5 +58,5 @@ def build_health(
         "fertilityRate": fertility,
         "stateImr": state_imr,
         "stateHealth": state_health,
-        "source": "World Bank Development Indicators + SRS 2022 + NFHS-6 (2023-24)",
+        "source": "World Bank Development Indicators + SRS 2024 + NFHS-6 (2023-24)",
     }

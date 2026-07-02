@@ -130,7 +130,7 @@ const SECTIONS = [
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Unemployment Rate (total)</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Youth Unemployment (15-24)</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Female Unemployment</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
-              <tr><td className="py-2 pr-4">State Unemployment Rate</td><td className="py-2 pr-4 text-xs">PLFS 2023-24</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr><td className="py-2 pr-4">State Unemployment Rate</td><td className="py-2 pr-4 text-xs">PLFS 2025</td><td className="py-2 pr-4 text-xs">2025</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
         </div>

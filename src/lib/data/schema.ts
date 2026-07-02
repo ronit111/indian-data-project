@@ -612,7 +612,7 @@ export interface HealthData {
   under5: TimeSeriesPoint[];
   lifeExpectancy: TimeSeriesPoint[];
   fertilityRate: TimeSeriesPoint[];
-  stateImr: StateHealthEntry[];       // SRS 2023 state-level IMR
+  stateImr: StateHealthEntry[];       // SRS 2024 state-level IMR
   stateHealth: StateNfhsEntry[];      // NFHS-5 state-level
   source: string;
 }
