@@ -1,0 +1,82 @@
+{
+  "domain": "crime",
+  "year": "2025-26",
+  "generated": "2026-07-02",
+  "spec": 1,
+  "figures": {
+    "summary.totalCrimes": {
+      "value": 6241569,
+      "unit": "cases",
+      "label": "Cognizable crimes registered (2023)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "NCRB — Crime in India 2023 (published October 2025)",
+          "publisher": "National Crime Records Bureau, Ministry of Home Affairs",
+          "url": "https://www.ncrb.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "IPC + SLL equals the total for every year of the trend",
+          "status": "pass"
+        },
+        {
+          "kind": "check",
+          "name": "2023 trend point equals the summary total",
+          "status": "pass"
+        }
+      ],
+      "basis": "NCRB Table 1.1: IPC 37,63,102 + SLL 24,78,467."
+    },
+    "summary.convictionRatePct": {
+      "value": 54.0,
+      "unit": "%",
+      "label": "IPC conviction rate (of completed trials)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "NCRB — Crime in India 2023, Part III (court disposal, Table 18A.1)",
+          "publisher": "National Crime Records Bureau",
+          "url": "https://www.ncrb.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "Recomputes from the published justice funnel",
+          "status": "pass"
+        }
+      ],
+      "basis": "Convicted ÷ trials completed — not convictions per crime reported."
+    },
+    "summary.roadDeaths": {
+      "value": 172890,
+      "unit": "deaths",
+      "label": "Road accident deaths (2023)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "MoRTH — Road Accidents in India 2023",
+          "publisher": "Ministry of Road Transport & Highways",
+          "url": "https://morth.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        }
+      ]
+    }
+  }
+}

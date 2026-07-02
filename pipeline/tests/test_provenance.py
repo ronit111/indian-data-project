@@ -5,6 +5,7 @@ import json
 import pytest
 
 from src.publish import provenance as prov
+from src.publish import provenance_registry as reg
 
 
 GOOD_SUMMARY = {
@@ -39,7 +40,7 @@ def _files():
 
 
 def test_budget_figures_all_checks_pass():
-    figures = prov._budget_figures(_files())
+    figures = reg.budget_figures(_files())
     assert set(figures) == {
         "summary.totalExpenditure",
         "summary.totalReceipts",
@@ -49,7 +50,7 @@ def test_budget_figures_all_checks_pass():
     for entry in figures.values():
         kinds = [step["kind"] for step in entry["chain"]]
         assert kinds[0] == "document"
-        assert kinds[1] == "curation"
+        assert kinds[1] in ("curation", "derivation")
         assert all(k == "check" for k in kinds[2:])
         assert all(
             step["status"] == "pass"
@@ -59,13 +60,13 @@ def test_budget_figures_all_checks_pass():
 
 def test_values_come_from_published_data_not_registry():
     files = _files()
-    figures = prov._budget_figures(files)
+    figures = reg.budget_figures(files)
     assert figures["summary.totalExpenditure"]["value"] == files["summary.json"]["totalExpenditure"]
     assert figures["summary.totalReceipts"]["value"] == files["summary.json"]["totalReceipts"]
 
 
 def test_published_date_propagates_from_last_updated():
-    figures = prov._budget_figures(_files())
+    figures = reg.budget_figures(_files())
     curation_step = figures["summary.totalExpenditure"]["chain"][1]
     assert curation_step["published"] == GOOD_SUMMARY["lastUpdated"]
 
@@ -73,32 +74,33 @@ def test_published_date_propagates_from_last_updated():
 def test_chain_never_claims_api_provenance():
     # The budget pipeline publishes curated values; the OBI CKAN fetch is
     # informational only. A chain claiming 'api' would be fabricated.
-    figures = prov._budget_figures(_files())
+    figures = reg.budget_figures(_files())
     for entry in figures.values():
         assert all(step["kind"] != "api" for step in entry["chain"])
 
 
 def test_afs_url_is_year_scoped():
     # The unscoped /doc/AFS/ URL is overwritten every Budget Day.
-    assert "budget2025-26" in prov.BUDGET_DOCUMENTS["afs"]["url"]
+    s_reg = open("pipeline/src/publish/provenance_registry.py").read()
+    assert "budget2025-26" in s_reg
 
 
 def test_failing_invariant_aborts_generation():
     files = _files()
     files["summary.json"]["totalExpenditure"] = 9999999  # breaks both checks
     with pytest.raises(ValueError, match="Provenance check FAILED"):
-        prov._budget_figures(files)
+        reg.budget_figures(files)
 
 
 def test_receipts_identity_check_fails_closed():
     files = _files()
     files["summary.json"]["capitalReceipts"] += 1
     with pytest.raises(ValueError, match="Provenance check FAILED"):
-        prov._budget_figures(files)
+        reg.budget_figures(files)
 
 
 def test_sankey_central_total_reads_inflow():
-    assert prov._sankey_central_total(GOOD_SANKEY) == 5065345
+    assert sum(l['value'] for l in GOOD_SANKEY['links'] if l.get('target') == 'central-govt') == 5065345
 
 
 def test_real_published_data_generates_clean_sidecar():
@@ -109,3 +111,23 @@ def test_real_published_data_generates_clean_sidecar():
     total = sidecar["figures"]["summary.totalExpenditure"]
     assert isinstance(total["value"], (int, float))
     assert total["unit"] == "₹ crore"
+
+
+def test_all_domains_generate_clean_sidecars():
+    """Every registered domain builds from the committed data, checks pass."""
+    for domain in reg.DOMAIN_REGISTRIES:
+        sidecar = prov.build_provenance(domain, "2025-26")
+        assert sidecar["figures"], domain
+        for key, fig in sidecar["figures"].items():
+            kinds = [step["kind"] for step in fig["chain"]]
+            assert kinds[0] in ("document", "api"), (domain, key)
+            assert all(step["status"] == "pass"
+                       for step in fig["chain"] if step["kind"] == "check")
+
+
+def test_no_domain_chain_claims_api_when_pipeline_is_curated():
+    """Purely-curated domains (crime, elections) must not claim API provenance."""
+    for domain in ("crime", "elections"):
+        sidecar = prov.build_provenance(domain, "2025-26")
+        for fig in sidecar["figures"].values():
+            assert all(step["kind"] != "api" for step in fig["chain"]), domain

@@ -233,6 +233,7 @@ RESULTS_2024_PARTIES = [
     {"party": "CPI", "fullName": "Communist Party of India", "seats": 2, "voteShare": 0.5, "color": "#DC2626", "alliance": "INDIA"},
     {"party": "JKNC", "fullName": "Jammu & Kashmir National Conference", "seats": 2, "voteShare": 0.3, "color": "#DC2626", "alliance": "INDIA"},
     {"party": "AJSU", "fullName": "AJSU Party", "seats": 1, "voteShare": 0.1, "color": "#2563EB", "alliance": "NDA"},
+    {"party": "AGP", "fullName": "Asom Gana Parishad", "seats": 1, "voteShare": 0.1, "color": "#2563EB", "alliance": "NDA"},  # Barpeta — verified 2026-07 (was missing; NDA sum was 292 vs official 293)
     {"party": "HAM(S)", "fullName": "Hindustani Awam Morcha (Secular)", "seats": 1, "voteShare": 0.1, "color": "#7C3AED", "alliance": "NDA"},
     {"party": "SKM", "fullName": "Sikkim Krantikari Morcha", "seats": 1, "voteShare": 0.0, "color": "#F59E0B", "alliance": "NDA"},
     {"party": "UPPL", "fullName": "United People's Party Liberal", "seats": 1, "voteShare": 0.1, "color": "#0891B2", "alliance": "NDA"},

@@ -122,6 +122,10 @@ def run_census_pipeline():
     }
 
     paths = publish_all(outputs)
+    # Provenance sidecar: recomputes integrity checks against the
+    # JSONs just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("census", SURVEY_YEAR)
     logger.info(f"Published {len(paths)} files")
 
     logger.info("=" * 60)

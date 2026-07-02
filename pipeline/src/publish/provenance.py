@@ -1,207 +1,34 @@
 """
 Generate machine-readable provenance sidecars for published figures.
 
-Every entry in the registry maps a figure the site displays to its chain of
-custody: the official document it comes from, how this pipeline obtained
-it (curation or a live fetch — declared truthfully per domain), and
-integrity checks that are RECOMPUTED against the published JSON at
-generation time — never asserted. A failing check aborts generation
-(fail-closed), so a provenance sidecar can never describe data it doesn't
-match.
+Every entry maps a figure the site displays to its chain of custody: the
+official document it comes from, how this pipeline obtained it (curation or
+a live fetch — declared truthfully per domain), and integrity checks that
+are RECOMPUTED against the published JSON at generation time — never
+asserted. A failing check aborts generation (fail-closed), so a provenance
+sidecar can never describe data it doesn't match.
 
 Output: public/data/<domain>/<year>/provenance.json
 
 Honesty rules (non-negotiable, same as the rest of this pipeline):
   - Values are read from the published JSONs, never hardcoded here.
-  - Only chains we actually know are declared. No decorative metadata.
+  - Only chains the pipeline code actually implements are declared.
   - Checks must be pure functions of published data.
+
+Domain registries live in provenance_registry.py.
 """
 
 import json
 import logging
 from datetime import date
 from pathlib import Path
-from typing import Any, Callable
 
 from src.publish.writer import PROJECT_ROOT
+from src.publish.provenance_registry import DOMAIN_REGISTRIES
 
 logger = logging.getLogger(__name__)
 
 DATA_DIR = PROJECT_ROOT / "public" / "data"
-
-
-def _resolve(data: dict, dotted_path: str) -> Any:
-    """Resolve 'a.b.c' against a nested dict. Raises KeyError if absent."""
-    node: Any = data
-    for part in dotted_path.split("."):
-        node = node[part]
-    return node
-
-
-class Check:
-    """A named integrity check recomputed against published data."""
-
-    def __init__(self, name: str, fn: Callable[[dict[str, dict]], bool]):
-        self.name = name
-        self.fn = fn
-
-    def run(self, files: dict[str, dict]) -> dict:
-        passed = bool(self.fn(files))
-        if not passed:
-            raise ValueError(f"Provenance check FAILED: {self.name}")
-        return {"kind": "check", "name": self.name, "status": "pass"}
-
-
-# ── Budget registry ───────────────────────────────────────────────────
-# Chains reference documents by stable ids so the UI can dedupe/link them.
-
-BUDGET_DOCUMENTS = {
-    # Year-scoped archive URL: the unscoped /doc/AFS/ path is overwritten
-    # every Budget Day with the newest year's document.
-    "afs": {
-        "kind": "document",
-        "name": "Union Budget 2025-26 — Annual Financial Statement",
-        "publisher": "Ministry of Finance, Government of India",
-        "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf",
-    },
-}
-
-
-def _budget_figures(files: dict[str, dict]) -> dict[str, dict]:
-    """Declarative figure registry for the budget domain."""
-    summary = files["summary.json"]
-    published = summary.get("lastUpdated")
-
-    # HONESTY NOTE: the budget pipeline publishes CURATED values transcribed
-    # from official budget documents (src/extract/csv_parser.py). The OBI
-    # CKAN fetch in main.py is informational only and does not feed the
-    # published JSONs — so the chain must NOT claim API provenance.
-    def curation_step() -> dict:
-        step = {
-            "kind": "curation",
-            "name": "Curated by this pipeline from the official document",
-            "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
-        }
-        if published:
-            step["published"] = published
-        return step
-
-    figures: dict[str, dict] = {}
-
-    def figure(key: str, label: str, unit: str, value: Any,
-               checks: list[Check], basis: str | None = None) -> None:
-        chain: list[dict] = [dict(BUDGET_DOCUMENTS["afs"]), curation_step()]
-        chain += [c.run(files) for c in checks]
-        entry: dict[str, Any] = {
-            "value": value, "unit": unit, "label": label, "chain": chain,
-        }
-        if basis:
-            entry["basis"] = basis
-        figures[key] = entry
-
-    figure(
-        "summary.totalExpenditure",
-        "Total central expenditure (net)",
-        "₹ crore",
-        summary["totalExpenditure"],
-        checks=[
-            Check(
-                "Invariant: perCapitaExpenditure × population ≈ totalExpenditure",
-                lambda f: abs(
-                    f["summary.json"]["perCapitaExpenditure"]
-                    * f["summary.json"]["population"] / 1e7
-                    - f["summary.json"]["totalExpenditure"]
-                ) / f["summary.json"]["totalExpenditure"] < 0.01,
-            ),
-            Check(
-                "Sankey central node equals summary total",
-                lambda f: _sankey_central_total(f["sankey.json"])
-                == f["summary.json"]["totalExpenditure"],
-            ),
-        ],
-        basis=(
-            "Net of tax devolution to states — matches the official Total "
-            "Expenditure headline. Gross framing would double-count devolution."
-        ),
-    )
-
-    figure(
-        "summary.totalReceipts",
-        "Total receipts (net)",
-        "₹ crore",
-        summary["totalReceipts"],
-        checks=[
-            Check(
-                "revenueReceipts + capitalReceipts = totalReceipts",
-                lambda f: f["summary.json"]["revenueReceipts"]
-                + f["summary.json"]["capitalReceipts"]
-                == f["summary.json"]["totalReceipts"],
-            ),
-        ],
-    )
-
-    figure(
-        "summary.fiscalDeficitPercentGDP",
-        "Fiscal deficit as % of GDP",
-        "%",
-        summary["fiscalDeficitPercentGDP"],
-        checks=[
-            Check(
-                "fiscalDeficit ÷ GDP ≈ published percentage (±0.1pp)",
-                lambda f: abs(
-                    f["summary.json"]["fiscalDeficit"]
-                    / f["summary.json"]["gdp"] * 100
-                    - f["summary.json"]["fiscalDeficitPercentGDP"]
-                ) < 0.1,
-            ),
-        ],
-    )
-
-    figure(
-        "summary.perCapitaDailyExpenditure",
-        "Government spend per person per day",
-        "₹",
-        summary["perCapitaDailyExpenditure"],
-        checks=[
-            Check(
-                "perCapitaExpenditure ÷ 365 ≈ daily figure (±₹1)",
-                lambda f: abs(
-                    f["summary.json"]["perCapitaExpenditure"] / 365
-                    - f["summary.json"]["perCapitaDailyExpenditure"]
-                ) < 1,
-            ),
-        ],
-        basis="Derived at pipeline time from totalExpenditure and population; never hardcoded.",
-    )
-
-    return figures
-
-
-def _sankey_central_total(sankey: dict) -> float:
-    """Total flow into the central 'budget' node (net expenditure pool)."""
-    links = sankey.get("links", [])
-    inflow = sum(
-        link["value"] for link in links
-        if link.get("target") in ("budget", "central-govt", "government")
-    )
-    if inflow:
-        return inflow
-    # Fallback: node with declared total
-    for node in sankey.get("nodes", []):
-        if node.get("id") in ("budget", "central-govt", "government"):
-            if "total" in node:
-                return node["total"]
-    # Last resort: outflow from the central node
-    return sum(
-        link["value"] for link in links
-        if link.get("source") in ("budget", "central-govt", "government")
-    )
-
-
-DOMAIN_REGISTRIES: dict[str, tuple[list[str], Callable]] = {
-    # domain: (files the registry reads, registry builder)
-    "budget": (["summary.json", "sankey.json"], _budget_figures),
-}
 
 
 def build_provenance(domain: str, year: str) -> dict:
@@ -240,6 +67,11 @@ def publish_provenance(domain: str, year: str) -> Path:
 if __name__ == "__main__":
     import sys
     logging.basicConfig(level=logging.INFO, format="%(message)s")
-    domain = sys.argv[1] if len(sys.argv) > 1 else "budget"
-    year = sys.argv[2] if len(sys.argv) > 2 else "2025-26"
-    publish_provenance(domain, year)
+    if len(sys.argv) > 1 and sys.argv[1] == "all":
+        year = sys.argv[2] if len(sys.argv) > 2 else "2025-26"
+        for domain in DOMAIN_REGISTRIES:
+            publish_provenance(domain, year)
+    else:
+        domain = sys.argv[1] if len(sys.argv) > 1 else "budget"
+        year = sys.argv[2] if len(sys.argv) > 2 else "2025-26"
+        publish_provenance(domain, year)

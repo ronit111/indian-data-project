@@ -18,7 +18,7 @@
         {
           "kind": "curation",
           "name": "Curated by this pipeline from the official document",
-          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "publisher": "Indian Data Project pipeline",
           "published": "2026-06-02"
         },
         {
@@ -48,7 +48,7 @@
         {
           "kind": "curation",
           "name": "Curated by this pipeline from the official document",
-          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "publisher": "Indian Data Project pipeline",
           "published": "2026-06-02"
         },
         {
@@ -72,7 +72,7 @@
         {
           "kind": "curation",
           "name": "Curated by this pipeline from the official document",
-          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
+          "publisher": "Indian Data Project pipeline",
           "published": "2026-06-02"
         },
         {
@@ -94,18 +94,16 @@
           "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
         },
         {
-          "kind": "curation",
-          "name": "Curated by this pipeline from the official document",
-          "publisher": "Indian Data Project (pipeline/src/extract/csv_parser.py)",
-          "published": "2026-06-02"
+          "kind": "derivation",
+          "name": "totalExpenditure ÷ population ÷ 365",
+          "publisher": "Computed at pipeline time, never hardcoded"
         },
         {
           "kind": "check",
           "name": "perCapitaExpenditure ÷ 365 ≈ daily figure (±₹1)",
           "status": "pass"
         }
-      ],
-      "basis": "Derived at pipeline time from totalExpenditure and population; never hardcoded."
+      ]
     }
   }
 }

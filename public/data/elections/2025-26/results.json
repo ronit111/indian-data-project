@@ -1100,6 +1100,14 @@
       "alliance": "NDA"
     },
     {
+      "party": "AGP",
+      "fullName": "Asom Gana Parishad",
+      "seats": 1,
+      "voteShare": 0.1,
+      "color": "#2563EB",
+      "alliance": "NDA"
+    },
+    {
       "party": "HAM(S)",
       "fullName": "Hindustani Awam Morcha (Secular)",
       "seats": 1,
@@ -1197,7 +1205,7 @@
     }
   ],
   "allianceTotals2024": {
-    "NDA": 292,
+    "NDA": 293,
     "INDIA": 234,
     "Others": 16,
     "majorityMark": 272

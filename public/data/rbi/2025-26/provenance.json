@@ -1,0 +1,86 @@
+{
+  "domain": "rbi",
+  "year": "2025-26",
+  "generated": "2026-07-02",
+  "spec": 1,
+  "figures": {
+    "summary.repoRate": {
+      "value": 5.25,
+      "unit": "%",
+      "label": "Policy repo rate",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "RBI Monetary Policy Statements",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated from each MPC statement; primary-confirmed against the RBI Monetary Policy Report, April 2026",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-03"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the newest decision in the published MPC history",
+          "status": "pass"
+        },
+        {
+          "kind": "check",
+          "name": "Every decision's change equals the rate delta to its predecessor",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.crr": {
+      "value": 3.0,
+      "unit": "%",
+      "label": "Cash Reserve Ratio",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "RBI Monetary Policy Statements",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated; cross-checked against RBI Handbook Table 45 CRR history",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-03"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the latest year in the published CRR history",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.forexReservesUSD": {
+      "value": 643.04,
+      "unit": "US$ billion",
+      "label": "Foreign exchange reserves",
+      "chain": [
+        {
+          "kind": "api",
+          "name": "World Bank Development Indicators API",
+          "publisher": "World Bank",
+          "url": "https://api.worldbank.org/",
+          "retrieved": "2026-06-03"
+        },
+        {
+          "kind": "document",
+          "name": "RBI Handbook of Statistics on Indian Economy (Table 147, history)",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the latest point of the published reserves series",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}
