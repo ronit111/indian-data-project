@@ -6,7 +6,7 @@ name: Employment Pipeline
 # World Bank labour indicators update mid-year.
 #
 # Quarterly runs catch World Bank updates and PLFS releases.
-# Curated data (PLFS state data, sectoral KLEMS) lives in pipeline
+# Curated data (PLFS state data) lives in pipeline
 # source files and must be updated manually when new reports publish.
 
 on:
@@ -67,7 +67,7 @@ jobs:
           git add public/data/employment/
           git commit -m "data: update Employment data $(date +%Y-%m-%d)
 
-          Automated pipeline run. Sources: World Bank API + curated PLFS/KLEMS data.
+          Automated pipeline run. Sources: World Bank API + PLFS (API + curated fallback) data.
           Triggered by: ${{ github.event_name }}"
           git push
 

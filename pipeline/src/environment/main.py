@@ -2,19 +2,21 @@
 Environment Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — MOSPI Energy API + World Bank API + curated CPCB/FSI/CEA/CWC/CGWB data
+  1. FETCH   — MOSPI Energy API + World Bank API + curated FSI/CEA/CWC/CGWB data
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/environment/
 
 Data source priority:
   - Energy supply: MOSPI Energy API (primary) → curated CEA data (fallback)
-  - Air quality: Curated CPCB NAQI (no usable annual API available)
+  - Air quality: World Bank PM2.5 annual-mean series only (curated CPCB
+    annual-AQI tables were removed as untraceable — see sources/curated.py)
   - Forest: World Bank + curated ISFR
   - Water: Curated CWC/CGWB
 
-Note: CPCB data.gov.in API provides real-time readings only (no annual averages).
-Annual AQI statistics remain curated from CPCB NAQI reports.
+Note: CPCB data.gov.in API provides real-time readings only (no annual
+averages), so this pipeline publishes no AQI statistics; live city AQI is
+CPCB's National AQI portal's job.
 """
 
 import logging

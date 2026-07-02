@@ -3,7 +3,7 @@
     "id": "budget-how-much-spend",
     "domain": "budget",
     "question": "How much does the government spend in a year?",
-    "answer": "India's total budget expenditure for 2025-26 is \u20b950.65 lakh crore.",
+    "answer": "India's total budget expenditure for 2025-26 is ₹50.65 lakh crore.",
     "sectionId": "expenditure",
     "route": "/budget#expenditure"
   },
@@ -11,7 +11,7 @@
     "id": "budget-revenue-sources",
     "domain": "budget",
     "question": "Where does the government get its money from?",
-    "answer": "Income tax, GST, corporate tax, and borrowing \u2014 31 paise of every rupee is borrowed.",
+    "answer": "Income tax, GST, corporate tax, and borrowing — 31 paise of every rupee is borrowed.",
     "sectionId": "revenue",
     "route": "/budget#revenue"
   },
@@ -19,7 +19,7 @@
     "id": "budget-why-borrow",
     "domain": "budget",
     "question": "Why does the government borrow so much?",
-    "answer": "Tax revenue doesn't cover all spending \u2014 the fiscal deficit is 4.4% of GDP.",
+    "answer": "Tax revenue doesn't cover all spending — the fiscal deficit is 4.4% of GDP.",
     "sectionId": "deficit",
     "route": "/budget#deficit"
   },
@@ -27,7 +27,7 @@
     "id": "budget-spend-per-day",
     "domain": "budget",
     "question": "How much does the government spend on me per day?",
-    "answer": "About \u20b996 per day per citizen, covering everything from defence to subsidies.",
+    "answer": "About ₹96 per day per citizen, covering everything from defence to subsidies.",
     "sectionId": "percapita",
     "route": "/budget#percapita"
   },
@@ -43,7 +43,7 @@
     "id": "budget-promises-reality",
     "domain": "budget",
     "question": "Does the government actually spend what it promises in the budget?",
-    "answer": "Not always \u2014 budget vs actual tracking shows gaps between allocation and spending.",
+    "answer": "Not always — budget vs actual tracking shows gaps between allocation and spending.",
     "sectionId": "budget-vs-actual",
     "route": "/budget#budget-vs-actual"
   },
@@ -51,7 +51,7 @@
     "id": "budget-size-over-time",
     "domain": "budget",
     "question": "How has the budget size changed over the years?",
-    "answer": "Total expenditure has grown from \u20b917L Cr in 2014-15 to \u20b950.65L Cr in 2025-26.",
+    "answer": "Total expenditure has grown from ₹17L Cr in 2014-15 to ₹50.65L Cr in 2025-26.",
     "sectionId": "trends",
     "route": "/budget#trends"
   },
@@ -67,7 +67,7 @@
     "id": "budget-state-allocation",
     "domain": "budget",
     "question": "How much does my state get from the central budget?",
-    "answer": "State allocations vary \u2014 explore the state-wise distribution map to find yours.",
+    "answer": "State allocations vary — explore the state-wise distribution map to find yours.",
     "sectionId": "map",
     "route": "/budget#map"
   },
@@ -75,7 +75,7 @@
     "id": "budget-fiscal-deficit-simple",
     "domain": "budget",
     "question": "What is fiscal deficit in simple terms?",
-    "answer": "It means the government spends more than it earns \u2014 the gap is 4.4% of GDP.",
+    "answer": "It means the government spends more than it earns — the gap is 4.4% of GDP.",
     "sectionId": "deficit",
     "route": "/budget#deficit"
   },
@@ -83,7 +83,7 @@
     "id": "budget-subsidies",
     "domain": "budget",
     "question": "How much money goes to subsidies?",
-    "answer": "Food, fertilizer, and fuel subsidies are a major expenditure head \u2014 see the flow.",
+    "answer": "Food, fertilizer, and fuel subsidies are a major expenditure head — see the flow.",
     "sectionId": "flow",
     "route": "/budget#flow"
   },
@@ -91,14 +91,14 @@
     "id": "budget-deficit-trend",
     "domain": "budget",
     "question": "Is the budget deficit getting better or worse?",
-    "answer": "It has improved from 6.7% in 2021-22 to 4.4% in 2025-26 \u2014 a declining trend.",
+    "answer": "It has improved from 6.7% in 2021-22 to 4.4% in 2025-26 — a declining trend.",
     "sectionId": "trends",
     "route": "/budget#trends"
   },
   {
     "id": "budget-31-paise",
     "domain": "budget",
-    "question": "31 paise borrowed per rupee \u2014 what does that mean?",
+    "question": "31 paise borrowed per rupee — what does that mean?",
     "answer": "For every rupee the government spends, 31 paise comes from borrowing, not taxes.",
     "sectionId": "revenue",
     "route": "/budget#revenue"
@@ -115,7 +115,7 @@
     "id": "economy-prices-rising",
     "domain": "economy",
     "question": "Why are prices going up?",
-    "answer": "CPI inflation is at 4.0% \u2014 food prices and supply shocks are key drivers.",
+    "answer": "CPI inflation is at 4.0% — food prices and supply shocks are key drivers.",
     "sectionId": "inflation",
     "route": "/economy#inflation"
   },
@@ -123,7 +123,7 @@
     "id": "economy-what-is-gdp",
     "domain": "economy",
     "question": "What is GDP and why should I care?",
-    "answer": "GDP measures total economic output \u2014 higher growth means more jobs and income.",
+    "answer": "GDP measures total economic output — higher growth means more jobs and income.",
     "sectionId": "growth",
     "route": "/economy#growth"
   },
@@ -139,7 +139,7 @@
     "id": "economy-cad",
     "domain": "economy",
     "question": "What is current account deficit?",
-    "answer": "India imports more than it exports \u2014 the gap (CAD) is -0.8% of GDP currently.",
+    "answer": "India imports more than it exports — the gap (CAD) is -0.8% of GDP currently.",
     "sectionId": "external",
     "route": "/economy#external"
   },
@@ -163,7 +163,7 @@
     "id": "economy-trade",
     "domain": "economy",
     "question": "How much does India import and export?",
-    "answer": "India runs a trade deficit \u2014 imports exceed exports, contributing to -0.8% CAD.",
+    "answer": "India runs a trade deficit — imports exceed exports, contributing to -0.8% CAD.",
     "sectionId": "external",
     "route": "/economy#external"
   },
@@ -187,7 +187,7 @@
     "id": "economy-tomatoes",
     "domain": "economy",
     "question": "Why are tomatoes and onions so expensive?",
-    "answer": "Food inflation spikes are driven by supply shocks \u2014 overall CPI is 4.0%.",
+    "answer": "Food inflation spikes are driven by supply shocks — overall CPI is 4.0%.",
     "sectionId": "inflation",
     "route": "/economy#inflation"
   },
@@ -219,7 +219,7 @@
     "id": "rbi-emi-impact",
     "domain": "rbi",
     "question": "How does repo rate affect my home loan EMI?",
-    "answer": "When repo rate falls, banks cut lending rates \u2014 your floating EMI drops too.",
+    "answer": "When repo rate falls, banks cut lending rates — your floating EMI drops too.",
     "sectionId": "monetary-policy",
     "route": "/rbi#monetary-policy"
   },
@@ -235,7 +235,7 @@
     "id": "rbi-printing-money",
     "domain": "rbi",
     "question": "Is RBI printing too much money?",
-    "answer": "RBI manages liquidity carefully \u2014 excess money causes inflation, too little slows growth.",
+    "answer": "RBI manages liquidity carefully — excess money causes inflation, too little slows growth.",
     "sectionId": "liquidity",
     "route": "/rbi#liquidity"
   },
@@ -259,7 +259,7 @@
     "id": "rbi-crr",
     "domain": "rbi",
     "question": "What is CRR and why does it matter?",
-    "answer": "Banks must keep 4.0% of deposits with RBI \u2014 this controls money supply.",
+    "answer": "Banks must keep 4.0% of deposits with RBI — this controls money supply.",
     "sectionId": "liquidity",
     "route": "/rbi#liquidity"
   },
@@ -283,7 +283,7 @@
     "id": "rbi-how-control-inflation",
     "domain": "rbi",
     "question": "How does RBI control inflation?",
-    "answer": "Primarily through the repo rate \u2014 higher rates make borrowing expensive, cooling demand.",
+    "answer": "Primarily through the repo rate — higher rates make borrowing expensive, cooling demand.",
     "sectionId": "inflation-target",
     "route": "/rbi#inflation-target"
   },
@@ -299,7 +299,7 @@
     "id": "rbi-fd-rates",
     "domain": "rbi",
     "question": "Will my FD interest rate go up or down?",
-    "answer": "FD rates follow repo rate trends \u2014 with the neutral stance, rates are stabilizing.",
+    "answer": "FD rates follow repo rate trends — with the neutral stance, rates are stabilizing.",
     "sectionId": "monetary-policy",
     "route": "/rbi#monetary-policy"
   },
@@ -315,7 +315,7 @@
     "id": "states-richest",
     "domain": "states",
     "question": "Which is the richest state in India?",
-    "answer": "Maharashtra has the highest GSDP at \u20b945.32 lakh crore.",
+    "answer": "Maharashtra has the highest GSDP at ₹45.32 lakh crore.",
     "sectionId": "gsdp",
     "route": "/states#gsdp"
   },
@@ -323,7 +323,7 @@
     "id": "states-fair-share",
     "domain": "states",
     "question": "Is my state getting its fair share of money?",
-    "answer": "State revenue comes from own taxes plus central transfers \u2014 compare your state's share.",
+    "answer": "State revenue comes from own taxes plus central transfers — compare your state's share.",
     "sectionId": "revenue",
     "route": "/states#revenue"
   },
@@ -331,7 +331,7 @@
     "id": "states-fastest-growing",
     "domain": "states",
     "question": "Which states are growing the fastest?",
-    "answer": "State growth rates range from 8.7% to 16.0% \u2014 see which ones are leading.",
+    "answer": "State growth rates range from 8.7% to 16.0% — see which ones are leading.",
     "sectionId": "growth",
     "route": "/states#growth"
   },
@@ -339,7 +339,7 @@
     "id": "states-own-revenue",
     "domain": "states",
     "question": "How much does my state earn on its own?",
-    "answer": "Own tax revenue vs central transfers varies widely \u2014 some states are heavily dependent.",
+    "answer": "Own tax revenue vs central transfers varies widely — some states are heavily dependent.",
     "sectionId": "revenue",
     "route": "/states#revenue"
   },
@@ -347,7 +347,7 @@
     "id": "states-most-debt",
     "domain": "states",
     "question": "Which states have the most debt?",
-    "answer": "Fiscal health varies \u2014 some states run deficits above 3% while others are in surplus.",
+    "answer": "Fiscal health varies — some states run deficits above 3% while others are in surplus.",
     "sectionId": "fiscal-health",
     "route": "/states#fiscal-health"
   },
@@ -363,7 +363,7 @@
     "id": "states-per-capita",
     "domain": "states",
     "question": "What is per capita income in my state?",
-    "answer": "Average per capita NSDP is \u20b92.08 lakh, but varies widely across states.",
+    "answer": "Average per capita NSDP is ₹2.08 lakh, but varies widely across states.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },
@@ -379,7 +379,7 @@
     "id": "states-bihar-income",
     "domain": "states",
     "question": "Does Bihar really have the lowest per capita income?",
-    "answer": "Bihar and UP rank among the lowest in per capita NSDP \u2014 see the full state ranking.",
+    "answer": "Bihar and UP rank among the lowest in per capita NSDP — see the full state ranking.",
     "sectionId": "percapita",
     "route": "/states#percapita"
   },
@@ -435,7 +435,7 @@
     "id": "census-sex-ratio",
     "domain": "census",
     "question": "How many men vs women are there in India?",
-    "answer": "The sex ratio is 943 females per 1000 males \u2014 improving but still below parity.",
+    "answer": "The sex ratio is 943 females per 1000 males — improving but still below parity.",
     "sectionId": "population",
     "route": "/census#population"
   },
@@ -443,7 +443,7 @@
     "id": "census-aging",
     "domain": "census",
     "question": "Is India getting older?",
-    "answer": "India's median age is rising \u2014 the demographic dividend window is narrowing.",
+    "answer": "India's median age is rising — the demographic dividend window is narrowing.",
     "sectionId": "age",
     "route": "/census#age"
   },
@@ -451,7 +451,7 @@
     "id": "census-urban-rural",
     "domain": "census",
     "question": "How many people live in cities vs villages?",
-    "answer": "35.4% of India is urban \u2014 urbanization is accelerating every decade.",
+    "answer": "35.4% of India is urban — urbanization is accelerating every decade.",
     "sectionId": "urbanization",
     "route": "/census#urbanization"
   },
@@ -459,7 +459,7 @@
     "id": "census-birth-death",
     "domain": "census",
     "question": "What is India's birth rate and death rate?",
-    "answer": "Birth rate has fallen steadily while life expectancy has risen \u2014 see vital statistics.",
+    "answer": "Birth rate has fallen steadily while life expectancy has risen — see vital statistics.",
     "sectionId": "vital-stats",
     "route": "/census#vital-stats"
   },
@@ -475,7 +475,7 @@
     "id": "census-young-country",
     "domain": "census",
     "question": "Is India still a young country?",
-    "answer": "Yes, but the age structure is shifting \u2014 the working-age share is peaking now.",
+    "answer": "Yes, but the age structure is shifting — the working-age share is peaking now.",
     "sectionId": "age",
     "route": "/census#age"
   },
@@ -483,7 +483,7 @@
     "id": "census-births-per-year",
     "domain": "census",
     "question": "How many babies are born every year in India?",
-    "answer": "Birth and fertility rates have been declining steadily \u2014 explore the vital statistics.",
+    "answer": "Birth and fertility rates have been declining steadily — explore the vital statistics.",
     "sectionId": "vital-stats",
     "route": "/census#vital-stats"
   },
@@ -515,7 +515,7 @@
     "id": "census-urbanizing-fast",
     "domain": "census",
     "question": "Is India urbanizing too fast?",
-    "answer": "At 35.4% urban, India is less urbanized than most peers \u2014 but cities are straining.",
+    "answer": "At 35.4% urban, India is less urbanized than most peers — but cities are straining.",
     "sectionId": "urbanization",
     "route": "/census#urbanization"
   },
@@ -523,7 +523,7 @@
     "id": "education-spending",
     "domain": "education",
     "question": "How much does India spend on education?",
-    "answer": "India spends about 4.1% of GDP on education \u2014 NEP 2020 targets 6%.",
+    "answer": "India spends about 4.1% of GDP on education — NEP 2020 targets 6%.",
     "sectionId": "spending",
     "route": "/education#spending"
   },
@@ -531,7 +531,7 @@
     "id": "education-learning",
     "domain": "education",
     "question": "Are children actually learning in school?",
-    "answer": "ASER data shows many children can't read grade-level text \u2014 quality is a crisis.",
+    "answer": "ASER data shows many children can't read grade-level text — quality is a crisis.",
     "sectionId": "quality",
     "route": "/education#quality"
   },
@@ -563,7 +563,7 @@
     "id": "education-teachers",
     "domain": "education",
     "question": "Are there enough teachers in government schools?",
-    "answer": "Pupil-teacher ratios vary widely \u2014 many rural schools are severely understaffed.",
+    "answer": "Pupil-teacher ratios vary widely — many rural schools are severely understaffed.",
     "sectionId": "teacher",
     "route": "/education#teacher"
   },
@@ -579,7 +579,7 @@
     "id": "education-quality-improving",
     "domain": "education",
     "question": "Is the quality of education improving?",
-    "answer": "Learning outcomes remain poor \u2014 many Class 5 students can't do Class 2 level math.",
+    "answer": "Learning outcomes remain poor — many Class 5 students can't do Class 2 level math.",
     "sectionId": "quality",
     "route": "/education#quality"
   },
@@ -595,7 +595,7 @@
     "id": "education-private-govt",
     "domain": "education",
     "question": "Are private schools better than government schools?",
-    "answer": "ASER shows learning gaps exist in both \u2014 the quality challenge is systemic.",
+    "answer": "ASER shows learning gaps exist in both — the quality challenge is systemic.",
     "sectionId": "quality",
     "route": "/education#quality"
   },
@@ -603,7 +603,7 @@
     "id": "education-total-schools",
     "domain": "education",
     "question": "How many schools are there in India?",
-    "answer": "Over 15 lakh schools serve India's children \u2014 explore enrollment data by level.",
+    "answer": "Over 15 lakh schools serve India's children — explore enrollment data by level.",
     "sectionId": "enrollment",
     "route": "/education#enrollment"
   },
@@ -627,7 +627,7 @@
     "id": "employment-youth-jobs",
     "domain": "employment",
     "question": "Why can't young people find jobs?",
-    "answer": "Youth unemployment is far higher than the national average \u2014 education-job mismatch is key.",
+    "answer": "Youth unemployment is far higher than the national average — education-job mismatch is key.",
     "sectionId": "youth",
     "route": "/employment#youth"
   },
@@ -643,7 +643,7 @@
     "id": "employment-women",
     "domain": "employment",
     "question": "Why don't more Indian women work?",
-    "answer": "Female LFPR is among the world's lowest \u2014 social norms and safety are major barriers.",
+    "answer": "Female LFPR is among the world's lowest — social norms and safety are major barriers.",
     "sectionId": "gender-gap",
     "route": "/employment#gender-gap"
   },
@@ -683,7 +683,7 @@
     "id": "employment-educated",
     "domain": "employment",
     "question": "Do educated people have better job prospects?",
-    "answer": "Paradoxically, unemployment is highest among graduates \u2014 a skills mismatch problem.",
+    "answer": "Paradoxically, unemployment is highest among graduates — a skills mismatch problem.",
     "sectionId": "youth",
     "route": "/employment#youth"
   },
@@ -723,7 +723,7 @@
     "id": "healthcare-beds",
     "domain": "healthcare",
     "question": "How many hospital beds does India have?",
-    "answer": "India has 1.6 beds per 1,000 people (public + private) \u2014 WHO recommends 3.5 per 1,000.",
+    "answer": "India has 1.6 beds per 1,000 people (public + private) — WHO recommends 3.5 per 1,000.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -731,7 +731,7 @@
     "id": "healthcare-spending",
     "domain": "healthcare",
     "question": "How much does India spend on healthcare?",
-    "answer": "Government health spending is about 2.1% of GDP \u2014 among the lowest globally.",
+    "answer": "Government health spending is about 2.1% of GDP — among the lowest globally.",
     "sectionId": "spending",
     "route": "/healthcare#spending"
   },
@@ -739,7 +739,7 @@
     "id": "healthcare-bankrupt",
     "domain": "healthcare",
     "question": "Why do people go bankrupt from hospital bills?",
-    "answer": "About 45% of health spending is out-of-pocket \u2014 families bear a huge share of costs directly.",
+    "answer": "About 45% of health spending is out-of-pocket — families bear a huge share of costs directly.",
     "sectionId": "oop",
     "route": "/healthcare#oop"
   },
@@ -803,7 +803,7 @@
     "id": "healthcare-malnutrition",
     "domain": "healthcare",
     "question": "Are Indian children malnourished?",
-    "answer": "Stunting and wasting remain high \u2014 nutrition is a major child health challenge.",
+    "answer": "Stunting and wasting remain high — nutrition is a major child health challenge.",
     "sectionId": "disease",
     "route": "/healthcare#disease"
   },
@@ -819,7 +819,7 @@
     "id": "env-air-quality",
     "domain": "environment",
     "question": "How bad is India's air pollution?",
-    "answer": "India's PM2.5 annual mean is 53 \u03bcg/m\u00b3 \u2014 more than 10\u00d7 the WHO guideline of 5 \u03bcg/m\u00b3.",
+    "answer": "India's PM2.5 annual mean is 53 μg/m³ — more than 10× the WHO guideline of 5 μg/m³.",
     "sectionId": "air-quality",
     "route": "/environment#air-quality"
   },
@@ -827,7 +827,7 @@
     "id": "env-most-polluted",
     "domain": "environment",
     "question": "Which are India's most polluted cities?",
-    "answer": "Delhi, Patna, and Muzaffarpur consistently rank among the worst for annual average AQI.",
+    "answer": "India's PM2.5 exposure runs about 10x the WHO guideline nationally. Live city-by-city AQI rankings are published on CPCB's National Air Quality Index portal.",
     "sectionId": "air-quality",
     "route": "/environment#air-quality"
   },
@@ -835,7 +835,7 @@
     "id": "env-safe-breathe",
     "domain": "environment",
     "question": "Is the air safe to breathe in my city?",
-    "answer": "Most Indian cities exceed WHO air quality guidelines. CPCB monitors AQI across 30 states.",
+    "answer": "Most Indian cities exceed WHO air quality guidelines. Check your city's live AQI on CPCB's National Air Quality Index portal.",
     "sectionId": "air-quality",
     "route": "/environment#air-quality"
   },
@@ -843,7 +843,7 @@
     "id": "env-forest-cover",
     "domain": "environment",
     "question": "How much of India is covered by forests?",
-    "answer": "About 25% of India's land area is under forest cover, though this includes plantations.",
+    "answer": "India's forest cover is 21.76% of its land area (ISFR 2023). Counting tree cover outside forests too, the green total is 25.17% — and not all of it is natural forest.",
     "sectionId": "forest-cover",
     "route": "/environment#forest-cover"
   },
@@ -851,7 +851,7 @@
     "id": "env-forest-growing",
     "domain": "environment",
     "question": "Are India's forests growing or shrinking?",
-    "answer": "Some states have gained forest cover while others have lost it \u2014 the net change varies by assessment.",
+    "answer": "Some states have gained forest cover while others have lost it — the net change varies by assessment.",
     "sectionId": "forest-cover",
     "route": "/environment#forest-cover"
   },
@@ -875,15 +875,15 @@
     "id": "env-solar-growth",
     "domain": "environment",
     "question": "How fast is India's solar capacity growing?",
-    "answer": "Solar capacity has grown from 3,744 MW in 2015 to over 90,000 MW in 2024 \u2014 a 25x increase.",
+    "answer": "Solar capacity has grown from 3,744 MW in 2015 to over 90,000 MW in 2024 — a 25x increase.",
     "sectionId": "energy-transition",
     "route": "/environment#energy-transition"
   },
   {
     "id": "env-carbon-footprint",
     "domain": "environment",
-    "question": "How much CO\u2082 does India emit per person?",
-    "answer": "India's CO\u2082 per capita is about 1.9 tonnes \u2014 well below the global average of 4.7 tonnes.",
+    "question": "How much CO₂ does India emit per person?",
+    "answer": "India's CO₂ per capita is about 1.9 tonnes — well below the global average of 4.7 tonnes.",
     "sectionId": "carbon-footprint",
     "route": "/environment#carbon-footprint"
   },
@@ -907,7 +907,7 @@
     "id": "env-reservoir-levels",
     "domain": "environment",
     "question": "How full are India's reservoirs?",
-    "answer": "Reservoir storage varies seasonally with monsoon \u2014 CWC tracks 150 major reservoirs across 5 regions.",
+    "answer": "Reservoir storage varies seasonally with monsoon — CWC tracks 150 major reservoirs across 5 regions.",
     "sectionId": "water-stress",
     "route": "/environment#water-stress"
   },
@@ -915,7 +915,7 @@
     "id": "env-climate-compare",
     "domain": "environment",
     "question": "How does India compare globally on climate?",
-    "answer": "India is the 3rd largest CO\u2082 emitter but per capita emissions are among the lowest of major economies.",
+    "answer": "India is the 3rd largest CO₂ emitter but per capita emissions are among the lowest of major economies.",
     "sectionId": "carbon-footprint",
     "route": "/environment#carbon-footprint"
   },
@@ -939,7 +939,7 @@
     "id": "elections-bjp-seats",
     "domain": "elections",
     "question": "How many seats did BJP win in 2024?",
-    "answer": "BJP won 240 seats with 36.6% vote share \u2014 down from 303 seats in 2019.",
+    "answer": "BJP won 240 seats with 36.6% vote share — down from 303 seats in 2019.",
     "sectionId": "lok-sabha-2024",
     "route": "/elections#lok-sabha-2024"
   },
@@ -955,7 +955,7 @@
     "id": "elections-richest-mp",
     "domain": "elections",
     "question": "Who is the richest MP in India?",
-    "answer": "The wealthiest MPs have declared assets exceeding hundreds of crores \u2014 see the full ranking.",
+    "answer": "The wealthiest MPs have declared assets exceeding hundreds of crores — see the full ranking.",
     "sectionId": "money-muscle",
     "route": "/elections#money-muscle"
   },
@@ -987,7 +987,7 @@
     "id": "elections-nota",
     "domain": "elections",
     "question": "What is NOTA and how many people use it?",
-    "answer": "NOTA (None of the Above) lets voters reject all candidates \u2014 it was introduced in 2013.",
+    "answer": "NOTA (None of the Above) lets voters reject all candidates — it was introduced in 2013.",
     "sectionId": "turnout",
     "route": "/elections#turnout"
   },
@@ -995,7 +995,7 @@
     "id": "elections-highest-turnout",
     "domain": "elections",
     "question": "Which state had the highest voter turnout in 2024?",
-    "answer": "Turnout varies widely by state \u2014 some northeast states consistently exceed 80%.",
+    "answer": "Turnout varies widely by state — some northeast states consistently exceed 80%.",
     "sectionId": "turnout",
     "route": "/elections#turnout"
   },
@@ -1003,7 +1003,7 @@
     "id": "elections-fptp",
     "domain": "elections",
     "question": "Why does a party with fewer votes win more seats?",
-    "answer": "India uses FPTP (first-past-the-post) \u2014 you only need the most votes in each constituency, not a majority.",
+    "answer": "India uses FPTP (first-past-the-post) — you only need the most votes in each constituency, not a majority.",
     "sectionId": "party-landscape",
     "route": "/elections#party-landscape"
   },
@@ -1187,7 +1187,7 @@
     "id": "budget-income-tax-slabs",
     "domain": "budget",
     "question": "How much tax do I pay on my salary?",
-    "answer": "Under the new tax regime, income up to \u20b912 lakh is effectively tax-free. Above that, rates range from 5% to 30% in slabs.",
+    "answer": "Under the new tax regime, income up to ₹12 lakh is effectively tax-free. Above that, rates range from 5% to 30% in slabs.",
     "sectionId": "calculator",
     "route": "/budget/calculator"
   },
@@ -1203,7 +1203,7 @@
     "id": "healthcare-spend-per-person",
     "domain": "healthcare",
     "question": "How much does India spend on healthcare per person?",
-    "answer": "About \u20b919 per day per citizen (\u20b97,000/year). That's less than the cost of one OPD visit at a private hospital.",
+    "answer": "About ₹19 per day per citizen (₹7,000/year). That's less than the cost of one OPD visit at a private hospital.",
     "sectionId": "spending",
     "route": "/healthcare#spending"
   },
@@ -1211,7 +1211,7 @@
     "id": "healthcare-out-of-pocket",
     "domain": "healthcare",
     "question": "Why do Indians pay so much out of pocket for health?",
-    "answer": "About 45% of health spending comes from patients' own pockets \u2014 among the highest in the world. Low public spending forces families to pay directly.",
+    "answer": "About 45% of health spending comes from patients' own pockets — among the highest in the world. Low public spending forces families to pay directly.",
     "sectionId": "oop",
     "route": "/healthcare#oop"
   },
@@ -1219,7 +1219,7 @@
     "id": "employment-farming-share",
     "domain": "employment",
     "question": "What percentage of Indians work in farming?",
-    "answer": "About 43% of India's workforce is in agriculture, but farming contributes only ~16% of GDP \u2014 a lot of people sharing a small pie.",
+    "answer": "About 43% of India's workforce is in agriculture, but farming contributes only ~16% of GDP — a lot of people sharing a small pie.",
     "sectionId": "sectoral",
     "route": "/employment#sectoral"
   },
@@ -1235,7 +1235,7 @@
     "id": "economy-gdp-explained",
     "domain": "economy",
     "question": "What is GDP and why does it matter?",
-    "answer": "GDP is the total value of everything India produces in a year. When GDP grows, there's more income to go around \u2014 but distribution matters too.",
+    "answer": "GDP is the total value of everything India produces in a year. When GDP grows, there's more income to go around — but distribution matters too.",
     "sectionId": "growth",
     "route": "/economy#growth"
   },
@@ -1243,7 +1243,7 @@
     "id": "education-spend-per-student",
     "domain": "education",
     "question": "How much does India spend on education per student?",
-    "answer": "India spends about 4.1% of GDP on education \u2014 below the 6% recommended by the NEP. Per-student spending varies hugely across states.",
+    "answer": "India spends about 4.1% of GDP on education — below the 6% recommended by the NEP. Per-student spending varies hugely across states.",
     "sectionId": "spending",
     "route": "/education#spending"
   },
@@ -1259,7 +1259,7 @@
     "id": "crime-police-per-person",
     "domain": "crime",
     "question": "How many police officers does India have per person?",
-    "answer": "India has about 151 police per lakh population \u2014 32% below the UN-recommended 222. That's roughly 1 officer for every 660 citizens.",
+    "answer": "India has about 151 police per lakh population — 32% below the UN-recommended 222. That's roughly 1 officer for every 660 citizens.",
     "sectionId": "police-infrastructure",
     "route": "/crime#police-infrastructure"
   },
@@ -1283,7 +1283,7 @@
     "id": "states-richest-state",
     "domain": "states",
     "question": "Which is the richest state in India?",
-    "answer": "Maharashtra has the largest economy by GSDP (\u20b935+ lakh crore). But per person, Goa is the richest \u2014 size vs. prosperity are different things.",
+    "answer": "Maharashtra has the largest economy by GSDP (₹35+ lakh crore). But per person, Goa is the richest — size vs. prosperity are different things.",
     "sectionId": "gsdp",
     "route": "/states#gsdp"
   }

@@ -20,9 +20,19 @@ interface ChartActionsWrapperProps {
 }
 
 // Module-scoped ownership registry: when a section wraps several charts with
-// the same registryKey, only the first mounted wrapper renders the sr-only
-// data table — screen readers were getting the identical table repeated.
-const srTableOwners = new Map<string, symbol>();
+// the same registryKey, only one mounted wrapper renders the sr-only data
+// table — screen readers were getting the identical table repeated. Each
+// mounted wrapper registers as a claimant; the first claimant owns the table,
+// and when it unmounts the next one is elected so the table never disappears
+// while any duplicate remains mounted.
+type SrTableClaimant = { id: symbol; setOwns: (owns: boolean) => void };
+const srTableClaimants = new Map<string, SrTableClaimant[]>();
+
+function electSrTableOwner(registryKey: string) {
+  const claimants = srTableClaimants.get(registryKey);
+  if (!claimants) return;
+  claimants.forEach((c, i) => c.setOwns(i === 0));
+}
 
 export function ChartActionsWrapper({ registryKey, data, children }: ChartActionsWrapperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,11 +46,18 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   const [ownsTable, setOwnsTable] = useState(false);
 
   useEffect(() => {
-    const id = instanceId.current!;
-    if (!srTableOwners.has(registryKey)) srTableOwners.set(registryKey, id);
-    setOwnsTable(srTableOwners.get(registryKey) === id);
+    const claimant: SrTableClaimant = { id: instanceId.current!, setOwns: setOwnsTable };
+    const claimants = srTableClaimants.get(registryKey) ?? [];
+    claimants.push(claimant);
+    srTableClaimants.set(registryKey, claimants);
+    electSrTableOwner(registryKey);
     return () => {
-      if (srTableOwners.get(registryKey) === id) srTableOwners.delete(registryKey);
+      const list = srTableClaimants.get(registryKey);
+      if (!list) return;
+      const idx = list.indexOf(claimant);
+      if (idx !== -1) list.splice(idx, 1);
+      if (list.length === 0) srTableClaimants.delete(registryKey);
+      else electSrTableOwner(registryKey);
     };
   }, [registryKey]);
 
