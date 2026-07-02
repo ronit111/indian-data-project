@@ -10,3 +10,9 @@ __pycache__/
 *.pyc
 *.egg-info/
 pipeline/reference-pdfs/
+
+# Local session artifacts (data-verification sources & working state — never commit)
+.docs-3b/
+.web-design/
+.session-data-findings-*.json
+SESSION_HANDOFF.md
