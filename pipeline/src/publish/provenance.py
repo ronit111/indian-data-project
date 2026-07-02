@@ -2,8 +2,9 @@
 Generate machine-readable provenance sidecars for published figures.
 
 Every entry in the registry maps a figure the site displays to its chain of
-custody: the official document it comes from, the API/pipeline that fetched
-it, and integrity checks that are RECOMPUTED against the published JSON at
+custody: the official document it comes from, how this pipeline obtained
+it (curation or a live fetch — declared truthfully per domain), and
+integrity checks that are RECOMPUTED against the published JSON at
 generation time — never asserted. A failing check aborts generation
 (fail-closed), so a provenance sidecar can never describe data it doesn't
 match.
