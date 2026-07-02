@@ -202,7 +202,7 @@ export const womenInIndia: TopicDef = {
       annotation:
         'The literacy gender gap has shrunk from 25 percentage points in 1991 to about 13.5 percentage points today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality and child marriage rates remind us that progress is uneven.',
       domains: ['education', 'census', 'healthcare'],
-      sources: ['Census of India', 'UDISE+', 'NFHS-5', 'World Bank'],
+      sources: ['Census of India', 'UDISE+', 'NFHS-6', 'World Bank'],
       charts: [
         {
           chartType: 'line',

@@ -108,7 +108,7 @@ const METRIC_DEFS: MetricDef[] = [
   // Healthcare (from infrastructure.json)
   { key: 'bedsPerLakh', label: 'Hospital Beds', unit: 'per lakh', higherIsBetter: true, domain: 'healthcare' },
   { key: 'doctorsPer10K', label: 'Doctors', unit: 'per 10K', higherIsBetter: true, domain: 'healthcare' },
-  // Health - NFHS-5 (from health.json, disease.json)
+  // Health - NFHS-6 (from health.json, disease.json)
   { key: 'imr', label: 'Infant Mortality (SRS)', unit: 'per 1000', higherIsBetter: false, domain: 'health' },
   { key: 'fullImmunization', label: 'Full Immunization', unit: '%', higherIsBetter: true, domain: 'health' },
   { key: 'stunting', label: 'Stunting', unit: '%', higherIsBetter: false, domain: 'health' },
@@ -135,7 +135,7 @@ const PANEL_CONFIG: Record<string, { title: string; accentColor: string }> = {
   education: { title: 'Education', accentColor: '#3B82F6' },
   employment: { title: 'Employment', accentColor: '#F59E0B' },
   healthcare: { title: 'Healthcare Infrastructure', accentColor: '#F43F5E' },
-  health: { title: 'Health Outcomes (NFHS-5)', accentColor: '#F43F5E' },
+  health: { title: 'Health Outcomes (NFHS-6)', accentColor: '#F43F5E' },
   environment: { title: 'Environment', accentColor: '#14B8A6' },
   elections: { title: 'Elections', accentColor: '#6366F1' },
   crime: { title: 'Crime & Safety', accentColor: '#DC2626' },

@@ -2,7 +2,7 @@
 Census & Demographics Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — World Bank API + curated Census 2011 / NFHS-5 / SRS data
+  1. FETCH   — World Bank API + curated Census 2011 / NFHS-6 / SRS data
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/census/
@@ -10,7 +10,7 @@ Stages:
 Data sources:
   - World Bank Development Indicators (population, demographics, health, literacy)
   - Census of India 2011 (state-level population, literacy, sex ratio)
-  - NFHS-5 2019-21 (state-level health and nutrition indicators)
+  - NFHS-6 2023-24 (state-level health and nutrition indicators)
   - SRS 2024 (state-level infant mortality rates)
 """
 
@@ -26,7 +26,7 @@ from src.census.sources.world_bank import fetch_multiple
 from src.census.sources.curated import (
     CENSUS_2011_STATES,
     NPC_2026_PROJECTIONS,
-    NFHS5_STATE_HEALTH,
+    NFHS6_STATE_HEALTH,
     SRS_STATE_IMR,
 )
 from src.census.transform.population import build_population
@@ -67,7 +67,7 @@ def run_census_pipeline():
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
     logger.info(f"  Curated: {len(CENSUS_2011_STATES)} Census 2011 states")
     logger.info(f"  Curated: {len(NPC_2026_PROJECTIONS)} NPC 2026 projected states")
-    logger.info(f"  Curated: {len(NFHS5_STATE_HEALTH)} NFHS-5 states")
+    logger.info(f"  Curated: {len(NFHS6_STATE_HEALTH)} NFHS-6 states")
     logger.info(f"  Curated: {len(SRS_STATE_IMR)} SRS IMR states")
 
     # \u2500\u2500 Stage 2: TRANSFORM \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
@@ -76,9 +76,9 @@ def run_census_pipeline():
     population_data = build_population(wb_data, CENSUS_2011_STATES, NPC_2026_PROJECTIONS, SURVEY_YEAR)
     demographics_data = build_demographics(wb_data, CENSUS_2011_STATES, SURVEY_YEAR)
     literacy_data = build_literacy(wb_data, CENSUS_2011_STATES, SURVEY_YEAR)
-    health_data = build_health(wb_data, SRS_STATE_IMR, NFHS5_STATE_HEALTH, SURVEY_YEAR)
+    health_data = build_health(wb_data, SRS_STATE_IMR, NFHS6_STATE_HEALTH, SURVEY_YEAR)
     summary_data = _build_summary(wb_data, NPC_2026_PROJECTIONS)
-    indicators_data = _build_indicators(CENSUS_2011_STATES, NPC_2026_PROJECTIONS, NFHS5_STATE_HEALTH, SRS_STATE_IMR)
+    indicators_data = _build_indicators(CENSUS_2011_STATES, NPC_2026_PROJECTIONS, NFHS6_STATE_HEALTH, SRS_STATE_IMR)
     glossary_data = _build_glossary()
 
     # \u2500\u2500 Stage 3: VALIDATE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
@@ -267,11 +267,11 @@ def _build_indicators(
     })
     indicators.append({
         "id": "tfr_nfhs",
-        "name": "Total Fertility Rate (NFHS-5)",
+        "name": "Total Fertility Rate (NFHS-6)",
         "category": "health",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["tfr"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "stunting",
@@ -279,7 +279,7 @@ def _build_indicators(
         "category": "health",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["stunting"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "full_immunization",
@@ -287,7 +287,7 @@ def _build_indicators(
         "category": "health",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["fullImmunization"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
 
     return {
@@ -338,8 +338,8 @@ def _build_glossary() -> dict:
                 "id": "total-fertility-rate",
                 "term": "Total Fertility Rate (TFR)",
                 "simple": "The average number of children a woman would have in her lifetime at current birth rates.",
-                "detail": "TFR of 2.1 is called 'replacement level' \u2014 the rate at which a population exactly replaces itself. India's TFR dropped below replacement to 2.0 nationally (NFHS-5, 2019-21). Bihar remains highest at 3.0; Goa lowest at 1.3. Below-replacement fertility means India's population will eventually stabilize and then decline, though population momentum means growth continues for decades after TFR drops below 2.1.",
-                "inContext": "India's TFR: 2.0 (NFHS-5). Below replacement level (2.1) for the first time.",
+                "detail": "TFR of 2.1 is called 'replacement level' \u2014 the rate at which a population exactly replaces itself. India's TFR held below replacement at 2.0 nationally (NFHS-6, 2023-24). Bihar remains highest at 2.7 (down from 3.0 in NFHS-5); West Bengal, Punjab, Assam and Goa are among the lowest at 1.6. Below-replacement fertility means India's population will eventually stabilize and then decline, though population momentum means growth continues for decades after TFR drops below 2.1.",
+                "inContext": "India's TFR: 2.0 (NFHS-6). Below replacement level (2.1).",
                 "relatedTerms": ["infant-mortality-rate", "demographic-dividend", "sex-ratio"],
             },
             {
@@ -402,8 +402,8 @@ def _build_glossary() -> dict:
                 "id": "stunting",
                 "term": "Stunting",
                 "simple": "When a child under 5 is too short for their age due to chronic malnutrition.",
-                "detail": "Stunting (low height-for-age) is a marker of chronic undernutrition, repeated infections, and poor living conditions in early life. It affects brain development and lifelong earning potential. India's stunting rate was 35.5% nationally in NFHS-5 (2019-21), down from 38.4% in NFHS-4. That's still over 40 million stunted children \u2014 more than any other country.",
-                "inContext": "35.5% of Indian children under 5 are stunted (NFHS-5). Down from 48% in 2005-06.",
+                "detail": "Stunting (low height-for-age) is a marker of chronic undernutrition, repeated infections, and poor living conditions in early life. It affects brain development and lifelong earning potential. India's stunting rate fell to 29.3% nationally in NFHS-6 (2023-24), down from 35.5% in NFHS-5 (2019-21). That's still tens of millions of stunted children \u2014 among the most of any country.",
+                "inContext": "29.3% of Indian children under 5 are stunted (NFHS-6). Down from 35.5% in NFHS-5.",
                 "relatedTerms": ["under-5-mortality", "infant-mortality-rate"],
             },
             {

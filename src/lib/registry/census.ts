@@ -86,7 +86,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'health',
   title: 'Health Indicators',
-  source: 'World Bank, NFHS-5, SRS 2024',
+  source: 'World Bank, NFHS-6, SRS 2024',
   accentColor: ACCENT,
   dataFiles: [`${base}/health.json`],
   chartType: 'line',

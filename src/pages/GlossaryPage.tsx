@@ -454,7 +454,7 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
             : domain === 'economy'
               ? 'Economic Survey 2025-26, World Bank'
               : domain === 'census'
-                ? 'Census of India, NFHS-5, SRS, World Bank'
+                ? 'Census of India, NFHS-6, SRS, World Bank'
                 : domain === 'states'
                   ? 'RBI Handbook, Finance Commission'
                   : domain === 'education'
