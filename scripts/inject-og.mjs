@@ -332,7 +332,7 @@ const ROUTES = [
   },
   {
     path: '/crime/methodology',
-    title: 'Methodology — Crime Data | Indian Data Project',
+    title: 'Methodology — Crime & Safety Data | Indian Data Project',
     description: 'Data sources, NCRB methodology, underreporting caveats, Kerala paradox, and limitations for crime data on Indian Data Project.',
     image: '/og-crime.png',
   },

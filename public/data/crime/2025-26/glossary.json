@@ -140,7 +140,7 @@
       "term": "I4C (Indian Cyber Crime Coordination Centre)",
       "simple": "A government portal (cybercrime.gov.in) where citizens can report cybercrimes online — separate from filing an FIR.",
       "detail": "I4C was set up by MHA in 2020 to coordinate cybercrime response across states. The portal (cybercrime.gov.in) allows online complaint filing for financial fraud, women/child-related cybercrimes, and other cybercrimes. The 22.68 lakh complaints filed on the portal in 2022 vastly exceed the 86,420 cybercrime FIRs registered by NCRB in 2023 — the gap reflects how few complaints convert to formal police cases. I4C also operates a toll-free helpline (1930) for financial fraud, which has recovered hundreds of crores through quick intervention.",
-      "inContext": "22.68 lakh complaints vs 65,893 FIRs (34x gap). Helpline: 1930.",
+      "inContext": "22.68 lakh complaints vs 86,420 FIRs (26x gap). Helpline: 1930.",
       "relatedTerms": [
         "ncrb",
         "fir"

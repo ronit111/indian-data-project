@@ -115,12 +115,12 @@ This is an independent civic project built by one person, not affiliated with or
 ### Crime & Safety Domain
 - /crime — Scrollytelling narrative (6 sections): crime overview (IPC/SLL split, national trend, state choropleth), crimes against women (4.48 lakh cases, cruelty and kidnapping lead), road accidents (1.73 lakh killed, 474 daily, over-speeding 68%), cybercrime (4x growth since 2017, under 4% FIR conversion), police infrastructure (155 per lakh vs UN 222, 12.3% women), justice pipeline (funnel from FIR to conviction, 54% of completed trials convict, 3.5 year avg trial)
 - /crime/explore — State-wise crime indicators: overall rates, women crime rates, road fatalities, police-population ratio, vacancies
-- /crime/methodology — NCRB methodology (FIR-based, cognizable only), underreporting caveats, Kerala paradox, MoRTH road data, World Bank homicide data, 2022 data vintage
+- /crime/methodology — NCRB methodology (FIR-based, cognizable only), underreporting caveats, Kerala paradox, MoRTH road data, World Bank homicide data, 2023 data vintage
 - /crime/glossary — Plain-language definitions: FIR, chargesheet, cognizable offence, IPC, SLL, conviction rate, cybercrime, and more.
 
 ### Cross-Domain Topics
 - /topics — Hub page with 11 curated cross-domain topic cards. Each topic weaves data from 2-5 domains into a narrative view.
-- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps, safety & violence (4.45L crimes against women). Domains: Elections, Employment, Education, Census, Healthcare, Crime.
+- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps, safety & violence (4.48L crimes against women). Domains: Elections, Employment, Education, Census, Healthcare, Crime.
 - /topics/fiscal-health — India's Fiscal Health: GDP growth engine, spending vs borrowing (fiscal deficit % GDP), RBI monetary policy lever. Domains: Budget, Economy, RBI, States.
 - /topics/inflation-cost — Inflation & Cost of Living: CPI price trajectory, RBI rate response, fiscal connection. Domains: Economy, RBI, Budget.
 - /topics/education-employment — Education to Employment Pipeline: enrollment scale (secondary GER), jobs gap (unemployment rate), education spending. Domains: Education, Employment, Census, Budget.
