@@ -7,8 +7,12 @@
       "term": "GSDP (Gross State Domestic Product)",
       "simple": "The total value of all goods and services produced within a state in a year — the state's GDP.",
       "detail": "GSDP is the state-level equivalent of GDP. It measures economic output within a state's borders. GSDP at 'current prices' uses today's prices (includes inflation), while 'constant prices' strips out inflation to show real growth. States like Maharashtra and Tamil Nadu have GSDPs comparable to medium-sized countries.",
-      "inContext": "Maharashtra leads with ₹45.32 lakh crore (at current prices)",
-      "relatedTerms": ["per-capita-nsdp", "gsdp-growth-rate", "constant-prices"]
+      "inContext": "Maharashtra leads with ₹36.42 lakh crore (FY2022-23, at current prices)",
+      "relatedTerms": [
+        "per-capita-nsdp",
+        "gsdp-growth-rate",
+        "constant-prices"
+      ]
     },
     {
       "id": "per-capita-nsdp",
@@ -16,21 +20,30 @@
       "simple": "A state's net domestic product divided by its population. NSDP = GSDP minus depreciation, so it reflects the income actually available to residents.",
       "detail": "Per capita NSDP adjusts for population size and capital depreciation, revealing which states are truly wealthier per person. A state with high total GSDP but a huge population (like Uttar Pradesh) may have low per capita income. Smaller states like Goa and Sikkim often top per capita rankings because their economies are decent but populations are small. Source: RBI Handbook Table 19.",
       "inContext": "Goa and Sikkim lead with per capita NSDP several times the national average",
-      "relatedTerms": ["gsdp", "gsdp-growth-rate"]
+      "relatedTerms": [
+        "gsdp",
+        "gsdp-growth-rate"
+      ]
     },
     {
       "id": "gsdp-growth-rate",
       "term": "GSDP Growth Rate",
       "simple": "How fast a state's economy is growing compared to the previous year, measured in percentage.",
       "detail": "Growth rate is calculated using GSDP at constant prices (inflation-adjusted) to capture real economic expansion. High growth rates in smaller states may indicate catch-up growth — they're starting from a low base. Mature economies like Maharashtra grow slower in percentage terms but add more in absolute rupees.",
-      "relatedTerms": ["gsdp", "constant-prices"]
+      "relatedTerms": [
+        "gsdp",
+        "constant-prices"
+      ]
     },
     {
       "id": "constant-prices",
       "term": "Constant Prices (Real Terms)",
       "simple": "Values adjusted for inflation using a fixed base year — so you're comparing apples to apples across years.",
       "detail": "When we say GSDP at '2011-12 constant prices', all values are expressed in 2011-12 rupees. This removes the effect of rising prices. If a state's GSDP grows 15% at current prices but inflation was 6%, real growth was closer to 9%. Constant prices are essential for meaningful year-over-year comparisons.",
-      "relatedTerms": ["gsdp", "gsdp-growth-rate"]
+      "relatedTerms": [
+        "gsdp",
+        "gsdp-growth-rate"
+      ]
     },
     {
       "id": "own-tax-revenue",
@@ -38,14 +51,22 @@
       "simple": "Taxes a state collects on its own — like GST (state share), stamp duty, motor vehicle tax, and excise on alcohol.",
       "detail": "Own tax revenue is the money a state government earns from taxes it administers directly. The biggest components are the state's share of GST, state excise duties (mainly on alcohol), stamp duty and registration fees (on property), and vehicle taxes. States with large urban economies and property markets tend to have higher own tax revenue.",
       "inContext": "Maharashtra and Tamil Nadu collect the most own tax revenue, reflecting their industrial and urban base",
-      "relatedTerms": ["central-transfers", "self-sufficiency-ratio", "devolution"]
+      "relatedTerms": [
+        "central-transfers",
+        "self-sufficiency-ratio",
+        "devolution"
+      ]
     },
     {
       "id": "central-transfers",
       "term": "Central Transfers",
       "simple": "Money that flows from the Central Government to states — through tax sharing (devolution) and grants.",
       "detail": "The Centre shares a portion of its tax collections with states based on a formula recommended by the Finance Commission. This 'devolution' is the largest component. On top of this, states receive grants-in-aid for specific purposes (schemes, disaster relief, etc.). Poorer states receive proportionally more, as the formula accounts for income distance from the national average.",
-      "relatedTerms": ["own-tax-revenue", "devolution", "finance-commission"]
+      "relatedTerms": [
+        "own-tax-revenue",
+        "devolution",
+        "finance-commission"
+      ]
     },
     {
       "id": "self-sufficiency-ratio",
@@ -53,7 +74,10 @@
       "simple": "What percentage of a state's total revenue comes from its own sources — a measure of fiscal independence.",
       "detail": "Calculated as (own tax revenue ÷ total revenue) × 100. A high ratio (like Maharashtra at ~70%) means the state funds most of its spending from its own taxes. A low ratio (like Bihar at ~25%) means heavy dependence on Central transfers. Neither is inherently good or bad — poorer states genuinely need more Central support — but it shapes a state's policy autonomy.",
       "inContext": "Ranges from ~70% (Maharashtra, Tamil Nadu) to ~15% (northeastern states)",
-      "relatedTerms": ["own-tax-revenue", "central-transfers"]
+      "relatedTerms": [
+        "own-tax-revenue",
+        "central-transfers"
+      ]
     },
     {
       "id": "fiscal-deficit",
@@ -61,7 +85,10 @@
       "simple": "How much more a state spends than it earns in a year, expressed as a percentage of its economy.",
       "detail": "Fiscal deficit = total expenditure minus total revenue (excluding borrowings). When a state runs a deficit, it borrows to cover the gap. A 3% fiscal deficit means borrowing equal to 3% of the state's GSDP that year. The FRBM Act recommends states keep this below 3%, though many exceed it during crises or when investing heavily in infrastructure.",
       "inContext": "Most states are near or above the 3% FRBM limit",
-      "relatedTerms": ["frbm-act", "debt-to-gsdp"]
+      "relatedTerms": [
+        "frbm-act",
+        "debt-to-gsdp"
+      ]
     },
     {
       "id": "debt-to-gsdp",
@@ -69,28 +96,40 @@
       "simple": "A state's total outstanding debt as a share of its economy — the accumulated result of years of borrowing.",
       "detail": "While fiscal deficit measures the annual flow of new borrowing, debt-to-GSDP measures the total stock of accumulated debt. A state with 30% debt-to-GSDP owes an amount equal to 30% of one year's economic output. The N.K. Singh committee recommended states target 20% by 2024-25, but many exceed 30%. High debt means more revenue goes to interest payments instead of public services.",
       "inContext": "Ranges from under 15% to over 40% across states",
-      "relatedTerms": ["fiscal-deficit", "frbm-act"]
+      "relatedTerms": [
+        "fiscal-deficit",
+        "frbm-act"
+      ]
     },
     {
       "id": "frbm-act",
       "term": "FRBM Act",
       "simple": "The law that says governments should not borrow too much — it caps fiscal deficit at 3% of GDP/GSDP.",
       "detail": "The Fiscal Responsibility and Budget Management Act (2003, amended multiple times) requires the Centre and states to progressively reduce deficits and debt. For states, the key target is fiscal deficit below 3% of GSDP. States that comply get more borrowing headroom from the Centre. During COVID-19, these limits were temporarily relaxed. The Act aims to ensure governments don't pass excessive debt to future generations.",
-      "relatedTerms": ["fiscal-deficit", "debt-to-gsdp"]
+      "relatedTerms": [
+        "fiscal-deficit",
+        "debt-to-gsdp"
+      ]
     },
     {
       "id": "devolution",
       "term": "Devolution",
       "simple": "The Centre's sharing of its tax collections with states — currently 41% of the divisible pool goes to states collectively.",
       "detail": "The Finance Commission recommends what share of Central taxes goes to states (the 'vertical share') and how it's divided among them (the 'horizontal share'). The 15th Finance Commission set the vertical share at 41%. The horizontal formula considers each state's population, area, income distance (poorer states get more), forest cover, and demographic performance. This is the single largest source of revenue for most states.",
-      "relatedTerms": ["central-transfers", "finance-commission"]
+      "relatedTerms": [
+        "central-transfers",
+        "finance-commission"
+      ]
     },
     {
       "id": "finance-commission",
       "term": "Finance Commission",
       "simple": "A constitutional body appointed every five years to decide how tax money is shared between the Centre and states.",
       "detail": "Article 280 of the Constitution requires the President to appoint a Finance Commission every five years. The Commission recommends: (1) what share of Central taxes goes to states, (2) how that share is divided among states, and (3) grants-in-aid for states in need. The 15th Finance Commission (chaired by N.K. Singh) covers 2021-26. Its recommendations are usually accepted by the government.",
-      "relatedTerms": ["devolution", "central-transfers"]
+      "relatedTerms": [
+        "devolution",
+        "central-transfers"
+      ]
     }
   ]
 }

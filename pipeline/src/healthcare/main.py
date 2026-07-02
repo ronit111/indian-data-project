@@ -136,7 +136,7 @@ def _build_summary() -> dict:
         "dptImmunization": NATIONAL_TOTALS["dptImmunization"],
         "tbIncidence": NATIONAL_TOTALS["tbIncidence"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24)",
+        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24) + WHO Global TB Report 2023",
     }
 
 

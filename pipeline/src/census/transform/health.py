@@ -1,5 +1,5 @@
 """
-Transform World Bank health data + NFHS-5 + SRS state data into health.json.
+Transform World Bank health data + NFHS-6 + SRS state data into health.json.
 """
 
 import logging
@@ -19,7 +19,7 @@ def build_health(
     Args:
         wb_data: World Bank indicator data keyed by indicator name
         srs_state_imr: SRS 2024 state-level IMR entries
-        nfhs_state_health: NFHS-5 state-level health entries
+        nfhs_state_health: NFHS-6 state-level health entries
         year: Output year string (e.g. "2025-26")
     """
     imr_national = wb_data.get("imr", [])

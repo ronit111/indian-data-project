@@ -1643,34 +1643,34 @@
     },
     {
       "id": "girls_toilets",
-      "name": "Schools with Girls' Toilets",
+      "name": "Schools with Functional Girls' Toilets",
       "category": "infrastructure",
       "unit": "%",
       "states": [
         {
           "id": "UP",
           "name": "Uttar Pradesh",
-          "value": 97.1
+          "value": 93.7
         },
         {
           "id": "MH",
           "name": "Maharashtra",
-          "value": 96.6
+          "value": 93.6
         },
         {
           "id": "BR",
           "name": "Bihar",
-          "value": 98.6
+          "value": 98.0
         },
         {
           "id": "MP",
           "name": "Madhya Pradesh",
-          "value": 96.7
+          "value": 87.6
         },
         {
           "id": "RJ",
           "name": "Rajasthan",
-          "value": 94.9
+          "value": 87.2
         },
         {
           "id": "WB",
@@ -1680,117 +1680,117 @@
         {
           "id": "TN",
           "name": "Tamil Nadu",
-          "value": 94.6
+          "value": 93.5
         },
         {
           "id": "KA",
           "name": "Karnataka",
-          "value": 98.5
+          "value": 97.9
         },
         {
           "id": "GJ",
           "name": "Gujarat",
-          "value": 96.5
+          "value": 95.6
         },
         {
           "id": "AP",
           "name": "Andhra Pradesh",
-          "value": 98.3
+          "value": 98.0
         },
         {
           "id": "TS",
           "name": "Telangana",
-          "value": 94.2
+          "value": 91.4
         },
         {
           "id": "OD",
           "name": "Odisha",
-          "value": 98.9
+          "value": 98.0
         },
         {
           "id": "KL",
           "name": "Kerala",
-          "value": 99.4
+          "value": 99.3
         },
         {
           "id": "JH",
           "name": "Jharkhand",
-          "value": 98.0
+          "value": 95.4
         },
         {
           "id": "AS",
           "name": "Assam",
-          "value": 95.3
+          "value": 94.2
         },
         {
           "id": "PB",
           "name": "Punjab",
-          "value": 98.7
+          "value": 98.0
         },
         {
           "id": "CG",
           "name": "Chhattisgarh",
-          "value": 93.8
+          "value": 88.6
         },
         {
           "id": "HR",
           "name": "Haryana",
-          "value": 98.0
+          "value": 97.9
         },
         {
           "id": "UK",
           "name": "Uttarakhand",
-          "value": 97.8
+          "value": 90.5
         },
         {
           "id": "JK",
           "name": "Jammu & Kashmir",
-          "value": 91.2
+          "value": 83.9
         },
         {
           "id": "HP",
           "name": "Himachal Pradesh",
-          "value": 99.3
+          "value": 98.9
         },
         {
           "id": "TR",
           "name": "Tripura",
-          "value": 90.4
+          "value": 75.3
         },
         {
           "id": "ML",
           "name": "Meghalaya",
-          "value": 82.1
+          "value": 68.7
         },
         {
           "id": "MN",
           "name": "Manipur",
-          "value": 83.5
+          "value": 74.5
         },
         {
           "id": "NL",
           "name": "Nagaland",
-          "value": 91.4
+          "value": 80.6
         },
         {
           "id": "GA",
           "name": "Goa",
-          "value": 99.4
+          "value": 99.3
         },
         {
           "id": "AR",
           "name": "Arunachal Pradesh",
-          "value": 91.0
+          "value": 73.6
         },
         {
           "id": "MZ",
           "name": "Mizoram",
-          "value": 88.4
+          "value": 79.1
         },
         {
           "id": "SK",
           "name": "Sikkim",
-          "value": 91.8
+          "value": 91.2
         },
         {
           "id": "DL",

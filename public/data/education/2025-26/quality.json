@@ -107,7 +107,7 @@
       "ptr": 26,
       "schoolsWithComputers": 60.1,
       "schoolsWithInternet": 45.9,
-      "girlsToilets": 97.1
+      "girlsToilets": 93.7
     },
     {
       "id": "MH",
@@ -115,7 +115,7 @@
       "ptr": 28,
       "schoolsWithComputers": 82.5,
       "schoolsWithInternet": 72.1,
-      "girlsToilets": 96.6
+      "girlsToilets": 93.6
     },
     {
       "id": "BR",
@@ -123,7 +123,7 @@
       "ptr": 30,
       "schoolsWithComputers": 25.2,
       "schoolsWithInternet": 84.8,
-      "girlsToilets": 98.6
+      "girlsToilets": 98.0
     },
     {
       "id": "MP",
@@ -131,7 +131,7 @@
       "ptr": 21,
       "schoolsWithComputers": 59.2,
       "schoolsWithInternet": 45.7,
-      "girlsToilets": 96.7
+      "girlsToilets": 87.6
     },
     {
       "id": "RJ",
@@ -139,7 +139,7 @@
       "ptr": 21,
       "schoolsWithComputers": 53.3,
       "schoolsWithInternet": 69.9,
-      "girlsToilets": 94.9
+      "girlsToilets": 87.2
     },
     {
       "id": "WB",
@@ -155,7 +155,7 @@
       "ptr": 23,
       "schoolsWithComputers": 92.6,
       "schoolsWithInternet": 84.9,
-      "girlsToilets": 94.6
+      "girlsToilets": 93.5
     },
     {
       "id": "KA",
@@ -163,7 +163,7 @@
       "ptr": 26,
       "schoolsWithComputers": 55.7,
       "schoolsWithInternet": 50.7,
-      "girlsToilets": 98.5
+      "girlsToilets": 97.9
     },
     {
       "id": "GJ",
@@ -171,7 +171,7 @@
       "ptr": 30,
       "schoolsWithComputers": 97.8,
       "schoolsWithInternet": 96.5,
-      "girlsToilets": 96.5
+      "girlsToilets": 95.6
     },
     {
       "id": "AP",
@@ -179,7 +179,7 @@
       "ptr": 25,
       "schoolsWithComputers": 79.6,
       "schoolsWithInternet": 99.0,
-      "girlsToilets": 98.3
+      "girlsToilets": 98.0
     },
     {
       "id": "TS",
@@ -187,7 +187,7 @@
       "ptr": 21,
       "schoolsWithComputers": 86.0,
       "schoolsWithInternet": 63.3,
-      "girlsToilets": 94.2
+      "girlsToilets": 91.4
     },
     {
       "id": "OD",
@@ -195,7 +195,7 @@
       "ptr": 22,
       "schoolsWithComputers": 76.7,
       "schoolsWithInternet": 83.8,
-      "girlsToilets": 98.9
+      "girlsToilets": 98.0
     },
     {
       "id": "KL",
@@ -203,7 +203,7 @@
       "ptr": 21,
       "schoolsWithComputers": 99.5,
       "schoolsWithInternet": 91.7,
-      "girlsToilets": 99.4
+      "girlsToilets": 99.3
     },
     {
       "id": "JH",
@@ -211,7 +211,7 @@
       "ptr": 36,
       "schoolsWithComputers": 76.0,
       "schoolsWithInternet": 57.9,
-      "girlsToilets": 98.0
+      "girlsToilets": 95.4
     },
     {
       "id": "AS",
@@ -219,7 +219,7 @@
       "ptr": 21,
       "schoolsWithComputers": 78.7,
       "schoolsWithInternet": 87.2,
-      "girlsToilets": 95.3
+      "girlsToilets": 94.2
     },
     {
       "id": "PB",
@@ -227,7 +227,7 @@
       "ptr": 22,
       "schoolsWithComputers": 99.0,
       "schoolsWithInternet": 88.9,
-      "girlsToilets": 98.7
+      "girlsToilets": 98.0
     },
     {
       "id": "CG",
@@ -235,7 +235,7 @@
       "ptr": 20,
       "schoolsWithComputers": 62.7,
       "schoolsWithInternet": 64.3,
-      "girlsToilets": 93.8
+      "girlsToilets": 88.6
     },
     {
       "id": "HR",
@@ -243,7 +243,7 @@
       "ptr": 22,
       "schoolsWithComputers": 97.3,
       "schoolsWithInternet": 78.9,
-      "girlsToilets": 98.0
+      "girlsToilets": 97.9
     },
     {
       "id": "UK",
@@ -251,7 +251,7 @@
       "ptr": 18,
       "schoolsWithComputers": 91.3,
       "schoolsWithInternet": 72.3,
-      "girlsToilets": 97.8
+      "girlsToilets": 90.5
     },
     {
       "id": "JK",
@@ -259,7 +259,7 @@
       "ptr": 16,
       "schoolsWithComputers": 43.1,
       "schoolsWithInternet": 49.1,
-      "girlsToilets": 91.2
+      "girlsToilets": 83.9
     },
     {
       "id": "HP",
@@ -267,7 +267,7 @@
       "ptr": 14,
       "schoolsWithComputers": 77.9,
       "schoolsWithInternet": 63.5,
-      "girlsToilets": 99.3
+      "girlsToilets": 98.9
     },
     {
       "id": "TR",
@@ -275,7 +275,7 @@
       "ptr": 18,
       "schoolsWithComputers": 66.5,
       "schoolsWithInternet": 41.7,
-      "girlsToilets": 90.4
+      "girlsToilets": 75.3
     },
     {
       "id": "ML",
@@ -283,7 +283,7 @@
       "ptr": 19,
       "schoolsWithComputers": 19.7,
       "schoolsWithInternet": 26.4,
-      "girlsToilets": 82.1
+      "girlsToilets": 68.7
     },
     {
       "id": "MN",
@@ -291,7 +291,7 @@
       "ptr": 16,
       "schoolsWithComputers": 38.0,
       "schoolsWithInternet": 36.6,
-      "girlsToilets": 83.5
+      "girlsToilets": 74.5
     },
     {
       "id": "NL",
@@ -299,7 +299,7 @@
       "ptr": 13,
       "schoolsWithComputers": 90.8,
       "schoolsWithInternet": 59.0,
-      "girlsToilets": 91.4
+      "girlsToilets": 80.6
     },
     {
       "id": "GA",
@@ -307,7 +307,7 @@
       "ptr": 20,
       "schoolsWithComputers": 57.1,
       "schoolsWithInternet": 93.2,
-      "girlsToilets": 99.4
+      "girlsToilets": 99.3
     },
     {
       "id": "AR",
@@ -315,7 +315,7 @@
       "ptr": 13,
       "schoolsWithComputers": 47.7,
       "schoolsWithInternet": 33.6,
-      "girlsToilets": 91.0
+      "girlsToilets": 73.6
     },
     {
       "id": "MZ",
@@ -323,7 +323,7 @@
       "ptr": 11,
       "schoolsWithComputers": 76.7,
       "schoolsWithInternet": 64.9,
-      "girlsToilets": 88.4
+      "girlsToilets": 79.1
     },
     {
       "id": "SK",
@@ -331,7 +331,7 @@
       "ptr": 8,
       "schoolsWithComputers": 93.7,
       "schoolsWithInternet": 51.6,
-      "girlsToilets": 91.8
+      "girlsToilets": 91.2
     },
     {
       "id": "DL",
@@ -522,5 +522,5 @@
       "canDoSubtraction": 35.1
     }
   ],
-  "source": "World Bank + UDISE+ 2023-24 + ASER 2024"
+  "source": "World Bank + UDISE+ 2024-25 + ASER 2024"
 }

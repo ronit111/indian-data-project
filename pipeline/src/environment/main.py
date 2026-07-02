@@ -224,7 +224,7 @@ def _build_glossary() -> dict:
                 "term": "Air Quality Index (AQI)",
                 "simple": "A number from 0-500 that tells you how clean or polluted the air is. Higher means worse.",
                 "detail": "India uses a 6-category AQI: Good (0-50), Satisfactory (51-100), Moderate (101-200), Poor (201-300), Very Poor (301-400), Severe (401-500). It considers 8 pollutants: PM10, PM2.5, NO2, SO2, CO, O3, NH3, Pb. The AQI is based on the worst-performing pollutant — if PM2.5 is bad but everything else is fine, the AQI still reflects PM2.5. Delhi regularly exceeds 300 (Very Poor) during October-January due to stubble burning, Diwali firecrackers, and temperature inversions.",
-                "inContext": "Delhi's annual avg AQI: ~263 (Poor). WHO recommends PM2.5 below 5 μg/m3.",
+                "inContext": "Live city AQI: CPCB National Air Quality Index portal (airquality.cpcb.gov.in). WHO recommends PM2.5 below 5 μg/m3.",
                 "relatedTerms": ["pm25", "naaqs"],
             },
             {
@@ -246,9 +246,9 @@ def _build_glossary() -> dict:
             {
                 "id": "forest-cover",
                 "term": "Forest Cover",
-                "simple": "Land area covered by trees, measured by satellite. India has 25.17% forest cover — about 8.27 lakh km².",
-                "detail": "Forest Survey of India (FSI) classifies forest into: Very Dense (canopy >70%), Moderately Dense (40-70%), Open (10-40%). The biennial India State of Forest Report (ISFR) uses satellite imagery (LISS-III). India's 25.17% forest cover is below the National Forest Policy target of 33%. However, not all 'forest cover' is natural forest — plantations, orchards, and even urban tree cover count. The northeast has the highest forest % but is losing cover fastest due to shifting cultivation and encroachment.",
-                "inContext": "India: 25.17% forest cover (ISFR 2023). Policy target: 33%. Northeast losing fastest.",
+                "simple": "Land area covered by forest, measured by satellite. India has 21.76% forest cover — about 7.15 lakh km² (25.17% counting tree cover outside forests too).",
+                "detail": "Forest Survey of India (FSI) classifies forest into: Very Dense (canopy >70%), Moderately Dense (40-70%), Open (10-40%). The biennial India State of Forest Report (ISFR) uses satellite imagery (LISS-III). India's forest cover is 21.76% (7,15,343 km²); the often-quoted 25.17% adds tree cover outside forests. Both are below the National Forest Policy target of 33%. However, not all 'forest cover' is natural forest — plantations, orchards, and even urban tree cover count. The northeast has the highest forest % but is losing cover fastest due to shifting cultivation and encroachment.",
+                "inContext": "India: 21.76% forest cover; 25.17% incl. tree cover (ISFR 2023). Policy target: 33%. Northeast losing fastest.",
                 "relatedTerms": ["isfr", "protected-areas"],
             },
             {

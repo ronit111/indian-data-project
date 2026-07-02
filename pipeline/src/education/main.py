@@ -9,7 +9,7 @@ Stages:
 
 Data sources:
   - World Bank Development Indicators (enrollment, literacy, spending, PTR)
-  - UDISE+ Flash Statistics 2023-24 (state-level schools, teachers, infrastructure)
+  - UDISE+ 2024-25 (state-level schools, teachers, infrastructure)
   - ASER 2024 (state-level learning outcomes)
 """
 
@@ -236,7 +236,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
     })
     indicators.append({
         "id": "girls_toilets",
-        "name": "Schools with Girls' Toilets",
+        "name": "Schools with Functional Girls' Toilets",
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["girlsToilets"]} for s in udise_states],

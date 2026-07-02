@@ -46,5 +46,5 @@ def build_quality(
         "ptrSecondaryTimeSeries": wb_data.get("ptr_secondary", []),
         "stateInfrastructure": state_infra,
         "learningOutcomes": learning,
-        "source": "World Bank + UDISE+ 2023-24 + ASER 2024",
+        "source": "World Bank + UDISE+ 2024-25 + ASER 2024",
     }

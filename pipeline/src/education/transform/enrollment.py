@@ -35,5 +35,5 @@ def build_enrollment(wb_data: dict, udise_states: list[dict], year: str) -> dict
         "maleSecondary": wb_data.get("sec_enroll_m", []),
         "primaryCompletion": wb_data.get("prim_compl", []),
         "states": states,
-        "source": "World Bank + UDISE+ Flash Statistics 2023-24",
+        "source": "World Bank + UDISE+ 2024-25",
     }

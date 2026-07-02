@@ -183,7 +183,9 @@ NFHS5_STATE_HEALTH = NFHS6_STATE_HEALTH
 # state breakdown). Table 46: "Infant Mortality Rate by Sex and Residence,
 # India and States/UTs, 2024" — Total (combined) column.
 # IMR = Infant Mortality Rate per 1000 live births.
-# Set = the 22 bigger States/UTs with annual 2024 estimates (national IMR 24).
+# Set = the 22 bigger States/UTs (national IMR 24). All are annual 2024
+# estimates except Himachal Pradesh, which SRS marks with an asterisk as based
+# on the three-year period 2022-24 (same as the smaller States/UTs).
 # Smaller States/UTs are published by SRS only on a 3-year (2022-24) basis and
 # are intentionally excluded here for single-year comparability.
 # Refresh 2026-06: was mislabeled "SRS 2022" with older values; updated to the
