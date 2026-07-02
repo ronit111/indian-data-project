@@ -39,6 +39,15 @@ export function FlowSection({ sankey }: FlowSectionProps) {
           <SankeyDiagram data={sankey} isVisible={isVisible} />
         </ChartActionsWrapper>
 
+        <p className="text-xs mt-4 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+          Figures are shown <strong>net of states' share of central taxes</strong> — the
+          ~₹14.2 lakh crore the Centre collects but must pass to states under the Finance
+          Commission formula (41% of the divisible pool). This matches the Budget's headline
+          total expenditure of ₹50.65 lakh crore. The "Transfers to States &amp; UTs" band
+          above is separate: it is discretionary grants and centrally-sponsored schemes, which
+          the Centre does control.
+        </p>
+
         <p className="source-attribution">
           {'Source: Union Budget 2025-26, Budget at a Glance'}
         </p>

@@ -19,10 +19,18 @@ def build_sankey(
         total_expenditure: total expenditure in Rs crore
         year: budget year string
 
-    Note: Receipt amounts are GROSS tax collections. The centre devolves
-    ~41% of the divisible pool to states under the Finance Commission.
-    We add a "States' Share of Taxes" outflow so the Sankey balances:
-    gross inflows = central expenditure + states' share.
+    Framing (Decision D1): NET. The curated receipts are NET to the Centre
+    (already net of the ~41% tax devolution to states under the Finance
+    Commission), so total_inflows == total_expenditure and the Sankey shows the
+    Centre's spendable pool — matching the Budget's "Total Expenditure"
+    headline (Rs 50,65,345 Cr) and the per-capita figures derived from it.
+    Constitutional tax devolution is a pass-through the Centre cannot spend, so
+    it is excluded; discretionary grants/CSS remain as "Transfers to States".
+
+    The states_share guard below stays only as a safety net: if a future data
+    change feeds GROSS receipts (total_inflows > total_expenditure), it would
+    re-add a "States' Share of Taxes" outflow to keep the diagram balanced.
+    With the current net receipts, states_share == 0 and no such node is added.
     """
     nodes = []
     links = []
