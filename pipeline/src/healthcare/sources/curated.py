@@ -117,5 +117,5 @@ NATIONAL_TOTALS = {
     "healthExpGDP": 3.3,                # World Bank 2021 (latest)
     "outOfPocketPct": 45.1,              # World Bank 2021 (SH.XPD.OOPC.CH.ZS = 45.11)
     "dptImmunization": 91.0,            # World Bank 2023
-    "tbIncidence": 199.0,               # WHO/World Bank 2023, per 100K
+    "tbIncidence": 195.0,               # WHO Global TB Report 2023 (India, per 100K) — was 199
 }
