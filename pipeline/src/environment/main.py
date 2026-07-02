@@ -163,7 +163,7 @@ def _build_summary() -> dict:
         "coalPct": NATIONAL_TOTALS["coalPct"],
         "ghgTotal": NATIONAL_TOTALS["ghgTotal"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB",
+        "source": "World Bank + ISFR 2023 + CEA + CWC + CGWB",
     }
 
 

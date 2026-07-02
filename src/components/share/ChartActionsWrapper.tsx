@@ -28,10 +28,16 @@ interface ChartActionsWrapperProps {
 type SrTableClaimant = { id: symbol; setOwns: (owns: boolean) => void };
 const srTableClaimants = new Map<string, SrTableClaimant[]>();
 
-function electSrTableOwner(registryKey: string) {
-  const claimants = srTableClaimants.get(registryKey);
-  if (!claimants) return;
-  claimants.forEach((c, i) => c.setOwns(i === 0));
+// Election is deferred to a microtask so it runs after the current React
+// commit completes: when a route unmount tears down several duplicate
+// wrappers, every departing claimant has already deregistered by the time
+// the election runs, so setOwns is never called on an unmounting sibling.
+function scheduleSrTableElection(registryKey: string) {
+  queueMicrotask(() => {
+    const claimants = srTableClaimants.get(registryKey);
+    if (!claimants) return;
+    claimants.forEach((c, i) => c.setOwns(i === 0));
+  });
 }
 
 export function ChartActionsWrapper({ registryKey, data, children }: ChartActionsWrapperProps) {
@@ -50,14 +56,14 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
     const claimants = srTableClaimants.get(registryKey) ?? [];
     claimants.push(claimant);
     srTableClaimants.set(registryKey, claimants);
-    electSrTableOwner(registryKey);
+    scheduleSrTableElection(registryKey);
     return () => {
       const list = srTableClaimants.get(registryKey);
       if (!list) return;
       const idx = list.indexOf(claimant);
       if (idx !== -1) list.splice(idx, 1);
       if (list.length === 0) srTableClaimants.delete(registryKey);
-      else electSrTableOwner(registryKey);
+      else scheduleSrTableElection(registryKey);
     };
   }, [registryKey]);
 

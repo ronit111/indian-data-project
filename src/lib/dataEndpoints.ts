@@ -591,7 +591,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Environmental snapshot with CO2 emissions, forest cover, renewable share, PM2.5 exposure, and coal dependence.',
     schema: 'EnvironmentSummary',
-    source: 'World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB',
+    source: 'World Bank + ISFR 2023 + CEA + CWC + CGWB',
     sourceUrl: 'https://data.worldbank.org',
   },
   {
@@ -641,7 +641,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Headline climate and environment indicators assembled for quick tracking.',
     schema: 'EnvironmentIndicatorsData',
-    source: 'World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB',
+    source: 'World Bank + ISFR 2023 + CEA + CWC + CGWB',
     sourceUrl: 'https://data.worldbank.org',
   },
   {
