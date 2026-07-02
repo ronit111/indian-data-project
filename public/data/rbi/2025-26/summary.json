@@ -1,13 +1,13 @@
 {
   "year": "2025-26",
-  "repoRate": 6.25,
-  "repoRateDate": "2025-02-07",
+  "repoRate": 5.25,
+  "repoRateDate": "2025-12-05",
   "stance": "Neutral",
-  "crr": 4.0,
+  "crr": 3.0,
   "slr": 18.0,
   "cpiLatest": 4.95,
   "forexReservesUSD": 643.04,
   "broadMoneyGrowth": 11.3,
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-06-03",
   "source": "Reserve Bank of India, World Bank"
 }
