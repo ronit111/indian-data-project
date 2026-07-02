@@ -128,7 +128,6 @@ class CriminalBreakdown(BaseModel):
 
 class AssetsBreakdown(BaseModel):
     avgCrore: float
-    medianCrore: float
 
 
 class EducationBreakdown(BaseModel):

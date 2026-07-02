@@ -294,7 +294,11 @@ ADR_SUMMARY = {
     },
     "assets": {
         "avgCrore": 46.34,    # Average declared assets (ADR 2024 Lok Sabha report)
-        "medianCrore": 29.8,  # Median (better central tendency given skew)
+        # NOTE: ADR publishes ONLY the average (Rs 46.34 cr) for the 543 winners,
+        # not a median. The previous medianCrore=29.8 was unsourced/fabricated and
+        # has been removed (both 2026-06 verification passes + ADR press release /
+        # crorepati analysis confirm no published median). Do not reintroduce
+        # without a primary ADR figure.
     },
     "education": {
         "postGradAndAbove": 37,   # % with post-graduate or higher
@@ -323,29 +327,28 @@ ADR_TOP_WEALTHIEST = [
     {"rank": 10, "name": "Dr. Prabha Mallikarjun", "constituency": "Davanagere (KA)", "party": "INC", "assetsCrore": 241},
 ]
 
-# Top MPs by number of criminal cases (2024 winning candidates only)
-# Source: ADR/MyNeta — from self-sworn affidavits of 543 winners
+# Top MPs by number of declared criminal cases (2024 winning candidates only)
+# Source: ADR / MyNeta — self-sworn affidavits of the 543 Lok Sabha 2024 winners,
+#         "Winners with declared criminal cases" sorted by number of cases.
+#         myneta.info/LokSabha2024 (winner crime analysis).
 #
-# NOTE (audit 2026-03-05): Heavy contamination found — 5 of original 15 entries
-# were NOT 2024 Lok Sabha winners:
-#   - Atul Kumar Singh (BSP): lost Ghosi to SP's Rajeev Rai
-#   - Omprakash Rajbhar (SBSP): not a candidate (son Arvind lost Ghosi)
-#   - Dinesh Lal Yadav Nirahua (BJP): lost Azamgarh to SP's Dharmendra Yadav
-#   - Anant Kumar Hegde (BJP): didn't get ticket (replaced by Kageri)
-#   - Hemant Soren (JMM): didn't contest (Nalin Soren won Dumka for JMM)
-# Fixes applied: Dean Kuriakose cases 149→204, Afzal Ansari party BSP→SP.
-# Remaining entries need verification against ADR PDF.
+# REBUILT 2026-06: The prior list was heavily contaminated — only Pappu Yadav was a
+# genuine entry (and at the wrong rank), ranks 2-4 of the real list were absent, and
+# several rows carried wrong party/constituency. Rank-1 case count was also wrong
+# (204 → 88 per the MyNeta affidavit). Rebuilt from the MyNeta winners-by-criminal-
+# cases ranking; double-confirmed across both 2026-06 verification passes.
+# Note: ranks 6 and 7 are tied at 36 cases (MyNeta listing order preserved).
 ADR_TOP_CRIMINAL = [
-    {"rank": 1, "name": "Dean Kuriakose", "constituency": "Idukki (KL)", "party": "INC", "cases": 204},
-    {"rank": 2, "name": "Dhairyasheel Mane", "constituency": "Hatkanangle (MH)", "party": "SS(UBT)", "cases": 43},
-    {"rank": 3, "name": "Afzal Ansari", "constituency": "Ghazipur (UP)", "party": "SP", "cases": 42},
-    {"rank": 4, "name": "Rajesh Ranjan (Pappu Yadav)", "constituency": "Purnia (BR)", "party": "IND", "cases": 41},
-    {"rank": 5, "name": "Sunil Kumar Singh", "constituency": "Chatra (JH)", "party": "BJP", "cases": 35},
-    {"rank": 6, "name": "Umesh Singh Kushwaha", "constituency": "Kaushambi (UP)", "party": "SP", "cases": 33},
-    {"rank": 7, "name": "Awadhesh Prasad", "constituency": "Faizabad (UP)", "party": "SP", "cases": 32},
-    {"rank": 8, "name": "Mohan Mandavi", "constituency": "Kanker (CG)", "party": "BJP", "cases": 24},
-    {"rank": 9, "name": "Devendra Singh Bhole", "constituency": "Jaunpur (UP)", "party": "SP", "cases": 23},
-    {"rank": 10, "name": "Lavu Sri Krishna Devarayalu", "constituency": "Narasaraopet (AP)", "party": "TDP", "cases": 22},
+    {"rank": 1, "name": "Dean Kuriakose", "constituency": "Idukki (KL)", "party": "INC", "cases": 88},
+    {"rank": 2, "name": "Shafi Parambil", "constituency": "Vadakara (KL)", "party": "INC", "cases": 47},
+    {"rank": 3, "name": "Eatala Rajender", "constituency": "Malkajgiri (TS)", "party": "BJP", "cases": 45},
+    {"rank": 4, "name": "Bandi Sanjay Kumar", "constituency": "Karimnagar (TS)", "party": "BJP", "cases": 42},
+    {"rank": 5, "name": "Rajesh Ranjan (Pappu Yadav)", "constituency": "Purnia (BR)", "party": "IND", "cases": 41},
+    {"rank": 6, "name": "Dhairyasheel Mohite-Patil", "constituency": "Madha (MH)", "party": "NCP(SP)", "cases": 36},
+    {"rank": 7, "name": "Chandrashekhar Azad", "constituency": "Nagina (UP)", "party": "ASP", "cases": 36},
+    {"rank": 8, "name": "M. Raghunandan Rao", "constituency": "Medak (TS)", "party": "BJP", "cases": 29},
+    {"rank": 9, "name": "Shantanu Thakur", "constituency": "Bangaon (WB)", "party": "BJP", "cases": 23},
+    {"rank": 10, "name": "Dulu Mahato", "constituency": "Dhanbad (JH)", "party": "BJP", "cases": 22},
 ]
 
 
