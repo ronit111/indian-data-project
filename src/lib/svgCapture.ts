@@ -94,7 +94,7 @@ function prepareSvgClone(svg: SVGSVGElement): SVGSVGElement {
 // ─── Font Embedding ──────────────────────────────────────────────────
 
 function createFontStyleElement(): string {
-  // Use web-safe fallback fonts. The exported image won't have Inter/JetBrains Mono
+  // Use web-safe fallback fonts. The exported image won't have Source Sans 3/JetBrains Mono
   // loaded unless the user's browser has them. For a clean export, we map to
   // system fonts that are reliably available on Canvas.
   return `

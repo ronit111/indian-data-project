@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 interface NarrativeBridgeProps {
   text: string;
@@ -60,14 +60,19 @@ function WordReveal({
   const start = index / (total + 3);
   const end = Math.min((index + 4) / (total + 3), 1);
 
+  const prefersReducedMotion = useReducedMotion();
   const opacity = useTransform(progress, [start, end], [0.12, 1]);
   const y = useTransform(progress, [start, end], [6, 0]);
 
+  // Honor reduced-motion: skip the scroll-driven word reveal (opacity + y
+  // movement) and render the text statically. CSS `prefers-reduced-motion`
+  // cannot stop Framer's `useTransform`, so this must be gated in JS.
+  const style = prefersReducedMotion
+    ? { display: 'inline-block', color: color || undefined }
+    : { opacity, y, display: 'inline-block', color: color || undefined };
+
   return (
-    <motion.span
-      style={{ opacity, y, display: 'inline-block', color: color || undefined }}
-      className="mr-[0.3em]"
-    >
+    <motion.span style={style} className="mr-[0.3em]">
       {word}
     </motion.span>
   );
