@@ -186,8 +186,8 @@ export default function StateReportCardPage() {
 
         <p className="text-xs text-center mt-12" style={{ color: 'var(--text-muted)' }}>
           Sources: RBI Handbook (GSDP, Revenue, Fiscal Health), Census 2011 + NPC 2026 (Demographics),
-          UDISE+ 2024-25 (Education), PLFS 2023-24 (Employment), NHP 2022 + NFHS-5 (Healthcare),
-          Union Budget 2025-26 (Budget Allocation), CPCB + FSI + CGWB (Environment), ECI (Elections).
+          UDISE+ 2024-25 (Education), PLFS 2025 (Employment), NHP 2022 + NFHS-6 (Healthcare),
+          Union Budget 2025-26 (Budget Allocation), FSI (Environment), ECI (Elections).
         </p>
       </div>
     </motion.div>
