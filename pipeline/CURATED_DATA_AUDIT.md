@@ -1,6 +1,14 @@
 # Curated Data Audit Report
 
 **Date**: 2026-03-04 (initial), 2026-03-05 (PDF verification pass)
+
+> **SUPERSEDED IN PART (2026-07-03):** This report records verification against the
+> source vintages current in March 2026. Later refreshes replaced several of those
+> vintages — crime moved to NCRB/MoRTH 2023 (total 62,41,569; road deaths 1,72,890;
+> women 4,48,211; cyber 86,420), census health to NFHS-6 (2023-24) + SRS 2024,
+> education to UDISE+ 2024-25, employment to PLFS Annual 2025 (KLEMS dropped).
+> The rows below describe the OLD vintages and are kept as a historical record;
+> current ground truth is `public/data/*/2025-26/*.json` + the provenance sidecars.
 **Scope**: All 11 domains, curated data constants in `pipeline/src/*/sources/curated.py`
 **Method**: 9 parallel verification agents cross-referencing curated values against authoritative government publications, followed by manual PDF verification against UDISE+ 2023-24, ASER 2024 Final Report, NFHS-5 dataset, and ADR 2024 analysis
 
