@@ -190,7 +190,7 @@ const ROUTES = [
   // ── Education ───────────────────────────────────────────────────
   {
     path: '/education',
-    title: 'Education — 248 Million Students | Indian Data Project',
+    title: 'Education — 247 Million Students | Indian Data Project',
     description: "Enrollment, learning outcomes, teacher availability, school infrastructure, and education spending across India's states — visualized from UDISE+, ASER, and World Bank data.",
     image: '/og-education.png',
   },
@@ -320,7 +320,7 @@ const ROUTES = [
   // ── Crime & Safety ─────────────────────────────────────────────
   {
     path: '/crime',
-    title: 'Crime & Safety — 58.2 Lakh Crimes | Indian Data Project',
+    title: 'Crime & Safety — 62.4 Lakh Crimes in 2023 | Indian Data Project',
     description: "India's crime landscape in data — IPC crimes, crimes against women, road accidents, cybercrime, police infrastructure, and conviction rates. Source: NCRB, MoRTH, BPRD.",
     image: '/og-crime.png',
   },

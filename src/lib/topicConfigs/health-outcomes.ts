@@ -57,7 +57,7 @@ export const healthOutcomes: TopicDef = {
       id: 'infrastructure-gap',
       sectionNumber: 2,
       title: 'Infrastructure Gap',
-      annotation: 'With 1.6 beds (mostly private) and 0.7 doctors per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
+      annotation: 'With 0.5 government beds (~1.9 counting private) and 0.7 doctors per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
       domains: ['healthcare'],
       sources: ['NHP 2022 (CBHI)'],
       charts: [{

@@ -155,11 +155,11 @@ function StatesMiniViz({ summary, isVisible }: { summary: StatesSummary | null; 
   const topStates = useMemo(() => {
     if (!summary) return [];
     return [
-      { name: 'MH', value: 45.32 },
-      { name: 'TN', value: 28.27 },
-      { name: 'KA', value: 26.32 },
-      { name: 'GJ', value: 24.53 },
-      { name: 'UP', value: 24.40 },
+      { name: 'MH', value: 36.42 },
+      { name: 'TN', value: 23.72 },
+      { name: 'KA', value: 23.20 },
+      { name: 'UP', value: 22.96 },
+      { name: 'GJ', value: 22.03 },
     ];
   }, [summary]);
 
