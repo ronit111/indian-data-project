@@ -35,6 +35,6 @@ export const STATE_DIVIDE: StoryKitDef = {
     "Small state advantage? How Goa, Sikkim, and northeastern states perform on per-capita metrics.",
     "The demographic-economic mismatch: India's most populated states are its poorest.",
   ],
-  dataSources: ['RBI Handbook of Statistics on Indian States', 'Census 2011', 'NFHS-5'],
+  dataSources: ['RBI Handbook of Statistics on Indian States', 'Census 2011', 'NFHS-6 (2023-24)'],
   lastUpdated: '2025-07',
 };

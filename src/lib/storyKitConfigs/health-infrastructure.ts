@@ -35,6 +35,6 @@ export const HEALTH_INFRASTRUCTURE: StoryKitDef = {
     "Medical debt and poverty: how a single hospitalization can push an Indian family below the poverty line.",
     "State-level health inequality: why being born in Kerala vs. Madhya Pradesh determines your life expectancy.",
   ],
-  dataSources: ['NHP (CBHI)', 'NFHS-5', 'World Bank', 'WHO'],
+  dataSources: ['NHP (CBHI)', 'NFHS-6 (2023-24)', 'World Bank', 'WHO'],
   lastUpdated: '2025-07',
 };

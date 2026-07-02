@@ -60,13 +60,13 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | `CENSUS_2011_STATES` | `pipeline/src/census/sources/curated.py` | Census of India 2011, Primary Census Abstract | 2011 | Next Census (TBD) |
 | `NPC_2026_PROJECTIONS` | `pipeline/src/census/sources/curated.py` | National Population Commission projections 2011-2036 | NPC 2020 report | Static (projection model won't change) |
 | `NFHS6_STATE_HEALTH` | `pipeline/src/census/sources/curated.py` | NFHS-6 State/UT Factsheets (2023-24; IMR/U5MR retained from NFHS-5) | 2023-24 | NFHS-7 |
-| `SRS_STATE_IMR` | `pipeline/src/census/sources/curated.py` | Sample Registration System Statistical Report 2022 | 2022 | Annual: SRS report (typically 1-2 year lag) |
+| `SRS_STATE_IMR` | `pipeline/src/census/sources/curated.py` | Sample Registration System Statistical Report 2024 | 2024 | Annual: SRS report (typically 1-2 year lag) |
 
 ### Education Domain
 
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
-| `UDISE_2023_24_STATES` | `pipeline/src/education/sources/curated.py` | UDISE+ Flash Statistics 2023-24 | 2023-24 | Annual: UDISE+ report (typically Apr-May) |
+| `UDISE_2024_25_STATES` | `pipeline/src/education/sources/curated.py` | UDISE+ 2024-25 Report | 2024-25 | Annual: UDISE+ report (typically Apr-May) |
 | `ASER_2024_STATES` | `pipeline/src/education/sources/curated.py` | ASER 2024 (Annual Status of Education Report) | 2024 | Annual: ASER report (typically Jan) |
 | `NATIONAL_TOTALS` | `pipeline/src/education/sources/curated.py` | UDISE+ 2024-25 Report | 2024-25 | Annual |
 
@@ -75,7 +75,7 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
 | PLFS Quarterly | `pipeline/src/employment/sources/curated.py` | PLFS Quarterly Bulletin, Oct-Dec 2025 | Q3 2025-26 | Quarterly: PLFS bulletin (~3 month lag) |
-| `PLFS_STATE_DATA` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2023-24, Tables E1/E2 | 2023-24 | Annual: PLFS annual report (typically Aug) |
+| `PLFS_STATE_DATA` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2025 (Tables 15.0/18.0, 15+) | 2025 | Annual: PLFS annual report (typically Aug) |
 | `SECTORAL_EMPLOYMENT` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2025 (KLEMS dropped 2026-06) | 2025 | Annual |
 | `NATIONAL_TOTALS` | `pipeline/src/employment/sources/curated.py` | PLFS Annual + Quarterly | Q3 2025-26 | Quarterly |
 

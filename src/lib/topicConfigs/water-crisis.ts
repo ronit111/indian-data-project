@@ -83,7 +83,7 @@ export const waterCrisis: TopicDef = {
       title: 'Water & Health',
       annotation: 'Contaminated water causes waterborne diseases that kill an estimated 400,000 Indians annually. Access to clean drinking water has improved under Jal Jeevan Mission, but sanitation and water quality in rural areas remain challenges.',
       domains: ['healthcare', 'census'],
-      sources: ['WHO', 'NFHS-5', 'Census 2011'],
+      sources: ['WHO', 'NFHS-6 (2023-24)', 'Census 2011'],
       charts: [{
         chartType: 'stat-row', chartTitle: 'Water-Health Connection',
         extractData: (bag) => {
