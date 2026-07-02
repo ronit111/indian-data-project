@@ -163,7 +163,7 @@ export function SearchOverlay() {
       { type: 'page', id: 'employment-glossary', name: 'Employment Glossary', subtitle: 'Labour market terms in plain language', route: '/employment/glossary' },
       { type: 'page', id: 'healthcare', name: 'Healthcare', subtitle: 'Infrastructure, spending, immunization, disease', route: '/healthcare' },
       { type: 'page', id: 'healthcare-explore', name: 'Healthcare Explorer', subtitle: 'Browse health indicators by state', route: '/healthcare/explore' },
-      { type: 'page', id: 'healthcare-methodology', name: 'Healthcare Methodology', subtitle: 'NHP, NFHS-5, and World Bank data sources', route: '/healthcare/methodology' },
+      { type: 'page', id: 'healthcare-methodology', name: 'Healthcare Methodology', subtitle: 'NHP, NFHS-6, and World Bank data sources', route: '/healthcare/methodology' },
       { type: 'page', id: 'healthcare-glossary', name: 'Healthcare Glossary', subtitle: 'Healthcare terms in plain language', route: '/healthcare/glossary' },
       { type: 'page', id: 'environment', name: 'Environment', subtitle: 'Air quality, forest cover, energy transition, water stress', route: '/environment' },
       { type: 'page', id: 'environment-explore', name: 'Environment Explorer', subtitle: 'Browse environment indicators by state', route: '/environment/explore' },

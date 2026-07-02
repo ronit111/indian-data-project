@@ -462,7 +462,7 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
                     : domain === 'employment'
                       ? 'PLFS 2023-24, RBI KLEMS, World Bank'
                       : domain === 'healthcare'
-                        ? 'NHP 2022, NFHS-5, World Bank'
+                        ? 'NHP 2022, NFHS-6, World Bank'
                         : 'RBI, World Bank'}
         </p>
       </div>
