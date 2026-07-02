@@ -36,7 +36,7 @@ jobs:
       - name: Install pipeline dependencies
         run: |
           cd pipeline
-          pip install -r requirements.txt
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Run data pipeline
         env:
@@ -50,6 +50,9 @@ jobs:
         run: |
           cd pipeline
           python -m pytest tests/ -v
+
+      - name: Data diff guard (fail-closed — no commit on structural change)
+        run: python pipeline/src/common/diff_guard.py public/data/budget public/data/tax-calculator public/data/years.json
 
       - name: Check for data changes
         id: changes
@@ -106,7 +109,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd pipeline
-          pip install -r requirements.txt
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Poll for new budget documents
         env:
@@ -114,6 +117,9 @@ jobs:
         run: |
           cd pipeline
           python src/sources/india_budget_gov.py --poll
+
+      - name: Data diff guard (fail-closed — no commit on structural change)
+        run: python pipeline/src/common/diff_guard.py public/data/budget public/data/tax-calculator public/data/years.json
 
       - name: Commit if new data found
         run: |

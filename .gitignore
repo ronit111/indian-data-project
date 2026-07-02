@@ -10,3 +10,7 @@ __pycache__/
 *.pyc
 *.egg-info/
 pipeline/reference-pdfs/
+
+# Python virtualenvs
+.venv*/
+pipeline/.venv*/
