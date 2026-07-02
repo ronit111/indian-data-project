@@ -79,25 +79,25 @@ This is an independent civic project built by one person, not affiliated with or
 ### Census & Demographics Domain
 - /census — Scrollytelling narrative: population growth (1.45 billion), age structure waffle chart (young/working/elderly), vital statistics (birth rate, death rate, fertility rate, life expectancy), infant mortality with state breakdown, literacy gender gap butterfly chart, urbanization trends
 - /census/explore — Browseable indicator explorer with categories: Population, Demographics, Literacy, Health. Select any indicator to compare across states.
-- /census/methodology — Data sources (Census of India 2011, World Bank API, NFHS-5, SRS 2023, NPC Projections), multi-vintage data strategy, indicator definitions, limitations
+- /census/methodology — Data sources (Census of India 2011, World Bank API, NFHS-6 2023-24, SRS 2024, NPC Projections), multi-vintage data strategy, indicator definitions, limitations
 - /census/glossary — Plain-language definitions of demographic terms: census, decadal growth, sex ratio, dependency ratio, infant mortality rate, total fertility rate, literacy rate, urbanization, NFHS, SRS.
 
 ### Education Domain
 - /education — Scrollytelling narrative: enrollment triumph (primary/secondary/tertiary GER trends), gender convergence in enrollment, dropout cliff (primary 1.9% → secondary 14.1%), learning quality gap (ASER outcomes), teacher challenge (pupil-teacher ratios), education spending vs global peers
 - /education/explore — Browseable indicator explorer with categories: enrollment, quality, infrastructure, spending. Select any indicator to compare across 32 states/UTs.
-- /education/methodology — Data sources (UDISE+ 2023-24, ASER 2024, World Bank), indicator definitions, limitations
+- /education/methodology — Data sources (UDISE+ 2024-25, ASER 2024, World Bank), indicator definitions, limitations
 - /education/glossary — Plain-language definitions of education terms: GER, NER, dropout rate, PTR, ASER, UDISE, NEP 2020, foundational literacy, RTE Act, and more.
 
 ### Employment Domain
 - /employment — Scrollytelling narrative: participation puzzle (LFPR trends), structural shift (agriculture declining, services rising), youth unemployment crisis (3-4x overall rate), gender gap in LFPR, informality challenge (self-employment dominance), rural vs urban employment patterns
 - /employment/explore — Browseable indicator explorer with categories: unemployment, participation, sectoral, informality. Select any indicator to compare across states.
-- /employment/methodology — Data sources (PLFS 2023-24, World Bank, RBI KLEMS), indicator definitions, limitations
+- /employment/methodology — Data sources (PLFS 2025, World Bank), indicator definitions, limitations
 - /employment/glossary — Plain-language definitions of employment terms: LFPR, unemployment rate, PLFS, informal sector, gig economy, structural transformation, and more.
 
 ### Healthcare Domain
 - /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 hospital beds per 1,000 vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (48% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
 - /healthcare/explore — Browseable indicator explorer with categories: infrastructure, spending, immunization, disease. Select any indicator to compare across states.
-- /healthcare/methodology — Data sources (NHP 2022, NFHS-5, World Bank), indicator definitions, limitations
+- /healthcare/methodology — Data sources (NHP 2022, NFHS-6 2023-24, World Bank), indicator definitions, limitations
 - /healthcare/glossary — Plain-language definitions of healthcare terms: PHC, CHC, out-of-pocket spending, immunization, TB incidence, hospital beds per 1000, and more.
 
 ### Environment Domain
@@ -244,16 +244,15 @@ This is an independent civic project built by one person, not affiliated with or
 - RBI State Finances: A Study of Budgets — revenue composition, fiscal deficit, debt
 - Finance Commission of India — tax devolution formulas, grants
 - Census of India (censusindia.gov.in) — decennial census 2011 baseline population, literacy, urbanization
-- National Family Health Survey (NFHS-5, 2019-21) — TFR, IMR, stunting, wasting, immunization by state
-- Sample Registration System (SRS 2023) — birth rate, death rate, IMR annual estimates
+- National Family Health Survey (NFHS-6, 2023-24) — TFR, stunting, wasting, immunization by state (IMR/U5MR retained from NFHS-5)
+- Sample Registration System (SRS 2024) — birth rate, death rate, IMR annual estimates
 - National Population Commission — population projections 2011-2036
 - UDISE+ Flash Statistics 2023-24 (udiseplus.gov.in) — school enrollment, infrastructure, teacher data
 - ASER 2024 (asercentre.org) — learning outcomes and foundational skills assessment
 - PLFS Quarterly Bulletin (mospi.gov.in) — unemployment, LFPR, worker population ratio
-- PLFS Annual Report 2023-24 — state-wise employment indicators
-- RBI KLEMS Database — sectoral employment and output data
+- PLFS Annual Report 2025 — state-wise employment indicators
 - National Health Profile 2022 (cbhidghs.mohfw.gov.in) — hospital infrastructure, PHCs, CHCs, doctors
-- NFHS-5 (rchiips.org/nfhs) — immunization coverage, health indicators by state
+- NFHS-6 (rchiips.org/nfhs) — immunization coverage, health indicators by state
 - MOSPI eSankhyiki CPI API (api.mospi.gov.in/api/cpi/getCPIIndex) — group-wise monthly CPI indices and YoY inflation rates, Base 2012=100. Primary source for CPI by COICOP division (FY 2019+)
 - IMF CPI dataset via DBnomics (db.nomics.world/IMF/CPI) — historical CPI by COICOP division (Food, Housing, Health, Transport, Education) for India, CY 2014-2018
 - SBI/HDFC/ICICI published rate cards — loan spreads over repo rate (home, car, personal loans)
@@ -311,7 +310,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /data/census/2025-26/population.json — State-wise population, density, urban/rural split, decadal growth, national time series
 - /data/census/2025-26/demographics.json — Age structure (young/working/elderly %), dependency ratio, vital stats (birth/death/fertility/life expectancy), urbanization trend
 - /data/census/2025-26/literacy.json — State-wise literacy by gender, national time series
-- /data/census/2025-26/health.json — IMR time series, state-level IMR, NFHS-5 state health (TFR, IMR, U5MR, stunting, wasting, immunization)
+- /data/census/2025-26/health.json — IMR time series, state-level IMR, NFHS-6 state health (TFR, stunting, wasting, immunization; IMR/U5MR retained from NFHS-5)
 - /data/census/2025-26/indicators.json — All census indicators across 4 categories
 
 ### Education

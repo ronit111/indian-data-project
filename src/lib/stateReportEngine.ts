@@ -250,7 +250,7 @@ const EXTRACTORS: Record<string, Extractor> = {
     return { value: s?.doctorsPer10K ?? null, all };
   },
   imr: (sid, d) => {
-    // Try SRS data first (stateImr), then NFHS-5 (stateHealth)
+    // Try SRS data first (stateImr), then NFHS-6 (stateHealth)
     const srsEntry = d.health?.stateImr.find(
       (x) => x.id === sid || x.id.toUpperCase() === sid.toUpperCase()
     );
@@ -263,7 +263,7 @@ const EXTRACTORS: Record<string, Extractor> = {
     return { value: nfhs?.imr ?? null, all };
   },
   fullImmunization: (sid, d) => {
-    // Try disease.json immunization first, then health.json NFHS-5
+    // Try disease.json immunization first, then health.json NFHS-6
     const immEntry = findInArray(d.disease?.stateImmunization, sid);
     if (immEntry) {
       const all = d.disease?.stateImmunization.map((x) => x.fullImmunization) ?? [];

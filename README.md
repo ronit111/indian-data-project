@@ -18,10 +18,10 @@ India publishes vast amounts of government data — budgets, economic surveys, R
 | Economic Survey 2025-26 | `/economy` | MOSPI, World Bank, Economic Survey |
 | RBI & Monetary Policy | `/rbi` | RBI Handbook, World Bank |
 | State Finances | `/states` | RBI Handbook on Indian States |
-| Census & Demographics | `/census` | Census 2011, NFHS-5, SRS, World Bank |
-| Education | `/education` | UDISE+ 2023-24, ASER 2024, World Bank |
-| Employment | `/employment` | PLFS 2023-24, RBI KLEMS, World Bank |
-| Healthcare | `/healthcare` | NHP 2022, NFHS-5, World Bank |
+| Census & Demographics | `/census` | Census 2011, NFHS-6 (2023-24), SRS 2024, World Bank |
+| Education | `/education` | UDISE+ 2024-25, ASER 2024, World Bank |
+| Employment | `/employment` | PLFS 2025, World Bank |
+| Healthcare | `/healthcare` | NHP 2022, NFHS-6 (2023-24), World Bank |
 | Environment | `/environment` | CPCB, MOEFCC, CEA, CWC, World Bank |
 | Elections | `/elections` | ECI, TCPD Lok Dhaba, ADR/MyNeta |
 | Crime & Safety | `/crime` | NCRB, MoRTH, BPRD, World Bank |
@@ -114,7 +114,7 @@ Every number traces to an authoritative primary source. Methodology pages for ea
 - [Open Budgets India / CKAN](https://openbudgetsindia.org) — Union Budget data
 
 **Curated sources (manually updated):**
-- [NCRB "Crime in India"](https://ncrb.gov.in), [NFHS-5](http://rchiips.org/nfhs/), [Census 2011](https://censusindia.gov.in), [UDISE+](https://udiseplus.gov.in), [ASER](https://asercentre.org), [ECI](https://eci.gov.in), [TCPD Lok Dhaba](https://lokdhaba.ashoka.edu.in), [ADR/MyNeta](https://myneta.info), [MoRTH](https://morth.nic.in), [CPCB](https://cpcb.nic.in), [CEA](https://cea.nic.in)
+- [NCRB "Crime in India"](https://ncrb.gov.in), [NFHS-6](http://rchiips.org/nfhs/), [Census 2011](https://censusindia.gov.in), [UDISE+](https://udiseplus.gov.in), [ASER](https://asercentre.org), [ECI](https://eci.gov.in), [TCPD Lok Dhaba](https://lokdhaba.ashoka.edu.in), [ADR/MyNeta](https://myneta.info), [MoRTH](https://morth.nic.in), [CPCB](https://cpcb.nic.in), [CEA](https://cea.nic.in)
 
 Data is published under the [Government Open Data License — India](https://data.gov.in/government-open-data-license-india).
 
@@ -157,7 +157,7 @@ AGPL ensures this civic infrastructure stays open — if someone builds on it, t
 
 ## Acknowledgments
 
-Built with data from: [Open Budgets India](https://openbudgetsindia.org) · [MOSPI](https://mospi.gov.in) · [RBI](https://www.rbi.org.in) · [Census of India](https://censusindia.gov.in) · [NFHS-5](http://rchiips.org/nfhs/) · [UDISE+](https://udiseplus.gov.in) · [ASER](https://asercentre.org) · [NCRB](https://ncrb.gov.in) · [ECI](https://eci.gov.in) · [TCPD](https://lokdhaba.ashoka.edu.in) · [ADR](https://myneta.info) · [CPCB](https://cpcb.nic.in) · [World Bank](https://data.worldbank.org)
+Built with data from: [Open Budgets India](https://openbudgetsindia.org) · [MOSPI](https://mospi.gov.in) · [RBI](https://www.rbi.org.in) · [Census of India](https://censusindia.gov.in) · [NFHS-6](http://rchiips.org/nfhs/) · [UDISE+](https://udiseplus.gov.in) · [ASER](https://asercentre.org) · [NCRB](https://ncrb.gov.in) · [ECI](https://eci.gov.in) · [TCPD](https://lokdhaba.ashoka.edu.in) · [ADR](https://myneta.info) · [CPCB](https://cpcb.nic.in) · [World Bank](https://data.worldbank.org)
 
 Design inspired by [Information is Beautiful](https://informationisbeautiful.net) and [Visual Cinnamon](https://www.visualcinnamon.com).
 

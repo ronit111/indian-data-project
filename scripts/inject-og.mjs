@@ -177,7 +177,7 @@ const ROUTES = [
   {
     path: '/census/methodology',
     title: 'Methodology — Census & Demographics — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-5, SRS 2023, World Bank.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-6 (2023-24), SRS 2024, World Bank.',
     image: '/og-census.png',
   },
   {
@@ -203,7 +203,7 @@ const ROUTES = [
   {
     path: '/education/methodology',
     title: 'Methodology — Education — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2023-24, ASER 2024, World Bank.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2024-25, ASER 2024, World Bank.',
     image: '/og-education.png',
   },
   {
@@ -217,7 +217,7 @@ const ROUTES = [
   {
     path: '/employment',
     title: 'Employment — 57 Crore Workers | Indian Data Project',
-    description: "Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS, World Bank, and RBI KLEMS data.",
+    description: "Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS and World Bank data.",
     image: '/og-employment.png',
   },
   {
@@ -229,7 +229,7 @@ const ROUTES = [
   {
     path: '/employment/methodology',
     title: 'Methodology — Employment & Labour — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS, World Bank, RBI KLEMS.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS and World Bank.',
     image: '/og-employment.png',
   },
   {
@@ -255,7 +255,7 @@ const ROUTES = [
   {
     path: '/healthcare/methodology',
     title: 'Methodology — Healthcare — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-5.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-6 (2023-24).',
     image: '/og-healthcare.png',
   },
   {

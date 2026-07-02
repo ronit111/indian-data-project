@@ -267,7 +267,7 @@ def _build_indicators(
         "category": "health",
         "unit": "per 1000 live births",
         "states": [{"id": s["id"], "name": s["name"], "value": s["value"]} for s in srs_states],
-        "source": "Sample Registration System 2022",
+        "source": "Sample Registration System 2024",
     })
     indicators.append({
         "id": "tfr_nfhs",

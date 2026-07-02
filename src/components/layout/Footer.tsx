@@ -443,7 +443,7 @@ export function Footer() {
           ) : isElections ? (
             'Elections 2025-26'
           ) : isCrime ? (
-            'Crime & Safety 2022'
+            'Crime & Safety 2023'
           ) : isTopics ? (
             'Cross-Domain Insights'
           ) : isOpenData ? (
