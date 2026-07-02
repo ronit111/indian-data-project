@@ -755,7 +755,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Crimes against women — national trend, crime types breakdown, and state-wise rates per lakh women.',
     schema: 'WomenSafetyData',
-    source: 'NCRB Crime in India 2022',
+    source: 'NCRB Crime in India 2023',
     sourceUrl: 'https://ncrb.gov.in',
   },
   {
@@ -765,7 +765,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Road accident deaths and injuries trend, cause breakdown, and state fatality rates.',
     schema: 'RoadAccidentData',
-    source: 'MoRTH Annual Report 2022',
+    source: 'MoRTH Road Accidents in India 2023',
     sourceUrl: 'https://morth.nic.in',
   },
   {
@@ -785,7 +785,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Police strength, vacancy, women in force, police-population ratio by state.',
     schema: 'PoliceData',
-    source: 'BPRD Data on Police Organisations 2022',
+    source: 'BPRD Data on Police Organisations (as on 01.01.2023)',
     sourceUrl: 'https://bprd.nic.in',
   },
   {
@@ -795,7 +795,7 @@ export const DATA_ENDPOINTS: DataEndpoint[] = [
     description:
       'Justice pipeline funnel (FIR to conviction), trial duration, judges per million, pendency.',
     schema: 'JusticeData',
-    source: 'NCRB Crime in India 2022',
+    source: 'NCRB Crime in India 2023',
     sourceUrl: 'https://ncrb.gov.in',
   },
   {

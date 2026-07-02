@@ -59,7 +59,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            crimes recorded in 2022 — roughly one every 5 seconds
+            crimes recorded in 2023 — roughly one every 5 seconds
           </p>
         </motion.div>
 
@@ -70,7 +70,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Of every 100 crimes reported, 13 end in conviction. This is that story.
+          Of every 100 crimes reported, 17 end in conviction. This is that story.
         </motion.p>
 
         {/* Stat badges */}

@@ -50,7 +50,7 @@ export default function CrimePage() {
       exit={{ opacity: 0 }}
     >
       <SEOHead
-        title="Crime & Safety — 58.2 Lakh Crimes in 2022 | Indian Data Project"
+        title="Crime & Safety — 62.4 Lakh Crimes in 2023 | Indian Data Project"
         description="India's crime landscape from NCRB data — crime trends, crimes against women, road accidents, cybercrime, police infrastructure, and the justice pipeline. Data from NCRB, MoRTH, BPRD."
         path="/crime"
         image="/og-crime.png"
@@ -61,8 +61,8 @@ export default function CrimePage() {
       {summary && <KeyTakeaways
         accent="#DC2626"
         pills={[
-          { value: '13 out of 100', label: 'crimes that end in conviction — the pipeline leaks at every stage', sectionId: 'justice-pipeline' },
-          { value: `${(summary.totalCrimes / 100000).toFixed(1)}L`, label: `crimes reported in 2022 — one every 5 seconds`, sectionId: 'crime-overview' },
+          { value: '17 out of 100', label: 'crimes that end in conviction — the pipeline leaks at every stage', sectionId: 'justice-pipeline' },
+          { value: `${(summary.totalCrimes / 100000).toFixed(1)}L`, label: `crimes reported in 2023 — one every 5 seconds`, sectionId: 'crime-overview' },
           { value: `${(summary.womenCrimes / 1000).toFixed(0)}K`, label: 'crimes against women — one case every 71 seconds', sectionId: 'women-safety' },
           { value: `${Math.round(summary.roadDeaths / 365)}`, label: 'road deaths per day — more than all violent crime combined', sectionId: 'road-accidents' },
         ]}
@@ -71,9 +71,9 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="58 lakh crimes. One every 5 seconds. And those are only the ones that were reported. Follow one crime from the moment it happens to conviction — on average, that journey takes 3.5 years. For 31 lakh families, it hasn't started."
+        text="62 lakh crimes. One every 5 seconds. And those are only the ones that were reported. Follow one crime from the moment it happens to conviction — on average, that journey takes 3.5 years. For 1.59 crore families, it hasn't started."
         highlights={{
-          '58': 'var(--crimson)',
+          '62': 'var(--crimson)',
           'reported': 'var(--crimson-light)',
           '3.5': 'var(--crimson)',
           '31': 'var(--crimson)',
@@ -87,11 +87,11 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Within that ocean of crime, one category demands separate attention. Not because the numbers are the largest — but because the victims are targeted for who they are. 4.45 lakh times in 2022, the crime was being a woman."
+        text="Within that ocean of crime, one category demands separate attention. Not because the numbers are the largest — but because the victims are targeted for who they are. 4.48 lakh times in 2023, the crime was being a woman."
         highlights={{
           'woman': 'var(--crimson)',
           'targeted': 'var(--crimson)',
-          '4.45': 'var(--crimson)',
+          '4.48': 'var(--crimson)',
           'separate': 'var(--crimson-light)',
         }}
       />
@@ -103,9 +103,9 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Crime is not only about people harming people. India's roads killed 1.68 lakh in 2022 — more than all violent crime combined. India has 1% of the world's vehicles but 11% of global road deaths. This is not fate. It is preventable death at industrial scale."
+        text="Crime is not only about people harming people. India's roads killed 1.73 lakh in 2023 — more than all violent crime combined. India has 1% of the world's vehicles but 11% of global road deaths. This is not fate. It is preventable death at industrial scale."
         highlights={{
-          '1.68': 'var(--crimson)',
+          '1.73': 'var(--crimson)',
           'preventable': 'var(--crimson)',
           '11%': 'var(--crimson)',
           'industrial': 'var(--crimson-light)',
@@ -151,7 +151,7 @@ export default function CrimePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Understaffed police feed an understaffed court system. Of every 100 crimes reported, 13 end in conviction. The funnel narrows at every stage. 31 lakh cases are waiting. 21 judges per million citizens. The system does not need efficiency tweaks — it needs fundamental expansion."
+        text="Understaffed police feed an understaffed court system. Of every 100 crimes reported, 17 end in conviction. The funnel narrows at every stage. 1.59 crore cases are waiting. 21 judges per million citizens. The system does not need efficiency tweaks — it needs fundamental expansion."
         highlights={{
           '13': 'var(--crimson)',
           'narrows': 'var(--crimson)',

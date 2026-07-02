@@ -30,48 +30,41 @@
       "year": "2022",
       "cases": 65893,
       "rate": 4.8
+    },
+    {
+      "year": "2023",
+      "cases": 86420,
+      "rate": 6.2
     }
   ],
   "crimeTypes": [
     {
       "id": "fraud",
-      "name": "Online Fraud / Cheating",
-      "cases": 27485,
-      "pct": 41.7
+      "name": "Fraud",
+      "cases": 59526,
+      "pct": 68.9
     },
     {
       "id": "sexual",
-      "name": "Sexual Exploitation / Publishing",
-      "cases": 8439,
-      "pct": 12.8
+      "name": "Sexual Exploitation",
+      "cases": 4199,
+      "pct": 4.9
     },
     {
       "id": "extortion",
-      "name": "Cyber Extortion / Blackmail",
-      "cases": 4227,
-      "pct": 6.4
-    },
-    {
-      "id": "forgery",
-      "name": "Data Forgery / Tampering",
-      "cases": 3790,
-      "pct": 5.7
-    },
-    {
-      "id": "identity-theft",
-      "name": "Identity Theft",
-      "cases": 2425,
-      "pct": 3.7
+      "name": "Extortion",
+      "cases": 3326,
+      "pct": 3.8
     },
     {
       "id": "other-cyber",
-      "name": "Other Cybercrimes",
-      "cases": 19527,
-      "pct": 29.6
+      "name": "Other Motives",
+      "cases": 19369,
+      "pct": 22.4
     }
   ],
   "i4cComplaints": 2268000,
   "i4cFinancialLossCrore": 2290,
-  "i4cNote": "I4C complaints are citizen-reported via portal. NCRB counts FIR-registered cases. The gap (22.68L complaints vs 65,893 FIRs) reflects underregistration of cybercrime as FIRs.",
-  "source": "NCRB Crime in India 2022 + I4C / cybercrime.gov.in"
+  "i4cNote": "I4C complaints are citizen-reported via portal. NCRB counts FIR-registered cases. The gap (22.68L complaints vs 86,420 cyber FIRs in 2023) reflects underregistration of cybercrime as FIRs.",
+  "source": "NCRB Crime in India 2023 + I4C / cybercrime.gov.in"
 }

@@ -54,166 +54,221 @@
       "accidents": 461312,
       "killed": 168491,
       "injured": 443366
+    },
+    {
+      "year": "2023",
+      "accidents": 480583,
+      "killed": 172890,
+      "injured": 462825
     }
   ],
   "causes": [
     {
       "id": "overspeeding",
       "name": "Over-speeding",
-      "pct": 72.3
+      "pct": 68.4
     },
     {
       "id": "wrong-side",
-      "name": "Driving on Wrong Side",
-      "pct": 4.9
+      "name": "Driving on Wrong Side / Lane Indiscipline",
+      "pct": 5.25
     },
     {
       "id": "drunk-driving",
       "name": "Drunken Driving",
-      "pct": 3.1
+      "pct": 1.9
     },
     {
       "id": "mobile-use",
       "name": "Use of Mobile Phone",
-      "pct": 2.7
-    },
-    {
-      "id": "overloading",
-      "name": "Overloading",
-      "pct": 1.9
+      "pct": 1.48
     },
     {
       "id": "red-light",
       "name": "Jumping Red Light",
-      "pct": 0.9
+      "pct": 0.51
     },
     {
       "id": "other-causes",
       "name": "Other Causes",
-      "pct": 14.2
+      "pct": 22.45
     }
   ],
   "stateFatalities": [
     {
-      "id": "TS",
-      "name": "Telangana",
-      "rate": 21.5,
-      "killed": 8248
-    },
-    {
-      "id": "MP",
-      "name": "Madhya Pradesh",
-      "rate": 18.9,
-      "killed": 16077
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "rate": 23.8,
+      "killed": 18347
     },
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "rate": 18.3,
-      "killed": 5419
+      "rate": 20.4,
+      "killed": 6166
     },
     {
-      "id": "TN",
-      "name": "Tamil Nadu",
-      "rate": 17.9,
-      "killed": 14054
+      "id": "TS",
+      "name": "Telangana",
+      "rate": 20.1,
+      "killed": 7660
+    },
+    {
+      "id": "GA",
+      "name": "Goa",
+      "rate": 18.4,
+      "killed": 290
     },
     {
       "id": "KA",
       "name": "Karnataka",
-      "rate": 17.8,
-      "killed": 11757
-    },
-    {
-      "id": "RJ",
-      "name": "Rajasthan",
-      "rate": 17.5,
-      "killed": 14194
-    },
-    {
-      "id": "UP",
-      "name": "Uttar Pradesh",
-      "rate": 15.4,
-      "killed": 35214
-    },
-    {
-      "id": "GJ",
-      "name": "Gujarat",
-      "rate": 15.2,
-      "killed": 10425
+      "rate": 18.2,
+      "killed": 12321
     },
     {
       "id": "HR",
       "name": "Haryana",
-      "rate": 15.0,
-      "killed": 4415
+      "rate": 16.4,
+      "killed": 4968
     },
     {
-      "id": "MH",
-      "name": "Maharashtra",
-      "rate": 14.1,
-      "killed": 17465
-    },
-    {
-      "id": "AP",
-      "name": "Andhra Pradesh",
-      "rate": 13.8,
-      "killed": 7429
-    },
-    {
-      "id": "OD",
-      "name": "Odisha",
-      "rate": 11.7,
-      "killed": 5372
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "rate": 15.9,
+      "killed": 13798
     },
     {
       "id": "PB",
       "name": "Punjab",
-      "rate": 11.4,
-      "killed": 3458
+      "rate": 15.7,
+      "killed": 4829
+    },
+    {
+      "id": "AP",
+      "name": "Andhra Pradesh",
+      "rate": 15.3,
+      "killed": 8137
+    },
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "rate": 14.5,
+      "killed": 11762
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "rate": 12.4,
+      "killed": 5739
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "rate": 12.1,
+      "killed": 15366
+    },
+    {
+      "id": "HP",
+      "name": "Himachal Pradesh",
+      "rate": 11.9,
+      "killed": 889
     },
     {
       "id": "KL",
       "name": "Kerala",
-      "rate": 10.8,
-      "killed": 3871
+      "rate": 11.4,
+      "killed": 4080
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "rate": 10.9,
+      "killed": 7854
     },
     {
       "id": "JH",
       "name": "Jharkhand",
-      "rate": 9.5,
-      "killed": 3585
+      "rate": 10.5,
+      "killed": 4173
     },
     {
-      "id": "UK",
-      "name": "Uttarakhand",
-      "rate": 9.3,
-      "killed": 1051
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "rate": 10.0,
+      "killed": 23652
     },
     {
-      "id": "BR",
-      "name": "Bihar",
-      "rate": 8.3,
-      "killed": 10154
-    },
-    {
-      "id": "WB",
-      "name": "West Bengal",
-      "rate": 7.2,
-      "killed": 6982
+      "id": "AR",
+      "name": "Arunachal Pradesh",
+      "rate": 9.2,
+      "killed": 145
     },
     {
       "id": "AS",
       "name": "Assam",
-      "rate": 6.4,
-      "killed": 2319
+      "rate": 9.2,
+      "killed": 3296
+    },
+    {
+      "id": "UK",
+      "name": "Uttarakhand",
+      "rate": 9.0,
+      "killed": 1054
+    },
+    {
+      "id": "SK",
+      "name": "Sikkim",
+      "rate": 8.3,
+      "killed": 57
+    },
+    {
+      "id": "MZ",
+      "name": "Mizoram",
+      "rate": 7.7,
+      "killed": 96
+    },
+    {
+      "id": "BR",
+      "name": "Bihar",
+      "rate": 7.0,
+      "killed": 8873
     },
     {
       "id": "DL",
       "name": "Delhi",
-      "rate": 5.9,
-      "killed": 1183
+      "rate": 6.8,
+      "killed": 1457
+    },
+    {
+      "id": "TR",
+      "name": "Tripura",
+      "rate": 6.3,
+      "killed": 261
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "rate": 6.1,
+      "killed": 6027
+    },
+    {
+      "id": "ML",
+      "name": "Meghalaya",
+      "rate": 5.0,
+      "killed": 168
+    },
+    {
+      "id": "NL",
+      "name": "Nagaland",
+      "rate": 3.8,
+      "killed": 86
+    },
+    {
+      "id": "MN",
+      "name": "Manipur",
+      "rate": 2.3,
+      "killed": 73
     }
   ],
-  "source": "MoRTH Road Accidents in India 2022"
+  "source": "MoRTH Road Accidents in India 2023"
 }

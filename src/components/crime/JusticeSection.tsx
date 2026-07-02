@@ -43,7 +43,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          13 out of 100. That is the number you should carry with you. Of every 100 crimes reported, 13 end in conviction. The funnel narrows at every stage: investigation backlogs, low chargesheet rates, and trials averaging {data.trialDuration.avgYears} years. Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. For most victims, filing a complaint leads to years of waiting and, statistically, no outcome. {data.trialDuration.casesOver5Years}% of cases have been pending for over 5 years.
+          17 out of 100. That is the number you should carry with you. Of every 100 crimes reported, 17 end in conviction. The funnel narrows at every stage: investigation backlogs, low chargesheet rates, and trials averaging {data.trialDuration.avgYears} years. Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. For most victims, filing a complaint leads to years of waiting and, statistically, no outcome. {data.trialDuration.casesOver5Years}% of cases have been pending for over 5 years.
         </motion.p>
 
         {/* Justice funnel */}
@@ -147,7 +147,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           className="text-annotation mt-6 max-w-xl"
           style={{ color: 'var(--text-secondary)' }}
         >
-          58 lakh crimes. 4.45 lakh against women. 1.68 lakh dead on roads. 22 lakh cybercrime complaints. 155 police per lakh people. 13 out of 100 end in conviction. These numbers are not an indictment of Indian society — they are a measure of the gap between the problem and the response. The data makes the gap visible. Visibility is the first step toward closing it.
+          62 lakh crimes. 4.48 lakh against women. 1.73 lakh dead on roads. 22 lakh cybercrime complaints. 155 police per lakh people. 17 out of 100 end in conviction. These numbers are not an indictment of Indian society — they are a measure of the gap between the problem and the response. The data makes the gap visible. Visibility is the first step toward closing it.
         </motion.p>
 
         <RelatedTopics sectionId="justice-pipeline" domain="crime" />

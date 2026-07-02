@@ -1,182 +1,188 @@
 {
   "year": "2025-26",
-  "sanctionedStrength": 2682376,
-  "actualStrength": 2090000,
-  "vacancyPct": 22.1,
-  "sanctionedRatePerLakh": 197.0,
-  "actualRatePerLakh": 152.0,
+  "sanctionedStrength": 2722669,
+  "actualStrength": 2141305,
+  "vacancyPct": 21.35,
+  "sanctionedRatePerLakh": 196.88,
+  "actualRatePerLakh": 154.84,
   "unRecommended": 222,
-  "womenPolicePct": 11.7,
-  "womenPoliceTotal": 244160,
+  "womenPolicePct": 12.32,
+  "womenPoliceTotal": 263762,
   "stateRatios": [
-    {
-      "id": "DL",
-      "name": "Delhi",
-      "sanctioned": 570.2,
-      "actual": 492.1
-    },
-    {
-      "id": "MZ",
-      "name": "Mizoram",
-      "sanctioned": 521.0,
-      "actual": 480.5
-    },
-    {
-      "id": "AN",
-      "name": "Andaman & Nicobar",
-      "sanctioned": 480.0,
-      "actual": 412.3
-    },
-    {
-      "id": "CH",
-      "name": "Chandigarh",
-      "sanctioned": 462.0,
-      "actual": 395.0
-    },
     {
       "id": "NL",
       "name": "Nagaland",
-      "sanctioned": 500.5,
-      "actual": 390.2
+      "sanctioned": 1201.48,
+      "actual": 1135.94
     },
     {
       "id": "MN",
       "name": "Manipur",
-      "sanctioned": 448.2,
-      "actual": 385.1
+      "sanctioned": 1093.8,
+      "actual": 941.63
     },
     {
       "id": "SK",
       "name": "Sikkim",
-      "sanctioned": 410.0,
-      "actual": 345.2
+      "sanctioned": 999.56,
+      "actual": 834.4
+    },
+    {
+      "id": "AR",
+      "name": "Arunachal Pradesh",
+      "sanctioned": 983.79,
+      "actual": 766.75
+    },
+    {
+      "id": "MZ",
+      "name": "Mizoram",
+      "sanctioned": 916.63,
+      "actual": 595.21
+    },
+    {
+      "id": "TR",
+      "name": "Tripura",
+      "sanctioned": 719.04,
+      "actual": 555.57
     },
     {
       "id": "GA",
       "name": "Goa",
-      "sanctioned": 388.5,
-      "actual": 295.7
+      "sanctioned": 687.84,
+      "actual": 498.47
     },
     {
-      "id": "KL",
-      "name": "Kerala",
-      "sanctioned": 263.0,
-      "actual": 187.5
+      "id": "ML",
+      "name": "Meghalaya",
+      "sanctioned": 505.25,
+      "actual": 422.92
+    },
+    {
+      "id": "DL",
+      "name": "Delhi",
+      "sanctioned": 444.7,
+      "actual": 380.2
     },
     {
       "id": "PB",
       "name": "Punjab",
-      "sanctioned": 225.0,
-      "actual": 186.5
-    },
-    {
-      "id": "KA",
-      "name": "Karnataka",
-      "sanctioned": 220.5,
-      "actual": 185.3
-    },
-    {
-      "id": "TN",
-      "name": "Tamil Nadu",
-      "sanctioned": 218.0,
-      "actual": 182.0
+      "sanctioned": 278.39,
+      "actual": 241.02
     },
     {
       "id": "HP",
       "name": "Himachal Pradesh",
-      "sanctioned": 248.0,
-      "actual": 180.2
-    },
-    {
-      "id": "MH",
-      "name": "Maharashtra",
-      "sanctioned": 205.3,
-      "actual": 178.1
-    },
-    {
-      "id": "TS",
-      "name": "Telangana",
-      "sanctioned": 200.0,
-      "actual": 172.3
-    },
-    {
-      "id": "UK",
-      "name": "Uttarakhand",
-      "sanctioned": 215.0,
-      "actual": 163.5
-    },
-    {
-      "id": "GJ",
-      "name": "Gujarat",
-      "sanctioned": 190.2,
-      "actual": 156.8
+      "sanctioned": 257.71,
+      "actual": 240.4
     },
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "sanctioned": 202.0,
-      "actual": 155.3
+      "sanctioned": 266.79,
+      "actual": 214.74
     },
     {
       "id": "AS",
       "name": "Assam",
-      "sanctioned": 186.0,
-      "actual": 155.0
+      "sanctioned": 229.86,
+      "actual": 205.74
     },
     {
       "id": "HR",
       "name": "Haryana",
-      "sanctioned": 190.0,
-      "actual": 152.4
+      "sanctioned": 292.15,
+      "actual": 199.08
     },
     {
-      "id": "RJ",
-      "name": "Rajasthan",
-      "sanctioned": 180.5,
-      "actual": 143.2
+      "id": "UK",
+      "name": "Uttarakhand",
+      "sanctioned": 193.45,
+      "actual": 183.96
     },
     {
       "id": "AP",
       "name": "Andhra Pradesh",
-      "sanctioned": 170.0,
-      "actual": 137.2
+      "sanctioned": 200.4,
+      "actual": 165.89
     },
     {
-      "id": "MP",
-      "name": "Madhya Pradesh",
-      "sanctioned": 175.0,
-      "actual": 132.5
+      "id": "TS",
+      "name": "Telangana",
+      "sanctioned": 226.47,
+      "actual": 162.66
     },
     {
-      "id": "OD",
-      "name": "Odisha",
-      "sanctioned": 158.0,
-      "actual": 119.5
-    },
-    {
-      "id": "WB",
-      "name": "West Bengal",
-      "sanctioned": 142.0,
-      "actual": 116.8
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "sanctioned": 172.56,
+      "actual": 159.54
     },
     {
       "id": "JH",
       "name": "Jharkhand",
-      "sanctioned": 149.0,
-      "actual": 109.5
+      "sanctioned": 211.04,
+      "actual": 157.71
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "sanctioned": 165.04,
+      "actual": 150.95
+    },
+    {
+      "id": "KL",
+      "name": "Kerala",
+      "sanctioned": 172.73,
+      "actual": 150.68
+    },
+    {
+      "id": "MH",
+      "name": "Maharashtra",
+      "sanctioned": 184.92,
+      "actual": 136.83
     },
     {
       "id": "UP",
       "name": "Uttar Pradesh",
-      "sanctioned": 150.0,
-      "actual": 108.3
+      "sanctioned": 182.24,
+      "actual": 135.39
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "sanctioned": 173.5,
+      "actual": 123.84
+    },
+    {
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "sanctioned": 145.54,
+      "actual": 121.13
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "sanctioned": 150.99,
+      "actual": 120.58
+    },
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "sanctioned": 140.61,
+      "actual": 118.18
+    },
+    {
+      "id": "WB",
+      "name": "West Bengal",
+      "sanctioned": 166.93,
+      "actual": 101.13
     },
     {
       "id": "BR",
       "name": "Bihar",
-      "sanctioned": 128.0,
-      "actual": 77.4
+      "sanctioned": 114.57,
+      "actual": 81.49
     }
   ],
-  "source": "BPRD Data on Police Organisations 2022"
+  "source": "BPRD Data on Police Organisations (as on 01.01.2023)"
 }

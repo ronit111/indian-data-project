@@ -116,7 +116,7 @@ export function CybercrimeSection({ data }: CybercrimeSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          {lastYear ? `${(lastYear.cases / 1000).toFixed(0)}K` : '—'} cybercrime FIRs in 2022 — {multiplier ?? '—'}x growth in {data.ncrbTrend.length - 1} years.
+          {lastYear ? `${(lastYear.cases / 1000).toFixed(0)}K` : '—'} cybercrime FIRs in 2023 — {multiplier ?? '—'}x growth in {data.ncrbTrend.length - 1} years.
           The Indian Cyber Crime Coordination Centre (I4C) portal received 22.68 lakh complaints — 34 times the number of FIRs registered.
           Online fraud alone accounts for ~42% of registered cases.
         </motion.p>
@@ -124,7 +124,7 @@ export function CybercrimeSection({ data }: CybercrimeSectionProps) {
         {/* NCRB FIR trend */}
         <div className="mb-6">
           <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-            NCRB-registered cybercrime FIRs, 2017–2022
+            NCRB-registered cybercrime FIRs, 2017–2023
           </p>
           <ChartActionsWrapper registryKey="crime/cybercrime" data={data}>
             <LineChart
