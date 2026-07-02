@@ -17,7 +17,7 @@ export function DeepLinks({ links }: DeepLinksProps) {
           <Link
             key={link.route}
             to={link.route}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium no-underline transition-all duration-150 hover:brightness-125"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium no-underline transition-[filter] duration-150 hover:brightness-125"
             style={{
               background: `${accent}12`,
               color: accent,

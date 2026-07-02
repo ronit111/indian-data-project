@@ -125,7 +125,7 @@ export function BudgetVsActualSection({ data }: BudgetVsActualSectionProps) {
               <button
                 key={yr}
                 onClick={() => setSelectedYear(yr)}
-                className="px-3 py-1 rounded-full text-xs font-mono font-medium transition-all cursor-pointer"
+                className="px-3 py-1 rounded-full text-xs font-mono font-medium transition-colors cursor-pointer"
                 style={{
                   background: yr === selectedYear ? 'var(--cyan)' : 'var(--bg-raised)',
                   color: yr === selectedYear ? 'var(--bg-void)' : 'var(--text-muted)',

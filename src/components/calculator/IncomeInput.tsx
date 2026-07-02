@@ -74,7 +74,7 @@ export function IncomeInput() {
           <button
             key={preset}
             onClick={() => setIncome(preset)}
-            className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors duration-150 cursor-pointer"
             style={{
               background: income === preset ? 'var(--bg-hover)' : 'var(--bg-raised)',
               color: income === preset ? 'var(--text-primary)' : 'var(--text-secondary)',

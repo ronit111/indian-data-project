@@ -30,7 +30,7 @@ export function RelatedTopics({ sectionId, domain }: RelatedTopicsProps) {
         <Link
           key={topic.id}
           to={`/topics/${topic.id}`}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium no-underline transition-all duration-150 hover:brightness-125"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium no-underline transition-[filter] duration-150 hover:brightness-125"
           style={{
             background: `${topic.accent}12`,
             color: topic.accent,

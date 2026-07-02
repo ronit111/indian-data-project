@@ -119,7 +119,7 @@ export function BuildWithDataSection() {
             >
               <Link
                 to={card.to}
-                className="group block h-full rounded-xl overflow-hidden no-underline transition-all duration-200 hover:-translate-y-1"
+                className="group block h-full rounded-xl overflow-hidden no-underline transition-[transform,border-color] duration-200 hover:-translate-y-1"
                 style={{
                   background: 'var(--bg-surface)',
                   border: '1px solid rgba(255,255,255,0.04)',
