@@ -164,15 +164,9 @@ def _build_summary() -> dict:
 def _build_indicators() -> dict:
     indicators = []
 
-    # Air Quality
-    indicators.append({
-        "id": "state_aqi",
-        "name": "Annual Average AQI",
-        "category": "air",
-        "unit": "AQI",
-        "states": [{"id": s["id"], "name": s["name"], "value": s["aqi"]} for s in CPCB_AQI_STATES],
-        "source": "CPCB NAQI 2023",
-    })
+    # Air Quality: state-wise annual-AQI indicator removed — CPCB does not
+    # publish annual state-level AQI (the source table was untraceable). The
+    # World Bank PM2.5 annual-mean series remains in air-quality.json.
 
     # Forest
     indicators.append({

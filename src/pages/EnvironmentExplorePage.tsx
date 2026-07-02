@@ -10,7 +10,6 @@ import { SkeletonChart, SkeletonText } from '../components/ui/Skeleton.tsx';
 
 const CATEGORIES = [
   { value: 'all', label: 'All' },
-  { value: 'air', label: 'Air' },
   { value: 'forest', label: 'Forest' },
   { value: 'water', label: 'Water' },
 ] as const;
@@ -18,7 +17,6 @@ const CATEGORIES = [
 type CategoryValue = (typeof CATEGORIES)[number]['value'];
 
 const INDICATOR_COLORS: Record<string, string> = {
-  state_aqi: 'var(--negative)',
   forest_cover_pct: 'var(--teal)',
   forest_cover_km2: 'var(--teal-light)',
   forest_change: 'var(--teal)',
@@ -93,7 +91,7 @@ export default function EnvironmentExplorePage() {
     >
       <SEOHead
         title="Explore Environment Data — Indian Data Project"
-        description="Browse and compare state-wise air quality, forest cover, and water stress indicators across all Indian states."
+        description="Browse and compare state-wise forest cover and water stress indicators across all Indian states."
         path="/environment/explore"
         image="/og-environment.png"
       />
@@ -116,7 +114,7 @@ export default function EnvironmentExplorePage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Select a category and indicator to compare states. Data from CPCB, ISFR 2023, and CGWB.
+          Select a category and indicator to compare states. Data from ISFR 2023 and CGWB.
         </motion.p>
 
         <motion.div variants={fadeUp}>

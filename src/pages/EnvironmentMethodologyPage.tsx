@@ -25,11 +25,11 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
             <span>
-              <strong style={{ color: 'var(--teal)' }}>Tier 2 — CPCB NAQI</strong> (state + city AQI, 2023, curated).{' '}
+              <strong style={{ color: 'var(--teal)' }}>CPCB NAQI</strong> (live reference, not ingested).{' '}
               <a href="https://airquality.cpcb.gov.in/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--teal)' }}>
                 airquality.cpcb.gov.in
               </a>{' '}
-              — Central Pollution Control Board National Air Quality Index. Annual average AQI across continuous monitoring stations for 30 states/UTs and 30 most polluted cities.
+              — The Central Pollution Control Board's National Air Quality Index is a <em>daily</em>, station-level index. CPCB does not publish an annual state-level AQI, so we link to the live portal rather than reproduce a derived annual figure. Annual particulate exposure on this site comes from World Bank PM2.5 (above).
             </span>
           </li>
           <li className="flex gap-3 items-start">

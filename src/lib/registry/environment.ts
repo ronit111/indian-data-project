@@ -9,8 +9,8 @@ const base = `/data/environment/${YEAR}`;
 registerChart({
   domain: DOMAIN,
   sectionId: 'air-quality',
-  title: 'Air Quality — PM2.5 & City AQI',
-  source: 'World Bank, CPCB NAQI',
+  title: 'Air Quality — PM2.5 Annual Mean',
+  source: 'World Bank (PM2.5 annual mean)',
   accentColor: ACCENT,
   dataFiles: [`${base}/air-quality.json`],
   chartType: 'line',
