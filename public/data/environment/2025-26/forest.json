@@ -255,7 +255,7 @@
       "id": "MP",
       "name": "Madhya Pradesh",
       "forestCoverKm2": 77073,
-      "pctGeographicArea": 25.11,
+      "pctGeographicArea": 25.0,
       "changeKm2": -371.54
     },
     {
@@ -269,7 +269,7 @@
       "id": "CG",
       "name": "Chhattisgarh",
       "forestCoverKm2": 55812,
-      "pctGeographicArea": 41.21,
+      "pctGeographicArea": 41.28,
       "changeKm2": -19.13
     },
     {
