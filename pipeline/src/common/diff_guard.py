@@ -52,6 +52,11 @@ def _ids(obj: object) -> set[str]:
 
 def check(paths: list[str]) -> list[str]:
     problems: list[str] = []
+    # `git diff HEAD` is blind to brand-new untracked files — a pipeline that
+    # starts emitting an extra output file would otherwise pass the guard.
+    untracked = _git("ls-files", "--others", "--exclude-standard", "--", *paths).strip()
+    for path in untracked.splitlines():
+        problems.append(f"NEW file added (untracked): {path}")
     out = _git("diff", "--name-status", "HEAD", "--", *paths).strip()
     if not out:
         return problems

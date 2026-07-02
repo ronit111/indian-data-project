@@ -19,6 +19,11 @@ interface ChartActionsWrapperProps {
   children: ReactNode;
 }
 
+// Module-scoped ownership registry: when a section wraps several charts with
+// the same registryKey, only the first mounted wrapper renders the sr-only
+// data table — screen readers were getting the identical table repeated.
+const srTableOwners = new Map<string, symbol>();
+
 export function ChartActionsWrapper({ registryKey, data, children }: ChartActionsWrapperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -26,6 +31,18 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   const [sheetOpen, setSheetOpen] = useState(false);
   const [showMobileActions, setShowMobileActions] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const instanceId = useRef<symbol | null>(null);
+  if (instanceId.current === null) instanceId.current = Symbol(registryKey);
+  const [ownsTable, setOwnsTable] = useState(false);
+
+  useEffect(() => {
+    const id = instanceId.current!;
+    if (!srTableOwners.has(registryKey)) srTableOwners.set(registryKey, id);
+    setOwnsTable(srTableOwners.get(registryKey) === id);
+    return () => {
+      if (srTableOwners.get(registryKey) === id) srTableOwners.delete(registryKey);
+    };
+  }, [registryKey]);
 
   const handleMobileTap = useCallback(() => {
     if (!svgRef.current && containerRef.current) {
@@ -68,6 +85,9 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
   useEffect(() => {
     const svg = containerRef.current?.querySelector('svg');
     if (!svg || !entry) return;
+    // Respect hand-authored labels (e.g. PerCapitaSection); only manage
+    // labels this wrapper set itself, marked with data-caw-label.
+    if (svg.hasAttribute('aria-label') && !svg.hasAttribute('data-caw-label')) return;
     let summary = '';
     if (entry.heroStat) {
       try {
@@ -77,6 +97,7 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
     }
     svg.setAttribute('role', 'img');
     svg.setAttribute('aria-label', `${entry.title}${summary}`);
+    svg.setAttribute('data-caw-label', '');
     svg.setAttribute('focusable', 'false');
   }, [entry, data]);
 
@@ -102,7 +123,7 @@ export function ChartActionsWrapper({ registryKey, data, children }: ChartAction
 
       {/* Screen-reader-only data table: the chart's data made accessible to
           assistive tech and crawlers. Built from the registry's toTabular(). */}
-      {accessibleTable && (
+      {ownsTable && accessibleTable && (
         <table className="sr-only">
           <caption>{entry.title} — data table. Source: {entry.source}</caption>
           <thead>
