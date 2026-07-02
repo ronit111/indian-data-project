@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build && node scripts/prerender.mjs",
     "build:no-prerender": "tsc -b && vite build && node scripts/inject-og.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "perf:lighthouse": "npm run build && npx --yes @lhci/cli@0.14.x autorun"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
@@ -26,6 +27,7 @@
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.18.1",
     "topojson-client": "^3.1.0",
+    "web-vitals": "^4.2.4",
     "zustand": "^5.0.11"
   },
   "devDependencies": {

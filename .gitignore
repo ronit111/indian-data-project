@@ -20,3 +20,6 @@ pipeline/.venv*/
 .web-design/
 .session-data-findings-*.json
 SESSION_HANDOFF.md
+
+# Lighthouse CI output
+.lighthouseci/
