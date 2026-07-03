@@ -150,9 +150,9 @@ This is an independent civic project built by one person, not affiliated with or
 - Real GDP growth: 6.5% (2024-25 Provisional Estimate)
 - Projected growth: 7.4% (2025-26 NSO First Advance Estimate, Jan 2026)
 - CPI inflation: 4.0% (Economic Survey revised projection)
-- Nominal GDP: Rs 3,45,47,157 crore
+- Nominal GDP: Rs 3,45,47,157 crore (2024-25 PE; 2025-26 FAE projects Rs 3,56,98,000 crore)
 - Current account deficit: -0.8% of GDP (H1 FY2025-26)
-- Per capita GDP: Rs 2,38,103
+- Per capita GDP: Rs 2,38,103 (2024-25 PE)
 
 ### RBI Data (2025-26)
 - Repo rate: 5.25% (Neutral stance, as of December 5, 2025)
@@ -223,7 +223,7 @@ This is an independent civic project built by one person, not affiliated with or
 ### Elections (Lok Sabha 1957-2024)
 - Total electors 2024: 96.88 crore (968.8 million)
 - Voter turnout 2024: 65.8% (17th Lok Sabha)
-- Highest ever turnout: 67.5% (2014)
+- Highest ever turnout: 67.4% (2019)
 - BJP seats 2024: 240 (36.6% vote share), INC seats: 99 (21.2%)
 - NDA total: 293 seats, INDIA bloc: 234 seats
 - MPs with criminal cases: 46% (251 out of 543), Serious charges: 31%

@@ -270,7 +270,7 @@ def _build_glossary() -> dict:
                 "term": "Usual Status (ps+ss)",
                 "simple": "Employment measured by what a person mainly did over the past year (principal status + subsidiary status).",
                 "detail": "PLFS uses two measurement approaches. Usual Status asks: 'What was your main activity in the last 365 days?' This captures long-term employment patterns. Current Weekly Status (CWS) asks about the reference week. Usual Status shows lower unemployment (because seasonal workers count as employed if they worked any time in the year). CWS shows higher unemployment (catches short-term joblessness). Both are valid — they measure different things.",
-                "inContext": "Usual Status UR: 3.2%. CWS UR: ~5.0% (higher because it captures short-term joblessness).",
+                "inContext": "Usual Status UR: 3.1%. CWS UR: ~5.0% (higher because it captures short-term joblessness).",
                 "relatedTerms": ["plfs", "unemployment-rate"],
             },
             {
@@ -278,7 +278,7 @@ def _build_glossary() -> dict:
                 "term": "Informal Sector",
                 "simple": "Jobs in unregistered enterprises with no written contracts, social security, or labor law protections.",
                 "detail": "About 89% of India's workers are in the informal sector (ILO estimates). This includes street vendors, farm laborers, construction workers, domestic workers, auto-rickshaw drivers. Informal workers have no provident fund, health insurance, or job security. The formal-informal divide is India's deepest labor market challenge. E-Shram portal (2021) registered 29+ crore informal workers to extend social security coverage.",
-                "inContext": "~89% of workers are informal. ~58% are self-employed. E-Shram: 29+ crore registered.",
+                "inContext": "~89% of workers are informal. ~56% are self-employed. E-Shram: 29+ crore registered.",
                 "relatedTerms": ["self-employment", "vulnerable-employment"],
             },
             {
@@ -302,7 +302,7 @@ def _build_glossary() -> dict:
                 "term": "Structural Transformation",
                 "simple": "The long-term shift of workers from agriculture to manufacturing and services as an economy develops.",
                 "detail": "In 1991, agriculture employed 65% of Indians. Today it's ~46% — but it still produces only ~18% of GDP. This means agricultural productivity is far below manufacturing or services. The 'transformation' is workers moving to higher-productivity sectors. India's unique pattern: workers are moving directly from agriculture to services (skipping manufacturing). This 'premature de-industrialization' worries economists because manufacturing historically creates more stable, higher-paying jobs.",
-                "inContext": "Agriculture: 46% of workers but 18% of GDP. Services: 31% of workers, 54% of GDP.",
+                "inContext": "Agriculture: 43% of workers but 17% of GVA. Services: ~33% of workers, 50% of GVA.",
                 "relatedTerms": ["informal-sector", "disguised-unemployment"],
             },
             {

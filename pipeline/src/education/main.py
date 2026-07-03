@@ -294,7 +294,7 @@ def _build_glossary() -> dict:
                 "term": "Dropout Rate",
                 "simple": "The percentage of students who leave school before completing a level.",
                 "detail": "Calculated from UDISE+ transition rates: the percentage of students enrolled in one year who don't appear in the next year's records. India's primary dropout is low (~1.9%) but secondary jumps to ~14%. The cliff steepens at higher secondary (~20%). Dropouts are driven by economic pressure (child labor), distance to school, quality perception, and for girls, early marriage.",
-                "inContext": "India: Primary dropout 1.9% → Secondary 14.1% → Higher secondary ~20%",
+                "inContext": "India: Primary dropout 0.3% → Upper Primary 3.5% → Secondary 11.5% (UDISE+ 2024-25)",
                 "relatedTerms": ["ger", "out-of-school", "rte"],
             },
             {
@@ -302,7 +302,7 @@ def _build_glossary() -> dict:
                 "term": "Pupil-Teacher Ratio (PTR)",
                 "simple": "The average number of students per teacher.",
                 "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is ~25:1, but this masks gaps: Jharkhand has 35:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
-                "inContext": "National PTR: 25:1. Bihar: 32:1. HP: 14:1. RTE target: 30:1.",
+                "inContext": "National PTR: 24:1. Bihar: 30:1. HP: 14:1. RTE target: 30:1.",
                 "relatedTerms": ["rte", "udise", "aser"],
             },
             {
