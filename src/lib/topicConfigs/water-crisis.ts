@@ -94,7 +94,7 @@ export const waterCrisis: TopicDef = {
           return [
             { label: 'Population', value: c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—', accent: '#8B5CF6' },
             { label: 'Freshwater use', value: '~80% agriculture', accent: '#F43F5E' },
-            { label: 'Hospital Beds', value: h ? `${h.hospitalBedsPer1000} / 1K` : '—', accent: '#EC4899' },
+            { label: 'Govt Hospital Beds', value: h ? `${h.hospitalBedsPer1000} / 1K` : '—', accent: '#EC4899' },
             { label: 'Out-of-Pocket', value: h ? `${h.outOfPocketPct}%` : '—', accent: '#F59E0B' },
           ];
         },

@@ -63,7 +63,7 @@ export default function HealthcarePage() {
         pills={[
           { value: '₹21/day', label: 'Per-capita health spending — about a cup of chai', sectionId: 'spending' },
           { value: `${summary.outOfPocketPct} paise`, label: 'Of every health rupee from your pocket — not the government', sectionId: 'oop' },
-          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Hospital beds per 1,000 people — WHO recommends 3.5', sectionId: 'infrastructure' },
+          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Government hospital beds per 1,000 (~1.6 incl. private; WHO recommends 3.5)', sectionId: 'infrastructure' },
           { value: `${summary.healthExpGDP}% GDP`, label: 'India spends on health — roughly half the global average', sectionId: 'spending' },
         ]}
       />}

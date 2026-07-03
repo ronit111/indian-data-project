@@ -92,7 +92,7 @@ export const regionalInequality: TopicDef = {
           return [
             { label: 'Urban Share', value: c ? `${c.urbanizationRate}%` : '—', accent: '#6366F1' },
             { label: 'Rural Share', value: c ? `${(100 - c.urbanizationRate).toFixed(1)}%` : '—', accent: '#8B5CF6' },
-            { label: 'Hospital Beds / 1,000', value: h ? `${h.hospitalBedsPer1000}` : '—', accent: '#F43F5E' },
+            { label: 'Govt Hospital Beds / 1,000', value: h ? `${h.hospitalBedsPer1000}` : '—', accent: '#F43F5E' },
             { label: 'Literacy Rate', value: c ? `${c.literacyRate}%` : '—', accent: '#4ADE80' },
           ];
         },

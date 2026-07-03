@@ -5,7 +5,7 @@ export const HEALTH_INFRASTRUCTURE: StoryKitDef = {
   title: "India's Health Infrastructure",
   subtitle: "COVID exposed the gaps. Three years later, how does India's health system measure up — in beds, doctors, spending, and immunization?",
   accent: '#F43F5E',
-  narrativeContext: `India has 0.5 hospital beds per 1,000 people against a WHO recommendation of 3.5 per 1,000. Out-of-pocket spending pushes 55 million people into poverty every year. Yet immunization coverage has risen to near-90%, and doctor density is slowly improving. This kit assembles the infrastructure, spending, and outcome data you need for any health system story.`,
+  narrativeContext: `India has 0.5 government hospital beds per 1,000 people (~1.6 counting private) against a WHO recommendation of 3.5 per 1,000. Out-of-pocket spending pushes 55 million people into poverty every year. Yet immunization coverage has risen to near-90%, and doctor density is slowly improving. This kit assembles the infrastructure, spending, and outcome data you need for any health system story.`,
   charts: [
     {
       registryKey: 'healthcare/infrastructure',

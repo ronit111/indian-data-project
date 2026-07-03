@@ -22,8 +22,8 @@ export const healthOutcomes: TopicDef = {
       const h = hcSummary(bag);
       return h ? `${h.hospitalBedsPer1000}` : '—';
     },
-    label: 'Hospital beds per 1,000 people',
-    context: 'WHO recommends 3.5 beds per 1,000. India has a long way to go.',
+    label: 'Government hospital beds per 1,000 people',
+    context: 'About 1.6 per 1,000 counting private hospitals. WHO recommends 3.5.',
   },
 
   takeaways: [

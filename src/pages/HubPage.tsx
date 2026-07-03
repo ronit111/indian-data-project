@@ -300,7 +300,7 @@ function HealthcareMiniViz({ summary, isVisible }: { summary: HealthcareSummary 
   const compBars = useMemo(() => {
     if (!summary) return [];
     return [
-      { label: 'Beds', india: summary.hospitalBedsPer1000, who: 3.5 },
+      { label: 'Govt beds', india: summary.hospitalBedsPer1000, who: 3.5 },
       { label: 'Docs', india: summary.physiciansPer1000, who: 2.5 },
       { label: 'Exp', india: summary.healthExpGDP, who: 6.0 },
     ];

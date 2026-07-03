@@ -99,7 +99,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
             style={{ backgroundColor: 'var(--rose)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Beds {summary?.hospitalBedsPer1000?.toFixed(1) ?? '—'}/1K
+            Govt beds {summary?.hospitalBedsPer1000?.toFixed(1) ?? '—'}/1K
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; Health Exp {summary?.healthExpGDP?.toFixed(1) ?? '—'}% GDP

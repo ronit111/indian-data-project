@@ -373,7 +373,7 @@ Examples:
 - Census: "943 — Girls per 1,000 boys, 57 are 'missing'", "1 in 4 — Indians who can't read or write"
 - Education: "24.7 Cr — Students, more than Brazil's population", "24:1 — Students per teacher"
 - Employment: "9.9% — Youth unemployment, over 3× the national rate", "40% — Female LFPR, lower than Bangladesh and Sri Lanka"
-- Healthcare: "~45% — You pay nearly half your medical bills from your pocket", "0.5 beds — Per 1,000 (WHO says 3.5)"
+- Healthcare: "~45% — You pay nearly half your medical bills from your pocket", "0.5 beds — Govt beds per 1,000, ~1.6 incl. private (WHO says 3.5)"
 
 ### Question-First Search
 The Cmd+K search overlay indexes 161 curated citizen questions across all 11 domains. Questions are phrased in natural language ("Why are prices rising?", "How much does the government spend on me per day?") and map to specific story page sections with one-sentence answers.
