@@ -106,7 +106,7 @@ export function GenderGapSection({ data }: GenderGapSectionProps) {
           className="text-annotation mt-8 max-w-xl"
           style={{ color: 'var(--text-secondary)' }}
         >
-          96.88 crore people are eligible to choose their representatives. They show up in extraordinary numbers. What they get in return — a Parliament where 1 in 3 members faces criminal charges and 6 in 7 are men — is the gap between India's democratic ambition and its democratic reality. The ballot box works. Everything around it needs work.
+          96.88 crore people are eligible to choose their representatives. They show up in extraordinary numbers. What they get in return — a Parliament where nearly half the members face criminal cases and 6 in 7 are men — is the gap between India's democratic ambition and its democratic reality. The ballot box works. Everything around it needs work.
         </motion.p>
 
         <RelatedTopics sectionId="representation" domain="elections" />

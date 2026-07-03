@@ -71,7 +71,7 @@ export default function EducationPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India runs the largest school system on Earth. 247 million students. Primary enrollment above 100%. By any access metric, it's a success story."
+        text="India runs the largest school system on Earth. 247 million students. Primary enrollment near-universal. By any access metric, it's a success story."
         highlights={{
           'largest': 'var(--blue)',
           '247': 'var(--blue)',

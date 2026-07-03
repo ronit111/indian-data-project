@@ -655,7 +655,7 @@ export default function HubPage() {
           to="/states"
           sectionNumber="04"
           title="State Finances"
-          description="India's federal mosaic. GSDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 28 states and 8 union territories."
+          description="India's federal mosaic. GSDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs."
           accentColor="var(--emerald)"
           accentVar="--emerald"
           ctaText="Explore state data"

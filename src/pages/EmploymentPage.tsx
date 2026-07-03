@@ -62,7 +62,7 @@ export default function EmploymentPage() {
         accent="#F59E0B"
         pills={[
           { value: `${summary.selfEmployedPct}%`, label: 'Self-employed — most are subsistence, not enterprise', sectionId: 'informality' },
-          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — nearly 4× the national rate', sectionId: 'youth' },
+          { value: `${summary.youthUnemployment}%`, label: 'Youth unemployment — over 3× the national rate', sectionId: 'youth' },
           { value: `${summary.femaleLfpr}%`, label: 'Female LFPR — lower than Bangladesh and Sri Lanka', sectionId: 'gender-gap' },
           { value: `${summary.workforceTotal} Cr`, label: 'Workers — but most survive rather than thrive', sectionId: 'participation' },
         ]}
@@ -101,7 +101,7 @@ export default function EmploymentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="The young bear the heaviest cost. India adds over 1 crore people to the workforce each year. The economy does not create enough quality jobs to absorb them. Youth unemployment runs at nearly 4 times the overall rate. The demographic dividend becomes a demographic disaster without work."
+        text="The young bear the heaviest cost. India adds over 1 crore people to the workforce each year. The economy does not create enough quality jobs to absorb them. Youth unemployment runs at over 3 times the overall rate. The demographic dividend becomes a demographic disaster without work."
         highlights={{
           'young': 'var(--amber)',
           'times': 'var(--saffron)',
