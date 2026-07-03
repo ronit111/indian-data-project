@@ -76,7 +76,7 @@ export const educationEmployment: TopicDef = {
           if (!d) return null;
           const series = [];
           if (d.totalTimeSeries?.length >= 3) series.push({ name: 'National', color: '#F59E0B', data: d.totalTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
-          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-29)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
+          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-24, WB/ILO)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
           return series.length > 0 ? series : null;
         },
       }],

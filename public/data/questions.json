@@ -723,7 +723,7 @@
     "id": "healthcare-beds",
     "domain": "healthcare",
     "question": "How many hospital beds does India have?",
-    "answer": "India has 0.5 hospital beds per 1,000 people in government hospitals (~1.9 including private) — WHO recommends 3.5 per 1,000.",
+    "answer": "India has 0.5 hospital beds per 1,000 people in government hospitals (~1.6 including private, World Bank 2021) — WHO recommends 3.5 per 1,000.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },
@@ -771,7 +771,7 @@
     "id": "healthcare-crowded",
     "domain": "healthcare",
     "question": "Why are government hospitals so crowded?",
-    "answer": "With 0.5 government beds per 1,000 (~1.9 including private) and facilities concentrated in cities, demand far exceeds supply.",
+    "answer": "With 0.5 government beds per 1,000 (~1.6 including private) and facilities concentrated in cities, demand far exceeds supply.",
     "sectionId": "infrastructure",
     "route": "/healthcare#infrastructure"
   },

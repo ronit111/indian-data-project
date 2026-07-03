@@ -83,8 +83,8 @@
       "id": "hospital-beds",
       "term": "Hospital Beds per 1,000 Population",
       "simple": "The number of hospital beds available for every 1,000 people in the country.",
-      "detail": "India has about 0.5 beds per 1,000 (government hospitals only) — far below the WHO recommendation of 3.5 per 1,000. Including private hospitals, the total is ~1.9 per 1,000. The variation is extreme: Delhi has 12+ per 1,000 while Bihar has less than 0.5. COVID-19 exposed this deficit acutely. Most beds are concentrated in urban areas, leaving rural India with minimal hospital infrastructure.",
-      "inContext": "India: 0.5 govt beds/1000. Total (incl. private): ~1.9. WHO recommends: 3.5.",
+      "detail": "India has about 0.5 beds per 1,000 (government hospitals only) — far below the WHO recommendation of 3.5 per 1,000. Including private hospitals, the World Bank all-beds series puts the total at ~1.6 per 1,000 (2021). The variation is extreme: Delhi has 12+ per 1,000 while Bihar has less than 0.5. COVID-19 exposed this deficit acutely. Most beds are concentrated in urban areas, leaving rural India with minimal hospital infrastructure.",
+      "inContext": "India: 0.5 govt beds/1000. Total (incl. private): ~1.6 (World Bank 2021). WHO recommends: 3.5.",
       "relatedTerms": [
         "phc",
         "chc",

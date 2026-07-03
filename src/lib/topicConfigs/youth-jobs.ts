@@ -40,7 +40,7 @@ export const youthJobs: TopicDef = {
       id: 'youth-challenge',
       sectionNumber: 1,
       title: 'The Youth Challenge',
-      annotation: 'Youth (15-29) unemployment is consistently 2-3x the national average. The more educated you are, the higher your unemployment rate — a painful paradox reflecting the skills-jobs mismatch.',
+      annotation: 'Youth (15-24, WB/ILO) unemployment is consistently 2-3x the national average. The more educated you are, the higher your unemployment rate — a painful paradox reflecting the skills-jobs mismatch.',
       domains: ['employment'],
       sources: ['PLFS (MoSPI)', 'World Bank'],
       charts: [{
@@ -50,7 +50,7 @@ export const youthJobs: TopicDef = {
           if (!d) return null;
           const series = [];
           if (d.totalTimeSeries?.length >= 3) series.push({ name: 'National', color: '#F59E0B', data: d.totalTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
-          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-29)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
+          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-24, WB/ILO)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
           return series.length > 0 ? series : null;
         },
       }],

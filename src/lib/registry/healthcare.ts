@@ -33,7 +33,7 @@ registerChart({
     return {
       label: 'Hospital Beds per 1,000',
       value: `${latest.value.toFixed(1)}`,
-      context: `India's hospital bed density. WHO recommends 3.0 per 1,000.`,
+      context: `India's hospital bed density. WHO recommends 3.5 per 1,000.`,
     };
   },
 });

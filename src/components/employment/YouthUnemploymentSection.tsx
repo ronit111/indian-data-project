@@ -30,7 +30,7 @@ export function YouthUnemploymentSection({ data }: YouthUnemploymentSectionProps
     if (data.youthTimeSeries.length >= MIN_POINTS) {
       series.push({
         id: 'youth-ur',
-        name: 'Youth UR (15-24)',
+        name: 'Youth UR (15-24, World Bank/ILO series)',
         color: 'var(--saffron)',
         data: data.youthTimeSeries,
       });
@@ -58,7 +58,7 @@ export function YouthUnemploymentSection({ data }: YouthUnemploymentSectionProps
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Youth unemployment (ages 15-29) is over 3 times the overall rate. India produces millions of graduates each year, but the economy doesn't create enough quality jobs to absorb them.
+          Youth unemployment (9.9%, PLFS 2025, ages 15-29) is over 3 times the overall rate. India produces millions of graduates each year, but the economy doesn't create enough quality jobs to absorb them.
         </motion.p>
 
         {unemploymentSeries.length > 0 && (
