@@ -109,7 +109,7 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
-            <span><strong>Renewable energy %</strong> — World Bank. Final energy consumption from renewable sources (includes traditional biomass, which is large in India).</span>
+            <span><strong>Renewable capacity share</strong> — CEA Installed Capacity Reports. Share of installed grid capacity including large hydro (43.4%, March 2024). Generation share is lower — solar/wind capacity factors run 15–25%.</span>
           </li>
         </ul>
       </>
@@ -143,7 +143,7 @@ const SECTIONS = [
         <ul className="space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>World Bank data has ~1-2 year lag. PM2.5 latest: 2020. Forest cover latest: 2023. Energy data latest: 2023.</span>
+            <span>World Bank data has ~1-2 year lag. PM2.5 latest: 2020. Forest cover latest: 2023 (ISFR). Capacity mix latest: 2024 (CEA); World Bank energy series lag 1-2 years.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />

@@ -21,7 +21,7 @@ export const CRIME_SAFETY: StoryKitDef = {
     },
     {
       registryKey: 'crime/justice',
-      caption: 'The justice funnel: 53.6L cases for investigation → 27.5L chargesheeted → 9.1L convicted (2023). Only 21 judges per million citizens (global average: 50).',
+      caption: 'The justice pipeline in 2023: police completed 37.9L investigations (27.5L chargesheeted); courts completed 16.8L trials (9.1L convictions) while 1.59Cr cases stayed pending. Only 21 judges per million citizens (global average: 50).',
     },
     {
       registryKey: 'crime/police',

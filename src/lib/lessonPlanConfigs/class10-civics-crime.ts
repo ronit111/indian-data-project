@@ -33,7 +33,7 @@ export const CLASS10_CIVICS_CRIME: LessonPlanDef = {
     },
     {
       registryKey: 'crime/justice',
-      teachingNote: 'The justice funnel is the key visual. Show how 54 lakh cases for investigation become just 9 lakh convictions. Average trial time: 3.5 years. Connect to the textbook concept of "rule of law" — if the system is slow and under-resourced, does the rule of law function in practice?',
+      teachingNote: 'The justice funnel is the key visual. Show the two stages side by side: of 27.5 lakh chargesheets filed in 2023, courts completed only 16.8 lakh trials (9.1 lakh convictions) — while 1.59 crore cases stayed pending. Average trial time: 3.5 years. Connect to the textbook concept of "rule of law" — if the system is slow and under-resourced, does the rule of law function in practice?',
       discussionQuestions: [
         'If it takes 3.5 years for a trial, what does that mean for victims and the accused?',
         'India has 21 judges per million people. The global average is 50. What are the consequences of this gap?',

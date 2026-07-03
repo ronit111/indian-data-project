@@ -19,7 +19,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
     { label: 'Cases for Investigation', value: data.funnel.totalForInvestigation },
     { label: 'Investigated', value: data.funnel.investigated },
     { label: 'Chargesheeted (accused in court filing)', value: data.funnel.chargesheeted },
-    { label: 'Trial Completed', value: data.funnel.trialCompleted },
+    { label: 'Trials Completed (incl. earlier years\u2019 cases)', value: data.funnel.trialCompleted },
     { label: 'Convicted', value: data.funnel.convicted },
   ], [data]);
 
@@ -49,7 +49,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
         {/* Justice funnel */}
         <div className="mb-10">
           <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-            From FIR to conviction — how cases drain away
+            How cases drain away — 2023 police and court disposals (same-year cross-section, not one cohort)
           </p>
           <ChartActionsWrapper registryKey="crime/justice" data={data}>
             <FunnelChart
@@ -60,6 +60,11 @@ export function JusticeSection({ data }: JusticeSectionProps) {
               formatValue={(v) => `${(v / 100000).toFixed(1)}L`}
             />
           </ChartActionsWrapper>
+          <p className="mt-3 text-xs max-w-xl" style={{ color: 'var(--text-muted)' }}>
+            Stages 1–3 are police disposals during 2023; stages 4–5 are court disposals the same
+            year, drawn largely from the 1.8 crore cases already pending trial. A same-year
+            cross-section of the system — not one batch of cases tracked end to end.
+          </p>
         </div>
 
         {/* Conviction rate bullet */}

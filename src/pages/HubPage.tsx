@@ -814,7 +814,7 @@ export default function HubPage() {
           to="/crime"
           sectionNumber="11"
           title="Crime & Safety"
-          description={`${crimeSummary ? `${(crimeSummary.totalCrimes / 100000).toFixed(1)}L` : '...'} crimes recorded in ${crimeSummary?.dataYear ?? '2023'}. One every 5 seconds. From FIR to conviction, the justice pipeline loses 60% along the way.`}
+          description={`${crimeSummary ? `${(crimeSummary.totalCrimes / 100000).toFixed(1)}L` : '...'} crimes recorded in ${crimeSummary?.dataYear ?? '2023'}. One every 5 seconds. Courts deliver only ~15 same-year convictions per 100 crimes reported.`}
           accentColor="var(--crimson)"
           accentVar="--crimson"
           ctaText="Explore crime data"

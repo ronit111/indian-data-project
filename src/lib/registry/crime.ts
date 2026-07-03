@@ -150,7 +150,7 @@ registerChart({
 registerChart({
   domain: DOMAIN,
   sectionId: 'justice',
-  title: 'Justice Pipeline — FIR to Conviction',
+  title: 'Justice Pipeline — 2023 Police & Court Disposals',
   source: 'NCRB Crime in India 2023',
   accentColor: ACCENT,
   dataFiles: [`${base}/justice.json`],
