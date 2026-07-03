@@ -28,7 +28,7 @@ export const waterCrisis: TopicDef = {
     { value: '4%', label: 'Share of global freshwater', sectionId: 'water-stress' },
     { value: (bag) => { const c = censusSummary(bag); return c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—'; }, label: 'Population dependent on it', sectionId: 'water-stress' },
     { value: '~80%', label: 'Freshwater used by agriculture', sectionId: 'groundwater-depletion' },
-    { value: (bag) => { const h = bag['healthcare/summary'] as { hospitalBedsPer1000: number } | undefined; return h ? `${h.hospitalBedsPer1000}/1K` : '—'; }, label: 'Hospital beds per 1,000', sectionId: 'health-link' },
+    { value: (bag) => { const h = bag['healthcare/summary'] as { hospitalBedsPer1000: number } | undefined; return h ? `${h.hospitalBedsPer1000}/1K` : '—'; }, label: 'Govt hospital beds per 1,000', sectionId: 'health-link' },
   ],
 
   narrativeBridge: 'India\'s water crisis is not just about scarcity — it\'s about distribution, contamination, and governance. Some states are mining groundwater faster than it recharges. Rivers are polluted. Agriculture consumes 80% of freshwater. And climate change is making rainfall more erratic.',

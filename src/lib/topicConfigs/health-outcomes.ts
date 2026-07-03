@@ -27,7 +27,7 @@ export const healthOutcomes: TopicDef = {
   },
 
   takeaways: [
-    { value: (bag) => { const h = hcSummary(bag); return h ? `${h.hospitalBedsPer1000}` : '—'; }, label: 'Beds per 1,000', sectionId: 'infrastructure-gap' },
+    { value: (bag) => { const h = hcSummary(bag); return h ? `${h.hospitalBedsPer1000}` : '—'; }, label: 'Govt beds per 1,000', sectionId: 'infrastructure-gap' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.dptImmunization}%` : '—'; }, label: 'DPT immunization', sectionId: 'child-health' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.healthExpGDP}%` : '—'; }, label: 'Health spending (% GDP)', sectionId: 'spending-gap' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.outOfPocketPct}%` : '—'; }, label: 'Out-of-pocket spending', sectionId: 'spending-gap' },
@@ -66,7 +66,7 @@ export const healthOutcomes: TopicDef = {
           const h = hcSummary(bag);
           if (!h) return null;
           return [
-            { label: 'Beds / 1,000', value: `${h.hospitalBedsPer1000}`, accent: '#EC4899' },
+            { label: 'Govt Beds / 1,000', value: `${h.hospitalBedsPer1000}`, accent: '#EC4899' },
             { label: 'Physicians / 1,000', value: `${h.physiciansPer1000}`, accent: '#F43F5E' },
             { label: 'Health Spend (% GDP)', value: `${h.healthExpGDP}%`, accent: '#8B5CF6' },
             { label: 'Out-of-Pocket', value: `${h.outOfPocketPct}%`, accent: '#F59E0B' },

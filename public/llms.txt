@@ -95,7 +95,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /employment/glossary — Plain-language definitions of employment terms: LFPR, unemployment rate, PLFS, informal sector, gig economy, structural transformation, and more.
 
 ### Healthcare Domain
-- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 hospital beds per 1,000 vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (45% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
+- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 govt hospital beds per 1,000, ~1.6 incl. private, vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (45% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
 - /healthcare/explore — Browseable indicator explorer with categories: infrastructure, spending, immunization, disease. Select any indicator to compare across states.
 - /healthcare/methodology — Data sources (NHP 2022, NFHS-6 2023-24, World Bank), indicator definitions, limitations
 - /healthcare/glossary — Plain-language definitions of healthcare terms: PHC, CHC, out-of-pocket spending, immunization, TB incidence, hospital beds per 1000, and more.

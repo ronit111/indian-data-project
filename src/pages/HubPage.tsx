@@ -746,7 +746,7 @@ export default function HubPage() {
 
           className="mt-8"
           stats={[
-            s('Beds / 1,000', healthcareSummary ? `${healthcareSummary.hospitalBedsPer1000}` : null, 'var(--rose)'),
+            s('Govt Beds / 1,000', healthcareSummary ? `${healthcareSummary.hospitalBedsPer1000}` : null, 'var(--rose)'),
             s('Health Exp', healthcareSummary ? `${healthcareSummary.healthExpGDP}% GDP` : null, 'var(--rose-light, #FB7185)'),
             s('Out-of-Pocket', healthcareSummary ? `${healthcareSummary.outOfPocketPct}%` : null, 'var(--saffron)'),
           ]}
