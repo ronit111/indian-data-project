@@ -133,7 +133,7 @@ const ROUTES = [
   {
     path: '/states',
     title: "State Finances — India's Federal Mosaic | Indian Data Project",
-    description: 'State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs — visualized from RBI Handbook data.',
+    description: "State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs — visualized from RBI Handbook data.",
     image: '/og-states.png',
   },
   {
