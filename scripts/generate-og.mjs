@@ -79,7 +79,7 @@ const VARIANTS = [
   {
     filename: 'og-states.png',
     title: 'State Finances',
-    tagline: 'GSDP, revenue, fiscal health across 28 states and 8 union territories',
+    tagline: 'GSDP, revenue, fiscal health across 31 of 36 states and UTs',
     accentFrom: '#4ADE80',
     accentTo: '#86EFAC',
     cornerTL: 'rgba(74,222,128,0.25)',

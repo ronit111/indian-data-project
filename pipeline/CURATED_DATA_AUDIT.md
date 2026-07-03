@@ -9,6 +9,7 @@
 > education to UDISE+ 2024-25, employment to PLFS Annual 2025 (KLEMS dropped).
 > The rows below describe the OLD vintages and are kept as a historical record;
 > current ground truth is `public/data/*/2025-26/*.json` + the provenance sidecars.
+> (RBI likewise moved on: 28 repo decisions through Dec 2025, repo 5.25%, CRR 3.0%.)
 **Scope**: All 11 domains, curated data constants in `pipeline/src/*/sources/curated.py`
 **Method**: 9 parallel verification agents cross-referencing curated values against authoritative government publications, followed by manual PDF verification against UDISE+ 2023-24, ASER 2024 Final Report, NFHS-5 dataset, and ADR 2024 analysis
 

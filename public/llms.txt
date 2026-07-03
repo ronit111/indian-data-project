@@ -95,7 +95,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /employment/glossary — Plain-language definitions of employment terms: LFPR, unemployment rate, PLFS, informal sector, gig economy, structural transformation, and more.
 
 ### Healthcare Domain
-- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 hospital beds per 1,000 vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (48% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
+- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 hospital beds per 1,000 vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (45% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
 - /healthcare/explore — Browseable indicator explorer with categories: infrastructure, spending, immunization, disease. Select any indicator to compare across states.
 - /healthcare/methodology — Data sources (NHP 2022, NFHS-6 2023-24, World Bank), indicator definitions, limitations
 - /healthcare/glossary — Plain-language definitions of healthcare terms: PHC, CHC, out-of-pocket spending, immunization, TB incidence, hospital beds per 1000, and more.
@@ -129,7 +129,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /topics/climate-energy — Climate & Energy Transition: energy mix (renewables capacity growth, coal dominates generation), carbon footprint, forest cover by state. Domains: Environment, Economy, Budget.
 - /topics/youth-jobs — Youth & Jobs: youth unemployment (3x national rate), structural shift (sectoral employment), quality of work. Domains: Employment, Education, Census, Economy.
 - /topics/democratic-health — India's Democratic Health: turnout arc (1952-2024), quality of representation (criminal cases, women MPs, assets), accountability gap (budget underspending). Domains: Elections, Census, Education, Budget, Crime.
-- /topics/agriculture-food — Agriculture & Food Security: productivity paradox (42% workforce, 15% GDP), food-inflation link, sustainability pressures. Domains: Budget, Economy, Employment, Environment.
+- /topics/agriculture-food — Agriculture & Food Security: productivity paradox (~43% workforce, ~17% GVA), food-inflation link, sustainability pressures. Domains: Budget, Economy, Employment, Environment.
 - /topics/water-crisis — Water Crisis: groundwater stress by state, depletion facts, water-health connection. Domains: Environment, Census, Healthcare.
 
 ### Personalization Calculators
@@ -141,7 +141,7 @@ This is an independent civic project built by one person, not affiliated with or
 
 ### Budget (Budget Estimate 2025-26)
 - Total expenditure: Rs 50,65,345 crore
-- Revenue receipts: Rs 34,20,905 crore
+- Revenue receipts: Rs 34,20,409 crore
 - Capital expenditure: Rs 11,21,059 crore
 - Fiscal deficit target: 4.4% of GDP
 - Population estimate used: 145 crore (1.45 billion)

@@ -40,7 +40,7 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
-| `REPO_RATE_DECISIONS` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI MPC Statements (rbi.org.in) | 56 decisions, Feb 2014 to Feb 2026 | Bi-monthly: after each MPC meeting (~6x/year) |
+| `REPO_RATE_DECISIONS` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI MPC Statements (rbi.org.in) | 28 decisions, Jan 2014 to Dec 2025 | Bi-monthly: after each MPC meeting (~6x/year) |
 | `CURRENT_RATES` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI Current Rates page | As of Feb 6, 2026 | After any MPC rate change |
 | `CRR_HISTORY` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI Handbook of Statistics, Table 45 | 12-year series (2014-2026) | After CRR changes (infrequent) |
 

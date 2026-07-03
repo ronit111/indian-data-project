@@ -133,7 +133,7 @@ const ROUTES = [
   {
     path: '/states',
     title: "State Finances — India's Federal Mosaic | Indian Data Project",
-    description: 'State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 28 states and 8 union territories — visualized from RBI Handbook data.',
+    description: 'State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs — visualized from RBI Handbook data.',
     image: '/og-states.png',
   },
   {
@@ -407,7 +407,7 @@ const ROUTES = [
   {
     path: '/topics/agriculture-food',
     title: 'Agriculture & Food Security — Indian Data Project',
-    description: "42% of India's workforce is in agriculture, but it produces only 15% of GDP. Can India feed itself sustainably?",
+    description: "About 43% of India's workforce is in agriculture, but it produces only ~17% of GVA. Can India feed itself sustainably?",
     image: '/og-topics.png',
   },
   {
