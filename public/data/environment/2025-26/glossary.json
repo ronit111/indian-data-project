@@ -72,7 +72,7 @@
       "id": "renewable-energy",
       "term": "Renewable Energy",
       "simple": "Electricity from sources that don't run out — solar, wind, hydro, and biomass. India's renewables are growing fast.",
-      "detail": "India's installed renewable capacity: ~192 GW (March 2024) = 43.4% of total. Breakdown: solar 82.8 GW, wind 46.2 GW, hydro 47.1 GW, biomass+small hydro 15.6 GW. India has committed to 500 GW non-fossil capacity by 2030 (COP26 Glasgow). Solar has been the fastest-growing source: from 3.7 GW (2015) to 82.8 GW (2024) — a 22x increase in 9 years. Challenges: grid intermittency, land acquisition, storage, and coal lobbying.",
+      "detail": "India's installed renewable capacity: ~190 GW (March 2024) ≈ 43.4% of total on CEA's full-report denominator. Breakdown per the published capacity table: solar 81.8 GW, wind 46.2 GW, hydro 46.9 GW, biomass + small hydro 15.6 GW. India has committed to 500 GW non-fossil capacity by 2030 (COP26 Glasgow). Solar has been the fastest-growing source: from 3.7 GW (2015) to 81.8 GW (2024) — a 22x increase in 9 years. Challenges: grid intermittency, land acquisition, storage, and coal lobbying.",
       "inContext": "Renewables: 43.4% of capacity. Solar grew 22x in 9 years. Target: 500 GW by 2030.",
       "relatedTerms": [
         "energy-transition",

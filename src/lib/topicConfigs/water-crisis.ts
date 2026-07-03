@@ -40,7 +40,7 @@ export const waterCrisis: TopicDef = {
       title: 'Water Stress Map',
       annotation: 'India is classified as "water-stressed" — per capita availability has dropped from 5,177 cubic meters in 1951 to below 1,500 today. By 2030, demand is projected to outstrip supply in many basins.',
       domains: ['environment', 'census'],
-      sources: ['CWC', 'World Bank'],
+      sources: ['CWC', 'CGWB'],
       charts: [{
         chartType: 'horizontal-bar', chartTitle: 'Groundwater Stage by State (Most Stressed)', unit: '%', accent: '#06B6D4',
         extractData: (bag) => {
