@@ -332,9 +332,10 @@ function HealthcareMiniViz({ summary, isVisible }: { summary: HealthcareSummary 
 function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummary | null; isVisible: boolean }) {
   const energySplit = useMemo(() => {
     if (!summary) return null;
-    const fossil = summary.coalPct;
-    const renewable = 100 - fossil;
-    return { fossil, renewable };
+    const coal = summary.coalPct;
+    const renewable = summary.renewablesPct;
+    const other = Math.max(0, 100 - coal - renewable);
+    return { coal, renewable, other };
   }, [summary]);
 
   if (!energySplit) return null;
@@ -342,7 +343,7 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
   return (
     <div className="mb-2 max-w-xs">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Fossil</span>
+        <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Coal</span>
         <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Renewable</span>
       </div>
       <div className="flex h-2.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-raised)' }}>
@@ -350,8 +351,16 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
           className="h-full"
           style={{ background: 'var(--text-muted)', borderRadius: '9999px 0 0 9999px' }}
           initial={{ width: 0 }}
-          animate={isVisible ? { width: `${energySplit.fossil}%` } : {}}
+          animate={isVisible ? { width: `${energySplit.coal}%` } : {}}
           transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.4 }}
+        />
+        <motion.div
+          className="h-full"
+          style={{ background: 'var(--bg-deep, #1a2035)' }}
+          title={`Gas, nuclear and other capacity: ${energySplit.other.toFixed(0)}%`}
+          initial={{ width: 0 }}
+          animate={isVisible ? { width: `${energySplit.other}%` } : {}}
+          transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.45 }}
         />
         <motion.div
           className="h-full"
@@ -362,7 +371,7 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
         />
       </div>
       <div className="flex items-center justify-between mt-1">
-        <span className="text-[9px] font-mono" style={{ color: 'var(--text-muted)' }}>{energySplit.fossil.toFixed(0)}%</span>
+        <span className="text-[9px] font-mono" style={{ color: 'var(--text-muted)' }}>{energySplit.coal.toFixed(0)}%</span>
         <span className="text-[9px] font-mono" style={{ color: 'var(--teal)' }}>{energySplit.renewable.toFixed(0)}%</span>
       </div>
     </div>
@@ -426,8 +435,8 @@ function CrimeMiniViz({ summary, isVisible }: { summary: CrimeSummary | null; is
     if (!summary) return null;
     return [
       { label: 'Reported', pct: 100 },
-      { label: 'Chargesheeted', pct: summary.chargesheetRatePct },
-      { label: 'Convicted', pct: summary.convictionRatePct },
+      { label: 'Chargesheet %', pct: summary.chargesheetRatePct },
+      { label: 'Trial conv. %', pct: summary.convictionRatePct },
     ];
   }, [summary]);
 
@@ -450,6 +459,9 @@ function CrimeMiniViz({ summary, isVisible }: { summary: CrimeSummary | null; is
           <span className="text-[9px] font-mono w-8" style={{ color: 'var(--crimson)' }}>{stage.pct}%</span>
         </div>
       ))}
+      <p className="text-[9px] leading-snug" style={{ color: 'var(--text-muted)' }}>
+        Each rate is of its own base — only ~15 of 100 reported crimes end in a same-year conviction.
+      </p>
     </div>
   );
 }

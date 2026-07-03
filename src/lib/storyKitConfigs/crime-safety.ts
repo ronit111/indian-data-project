@@ -21,7 +21,7 @@ export const CRIME_SAFETY: StoryKitDef = {
     },
     {
       registryKey: 'crime/justice',
-      caption: 'The justice funnel: 54.1L FIRs → 31.4L chargesheeted → 7.1L convicted. Only 21 judges per million citizens (global average: 50).',
+      caption: 'The justice funnel: 53.6L cases for investigation → 27.5L chargesheeted → 9.1L convicted (2023). Only 21 judges per million citizens (global average: 50).',
     },
     {
       registryKey: 'crime/police',
