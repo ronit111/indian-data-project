@@ -1,5 +1,5 @@
 """
-Transform World Bank disease/immunization data + NFHS state data into disease.json.
+Transform World Bank disease/immunization data + NFHS-6 state data into disease.json.
 """
 
 import logging
@@ -30,5 +30,5 @@ def build_disease(wb_data: dict, imm_states: list[dict], year: str) -> dict:
         "hivTimeSeries": wb_data.get("hiv_prev", []),
         "birthsAttendedTimeSeries": wb_data.get("births_attended", []),
         "stateImmunization": state_imm,
-        "source": "World Bank + NFHS-5 (2019-21)",
+        "source": "World Bank + NFHS-6 (2023-24)",
     }

@@ -51,7 +51,7 @@ export function CrimeOverviewSection({ data }: CrimeOverviewSectionProps) {
   [data]);
 
   const latest = data.nationalTrend[data.nationalTrend.length - 1];
-  const covidDip = data.nationalTrend.find((t) => t.year === '2020');
+  const covidSpike = data.nationalTrend.find((t) => t.year === '2020');
   const growth = latest && data.nationalTrend[0]
     ? ((latest.total - data.nationalTrend[0].total) / data.nationalTrend[0].total * 100).toFixed(0)
     : null;
@@ -77,14 +77,14 @@ export function CrimeOverviewSection({ data }: CrimeOverviewSectionProps) {
           className="text-annotation mb-8 max-w-xl"
         >
           {latest ? `${(latest.total / 100000).toFixed(1)} lakh` : '—'} cognizable crimes in {latest?.year ?? '—'} — up {growth}% since {data.nationalTrend[0]?.year ?? '2014'}. Cognizable means crimes where police must register an FIR (First Information Report).
-          {covidDip && <> The 2020 dip to {(covidDip.total / 100000).toFixed(1)}L reflects lockdown suppression, not safer streets.</>}
+          {covidSpike && <> The 2020 spike to {(covidSpike.total / 100000).toFixed(1)}L reflects COVID-era enforcement — mass registrations under lockdown and disaster-management provisions — not a surge in conventional crime.</>}
           {' '}IPC (Indian Penal Code) crimes cover everyday offences (theft, assault, murder, fraud). SLL (Special & Local Laws) cover specific acts like drug offences and cybercrime. IPC makes up {latest ? Math.round(latest.ipc / latest.total * 100) : 61}% of the total. Note: IPC was replaced by BNS (Bharatiya Nyaya Sanhita) in July 2024; this data uses the IPC-era classification.
         </motion.p>
 
         {/* Trend chart */}
         <div className="mb-10">
           <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-            Total cognizable crimes, 2014–2022 (IPC vs SLL)
+            Total cognizable crimes, 2014–2023 (IPC vs SLL)
           </p>
           <ChartActionsWrapper registryKey="crime/overview" data={data}>
             <LineChart

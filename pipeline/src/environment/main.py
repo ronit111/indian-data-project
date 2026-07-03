@@ -2,19 +2,21 @@
 Environment Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — MOSPI Energy API + World Bank API + curated CPCB/FSI/CEA/CWC/CGWB data
+  1. FETCH   — MOSPI Energy API + World Bank API + curated FSI/CEA/CWC/CGWB data
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/environment/
 
 Data source priority:
   - Energy supply: MOSPI Energy API (primary) → curated CEA data (fallback)
-  - Air quality: Curated CPCB NAQI (no usable annual API available)
+  - Air quality: World Bank PM2.5 annual-mean series only (curated CPCB
+    annual-AQI tables were removed as untraceable — see sources/curated.py)
   - Forest: World Bank + curated ISFR
   - Water: Curated CWC/CGWB
 
-Note: CPCB data.gov.in API provides real-time readings only (no annual averages).
-Annual AQI statistics remain curated from CPCB NAQI reports.
+Note: CPCB data.gov.in API provides real-time readings only (no annual
+averages), so this pipeline publishes no AQI statistics; live city AQI is
+CPCB's National AQI portal's job.
 """
 
 import logging
@@ -140,6 +142,10 @@ def run_environment_pipeline():
     }
 
     paths = publish_all(outputs)
+    # Provenance sidecar: recomputes integrity checks against the
+    # JSONs just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("environment", SURVEY_YEAR)
     logger.info(f"Published {len(paths)} files")
 
     logger.info("=" * 60)
@@ -157,22 +163,16 @@ def _build_summary() -> dict:
         "coalPct": NATIONAL_TOTALS["coalPct"],
         "ghgTotal": NATIONAL_TOTALS["ghgTotal"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB",
+        "source": "World Bank + ISFR 2023 + CEA + CWC + CGWB",
     }
 
 
 def _build_indicators() -> dict:
     indicators = []
 
-    # Air Quality
-    indicators.append({
-        "id": "state_aqi",
-        "name": "Annual Average AQI",
-        "category": "air",
-        "unit": "AQI",
-        "states": [{"id": s["id"], "name": s["name"], "value": s["aqi"]} for s in CPCB_AQI_STATES],
-        "source": "CPCB NAQI 2023",
-    })
+    # Air Quality: state-wise annual-AQI indicator removed — CPCB does not
+    # publish annual state-level AQI (the source table was untraceable). The
+    # World Bank PM2.5 annual-mean series remains in air-quality.json.
 
     # Forest
     indicators.append({
@@ -226,7 +226,7 @@ def _build_glossary() -> dict:
                 "term": "Air Quality Index (AQI)",
                 "simple": "A number from 0-500 that tells you how clean or polluted the air is. Higher means worse.",
                 "detail": "India uses a 6-category AQI: Good (0-50), Satisfactory (51-100), Moderate (101-200), Poor (201-300), Very Poor (301-400), Severe (401-500). It considers 8 pollutants: PM10, PM2.5, NO2, SO2, CO, O3, NH3, Pb. The AQI is based on the worst-performing pollutant — if PM2.5 is bad but everything else is fine, the AQI still reflects PM2.5. Delhi regularly exceeds 300 (Very Poor) during October-January due to stubble burning, Diwali firecrackers, and temperature inversions.",
-                "inContext": "Delhi's annual avg AQI: ~263 (Poor). WHO recommends PM2.5 below 5 μg/m3.",
+                "inContext": "Live city AQI: CPCB National Air Quality Index portal (airquality.cpcb.gov.in). WHO recommends PM2.5 below 5 μg/m3.",
                 "relatedTerms": ["pm25", "naaqs"],
             },
             {
@@ -248,9 +248,9 @@ def _build_glossary() -> dict:
             {
                 "id": "forest-cover",
                 "term": "Forest Cover",
-                "simple": "Land area covered by trees, measured by satellite. India has 25.17% forest cover — about 8.27 lakh km².",
-                "detail": "Forest Survey of India (FSI) classifies forest into: Very Dense (canopy >70%), Moderately Dense (40-70%), Open (10-40%). The biennial India State of Forest Report (ISFR) uses satellite imagery (LISS-III). India's 25.17% forest cover is below the National Forest Policy target of 33%. However, not all 'forest cover' is natural forest — plantations, orchards, and even urban tree cover count. The northeast has the highest forest % but is losing cover fastest due to shifting cultivation and encroachment.",
-                "inContext": "India: 25.17% forest cover (ISFR 2023). Policy target: 33%. Northeast losing fastest.",
+                "simple": "Land area covered by forest, measured by satellite. India has 21.76% forest cover — about 7.15 lakh km² (25.17% counting tree cover outside forests too).",
+                "detail": "Forest Survey of India (FSI) classifies forest into: Very Dense (canopy >70%), Moderately Dense (40-70%), Open (10-40%). The biennial India State of Forest Report (ISFR) uses satellite imagery (LISS-III). India's forest cover is 21.76% (7,15,343 km²); the often-quoted 25.17% adds tree cover outside forests. Both are below the National Forest Policy target of 33%. However, not all 'forest cover' is natural forest — plantations, orchards, and even urban tree cover count. The northeast has the highest forest % but is losing cover fastest due to shifting cultivation and encroachment.",
+                "inContext": "India: 21.76% forest cover; 25.17% incl. tree cover (ISFR 2023). Policy target: 33%. Northeast losing fastest.",
                 "relatedTerms": ["isfr", "protected-areas"],
             },
             {
@@ -273,14 +273,14 @@ def _build_glossary() -> dict:
                 "id": "renewable-energy",
                 "term": "Renewable Energy",
                 "simple": "Electricity from sources that don't run out — solar, wind, hydro, and biomass. India's renewables are growing fast.",
-                "detail": "India's installed renewable capacity: ~192 GW (March 2024) = 43.4% of total. Breakdown: solar 82.8 GW, wind 46.2 GW, hydro 47.1 GW, biomass+small hydro 15.6 GW. India has committed to 500 GW non-fossil capacity by 2030 (COP26 Glasgow). Solar has been the fastest-growing source: from 3.7 GW (2015) to 82.8 GW (2024) — a 22x increase in 9 years. Challenges: grid intermittency, land acquisition, storage, and coal lobbying.",
+                "detail": "India's installed renewable capacity: ~190 GW (March 2024) ≈ 43.4% of total on CEA's full-report denominator. Breakdown per the published capacity table: solar 81.8 GW, wind 46.2 GW, hydro 46.9 GW, biomass + small hydro 15.6 GW. India has committed to 500 GW non-fossil capacity by 2030 (COP26 Glasgow). Solar has been the fastest-growing source: from 3.7 GW (2015) to 81.8 GW (2024) — a 22x increase in 9 years. Challenges: grid intermittency, land acquisition, storage, and coal lobbying.",
                 "inContext": "Renewables: 43.4% of capacity. Solar grew 22x in 9 years. Target: 500 GW by 2030.",
                 "relatedTerms": ["energy-transition", "coal"],
             },
             {
                 "id": "coal",
                 "term": "Coal Power",
-                "simple": "Electricity generated by burning coal. India is the world's 2nd largest coal consumer. Coal still powers ~49% of India's grid.",
+                "simple": "Electricity generated by burning coal. India is the world's 2nd largest coal consumer. Coal is still ~48% of installed capacity — and an even larger share of actual generation.",
                 "detail": "India's coal installed capacity: ~214 GW (March 2024). While renewables are growing, coal capacity has NOT declined — it continues to grow slowly. India added ~4 GW of coal capacity even between 2022-2024. This is because electricity demand is growing so fast (~5% per year) that renewables ADD to the mix rather than REPLACE coal. India's net-zero target is 2070 — the latest among major economies. Coal India Limited is the world's largest coal miner.",
                 "inContext": "Coal: ~214 GW (49% of capacity). Still growing. Net-zero target: 2070.",
                 "relatedTerms": ["renewable-energy", "co2-emissions"],

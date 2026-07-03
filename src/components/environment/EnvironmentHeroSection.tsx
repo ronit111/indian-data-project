@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { EnvironmentSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface EnvironmentHeroSectionProps {
   summary: EnvironmentSummary | null;
@@ -53,7 +54,14 @@ export function EnvironmentHeroSection({ summary }: EnvironmentHeroSectionProps)
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-teal">
-            {pm25}
+            <SourceChain
+              domain="environment"
+              year={summary?.year ?? ''}
+              figureKey="summary.pm25"
+              placement="bottom"
+            >
+              <span className="gradient-text-teal">{pm25}</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"

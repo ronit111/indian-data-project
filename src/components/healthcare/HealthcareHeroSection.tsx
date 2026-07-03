@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { HealthcareSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface HealthcareHeroSectionProps {
   summary: HealthcareSummary | null;
@@ -55,7 +56,14 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-rose">
-            {formattedDoctors}
+            <SourceChain
+              domain="healthcare"
+              year={summary?.year ?? ''}
+              figureKey="summary.physiciansPer1000"
+              placement="bottom"
+            >
+              <span className="gradient-text-rose">{formattedDoctors}</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"
@@ -91,7 +99,7 @@ export function HealthcareHeroSection({ summary }: HealthcareHeroSectionProps) {
             style={{ backgroundColor: 'var(--rose)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Beds {summary?.hospitalBedsPer1000?.toFixed(1) ?? '—'}/1K
+            Govt beds {summary?.hospitalBedsPer1000?.toFixed(1) ?? '—'}/1K
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; Health Exp {summary?.healthExpGDP?.toFixed(1) ?? '—'}% GDP

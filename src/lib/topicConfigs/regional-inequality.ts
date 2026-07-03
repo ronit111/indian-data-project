@@ -62,7 +62,7 @@ export const regionalInequality: TopicDef = {
       title: 'Education Access',
       annotation: 'Primary enrollment is near-universal everywhere, but secondary education diverges sharply. Kerala and Goa have secondary GER above 100%, while Bihar and Jharkhand remain below 70%.',
       domains: ['education', 'census'],
-      sources: ['UDISE+ 2023-24', 'Census 2011'],
+      sources: ['UDISE+ 2024-25', 'Census 2011'],
       charts: [{
         chartType: 'horizontal-bar', chartTitle: 'Secondary GER by State (Top/Bottom 10)', unit: '%', accent: '#3B82F6',
         extractData: (bag) => {
@@ -92,7 +92,7 @@ export const regionalInequality: TopicDef = {
           return [
             { label: 'Urban Share', value: c ? `${c.urbanizationRate}%` : '—', accent: '#6366F1' },
             { label: 'Rural Share', value: c ? `${(100 - c.urbanizationRate).toFixed(1)}%` : '—', accent: '#8B5CF6' },
-            { label: 'Hospital Beds / 1,000', value: h ? `${h.hospitalBedsPer1000}` : '—', accent: '#F43F5E' },
+            { label: 'Govt Hospital Beds / 1,000', value: h ? `${h.hospitalBedsPer1000}` : '—', accent: '#F43F5E' },
             { label: 'Literacy Rate', value: c ? `${c.literacyRate}%` : '—', accent: '#4ADE80' },
           ];
         },

@@ -51,7 +51,7 @@ export default function StatesPage() {
     >
       <SEOHead
         title="State Finances — India's Federal Mosaic | Indian Data Project"
-        description="State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 28 states and 8 union territories — visualized from RBI Handbook data."
+        description="State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs — visualized from RBI Handbook data."
         path="/states"
         image="/og-states.png"
       />
@@ -64,7 +64,7 @@ export default function StatesPage() {
           { value: `₹${formatIndianNumber(summary.averagePerCapita)}`, label: 'Average income per person — but the gap between states is 8-9x', sectionId: 'percapita' },
           { value: summary.growthRange, label: 'Growth gap: slowest to fastest state', sectionId: 'growth' },
           { value: `₹${summary.topGsdpValue}L Cr`, label: 'Maharashtra alone — more than most nations', sectionId: 'gsdp' },
-          { value: '36', label: 'Economies sharing one Constitution', sectionId: 'fiscal-health' },
+          { value: `${summary.totalStatesAndUTs}`, label: 'Economies sharing one Constitution', sectionId: 'fiscal-health' },
         ]}
       />}
 

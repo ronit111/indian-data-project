@@ -1,0 +1,109 @@
+{
+  "domain": "budget",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.totalExpenditure": {
+      "value": 5065345,
+      "unit": "₹ crore",
+      "label": "Total central expenditure (net)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Union Budget 2025-26 — Annual Financial Statement",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-02"
+        },
+        {
+          "kind": "check",
+          "name": "Invariant: perCapitaExpenditure × population ≈ totalExpenditure",
+          "status": "pass"
+        },
+        {
+          "kind": "check",
+          "name": "Sankey central node equals summary total",
+          "status": "pass"
+        }
+      ],
+      "basis": "Net of tax devolution to states — matches the official Total Expenditure headline. Gross framing would double-count devolution."
+    },
+    "summary.totalReceipts": {
+      "value": 3496409,
+      "unit": "₹ crore",
+      "label": "Total receipts (net)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Union Budget 2025-26 — Annual Financial Statement",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-02"
+        },
+        {
+          "kind": "check",
+          "name": "revenueReceipts + capitalReceipts = totalReceipts",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.fiscalDeficitPercentGDP": {
+      "value": 4.4,
+      "unit": "%",
+      "label": "Fiscal deficit as % of GDP",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Union Budget 2025-26 — Annual Financial Statement",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated by this pipeline from the official document",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-02"
+        },
+        {
+          "kind": "check",
+          "name": "fiscalDeficit ÷ GDP ≈ published percentage (±0.1pp)",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.perCapitaDailyExpenditure": {
+      "value": 95.71,
+      "unit": "₹",
+      "label": "Government spend per person per day",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Union Budget 2025-26 — Annual Financial Statement",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/budget2025-26/doc/AFS/allafs.pdf"
+        },
+        {
+          "kind": "derivation",
+          "name": "totalExpenditure ÷ population ÷ 365",
+          "publisher": "Computed at pipeline time, never hardcoded"
+        },
+        {
+          "kind": "check",
+          "name": "perCapitaExpenditure ÷ 365 ≈ daily figure (±₹1)",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "domain": "states",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.nationalGsdpTotal": {
+      "value": 272.2,
+      "unit": "₹ lakh crore",
+      "label": "Combined GSDP of Indian states",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "RBI Handbook of Statistics on Indian States (Tables 19/21/22)",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+States"
+        },
+        {
+          "kind": "api",
+          "name": "RBI Handbook XLSX (live scrape)",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "derivation",
+          "name": "Sum of state GSDPs with data",
+          "publisher": "Computed at pipeline time, never hardcoded"
+        },
+        {
+          "kind": "check",
+          "name": "Recomputes from the published per-state GSDP table",
+          "status": "pass"
+        },
+        {
+          "kind": "check",
+          "name": "statesWithData equals the count of states with GSDP data",
+          "status": "pass"
+        }
+      ],
+      "basis": "FY2022-23 — the latest year with complete coverage across states in the Handbook; later columns are still sparsely populated."
+    },
+    "summary.topGsdpValue": {
+      "value": 36.42,
+      "unit": "₹ lakh crore",
+      "label": "Largest state economy (Maharashtra)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "RBI Handbook of Statistics on Indian States (Tables 19/21/22)",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+States"
+        },
+        {
+          "kind": "api",
+          "name": "RBI Handbook XLSX (live scrape)",
+          "publisher": "Reserve Bank of India",
+          "url": "https://www.rbi.org.in/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "derivation",
+          "name": "Max over state GSDPs",
+          "publisher": "Computed at pipeline time, never hardcoded"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the top row of the published GSDP table",
+          "status": "pass"
+        }
+      ],
+      "basis": "FY2022-23 — the latest year with complete coverage across states in the Handbook; later columns are still sparsely populated."
+    }
+  }
+}

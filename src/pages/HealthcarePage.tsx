@@ -61,9 +61,9 @@ export default function HealthcarePage() {
       {summary && <KeyTakeaways
         accent="#F43F5E"
         pills={[
-          { value: '₹19/day', label: 'Per-capita health spending — less than a cup of chai', sectionId: 'spending' },
+          { value: '₹21/day', label: 'Per-capita health spending — about a cup of chai', sectionId: 'spending' },
           { value: `${summary.outOfPocketPct} paise`, label: 'Of every health rupee from your pocket — not the government', sectionId: 'oop' },
-          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Hospital beds per 1,000 people — WHO recommends 3.5', sectionId: 'infrastructure' },
+          { value: `${summary.hospitalBedsPer1000} beds`, label: 'Government hospital beds per 1,000 (~1.6 incl. private; WHO recommends 3.5)', sectionId: 'infrastructure' },
           { value: `${summary.healthExpGDP}% GDP`, label: 'India spends on health — roughly half the global average', sectionId: 'spending' },
         ]}
       />}
@@ -87,9 +87,9 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="Why is the infrastructure so thin? Follow the money. India spends roughly 19 rupees per citizen per day on health. Less than a cup of chai. This is not an inevitability; it is a choice."
+        text="Why is the infrastructure so thin? Follow the money. India spends roughly 21 rupees per citizen per day on health. About the price of a cup of chai. This is not an inevitability; it is a choice."
         highlights={{
-          '19': 'var(--rose)',
+          '21': 'var(--rose)',
           'chai': 'var(--saffron)',
           'choice': 'var(--saffron)',
         }}
@@ -106,9 +106,9 @@ export default function HealthcarePage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="When the government doesn't pay, families do. 44 paise of every health rupee comes from patients' own pockets. One medical emergency can push a family into poverty. But the story is not all deficit. When India commits resources and political will, the results are extraordinary."
+        text="When the government doesn't pay, families do. 45 paise of every health rupee comes from patients' own pockets. One medical emergency can push a family into poverty. But the story is not all deficit. When India commits resources and political will, the results are extraordinary."
         highlights={{
-          '44': 'var(--saffron)',
+          '45': 'var(--saffron)',
           'poverty': 'var(--saffron)',
           'extraordinary': 'var(--rose)',
         }}

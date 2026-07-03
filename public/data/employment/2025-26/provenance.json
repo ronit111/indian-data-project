@@ -1,0 +1,102 @@
+{
+  "domain": "employment",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.unemploymentRate": {
+      "value": 3.1,
+      "unit": "%",
+      "label": "Unemployment rate (2025)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "PLFS Annual Report 2025 (Jan–Dec 2025)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://mospi.gov.in/publication/annual-report-plfs"
+        },
+        {
+          "kind": "api",
+          "name": "MOSPI eSankhyiki API (PLFS)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://api.mospi.gov.in/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "curation",
+          "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "Plausible range and below every published state maximum context",
+          "status": "pass"
+        }
+      ],
+      "basis": "Usual status (ps+ss), all ages — PLFS headline basis."
+    },
+    "summary.lfpr": {
+      "value": 59.3,
+      "unit": "%",
+      "label": "Labour force participation rate",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "PLFS Annual Report 2025 (Jan–Dec 2025)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://mospi.gov.in/publication/annual-report-plfs"
+        },
+        {
+          "kind": "api",
+          "name": "MOSPI eSankhyiki API (PLFS)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://api.mospi.gov.in/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "curation",
+          "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "30 states published in both unemployment and participation tables",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.selfEmployedPct": {
+      "value": 56.2,
+      "unit": "%",
+      "label": "Workers who are self-employed",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "PLFS Annual Report 2025 (Jan–Dec 2025)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://mospi.gov.in/publication/annual-report-plfs"
+        },
+        {
+          "kind": "api",
+          "name": "MOSPI eSankhyiki API (PLFS)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://api.mospi.gov.in/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "curation",
+          "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "Sectoral employment shares sum to ~100%",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}

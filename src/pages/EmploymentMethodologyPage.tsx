@@ -56,7 +56,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
             <span>
-              <strong style={{ color: 'var(--amber)' }}>PLFS Annual Report 2023-24</strong> (state-level, curated fallback).{' '}
+              <strong style={{ color: 'var(--amber)' }}>PLFS Annual Report 2025</strong> (state-level, curated fallback).{' '}
               <a
                 href="https://mospi.gov.in/publication/plfs-annual-report"
                 target="_blank"
@@ -67,22 +67,6 @@ const SECTIONS = [
                 mospi.gov.in
               </a>{' '}
               — Used as fallback when the PLFS API is unavailable. State-level unemployment rates, LFPR, worker population ratios using Usual Status (ps+ss) approach.
-            </span>
-          </li>
-          <li className="flex gap-3 items-start">
-            <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
-            <span>
-              <strong style={{ color: 'var(--amber)' }}>RBI KLEMS Database</strong> (sectoral, 1980-2022, curated).{' '}
-              <a
-                href="https://rbi.org.in/scripts/KLEMS.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium link-hover"
-                style={{ color: 'var(--amber)' }}
-              >
-                rbi.org.in
-              </a>{' '}
-              — Long-run sectoral employment shares (agriculture, industry, services) and productivity metrics. Used for structural transformation analysis.
             </span>
           </li>
         </ul>
@@ -130,7 +114,7 @@ const SECTIONS = [
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Unemployment Rate (total)</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Youth Unemployment (15-24)</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Female Unemployment</td><td className="py-2 pr-4 text-xs">World Bank (ILO)</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2">%</td></tr>
-              <tr><td className="py-2 pr-4">State Unemployment Rate</td><td className="py-2 pr-4 text-xs">PLFS 2023-24</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr><td className="py-2 pr-4">State Unemployment Rate</td><td className="py-2 pr-4 text-xs">PLFS 2025</td><td className="py-2 pr-4 text-xs">2025</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
         </div>
@@ -163,7 +147,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--amber)' }} />
             <span>
-              <strong>Gender-disaggregated LFPR</strong> — Male and female participation rates tracked separately. The gap between male (~78%) and female (~35%) LFPR is one of the widest among major economies. Female LFPR has been rising since 2017 after a decades-long decline.
+              <strong>Gender-disaggregated LFPR</strong> — Male and female participation rates tracked separately. The gap between male (~79%) and female (~40%) LFPR is one of the widest among major economies. Female LFPR has been rising since 2017 after a decades-long decline.
             </span>
           </li>
         </ul>
@@ -222,8 +206,7 @@ const SECTIONS = [
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">World Bank API</td><td className="py-2 pr-4 text-xs">2000-2024</td><td className="py-2 pr-4 text-xs">National</td><td className="py-2">Time series trends</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">PLFS Quarterly</td><td className="py-2 pr-4 text-xs">Oct-Dec 2025</td><td className="py-2 pr-4 text-xs">National</td><td className="py-2">Latest quarterly UR, LFPR</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">PLFS Annual</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">State-level indicators</td></tr>
-              <tr><td className="py-2 pr-4">RBI KLEMS</td><td className="py-2 pr-4 text-xs">1980-2022</td><td className="py-2 pr-4 text-xs">Sector</td><td className="py-2">Long-run sectoral trends</td></tr>
+              <tr><td className="py-2 pr-4">PLFS Annual</td><td className="py-2 pr-4 text-xs">2025</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">State-level indicators</td></tr>
             </tbody>
           </table>
         </div>
@@ -327,7 +310,7 @@ export default function EmploymentMethodologyPage() {
     >
       <SEOHead
         title="Methodology — Employment & Labour — Indian Data Project"
-        description="Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS, World Bank, RBI KLEMS."
+        description="Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS and World Bank."
         path="/employment/methodology"
         image="/og-employment.png"
       />
@@ -354,7 +337,7 @@ export default function EmploymentMethodologyPage() {
           className="text-base max-w-xl"
           style={{ color: 'var(--text-secondary)' }}
         >
-          How we source, validate, and present employment data across World Bank, PLFS, and RBI KLEMS. Every number traces to an authoritative publication.
+          How we source, validate, and present employment data across World Bank and PLFS. Every number traces to an authoritative publication.
         </p>
       </motion.div>
 

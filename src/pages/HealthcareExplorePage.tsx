@@ -131,7 +131,7 @@ export default function HealthcareExplorePage() {
           style={{ color: 'var(--text-secondary)' }}
           variants={fadeUp}
         >
-          Select a category and indicator to compare states. Data from World Bank, NHP 2022, and NFHS-5.
+          Select a category and indicator to compare states. Data from World Bank, NHP 2022, and NFHS-6.
         </motion.p>
 
         <motion.div variants={fadeUp}>

@@ -45,173 +45,232 @@
       "year": "2022",
       "total": 445256,
       "rate": 66.4
+    },
+    {
+      "year": "2023",
+      "total": 448211,
+      "rate": 66.2
     }
   ],
   "crimeTypes": [
     {
       "id": "cruelty",
       "name": "Cruelty by Husband/Relatives",
-      "cases": 145309,
-      "pct": 32.6
+      "cases": 133676,
+      "pct": 29.8
     },
     {
       "id": "kidnapping",
-      "name": "Kidnapping & Abduction",
-      "cases": 105418,
-      "pct": 23.7
+      "name": "Kidnapping & Abduction of Women",
+      "cases": 88605,
+      "pct": 19.8
     },
     {
       "id": "assault",
       "name": "Assault to Outrage Modesty",
-      "cases": 82727,
-      "pct": 18.6
+      "cases": 83891,
+      "pct": 18.7
+    },
+    {
+      "id": "pocso",
+      "name": "POCSO (Child Sexual Offences)",
+      "cases": 66232,
+      "pct": 14.8
     },
     {
       "id": "rape",
       "name": "Rape",
-      "cases": 31516,
-      "pct": 7.1
+      "cases": 29670,
+      "pct": 6.6
     },
     {
       "id": "dowry-death",
       "name": "Dowry Deaths",
-      "cases": 6450,
+      "cases": 6156,
       "pct": 1.4
-    },
-    {
-      "id": "cybercrime-women",
-      "name": "Cybercrime Against Women",
-      "cases": 7796,
-      "pct": 1.8
     },
     {
       "id": "other-women",
       "name": "Other Crimes Against Women",
-      "cases": 66040,
-      "pct": 14.8
+      "cases": 39981,
+      "pct": 8.9
     }
   ],
   "stateRates": [
     {
-      "id": "RJ",
-      "name": "Rajasthan",
-      "rate": 105.4,
-      "total": 40738
-    },
-    {
       "id": "DL",
       "name": "Delhi",
-      "rate": 100.2,
-      "total": 10036
-    },
-    {
-      "id": "HR",
-      "name": "Haryana",
-      "rate": 93.4,
-      "total": 13048
-    },
-    {
-      "id": "OD",
-      "name": "Odisha",
-      "rate": 90.5,
-      "total": 19567
-    },
-    {
-      "id": "AS",
-      "name": "Assam",
-      "rate": 88.0,
-      "total": 14915
-    },
-    {
-      "id": "MP",
-      "name": "Madhya Pradesh",
-      "rate": 82.6,
-      "total": 32714
-    },
-    {
-      "id": "UP",
-      "name": "Uttar Pradesh",
-      "rate": 76.4,
-      "total": 82180
-    },
-    {
-      "id": "CG",
-      "name": "Chhattisgarh",
-      "rate": 73.0,
-      "total": 10115
-    },
-    {
-      "id": "AP",
-      "name": "Andhra Pradesh",
-      "rate": 70.5,
-      "total": 17911
+      "rate": 133.6,
+      "total": 13439
     },
     {
       "id": "TS",
       "name": "Telangana",
-      "rate": 67.3,
-      "total": 12150
+      "rate": 124.9,
+      "total": 23678
+    },
+    {
+      "id": "RJ",
+      "name": "Rajasthan",
+      "rate": 114.8,
+      "total": 45450
+    },
+    {
+      "id": "OD",
+      "name": "Odisha",
+      "rate": 112.4,
+      "total": 25914
+    },
+    {
+      "id": "HR",
+      "name": "Haryana",
+      "rate": 110.3,
+      "total": 15758
     },
     {
       "id": "KL",
       "name": "Kerala",
-      "rate": 65.7,
-      "total": 11725
+      "rate": 86.1,
+      "total": 16025
     },
     {
-      "id": "TN",
-      "name": "Tamil Nadu",
-      "rate": 60.3,
-      "total": 23268
+      "id": "AP",
+      "name": "Andhra Pradesh",
+      "rate": 84.2,
+      "total": 22418
     },
     {
       "id": "MH",
       "name": "Maharashtra",
-      "rate": 56.0,
-      "total": 34625
+      "rate": 77.5,
+      "total": 47101
     },
     {
-      "id": "KA",
-      "name": "Karnataka",
-      "rate": 55.2,
-      "total": 17676
-    },
-    {
-      "id": "JH",
-      "name": "Jharkhand",
-      "rate": 54.2,
-      "total": 9619
-    },
-    {
-      "id": "BR",
-      "name": "Bihar",
-      "rate": 43.6,
-      "total": 25316
+      "id": "MP",
+      "name": "Madhya Pradesh",
+      "rate": 76.8,
+      "total": 32342
     },
     {
       "id": "WB",
       "name": "West Bengal",
-      "rate": 42.4,
-      "total": 19823
+      "rate": 71.3,
+      "total": 34691
     },
     {
-      "id": "GJ",
-      "name": "Gujarat",
-      "rate": 40.0,
-      "total": 12889
-    },
-    {
-      "id": "PB",
-      "name": "Punjab",
-      "rate": 37.2,
-      "total": 5308
+      "id": "AS",
+      "name": "Assam",
+      "rate": 68.6,
+      "total": 12070
     },
     {
       "id": "UK",
       "name": "Uttarakhand",
-      "rate": 35.8,
-      "total": 1906
+      "rate": 66.9,
+      "total": 3808
+    },
+    {
+      "id": "KA",
+      "name": "Karnataka",
+      "rate": 60.9,
+      "total": 20336
+    },
+    {
+      "id": "UP",
+      "name": "Uttar Pradesh",
+      "rate": 58.6,
+      "total": 66381
+    },
+    {
+      "id": "CG",
+      "name": "Chhattisgarh",
+      "rate": 53.2,
+      "total": 8035
+    },
+    {
+      "id": "HP",
+      "name": "Himachal Pradesh",
+      "rate": 43.5,
+      "total": 1604
+    },
+    {
+      "id": "AR",
+      "name": "Arunachal Pradesh",
+      "rate": 42.8,
+      "total": 326
+    },
+    {
+      "id": "SK",
+      "name": "Sikkim",
+      "rate": 41.0,
+      "total": 134
+    },
+    {
+      "id": "TR",
+      "name": "Tripura",
+      "rate": 38.7,
+      "total": 791
+    },
+    {
+      "id": "BR",
+      "name": "Bihar",
+      "rate": 37.5,
+      "total": 22952
+    },
+    {
+      "id": "ML",
+      "name": "Meghalaya",
+      "rate": 37.5,
+      "total": 628
+    },
+    {
+      "id": "GA",
+      "name": "Goa",
+      "rate": 36.5,
+      "total": 286
+    },
+    {
+      "id": "JH",
+      "name": "Jharkhand",
+      "rate": 36.1,
+      "total": 6989
+    },
+    {
+      "id": "PB",
+      "name": "Punjab",
+      "rate": 35.9,
+      "total": 5258
+    },
+    {
+      "id": "MZ",
+      "name": "Mizoram",
+      "rate": 29.9,
+      "total": 184
+    },
+    {
+      "id": "TN",
+      "name": "Tamil Nadu",
+      "rate": 23.2,
+      "total": 8943
+    },
+    {
+      "id": "GJ",
+      "name": "Gujarat",
+      "rate": 22.9,
+      "total": 7805
+    },
+    {
+      "id": "MN",
+      "name": "Manipur",
+      "rate": 12.5,
+      "total": 201
+    },
+    {
+      "id": "NL",
+      "name": "Nagaland",
+      "rate": 5.2,
+      "total": 56
     }
   ],
-  "source": "NCRB Crime in India 2022, Chapter 5"
+  "source": "NCRB Crime in India 2023, Chapter 5"
 }

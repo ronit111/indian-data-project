@@ -8,8 +8,7 @@
     "pctSerious": 31
   },
   "assets": {
-    "avgCrore": 46.34,
-    "medianCrore": 29.8
+    "avgCrore": 46.34
   },
   "education": {
     "postGradAndAbove": 37,
@@ -94,69 +93,69 @@
       "name": "Dean Kuriakose",
       "constituency": "Idukki (KL)",
       "party": "INC",
-      "cases": 204
+      "cases": 88
     },
     {
       "rank": 2,
-      "name": "Dhairyasheel Mane",
-      "constituency": "Hatkanangle (MH)",
-      "party": "SS(UBT)",
-      "cases": 43
+      "name": "Shafi Parambil",
+      "constituency": "Vadakara (KL)",
+      "party": "INC",
+      "cases": 47
     },
     {
       "rank": 3,
-      "name": "Afzal Ansari",
-      "constituency": "Ghazipur (UP)",
-      "party": "SP",
-      "cases": 42
+      "name": "Eatala Rajender",
+      "constituency": "Malkajgiri (TS)",
+      "party": "BJP",
+      "cases": 45
     },
     {
       "rank": 4,
+      "name": "Bandi Sanjay Kumar",
+      "constituency": "Karimnagar (TS)",
+      "party": "BJP",
+      "cases": 42
+    },
+    {
+      "rank": 5,
       "name": "Rajesh Ranjan (Pappu Yadav)",
       "constituency": "Purnia (BR)",
       "party": "IND",
       "cases": 41
     },
     {
-      "rank": 5,
-      "name": "Sunil Kumar Singh",
-      "constituency": "Chatra (JH)",
-      "party": "BJP",
-      "cases": 35
-    },
-    {
       "rank": 6,
-      "name": "Umesh Singh Kushwaha",
-      "constituency": "Kaushambi (UP)",
-      "party": "SP",
-      "cases": 33
+      "name": "Dhairyasheel Mohite-Patil",
+      "constituency": "Madha (MH)",
+      "party": "NCP(SP)",
+      "cases": 36
     },
     {
       "rank": 7,
-      "name": "Awadhesh Prasad",
-      "constituency": "Faizabad (UP)",
-      "party": "SP",
-      "cases": 32
+      "name": "Chandrashekhar Azad",
+      "constituency": "Nagina (UP)",
+      "party": "ASP",
+      "cases": 36
     },
     {
       "rank": 8,
-      "name": "Mohan Mandavi",
-      "constituency": "Kanker (CG)",
+      "name": "M. Raghunandan Rao",
+      "constituency": "Medak (TS)",
       "party": "BJP",
-      "cases": 24
+      "cases": 29
     },
     {
       "rank": 9,
-      "name": "Devendra Singh Bhole",
-      "constituency": "Jaunpur (UP)",
-      "party": "SP",
+      "name": "Shantanu Thakur",
+      "constituency": "Bangaon (WB)",
+      "party": "BJP",
       "cases": 23
     },
     {
       "rank": 10,
-      "name": "Lavu Sri Krishna Devarayalu",
-      "constituency": "Narasaraopet (AP)",
-      "party": "TDP",
+      "name": "Dulu Mahato",
+      "constituency": "Dhanbad (JH)",
+      "party": "BJP",
       "cases": 22
     }
   ],

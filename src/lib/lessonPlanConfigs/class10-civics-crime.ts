@@ -17,7 +17,7 @@ export const CLASS10_CIVICS_CRIME: LessonPlanDef = {
   charts: [
     {
       registryKey: 'crime/overview',
-      teachingNote: 'Begin by establishing scale: India recorded 58.2 lakh crimes in 2022. Show the IPC vs SLL breakdown and the national trend. Ask students what surprises them — most expect violent crime to dominate, but property crime and cruelty cases lead.',
+      teachingNote: 'Begin by establishing scale: India recorded 62.4 lakh crimes in 2023. Show the IPC vs SLL breakdown and the national trend. Ask students what surprises them — most expect violent crime to dominate, but property crime and cruelty cases lead.',
       discussionQuestions: [
         'Why might some states have higher crime rates but also higher development indicators?',
         'If a crime is not reported, does it still count? What does this mean for official crime statistics?',
@@ -25,7 +25,7 @@ export const CLASS10_CIVICS_CRIME: LessonPlanDef = {
     },
     {
       registryKey: 'crime/crimes-against-women',
-      teachingNote: 'Connect to the textbook discussion on gender inequality and democratic challenges. Show that 4.45 lakh cases were registered in 2022, but experts estimate the actual number is many times higher due to underreporting. Discuss why women may not report crimes.',
+      teachingNote: 'Connect to the textbook discussion on gender inequality and democratic challenges. Show that 4.48 lakh cases were registered in 2023, but experts estimate the actual number is many times higher due to underreporting. Discuss why women may not report crimes.',
       discussionQuestions: [
         'What barriers prevent women from reporting crimes? Think of social, economic, and institutional reasons.',
         'Do you think stricter laws alone can reduce crimes against women? What else is needed?',
@@ -33,7 +33,7 @@ export const CLASS10_CIVICS_CRIME: LessonPlanDef = {
     },
     {
       registryKey: 'crime/justice',
-      teachingNote: 'The justice funnel is the key visual. Show how 54 lakh FIRs become just 7 lakh convictions. Average trial time: 3.5 years. Connect to the textbook concept of "rule of law" — if the system is slow and under-resourced, does the rule of law function in practice?',
+      teachingNote: 'The justice funnel is the key visual. Show the two stages side by side: of 27.5 lakh chargesheets filed in 2023, courts completed only 16.8 lakh trials (9.1 lakh convictions) — while 1.59 crore cases stayed pending. Average trial time: 3.5 years. Connect to the textbook concept of "rule of law" — if the system is slow and under-resourced, does the rule of law function in practice?',
       discussionQuestions: [
         'If it takes 3.5 years for a trial, what does that mean for victims and the accused?',
         'India has 21 judges per million people. The global average is 50. What are the consequences of this gap?',

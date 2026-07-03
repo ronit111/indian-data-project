@@ -6,8 +6,8 @@
       "id": "ger",
       "term": "Gross Enrollment Ratio (GER)",
       "simple": "The total number of students enrolled at a level, as a percentage of the age-appropriate population.",
-      "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~93% (UDISE+ 2023-24, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~77% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
-      "inContext": "India's primary GER: ~93% (UDISE+ 2023-24, post-SDMIS). Secondary: ~77%. Higher secondary: ~57%.",
+      "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~91% (UDISE+ 2024-25, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~79% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
+      "inContext": "India's primary GER: ~91% (UDISE+ 2024-25, post-SDMIS). Secondary: ~79%. Higher secondary: ~58%.",
       "relatedTerms": [
         "ner",
         "dropout-rate",
@@ -29,8 +29,8 @@
       "id": "dropout-rate",
       "term": "Dropout Rate",
       "simple": "The percentage of students who leave school before completing a level.",
-      "detail": "Calculated from UDISE+ transition rates: the percentage of students enrolled in one year who don't appear in the next year's records. India's primary dropout is low (~1.9%) but secondary jumps to ~14%. The cliff steepens at higher secondary (~20%). Dropouts are driven by economic pressure (child labor), distance to school, quality perception, and for girls, early marriage.",
-      "inContext": "India: Primary dropout 1.9% → Secondary 14.1% → Higher secondary ~20%",
+      "detail": "Calculated from UDISE+ transition rates: the percentage of students enrolled in one year who don't appear in the next year's records. India's primary dropout is low (0.3%, UDISE+ 2024-25) but it climbs to 3.5% at upper primary and 11.5% at secondary — the cliff comes after Class 8. Dropouts are driven by economic pressure (child labor), distance to school, quality perception, and for girls, early marriage.",
+      "inContext": "India: Primary dropout 0.3% → Upper Primary 3.5% → Secondary 11.5% (UDISE+ 2024-25)",
       "relatedTerms": [
         "ger",
         "out-of-school",
@@ -41,8 +41,8 @@
       "id": "ptr",
       "term": "Pupil-Teacher Ratio (PTR)",
       "simple": "The average number of students per teacher.",
-      "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is ~25:1, but this masks gaps: Jharkhand has 35:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
-      "inContext": "National PTR: 25:1. Bihar: 32:1. HP: 14:1. RTE target: 30:1.",
+      "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is 24:1, but this masks gaps: Jharkhand has 36:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
+      "inContext": "National PTR: 24:1. Bihar: 30:1. HP: 14:1. RTE target: 30:1.",
       "relatedTerms": [
         "rte",
         "udise",
@@ -89,7 +89,7 @@
       "id": "nep",
       "term": "National Education Policy (NEP) 2020",
       "simple": "India's new education policy replacing the 34-year-old policy, restructuring schooling into a 5+3+3+4 model.",
-      "detail": "NEP 2020 replaces the 10+2 structure with 5+3+3+4 (Foundational: ages 3-8, Preparatory: 8-11, Middle: 11-14, Secondary: 14-18). Key goals: foundational literacy/numeracy by Class 3, mother tongue instruction until Class 5, coding from Class 6, flexible board exams, 6% of GDP target for education spending (currently ~3.5%). Implementation is phased and varies by state.",
+      "detail": "NEP 2020 replaces the 10+2 structure with 5+3+3+4 (Foundational: ages 3-8, Preparatory: 8-11, Middle: 11-14, Secondary: 14-18). Key goals: foundational literacy/numeracy by Class 3, mother tongue instruction until Class 5, coding from Class 6, flexible board exams, 6% of GDP target for education spending (currently ~4.1%). Implementation is phased and varies by state.",
       "inContext": "NEP 2020 targets: 100% GER by 2030, 6% GDP education spending, mother tongue instruction",
       "relatedTerms": [
         "rte",
@@ -101,8 +101,8 @@
       "id": "udise",
       "term": "UDISE+ (Unified District Information System for Education Plus)",
       "simple": "India's comprehensive school census, covering every school from pre-primary to higher secondary.",
-      "detail": "UDISE+ collects data from 14.89 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
-      "inContext": "UDISE+ 2023-24: 14.72 lakh schools, 98.08 lakh teachers, 24.80 crore students",
+      "detail": "UDISE+ collects data from 14.71 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
+      "inContext": "UDISE+ 2024-25: 14.71 lakh schools, 1.01 crore teachers, 24.69 crore students",
       "relatedTerms": [
         "ger",
         "ptr",
@@ -137,8 +137,8 @@
       "id": "education-spending",
       "term": "Education Spending (% of GDP)",
       "simple": "How much of the country's total economic output is spent on education by the government.",
-      "detail": "India spends about 3.5% of GDP on education — below the NEP 2020 target of 6% and below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
-      "inContext": "India: ~3.5% GDP. NEP target: 6%. Global average: ~4.3%.",
+      "detail": "India spends about 4.1% of GDP on education — below the NEP 2020 target of 6% and just below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
+      "inContext": "India: ~4.1% GDP. NEP target: 6%. Global average: ~4.3%.",
       "relatedTerms": [
         "nep",
         "ptr",

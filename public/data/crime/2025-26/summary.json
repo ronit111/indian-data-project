@@ -1,14 +1,14 @@
 {
   "year": "2025-26",
-  "totalCrimes": 5824946,
-  "crimeRate": 422.2,
-  "roadDeaths": 168491,
-  "chargesheetRatePct": 74.6,
-  "convictionRatePct": 39.1,
-  "womenCrimes": 445256,
-  "cybercrimes": 65893,
-  "policeRatioActual": 152.0,
-  "dataYear": "2022",
-  "lastUpdated": "2026-03-06",
-  "source": "NCRB Crime in India 2022 + MoRTH 2022 + BPRD 2022"
+  "totalCrimes": 6241569,
+  "crimeRate": 448.3,
+  "roadDeaths": 172890,
+  "chargesheetRatePct": 72.7,
+  "convictionRatePct": 54.0,
+  "womenCrimes": 448211,
+  "cybercrimes": 86420,
+  "policeRatioActual": 154.84,
+  "dataYear": "2023",
+  "lastUpdated": "2026-06-04",
+  "source": "NCRB Crime in India 2023 + MoRTH 2023 + BPRD 2023"
 }

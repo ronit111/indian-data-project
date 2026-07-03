@@ -47,5 +47,5 @@ def build_women_safety(
         "nationalTrend": national_trend,
         "crimeTypes": types,
         "stateRates": states,
-        "source": "NCRB Crime in India 2022, Chapter 5",
+        "source": "NCRB Crime in India 2023, Chapter 5",
     }

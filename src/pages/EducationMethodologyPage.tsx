@@ -40,7 +40,7 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--blue)' }} />
             <span>
-              <strong style={{ color: 'var(--blue)' }}>Tier 2 — UDISE+ 2023-24</strong> (state-level, curated).{' '}
+              <strong style={{ color: 'var(--blue)' }}>Tier 2 — UDISE+ 2024-25</strong> (state-level, curated).{' '}
               <a
                 href="https://udiseplus.gov.in/"
                 target="_blank"
@@ -94,8 +94,8 @@ const SECTIONS = [
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GER Primary (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GER Secondary (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">GER Tertiary (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">State GER (Primary/Secondary)</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Dropout Rate (Primary/Secondary)</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">State GER (Primary/Secondary)</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Dropout Rate (Primary/Secondary)</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2">%</td></tr>
               <tr><td className="py-2 pr-4">Primary Completion Rate</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
@@ -126,11 +126,11 @@ const SECTIONS = [
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">PTR Primary (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">students/teacher</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">PTR Secondary (national)</td><td className="py-2 pr-4 text-xs">World Bank</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2">students/teacher</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">State PTR</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">students/teacher</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">State PTR</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2">students/teacher</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Can Read Std II Text (Std III)</td><td className="py-2 pr-4 text-xs">ASER 2024</td><td className="py-2 pr-4 text-xs">2024</td><td className="py-2">%</td></tr>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Can Do Subtraction (Std III)</td><td className="py-2 pr-4 text-xs">ASER 2024</td><td className="py-2 pr-4 text-xs">2024</td><td className="py-2">%</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Schools with Computers</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
-              <tr><td className="py-2 pr-4">Schools with Internet</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2">%</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">Schools with Computers</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2">%</td></tr>
+              <tr><td className="py-2 pr-4">Schools with Internet</td><td className="py-2 pr-4 text-xs">UDISE+</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2">%</td></tr>
             </tbody>
           </table>
         </div>
@@ -189,7 +189,7 @@ const SECTIONS = [
             </thead>
             <tbody style={{ color: 'var(--text-secondary)' }}>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">World Bank API</td><td className="py-2 pr-4 text-xs">2000–2023</td><td className="py-2 pr-4 text-xs">National</td><td className="py-2">Quarterly (automated)</td></tr>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">UDISE+ 2023-24</td><td className="py-2 pr-4 text-xs">2023-24</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Annual (manual)</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}><td className="py-2 pr-4">UDISE+ 2024-25</td><td className="py-2 pr-4 text-xs">2024-25</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Annual (manual)</td></tr>
               <tr><td className="py-2 pr-4">ASER 2024</td><td className="py-2 pr-4 text-xs">2024</td><td className="py-2 pr-4 text-xs">State</td><td className="py-2">Annual (manual)</td></tr>
             </tbody>
           </table>
@@ -300,7 +300,7 @@ export default function EducationMethodologyPage() {
     >
       <SEOHead
         title="Methodology — Education — Indian Data Project"
-        description="Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2023-24, ASER 2024, World Bank."
+        description="Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2024-25, ASER 2024, World Bank."
         path="/education/methodology"
         image="/og-education.png"
       />

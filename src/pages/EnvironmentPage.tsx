@@ -62,7 +62,7 @@ export default function EnvironmentPage() {
         pills={[
           { value: `${summary?.pm25?.toFixed(0) ?? '—'} μg/m³`, label: 'PM2.5 — 10× the WHO safe limit', sectionId: 'air-quality' },
           { value: `${summary?.forestPct?.toFixed(1) ?? '—'}%`, label: 'Forest cover (target: 33%)', sectionId: 'forest-cover' },
-          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: 'Renewable installed capacity (coal generates 70%+ of electricity)', sectionId: 'energy-transition' },
+          { value: `${summary?.renewablesPct?.toFixed(0) ?? '—'}%`, label: `Renewable installed capacity (coal is still ${summary?.coalPct?.toFixed(0) ?? '—'}% of capacity)`, sectionId: 'energy-transition' },
           { value: `${summary?.co2PerCapita?.toFixed(1) ?? '—'}t`, label: 'CO₂ per capita (US: 14t)', sectionId: 'carbon-footprint' },
         ]}
       />

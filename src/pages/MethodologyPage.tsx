@@ -186,6 +186,17 @@ const SECTIONS = [
             follows a complex formula.
           </span>
         </li>
+        <li className="flex gap-3 items-start">
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
+          <span>
+            The "Follow the money" flow shows the Centre's finances <strong>net of states'
+            share of central taxes</strong> (~₹14.2 lakh crore devolved under the Finance
+            Commission formula). This is the constitutional pass-through the Centre cannot
+            spend, so excluding it keeps the flow consistent with the Budget's ₹50.65 lakh crore
+            total-expenditure headline and the per-capita figures derived from it. Discretionary
+            grants and centrally-sponsored schemes remain in the flow as "Transfers to States &amp; UTs".
+          </span>
+        </li>
       </ul>
     ),
   },

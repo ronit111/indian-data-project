@@ -108,6 +108,8 @@ function RBIMiniViz({ summary, isVisible }: { summary: RBISummary | null; isVisi
       { label: 'May 22', rate: 4.40 },
       { label: 'Feb 23', rate: 6.50 },
       { label: 'Feb 25', rate: 6.25 },
+      { label: 'Jun 25', rate: 5.50 },
+      { label: 'Dec 25', rate: 5.25 },
     ];
   }, [summary]);
 
@@ -153,11 +155,11 @@ function StatesMiniViz({ summary, isVisible }: { summary: StatesSummary | null; 
   const topStates = useMemo(() => {
     if (!summary) return [];
     return [
-      { name: 'MH', value: 45.32 },
-      { name: 'TN', value: 28.27 },
-      { name: 'KA', value: 26.32 },
-      { name: 'GJ', value: 24.53 },
-      { name: 'UP', value: 24.40 },
+      { name: 'MH', value: 36.42 },
+      { name: 'TN', value: 23.72 },
+      { name: 'KA', value: 23.20 },
+      { name: 'UP', value: 22.96 },
+      { name: 'GJ', value: 22.03 },
     ];
   }, [summary]);
 
@@ -298,7 +300,7 @@ function HealthcareMiniViz({ summary, isVisible }: { summary: HealthcareSummary 
   const compBars = useMemo(() => {
     if (!summary) return [];
     return [
-      { label: 'Beds', india: summary.hospitalBedsPer1000, who: 3.5 },
+      { label: 'Govt beds', india: summary.hospitalBedsPer1000, who: 3.5 },
       { label: 'Docs', india: summary.physiciansPer1000, who: 2.5 },
       { label: 'Exp', india: summary.healthExpGDP, who: 6.0 },
     ];
@@ -330,9 +332,10 @@ function HealthcareMiniViz({ summary, isVisible }: { summary: HealthcareSummary 
 function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummary | null; isVisible: boolean }) {
   const energySplit = useMemo(() => {
     if (!summary) return null;
-    const fossil = summary.coalPct;
-    const renewable = 100 - fossil;
-    return { fossil, renewable };
+    const coal = summary.coalPct;
+    const renewable = summary.renewablesPct;
+    const other = Math.max(0, 100 - coal - renewable);
+    return { coal, renewable, other };
   }, [summary]);
 
   if (!energySplit) return null;
@@ -340,7 +343,7 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
   return (
     <div className="mb-2 max-w-xs">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Fossil</span>
+        <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Coal</span>
         <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Renewable</span>
       </div>
       <div className="flex h-2.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-raised)' }}>
@@ -348,8 +351,16 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
           className="h-full"
           style={{ background: 'var(--text-muted)', borderRadius: '9999px 0 0 9999px' }}
           initial={{ width: 0 }}
-          animate={isVisible ? { width: `${energySplit.fossil}%` } : {}}
+          animate={isVisible ? { width: `${energySplit.coal}%` } : {}}
           transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.4 }}
+        />
+        <motion.div
+          className="h-full"
+          style={{ background: 'var(--bg-deep, #1a2035)' }}
+          title={`Gas, nuclear and other capacity: ${energySplit.other.toFixed(0)}%`}
+          initial={{ width: 0 }}
+          animate={isVisible ? { width: `${energySplit.other}%` } : {}}
+          transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.45 }}
         />
         <motion.div
           className="h-full"
@@ -360,7 +371,7 @@ function EnvironmentMiniViz({ summary, isVisible }: { summary: EnvironmentSummar
         />
       </div>
       <div className="flex items-center justify-between mt-1">
-        <span className="text-[9px] font-mono" style={{ color: 'var(--text-muted)' }}>{energySplit.fossil.toFixed(0)}%</span>
+        <span className="text-[9px] font-mono" style={{ color: 'var(--text-muted)' }}>{energySplit.coal.toFixed(0)}%</span>
         <span className="text-[9px] font-mono" style={{ color: 'var(--teal)' }}>{energySplit.renewable.toFixed(0)}%</span>
       </div>
     </div>
@@ -424,8 +435,8 @@ function CrimeMiniViz({ summary, isVisible }: { summary: CrimeSummary | null; is
     if (!summary) return null;
     return [
       { label: 'Reported', pct: 100 },
-      { label: 'Chargesheeted', pct: summary.chargesheetRatePct },
-      { label: 'Convicted', pct: summary.convictionRatePct },
+      { label: 'Chargesheet %', pct: summary.chargesheetRatePct },
+      { label: 'Trial conv. %', pct: summary.convictionRatePct },
     ];
   }, [summary]);
 
@@ -448,6 +459,9 @@ function CrimeMiniViz({ summary, isVisible }: { summary: CrimeSummary | null; is
           <span className="text-[9px] font-mono w-8" style={{ color: 'var(--crimson)' }}>{stage.pct}%</span>
         </div>
       ))}
+      <p className="text-[9px] leading-snug" style={{ color: 'var(--text-muted)' }}>
+        Each rate is of its own base — only ~15 of 100 reported crimes end in a same-year conviction.
+      </p>
     </div>
   );
 }
@@ -653,7 +667,7 @@ export default function HubPage() {
           to="/states"
           sectionNumber="04"
           title="State Finances"
-          description="India's federal mosaic. GSDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 28 states and 8 union territories."
+          description="India's federal mosaic. GSDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs."
           accentColor="var(--emerald)"
           accentVar="--emerald"
           ctaText="Explore state data"
@@ -695,7 +709,7 @@ export default function HubPage() {
           to="/education"
           sectionNumber="06"
           title="Education"
-          description="248 million students. Enrollment triumphs, quality gaps, the dropout cliff, and spending challenges across India's education system."
+          description="247 million students. Enrollment triumphs, quality gaps, the dropout cliff, and spending challenges across India's education system."
           accentColor="var(--blue)"
           accentVar="--blue"
           ctaText="Explore education"
@@ -744,7 +758,7 @@ export default function HubPage() {
 
           className="mt-8"
           stats={[
-            s('Beds / 1,000', healthcareSummary ? `${healthcareSummary.hospitalBedsPer1000}` : null, 'var(--rose)'),
+            s('Govt Beds / 1,000', healthcareSummary ? `${healthcareSummary.hospitalBedsPer1000}` : null, 'var(--rose)'),
             s('Health Exp', healthcareSummary ? `${healthcareSummary.healthExpGDP}% GDP` : null, 'var(--rose-light, #FB7185)'),
             s('Out-of-Pocket', healthcareSummary ? `${healthcareSummary.outOfPocketPct}%` : null, 'var(--saffron)'),
           ]}
@@ -800,7 +814,7 @@ export default function HubPage() {
           to="/crime"
           sectionNumber="11"
           title="Crime & Safety"
-          description={`${crimeSummary ? `${(crimeSummary.totalCrimes / 100000).toFixed(1)}L` : '...'} crimes recorded in ${crimeSummary?.dataYear ?? '2022'}. One every 5 seconds. From FIR to conviction, the justice pipeline loses 60% along the way.`}
+          description={`${crimeSummary ? `${(crimeSummary.totalCrimes / 100000).toFixed(1)}L` : '...'} crimes recorded in ${crimeSummary?.dataYear ?? '2023'}. One every 5 seconds. Courts deliver only ~15 same-year convictions per 100 crimes reported.`}
           accentColor="var(--crimson)"
           accentVar="--crimson"
           ctaText="Explore crime data"

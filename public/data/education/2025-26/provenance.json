@@ -1,0 +1,75 @@
+{
+  "domain": "education",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.totalStudents": {
+      "value": 246932680,
+      "unit": "students",
+      "label": "Students enrolled in schools",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "UDISE+ 2024-25 Report (Tables 2.2/6.1)",
+          "publisher": "Ministry of Education, Government of India",
+          "url": "https://udiseplus.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated from the printed report; per-state values validated against national anchors",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-05"
+        },
+        {
+          "kind": "check",
+          "name": "Students ÷ teachers rounds to the published pupil-teacher ratio",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.gerPrimary": {
+      "value": 90.9,
+      "unit": "%",
+      "label": "Gross enrolment ratio, primary",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "UDISE+ 2024-25 Report (Tables 2.2/6.1)",
+          "publisher": "Ministry of Education, Government of India",
+          "url": "https://udiseplus.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated from the printed report; per-state values validated against national anchors",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-05"
+        },
+        {
+          "kind": "check",
+          "name": "GER funnel: primary ≥ secondary, both plausible",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.educationSpendGDP": {
+      "value": 4.1,
+      "unit": "% of GDP",
+      "label": "Public education spend",
+      "chain": [
+        {
+          "kind": "api",
+          "name": "World Bank Development Indicators API",
+          "publisher": "World Bank",
+          "url": "https://api.worldbank.org/",
+          "retrieved": "2026-06-05"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the latest point of the published spending series",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}

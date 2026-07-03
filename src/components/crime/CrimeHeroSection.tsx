@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { CrimeSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface CrimeHeroSectionProps {
   summary: CrimeSummary | null;
@@ -53,13 +54,20 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-crimson">
-            {totalLakh}L
+            <SourceChain
+              domain="crime"
+              year={summary?.year ?? ''}
+              figureKey="summary.totalCrimes"
+              placement="bottom"
+            >
+              <span className="gradient-text-crimson">{totalLakh}L</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"
             style={{ color: 'var(--text-secondary)' }}
           >
-            crimes recorded in 2022 — roughly one every 5 seconds
+            crimes recorded in 2023 — roughly one every 5 seconds
           </p>
         </motion.div>
 
@@ -70,7 +78,7 @@ export function CrimeHeroSection({ summary }: CrimeHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Of every 100 crimes reported, 13 end in conviction. This is that story.
+          For every 100 crimes reported in 2023, courts delivered 15 convictions that same year. This is that story.
         </motion.p>
 
         {/* Stat badges */}

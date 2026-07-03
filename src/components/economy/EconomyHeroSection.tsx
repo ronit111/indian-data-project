@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { EconomySummary } from '../../lib/data/schema.ts';
 import { formatIndianNumber } from '../../lib/format.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface EconomyHeroSectionProps {
   summary: EconomySummary;
@@ -65,7 +66,14 @@ export function EconomyHeroSection({ summary }: EconomyHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         >
           <div className="text-hero gradient-text-cyan">
-            {summary.realGDPGrowth}%
+            <SourceChain
+              domain="economy"
+              year={summary.year}
+              figureKey="summary.realGDPGrowth"
+              placement="bottom"
+            >
+              <span className="gradient-text-cyan">{summary.realGDPGrowth}%</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"

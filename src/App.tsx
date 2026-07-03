@@ -241,7 +241,8 @@ export default function App() {
   // Global hover prefetch: start loading route chunks when the user hovers a link
   useEffect(() => {
     function handleHover(e: Event) {
-      const anchor = (e.target as HTMLElement).closest('a');
+      if (!(e.target instanceof Element)) return; // pointerenter fires on document itself
+      const anchor = e.target.closest('a');
       if (!anchor) return;
       const href = anchor.getAttribute('href');
       if (href && href.startsWith('/')) {

@@ -19,10 +19,9 @@ def build_candidates(adr_summary: dict, top_wealthiest: list[dict],
         "pctSerious": adr_summary["criminalCases"]["pctSerious"],
     }
 
-    # Assets distribution
+    # Assets distribution (ADR publishes only the average, not a median)
     assets = {
         "avgCrore": adr_summary["assets"]["avgCrore"],
-        "medianCrore": adr_summary["assets"]["medianCrore"],
     }
 
     # Education breakdown (percentages)

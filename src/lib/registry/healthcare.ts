@@ -33,7 +33,7 @@ registerChart({
     return {
       label: 'Hospital Beds per 1,000',
       value: `${latest.value.toFixed(1)}`,
-      context: `India's hospital bed density. WHO recommends 3.0 per 1,000.`,
+      context: `India's hospital bed density. WHO recommends 3.5 per 1,000.`,
     };
   },
 });
@@ -81,7 +81,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'immunization',
   title: 'Immunization Coverage',
-  source: 'World Bank, NFHS-5',
+  source: 'World Bank, NFHS-6',
   accentColor: ACCENT,
   dataFiles: [`${base}/disease.json`],
   chartType: 'line',
@@ -123,7 +123,7 @@ registerChart({
   domain: DOMAIN,
   sectionId: 'doctor-gap',
   title: 'Doctor Shortages by State',
-  source: 'NHP 2022, NFHS-5',
+  source: 'NHP 2022, NFHS-6',
   accentColor: ACCENT,
   dataFiles: [`${base}/infrastructure.json`],
   chartType: 'horizontal-bar',

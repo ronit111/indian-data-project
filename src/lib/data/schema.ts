@@ -612,8 +612,8 @@ export interface HealthData {
   under5: TimeSeriesPoint[];
   lifeExpectancy: TimeSeriesPoint[];
   fertilityRate: TimeSeriesPoint[];
-  stateImr: StateHealthEntry[];       // SRS 2023 state-level IMR
-  stateHealth: StateNfhsEntry[];      // NFHS-5 state-level
+  stateImr: StateHealthEntry[];       // SRS 2024 state-level IMR
+  stateHealth: StateNfhsEntry[];      // NFHS-6 state-level
   source: string;
 }
 
@@ -1092,7 +1092,6 @@ export interface CriminalBreakdown {
 
 export interface AssetsBreakdown {
   avgCrore: number;
-  medianCrore: number;
 }
 
 export interface EducationBreakdown {

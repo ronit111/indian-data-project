@@ -534,12 +534,22 @@
     {
       "id": "agriculture",
       "name": "Agriculture & Allied",
-      "employmentShare": 46.1
+      "employmentShare": 43.0
+    },
+    {
+      "id": "other_services",
+      "name": "Other Services",
+      "employmentShare": 13.1
+    },
+    {
+      "id": "trade_hotel",
+      "name": "Trade, Hotel & Restaurant",
+      "employmentShare": 12.9
     },
     {
       "id": "manufacturing",
       "name": "Manufacturing",
-      "employmentShare": 11.4
+      "employmentShare": 12.1
     },
     {
       "id": "construction",
@@ -547,25 +557,20 @@
       "employmentShare": 12.0
     },
     {
-      "id": "trade",
-      "name": "Trade, Hotels & Transport",
-      "employmentShare": 13.8
+      "id": "transport_comm",
+      "name": "Transport, Storage & Communications",
+      "employmentShare": 5.8
     },
     {
-      "id": "finance",
-      "name": "Finance & Business Services",
-      "employmentShare": 4.2
+      "id": "utilities",
+      "name": "Electricity, Water & Utilities",
+      "employmentShare": 0.7
     },
     {
-      "id": "public_admin",
-      "name": "Public Administration & Defence",
-      "employmentShare": 3.8
-    },
-    {
-      "id": "other_services",
-      "name": "Other Services",
-      "employmentShare": 8.9
+      "id": "mining",
+      "name": "Mining & Quarrying",
+      "employmentShare": 0.3
     }
   ],
-  "source": "World Bank (ILO modelled) + RBI KLEMS Database"
+  "source": "World Bank (ILO modelled) + PLFS Annual Report 2025"
 }

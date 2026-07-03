@@ -73,8 +73,9 @@ export function EnergyTransitionSection({ data }: EnergyTransitionSectionProps) 
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          Solar capacity exploded from 3.7 GW to 82.8 GW in nine years (2015-2024) — a 22x increase. But coal hasn't shrunk. India is adding clean energy on top of fossil fuels, not replacing them.{' '}
-          {latest && <span className="font-mono" style={{ color: 'var(--teal)' }}>Solar is now {solarPct}% of <em>installed capacity</em> — but coal still generates over 70% of actual electricity.</span>}
+          Solar capacity exploded from 3.7 GW to 81.8 GW in nine years (2015-2024) — a 22x increase. But coal hasn't shrunk. India is adding clean energy on top of fossil fuels, not replacing them.{' '}
+          {latest && <span className="font-mono" style={{ color: 'var(--teal)' }}>Solar is now {solarPct}% of <em>installed capacity</em> — but coal still generates over 70% of actual electricity.</span>}{' '}
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Headline shares (renewables 43.4%, coal 47.7%) use CEA's full-report total, which includes ~7 GW of categories not broken out in this chart; shares computed from the chart alone differ by under 1 percentage point.</span>
         </motion.p>
 
         {capacitySeries.length > 0 && (

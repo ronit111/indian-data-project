@@ -7,10 +7,10 @@ Sources:
   - NPC Population Projections 2011-2036: Technical Group on Population Projections,
     National Commission on Population, Ministry of Health & Family Welfare (July 2020)
     https://nhm.gov.in/New_Updates_2018/Report_Population_Projection_2019.pdf
-  - NFHS-5 (2019-21): National Family Health Survey State Factsheets
-    https://rchiips.org/nfhs/NFHS-5Reports/NFHS-5_INDIA_REPORT.pdf
-  - SRS 2022 (Sample Registration System): Registrar General of India
-    https://censusindia.gov.in/nada/index.php/catalog/44457
+  - NFHS-6 (2023-24): National Family Health Survey State/UT Fact Sheets (IIPS)
+    https://www.nfhsiips.in/nfhsuser/nfhs6.php
+  - SRS 2024 (Sample Registration System): Registrar General of India
+    https://censusindia.gov.in/nada/index.php/catalog/47152
 
 Data notes:
   - Census 2011 state boundaries: AP shown as undivided (includes present-day Telangana).
@@ -19,8 +19,8 @@ Data notes:
   - NPC 2026 projections use current boundaries. J&K + Ladakh combined here
     to match Census 2011 undivided J&K. DNH + DD split proportionally by
     Census 2011 population share (merged into single UT in Jan 2020).
-  - NFHS-5 uses current (2019-21) state/UT boundaries.
-  - SRS data uses current state boundaries. Latest available: SRS 2022.
+  - NFHS-6 uses current (2023-24) state/UT boundaries; Manipur was not surveyed.
+  - SRS data uses current state boundaries. Latest available: SRS 2024.
 
 IMPORTANT: Every number must be cross-checked against primary source documents.
 This file is manually curated.
@@ -126,71 +126,92 @@ NPC_2026_PROJECTIONS = [
 ]
 
 
-# ── NFHS-5 (2019-21) State Health Data ───────────────────────────────
-# Source: NFHS-5 India Report and State Factsheets
-# https://rchiips.org/nfhs/NFHS-5Reports/NFHS-5_INDIA_REPORT.pdf
+# ── NFHS-6 (2023-24) State Health Data ───────────────────────────────
+# Source: National Family Health Survey (NFHS-6) 2023-24 — India and State/UT
+# Fact Sheets, IIPS (provisional). https://www.nfhsiips.in/nfhsuser/nfhs6.php
 #
-# Fields:
-#   tfr: Total Fertility Rate
-#   imr: Infant Mortality Rate (per 1000 live births)
-#   under5mr: Under-5 Mortality Rate (per 1000 live births)
-#   stunting: % of children under 5 who are stunted (height-for-age)
-#   wasting: % of children under 5 who are wasted (weight-for-height)
-#   fullImmunization: % of children 12-23 months fully immunized
+# Fields (all NFHS-6 Total column unless noted):
+#   tfr: Total Fertility Rate (factsheet indicator 18)
+#   imr: Infant Mortality Rate (per 1000 live births)        — see note
+#   under5mr: Under-5 Mortality Rate (per 1000 live births)  — see note
+#   stunting: % of children under 5 who are stunted (indicator 69)
+#   wasting: % of children under 5 who are wasted (indicator 70)
+#   fullImmunization: % children 12-23 mo fully vaccinated (indicator 44,
+#       "based on either vaccination card or mother's recall")
+#
+# NOTE — imr / under5mr are RETAINED from NFHS-5 (2019-21): the NFHS-6 fact
+# sheets do NOT report infant or under-5 mortality (mortality indicators were
+# dropped from the NFHS-6 factsheet). Current state mortality is covered
+# separately by SRS (SRS_STATE_IMR) and the World Bank national series. These
+# two fields are therefore the only non-NFHS-6 values in this table and should
+# be refreshed from the full NFHS-6 report if/when it publishes mortality.
+# NFHS-6 excluded Manipur (not surveyed); Manipur was already absent here.
 
-NFHS5_STATE_HEALTH = [
-    {"id": "UP", "name": "Uttar Pradesh", "tfr": 2.4, "imr": 50.4, "under5mr": 59.8, "stunting": 39.7, "wasting": 17.3, "fullImmunization": 69.6},
-    {"id": "MH", "name": "Maharashtra", "tfr": 1.7, "imr": 23.2, "under5mr": 28.0, "stunting": 35.2, "wasting": 25.6, "fullImmunization": 73.5},
-    {"id": "BR", "name": "Bihar", "tfr": 3.0, "imr": 46.8, "under5mr": 56.4, "stunting": 42.9, "wasting": 22.9, "fullImmunization": 71.0},
-    {"id": "WB", "name": "West Bengal", "tfr": 1.6, "imr": 22.0, "under5mr": 25.4, "stunting": 33.8, "wasting": 20.3, "fullImmunization": 87.8},
-    {"id": "MP", "name": "Madhya Pradesh", "tfr": 2.0, "imr": 41.3, "under5mr": 49.2, "stunting": 35.7, "wasting": 19.0, "fullImmunization": 77.1},
-    {"id": "TN", "name": "Tamil Nadu", "tfr": 1.8, "imr": 18.6, "under5mr": 22.3, "stunting": 25.0, "wasting": 14.6, "fullImmunization": 89.2},
-    {"id": "RJ", "name": "Rajasthan", "tfr": 2.0, "imr": 30.3, "under5mr": 37.6, "stunting": 31.8, "wasting": 16.8, "fullImmunization": 80.4},
-    {"id": "KA", "name": "Karnataka", "tfr": 1.7, "imr": 25.4, "under5mr": 29.5, "stunting": 35.4, "wasting": 19.5, "fullImmunization": 84.1},
-    {"id": "GJ", "name": "Gujarat", "tfr": 1.9, "imr": 31.2, "under5mr": 37.6, "stunting": 39.0, "wasting": 25.1, "fullImmunization": 76.3},
-    {"id": "AP", "name": "Andhra Pradesh", "tfr": 1.7, "imr": 30.3, "under5mr": 35.2, "stunting": 31.2, "wasting": 16.1, "fullImmunization": 73.0},
-    {"id": "OD", "name": "Odisha", "tfr": 1.8, "imr": 36.3, "under5mr": 41.1, "stunting": 31.0, "wasting": 18.1, "fullImmunization": 90.5},
-    {"id": "TS", "name": "Telangana", "tfr": 1.8, "imr": 26.4, "under5mr": 29.4, "stunting": 33.1, "wasting": 21.7, "fullImmunization": 79.1},
-    {"id": "KL", "name": "Kerala", "tfr": 1.8, "imr": 4.4, "under5mr": 5.2, "stunting": 23.4, "wasting": 15.8, "fullImmunization": 77.8},
-    {"id": "JH", "name": "Jharkhand", "tfr": 2.3, "imr": 37.9, "under5mr": 45.4, "stunting": 39.6, "wasting": 22.4, "fullImmunization": 73.9},
-    {"id": "AS", "name": "Assam", "tfr": 1.9, "imr": 31.9, "under5mr": 39.1, "stunting": 35.3, "wasting": 21.7, "fullImmunization": 66.4},
-    {"id": "PB", "name": "Punjab", "tfr": 1.6, "imr": 28.0, "under5mr": 32.7, "stunting": 24.5, "wasting": 10.6, "fullImmunization": 76.2},
-    {"id": "CG", "name": "Chhattisgarh", "tfr": 1.8, "imr": 44.3, "under5mr": 50.4, "stunting": 34.6, "wasting": 18.9, "fullImmunization": 79.7},
-    {"id": "HR", "name": "Haryana", "tfr": 1.9, "imr": 33.3, "under5mr": 38.7, "stunting": 27.5, "wasting": 11.5, "fullImmunization": 76.9},
-    {"id": "JK", "name": "Jammu & Kashmir", "tfr": 1.4, "imr": 16.3, "under5mr": 18.5, "stunting": 26.9, "wasting": 19.0, "fullImmunization": 86.2},
-    {"id": "UK", "name": "Uttarakhand", "tfr": 1.9, "imr": 39.1, "under5mr": 45.6, "stunting": 27.0, "wasting": 13.2, "fullImmunization": 80.8},
-    {"id": "HP", "name": "Himachal Pradesh", "tfr": 1.7, "imr": 25.6, "under5mr": 28.9, "stunting": 30.8, "wasting": 17.4, "fullImmunization": 89.3},
-    {"id": "DL", "name": "Delhi", "tfr": 1.6, "imr": 24.5, "under5mr": 30.6, "stunting": 30.9, "wasting": 11.2, "fullImmunization": 76.0},
-    {"id": "GA", "name": "Goa", "tfr": 1.3, "imr": 5.6, "under5mr": 10.6, "stunting": 25.8, "wasting": 19.1, "fullImmunization": 81.9},
+NFHS6_STATE_HEALTH = [
+    {"id": "UP", "name": "Uttar Pradesh", "tfr": 2.2, "imr": 50.4, "under5mr": 59.8, "stunting": 31.5, "wasting": 19.2, "fullImmunization": 81.4},
+    {"id": "MH", "name": "Maharashtra", "tfr": 1.8, "imr": 23.2, "under5mr": 28.0, "stunting": 29.5, "wasting": 19.9, "fullImmunization": 83.4},
+    {"id": "BR", "name": "Bihar", "tfr": 2.7, "imr": 46.8, "under5mr": 56.4, "stunting": 35.6, "wasting": 19.0, "fullImmunization": 77.3},
+    {"id": "WB", "name": "West Bengal", "tfr": 1.6, "imr": 22.0, "under5mr": 25.4, "stunting": 22.4, "wasting": 20.3, "fullImmunization": 88.1},
+    {"id": "MP", "name": "Madhya Pradesh", "tfr": 2.1, "imr": 41.3, "under5mr": 49.2, "stunting": 31.4, "wasting": 23.8, "fullImmunization": 81.5},
+    {"id": "TN", "name": "Tamil Nadu", "tfr": 1.7, "imr": 18.6, "under5mr": 22.3, "stunting": 20.7, "wasting": 17.4, "fullImmunization": 90.0},
+    {"id": "RJ", "name": "Rajasthan", "tfr": 2.1, "imr": 30.3, "under5mr": 37.6, "stunting": 29.6, "wasting": 19.8, "fullImmunization": 80.6},
+    {"id": "KA", "name": "Karnataka", "tfr": 1.8, "imr": 25.4, "under5mr": 29.5, "stunting": 26.5, "wasting": 18.7, "fullImmunization": 90.2},
+    {"id": "GJ", "name": "Gujarat", "tfr": 1.9, "imr": 31.2, "under5mr": 37.6, "stunting": 35.3, "wasting": 20.2, "fullImmunization": 81.7},
+    {"id": "AP", "name": "Andhra Pradesh", "tfr": 1.8, "imr": 30.3, "under5mr": 35.2, "stunting": 24.6, "wasting": 12.3, "fullImmunization": 87.7},
+    {"id": "OD", "name": "Odisha", "tfr": 1.7, "imr": 36.3, "under5mr": 41.1, "stunting": 26.8, "wasting": 22.1, "fullImmunization": 90.8},
+    {"id": "TS", "name": "Telangana", "tfr": 1.9, "imr": 26.4, "under5mr": 29.4, "stunting": 27.0, "wasting": 16.9, "fullImmunization": 80.9},
+    {"id": "KL", "name": "Kerala", "tfr": 1.8, "imr": 4.4, "under5mr": 5.2, "stunting": 20.1, "wasting": 10.9, "fullImmunization": 84.9},
+    {"id": "JH", "name": "Jharkhand", "tfr": 2.2, "imr": 37.9, "under5mr": 45.4, "stunting": 35.0, "wasting": 22.3, "fullImmunization": 78.1},
+    {"id": "AS", "name": "Assam", "tfr": 1.6, "imr": 31.9, "under5mr": 39.1, "stunting": 30.3, "wasting": 21.4, "fullImmunization": 81.7},
+    {"id": "PB", "name": "Punjab", "tfr": 1.6, "imr": 28.0, "under5mr": 32.7, "stunting": 20.4, "wasting": 18.0, "fullImmunization": 77.7},
+    {"id": "CG", "name": "Chhattisgarh", "tfr": 1.9, "imr": 44.3, "under5mr": 50.4, "stunting": 27.5, "wasting": 21.1, "fullImmunization": 77.9},
+    {"id": "HR", "name": "Haryana", "tfr": 2.0, "imr": 33.3, "under5mr": 38.7, "stunting": 25.9, "wasting": 16.6, "fullImmunization": 79.7},
+    {"id": "JK", "name": "Jammu & Kashmir", "tfr": 1.8, "imr": 16.3, "under5mr": 18.5, "stunting": 21.4, "wasting": 10.6, "fullImmunization": 89.4},
+    {"id": "UK", "name": "Uttarakhand", "tfr": 1.9, "imr": 39.1, "under5mr": 45.6, "stunting": 20.0, "wasting": 11.0, "fullImmunization": 86.0},
+    {"id": "HP", "name": "Himachal Pradesh", "tfr": 1.8, "imr": 25.6, "under5mr": 28.9, "stunting": 20.6, "wasting": 10.4, "fullImmunization": 90.1},
+    {"id": "DL", "name": "Delhi", "tfr": 1.6, "imr": 24.5, "under5mr": 30.6, "stunting": 26.4, "wasting": 15.0, "fullImmunization": 80.7},
+    {"id": "GA", "name": "Goa", "tfr": 1.6, "imr": 5.6, "under5mr": 10.6, "stunting": 19.4, "wasting": 16.3, "fullImmunization": 93.8},
 ]
 
+# Backwards-compatible alias (NFHS-6 supersedes NFHS-5)
+NFHS5_STATE_HEALTH = NFHS6_STATE_HEALTH
 
-# ── SRS 2022 State IMR ───────────────────────────────────────────────
-# Source: Sample Registration System Statistical Report 2022
-# Registrar General of India (latest available with state breakdown)
-# IMR = Infant Mortality Rate per 1000 live births
+
+# ── SRS 2024 State IMR ───────────────────────────────────────────────
+# Source: Sample Registration System Statistical Report 2024
+# Office of the Registrar General of India (released May 2026; latest with
+# state breakdown). Table 46: "Infant Mortality Rate by Sex and Residence,
+# India and States/UTs, 2024" — Total (combined) column.
+# IMR = Infant Mortality Rate per 1000 live births.
+# Set = the 22 bigger States/UTs (national IMR 24). All are annual 2024
+# estimates except Himachal Pradesh, which SRS marks with an asterisk as based
+# on the three-year period 2022-24 (same as the smaller States/UTs).
+# Smaller States/UTs are published by SRS only on a 3-year (2022-24) basis and
+# are intentionally excluded here for single-year comparability.
+# Refresh 2026-06: was mislabeled "SRS 2022" with older values; updated to the
+# verified SRS-2024 annual figures.
 
 SRS_STATE_IMR = [
+    {"id": "CG", "name": "Chhattisgarh", "value": 36},
     {"id": "MP", "name": "Madhya Pradesh", "value": 35},
-    {"id": "UP", "name": "Uttar Pradesh", "value": 33},
-    {"id": "CG", "name": "Chhattisgarh", "value": 32},
-    {"id": "OD", "name": "Odisha", "value": 30},
-    {"id": "AS", "name": "Assam", "value": 30},
-    {"id": "RJ", "name": "Rajasthan", "value": 29},
-    {"id": "BR", "name": "Bihar", "value": 27},
-    {"id": "JH", "name": "Jharkhand", "value": 25},
+    {"id": "UP", "name": "Uttar Pradesh", "value": 35},
+    {"id": "AS", "name": "Assam", "value": 29},
+    {"id": "OD", "name": "Odisha", "value": 28},
+    {"id": "RJ", "name": "Rajasthan", "value": 28},
+    {"id": "JH", "name": "Jharkhand", "value": 27},
     {"id": "HR", "name": "Haryana", "value": 24},
-    {"id": "GJ", "name": "Gujarat", "value": 23},
-    {"id": "AP", "name": "Andhra Pradesh", "value": 21},
-    {"id": "WB", "name": "West Bengal", "value": 19},
+    {"id": "BR", "name": "Bihar", "value": 23},
+    {"id": "GJ", "name": "Gujarat", "value": 19},
     {"id": "UK", "name": "Uttarakhand", "value": 19},
-    {"id": "PB", "name": "Punjab", "value": 18},
+    {"id": "AP", "name": "Andhra Pradesh", "value": 18},
     {"id": "TS", "name": "Telangana", "value": 17},
-    {"id": "MH", "name": "Maharashtra", "value": 15},
+    {"id": "PB", "name": "Punjab", "value": 16},
+    {"id": "WB", "name": "West Bengal", "value": 16},
     {"id": "KA", "name": "Karnataka", "value": 15},
     {"id": "JK", "name": "Jammu & Kashmir", "value": 14},
-    {"id": "HP", "name": "Himachal Pradesh", "value": 14},
-    {"id": "TN", "name": "Tamil Nadu", "value": 12},
+    {"id": "MH", "name": "Maharashtra", "value": 13},
     {"id": "DL", "name": "Delhi", "value": 11},
-    {"id": "KL", "name": "Kerala", "value": 5},
+    {"id": "HP", "name": "Himachal Pradesh", "value": 11},
+    {"id": "TN", "name": "Tamil Nadu", "value": 11},
+    {"id": "KL", "name": "Kerala", "value": 8},
 ]

@@ -22,12 +22,12 @@ export const healthOutcomes: TopicDef = {
       const h = hcSummary(bag);
       return h ? `${h.hospitalBedsPer1000}` : '—';
     },
-    label: 'Hospital beds per 1,000 people',
-    context: 'WHO recommends 3 beds per 1,000. India has a long way to go.',
+    label: 'Government hospital beds per 1,000 people',
+    context: 'About 1.6 per 1,000 counting private hospitals. WHO recommends 3.5.',
   },
 
   takeaways: [
-    { value: (bag) => { const h = hcSummary(bag); return h ? `${h.hospitalBedsPer1000}` : '—'; }, label: 'Beds per 1,000', sectionId: 'infrastructure-gap' },
+    { value: (bag) => { const h = hcSummary(bag); return h ? `${h.hospitalBedsPer1000}` : '—'; }, label: 'Govt beds per 1,000', sectionId: 'infrastructure-gap' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.dptImmunization}%` : '—'; }, label: 'DPT immunization', sectionId: 'child-health' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.healthExpGDP}%` : '—'; }, label: 'Health spending (% GDP)', sectionId: 'spending-gap' },
     { value: (bag) => { const h = hcSummary(bag); return h ? `${h.outOfPocketPct}%` : '—'; }, label: 'Out-of-pocket spending', sectionId: 'spending-gap' },
@@ -42,7 +42,7 @@ export const healthOutcomes: TopicDef = {
       title: 'Child Survival',
       annotation: 'India\'s infant mortality rate has dropped from 66 per 1,000 live births in 2000 to about 25 today. Immunization coverage now exceeds 90% nationally, though state-level variation is wide.',
       domains: ['healthcare', 'census'],
-      sources: ['SRS 2022', 'NFHS-5', 'World Bank'],
+      sources: ['SRS 2024', 'NFHS-6', 'World Bank'],
       charts: [{
         chartType: 'line', chartTitle: 'Infant Mortality Rate (per 1,000 live births)', unit: 'per 1,000', accent: '#EC4899',
         extractData: (bag) => {
@@ -57,7 +57,7 @@ export const healthOutcomes: TopicDef = {
       id: 'infrastructure-gap',
       sectionNumber: 2,
       title: 'Infrastructure Gap',
-      annotation: 'With 1.6 beds (mostly private) and 0.7 doctors per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
+      annotation: 'With 0.5 government beds (~1.6 counting private, World Bank 2021) and 0.7 doctors per 1,000 people, India\'s health infrastructure falls short of WHO norms. Rural areas fare worse — driving millions to seek private care they can barely afford.',
       domains: ['healthcare'],
       sources: ['NHP 2022 (CBHI)'],
       charts: [{
@@ -66,7 +66,7 @@ export const healthOutcomes: TopicDef = {
           const h = hcSummary(bag);
           if (!h) return null;
           return [
-            { label: 'Beds / 1,000', value: `${h.hospitalBedsPer1000}`, accent: '#EC4899' },
+            { label: 'Govt Beds / 1,000', value: `${h.hospitalBedsPer1000}`, accent: '#EC4899' },
             { label: 'Physicians / 1,000', value: `${h.physiciansPer1000}`, accent: '#F43F5E' },
             { label: 'Health Spend (% GDP)', value: `${h.healthExpGDP}%`, accent: '#8B5CF6' },
             { label: 'Out-of-Pocket', value: `${h.outOfPocketPct}%`, accent: '#F59E0B' },

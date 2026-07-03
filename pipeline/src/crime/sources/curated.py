@@ -4,18 +4,21 @@ Crime & Safety — Curated data from authoritative sources.
 Every figure traces to a primary government or institutional source.
 This file is the single source of truth for India's crime and safety data.
 
-Sources:
-  - NCRB "Crime in India 2022" (Vol I & II): ncrb.gov.in — IPC/SLL crimes,
-    crimes against women, cybercrime, police, justice system
-  - MoRTH "Road Accidents in India 2022": morth.nic.in — Road accidents,
-    fatalities, causes
-  - BPRD "Data on Police Organisations 2022": bprd.nic.in — Police strength,
-    vacancies, women in police
+Sources (2023 edition refresh):
+  - NCRB "Crime in India 2023" (Part I, II & III): ncrb.gov.in — IPC/SLL crimes,
+    crimes against women, cybercrime, court disposal, justice system.
+    Part I = chapters 1–5 (overall, human-body, women, children); Part III =
+    chapters 12–19 (incl. Table 18A.1 court disposal / conviction).
+  - MoRTH "Road Accidents in India 2023": morth.gov.in — Road accidents,
+    fatalities, causes.
+  - BPRD "Data on Police Organisations" (as on 01.01.2023): bprd.nic.in —
+    Police strength, vacancies, women in police.
   - I4C (Indian Cyber Crime Coordination Centre): cybercrime.gov.in —
-    Complaint portal statistics (context only, not FIR counts)
+    Complaint portal statistics (context only, not FIR counts).
 
-Data period: Primarily 2014–2022 (10-year trends where available)
-Publication: NCRB Crime in India 2022 published December 2023
+Data period: Primarily 2014–2023 (10-year trends where available)
+Publication: NCRB Crime in India 2023 published October 2025; MoRTH RAI 2023;
+             BPRD DoPO as on 01.01.2023.
 
 Note on accuracy:
   - NCRB figures cover cognizable crimes (FIR-based). Actual crime is higher
@@ -26,15 +29,25 @@ Note on accuracy:
     standard. Mapping: OD (Odisha), CG (Chhattisgarh), TS (Telangana).
   - MoRTH road data covers all road accidents (not just FIR-based), so
     totals are higher than NCRB motor vehicle accident counts.
-  - I4C complaint portal numbers (22.68 lakh in 2022) are NOT comparable
-    to NCRB FIR counts (65,893 in 2022) — different systems.
+  - "IPC" labels are retained because Crime in India 2023 still reports under
+    IPC (the BNS transition begins with the 2024 data-year).
+
+Derivations explicitly documented inline:
+  - STATE_ROAD_FATALITIES.rate (deaths per lakh population): MoRTH publishes
+    a state-wise rate only per-10,000-vehicles (Chart 4.3) and a per-lakh-
+    population rate only at the all-India level (Table 1.8 = 12.5 in 2023).
+    The per-lakh-population *state* rate below is COMPUTED as MoRTH-2023
+    persons-killed (Table 5.6) ÷ NCRB-2023 mid-year projected population
+    (Crime in India 2023, Table 1A.3), then rounded to 1 dp.
 """
 
 
 # ══════════════════════════════════════════════════════════════════════
-# NATIONAL CRIME TRENDS — 10 years (2014–2022)
-# Source: NCRB "Crime in India" annual reports
-# All figures are cognizable crimes registered (IPC + SLL combined)
+# NATIONAL CRIME TRENDS — 10 years (2014–2023)
+# Source: NCRB "Crime in India" annual reports.
+# 2021-2023 verified against NCRB Crime in India 2023, Table 1.1.
+# 2020 verified against the 2023 "at-a-glance IPC" series (IPC 4,254,356)
+# and NCRB CII-2022 Vol I. All figures = cognizable crimes (IPC + SLL).
 # ══════════════════════════════════════════════════════════════════════
 
 NATIONAL_CRIME_TREND = [
@@ -45,73 +58,76 @@ NATIONAL_CRIME_TREND = [
     {"year": "2017", "total": 5059089, "ipc": 3091676, "sll": 1967413, "rate": 385.5},
     {"year": "2018", "total": 5015127, "ipc": 3132954, "sll": 1882173, "rate": 377.8},
     {"year": "2019", "total": 5156172, "ipc": 3225701, "sll": 1930471, "rate": 383.5},
-    {"year": "2020", "total": 4527694, "ipc": 2904490, "sll": 1623204, "rate": 332.3},
-    {"year": "2021", "total": 5343323, "ipc": 3370183, "sll": 1973140, "rate": 388.1},
+    {"year": "2020", "total": 6601285, "ipc": 4254356, "sll": 2346929, "rate": 487.8},
+    {"year": "2021", "total": 6096310, "ipc": 3663360, "sll": 2432950, "rate": 445.9},
     {"year": "2022", "total": 5824946, "ipc": 3561379, "sll": 2263567, "rate": 422.2},
+    {"year": "2023", "total": 6241569, "ipc": 3763102, "sll": 2478467, "rate": 448.3},
 ]
 
-# IPC crime composition breakdown — 2022
-# Source: NCRB Crime in India 2022, Table 1A.1
+# IPC crime composition breakdown — 2023
+# Source: NCRB Crime in India 2023, Table 1.2 (IPC Crimes, Crime Head-wise).
+# `pct` = published "Percentage Share of IPC Crimes" (col 9). other-ipc is the
+# remainder so the slices sum to 100% of the 37,63,102 total IPC crimes.
 IPC_CRIME_COMPOSITION = [
-    {"id": "theft", "name": "Theft", "cases": 376090, "pct": 10.6},
-    {"id": "hurt", "name": "Causing Hurt", "cases": 331464, "pct": 9.3},
-    {"id": "cruelty-women", "name": "Cruelty by Husband/Relatives", "cases": 145309, "pct": 4.1},
-    {"id": "kidnapping", "name": "Kidnapping & Abduction", "cases": 109400, "pct": 3.1},
-    {"id": "assault-women", "name": "Assault on Women", "cases": 82727, "pct": 2.3},
-    {"id": "burglary", "name": "Burglary", "cases": 63920, "pct": 1.8},
-    {"id": "robbery", "name": "Robbery", "cases": 12958, "pct": 0.4},
-    {"id": "rape", "name": "Rape", "cases": 31516, "pct": 0.9},
-    {"id": "murder", "name": "Murder", "cases": 28522, "pct": 0.8},
-    {"id": "riots", "name": "Riots", "cases": 29386, "pct": 0.8},
-    {"id": "cheating", "name": "Cheating", "cases": 163092, "pct": 4.6},
-    {"id": "other-ipc", "name": "Other IPC Crimes", "cases": 2186995, "pct": 61.4},
+    {"id": "theft", "name": "Theft", "cases": 689580, "pct": 18.3},
+    {"id": "hurt", "name": "Causing Hurt", "cases": 636767, "pct": 16.9},
+    {"id": "cheating", "name": "Forgery, Cheating & Fraud", "cases": 181553, "pct": 4.8},
+    {"id": "cruelty-women", "name": "Cruelty by Husband/Relatives", "cases": 133676, "pct": 3.6},
+    {"id": "kidnapping", "name": "Kidnapping & Abduction", "cases": 113564, "pct": 3.0},
+    {"id": "burglary", "name": "Burglary", "cases": 107573, "pct": 2.9},
+    {"id": "assault-women", "name": "Assault on Women", "cases": 83891, "pct": 2.2},
+    {"id": "riots", "name": "Riots", "cases": 39260, "pct": 1.0},
+    {"id": "rape", "name": "Rape", "cases": 29670, "pct": 0.8},
+    {"id": "murder", "name": "Murder", "cases": 27721, "pct": 0.7},
+    {"id": "robbery", "name": "Robbery", "cases": 26599, "pct": 0.7},
+    {"id": "other-ipc", "name": "Other IPC Crimes", "cases": 1693248, "pct": 45.1},
 ]
 
 
 # ══════════════════════════════════════════════════════════════════════
-# STATE-WISE CRIME RATES — 2022
-# Source: NCRB Crime in India 2022, Table 1.4
-# Rate = total cognizable crimes per lakh population
-# Uses uppercase vehicle registration (RTO) codes per project standard
+# STATE-WISE CRIME RATES — 2023
+# Source: NCRB Crime in India 2023, Table 1A.3 (Total Cognizable Crimes,
+# State/UT-wise). Rate = total cognizable crimes per lakh population (2023).
+# Uses uppercase vehicle registration (RTO) codes per project standard.
 # ══════════════════════════════════════════════════════════════════════
 
 STATE_CRIME_RATES = [
-    {"id": "KL", "name": "Kerala", "rate": 1287.4, "total": 461652},
-    {"id": "DL", "name": "Delhi", "rate": 1241.8, "total": 248485},
-    {"id": "TN", "name": "Tamil Nadu", "rate": 566.6, "total": 444779},
-    {"id": "MP", "name": "Madhya Pradesh", "rate": 517.1, "total": 438879},
-    {"id": "HR", "name": "Haryana", "rate": 504.9, "total": 148714},
-    {"id": "CG", "name": "Chhattisgarh", "rate": 488.1, "total": 144680},
-    {"id": "RJ", "name": "Rajasthan", "rate": 477.8, "total": 386975},
-    {"id": "UP", "name": "Uttar Pradesh", "rate": 451.7, "total": 1030895},
-    {"id": "GJ", "name": "Gujarat", "rate": 445.5, "total": 305310},
-    {"id": "MH", "name": "Maharashtra", "rate": 406.4, "total": 502803},
-    {"id": "AP", "name": "Andhra Pradesh", "rate": 401.0, "total": 216063},
-    {"id": "OD", "name": "Odisha", "rate": 395.3, "total": 181038},
-    {"id": "KA", "name": "Karnataka", "rate": 389.0, "total": 256803},
-    {"id": "JH", "name": "Jharkhand", "rate": 374.5, "total": 140820},
-    {"id": "TS", "name": "Telangana", "rate": 368.3, "total": 140979},
-    {"id": "AS", "name": "Assam", "rate": 359.1, "total": 130010},
-    {"id": "BR", "name": "Bihar", "rate": 295.0, "total": 361019},
-    {"id": "WB", "name": "West Bengal", "rate": 291.0, "total": 282024},
-    {"id": "PB", "name": "Punjab", "rate": 285.7, "total": 86773},
-    {"id": "UK", "name": "Uttarakhand", "rate": 262.0, "total": 29597},
-    {"id": "HP", "name": "Himachal Pradesh", "rate": 246.2, "total": 18325},
-    {"id": "GA", "name": "Goa", "rate": 225.4, "total": 3587},
-    {"id": "JK", "name": "Jammu & Kashmir", "rate": 207.6, "total": 27596},
-    {"id": "MN", "name": "Manipur", "rate": 200.0, "total": 6098},
-    {"id": "TR", "name": "Tripura", "rate": 196.3, "total": 7989},
-    {"id": "ML", "name": "Meghalaya", "rate": 181.3, "total": 6214},
-    {"id": "SK", "name": "Sikkim", "rate": 164.2, "total": 1137},
-    {"id": "AR", "name": "Arunachal Pradesh", "rate": 155.9, "total": 2529},
-    {"id": "NL", "name": "Nagaland", "rate": 124.1, "total": 2694},
-    {"id": "MZ", "name": "Mizoram", "rate": 110.2, "total": 1372},
+    {"id": "KL", "name": "Kerala", "rate": 1631.2, "total": 584373},
+    {"id": "DL", "name": "Delhi", "rate": 1602.0, "total": 344263},
+    {"id": "GJ", "name": "Gujarat", "rate": 806.3, "total": 578879},
+    {"id": "HR", "name": "Haryana", "rate": 739.2, "total": 224216},
+    {"id": "TN", "name": "Tamil Nadu", "rate": 701.4, "total": 539651},
+    {"id": "MN", "name": "Manipur", "rate": 627.8, "total": 20283},
+    {"id": "MP", "name": "Madhya Pradesh", "rate": 570.3, "total": 495708},
+    {"id": "TS", "name": "Telangana", "rate": 481.6, "total": 183644},
+    {"id": "MH", "name": "Maharashtra", "rate": 470.4, "total": 596103},
+    {"id": "OD", "name": "Odisha", "rate": 431.2, "total": 199954},
+    {"id": "RJ", "name": "Rajasthan", "rate": 390.4, "total": 317480},
+    {"id": "CG", "name": "Chhattisgarh", "rate": 381.2, "total": 115493},
+    {"id": "AP", "name": "Andhra Pradesh", "rate": 346.3, "total": 184293},
+    {"id": "UP", "name": "Uttar Pradesh", "rate": 335.3, "total": 793020},
+    {"id": "MZ", "name": "Mizoram", "rate": 326.3, "total": 4050},
+    {"id": "KA", "name": "Karnataka", "rate": 315.8, "total": 214234},
+    {"id": "UK", "name": "Uttarakhand", "rate": 291.3, "total": 34017},
+    {"id": "BR", "name": "Bihar", "rate": 277.5, "total": 353502},
+    {"id": "HP", "name": "Himachal Pradesh", "rate": 267.2, "total": 19987},
+    {"id": "PB", "name": "Punjab", "rate": 227.1, "total": 69944},
+    {"id": "JK", "name": "Jammu & Kashmir", "rate": 217.0, "total": 29595},
+    {"id": "GA", "name": "Goa", "rate": 195.4, "total": 3082},
+    {"id": "AR", "name": "Arunachal Pradesh", "rate": 187.9, "total": 2941},
+    {"id": "WB", "name": "West Bengal", "rate": 181.6, "total": 180272},
+    {"id": "AS", "name": "Assam", "rate": 181.3, "total": 64959},
+    {"id": "JH", "name": "Jharkhand", "rate": 161.1, "total": 63838},
+    {"id": "TR", "name": "Tripura", "rate": 120.4, "total": 5002},
+    {"id": "ML", "name": "Meghalaya", "rate": 105.2, "total": 3532},
+    {"id": "SK", "name": "Sikkim", "rate": 103.9, "total": 718},
+    {"id": "NL", "name": "Nagaland", "rate": 84.9, "total": 1899},
 ]
 
 
 # ══════════════════════════════════════════════════════════════════════
 # CRIMES AGAINST WOMEN — national trends + breakdown
-# Source: NCRB Crime in India 2022, Chapter 5
+# Source: NCRB Crime in India 2023, Chapter 3A (Table 3A.1, 3A.2).
 # ══════════════════════════════════════════════════════════════════════
 
 WOMEN_CRIME_TREND = [
@@ -125,50 +141,65 @@ WOMEN_CRIME_TREND = [
     {"year": "2020", "total": 371503, "rate": 56.5},
     {"year": "2021", "total": 428278, "rate": 64.5},
     {"year": "2022", "total": 445256, "rate": 66.4},
+    {"year": "2023", "total": 448211, "rate": 66.2},
 ]
 
-# Crime type breakdown — 2022
-# Source: NCRB Crime in India 2022, Table 5A.1
+# Crime-against-women head breakdown — 2023
+# Source: NCRB Crime in India 2023, "Crime against Women" snapshot (Table 3A.2):
+# cruelty 1,33,676 (29.8%), kidnapping-of-women 88,605 (19.8%), assault/modesty
+# 83,891 (18.71%), POCSO 66,232 (14.8%). Rape (29,670) and dowry deaths (6,156)
+# from Table 1.2; other-women is the remainder to the 4,48,211 total.
+# (Cyber crimes against women — 19,510, Table 9A.10 — are counted under the
+# cyber chapter, not within this 4,48,211 total, so they are not a slice here.)
 WOMEN_CRIME_TYPES = [
-    {"id": "cruelty", "name": "Cruelty by Husband/Relatives", "cases": 145309, "pct": 32.6},
-    {"id": "kidnapping", "name": "Kidnapping & Abduction", "cases": 105418, "pct": 23.7},
-    {"id": "assault", "name": "Assault to Outrage Modesty", "cases": 82727, "pct": 18.6},
-    {"id": "rape", "name": "Rape", "cases": 31516, "pct": 7.1},
-    {"id": "dowry-death", "name": "Dowry Deaths", "cases": 6450, "pct": 1.4},
-    {"id": "cybercrime-women", "name": "Cybercrime Against Women", "cases": 7796, "pct": 1.8},
-    {"id": "other-women", "name": "Other Crimes Against Women", "cases": 66040, "pct": 14.8},
+    {"id": "cruelty", "name": "Cruelty by Husband/Relatives", "cases": 133676, "pct": 29.8},
+    {"id": "kidnapping", "name": "Kidnapping & Abduction of Women", "cases": 88605, "pct": 19.8},
+    {"id": "assault", "name": "Assault to Outrage Modesty", "cases": 83891, "pct": 18.7},
+    {"id": "pocso", "name": "POCSO (Child Sexual Offences)", "cases": 66232, "pct": 14.8},
+    {"id": "rape", "name": "Rape", "cases": 29670, "pct": 6.6},
+    {"id": "dowry-death", "name": "Dowry Deaths", "cases": 6156, "pct": 1.4},
+    {"id": "other-women", "name": "Other Crimes Against Women", "cases": 39981, "pct": 8.9},
 ]
 
-# State-wise crime against women rate (per lakh women population) — 2022
-# Source: NCRB Crime in India 2022, Table 5A.2
+# State-wise crime against women rate (per lakh women population) — 2023
+# Source: NCRB Crime in India 2023, Table 3A.1 (col 7 = rate, col 5 = total 2023).
 STATE_WOMEN_CRIME_RATES = [
-    {"id": "RJ", "name": "Rajasthan", "rate": 105.4, "total": 40738},
-    {"id": "DL", "name": "Delhi", "rate": 100.2, "total": 10036},
-    {"id": "HR", "name": "Haryana", "rate": 93.4, "total": 13048},
-    {"id": "OD", "name": "Odisha", "rate": 90.5, "total": 19567},
-    {"id": "AS", "name": "Assam", "rate": 88.0, "total": 14915},
-    {"id": "MP", "name": "Madhya Pradesh", "rate": 82.6, "total": 32714},
-    {"id": "UP", "name": "Uttar Pradesh", "rate": 76.4, "total": 82180},
-    {"id": "CG", "name": "Chhattisgarh", "rate": 73.0, "total": 10115},
-    {"id": "AP", "name": "Andhra Pradesh", "rate": 70.5, "total": 17911},
-    {"id": "TS", "name": "Telangana", "rate": 67.3, "total": 12150},
-    {"id": "KL", "name": "Kerala", "rate": 65.7, "total": 11725},
-    {"id": "TN", "name": "Tamil Nadu", "rate": 60.3, "total": 23268},
-    {"id": "MH", "name": "Maharashtra", "rate": 56.0, "total": 34625},
-    {"id": "KA", "name": "Karnataka", "rate": 55.2, "total": 17676},
-    {"id": "JH", "name": "Jharkhand", "rate": 54.2, "total": 9619},
-    {"id": "BR", "name": "Bihar", "rate": 43.6, "total": 25316},
-    {"id": "WB", "name": "West Bengal", "rate": 42.4, "total": 19823},
-    {"id": "GJ", "name": "Gujarat", "rate": 40.0, "total": 12889},
-    {"id": "PB", "name": "Punjab", "rate": 37.2, "total": 5308},
-    {"id": "UK", "name": "Uttarakhand", "rate": 35.8, "total": 1906},
+    {"id": "DL", "name": "Delhi", "rate": 133.6, "total": 13439},
+    {"id": "TS", "name": "Telangana", "rate": 124.9, "total": 23678},
+    {"id": "RJ", "name": "Rajasthan", "rate": 114.8, "total": 45450},
+    {"id": "OD", "name": "Odisha", "rate": 112.4, "total": 25914},
+    {"id": "HR", "name": "Haryana", "rate": 110.3, "total": 15758},
+    {"id": "KL", "name": "Kerala", "rate": 86.1, "total": 16025},
+    {"id": "AP", "name": "Andhra Pradesh", "rate": 84.2, "total": 22418},
+    {"id": "MH", "name": "Maharashtra", "rate": 77.5, "total": 47101},
+    {"id": "MP", "name": "Madhya Pradesh", "rate": 76.8, "total": 32342},
+    {"id": "WB", "name": "West Bengal", "rate": 71.3, "total": 34691},
+    {"id": "AS", "name": "Assam", "rate": 68.6, "total": 12070},
+    {"id": "UK", "name": "Uttarakhand", "rate": 66.9, "total": 3808},
+    {"id": "KA", "name": "Karnataka", "rate": 60.9, "total": 20336},
+    {"id": "UP", "name": "Uttar Pradesh", "rate": 58.6, "total": 66381},
+    {"id": "CG", "name": "Chhattisgarh", "rate": 53.2, "total": 8035},
+    {"id": "HP", "name": "Himachal Pradesh", "rate": 43.5, "total": 1604},
+    {"id": "AR", "name": "Arunachal Pradesh", "rate": 42.8, "total": 326},
+    {"id": "SK", "name": "Sikkim", "rate": 41.0, "total": 134},
+    {"id": "TR", "name": "Tripura", "rate": 38.7, "total": 791},
+    {"id": "BR", "name": "Bihar", "rate": 37.5, "total": 22952},
+    {"id": "ML", "name": "Meghalaya", "rate": 37.5, "total": 628},
+    {"id": "GA", "name": "Goa", "rate": 36.5, "total": 286},
+    {"id": "JH", "name": "Jharkhand", "rate": 36.1, "total": 6989},
+    {"id": "PB", "name": "Punjab", "rate": 35.9, "total": 5258},
+    {"id": "MZ", "name": "Mizoram", "rate": 29.9, "total": 184},
+    {"id": "TN", "name": "Tamil Nadu", "rate": 23.2, "total": 8943},
+    {"id": "GJ", "name": "Gujarat", "rate": 22.9, "total": 7805},
+    {"id": "MN", "name": "Manipur", "rate": 12.5, "total": 201},
+    {"id": "NL", "name": "Nagaland", "rate": 5.2, "total": 56},
 ]
 
 
 # ══════════════════════════════════════════════════════════════════════
 # ROAD ACCIDENTS — national trends
-# Source: MoRTH "Road Accidents in India 2022"
-# MoRTH figures are more comprehensive than NCRB motor vehicle FIRs
+# Source: MoRTH "Road Accidents in India 2023".
+# MoRTH figures are more comprehensive than NCRB motor vehicle FIRs.
 # ══════════════════════════════════════════════════════════════════════
 
 ROAD_ACCIDENT_TREND = [
@@ -182,51 +213,66 @@ ROAD_ACCIDENT_TREND = [
     {"year": "2020", "accidents": 354796, "killed": 131714, "injured": 348279},
     {"year": "2021", "accidents": 412432, "killed": 153972, "injured": 384448},
     {"year": "2022", "accidents": 461312, "killed": 168491, "injured": 443366},
+    {"year": "2023", "accidents": 480583, "killed": 172890, "injured": 462825},
 ]
 
-# Cause-wise breakdown of road accidents — 2022
-# Source: MoRTH Road Accidents in India 2022
+# Cause-wise breakdown of road accidents — 2023 (% share of total accidents)
+# Source: MoRTH Road Accidents in India 2023, Table 3.1 (Road Accidents by
+# Type of Traffic Rule Violation). MoRTH 2023 groups all remaining violations
+# (incl. overloading) under "Others".
 ROAD_ACCIDENT_CAUSES = [
-    {"id": "overspeeding", "name": "Over-speeding", "pct": 72.3},  # MoRTH 2022: 72.3% of total accidents
-    {"id": "wrong-side", "name": "Driving on Wrong Side", "pct": 4.9},  # MoRTH 2022
-    {"id": "drunk-driving", "name": "Drunken Driving", "pct": 3.1},
-    {"id": "mobile-use", "name": "Use of Mobile Phone", "pct": 2.7},
-    {"id": "overloading", "name": "Overloading", "pct": 1.9},
-    {"id": "red-light", "name": "Jumping Red Light", "pct": 0.9},
-    {"id": "other-causes", "name": "Other Causes", "pct": 14.2},  # remainder to sum to 100%
+    {"id": "overspeeding", "name": "Over-speeding", "pct": 68.4},
+    {"id": "wrong-side", "name": "Driving on Wrong Side / Lane Indiscipline", "pct": 5.25},
+    {"id": "drunk-driving", "name": "Drunken Driving", "pct": 1.9},
+    {"id": "mobile-use", "name": "Use of Mobile Phone", "pct": 1.48},
+    {"id": "red-light", "name": "Jumping Red Light", "pct": 0.51},
+    {"id": "other-causes", "name": "Other Causes", "pct": 22.45},
 ]
 
-# State-wise road accident fatality rates (deaths per lakh population) — 2022
-# Source: MoRTH Road Accidents in India 2022
+# State-wise road accident fatality rate (deaths per lakh population) — 2023
+# `killed`: MoRTH Road Accidents in India 2023, Table 5.6 (verbatim).
+# `rate`:   COMPUTED = killed ÷ NCRB-2023 mid-year projected population
+#           (Crime in India 2023, Table 1A.3, in lakhs), rounded to 1 dp —
+#           because MoRTH publishes a per-lakh-population rate only at the
+#           all-India level (12.5 in 2023), not state-wise. See module docstring.
 STATE_ROAD_FATALITIES = [
-    {"id": "TS", "name": "Telangana", "rate": 21.5, "killed": 8248},
-    {"id": "MP", "name": "Madhya Pradesh", "rate": 18.9, "killed": 16077},
-    {"id": "CG", "name": "Chhattisgarh", "rate": 18.3, "killed": 5419},
-    {"id": "TN", "name": "Tamil Nadu", "rate": 17.9, "killed": 14054},
-    {"id": "KA", "name": "Karnataka", "rate": 17.8, "killed": 11757},
-    {"id": "RJ", "name": "Rajasthan", "rate": 17.5, "killed": 14194},
-    {"id": "UP", "name": "Uttar Pradesh", "rate": 15.4, "killed": 35214},
-    {"id": "GJ", "name": "Gujarat", "rate": 15.2, "killed": 10425},
-    {"id": "HR", "name": "Haryana", "rate": 15.0, "killed": 4415},
-    {"id": "MH", "name": "Maharashtra", "rate": 14.1, "killed": 17465},
-    {"id": "AP", "name": "Andhra Pradesh", "rate": 13.8, "killed": 7429},
-    {"id": "OD", "name": "Odisha", "rate": 11.7, "killed": 5372},
-    {"id": "PB", "name": "Punjab", "rate": 11.4, "killed": 3458},
-    {"id": "KL", "name": "Kerala", "rate": 10.8, "killed": 3871},
-    {"id": "JH", "name": "Jharkhand", "rate": 9.5, "killed": 3585},
-    {"id": "UK", "name": "Uttarakhand", "rate": 9.3, "killed": 1051},
-    {"id": "BR", "name": "Bihar", "rate": 8.3, "killed": 10154},
-    {"id": "WB", "name": "West Bengal", "rate": 7.2, "killed": 6982},
-    {"id": "AS", "name": "Assam", "rate": 6.4, "killed": 2319},
-    {"id": "DL", "name": "Delhi", "rate": 5.9, "killed": 1183},  # Fixed: was "total", should be "killed"
+    {"id": "TN", "name": "Tamil Nadu", "rate": 23.8, "killed": 18347},
+    {"id": "CG", "name": "Chhattisgarh", "rate": 20.4, "killed": 6166},
+    {"id": "TS", "name": "Telangana", "rate": 20.1, "killed": 7660},
+    {"id": "GA", "name": "Goa", "rate": 18.4, "killed": 290},
+    {"id": "KA", "name": "Karnataka", "rate": 18.2, "killed": 12321},
+    {"id": "HR", "name": "Haryana", "rate": 16.4, "killed": 4968},
+    {"id": "MP", "name": "Madhya Pradesh", "rate": 15.9, "killed": 13798},
+    {"id": "PB", "name": "Punjab", "rate": 15.7, "killed": 4829},
+    {"id": "AP", "name": "Andhra Pradesh", "rate": 15.3, "killed": 8137},
+    {"id": "RJ", "name": "Rajasthan", "rate": 14.5, "killed": 11762},
+    {"id": "OD", "name": "Odisha", "rate": 12.4, "killed": 5739},
+    {"id": "MH", "name": "Maharashtra", "rate": 12.1, "killed": 15366},
+    {"id": "HP", "name": "Himachal Pradesh", "rate": 11.9, "killed": 889},
+    {"id": "KL", "name": "Kerala", "rate": 11.4, "killed": 4080},
+    {"id": "GJ", "name": "Gujarat", "rate": 10.9, "killed": 7854},
+    {"id": "JH", "name": "Jharkhand", "rate": 10.5, "killed": 4173},
+    {"id": "UP", "name": "Uttar Pradesh", "rate": 10.0, "killed": 23652},
+    {"id": "AR", "name": "Arunachal Pradesh", "rate": 9.2, "killed": 145},
+    {"id": "AS", "name": "Assam", "rate": 9.2, "killed": 3296},
+    {"id": "UK", "name": "Uttarakhand", "rate": 9.0, "killed": 1054},
+    {"id": "SK", "name": "Sikkim", "rate": 8.3, "killed": 57},
+    {"id": "MZ", "name": "Mizoram", "rate": 7.7, "killed": 96},
+    {"id": "BR", "name": "Bihar", "rate": 7.0, "killed": 8873},
+    {"id": "DL", "name": "Delhi", "rate": 6.8, "killed": 1457},
+    {"id": "TR", "name": "Tripura", "rate": 6.3, "killed": 261},
+    {"id": "WB", "name": "West Bengal", "rate": 6.1, "killed": 6027},
+    {"id": "ML", "name": "Meghalaya", "rate": 5.0, "killed": 168},
+    {"id": "NL", "name": "Nagaland", "rate": 3.8, "killed": 86},
+    {"id": "MN", "name": "Manipur", "rate": 2.3, "killed": 73},
 ]
 
 
 # ══════════════════════════════════════════════════════════════════════
 # CYBERCRIME — national trends
-# Source: NCRB Crime in India 2022, Chapter 11
+# Source: NCRB Crime in India 2023, Chapter 9A.
 # Note: NCRB counts FIR-registered cybercrimes. I4C complaint portal
-# numbers (22.68 lakh in 2022) are much higher and NOT comparable.
+# numbers are much higher and NOT comparable.
 # ══════════════════════════════════════════════════════════════════════
 
 CYBERCRIME_TREND = [
@@ -237,105 +283,111 @@ CYBERCRIME_TREND = [
     {"year": "2020", "cases": 50035, "rate": 3.7},
     {"year": "2021", "cases": 52974, "rate": 3.8},
     {"year": "2022", "cases": 65893, "rate": 4.8},
+    {"year": "2023", "cases": 86420, "rate": 6.2},
 ]
 
-# Cybercrime category breakdown — 2022
-# Source: NCRB Crime in India 2022
+# Cybercrime motive breakdown — 2023
+# Source: NCRB Crime in India 2023, Table 9A.3 (Cyber Crime Motives) +
+# Chapter-9 snapshot: of 86,420 cases, fraud 59,526 (68.9%), sexual
+# exploitation 4,199 (4.9%), extortion 3,326 (3.8%); other-cyber is the
+# remainder. (2023 is reported by motive, not by the older crime-head split.)
 CYBERCRIME_TYPES = [
-    {"id": "fraud", "name": "Online Fraud / Cheating", "cases": 27485, "pct": 41.7},
-    {"id": "sexual", "name": "Sexual Exploitation / Publishing", "cases": 8439, "pct": 12.8},
-    {"id": "extortion", "name": "Cyber Extortion / Blackmail", "cases": 4227, "pct": 6.4},
-    {"id": "forgery", "name": "Data Forgery / Tampering", "cases": 3790, "pct": 5.7},
-    {"id": "identity-theft", "name": "Identity Theft", "cases": 2425, "pct": 3.7},
-    {"id": "other-cyber", "name": "Other Cybercrimes", "cases": 19527, "pct": 29.6},
+    {"id": "fraud", "name": "Fraud", "cases": 59526, "pct": 68.9},
+    {"id": "sexual", "name": "Sexual Exploitation", "cases": 4199, "pct": 4.9},
+    {"id": "extortion", "name": "Extortion", "cases": 3326, "pct": 3.8},
+    {"id": "other-cyber", "name": "Other Motives", "cases": 19369, "pct": 22.4},
 ]
 
 # I4C complaint portal context (NOT FIR counts)
-# Source: I4C annual report / cybercrime.gov.in
+# Source: I4C annual report / cybercrime.gov.in. Complaint figure retained at
+# the 2022 portal total (latest verified); compared against 2023 NCRB FIRs.
 I4C_CONTEXT = {
-    "complaints2022": 2268000,  # 22.68 lakh complaints registered on portal
-    "financialLossCrore": 2290,  # Rs 2,290 crore — NCRP 2022 full-year reported financial loss
+    "complaints2022": 2268000,  # 22.68 lakh complaints registered on portal (2022, latest verified)
+    "financialLossCrore": 2290,  # Rs 2,290 crore — NCRP reported financial loss (2022)
     "note": "I4C complaints are citizen-reported via portal. NCRB counts FIR-registered cases. "
-            "The gap (22.68L complaints vs 65,893 FIRs) reflects underregistration of cybercrime as FIRs.",
+            "The gap (22.68L complaints vs 86,420 cyber FIRs in 2023) reflects underregistration "
+            "of cybercrime as FIRs.",
 }
 
 
 # ══════════════════════════════════════════════════════════════════════
 # POLICE INFRASTRUCTURE
-# Source: BPRD "Data on Police Organisations 2022"
+# Source: BPRD "Data on Police Organisations" (as on 01.01.2023)
 # ══════════════════════════════════════════════════════════════════════
 
 POLICE_NATIONAL = {
-    "sanctionedStrength": 2682376,  # ~26.8 lakh sanctioned (BPRD DoPO 2022, as on 01.01.2022)
-    "actualStrength": 2090000,      # ~20.9 lakh actual (BPRD DoPO 2022)
-    "vacancyPct": 22.1,             # BPRD DoPO 2022: 5.95 lakh vacancies / 26.8 lakh = ~22%
-    "sanctionedRatePerLakh": 197.0,  # sanctioned per lakh (BPRD DoPO 2022)
-    "actualRatePerLakh": 152.0,      # actual per lakh (BPRD DoPO 2022; UN recommends 222)
+    "sanctionedStrength": 2722669,  # Table 3.1.1, All-India (Civil+DAR+Special Armed+IRB)
+    "actualStrength": 2141305,      # Table 3.1.1, All-India actual
+    "vacancyPct": 21.35,            # derived: 5,81,364 vacancy / 27,22,669 sanctioned
+    "sanctionedRatePerLakh": 196.88,  # Table 2.1.3, All-India sanctioned per lakh (PPR)
+    "actualRatePerLakh": 154.84,      # Table 2.1.3, All-India actual per lakh (UN recommends 222)
     "unRecommended": 222,            # UN recommended police-population ratio
-    "womenPolicePct": 11.7,          # % women in total police force
-    "womenPoliceTotal": 244160,
-    "source": "BPRD Data on Police Organisations 2022",
+    "womenPolicePct": 12.32,          # % women in actual total police force
+    "womenPoliceTotal": 263762,
+    "source": "BPRD Data on Police Organisations (as on 01.01.2023)",
 }
 
-# State-wise police-population ratio (actual per lakh) — 2022
-# Source: BPRD Data on Police Organisations 2022
+# State-wise police-population ratio (per lakh) — as on 01.01.2023
+# Source: BPRD DoPO 2023, Table 2.1.3 (TOTAL sanctioned / actual per lakh).
 STATE_POLICE_RATIO = [
-    {"id": "DL", "name": "Delhi", "sanctioned": 570.2, "actual": 492.1},
-    {"id": "MZ", "name": "Mizoram", "sanctioned": 521.0, "actual": 480.5},
-    {"id": "NL", "name": "Nagaland", "sanctioned": 500.5, "actual": 390.2},
-    {"id": "AN", "name": "Andaman & Nicobar", "sanctioned": 480.0, "actual": 412.3},
-    {"id": "CH", "name": "Chandigarh", "sanctioned": 462.0, "actual": 395.0},
-    {"id": "MN", "name": "Manipur", "sanctioned": 448.2, "actual": 385.1},
-    {"id": "SK", "name": "Sikkim", "sanctioned": 410.0, "actual": 345.2},
-    {"id": "GA", "name": "Goa", "sanctioned": 388.5, "actual": 295.7},
-    {"id": "KL", "name": "Kerala", "sanctioned": 263.0, "actual": 187.5},
-    {"id": "HP", "name": "Himachal Pradesh", "sanctioned": 248.0, "actual": 180.2},
-    {"id": "KA", "name": "Karnataka", "sanctioned": 220.5, "actual": 185.3},
-    {"id": "TN", "name": "Tamil Nadu", "sanctioned": 218.0, "actual": 182.0},
-    {"id": "MH", "name": "Maharashtra", "sanctioned": 205.3, "actual": 178.1},
-    {"id": "PB", "name": "Punjab", "sanctioned": 225.0, "actual": 186.5},
-    {"id": "TS", "name": "Telangana", "sanctioned": 200.0, "actual": 172.3},
-    {"id": "GJ", "name": "Gujarat", "sanctioned": 190.2, "actual": 156.8},
-    {"id": "RJ", "name": "Rajasthan", "sanctioned": 180.5, "actual": 143.2},
-    {"id": "MP", "name": "Madhya Pradesh", "sanctioned": 175.0, "actual": 132.5},
-    {"id": "CG", "name": "Chhattisgarh", "sanctioned": 202.0, "actual": 155.3},
-    {"id": "OD", "name": "Odisha", "sanctioned": 158.0, "actual": 119.5},
-    {"id": "AP", "name": "Andhra Pradesh", "sanctioned": 170.0, "actual": 137.2},
-    {"id": "WB", "name": "West Bengal", "sanctioned": 142.0, "actual": 116.8},
-    {"id": "JH", "name": "Jharkhand", "sanctioned": 149.0, "actual": 109.5},
-    {"id": "HR", "name": "Haryana", "sanctioned": 190.0, "actual": 152.4},
-    {"id": "UK", "name": "Uttarakhand", "sanctioned": 215.0, "actual": 163.5},
-    {"id": "AS", "name": "Assam", "sanctioned": 186.0, "actual": 155.0},
-    {"id": "UP", "name": "Uttar Pradesh", "sanctioned": 150.0, "actual": 108.3},
-    {"id": "BR", "name": "Bihar", "sanctioned": 128.0, "actual": 77.4},
+    {"id": "DL", "name": "Delhi", "sanctioned": 444.70, "actual": 380.20},
+    {"id": "MN", "name": "Manipur", "sanctioned": 1093.80, "actual": 941.63},
+    {"id": "NL", "name": "Nagaland", "sanctioned": 1201.48, "actual": 1135.94},
+    {"id": "AR", "name": "Arunachal Pradesh", "sanctioned": 983.79, "actual": 766.75},
+    {"id": "SK", "name": "Sikkim", "sanctioned": 999.56, "actual": 834.40},
+    {"id": "MZ", "name": "Mizoram", "sanctioned": 916.63, "actual": 595.21},
+    {"id": "GA", "name": "Goa", "sanctioned": 687.84, "actual": 498.47},
+    {"id": "TR", "name": "Tripura", "sanctioned": 719.04, "actual": 555.57},
+    {"id": "ML", "name": "Meghalaya", "sanctioned": 505.25, "actual": 422.92},
+    {"id": "HP", "name": "Himachal Pradesh", "sanctioned": 257.71, "actual": 240.40},
+    {"id": "PB", "name": "Punjab", "sanctioned": 278.39, "actual": 241.02},
+    {"id": "CG", "name": "Chhattisgarh", "sanctioned": 266.79, "actual": 214.74},
+    {"id": "AS", "name": "Assam", "sanctioned": 229.86, "actual": 205.74},
+    {"id": "HR", "name": "Haryana", "sanctioned": 292.15, "actual": 199.08},
+    {"id": "AP", "name": "Andhra Pradesh", "sanctioned": 200.40, "actual": 165.89},
+    {"id": "TS", "name": "Telangana", "sanctioned": 226.47, "actual": 162.66},
+    {"id": "TN", "name": "Tamil Nadu", "sanctioned": 172.56, "actual": 159.54},
+    {"id": "JH", "name": "Jharkhand", "sanctioned": 211.04, "actual": 157.71},
+    {"id": "KA", "name": "Karnataka", "sanctioned": 165.04, "actual": 150.95},
+    {"id": "KL", "name": "Kerala", "sanctioned": 172.73, "actual": 150.68},
+    {"id": "MH", "name": "Maharashtra", "sanctioned": 184.92, "actual": 136.83},
+    {"id": "UP", "name": "Uttar Pradesh", "sanctioned": 182.24, "actual": 135.39},
+    {"id": "GJ", "name": "Gujarat", "sanctioned": 173.50, "actual": 123.84},
+    {"id": "MP", "name": "Madhya Pradesh", "sanctioned": 145.54, "actual": 121.13},
+    {"id": "OD", "name": "Odisha", "sanctioned": 150.99, "actual": 120.58},
+    {"id": "RJ", "name": "Rajasthan", "sanctioned": 140.61, "actual": 118.18},
+    {"id": "UK", "name": "Uttarakhand", "sanctioned": 193.45, "actual": 183.96},
+    {"id": "WB", "name": "West Bengal", "sanctioned": 166.93, "actual": 101.13},
+    {"id": "BR", "name": "Bihar", "sanctioned": 114.57, "actual": 81.49},
 ]
 
 
 # ══════════════════════════════════════════════════════════════════════
-# JUSTICE PIPELINE — the funnel from FIR to conviction
-# Source: NCRB Crime in India 2022, Chapter 4 (Disposal of Cases)
-# Covers IPC crimes only (most meaningful for justice system analysis)
+# JUSTICE PIPELINE — the funnel from FIR to conviction (IPC crimes)
+# Source: NCRB Crime in India 2023 — police disposal (Part I snapshot Y +
+# Part III Table 18A.1 col 3-6/19) and court disposal (Part III Table 18A.1).
+# All figures are CASE-level and internally consistent for 2023.
 # ══════════════════════════════════════════════════════════════════════
 
 JUSTICE_PIPELINE = {
-    "year": "2022",
-    # FIR → Investigation → Chargesheet → Trial → Conviction
-    "totalCasesForInvestigation": 5413745,  # Cases available (pending + new)
-    "casesInvestigated": 4203822,           # Cases where investigation completed
-    "chargesheetFiled": 3135620,            # Cases where chargesheet submitted
-    "chargesheetRate": 74.6,               # % of investigated cases chargesheeted
+    "year": "2023",
+    # FIR → Investigation → Chargesheet → Trial → Conviction (IPC cases)
+    "totalCasesForInvestigation": 5361518,  # 15,84,912 pending + 37,63,102 new + 13,504 reopened
+    "casesInvestigated": 3785839,           # cases disposed of by police
+    "chargesheetFiled": 2753235,            # cases chargesheeted (= cases sent for trial)
+    "chargesheetRate": 72.7,                # chargesheeted / disposed by police
 
-    "totalCasesForTrial": 4906386,          # Cases available at courts (pending + new)
-    "casesTrialCompleted": 1802954,         # Cases where trial concluded
-    "convicted": 705614,                    # Persons convicted
-    "acquitted": 1097340,                   # Persons acquitted
-    "convictionRate": 39.1,                 # % convicted of trial-completed
+    "totalCasesForTrial": 17990929,         # Table 18A.1: 1,52,37,694 pending + 27,53,235 new
+    "casesTrialCompleted": 1678367,         # cases in which trials were completed
+    "convicted": 907028,                    # CASES convicted (Table 18A.1)
+    "acquitted": 706718,                    # CASES acquitted (excl. 64,621 discharged)
+    "convictionRate": 54.0,                 # cases convicted / trials completed (NCRB official)
 
-    "pendingInvestigation": 1209923,        # Cases still under investigation at year end
-    "pendingTrial": 3103432,               # Cases pending in courts at year end
-    "pendencyRate": 63.2,                  # % pending of total cases at courts
+    "pendingInvestigation": 1565450,        # IPC cases pending investigation at year end (Table 18A pre)
+    "pendingTrial": 15880050,               # cases pending trial at year end (Table 18A.1)
+    "pendencyRate": 88.3,                   # % pending of total cases at courts
 
-    "source": "NCRB Crime in India 2022, Chapter 4 — Disposal of Cases by Police & Courts",
+    "source": "NCRB Crime in India 2023 — Disposal of IPC Cases by Police & Courts (Table 18A.1)",
 }
 
 # Average trial duration (indicative)
@@ -345,26 +397,26 @@ TRIAL_DURATION = {
     "casesOver5Years": 28.6,  # % of pending cases older than 5 years
     "casesOver10Years": 10.2,  # % of pending cases older than 10 years
     "judgesPerMillionPopulation": 21.0,  # India vs global avg of ~50
-    "source": "NJDG + NCRB Crime in India 2022",
+    "source": "NJDG + NCRB Crime in India 2023",
 }
 
 
 # ══════════════════════════════════════════════════════════════════════
-# NATIONAL SUMMARY TOTALS
-# Source: NCRB 2022 + MoRTH 2022 + BPRD 2022
-# Used for hub card stat pills and hero section
+# NATIONAL SUMMARY TOTALS — 2023
+# Source: NCRB CII 2023 + MoRTH RAI 2023 + BPRD DoPO 2023
+# Used for hub card stat pills and hero section.
 # ══════════════════════════════════════════════════════════════════════
 
 NATIONAL_TOTALS = {
-    "totalCrimes2022": 5824946,
-    "crimeRate2022": 422.2,
-    "roadDeaths2022": 168491,
-    "cybercrimes2022": 65893,
-    "convictionRatePct": 39.1,
-    "chargesheetRatePct": 74.6,
-    "policeRatioActual": 152.0,
-    "womenCrimes2022": 445256,
-    "womenCrimeRate2022": 66.4,
-    "pendingTrialCases": 3103432,
-    "dataYear": "2022",
+    "totalCrimes": 6241569,
+    "crimeRate": 448.3,
+    "roadDeaths": 172890,
+    "cybercrimes": 86420,
+    "convictionRatePct": 54.0,
+    "chargesheetRatePct": 72.7,
+    "policeRatioActual": 154.84,
+    "womenCrimes": 448211,
+    "womenCrimeRate": 66.2,
+    "pendingTrialCases": 15880050,
+    "dataYear": "2023",
 }

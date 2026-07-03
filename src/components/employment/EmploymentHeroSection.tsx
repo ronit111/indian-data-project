@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { EmploymentSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface EmploymentHeroSectionProps {
   summary: EmploymentSummary | null;
@@ -72,7 +73,7 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Low unemployment. High growth. Sounds like a success story. But 58% are self-employed — and most of that is subsistence.
+          Low unemployment. High growth. Sounds like a success story. But 56% are self-employed — and most of that is subsistence.
         </motion.p>
 
         {/* Stat badges */}
@@ -91,7 +92,14 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             style={{ backgroundColor: 'var(--amber)' }}
           />
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
+            <SourceChain
+              domain="employment"
+              year={summary?.year ?? ''}
+              figureKey="summary.unemploymentRate"
+              placement="bottom"
+            >
+              Unemployment {summary?.unemploymentRate?.toFixed(1) ?? '—'}%
+            </SourceChain>
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)' }}>
             &middot; LFPR {summary?.lfpr?.toFixed(1) ?? '—'}%
@@ -100,7 +108,7 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
             &middot; Female LFPR {summary?.femaleLfpr?.toFixed(1) ?? '—'}%
           </span>
           <span className="text-caption" style={{ color: 'var(--text-muted)', fontSize: '0.6rem' }}>
-            (PLFS 2023-24)
+            (PLFS 2025)
           </span>
         </motion.div>
 

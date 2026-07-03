@@ -1,11 +1,11 @@
 {
   "year": "2025-26",
   "co2PerCapita": 1.9,
-  "forestPct": 25.17,
+  "forestPct": 21.76,
   "renewablesPct": 43.4,
   "pm25": 53.3,
-  "coalPct": 48.8,
+  "coalPct": 47.73,
   "ghgTotal": 3347.9,
-  "lastUpdated": "2026-04-15",
-  "source": "World Bank + CPCB + ISFR 2023 + CEA + CWC + CGWB"
+  "lastUpdated": "2026-06-03",
+  "source": "World Bank + ISFR 2023 + CEA + CWC + CGWB"
 }

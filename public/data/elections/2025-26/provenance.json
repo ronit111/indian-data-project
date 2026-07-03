@@ -1,0 +1,106 @@
+{
+  "domain": "elections",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.turnout2024": {
+      "value": 65.8,
+      "unit": "%",
+      "label": "Voter turnout, 2024 general election",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Election Commission of India — General Election 2024 results",
+          "publisher": "Election Commission of India",
+          "url": "https://www.eci.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from official results and affidavit analyses",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-07-02"
+        },
+        {
+          "kind": "check",
+          "name": "Matches the 2024 point of the published turnout trend",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.bjpSeats2024": {
+      "value": 240,
+      "unit": "seats",
+      "label": "BJP seats, 2024",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Election Commission of India — General Election 2024 results",
+          "publisher": "Election Commission of India",
+          "url": "https://www.eci.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from official results and affidavit analyses",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-07-02"
+        },
+        {
+          "kind": "check",
+          "name": "Matches the BJP row of the published party results",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.totalElectorsCrore": {
+      "value": 96.88,
+      "unit": "crore",
+      "label": "Registered electors, 2024 general election",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Election Commission of India — General Election 2024 results",
+          "publisher": "Election Commission of India",
+          "url": "https://www.eci.gov.in/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from official results and affidavit analyses",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-07-02"
+        },
+        {
+          "kind": "check",
+          "name": "Turnout × electors is consistent with ~64 crore votes cast",
+          "status": "pass"
+        }
+      ],
+      "basis": "96.88 crore registered voters — the largest electorate ever assembled for a democratic election."
+    },
+    "summary.criminalPct": {
+      "value": 46,
+      "unit": "%",
+      "label": "Winning MPs with declared criminal cases",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "ADR — Lok Sabha 2024 winning candidates analysis",
+          "publisher": "Association for Democratic Reforms",
+          "url": "https://www.myneta.info/LokSabha2024/"
+        },
+        {
+          "kind": "curation",
+          "name": "Hand-curated from official results and affidavit analyses",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-07-02"
+        },
+        {
+          "kind": "check",
+          "name": "Recomputes from the published candidate counts",
+          "status": "pass"
+        }
+      ],
+      "basis": "Self-declared cases in election affidavits, per ADR/MyNeta analysis."
+    }
+  }
+}

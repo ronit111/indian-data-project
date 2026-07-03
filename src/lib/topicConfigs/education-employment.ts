@@ -49,9 +49,9 @@ export const educationEmployment: TopicDef = {
       id: 'enrollment-scale',
       sectionNumber: 1,
       title: 'The Enrollment Story',
-      annotation: 'India enrolls 248 million students — more than most countries\' total population. Primary enrollment is near universal, but secondary and higher education still lose millions to dropouts.',
+      annotation: 'India enrolls 247 million students — more than most countries\' total population. Primary enrollment is near universal, but secondary and higher education still lose millions to dropouts.',
       domains: ['education'],
-      sources: ['UDISE+ 2023-24', 'World Bank'],
+      sources: ['UDISE+ 2024-25', 'World Bank'],
       charts: [{
         chartType: 'line', chartTitle: 'Gross Enrollment Ratio — Secondary', unit: '%', accent: '#3B82F6',
         extractData: (bag) => {
@@ -76,7 +76,7 @@ export const educationEmployment: TopicDef = {
           if (!d) return null;
           const series = [];
           if (d.totalTimeSeries?.length >= 3) series.push({ name: 'National', color: '#F59E0B', data: d.totalTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
-          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-29)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
+          if (d.youthTimeSeries?.length >= 3) series.push({ name: 'Youth (15-24, WB/ILO)', color: '#F43F5E', data: d.youthTimeSeries.map((p: { year: string; value: number }) => ({ label: p.year, value: p.value })) });
           return series.length > 0 ? series : null;
         },
       }],

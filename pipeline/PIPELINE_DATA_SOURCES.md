@@ -40,7 +40,7 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
-| `REPO_RATE_DECISIONS` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI MPC Statements (rbi.org.in) | 56 decisions, Feb 2014 to Feb 2026 | Bi-monthly: after each MPC meeting (~6x/year) |
+| `REPO_RATE_DECISIONS` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI MPC Statements (rbi.org.in) | 28 decisions, Jan 2014 to Dec 2025 | Bi-monthly: after each MPC meeting (~6x/year) |
 | `CURRENT_RATES` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI Current Rates page | As of Feb 6, 2026 | After any MPC rate change |
 | `CRR_HISTORY` | `pipeline/src/rbi/transform/monetary_policy.py` | RBI Handbook of Statistics, Table 45 | 12-year series (2014-2026) | After CRR changes (infrequent) |
 
@@ -59,24 +59,24 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 |----------|------|--------|-------------|----------------|
 | `CENSUS_2011_STATES` | `pipeline/src/census/sources/curated.py` | Census of India 2011, Primary Census Abstract | 2011 | Next Census (TBD) |
 | `NPC_2026_PROJECTIONS` | `pipeline/src/census/sources/curated.py` | National Population Commission projections 2011-2036 | NPC 2020 report | Static (projection model won't change) |
-| `NFHS5_STATE_HEALTH` | `pipeline/src/census/sources/curated.py` | NFHS-5 India Report & State Factsheets (2019-21) | 2019-21 | NFHS-6 (expected ~2028) |
-| `SRS_STATE_IMR` | `pipeline/src/census/sources/curated.py` | Sample Registration System Statistical Report 2022 | 2022 | Annual: SRS report (typically 1-2 year lag) |
+| `NFHS6_STATE_HEALTH` | `pipeline/src/census/sources/curated.py` | NFHS-6 State/UT Factsheets (2023-24; IMR/U5MR retained from NFHS-5) | 2023-24 | NFHS-7 |
+| `SRS_STATE_IMR` | `pipeline/src/census/sources/curated.py` | Sample Registration System Statistical Report 2024 | 2024 | Annual: SRS report (typically 1-2 year lag) |
 
 ### Education Domain
 
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
-| `UDISE_2023_24_STATES` | `pipeline/src/education/sources/curated.py` | UDISE+ Flash Statistics 2023-24 | 2023-24 | Annual: UDISE+ report (typically Apr-May) |
+| `UDISE_2024_25_STATES` | `pipeline/src/education/sources/curated.py` | UDISE+ 2024-25 Report | 2024-25 | Annual: UDISE+ report (typically Apr-May) |
 | `ASER_2024_STATES` | `pipeline/src/education/sources/curated.py` | ASER 2024 (Annual Status of Education Report) | 2024 | Annual: ASER report (typically Jan) |
-| `NATIONAL_TOTALS` | `pipeline/src/education/sources/curated.py` | UDISE+ 2023-24 Summary | 2023-24 | Annual |
+| `NATIONAL_TOTALS` | `pipeline/src/education/sources/curated.py` | UDISE+ 2024-25 Report | 2024-25 | Annual |
 
 ### Employment Domain
 
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
 | PLFS Quarterly | `pipeline/src/employment/sources/curated.py` | PLFS Quarterly Bulletin, Oct-Dec 2025 | Q3 2025-26 | Quarterly: PLFS bulletin (~3 month lag) |
-| `PLFS_STATE_DATA` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2023-24, Tables E1/E2 | 2023-24 | Annual: PLFS annual report (typically Aug) |
-| `SECTORAL_EMPLOYMENT` | `pipeline/src/employment/sources/curated.py` | RBI KLEMS Database + PLFS 2023-24 | 2023-24 | Annual |
+| `PLFS_STATE_DATA` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2025 (Tables 15.0/18.0, 15+) | 2025 | Annual: PLFS annual report (typically Aug) |
+| `SECTORAL_EMPLOYMENT` | `pipeline/src/employment/sources/curated.py` | PLFS Annual Report 2025 (KLEMS dropped 2026-06) | 2025 | Annual |
 | `NATIONAL_TOTALS` | `pipeline/src/employment/sources/curated.py` | PLFS Annual + Quarterly | Q3 2025-26 | Quarterly |
 
 ### Healthcare Domain
@@ -84,7 +84,7 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | Constant | File | Source | Data Vintage | Update Trigger |
 |----------|------|--------|-------------|----------------|
 | Infrastructure states | `pipeline/src/healthcare/sources/curated.py` | NHP 2022 + Rural Health Statistics 2021-22 | 2022 | NHP typically publishes annually (1-2 year lag) |
-| `IMMUNIZATION_STATES` | `pipeline/src/healthcare/sources/curated.py` | NFHS-5 State Factsheets (2019-21) | 2019-21 | NFHS-6 (expected ~2028) |
+| `IMMUNIZATION_STATES` | `pipeline/src/healthcare/sources/curated.py` | NFHS-6 State Factsheets (2023-24) | 2023-24 | NFHS-7 |
 | `NATIONAL_TOTALS` | `pipeline/src/healthcare/sources/curated.py` | NHP 2022 + World Bank 2022 | 2022 | Annual |
 
 ---
@@ -106,10 +106,10 @@ These are hardcoded data constants in Python files, sourced from government PDFs
 | Economy | ~95% | Summary figures (annual) | `economy-pipeline.yml` (quarterly) |
 | RBI | ~85% | MPC decisions (~6x/yr), current rates | `rbi-pipeline.yml` (bi-monthly) |
 | States | ~80% | Revenue data, debt/GSDP ratios (annual) | `states-pipeline.yml` (semi-annual) |
-| Census | ~40% | Census 2011, NFHS-5, SRS (infrequent) | `census-pipeline.yml` (quarterly) |
+| Census | ~40% | Census 2011, NFHS-6, SRS (infrequent) | `census-pipeline.yml` (quarterly) |
 | Education | ~40% | UDISE+, ASER (annual) | `education-pipeline.yml` (quarterly) |
-| Employment | ~90% | KLEMS sectoral data (annual) | `employment-pipeline.yml` (quarterly) |
-| Healthcare | ~40% | NHP, NFHS-5 immunization (annual/5-year) | `healthcare-pipeline.yml` (quarterly) |
+| Employment | ~90% | PLFS curated state/sectoral data (annual) | `employment-pipeline.yml` (quarterly) |
+| Healthcare | ~40% | NHP, NFHS-6 immunization (annual/5-year) | `healthcare-pipeline.yml` (quarterly) |
 | Environment | ~55% | AQI (curated), forest cover, water (curated) | `environment-pipeline.yml` (quarterly) |
 | Elections | ~0% | All data (event-driven, no API) | `elections-pipeline.yml` (semi-annual) |
 | Crime | ~0% | All data (annual, NCRB publication) | `crime-pipeline.yml` (semi-annual) |
@@ -140,7 +140,7 @@ This checks: state sums ≈ national totals, PTR = students/teachers, percentage
 
 1. **UDISE+ methodology change (2022-23)**: GER dropped from ~103% to ~93% after SDMIS introduction. Old values >100 are not comparable to new values.
 2. **PLFS methodology**: "Usual Status" (annual, ages 15+) ≠ "Current Weekly Status" (quarterly, urban). Always specify which methodology a number uses.
-3. **NFHS-5 vs SRS**: NFHS-5 IMR (survey-based, 2019-21) ≠ SRS IMR (civil registration, 2022). Both are legitimate but not comparable.
+3. **NFHS-5 vs SRS**: NFHS-5 IMR (survey-based, 2019-21) ≠ SRS IMR (civil registration, 2024). Both are legitimate but not comparable.
 4. **Forest cover**: ISFR reports "forest cover" (21.76%) and "forest + tree cover" (25.17%) separately. The 25.17% is often miscited as "forest cover."
 5. **World Bank lag**: World Bank data runs ~1-2 years behind national releases. When curating, check if a more recent government source exists.
 

@@ -133,7 +133,7 @@ const ROUTES = [
   {
     path: '/states',
     title: "State Finances — India's Federal Mosaic | Indian Data Project",
-    description: 'State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 28 states and 8 union territories — visualized from RBI Handbook data.',
+    description: "State-wise GDP, growth rates, revenue self-sufficiency, fiscal health, and per capita income across 31 of India's 36 states and UTs — visualized from RBI Handbook data.",
     image: '/og-states.png',
   },
   {
@@ -177,7 +177,7 @@ const ROUTES = [
   {
     path: '/census/methodology',
     title: 'Methodology — Census & Demographics — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-5, SRS 2023, World Bank.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for census and demographics data. Census 2011, NFHS-6 (2023-24), SRS 2024, World Bank.',
     image: '/og-census.png',
   },
   {
@@ -190,7 +190,7 @@ const ROUTES = [
   // ── Education ───────────────────────────────────────────────────
   {
     path: '/education',
-    title: 'Education — 248 Million Students | Indian Data Project',
+    title: 'Education — 247 Million Students | Indian Data Project',
     description: "Enrollment, learning outcomes, teacher availability, school infrastructure, and education spending across India's states — visualized from UDISE+, ASER, and World Bank data.",
     image: '/og-education.png',
   },
@@ -203,7 +203,7 @@ const ROUTES = [
   {
     path: '/education/methodology',
     title: 'Methodology — Education — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2023-24, ASER 2024, World Bank.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for education data. UDISE+ 2024-25, ASER 2024, World Bank.',
     image: '/og-education.png',
   },
   {
@@ -217,7 +217,7 @@ const ROUTES = [
   {
     path: '/employment',
     title: 'Employment — 57 Crore Workers | Indian Data Project',
-    description: "Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS, World Bank, and RBI KLEMS data.",
+    description: "Labour force participation, unemployment, sectoral shifts, gender gaps, and informality across India's 57-crore workforce — visualized from PLFS and World Bank data.",
     image: '/og-employment.png',
   },
   {
@@ -229,7 +229,7 @@ const ROUTES = [
   {
     path: '/employment/methodology',
     title: 'Methodology — Employment & Labour — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS, World Bank, RBI KLEMS.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for employment data. PLFS and World Bank.',
     image: '/og-employment.png',
   },
   {
@@ -255,7 +255,7 @@ const ROUTES = [
   {
     path: '/healthcare/methodology',
     title: 'Methodology — Healthcare — Indian Data Project',
-    description: 'Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-5.',
+    description: 'Data sources, indicator definitions, vintage transparency, and limitations for healthcare data. World Bank, NHP 2022, NFHS-6 (2023-24).',
     image: '/og-healthcare.png',
   },
   {
@@ -320,7 +320,7 @@ const ROUTES = [
   // ── Crime & Safety ─────────────────────────────────────────────
   {
     path: '/crime',
-    title: 'Crime & Safety — 58.2 Lakh Crimes | Indian Data Project',
+    title: 'Crime & Safety — 62.4 Lakh Crimes in 2023 | Indian Data Project',
     description: "India's crime landscape in data — IPC crimes, crimes against women, road accidents, cybercrime, police infrastructure, and conviction rates. Source: NCRB, MoRTH, BPRD.",
     image: '/og-crime.png',
   },
@@ -332,7 +332,7 @@ const ROUTES = [
   },
   {
     path: '/crime/methodology',
-    title: 'Methodology — Crime Data | Indian Data Project',
+    title: 'Methodology — Crime & Safety Data | Indian Data Project',
     description: 'Data sources, NCRB methodology, underreporting caveats, Kerala paradox, and limitations for crime data on Indian Data Project.',
     image: '/og-crime.png',
   },
@@ -407,7 +407,7 @@ const ROUTES = [
   {
     path: '/topics/agriculture-food',
     title: 'Agriculture & Food Security — Indian Data Project',
-    description: "42% of India's workforce is in agriculture, but it produces only 15% of GDP. Can India feed itself sustainably?",
+    description: "About 43% of India's workforce is in agriculture, but it produces only ~17% of GVA. Can India feed itself sustainably?",
     image: '/og-topics.png',
   },
   {

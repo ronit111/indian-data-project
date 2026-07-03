@@ -19,7 +19,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
     { label: 'Cases for Investigation', value: data.funnel.totalForInvestigation },
     { label: 'Investigated', value: data.funnel.investigated },
     { label: 'Chargesheeted (accused in court filing)', value: data.funnel.chargesheeted },
-    { label: 'Trial Completed', value: data.funnel.trialCompleted },
+    { label: 'Trials Completed (incl. earlier years\u2019 cases)', value: data.funnel.trialCompleted },
     { label: 'Convicted', value: data.funnel.convicted },
   ], [data]);
 
@@ -43,13 +43,13 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          13 out of 100. That is the number you should carry with you. Of every 100 crimes reported, 13 end in conviction. The funnel narrows at every stage: investigation backlogs, low chargesheet rates, and trials averaging {data.trialDuration.avgYears} years. Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. For most victims, filing a complaint leads to years of waiting and, statistically, no outcome. {data.trialDuration.casesOver5Years}% of cases have been pending for over 5 years.
+          15 out of 100. That is the number you should carry with you. For every 100 crimes reported in 2023, courts delivered 15 convictions that same year — most of them closing cases filed years earlier. The funnel narrows at every stage: investigation backlogs, low chargesheet rates, and trials averaging {data.trialDuration.avgYears} years. Even among cases that reach trial, the conviction rate is just {data.funnel.convictionRate}%. For most victims, filing a complaint leads to years of waiting and, statistically, no outcome. {data.trialDuration.casesOver5Years}% of cases have been pending for over 5 years.
         </motion.p>
 
         {/* Justice funnel */}
         <div className="mb-10">
           <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
-            From FIR to conviction — how cases drain away
+            How cases drain away — 2023 police and court disposals (same-year cross-section, not one cohort)
           </p>
           <ChartActionsWrapper registryKey="crime/justice" data={data}>
             <FunnelChart
@@ -60,6 +60,11 @@ export function JusticeSection({ data }: JusticeSectionProps) {
               formatValue={(v) => `${(v / 100000).toFixed(1)}L`}
             />
           </ChartActionsWrapper>
+          <p className="mt-3 text-xs max-w-xl" style={{ color: 'var(--text-muted)' }}>
+            Stages 1–3 are police disposals during 2023; stages 4–5 are court disposals the same
+            year, drawn largely from the 1.8 crore cases already pending trial. A same-year
+            cross-section of the system — not one batch of cases tracked end to end.
+          </p>
         </div>
 
         {/* Conviction rate bullet */}
@@ -147,7 +152,7 @@ export function JusticeSection({ data }: JusticeSectionProps) {
           className="text-annotation mt-6 max-w-xl"
           style={{ color: 'var(--text-secondary)' }}
         >
-          58 lakh crimes. 4.45 lakh against women. 1.68 lakh dead on roads. 22 lakh cybercrime complaints. 155 police per lakh people. 13 out of 100 end in conviction. These numbers are not an indictment of Indian society — they are a measure of the gap between the problem and the response. The data makes the gap visible. Visibility is the first step toward closing it.
+          62 lakh crimes. 4.48 lakh against women. 1.73 lakh dead on roads. 22 lakh cybercrime complaints. 155 police per lakh people. 15 convictions for every 100 crimes reported in the same year. These numbers are not an indictment of Indian society — they are a measure of the gap between the problem and the response. The data makes the gap visible. Visibility is the first step toward closing it.
         </motion.p>
 
         <RelatedTopics sectionId="justice-pipeline" domain="crime" />

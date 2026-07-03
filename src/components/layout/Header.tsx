@@ -298,7 +298,7 @@ export function Header() {
                 key={link.to}
                 to={link.to}
                 onClick={(e) => handleNavClick(e, link.to)}
-                className="relative px-4 py-2 text-sm font-medium no-underline rounded-lg transition-all duration-150 hover:bg-[var(--bg-raised)]"
+                className="relative px-4 py-2 text-sm font-medium no-underline rounded-lg transition-colors duration-150 hover:bg-[var(--bg-raised)]"
                 style={{
                   color: isActive
                     ? 'var(--text-primary)'

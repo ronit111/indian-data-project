@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AnimatedCounter } from '../viz/AnimatedCounter.tsx';
+import { SourceChain } from '../ui/SourceChain.tsx';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { BudgetSummary } from '../../lib/data/schema.ts';
 
@@ -66,13 +67,20 @@ export function HeroSection({ summary }: HeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         >
           <div className="text-hero gradient-text-saffron">
-            <span className="text-[0.5em] font-semibold mr-1">Rs</span>
-            <AnimatedCounter
-              target={summary.totalExpenditure}
-              duration={2.5}
-              trigger={isVisible}
-              className="gradient-text-saffron"
-            />
+            <SourceChain
+              domain="budget"
+              year={summary.year}
+              figureKey="summary.totalExpenditure"
+              placement="bottom"
+            >
+              <span className="text-[0.5em] font-semibold mr-1 gradient-text-saffron">Rs</span>
+              <AnimatedCounter
+                target={summary.totalExpenditure}
+                duration={2.5}
+                trigger={isVisible}
+                className="gradient-text-saffron"
+              />
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"
@@ -94,7 +102,14 @@ export function HeroSection({ summary }: HeroSectionProps) {
           }}
         >
           <span className="text-caption font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-            {`That's ₹${summary.perCapitaDailyExpenditure.toFixed(2)} per citizen per day`}
+            <SourceChain
+              domain="budget"
+              year={summary.year}
+              figureKey="summary.perCapitaDailyExpenditure"
+              placement="bottom"
+            >
+              {`That's ₹${summary.perCapitaDailyExpenditure.toFixed(2)} per citizen per day`}
+            </SourceChain>
           </span>
         </motion.div>
 

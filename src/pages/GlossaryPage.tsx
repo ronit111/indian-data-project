@@ -454,15 +454,15 @@ export default function GlossaryPage({ domain }: { domain: Domain }) {
             : domain === 'economy'
               ? 'Economic Survey 2025-26, World Bank'
               : domain === 'census'
-                ? 'Census of India, NFHS-5, SRS, World Bank'
+                ? 'Census of India, NFHS-6, SRS, World Bank'
                 : domain === 'states'
                   ? 'RBI Handbook, Finance Commission'
                   : domain === 'education'
-                    ? 'UDISE+ 2023-24, ASER 2024, World Bank'
+                    ? 'UDISE+ 2024-25, ASER 2024, World Bank'
                     : domain === 'employment'
-                      ? 'PLFS 2023-24, RBI KLEMS, World Bank'
+                      ? 'PLFS 2025, World Bank'
                       : domain === 'healthcare'
-                        ? 'NHP 2022, NFHS-5, World Bank'
+                        ? 'NHP 2022, NFHS-6, World Bank'
                         : 'RBI, World Bank'}
         </p>
       </div>

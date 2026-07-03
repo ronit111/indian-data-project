@@ -27,6 +27,7 @@ import logging
 from typing import Any
 
 from src.common.mospi_client import fetch
+from src.employment.sources.curated import NATIONAL_TOTALS
 
 logger = logging.getLogger(__name__)
 
@@ -257,6 +258,6 @@ def fetch_national_totals(year: str = "2023-24") -> dict[str, Any] | None:
         "lfpr": totals.get("lfpr", 0),
         "youthUnemployment": totals.get("youthUnemployment", 0),
         "femaleLfpr": totals.get("femaleLfpr", 0),
-        "workforceTotal": 57.0,  # crores — API doesn't provide this directly, kept from curated
+        "workforceTotal": NATIONAL_TOTALS["workforceTotal"],  # crores — API doesn't provide this; single source of truth is curated
         "selfEmployedPct": totals.get("selfEmployedPct", 0),
     } if totals else None

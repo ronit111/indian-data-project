@@ -25,5 +25,5 @@ def build_unemployment(wb_data: dict, plfs_states: list[dict], year: str) -> dic
         "femaleTimeSeries": wb_data.get("unemp_female", []),
         "maleTimeSeries": wb_data.get("unemp_male", []),
         "stateUnemployment": state_ur,
-        "source": "World Bank (ILO modelled) + PLFS Annual Report 2023-24",
+        "source": "World Bank (ILO modelled) + PLFS Annual Report 2025",
     }

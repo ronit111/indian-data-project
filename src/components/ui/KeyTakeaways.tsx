@@ -57,7 +57,7 @@ export function KeyTakeaways({ pills, accent }: KeyTakeawaysProps) {
             >
               {pill.label}
               <span
-                className="inline-block ml-1 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0"
+                className="inline-block ml-1 opacity-0 -translate-x-1 transition-[opacity,transform] duration-200 group-hover:opacity-100 group-hover:translate-x-0"
                 aria-hidden
               >
                 &rarr;

@@ -154,7 +154,7 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 2,
       title: 'Economic Participation',
       annotation:
-        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent data shows a recovery, but the gap with men remains stark. PLFS 2023-24 reports female LFPR at 28.8% (usual status), while ILO modeled estimates put it at ~32%. More women are working, but mostly in agriculture and self-employment.',
+        'India\'s female LFPR hovered around 20-25% for years — one of the lowest globally. Recent data shows a recovery, but the gap with men remains stark. PLFS 2025 reports female LFPR at 40.0% (usual status, 15+), up from 33.9% three years earlier, while male LFPR (79.1%) remains nearly double. More women are working, but mostly in agriculture and self-employment.',
       domains: ['employment'],
       sources: ['PLFS (MoSPI)', 'World Bank'],
       charts: [
@@ -202,7 +202,7 @@ export const womenInIndia: TopicDef = {
       annotation:
         'The literacy gender gap has shrunk from 25 percentage points in 1991 to about 13.5 percentage points today, and girls now outnumber boys in secondary enrollment in many states. But maternal mortality and child marriage rates remind us that progress is uneven.',
       domains: ['education', 'census', 'healthcare'],
-      sources: ['Census of India', 'UDISE+', 'NFHS-5', 'World Bank'],
+      sources: ['Census of India', 'UDISE+', 'NFHS-6', 'World Bank'],
       charts: [
         {
           chartType: 'line',
@@ -279,9 +279,9 @@ export const womenInIndia: TopicDef = {
       sectionNumber: 4,
       title: 'Safety & Violence',
       annotation:
-        '4.45 lakh crimes against women were registered in 2022 — cruelty by husband, kidnapping, and assault lead the categories. The reported number is widely believed to be a fraction of the actual incidence due to stigma and institutional barriers to filing complaints.',
+        '4.48 lakh crimes against women were registered in 2023 — cruelty by husband, kidnapping, and assault lead the categories. The reported number is widely believed to be a fraction of the actual incidence due to stigma and institutional barriers to filing complaints.',
       domains: ['crime'],
-      sources: ['NCRB "Crime in India" 2022'],
+      sources: ['NCRB "Crime in India" 2023'],
       charts: [
         {
           chartType: 'line',
@@ -305,7 +305,7 @@ export const womenInIndia: TopicDef = {
         },
         {
           chartType: 'horizontal-bar',
-          chartTitle: 'Crime Types Against Women (2022)',
+          chartTitle: 'Crime Types Against Women (2023)',
           unit: '%',
           accent: '#DC2626',
           extractData: (bag) => {
@@ -359,7 +359,7 @@ export const womenInIndia: TopicDef = {
       label: 'Crime & Safety',
       route: '/crime',
       domain: 'crime',
-      description: 'Crimes against women — 4.45 lakh cases in 2022',
+      description: 'Crimes against women — 4.48 lakh cases in 2023',
     },
   ],
 };

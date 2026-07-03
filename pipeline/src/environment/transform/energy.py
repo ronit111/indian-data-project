@@ -50,11 +50,17 @@ def build_energy(
         "fuelCapacityMix": fuel_capacity,
     }
 
-    # Add MOSPI energy supply data if available (KToE by commodity)
+    # MOSPI energy supply (KToE by commodity). Always emit energySupply as a
+    # list — never omit the key — so the writer's last-known-good preservation
+    # (_preserve_nonempty_series) protects it: if MOSPI is unreachable this run,
+    # an empty list lets the previously published series be restored instead of
+    # the field silently vanishing from the open-data endpoint.
+    result["energySupply"] = mospi_energy or []
     if mospi_energy:
-        result["energySupply"] = mospi_energy
         sources.insert(0, "MOSPI Energy API (api.mospi.gov.in)")
         logger.info(f"  MOSPI energy supply: {len(mospi_energy)} commodities added")
+    else:
+        logger.info("  MOSPI energy supply unavailable — emitting [] (writer will preserve last-known-good)")
 
     result["source"] = " + ".join(sources)
     return result

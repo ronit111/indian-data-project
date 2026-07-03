@@ -171,7 +171,7 @@ export function Footer() {
               className="link-hover"
               style={{ color: 'var(--text-muted)' }}
             >
-              NFHS-5
+              NFHS-6
             </a>
             {' '}&middot; Not affiliated with GoI
           </p>
@@ -253,7 +253,7 @@ export function Footer() {
               className="link-hover"
               style={{ color: 'var(--text-muted)' }}
             >
-              NFHS-5
+              NFHS-6
             </a>
             {' '}&middot;{' '}
             <a
@@ -443,7 +443,7 @@ export function Footer() {
           ) : isElections ? (
             'Elections 2025-26'
           ) : isCrime ? (
-            'Crime & Safety 2022'
+            'Crime & Safety 2023'
           ) : isTopics ? (
             'Cross-Domain Insights'
           ) : isOpenData ? (

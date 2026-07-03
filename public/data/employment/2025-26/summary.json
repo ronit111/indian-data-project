@@ -1,11 +1,11 @@
 {
   "year": "2025-26",
-  "unemploymentRate": 3.2,
-  "lfpr": 60.1,
-  "youthUnemployment": 10.2,
-  "femaleLfpr": 41.7,
+  "unemploymentRate": 3.1,
+  "lfpr": 59.3,
+  "youthUnemployment": 9.9,
+  "femaleLfpr": 40.0,
   "workforceTotal": 57.4,
-  "selfEmployedPct": 58.4,
-  "lastUpdated": "2026-06-01",
-  "source": "MOSPI PLFS API (api.mospi.gov.in) + PLFS Annual Report 2023-24"
+  "selfEmployedPct": 56.2,
+  "lastUpdated": "2026-06-04",
+  "source": "MOSPI PLFS API (api.mospi.gov.in) + PLFS Annual Report 2025"
 }

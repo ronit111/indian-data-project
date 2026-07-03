@@ -2,7 +2,7 @@
 Census & Demographics Data Pipeline — main entry point.
 
 Stages:
-  1. FETCH   — World Bank API + curated Census 2011 / NFHS-5 / SRS data
+  1. FETCH   — World Bank API + curated Census 2011 / NFHS-6 / SRS data
   2. TRANSFORM — Build output schemas from raw data
   3. VALIDATE — Pydantic model checks
   4. PUBLISH — Write JSON to public/data/census/
@@ -10,8 +10,8 @@ Stages:
 Data sources:
   - World Bank Development Indicators (population, demographics, health, literacy)
   - Census of India 2011 (state-level population, literacy, sex ratio)
-  - NFHS-5 2019-21 (state-level health and nutrition indicators)
-  - SRS 2022 (state-level infant mortality rates)
+  - NFHS-6 2023-24 (state-level health and nutrition indicators)
+  - SRS 2024 (state-level infant mortality rates)
 """
 
 import logging
@@ -26,7 +26,7 @@ from src.census.sources.world_bank import fetch_multiple
 from src.census.sources.curated import (
     CENSUS_2011_STATES,
     NPC_2026_PROJECTIONS,
-    NFHS5_STATE_HEALTH,
+    NFHS6_STATE_HEALTH,
     SRS_STATE_IMR,
 )
 from src.census.transform.population import build_population
@@ -67,7 +67,7 @@ def run_census_pipeline():
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
     logger.info(f"  Curated: {len(CENSUS_2011_STATES)} Census 2011 states")
     logger.info(f"  Curated: {len(NPC_2026_PROJECTIONS)} NPC 2026 projected states")
-    logger.info(f"  Curated: {len(NFHS5_STATE_HEALTH)} NFHS-5 states")
+    logger.info(f"  Curated: {len(NFHS6_STATE_HEALTH)} NFHS-6 states")
     logger.info(f"  Curated: {len(SRS_STATE_IMR)} SRS IMR states")
 
     # \u2500\u2500 Stage 2: TRANSFORM \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
@@ -76,9 +76,9 @@ def run_census_pipeline():
     population_data = build_population(wb_data, CENSUS_2011_STATES, NPC_2026_PROJECTIONS, SURVEY_YEAR)
     demographics_data = build_demographics(wb_data, CENSUS_2011_STATES, SURVEY_YEAR)
     literacy_data = build_literacy(wb_data, CENSUS_2011_STATES, SURVEY_YEAR)
-    health_data = build_health(wb_data, SRS_STATE_IMR, NFHS5_STATE_HEALTH, SURVEY_YEAR)
+    health_data = build_health(wb_data, SRS_STATE_IMR, NFHS6_STATE_HEALTH, SURVEY_YEAR)
     summary_data = _build_summary(wb_data, NPC_2026_PROJECTIONS)
-    indicators_data = _build_indicators(CENSUS_2011_STATES, NPC_2026_PROJECTIONS, NFHS5_STATE_HEALTH, SRS_STATE_IMR)
+    indicators_data = _build_indicators(CENSUS_2011_STATES, NPC_2026_PROJECTIONS, NFHS6_STATE_HEALTH, SRS_STATE_IMR)
     glossary_data = _build_glossary()
 
     # \u2500\u2500 Stage 3: VALIDATE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
@@ -122,6 +122,10 @@ def run_census_pipeline():
     }
 
     paths = publish_all(outputs)
+    # Provenance sidecar: recomputes integrity checks against the
+    # JSONs just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("census", SURVEY_YEAR)
     logger.info(f"Published {len(paths)} files")
 
     logger.info("=" * 60)
@@ -259,19 +263,19 @@ def _build_indicators(
     # Health category
     indicators.append({
         "id": "imr_srs",
-        "name": "Infant Mortality Rate (SRS 2022)",
+        "name": "Infant Mortality Rate (SRS 2024)",
         "category": "health",
         "unit": "per 1000 live births",
         "states": [{"id": s["id"], "name": s["name"], "value": s["value"]} for s in srs_states],
-        "source": "Sample Registration System 2022",
+        "source": "Sample Registration System 2024",
     })
     indicators.append({
         "id": "tfr_nfhs",
-        "name": "Total Fertility Rate (NFHS-5)",
+        "name": "Total Fertility Rate (NFHS-6)",
         "category": "health",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["tfr"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "stunting",
@@ -279,7 +283,7 @@ def _build_indicators(
         "category": "health",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["stunting"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "full_immunization",
@@ -287,7 +291,7 @@ def _build_indicators(
         "category": "health",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["fullImmunization"]} for s in nfhs_states],
-        "source": "NFHS-5 (2019-21)",
+        "source": "NFHS-6 (2023-24)",
     })
 
     return {
@@ -338,16 +342,16 @@ def _build_glossary() -> dict:
                 "id": "total-fertility-rate",
                 "term": "Total Fertility Rate (TFR)",
                 "simple": "The average number of children a woman would have in her lifetime at current birth rates.",
-                "detail": "TFR of 2.1 is called 'replacement level' \u2014 the rate at which a population exactly replaces itself. India's TFR dropped below replacement to 2.0 nationally (NFHS-5, 2019-21). Bihar remains highest at 3.0; Goa lowest at 1.3. Below-replacement fertility means India's population will eventually stabilize and then decline, though population momentum means growth continues for decades after TFR drops below 2.1.",
-                "inContext": "India's TFR: 2.0 (NFHS-5). Below replacement level (2.1) for the first time.",
+                "detail": "TFR of 2.1 is called 'replacement level' \u2014 the rate at which a population exactly replaces itself. India's TFR held below replacement at 2.0 nationally (NFHS-6, 2023-24). Bihar remains highest at 2.7 (down from 3.0 in NFHS-5); West Bengal, Punjab, Assam and Goa are among the lowest at 1.6. Below-replacement fertility means India's population will eventually stabilize and then decline, though population momentum means growth continues for decades after TFR drops below 2.1.",
+                "inContext": "India's TFR: 2.0 (NFHS-6). Below replacement level (2.1).",
                 "relatedTerms": ["infant-mortality-rate", "demographic-dividend", "sex-ratio"],
             },
             {
                 "id": "infant-mortality-rate",
                 "term": "Infant Mortality Rate (IMR)",
                 "simple": "The number of babies (under age 1) who die per 1,000 live births in a year.",
-                "detail": "IMR is one of the most sensitive indicators of a country's healthcare quality and social development. India's IMR has dropped dramatically: from 66 per 1,000 in 2000 to about 25 in 2022 (SRS). But the interstate gap tells the real story: Kerala's IMR is 5 while Madhya Pradesh's is 35 \u2014 a baby born in MP is 7 times more likely to die before age 1 than one born in Kerala.",
-                "inContext": "National IMR: ~25 per 1000 (SRS 2022). Kerala: 5. Madhya Pradesh: 35.",
+                "detail": "IMR is one of the most sensitive indicators of a country's healthcare quality and social development. India's IMR has dropped dramatically: from 66 per 1,000 in 2000 to 24 in 2024 (SRS). But the interstate gap tells the real story: Kerala's IMR is 8 while Chhattisgarh's is 36 \u2014 a baby born in Chhattisgarh is about four to five times more likely to die before age 1 than one born in Kerala.",
+                "inContext": "National IMR: 24 per 1000 (SRS 2024). Kerala: 8. Chhattisgarh: 36.",
                 "relatedTerms": ["under-5-mortality", "maternal-mortality-ratio", "total-fertility-rate"],
             },
             {
@@ -402,8 +406,8 @@ def _build_glossary() -> dict:
                 "id": "stunting",
                 "term": "Stunting",
                 "simple": "When a child under 5 is too short for their age due to chronic malnutrition.",
-                "detail": "Stunting (low height-for-age) is a marker of chronic undernutrition, repeated infections, and poor living conditions in early life. It affects brain development and lifelong earning potential. India's stunting rate was 35.5% nationally in NFHS-5 (2019-21), down from 38.4% in NFHS-4. That's still over 40 million stunted children \u2014 more than any other country.",
-                "inContext": "35.5% of Indian children under 5 are stunted (NFHS-5). Down from 48% in 2005-06.",
+                "detail": "Stunting (low height-for-age) is a marker of chronic undernutrition, repeated infections, and poor living conditions in early life. It affects brain development and lifelong earning potential. India's stunting rate fell to 29.3% nationally in NFHS-6 (2023-24), down from 35.5% in NFHS-5 (2019-21). That's still tens of millions of stunted children \u2014 among the most of any country.",
+                "inContext": "29.3% of Indian children under 5 are stunted (NFHS-6). Down from 35.5% in NFHS-5.",
                 "relatedTerms": ["under-5-mortality", "infant-mortality-rate"],
             },
             {
@@ -411,7 +415,7 @@ def _build_glossary() -> dict:
                 "term": "Sample Registration System (SRS)",
                 "simple": "A continuous survey that tracks births and deaths across India between census years.",
                 "detail": "Since India conducts a census only every 10 years, the SRS fills the gap by continuously recording vital events (births, deaths) in a representative sample of villages and urban blocks. It provides annual estimates of birth rate, death rate, IMR, and fertility rate at state and national levels. The SRS is run by the Registrar General of India and is the primary source for inter-censal vital statistics.",
-                "inContext": "SRS 2022 reported a national IMR of 25 per 1000 live births",
+                "inContext": "SRS 2024 reported a national IMR of 24 per 1000 live births",
                 "relatedTerms": ["census", "infant-mortality-rate", "total-fertility-rate"],
             },
         ],

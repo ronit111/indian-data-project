@@ -25,11 +25,11 @@ const SECTIONS = [
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
             <span>
-              <strong style={{ color: 'var(--teal)' }}>Tier 2 — CPCB NAQI</strong> (state + city AQI, 2023, curated).{' '}
+              <strong style={{ color: 'var(--teal)' }}>CPCB NAQI</strong> (live reference, not ingested).{' '}
               <a href="https://airquality.cpcb.gov.in/" target="_blank" rel="noopener noreferrer" className="font-medium link-hover" style={{ color: 'var(--teal)' }}>
                 airquality.cpcb.gov.in
               </a>{' '}
-              — Central Pollution Control Board National Air Quality Index. Annual average AQI across continuous monitoring stations for 30 states/UTs and 30 most polluted cities.
+              — The Central Pollution Control Board's National Air Quality Index is a <em>daily</em>, station-level index. CPCB does not publish an annual state-level AQI, so we link to the live portal rather than reproduce a derived annual figure. Annual particulate exposure on this site comes from World Bank PM2.5 (above).
             </span>
           </li>
           <li className="flex gap-3 items-start">
@@ -88,7 +88,7 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
-            <span><strong>AQI</strong> — Composite index (0-500) based on 8 pollutants. CPCB NAQI data. State averages are mean of monitoring station annual averages.</span>
+            <span><strong>AQI</strong> — Composite index (0-500) based on 8 pollutants, published live on CPCB's National AQI portal. This site does not republish AQI averages — air-quality charts here use the PM2.5 series above.</span>
           </li>
         </ul>
       </>
@@ -109,7 +109,7 @@ const SECTIONS = [
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--teal)' }} />
-            <span><strong>Renewable energy %</strong> — World Bank. Final energy consumption from renewable sources (includes traditional biomass, which is large in India).</span>
+            <span><strong>Renewable capacity share</strong> — CEA Installed Capacity Reports. Share of installed grid capacity including large hydro (43.4%, March 2024). Generation share is lower — solar/wind capacity factors run 15–25%.</span>
           </li>
         </ul>
       </>
@@ -143,7 +143,7 @@ const SECTIONS = [
         <ul className="space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-            <span>World Bank data has ~1-2 year lag. PM2.5 latest: 2020. Forest cover latest: 2023. Energy data latest: 2023.</span>
+            <span>World Bank data has ~1-2 year lag. PM2.5 latest: 2020. Forest cover latest: 2023 (ISFR). Capacity mix latest: 2024 (CEA); World Bank energy series lag 1-2 years.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
@@ -168,7 +168,7 @@ const SECTIONS = [
         <ul className="space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
-            <span>ISFR counts plantations as forest. The national 25% figure overstates natural forest cover. Ecological quality is not captured.</span>
+            <span>ISFR counts plantations as forest. The oft-quoted 25% green-cover figure (forest + tree cover) overstates natural forest cover. Ecological quality is not captured.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />

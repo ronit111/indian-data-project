@@ -596,291 +596,291 @@
     {
       "id": "UP",
       "name": "Uttar Pradesh",
-      "gerPrimary": 82.0,
-      "gerSecondary": 62.4,
-      "gerHigherSec": 53.2,
-      "dropoutPrimary": 1.7,
-      "dropoutSecondary": 9.8
+      "gerPrimary": 83.1,
+      "gerSecondary": 64.3,
+      "gerHigherSec": 57.4,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 7.0
     },
     {
       "id": "MH",
       "name": "Maharashtra",
-      "gerPrimary": 100.1,
-      "gerSecondary": 92.6,
-      "gerHigherSec": 69.2,
+      "gerPrimary": 104.5,
+      "gerSecondary": 93.6,
+      "gerHigherSec": 70.8,
       "dropoutPrimary": 0.0,
-      "dropoutSecondary": 11.0
+      "dropoutSecondary": 11.5
     },
     {
       "id": "BR",
       "name": "Bihar",
-      "gerPrimary": 83.4,
-      "gerSecondary": 45.6,
-      "gerHigherSec": 30.0,
-      "dropoutPrimary": 8.9,
-      "dropoutSecondary": 25.6
+      "gerPrimary": 77.2,
+      "gerSecondary": 51.1,
+      "gerHigherSec": 38.1,
+      "dropoutPrimary": 2.9,
+      "dropoutSecondary": 6.9
     },
     {
       "id": "MP",
       "name": "Madhya Pradesh",
-      "gerPrimary": 78.9,
-      "gerSecondary": 66.4,
-      "gerHigherSec": 43.9,
-      "dropoutPrimary": 1.0,
-      "dropoutSecondary": 19.6
+      "gerPrimary": 76.3,
+      "gerSecondary": 68.2,
+      "gerHigherSec": 45.0,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 16.8
     },
     {
       "id": "RJ",
       "name": "Rajasthan",
-      "gerPrimary": 93.7,
-      "gerSecondary": 79.0,
-      "gerHigherSec": 57.4,
-      "dropoutPrimary": 7.6,
-      "dropoutSecondary": 12.2
+      "gerPrimary": 88.3,
+      "gerSecondary": 82.2,
+      "gerHigherSec": 66.1,
+      "dropoutPrimary": 3.6,
+      "dropoutSecondary": 7.7
     },
     {
       "id": "WB",
       "name": "West Bengal",
-      "gerPrimary": 108.8,
-      "gerSecondary": 104.2,
-      "gerHigherSec": 66.1,
-      "dropoutPrimary": 0.0,
-      "dropoutSecondary": 21.5
+      "gerPrimary": 106.6,
+      "gerSecondary": 99.4,
+      "gerHigherSec": 51.5,
+      "dropoutPrimary": 1.4,
+      "dropoutSecondary": 20.0
     },
     {
       "id": "TN",
       "name": "Tamil Nadu",
-      "gerPrimary": 94.6,
-      "gerSecondary": 98.1,
-      "gerHigherSec": 82.9,
-      "dropoutPrimary": 0.0,
-      "dropoutSecondary": 10.8
+      "gerPrimary": 91.6,
+      "gerSecondary": 95.5,
+      "gerHigherSec": 83.4,
+      "dropoutPrimary": 2.7,
+      "dropoutSecondary": 8.5
     },
     {
       "id": "KA",
       "name": "Karnataka",
-      "gerPrimary": 105.8,
-      "gerSecondary": 100.2,
-      "gerHigherSec": 58.5,
-      "dropoutPrimary": 1.7,
-      "dropoutSecondary": 15.2
+      "gerPrimary": 104.5,
+      "gerSecondary": 101.3,
+      "gerHigherSec": 61.4,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 18.3
     },
     {
       "id": "GJ",
       "name": "Gujarat",
-      "gerPrimary": 78.7,
-      "gerSecondary": 72.5,
-      "gerHigherSec": 43.0,
-      "dropoutPrimary": 0.1,
-      "dropoutSecondary": 10.2
+      "gerPrimary": 79.6,
+      "gerSecondary": 74.7,
+      "gerHigherSec": 47.3,
+      "dropoutPrimary": 0.2,
+      "dropoutSecondary": 16.9
     },
     {
       "id": "AP",
       "name": "Andhra Pradesh",
-      "gerPrimary": 95.9,
-      "gerSecondary": 95.9,
-      "gerHigherSec": 65.4,
-      "dropoutPrimary": 0.2,
-      "dropoutSecondary": 14.2
+      "gerPrimary": 91.9,
+      "gerSecondary": 89.4,
+      "gerHigherSec": 67.8,
+      "dropoutPrimary": 1.4,
+      "dropoutSecondary": 15.5
     },
     {
       "id": "TS",
       "name": "Telangana",
-      "gerPrimary": 110.0,
-      "gerSecondary": 98.7,
-      "gerHigherSec": 72.3,
+      "gerPrimary": 114.0,
+      "gerSecondary": 99.9,
+      "gerHigherSec": 67.6,
       "dropoutPrimary": 0.0,
-      "dropoutSecondary": 13.3
+      "dropoutSecondary": 13.2
     },
     {
       "id": "OD",
       "name": "Odisha",
-      "gerPrimary": 96.0,
-      "gerSecondary": 82.6,
-      "gerHigherSec": 58.6,
-      "dropoutPrimary": 0.0,
-      "dropoutSecondary": 14.1
+      "gerPrimary": 93.2,
+      "gerSecondary": 84.0,
+      "gerHigherSec": 60.7,
+      "dropoutPrimary": 0.7,
+      "dropoutSecondary": 15.0
     },
     {
       "id": "KL",
       "name": "Kerala",
-      "gerPrimary": 95.3,
-      "gerSecondary": 99.1,
-      "gerHigherSec": 88.1,
-      "dropoutPrimary": 0.0,
-      "dropoutSecondary": 4.3
+      "gerPrimary": 93.2,
+      "gerSecondary": 98.7,
+      "gerHigherSec": 89.5,
+      "dropoutPrimary": 0.8,
+      "dropoutSecondary": 4.8
     },
     {
       "id": "JH",
       "name": "Jharkhand",
-      "gerPrimary": 92.0,
-      "gerSecondary": 64.7,
-      "gerHigherSec": 41.3,
-      "dropoutPrimary": 0.9,
-      "dropoutSecondary": 15.2
+      "gerPrimary": 92.5,
+      "gerSecondary": 72.6,
+      "gerHigherSec": 48.6,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 3.5
     },
     {
       "id": "AS",
       "name": "Assam",
-      "gerPrimary": 107.6,
-      "gerSecondary": 85.5,
-      "gerHigherSec": 37.6,
-      "dropoutPrimary": 6.2,
-      "dropoutSecondary": 20.4
+      "gerPrimary": 108.1,
+      "gerSecondary": 79.6,
+      "gerHigherSec": 43.5,
+      "dropoutPrimary": 3.8,
+      "dropoutSecondary": 17.5
     },
     {
       "id": "PB",
       "name": "Punjab",
-      "gerPrimary": 107.3,
-      "gerSecondary": 94.2,
-      "gerHigherSec": 79.2,
-      "dropoutPrimary": 0.1,
-      "dropoutSecondary": 6.9
+      "gerPrimary": 105.6,
+      "gerSecondary": 92.6,
+      "gerHigherSec": 79.5,
+      "dropoutPrimary": 2.5,
+      "dropoutSecondary": 6.2
     },
     {
       "id": "CG",
       "name": "Chhattisgarh",
-      "gerPrimary": 88.9,
-      "gerSecondary": 72.8,
-      "gerHigherSec": 51.9,
-      "dropoutPrimary": 1.8,
-      "dropoutSecondary": 20.2
+      "gerPrimary": 89.2,
+      "gerSecondary": 77.5,
+      "gerHigherSec": 53.5,
+      "dropoutPrimary": 0.7,
+      "dropoutSecondary": 15.3
     },
     {
       "id": "HR",
       "name": "Haryana",
-      "gerPrimary": 90.6,
-      "gerSecondary": 89.0,
-      "gerHigherSec": 65.6,
-      "dropoutPrimary": 1.2,
-      "dropoutSecondary": 15.7
+      "gerPrimary": 91.6,
+      "gerSecondary": 90.3,
+      "gerHigherSec": 71.7,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 6.6
     },
     {
       "id": "UK",
       "name": "Uttarakhand",
-      "gerPrimary": 110.5,
-      "gerSecondary": 93.0,
-      "gerHigherSec": 77.5,
-      "dropoutPrimary": 0.1,
-      "dropoutSecondary": 8.6
+      "gerPrimary": 109.9,
+      "gerSecondary": 93.4,
+      "gerHigherSec": 80.9,
+      "dropoutPrimary": 0.9,
+      "dropoutSecondary": 4.6
     },
     {
       "id": "JK",
       "name": "Jammu & Kashmir",
-      "gerPrimary": 114.0,
-      "gerSecondary": 66.3,
-      "gerHigherSec": 42.8,
-      "dropoutPrimary": 1.6,
-      "dropoutSecondary": 14.1
+      "gerPrimary": 113.7,
+      "gerSecondary": 66.1,
+      "gerHigherSec": 44.8,
+      "dropoutPrimary": 1.5,
+      "dropoutSecondary": 12.9
     },
     {
       "id": "HP",
       "name": "Himachal Pradesh",
-      "gerPrimary": 105.3,
-      "gerSecondary": 102.1,
-      "gerHigherSec": 81.6,
+      "gerPrimary": 99.5,
+      "gerSecondary": 102.6,
+      "gerHigherSec": 84.7,
       "dropoutPrimary": 0.0,
-      "dropoutSecondary": 5.8
+      "dropoutSecondary": 6.2
     },
     {
       "id": "TR",
       "name": "Tripura",
-      "gerPrimary": 118.7,
-      "gerSecondary": 93.7,
-      "gerHigherSec": 56.6,
-      "dropoutPrimary": 0.5,
-      "dropoutSecondary": 10.7
+      "gerPrimary": 117.9,
+      "gerSecondary": 80.2,
+      "gerHigherSec": 56.4,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 11.3
     },
     {
       "id": "ML",
       "name": "Meghalaya",
-      "gerPrimary": 176.5,
-      "gerSecondary": 96.7,
-      "gerHigherSec": 39.8,
-      "dropoutPrimary": 12.4,
-      "dropoutSecondary": 23.2
+      "gerPrimary": 180.7,
+      "gerSecondary": 86.2,
+      "gerHigherSec": 39.7,
+      "dropoutPrimary": 4.2,
+      "dropoutSecondary": 17.4
     },
     {
       "id": "MN",
       "name": "Manipur",
-      "gerPrimary": 135.2,
-      "gerSecondary": 77.6,
-      "gerHigherSec": 56.4,
-      "dropoutPrimary": 4.5,
-      "dropoutSecondary": 15.6
+      "gerPrimary": 140.5,
+      "gerSecondary": 78.8,
+      "gerHigherSec": 58.5,
+      "dropoutPrimary": 2.9,
+      "dropoutSecondary": 9.1
     },
     {
       "id": "NL",
       "name": "Nagaland",
-      "gerPrimary": 92.0,
-      "gerSecondary": 55.5,
-      "gerHigherSec": 40.4,
-      "dropoutPrimary": 4.5,
-      "dropoutSecondary": 12.2
+      "gerPrimary": 95.4,
+      "gerSecondary": 61.8,
+      "gerHigherSec": 39.8,
+      "dropoutPrimary": 2.8,
+      "dropoutSecondary": 12.1
     },
     {
       "id": "GA",
       "name": "Goa",
-      "gerPrimary": 123.0,
-      "gerSecondary": 110.8,
-      "gerHigherSec": 92.2,
-      "dropoutPrimary": 0.8,
-      "dropoutSecondary": 10.2
+      "gerPrimary": 117.8,
+      "gerSecondary": 107.5,
+      "gerHigherSec": 93.8,
+      "dropoutPrimary": 0.3,
+      "dropoutSecondary": 9.3
     },
     {
       "id": "AR",
       "name": "Arunachal Pradesh",
-      "gerPrimary": 113.6,
-      "gerSecondary": 70.5,
-      "gerHigherSec": 45.9,
-      "dropoutPrimary": 5.4,
-      "dropoutSecondary": 20.4
+      "gerPrimary": 113.2,
+      "gerSecondary": 69.3,
+      "gerHigherSec": 43.7,
+      "dropoutPrimary": 4.8,
+      "dropoutSecondary": 18.3
     },
     {
       "id": "MZ",
       "name": "Mizoram",
-      "gerPrimary": 151.2,
-      "gerSecondary": 103.7,
-      "gerHigherSec": 53.3,
-      "dropoutPrimary": 3.5,
-      "dropoutSecondary": 15.2
+      "gerPrimary": 138.0,
+      "gerSecondary": 95.5,
+      "gerHigherSec": 53.9,
+      "dropoutPrimary": 10.8,
+      "dropoutSecondary": 17.4
     },
     {
       "id": "SK",
       "name": "Sikkim",
-      "gerPrimary": 100.6,
-      "gerSecondary": 75.9,
-      "gerHigherSec": 57.4,
-      "dropoutPrimary": 2.6,
-      "dropoutSecondary": 21.0
+      "gerPrimary": 97.4,
+      "gerSecondary": 72.0,
+      "gerHigherSec": 49.6,
+      "dropoutPrimary": 1.5,
+      "dropoutSecondary": 11.4
     },
     {
       "id": "DL",
       "name": "Delhi",
-      "gerPrimary": 98.8,
-      "gerSecondary": 105.4,
-      "gerHigherSec": 83.2,
+      "gerPrimary": 101.8,
+      "gerSecondary": 101.1,
+      "gerHigherSec": 82.7,
       "dropoutPrimary": 0.0,
-      "dropoutSecondary": 11.6
+      "dropoutSecondary": 7.5
     },
     {
       "id": "PY",
       "name": "Puducherry",
-      "gerPrimary": 97.4,
-      "gerSecondary": 102.5,
-      "gerHigherSec": 90.9,
-      "dropoutPrimary": 1.2,
-      "dropoutSecondary": 10.4
+      "gerPrimary": 93.0,
+      "gerSecondary": 98.1,
+      "gerHigherSec": 95.5,
+      "dropoutPrimary": 0.0,
+      "dropoutSecondary": 5.9
     },
     {
       "id": "CH",
       "name": "Chandigarh",
-      "gerPrimary": 97.7,
-      "gerSecondary": 118.3,
-      "gerHigherSec": 109.3,
-      "dropoutPrimary": 0.0,
-      "dropoutSecondary": 4.2
+      "gerPrimary": 93.7,
+      "gerSecondary": 110.1,
+      "gerHigherSec": 107.4,
+      "dropoutPrimary": 0.2,
+      "dropoutSecondary": 2.0
     }
   ],
-  "source": "World Bank + UDISE+ Flash Statistics 2023-24"
+  "source": "World Bank + UDISE+ 2024-25"
 }

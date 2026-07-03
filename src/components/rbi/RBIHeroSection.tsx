@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { RBISummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface RBIHeroSectionProps {
   summary: RBISummary | null;
@@ -78,7 +79,14 @@ export function RBIHeroSection({ summary }: RBIHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         >
           <div className="text-hero gradient-text-gold">
-            {summary?.repoRate ?? '—'}%
+            <SourceChain
+              domain="rbi"
+              year={summary?.year ?? ''}
+              figureKey="summary.repoRate"
+              placement="bottom"
+            >
+              <span className="gradient-text-gold">{summary?.repoRate ?? '—'}%</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"

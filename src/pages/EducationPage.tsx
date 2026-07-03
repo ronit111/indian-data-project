@@ -50,7 +50,7 @@ export default function EducationPage() {
       exit={{ opacity: 0 }}
     >
       <SEOHead
-        title="Education — 248 Million Students | Indian Data Project"
+        title="Education — 247 Million Students | Indian Data Project"
         description="Enrollment, learning outcomes, teacher availability, school infrastructure, and education spending across India's states — visualized from UDISE+, ASER, and World Bank data."
         path="/education"
         image="/og-education.png"
@@ -71,10 +71,10 @@ export default function EducationPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="India runs the largest school system on Earth. 248 million students. Primary enrollment above 100%. By any access metric, it's a success story."
+        text="India runs the largest school system on Earth. 247 million students. Primary enrollment near-universal. By any access metric, it's a success story."
         highlights={{
           'largest': 'var(--blue)',
-          '248': 'var(--blue)',
+          '247': 'var(--blue)',
           'success': 'var(--blue)',
         }}
       />

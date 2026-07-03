@@ -28,7 +28,7 @@ export const waterCrisis: TopicDef = {
     { value: '4%', label: 'Share of global freshwater', sectionId: 'water-stress' },
     { value: (bag) => { const c = censusSummary(bag); return c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—'; }, label: 'Population dependent on it', sectionId: 'water-stress' },
     { value: '~80%', label: 'Freshwater used by agriculture', sectionId: 'groundwater-depletion' },
-    { value: (bag) => { const h = bag['healthcare/summary'] as { hospitalBedsPer1000: number } | undefined; return h ? `${h.hospitalBedsPer1000}/1K` : '—'; }, label: 'Hospital beds per 1,000', sectionId: 'health-link' },
+    { value: (bag) => { const h = bag['healthcare/summary'] as { hospitalBedsPer1000: number } | undefined; return h ? `${h.hospitalBedsPer1000}/1K` : '—'; }, label: 'Govt hospital beds per 1,000', sectionId: 'health-link' },
   ],
 
   narrativeBridge: 'India\'s water crisis is not just about scarcity — it\'s about distribution, contamination, and governance. Some states are mining groundwater faster than it recharges. Rivers are polluted. Agriculture consumes 80% of freshwater. And climate change is making rainfall more erratic.',
@@ -40,7 +40,7 @@ export const waterCrisis: TopicDef = {
       title: 'Water Stress Map',
       annotation: 'India is classified as "water-stressed" — per capita availability has dropped from 5,177 cubic meters in 1951 to below 1,500 today. By 2030, demand is projected to outstrip supply in many basins.',
       domains: ['environment', 'census'],
-      sources: ['CWC', 'World Bank'],
+      sources: ['CWC', 'CGWB'],
       charts: [{
         chartType: 'horizontal-bar', chartTitle: 'Groundwater Stage by State (Most Stressed)', unit: '%', accent: '#06B6D4',
         extractData: (bag) => {
@@ -83,7 +83,7 @@ export const waterCrisis: TopicDef = {
       title: 'Water & Health',
       annotation: 'Contaminated water causes waterborne diseases that kill an estimated 400,000 Indians annually. Access to clean drinking water has improved under Jal Jeevan Mission, but sanitation and water quality in rural areas remain challenges.',
       domains: ['healthcare', 'census'],
-      sources: ['WHO', 'NFHS-5', 'Census 2011'],
+      sources: ['WHO', 'NFHS-6 (2023-24)', 'Census 2011'],
       charts: [{
         chartType: 'stat-row', chartTitle: 'Water-Health Connection',
         extractData: (bag) => {
@@ -94,7 +94,7 @@ export const waterCrisis: TopicDef = {
           return [
             { label: 'Population', value: c ? `${(c.totalPopulation / 1e9).toFixed(2)}B` : '—', accent: '#8B5CF6' },
             { label: 'Freshwater use', value: '~80% agriculture', accent: '#F43F5E' },
-            { label: 'Hospital Beds', value: h ? `${h.hospitalBedsPer1000} / 1K` : '—', accent: '#EC4899' },
+            { label: 'Govt Hospital Beds', value: h ? `${h.hospitalBedsPer1000} / 1K` : '—', accent: '#EC4899' },
             { label: 'Out-of-Pocket', value: h ? `${h.outOfPocketPct}%` : '—', accent: '#F59E0B' },
           ];
         },

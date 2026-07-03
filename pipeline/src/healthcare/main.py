@@ -10,7 +10,7 @@ Stages:
 Data sources:
   - World Bank Development Indicators (hospital beds, physicians, health spending, immunization, TB/HIV)
   - National Health Profile 2022 — CBHI (state-level infrastructure)
-  - NFHS-5 2019-21 (state-level immunization coverage)
+  - NFHS-6 2023-24 (state-level immunization coverage)
 
 Note: This domain focuses on infrastructure + spending + disease burden.
 Mortality (IMR, MMR, U5MR) and life expectancy are in the Census domain.
@@ -115,6 +115,10 @@ def run_healthcare_pipeline():
     }
 
     paths = publish_all(outputs)
+    # Provenance sidecar: recomputes integrity checks against the
+    # JSONs just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("healthcare", SURVEY_YEAR)
     logger.info(f"Published {len(paths)} files")
 
     logger.info("=" * 60)
@@ -132,7 +136,7 @@ def _build_summary() -> dict:
         "dptImmunization": NATIONAL_TOTALS["dptImmunization"],
         "tbIncidence": NATIONAL_TOTALS["tbIncidence"],
         "lastUpdated": date.today().isoformat(),
-        "source": "World Bank + National Health Profile 2022 + NFHS-5",
+        "source": "World Bank + National Health Profile 2022 + NFHS-6 (2023-24)",
     }
 
 
@@ -188,7 +192,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["fullImmunization"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "bcg_coverage",
@@ -196,7 +200,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["bcg"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "measles_coverage",
@@ -204,7 +208,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["measles"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
     indicators.append({
         "id": "dpt3_coverage",
@@ -212,7 +216,7 @@ def _build_indicators(nhp_states: list[dict], imm_states: list[dict]) -> dict:
         "category": "immunization",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dpt3"]} for s in imm_states],
-        "source": "NFHS-5",
+        "source": "NFHS-6 (2023-24)",
     })
 
     return {
@@ -270,24 +274,24 @@ def _build_glossary() -> dict:
                 "id": "ayushman-bharat",
                 "term": "Ayushman Bharat (PM-JAY)",
                 "simple": "World's largest government health insurance scheme, covering ₹5 lakh per family per year for hospitalization.",
-                "detail": "Launched 2018. Covers ~12 crore families (50 crore individuals) — the bottom 40% by income. Provides cashless hospitalization at empanelled hospitals (both public and private). Over 7 crore hospitalizations authorized since launch. Two components: (1) PM-JAY insurance for secondary/tertiary care, (2) Health & Wellness Centres (HWCs) for comprehensive primary care at 1.5 lakh upgraded sub-centres.",
-                "inContext": "PM-JAY covers ~50 crore people. ₹5 lakh/family/year. 7+ crore hospitalizations.",
+                "detail": "Launched 2018. Covers ~12 crore families (~55 crore individuals) — the bottom 40% by income. Provides cashless hospitalization at empanelled hospitals (both public and private). Over 7 crore hospitalizations authorized since launch. Two components: (1) PM-JAY insurance for secondary/tertiary care, (2) Health & Wellness Centres (HWCs) for comprehensive primary care at 1.5 lakh upgraded sub-centres.",
+                "inContext": "PM-JAY covers ~55 crore people. ₹5 lakh/family/year. 7+ crore hospitalizations.",
                 "relatedTerms": ["oop-expenditure", "phc"],
             },
             {
                 "id": "tb-incidence",
                 "term": "TB Incidence",
                 "simple": "The number of new tuberculosis cases per 100,000 people per year.",
-                "detail": "India accounts for 27% of global TB cases — the highest burden of any country. Incidence: ~199 per 100,000 (2023). The National TB Elimination Programme targets elimination by 2025 (5 years ahead of the global SDG target of 2030). Despite this ambitious target, India still reports ~28 lakh new cases annually. Multi-drug resistant TB (MDR-TB) is an additional challenge at ~1.2 lakh cases/year.",
-                "inContext": "India: ~199 TB cases per 100K. 27% of global burden. Target: elimination by 2025.",
+                "detail": "India accounts for 27% of global TB cases — the highest burden of any country. Incidence: ~187 per 100,000 (2024, WHO-derived World Bank series). The National TB Elimination Programme targets elimination by 2025 (5 years ahead of the global SDG target of 2030). Despite this ambitious target, India still reports ~28 lakh new cases annually. Multi-drug resistant TB (MDR-TB) is an additional challenge at ~1.2 lakh cases/year.",
+                "inContext": "India: ~187 TB cases per 100K (2024). 27% of global burden. Target: elimination by 2025.",
                 "relatedTerms": ["disease-burden"],
             },
             {
                 "id": "hospital-beds",
                 "term": "Hospital Beds per 1,000 Population",
                 "simple": "The number of hospital beds available for every 1,000 people in the country.",
-                "detail": "India has about 0.5 beds per 1,000 (government hospitals only) — far below the WHO recommendation of 3.5 per 1,000. Including private hospitals, the total is ~1.9 per 1,000. The variation is extreme: Delhi has 12+ per 1,000 while Bihar has less than 0.5. COVID-19 exposed this deficit acutely. Most beds are concentrated in urban areas, leaving rural India with minimal hospital infrastructure.",
-                "inContext": "India: 0.5 govt beds/1000. Total (incl. private): ~1.9. WHO recommends: 3.5.",
+                "detail": "India has about 0.5 beds per 1,000 (government hospitals only) — far below the WHO recommendation of 3.5 per 1,000. Including private hospitals, the World Bank all-beds series puts the total at ~1.6 per 1,000 (2021). The variation is extreme: Delhi has 12+ per 1,000 while Bihar has less than 0.5. COVID-19 exposed this deficit acutely. Most beds are concentrated in urban areas, leaving rural India with minimal hospital infrastructure.",
+                "inContext": "India: 0.5 govt beds/1000. Total (incl. private): ~1.6 (World Bank 2021). WHO recommends: 3.5.",
                 "relatedTerms": ["phc", "chc", "health-expenditure"],
             },
             {
@@ -302,8 +306,8 @@ def _build_glossary() -> dict:
                 "id": "immunization",
                 "term": "Universal Immunization Programme (UIP)",
                 "simple": "India's national programme providing free vaccines to all children and pregnant women.",
-                "detail": "UIP covers 12 vaccines for children (BCG, OPV, DPT, hepatitis B, measles, JE, pneumococcal, rotavirus, etc.) and 2 for pregnant women (tetanus). India is the world's largest vaccine producer and consumer. Full immunization coverage (all scheduled doses) has risen from 44% (NFHS-4, 2015-16) to 76% (NFHS-5, 2019-21). Mission Indradhanush (2014) intensified coverage in low-performing districts.",
-                "inContext": "Full immunization: 76% nationally (NFHS-5). Range: 58% (Nagaland) to 91% (Odisha).",
+                "detail": "UIP covers 12 vaccines for children (BCG, OPV, DPT, hepatitis B, measles, JE, pneumococcal, rotavirus, etc.) and 2 for pregnant women (tetanus). India is the world's largest vaccine producer and consumer. Full immunization coverage (all scheduled doses) has risen from 44% (NFHS-4, 2015-16) to 76% (NFHS-5, 2019-21) and 83% (NFHS-6, 2023-24). Mission Indradhanush (2014) intensified coverage in low-performing districts.",
+                "inContext": "Full immunization: 83% nationally (NFHS-6). Range: 64% (Nagaland) to 94% (Goa).",
                 "relatedTerms": ["phc", "disease-burden"],
             },
             {
@@ -326,8 +330,8 @@ def _build_glossary() -> dict:
                 "id": "nfhs",
                 "term": "NFHS (National Family Health Survey)",
                 "simple": "India's largest household health survey, covering reproductive health, nutrition, and immunization across all states.",
-                "detail": "NFHS is conducted by IIPS (Mumbai) with support from ICF International. NFHS-5 (2019-21) surveyed 6.4 lakh households across all states/UTs. It's the gold standard for district-level health data in India — used for planning, monitoring, and international comparisons (part of the global DHS programme). Data covers fertility, family planning, infant/child mortality, nutrition, immunization, HIV, and domestic violence.",
-                "inContext": "NFHS-5: 6.4 lakh households. Provides district-level health data for all India.",
+                "detail": "NFHS is conducted by IIPS (Mumbai) with support from ICF International. NFHS-6 (2023-24) surveyed about 6.7 lakh households across all states/UTs except Manipur. It's the gold standard for district-level health data in India — used for planning, monitoring, and international comparisons (part of the global DHS programme). Data covers fertility, family planning, infant/child mortality, nutrition, immunization, HIV, and domestic violence.",
+                "inContext": "NFHS-6: 6.7 lakh households. Provides district-level health data for all India (Manipur not surveyed).",
                 "relatedTerms": ["immunization", "disease-burden"],
             },
         ],

@@ -8,7 +8,7 @@ India's government data infrastructure has a fundamental accessibility problem. 
 
 The data exists. It's just formatted for bureaucrats and statisticians, not for the 1.4 billion citizens it belongs to. A citizen shouldn't need two hours and five government portals to answer a simple question about their own country.
 
-Indian Data Project takes data from RBI, MOSPI, World Bank, NCRB, Election Commission of India, UDISE+, NFHS-5, and 30+ other government and international statistical agencies, and presents it as interactive visual stories with plain-language annotations. The goal is making Indian public data genuinely useful for society — whether you're a student trying to understand the economy, a journalist sourcing a story, a teacher building a lesson plan, or a citizen who wants to know how their state compares to others.
+Indian Data Project takes data from RBI, MOSPI, World Bank, NCRB, Election Commission of India, UDISE+, NFHS-6, and 30+ other government and international statistical agencies, and presents it as interactive visual stories with plain-language annotations. The goal is making Indian public data genuinely useful for society — whether you're a student trying to understand the economy, a journalist sourcing a story, a teacher building a lesson plan, or a citizen who wants to know how their state compares to others.
 
 ## What you can do here
 
@@ -79,25 +79,25 @@ This is an independent civic project built by one person, not affiliated with or
 ### Census & Demographics Domain
 - /census — Scrollytelling narrative: population growth (1.45 billion), age structure waffle chart (young/working/elderly), vital statistics (birth rate, death rate, fertility rate, life expectancy), infant mortality with state breakdown, literacy gender gap butterfly chart, urbanization trends
 - /census/explore — Browseable indicator explorer with categories: Population, Demographics, Literacy, Health. Select any indicator to compare across states.
-- /census/methodology — Data sources (Census of India 2011, World Bank API, NFHS-5, SRS 2023, NPC Projections), multi-vintage data strategy, indicator definitions, limitations
+- /census/methodology — Data sources (Census of India 2011, World Bank API, NFHS-6 2023-24, SRS 2024, NPC Projections), multi-vintage data strategy, indicator definitions, limitations
 - /census/glossary — Plain-language definitions of demographic terms: census, decadal growth, sex ratio, dependency ratio, infant mortality rate, total fertility rate, literacy rate, urbanization, NFHS, SRS.
 
 ### Education Domain
-- /education — Scrollytelling narrative: enrollment triumph (primary/secondary/tertiary GER trends), gender convergence in enrollment, dropout cliff (primary 1.9% → secondary 14.1%), learning quality gap (ASER outcomes), teacher challenge (pupil-teacher ratios), education spending vs global peers
+- /education — Scrollytelling narrative: enrollment triumph (primary/secondary/tertiary GER trends), gender convergence in enrollment, dropout cliff (primary 0.3% → secondary 11.5%, UDISE+ 2024-25), learning quality gap (ASER outcomes), teacher challenge (pupil-teacher ratios), education spending vs global peers
 - /education/explore — Browseable indicator explorer with categories: enrollment, quality, infrastructure, spending. Select any indicator to compare across 32 states/UTs.
-- /education/methodology — Data sources (UDISE+ 2023-24, ASER 2024, World Bank), indicator definitions, limitations
+- /education/methodology — Data sources (UDISE+ 2024-25, ASER 2024, World Bank), indicator definitions, limitations
 - /education/glossary — Plain-language definitions of education terms: GER, NER, dropout rate, PTR, ASER, UDISE, NEP 2020, foundational literacy, RTE Act, and more.
 
 ### Employment Domain
 - /employment — Scrollytelling narrative: participation puzzle (LFPR trends), structural shift (agriculture declining, services rising), youth unemployment crisis (3-4x overall rate), gender gap in LFPR, informality challenge (self-employment dominance), rural vs urban employment patterns
 - /employment/explore — Browseable indicator explorer with categories: unemployment, participation, sectoral, informality. Select any indicator to compare across states.
-- /employment/methodology — Data sources (PLFS 2023-24, World Bank, RBI KLEMS), indicator definitions, limitations
+- /employment/methodology — Data sources (PLFS 2025, World Bank), indicator definitions, limitations
 - /employment/glossary — Plain-language definitions of employment terms: LFPR, unemployment rate, PLFS, informal sector, gig economy, structural transformation, and more.
 
 ### Healthcare Domain
-- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 hospital beds per 1,000 vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (48% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
+- /healthcare — Scrollytelling narrative: infrastructure deficit (0.5 govt hospital beds per 1,000, ~1.6 incl. private, vs WHO 3.5), health spending (3.3% GDP), out-of-pocket burden (45% of health spending), immunization coverage, disease burden (TB, NCDs), doctor gap across states
 - /healthcare/explore — Browseable indicator explorer with categories: infrastructure, spending, immunization, disease. Select any indicator to compare across states.
-- /healthcare/methodology — Data sources (NHP 2022, NFHS-5, World Bank), indicator definitions, limitations
+- /healthcare/methodology — Data sources (NHP 2022, NFHS-6 2023-24, World Bank), indicator definitions, limitations
 - /healthcare/glossary — Plain-language definitions of healthcare terms: PHC, CHC, out-of-pocket spending, immunization, TB incidence, hospital beds per 1000, and more.
 
 ### Environment Domain
@@ -113,14 +113,14 @@ This is an independent civic project built by one person, not affiliated with or
 - /elections/glossary — Plain-language definitions of election terms: Lok Sabha, FPTP, constituency, EVM, NOTA, ECI, MCC, affidavit, ADR, delimitation, coalition, Nari Shakti Vandan Adhiniyam.
 
 ### Crime & Safety Domain
-- /crime — Scrollytelling narrative (6 sections): crime overview (IPC/SLL split, national trend, state choropleth), crimes against women (4.45 lakh cases, cruelty and kidnapping lead), road accidents (1.68 lakh killed, 461 daily, overspeeding 69%), cybercrime (3x growth, 3% FIR conversion), police infrastructure (151 per lakh vs UN 222, 11.7% women), justice pipeline (funnel from FIR to conviction, 39.1% rate, 3.5 year avg trial)
+- /crime — Scrollytelling narrative (6 sections): crime overview (IPC/SLL split, national trend, state choropleth), crimes against women (4.48 lakh cases, cruelty and kidnapping lead), road accidents (1.73 lakh killed, 474 daily, over-speeding 68%), cybercrime (4x growth since 2017, under 4% FIR conversion), police infrastructure (155 per lakh vs UN 222, 12.3% women), justice pipeline (funnel from FIR to conviction, 54% of completed trials convict, 3.5 year avg trial)
 - /crime/explore — State-wise crime indicators: overall rates, women crime rates, road fatalities, police-population ratio, vacancies
-- /crime/methodology — NCRB methodology (FIR-based, cognizable only), underreporting caveats, Kerala paradox, MoRTH road data, World Bank homicide data, 2022 data vintage
+- /crime/methodology — NCRB methodology (FIR-based, cognizable only), underreporting caveats, Kerala paradox, MoRTH road data, World Bank homicide data, 2023 data vintage
 - /crime/glossary — Plain-language definitions: FIR, chargesheet, cognizable offence, IPC, SLL, conviction rate, cybercrime, and more.
 
 ### Cross-Domain Topics
 - /topics — Hub page with 11 curated cross-domain topic cards. Each topic weaves data from 2-5 domains into a narrative view.
-- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps, safety & violence (4.45L crimes against women). Domains: Elections, Employment, Education, Census, Healthcare, Crime.
+- /topics/women-in-india — Women in India: political voice (women MPs 1952-2024), economic participation (female LFPR), education & health gaps, safety & violence (4.48L crimes against women). Domains: Elections, Employment, Education, Census, Healthcare, Crime.
 - /topics/fiscal-health — India's Fiscal Health: GDP growth engine, spending vs borrowing (fiscal deficit % GDP), RBI monetary policy lever. Domains: Budget, Economy, RBI, States.
 - /topics/inflation-cost — Inflation & Cost of Living: CPI price trajectory, RBI rate response, fiscal connection. Domains: Economy, RBI, Budget.
 - /topics/education-employment — Education to Employment Pipeline: enrollment scale (secondary GER), jobs gap (unemployment rate), education spending. Domains: Education, Employment, Census, Budget.
@@ -129,11 +129,11 @@ This is an independent civic project built by one person, not affiliated with or
 - /topics/climate-energy — Climate & Energy Transition: energy mix (renewables capacity growth, coal dominates generation), carbon footprint, forest cover by state. Domains: Environment, Economy, Budget.
 - /topics/youth-jobs — Youth & Jobs: youth unemployment (3x national rate), structural shift (sectoral employment), quality of work. Domains: Employment, Education, Census, Economy.
 - /topics/democratic-health — India's Democratic Health: turnout arc (1952-2024), quality of representation (criminal cases, women MPs, assets), accountability gap (budget underspending). Domains: Elections, Census, Education, Budget, Crime.
-- /topics/agriculture-food — Agriculture & Food Security: productivity paradox (42% workforce, 15% GDP), food-inflation link, sustainability pressures. Domains: Budget, Economy, Employment, Environment.
+- /topics/agriculture-food — Agriculture & Food Security: productivity paradox (~43% workforce, ~17% GVA), food-inflation link, sustainability pressures. Domains: Budget, Economy, Employment, Environment.
 - /topics/water-crisis — Water Crisis: groundwater stress by state, depletion facts, water-health connection. Domains: Environment, Census, Healthcare.
 
 ### Personalization Calculators
-- /rbi/calculator — EMI Impact Calculator: See how repo rate changes affect your monthly EMI. Choose home/car/personal loan, set amount and tenure, view rate impact at ±25/50 bps scenarios. Uses live repo rate (currently 6.25%) and bank spreads (SBI EBLR).
+- /rbi/calculator — EMI Impact Calculator: See how repo rate changes affect your monthly EMI. Choose home/car/personal loan, set amount and tenure, view rate impact at ±25/50 bps scenarios. Uses live repo rate (currently 5.25%) and bank spreads (SBI EBLR).
 - /economy/calculator — Cost-of-Living Calculator: Input your monthly expenses by category (rent, groceries, transport, education, healthcare, utilities). Compare against any year from 2014+. Uses category-specific CPI by COICOP division (food, housing, health, transport, education) where available, headline CPI as fallback.
 - /states/your-state — State Report Card: Select any Indian state to see performance across 6 domains (Economy, Budget, Census, Education, Employment, Healthcare). ~25 metrics with ranks, quartile badges (top/middle/bottom 25%), and national average comparison.
 
@@ -141,7 +141,7 @@ This is an independent civic project built by one person, not affiliated with or
 
 ### Budget (Budget Estimate 2025-26)
 - Total expenditure: Rs 50,65,345 crore
-- Revenue receipts: Rs 34,20,905 crore
+- Revenue receipts: Rs 34,20,409 crore
 - Capital expenditure: Rs 11,21,059 crore
 - Fiscal deficit target: 4.4% of GDP
 - Population estimate used: 145 crore (1.45 billion)
@@ -150,25 +150,25 @@ This is an independent civic project built by one person, not affiliated with or
 - Real GDP growth: 6.5% (2024-25 Provisional Estimate)
 - Projected growth: 7.4% (2025-26 NSO First Advance Estimate, Jan 2026)
 - CPI inflation: 4.0% (Economic Survey revised projection)
-- Nominal GDP: Rs 3,56,98,000 crore
+- Nominal GDP: Rs 3,45,47,157 crore (2024-25 PE; 2025-26 FAE projects Rs 3,56,98,000 crore)
 - Current account deficit: -0.8% of GDP (H1 FY2025-26)
-- Per capita GDP: Rs 2,44,507
+- Per capita GDP: Rs 2,38,103 (2024-25 PE)
 
 ### RBI Data (2025-26)
-- Repo rate: 6.25% (Neutral stance, as of February 7, 2025)
-- CRR: 4.00%, SLR: 18.00%
+- Repo rate: 5.25% (Neutral stance, as of December 5, 2025)
+- CRR: 3.00%, SLR: 18.00%
 - CPI inflation (World Bank latest): 4.95%
-- Forex reserves: $643 billion (World Bank latest; RBI weekly: $724B as of Feb 2026)
+- Forex reserves: $643 billion (FY2024-25, RBI Handbook / World Bank)
 - Broad money (M3) growth: 11.3%
 - Exchange rate: ~83.67 INR per USD (FY2024-25 annual average)
-- 30 repo rate decisions tracked from 2014 onward
+- 28 repo rate decisions tracked from 2014 onward
 
 ### State Finances (FY 2022-23)
-- Top GSDP: Maharashtra Rs 45.32 lakh crore
-- National combined state GDP: Rs 310.13 lakh crore
-- Growth range: 8.7% to 16.0% (constant prices)
-- Data across 25 of 36 states/UTs (remaining UTs have incomplete accounts)
-- Average per capita NSDP: Rs 2,07,973
+- Top GSDP: Maharashtra Rs 36.42 lakh crore
+- National combined state GDP: Rs 272.2 lakh crore
+- Growth range: 2.8% to 18.1%
+- Data across 31 of 36 states/UTs (remaining UTs have incomplete accounts)
+- Average per capita NSDP: Rs 1,74,343
 - Data source: RBI Handbook of Statistics on Indian States
 
 ### Census & Demographics
@@ -176,54 +176,54 @@ This is an independent civic project built by one person, not affiliated with or
 - Population growth rate: ~0.8% (decelerating from 1.6% in 2001)
 - Literacy rate: 74.04% (Census 2011; male 82.14%, female 65.46%)
 - Sex ratio: 943 females per 1000 males (Census 2011)
-- Total fertility rate: 2.0 (NFHS-5 2019-21, below replacement level of 2.1)
-- Infant mortality rate: 28 per 1000 live births (SRS 2023)
+- Total fertility rate: 1.96 (World Bank 2024, below replacement level of 2.1)
+- Infant mortality rate: 24 per 1000 live births (SRS 2024)
 - Life expectancy: 70.19 years (World Bank 2023)
 - Urbanization: ~36% (World Bank 2023)
-- Data sources: Census of India 2011, World Bank Open Data, NFHS-5, SRS 2023, National Population Commission
+- Data sources: Census of India 2011, World Bank Open Data, NFHS-6 (2023-24), SRS 2024, National Population Commission
 
 ### Education
-- Total students: 248.0 million (UDISE+ 2023-24, Pre-Primary to Higher Secondary)
-- Total schools: 1.47 million (14.72 lakh)
-- GER Primary: 93.0%, Secondary: 77.4%, Tertiary: 28.4% (GER methodology changed in UDISE+ 2022-23 with SDMIS)
-- Pupil-teacher ratio: 25 (national average)
+- Total students: 246.9 million (UDISE+ 2024-25, Pre-Primary to Higher Secondary)
+- Total schools: 1.47 million (14.71 lakh)
+- GER Primary: 90.9%, Secondary: 78.7% (UDISE+ 2024-25, Total column)
+- Pupil-teacher ratio: 24 (national average)
 - Education spending: 4.1% of GDP (NEP 2020 target: 6%)
-- Data sources: UDISE+ 2023-24, ASER 2024, World Bank Open Data
+- Data sources: UDISE+ 2024-25, ASER 2024, World Bank Open Data
 
 ### Employment
-- Unemployment rate: 4.2% (PLFS Oct-Dec 2025)
-- Labour force participation rate: 55.8%
-- Female LFPR: 34.9% (CWS), Youth unemployment: 10.2% (PLFS 2023-24 usual status, 15-29 age group)
-- Agricultural employment: declining from 60% (2000) to 42% (2023)
-- Services employment: rising from 23% (2000) to 32% (2023)
-- Data sources: PLFS Quarterly Bulletin, PLFS Annual Report 2023-24, World Bank, RBI KLEMS
+- Unemployment rate: 3.1% (PLFS Annual 2025, usual status, 15+)
+- Labour force participation rate: 59.3% (15+)
+- Female LFPR: 40.0%, Youth unemployment: 9.9% (PLFS 2025 usual status, 15+ / 15-29)
+- Agricultural employment: declining from 60% (2000) to ~43% (2025)
+- Services employment: rising from 23% (2000) to ~33% (2025)
+- Data sources: PLFS Quarterly Bulletin, PLFS Annual Report 2025, World Bank
 
 ### Healthcare
-- Hospital beds: 1.6 per 1,000 (WHO recommends 3.5)
+- Hospital beds: 0.5 per 1,000 in government hospitals, ~1.6 including private (World Bank 2021; WHO recommends 3.5)
 - Physicians: 0.7 per 1,000
-- Health expenditure: 3.3% of GDP (global average ~6%)
+- Health expenditure: 3.3% of GDP (US: 18%, UK: 12%)
 - Out-of-pocket spending: 45.1% of total health expenditure (World Bank 2021, declining from 62% in 2014)
-- DPT immunization: 91%, Measles: 92%
-- TB incidence: 199 per 100,000 (highest global burden)
-- Data sources: NHP 2022 (CBHI), NFHS-5, World Bank Open Data
+- DPT immunization: 91% (2023), Measles: 97% (2024)
+- TB incidence: 187 per 100,000 (2024, WHO-derived World Bank series; highest global burden)
+- Data sources: NHP 2022 (CBHI), NFHS-6 (2023-24), World Bank Open Data
 
-### Crime & Safety (NCRB 2022)
-- Total cognizable crimes 2022: 58,24,946
-- Crime rate: 422.2 per lakh population
-- Crimes against women: 4,45,256 (rate: 66.4 per lakh women)
-- Road accident deaths: 1,68,491 (461 per day)
-- Conviction rate: 39.1%
-- Chargesheet rate: 74.6%
-- Cybercrime FIRs: 65,893 (I4C complaints: 22.68 lakh)
-- Police-population ratio: 151.1 per lakh (UN recommended: 222)
-- Women in police: 11.7% (2,44,961)
+### Crime & Safety (NCRB 2023)
+- Total cognizable crimes 2023: 62,41,569
+- Crime rate: 448.3 per lakh population
+- Crimes against women: 4,48,211 (rate: 66.2 per lakh women)
+- Road accident deaths: 1,72,890 (474 per day)
+- Conviction rate: 54% of completed trials (~15 same-year convictions per 100 crimes reported)
+- Chargesheet rate: 72.7%
+- Cybercrime FIRs: 86,420 (I4C complaints: 22.68 lakh)
+- Police-population ratio: 154.8 per lakh (UN recommended: 222)
+- Women in police: 12.3% (2,63,762)
 - Average trial duration: 3.5 years
-- Data sources: NCRB "Crime in India" 2022, MoRTH, BPRD, I4C, World Bank
+- Data sources: NCRB "Crime in India" 2023, MoRTH 2023, BPRD 2023, I4C, World Bank
 
 ### Elections (Lok Sabha 1957-2024)
 - Total electors 2024: 96.88 crore (968.8 million)
 - Voter turnout 2024: 65.8% (17th Lok Sabha)
-- Highest ever turnout: 67.5% (2014)
+- Highest ever turnout: 67.4% (2019)
 - BJP seats 2024: 240 (36.6% vote share), INC seats: 99 (21.2%)
 - NDA total: 293 seats, INDIA bloc: 234 seats
 - MPs with criminal cases: 46% (251 out of 543), Serious charges: 31%
@@ -244,16 +244,15 @@ This is an independent civic project built by one person, not affiliated with or
 - RBI State Finances: A Study of Budgets — revenue composition, fiscal deficit, debt
 - Finance Commission of India — tax devolution formulas, grants
 - Census of India (censusindia.gov.in) — decennial census 2011 baseline population, literacy, urbanization
-- National Family Health Survey (NFHS-5, 2019-21) — TFR, IMR, stunting, wasting, immunization by state
-- Sample Registration System (SRS 2023) — birth rate, death rate, IMR annual estimates
+- National Family Health Survey (NFHS-6, 2023-24) — TFR, stunting, wasting, immunization by state (IMR/U5MR retained from NFHS-5)
+- Sample Registration System (SRS 2024) — birth rate, death rate, IMR annual estimates
 - National Population Commission — population projections 2011-2036
 - UDISE+ Flash Statistics 2023-24 (udiseplus.gov.in) — school enrollment, infrastructure, teacher data
 - ASER 2024 (asercentre.org) — learning outcomes and foundational skills assessment
 - PLFS Quarterly Bulletin (mospi.gov.in) — unemployment, LFPR, worker population ratio
-- PLFS Annual Report 2023-24 — state-wise employment indicators
-- RBI KLEMS Database — sectoral employment and output data
+- PLFS Annual Report 2025 — state-wise employment indicators
 - National Health Profile 2022 (cbhidghs.mohfw.gov.in) — hospital infrastructure, PHCs, CHCs, doctors
-- NFHS-5 (rchiips.org/nfhs) — immunization coverage, health indicators by state
+- NFHS-6 (rchiips.org/nfhs) — immunization coverage, health indicators by state
 - MOSPI eSankhyiki CPI API (api.mospi.gov.in/api/cpi/getCPIIndex) — group-wise monthly CPI indices and YoY inflation rates, Base 2012=100. Primary source for CPI by COICOP division (FY 2019+)
 - IMF CPI dataset via DBnomics (db.nomics.world/IMF/CPI) — historical CPI by COICOP division (Food, Housing, Health, Transport, Education) for India, CY 2014-2018
 - SBI/HDFC/ICICI published rate cards — loan spreads over repo rate (home, car, personal loans)
@@ -311,7 +310,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /data/census/2025-26/population.json — State-wise population, density, urban/rural split, decadal growth, national time series
 - /data/census/2025-26/demographics.json — Age structure (young/working/elderly %), dependency ratio, vital stats (birth/death/fertility/life expectancy), urbanization trend
 - /data/census/2025-26/literacy.json — State-wise literacy by gender, national time series
-- /data/census/2025-26/health.json — IMR time series, state-level IMR, NFHS-5 state health (TFR, IMR, U5MR, stunting, wasting, immunization)
+- /data/census/2025-26/health.json — IMR time series, state-level IMR, NFHS-6 state health (TFR, stunting, wasting, immunization; IMR/U5MR retained from NFHS-5)
 - /data/census/2025-26/indicators.json — All census indicators across 4 categories
 
 ### Education
@@ -369,12 +368,12 @@ Every story page has a "Key Takeaways" strip between the hero section and the fi
 Examples:
 - Budget: "₹96/day — What govt. spends on you, daily", "31 paise — Of every rupee spent, borrowed"
 - Economy: "6.5% — How fast the economy grew", "4.0% — How much prices rose (inflation)"
-- RBI: "6.25% — The rate that decides your EMI", "$643B — India's forex safety net"
-- States: "₹2.08L — Average state income per person", "36 — States and UTs, 36 different economies"
+- RBI: "5.25% — The rate that decides your EMI", "$643B — India's forex safety net"
+- States: "₹1.74L — Average state income per person", "36 — States and UTs, 36 different economies"
 - Census: "943 — Girls per 1,000 boys, 57 are 'missing'", "1 in 4 — Indians who can't read or write"
-- Education: "24.8 Cr — Students, more than Brazil's population", "26:1 — Students per teacher"
-- Employment: "~13% — Youth unemployment, 3× the national rate", "~35% — Only 1 in 3 women in workforce"
-- Healthcare: "~48% — You pay half your medical bills from your pocket", "0.5 beds — Per 1,000 (WHO says 3.5)"
+- Education: "24.7 Cr — Students, more than Brazil's population", "24:1 — Students per teacher"
+- Employment: "9.9% — Youth unemployment, over 3× the national rate", "40% — Female LFPR, lower than Bangladesh and Sri Lanka"
+- Healthcare: "~45% — You pay nearly half your medical bills from your pocket", "0.5 beds — Govt beds per 1,000, ~1.6 incl. private (WHO says 3.5)"
 
 ### Question-First Search
 The Cmd+K search overlay indexes 161 curated citizen questions across all 11 domains. Questions are phrased in natural language ("Why are prices rising?", "How much does the government spend on me per day?") and map to specific story page sections with one-sentence answers.

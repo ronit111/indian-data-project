@@ -39,7 +39,7 @@ export function OutOfPocketSection({ data }: OutOfPocketSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-composition mb-2"
         >
-          44 paise of every health rupee
+          45 paise of every health rupee
         </motion.h2>
 
         <motion.p
@@ -48,7 +48,7 @@ export function OutOfPocketSection({ data }: OutOfPocketSectionProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-annotation mb-8 max-w-xl"
         >
-          44 paise of every health rupee comes from patients' own pockets. Not the government. Not an insurer. You. This out-of-pocket rate is among the highest in the world, and it has real consequences: about 5.5 crore Indians are pushed into poverty every year by healthcare costs alone. Families skip treatment, sell assets, borrow money. The rate has improved from over 70 paise in 2000, but remains far above the global average. Ayushman Bharat covers hospitalization for 55 crore citizens — but the everyday doctor visit, the medicines, the outpatient care remain largely uncovered.
+          45 paise of every health rupee comes from patients' own pockets. Not the government. Not an insurer. You. This out-of-pocket rate is among the highest in the world, and it has real consequences: about 5.5 crore Indians are pushed into poverty every year by healthcare costs alone. Families skip treatment, sell assets, borrow money. The rate has improved from over 70 paise in 2000, but remains far above the global average. Ayushman Bharat covers hospitalization for 55 crore citizens — but the everyday doctor visit, the medicines, the outpatient care remain largely uncovered.
         </motion.p>
 
         {oopSeries.length > 0 && (

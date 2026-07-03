@@ -74,7 +74,7 @@ export function DataTable({ data }: DataTableProps) {
         <p className="text-caption">{ministryCount} ministries · {categoryCount} other expenditure heads</p>
         <button
           onClick={exportCSV}
-          className="px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-all duration-150 hover:scale-[1.02] hover:border-[var(--saffron)]"
+          className="px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-[transform,border-color] duration-150 hover:scale-[1.02] hover:border-[var(--saffron)]"
           style={{
             background: 'var(--bg-raised)',
             color: 'var(--text-secondary)',
@@ -170,7 +170,7 @@ function MinistryRow({
   return (
     <>
       <tr
-        className="cursor-pointer transition-all duration-150 hover:bg-[var(--bg-raised)]"
+        className="cursor-pointer transition-colors duration-150 hover:bg-[var(--bg-raised)]"
         style={{
           borderBottom: 'var(--border-divider)',
           borderLeft: expanded ? '2px solid var(--saffron)' : '2px solid transparent',

@@ -35,7 +35,7 @@ export default function EMICalculatorPage() {
     }).catch(() => setLoading(false));
   }, []);
 
-  const repoRate = monetaryPolicy?.currentRate ?? 6.25;
+  const repoRate = monetaryPolicy?.currentRate ?? 5.25;
   const spread = spreads ? spreads.spreads[loanType].typicalSpread : 2.75;
   const effectiveRate = spreads ? getEffectiveRate(repoRate, loanType, spreads) : repoRate + spread;
   const activeRate = customRate ?? effectiveRate;

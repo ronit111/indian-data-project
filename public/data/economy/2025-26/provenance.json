@@ -1,0 +1,93 @@
+{
+  "domain": "economy",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.realGDPGrowth": {
+      "value": 6.5,
+      "unit": "%",
+      "label": "Real GDP growth (FY2024-25)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "NSO Provisional Estimates of National Income, May 2025",
+          "publisher": "National Statistical Office, MoSPI"
+        },
+        {
+          "kind": "document",
+          "name": "Economic Survey 2025-26",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/economicsurvey/"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated from the official estimate",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-02"
+        },
+        {
+          "kind": "check",
+          "name": "Matches the FY2024-25 point in the GDP-growth series",
+          "status": "pass"
+        }
+      ],
+      "basis": "NSO Provisional Estimate (May 2025), superseding the 6.4% First Advance Estimate."
+    },
+    "summary.perCapitaGDP": {
+      "value": 238103,
+      "unit": "₹",
+      "label": "Nominal GDP per person",
+      "chain": [
+        {
+          "kind": "api",
+          "name": "MOSPI eSankhyiki API (National Accounts)",
+          "publisher": "Ministry of Statistics and Programme Implementation",
+          "url": "https://api.mospi.gov.in/",
+          "retrieved": "2026-06-02"
+        },
+        {
+          "kind": "api",
+          "name": "World Bank Development Indicators API",
+          "publisher": "World Bank",
+          "url": "https://api.worldbank.org/",
+          "retrieved": "2026-06-02"
+        },
+        {
+          "kind": "derivation",
+          "name": "nominalGDP ÷ population",
+          "publisher": "Computed at pipeline time, never hardcoded"
+        },
+        {
+          "kind": "check",
+          "name": "perCapitaGDP == round(nominalGDP × 1e7 ÷ population)",
+          "status": "pass"
+        }
+      ]
+    },
+    "summary.cpiInflation": {
+      "value": 4.0,
+      "unit": "%",
+      "label": "CPI inflation projection",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Economic Survey 2025-26",
+          "publisher": "Ministry of Finance, Government of India",
+          "url": "https://www.indiabudget.gov.in/economicsurvey/"
+        },
+        {
+          "kind": "curation",
+          "name": "Curated from the official projection",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-02"
+        },
+        {
+          "kind": "check",
+          "name": "Matches the 2025-26 point in the inflation series",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollTrigger } from '../../hooks/useScrollTrigger.ts';
 import type { ElectionsSummary } from '../../lib/data/schema.ts';
+import { SourceChain } from '../ui/SourceChain.tsx';
 
 interface ElectionsHeroSectionProps {
   summary: ElectionsSummary | null;
@@ -53,7 +54,14 @@ export function ElectionsHeroSection({ summary }: ElectionsHeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="text-hero gradient-text-indigo">
-            {electors} Cr
+            <SourceChain
+              domain="elections"
+              year={summary?.year ?? ''}
+              figureKey="summary.totalElectorsCrore"
+              placement="bottom"
+            >
+              <span className="gradient-text-indigo">{electors} Cr</span>
+            </SourceChain>
           </div>
           <p
             className="text-xl md:text-2xl font-medium mt-2"

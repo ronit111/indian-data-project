@@ -108,12 +108,12 @@ const METRIC_DEFS: MetricDef[] = [
   // Healthcare (from infrastructure.json)
   { key: 'bedsPerLakh', label: 'Hospital Beds', unit: 'per lakh', higherIsBetter: true, domain: 'healthcare' },
   { key: 'doctorsPer10K', label: 'Doctors', unit: 'per 10K', higherIsBetter: true, domain: 'healthcare' },
-  // Health - NFHS-5 (from health.json, disease.json)
+  // Health - NFHS-6 (from health.json, disease.json)
   { key: 'imr', label: 'Infant Mortality (SRS)', unit: 'per 1000', higherIsBetter: false, domain: 'health' },
   { key: 'fullImmunization', label: 'Full Immunization', unit: '%', higherIsBetter: true, domain: 'health' },
   { key: 'stunting', label: 'Stunting', unit: '%', higherIsBetter: false, domain: 'health' },
-  // Environment (from air-quality.json, forest.json, water.json)
-  { key: 'stateAqi', label: 'AQI Average', unit: '', higherIsBetter: false, domain: 'environment' },
+  // Environment (from forest.json, water.json)
+  // Note: state AQI removed — CPCB publishes no annual state-level AQI (untraceable source).
   { key: 'forestCoverPct', label: 'Forest Cover', unit: '% area', higherIsBetter: true, domain: 'environment' },
   { key: 'groundwaterSafe', label: 'Groundwater Stage', unit: '%', higherIsBetter: false, domain: 'environment' },
   // Elections (from turnout.json)
@@ -135,7 +135,7 @@ const PANEL_CONFIG: Record<string, { title: string; accentColor: string }> = {
   education: { title: 'Education', accentColor: '#3B82F6' },
   employment: { title: 'Employment', accentColor: '#F59E0B' },
   healthcare: { title: 'Healthcare Infrastructure', accentColor: '#F43F5E' },
-  health: { title: 'Health Outcomes (NFHS-5)', accentColor: '#F43F5E' },
+  health: { title: 'Health Outcomes (NFHS-6)', accentColor: '#F43F5E' },
   environment: { title: 'Environment', accentColor: '#14B8A6' },
   elections: { title: 'Elections', accentColor: '#6366F1' },
   crime: { title: 'Crime & Safety', accentColor: '#DC2626' },
@@ -250,7 +250,7 @@ const EXTRACTORS: Record<string, Extractor> = {
     return { value: s?.doctorsPer10K ?? null, all };
   },
   imr: (sid, d) => {
-    // Try SRS data first (stateImr), then NFHS-5 (stateHealth)
+    // Try SRS data first (stateImr), then NFHS-6 (stateHealth)
     const srsEntry = d.health?.stateImr.find(
       (x) => x.id === sid || x.id.toUpperCase() === sid.toUpperCase()
     );
@@ -263,7 +263,7 @@ const EXTRACTORS: Record<string, Extractor> = {
     return { value: nfhs?.imr ?? null, all };
   },
   fullImmunization: (sid, d) => {
-    // Try disease.json immunization first, then health.json NFHS-5
+    // Try disease.json immunization first, then health.json NFHS-6
     const immEntry = findInArray(d.disease?.stateImmunization, sid);
     if (immEntry) {
       const all = d.disease?.stateImmunization.map((x) => x.fullImmunization) ?? [];

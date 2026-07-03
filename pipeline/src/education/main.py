@@ -9,7 +9,7 @@ Stages:
 
 Data sources:
   - World Bank Development Indicators (enrollment, literacy, spending, PTR)
-  - UDISE+ Flash Statistics 2023-24 (state-level schools, teachers, infrastructure)
+  - UDISE+ 2024-25 (state-level schools, teachers, infrastructure)
   - ASER 2024 (state-level learning outcomes)
 """
 
@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.education.sources.world_bank import fetch_multiple
 from src.education.sources.curated import (
-    UDISE_2023_24_STATES,
+    UDISE_2024_25_STATES,
     ASER_2024_STATES,
     NATIONAL_TOTALS,
 )
@@ -60,17 +60,17 @@ def run_education_pipeline():
     wb_data = fetch_multiple()
 
     logger.info(f"  World Bank: {sum(len(v) for v in wb_data.values())} total data points")
-    logger.info(f"  Curated: {len(UDISE_2023_24_STATES)} UDISE+ states")
+    logger.info(f"  Curated: {len(UDISE_2024_25_STATES)} UDISE+ states")
     logger.info(f"  Curated: {len(ASER_2024_STATES)} ASER states")
 
     # ── Stage 2: TRANSFORM ──────────────────────────────────────────
     logger.info("Stage 2: TRANSFORM")
 
-    enrollment_data = build_enrollment(wb_data, UDISE_2023_24_STATES, SURVEY_YEAR)
-    quality_data = build_quality(wb_data, UDISE_2023_24_STATES, ASER_2024_STATES, SURVEY_YEAR)
+    enrollment_data = build_enrollment(wb_data, UDISE_2024_25_STATES, SURVEY_YEAR)
+    quality_data = build_quality(wb_data, UDISE_2024_25_STATES, ASER_2024_STATES, SURVEY_YEAR)
     spending_data = build_spending(wb_data, SURVEY_YEAR)
     summary_data = _build_summary(wb_data)
-    indicators_data = _build_indicators(UDISE_2023_24_STATES, ASER_2024_STATES)
+    indicators_data = _build_indicators(UDISE_2024_25_STATES, ASER_2024_STATES)
     glossary_data = _build_glossary()
 
     # ── Stage 3: VALIDATE ───────────────────────────────────────────
@@ -112,6 +112,10 @@ def run_education_pipeline():
     }
 
     paths = publish_all(outputs)
+    # Provenance sidecar: recomputes integrity checks against the
+    # JSONs just published; a failing check aborts the run (fail-closed).
+    from src.publish.provenance import publish_provenance
+    publish_provenance("education", SURVEY_YEAR)
     logger.info(f"Published {len(paths)} files")
 
     logger.info("=" * 60)
@@ -124,7 +128,7 @@ def _build_summary(wb_data: dict) -> dict:
     edu_spend_ts = wb_data.get("edu_spend_gdp", [])
     latest_spend = edu_spend_ts[-1]["value"] if edu_spend_ts else 3.5
 
-    sorted_states = sorted(UDISE_2023_24_STATES, key=lambda s: s["totalStudents"], reverse=True)
+    sorted_states = sorted(UDISE_2024_25_STATES, key=lambda s: s["totalStudents"], reverse=True)
     top5 = [{"name": s["name"], "students": s["totalStudents"]} for s in sorted_states[:5]]
 
     return {
@@ -138,7 +142,7 @@ def _build_summary(wb_data: dict) -> dict:
         "educationSpendGDP": round(latest_spend, 1),
         "topEnrolledStates": top5,
         "lastUpdated": date.today().isoformat(),
-        "source": "UDISE+ 2023-24 + World Bank + ASER 2024",
+        "source": "UDISE+ 2024-25 + World Bank + ASER 2024",
     }
 
 
@@ -153,7 +157,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerPrimary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "ger_secondary",
@@ -161,7 +165,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerSecondary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "ger_higher_sec",
@@ -169,7 +173,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["gerHigherSec"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "dropout_primary",
@@ -177,7 +181,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dropoutPrimary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "dropout_secondary",
@@ -185,7 +189,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "enrollment",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["dropoutSecondary"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     # Quality category
@@ -212,7 +216,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["ptr"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "schools_computers",
@@ -220,7 +224,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["schoolsWithComputers"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "schools_internet",
@@ -228,15 +232,15 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["schoolsWithInternet"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "girls_toilets",
-        "name": "Schools with Girls' Toilets",
+        "name": "Schools with Functional Girls' Toilets",
         "category": "infrastructure",
         "unit": "%",
         "states": [{"id": s["id"], "name": s["name"], "value": s["girlsToilets"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     # Spending category
@@ -246,7 +250,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "spending",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["totalStudents"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
     indicators.append({
         "id": "total_teachers",
@@ -254,7 +258,7 @@ def _build_indicators(udise_states: list[dict], aser_states: list[dict]) -> dict
         "category": "spending",
         "unit": "",
         "states": [{"id": s["id"], "name": s["name"], "value": s["totalTeachers"]} for s in udise_states],
-        "source": "UDISE+ 2023-24",
+        "source": "UDISE+ 2024-25",
     })
 
     return {
@@ -273,8 +277,8 @@ def _build_glossary() -> dict:
                 "id": "ger",
                 "term": "Gross Enrollment Ratio (GER)",
                 "simple": "The total number of students enrolled at a level, as a percentage of the age-appropriate population.",
-                "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~93% (UDISE+ 2023-24, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~77% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
-                "inContext": "India's primary GER: ~93% (UDISE+ 2023-24, post-SDMIS). Secondary: ~77%. Higher secondary: ~57%.",
+                "detail": "GER can exceed 100% because it includes over-age and under-age students (repeaters, late starters). India's primary GER is ~91% (UDISE+ 2024-25, post-SDMIS methodology change; was ~103% before 2022-23). Secondary GER at ~79% reveals the drop-off. GER doesn't measure whether enrolled students actually attend or learn — that's where ASER and attendance data matter.",
+                "inContext": "India's primary GER: ~91% (UDISE+ 2024-25, post-SDMIS). Secondary: ~79%. Higher secondary: ~58%.",
                 "relatedTerms": ["ner", "dropout-rate", "udise"],
             },
             {
@@ -289,16 +293,16 @@ def _build_glossary() -> dict:
                 "id": "dropout-rate",
                 "term": "Dropout Rate",
                 "simple": "The percentage of students who leave school before completing a level.",
-                "detail": "Calculated from UDISE+ transition rates: the percentage of students enrolled in one year who don't appear in the next year's records. India's primary dropout is low (~1.9%) but secondary jumps to ~14%. The cliff steepens at higher secondary (~20%). Dropouts are driven by economic pressure (child labor), distance to school, quality perception, and for girls, early marriage.",
-                "inContext": "India: Primary dropout 1.9% → Secondary 14.1% → Higher secondary ~20%",
+                "detail": "Calculated from UDISE+ transition rates: the percentage of students enrolled in one year who don't appear in the next year's records. India's primary dropout is low (0.3%, UDISE+ 2024-25) but it climbs to 3.5% at upper primary and 11.5% at secondary — the cliff comes after Class 8. Dropouts are driven by economic pressure (child labor), distance to school, quality perception, and for girls, early marriage.",
+                "inContext": "India: Primary dropout 0.3% → Upper Primary 3.5% → Secondary 11.5% (UDISE+ 2024-25)",
                 "relatedTerms": ["ger", "out-of-school", "rte"],
             },
             {
                 "id": "ptr",
                 "term": "Pupil-Teacher Ratio (PTR)",
                 "simple": "The average number of students per teacher.",
-                "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is ~25:1, but this masks gaps: Jharkhand has 35:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
-                "inContext": "National PTR: 25:1. Bihar: 32:1. HP: 14:1. RTE target: 30:1.",
+                "detail": "RTE Act mandates PTR of 30:1 for primary and 35:1 for upper primary. National average is 24:1, but this masks gaps: Jharkhand has 36:1 while Himachal Pradesh has 14:1. A high PTR means less individual attention, more rote learning, and lower learning outcomes. PTR also doesn't capture teacher absenteeism, which ASER surveys estimate at 15-25% on any given day.",
+                "inContext": "National PTR: 24:1. Bihar: 30:1. HP: 14:1. RTE target: 30:1.",
                 "relatedTerms": ["rte", "udise", "aser"],
             },
             {
@@ -329,7 +333,7 @@ def _build_glossary() -> dict:
                 "id": "nep",
                 "term": "National Education Policy (NEP) 2020",
                 "simple": "India's new education policy replacing the 34-year-old policy, restructuring schooling into a 5+3+3+4 model.",
-                "detail": "NEP 2020 replaces the 10+2 structure with 5+3+3+4 (Foundational: ages 3-8, Preparatory: 8-11, Middle: 11-14, Secondary: 14-18). Key goals: foundational literacy/numeracy by Class 3, mother tongue instruction until Class 5, coding from Class 6, flexible board exams, 6% of GDP target for education spending (currently ~3.5%). Implementation is phased and varies by state.",
+                "detail": "NEP 2020 replaces the 10+2 structure with 5+3+3+4 (Foundational: ages 3-8, Preparatory: 8-11, Middle: 11-14, Secondary: 14-18). Key goals: foundational literacy/numeracy by Class 3, mother tongue instruction until Class 5, coding from Class 6, flexible board exams, 6% of GDP target for education spending (currently ~4.1%). Implementation is phased and varies by state.",
                 "inContext": "NEP 2020 targets: 100% GER by 2030, 6% GDP education spending, mother tongue instruction",
                 "relatedTerms": ["rte", "foundational-literacy", "education-spending"],
             },
@@ -337,8 +341,8 @@ def _build_glossary() -> dict:
                 "id": "udise",
                 "term": "UDISE+ (Unified District Information System for Education Plus)",
                 "simple": "India's comprehensive school census, covering every school from pre-primary to higher secondary.",
-                "detail": "UDISE+ collects data from 14.89 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
-                "inContext": "UDISE+ 2023-24: 14.72 lakh schools, 98.08 lakh teachers, 24.80 crore students",
+                "detail": "UDISE+ collects data from 14.71 lakh schools annually — enrollment, teachers, infrastructure, examination results. It's the primary data source for education planning. The '+' signifies real-time data entry (since 2018-19) vs. the older paper-based system. UDISE+ is to education what the Census is to demographics: the foundational administrative dataset.",
+                "inContext": "UDISE+ 2024-25: 14.71 lakh schools, 1.01 crore teachers, 24.69 crore students",
                 "relatedTerms": ["ger", "ptr", "rte"],
             },
             {
@@ -361,8 +365,8 @@ def _build_glossary() -> dict:
                 "id": "education-spending",
                 "term": "Education Spending (% of GDP)",
                 "simple": "How much of the country's total economic output is spent on education by the government.",
-                "detail": "India spends about 3.5% of GDP on education — below the NEP 2020 target of 6% and below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
-                "inContext": "India: ~3.5% GDP. NEP target: 6%. Global average: ~4.3%.",
+                "detail": "India spends about 4.1% of GDP on education — below the NEP 2020 target of 6% and just below the global average of ~4.3%. The Kothari Commission (1966) first recommended 6%. For context: the US spends ~5%, UK ~5.5%, Brazil ~6%. Low spending per student means overcrowded classrooms, undertrained teachers, and poor infrastructure in government schools.",
+                "inContext": "India: ~4.1% GDP. NEP target: 6%. Global average: ~4.3%.",
                 "relatedTerms": ["nep", "ptr", "udise"],
             },
             {

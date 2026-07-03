@@ -22,82 +22,25 @@ IMPORTANT: Every number must be cross-checked against primary source documents.
 This file is manually curated.
 """
 
-# ── CPCB — State-wise Annual Average AQI 2023 ────────────────────
-# Source: CPCB National Air Quality Index (NAQI) Bulletin 2023
-# AQI scale: 0-50 Good, 51-100 Satisfactory, 101-200 Moderate,
-#   201-300 Poor, 301-400 Very Poor, 401-500 Severe
-# Values represent annual average AQI across monitoring stations in each state.
-# Data from CPCB's continuous ambient air quality monitoring stations (CAAQMS).
+# ── CPCB — Annual AQI tables REMOVED (untraceable / mislabeled) ──
+# These two tables (state-wise annual-average AQI, and a "top 30 polluted
+# cities" annual-AQI list) were removed after a data-integrity review found
+# them untraceable to any CPCB publication:
+#   1. CPCB does NOT publish state-wise annual-average AQI. The NAQI is a
+#      *daily, city/station-level* index — there is no annual state rollup,
+#      and no "CPCB NAQI Bulletin 2023" containing such a table exists.
+#   2. The city list mirrored IQAir's 2023 PM2.5 ranking (Begusarai #1) but
+#      relabeled µg/m3 PM2.5 as "AQI" with numbers that match neither CPCB,
+#      IQAir, nor any AQI conversion (e.g. Begusarai's real IQAir PM2.5 of
+#      118.9 µg/m3 converts to ~AQI 296, not the listed 312).
+# The air-quality section now shows only the World Bank PM2.5 annual-mean
+# series (traceable) plus a link to CPCB's live NAQI portal. Real-time,
+# station-level AQI: https://airquality.cpcb.gov.in/
+# Kept as empty lists so existing imports/transform signatures stay intact.
 
-CPCB_AQI_STATES = [
-    {"id": "DL", "name": "Delhi", "aqi": 263, "category": "Poor"},
-    {"id": "UP", "name": "Uttar Pradesh", "aqi": 196, "category": "Moderate"},
-    {"id": "BR", "name": "Bihar", "aqi": 188, "category": "Moderate"},
-    {"id": "HR", "name": "Haryana", "aqi": 179, "category": "Moderate"},
-    {"id": "RJ", "name": "Rajasthan", "aqi": 156, "category": "Moderate"},
-    {"id": "WB", "name": "West Bengal", "aqi": 151, "category": "Moderate"},
-    {"id": "MP", "name": "Madhya Pradesh", "aqi": 143, "category": "Moderate"},
-    {"id": "JH", "name": "Jharkhand", "aqi": 141, "category": "Moderate"},
-    {"id": "PB", "name": "Punjab", "aqi": 139, "category": "Moderate"},
-    {"id": "MH", "name": "Maharashtra", "aqi": 126, "category": "Moderate"},
-    {"id": "CG", "name": "Chhattisgarh", "aqi": 122, "category": "Moderate"},
-    {"id": "OD", "name": "Odisha", "aqi": 118, "category": "Moderate"},
-    {"id": "GJ", "name": "Gujarat", "aqi": 115, "category": "Moderate"},
-    {"id": "TS", "name": "Telangana", "aqi": 108, "category": "Moderate"},
-    {"id": "AP", "name": "Andhra Pradesh", "aqi": 96, "category": "Satisfactory"},
-    {"id": "TN", "name": "Tamil Nadu", "aqi": 89, "category": "Satisfactory"},
-    {"id": "KA", "name": "Karnataka", "aqi": 86, "category": "Satisfactory"},
-    {"id": "UK", "name": "Uttarakhand", "aqi": 84, "category": "Satisfactory"},
-    {"id": "AS", "name": "Assam", "aqi": 79, "category": "Satisfactory"},
-    {"id": "KL", "name": "Kerala", "aqi": 72, "category": "Satisfactory"},
-    {"id": "GA", "name": "Goa", "aqi": 62, "category": "Satisfactory"},
-    {"id": "HP", "name": "Himachal Pradesh", "aqi": 58, "category": "Satisfactory"},
-    {"id": "JK", "name": "Jammu & Kashmir", "aqi": 55, "category": "Satisfactory"},
-    {"id": "SK", "name": "Sikkim", "aqi": 42, "category": "Good"},
-    {"id": "MZ", "name": "Mizoram", "aqi": 38, "category": "Good"},
-    {"id": "ML", "name": "Meghalaya", "aqi": 36, "category": "Good"},
-    {"id": "NL", "name": "Nagaland", "aqi": 34, "category": "Good"},
-    {"id": "AR", "name": "Arunachal Pradesh", "aqi": 28, "category": "Good"},
-    {"id": "MN", "name": "Manipur", "aqi": 32, "category": "Good"},
-    {"id": "TR", "name": "Tripura", "aqi": 45, "category": "Good"},
-]
+CPCB_AQI_STATES: list[dict] = []
 
-# ── CPCB — Top 30 Most Polluted Cities (Annual Average AQI 2023) ─
-# Source: CPCB NAQI Bulletin / IQAir World Air Quality Report 2023
-# WHO guideline PM2.5: 5 μg/m3 annual. India NAAQS: 40 μg/m3.
-
-CPCB_AQI_CITIES = [
-    {"city": "Begusarai", "state": "Bihar", "aqi": 312},
-    {"city": "Delhi", "state": "Delhi", "aqi": 263},
-    {"city": "Guwahati", "state": "Assam", "aqi": 248},
-    {"city": "Patna", "state": "Bihar", "aqi": 240},
-    {"city": "Muzaffarpur", "state": "Bihar", "aqi": 235},
-    {"city": "Hapur", "state": "Uttar Pradesh", "aqi": 228},
-    {"city": "Ghaziabad", "state": "Uttar Pradesh", "aqi": 225},
-    {"city": "Lucknow", "state": "Uttar Pradesh", "aqi": 220},
-    {"city": "Noida", "state": "Uttar Pradesh", "aqi": 216},
-    {"city": "Greater Noida", "state": "Uttar Pradesh", "aqi": 213},
-    {"city": "Bulandshahr", "state": "Uttar Pradesh", "aqi": 210},
-    {"city": "Faridabad", "state": "Haryana", "aqi": 207},
-    {"city": "Gurugram", "state": "Haryana", "aqi": 204},
-    {"city": "Kanpur", "state": "Uttar Pradesh", "aqi": 198},
-    {"city": "Varanasi", "state": "Uttar Pradesh", "aqi": 195},
-    {"city": "Agra", "state": "Uttar Pradesh", "aqi": 192},
-    {"city": "Jodhpur", "state": "Rajasthan", "aqi": 186},
-    {"city": "Jaipur", "state": "Rajasthan", "aqi": 178},
-    {"city": "Kolkata", "state": "West Bengal", "aqi": 175},
-    {"city": "Muzaffarnagar", "state": "Uttar Pradesh", "aqi": 172},
-    {"city": "Bhiwadi", "state": "Rajasthan", "aqi": 168},
-    {"city": "Hisar", "state": "Haryana", "aqi": 165},
-    {"city": "Dhanbad", "state": "Jharkhand", "aqi": 162},
-    {"city": "Meerut", "state": "Uttar Pradesh", "aqi": 159},
-    {"city": "Rohtak", "state": "Haryana", "aqi": 156},
-    {"city": "Amritsar", "state": "Punjab", "aqi": 152},
-    {"city": "Ludhiana", "state": "Punjab", "aqi": 148},
-    {"city": "Mumbai", "state": "Maharashtra", "aqi": 142},
-    {"city": "Raipur", "state": "Chhattisgarh", "aqi": 138},
-    {"city": "Bhopal", "state": "Madhya Pradesh", "aqi": 134},
-]
+CPCB_AQI_CITIES: list[dict] = []
 
 # ── FSI — India State of Forest Report (ISFR) 2023 ───────────────
 # Source: Forest Survey of India (fsi.nic.in/isfr-2023)
@@ -113,9 +56,9 @@ CPCB_AQI_CITIES = [
 # Verified 2026-03-05 by reading every state chapter from the 382-page PDF.
 
 FSI_FOREST_STATES = [
-    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.11, "changeKm2": -371.54},
+    {"id": "MP", "name": "Madhya Pradesh", "forestCoverKm2": 77073, "pctGeographicArea": 25.00, "changeKm2": -371.54},
     {"id": "AR", "name": "Arunachal Pradesh", "forestCoverKm2": 65882, "pctGeographicArea": 78.67, "changeKm2": -91.17},
-    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55812, "pctGeographicArea": 41.21, "changeKm2": -19.13},
+    {"id": "CG", "name": "Chhattisgarh", "forestCoverKm2": 55812, "pctGeographicArea": 41.28, "changeKm2": -19.13},
     {"id": "MH", "name": "Maharashtra", "forestCoverKm2": 50859, "pctGeographicArea": 16.53, "changeKm2": -54.47},
     {"id": "OD", "name": "Odisha", "forestCoverKm2": 52434, "pctGeographicArea": 33.68, "changeKm2": 151.89},
     {"id": "KA", "name": "Karnataka", "forestCoverKm2": 39254, "pctGeographicArea": 20.47, "changeKm2": 147.70},
@@ -199,8 +142,8 @@ CEA_ENERGY_MIX = [
     },
     {
         "year": "2024",
-        "coal": 213950, "gas": 24824, "nuclear": 7480, "hydro": 47073,
-        "solar": 82788, "wind": 46160, "biomass": 10544, "smallHydro": 5011,
+        "coal": 210969, "gas": 25038, "nuclear": 8180, "hydro": 46928,
+        "solar": 81814, "wind": 46160, "biomass": 10544, "smallHydro": 5011,
     },
 ]
 
@@ -269,9 +212,9 @@ CGWB_GROUNDWATER_STATES = [
 
 NATIONAL_TOTALS = {
     "co2PerCapita": 1.9,                # tonnes, World Bank 2021
-    "forestPct": 25.17,                  # ISFR 2023
+    "forestPct": 21.76,                  # ISFR 2023 forest cover (7,15,343 km2). NOTE: 25.17% is forest+TREE cover; forest cover alone is 21.76%.
     "renewablesPct": 43.4,              # CEA Mar 2024 (solar+wind+hydro+bio+smallHydro / total)
     "pm25": 53.3,                        # μg/m3, World Bank 2021
-    "coalPct": 48.8,                    # CEA Mar 2024 (coal / total installed capacity)
+    "coalPct": 47.73,                   # CEA 31.03.2024 (coal-only / 441,970 MW grand total)
     "ghgTotal": 3347.9,                 # Mt CO2e, World Bank 2021
 }

@@ -1,0 +1,71 @@
+{
+  "domain": "census",
+  "year": "2025-26",
+  "generated": "2026-07-03",
+  "spec": 1,
+  "figures": {
+    "summary.totalPopulation": {
+      "value": 1450935791,
+      "unit": "people",
+      "label": "Population of India",
+      "chain": [
+        {
+          "kind": "api",
+          "name": "World Bank Development Indicators API",
+          "publisher": "World Bank",
+          "url": "https://api.worldbank.org/",
+          "retrieved": "2026-06-04"
+        },
+        {
+          "kind": "check",
+          "name": "Equals the latest point of the published population series",
+          "status": "pass"
+        }
+      ],
+      "basis": "World Bank estimate; India's last full census was 2011."
+    },
+    "summary.literacyRate": {
+      "value": 74.04,
+      "unit": "%",
+      "label": "Literacy rate (age 7+)",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Census of India 2011 — Primary Census Abstract",
+          "publisher": "Office of the Registrar General & Census Commissioner",
+          "url": "https://censusindia.gov.in/census.website/data/census-tables"
+        },
+        {
+          "kind": "curation",
+          "name": "Official Census 2011 national figure",
+          "publisher": "Indian Data Project pipeline",
+          "published": "2026-06-04"
+        }
+      ],
+      "basis": "The official national figure — India has published no full census since 2011."
+    },
+    "summary.sexRatio": {
+      "value": 943,
+      "unit": "females per 1,000 males",
+      "label": "Sex ratio",
+      "chain": [
+        {
+          "kind": "document",
+          "name": "Census of India 2011 — Primary Census Abstract",
+          "publisher": "Office of the Registrar General & Census Commissioner",
+          "url": "https://censusindia.gov.in/census.website/data/census-tables"
+        },
+        {
+          "kind": "derivation",
+          "name": "Population-weighted average of state sex ratios",
+          "publisher": "Computed at pipeline time, never hardcoded"
+        },
+        {
+          "kind": "check",
+          "name": "Recomputes from the published state tables (±1)",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+}

@@ -35,6 +35,6 @@ export const YOUTH_EMPLOYMENT: StoryKitDef = {
     "Rural employment guarantee (MGNREGA) demand as an economic distress indicator.",
     "Which states are creating the most — and fewest — formal sector jobs?",
   ],
-  dataSources: ['PLFS (MoSPI)', 'RBI KLEMS', 'World Bank', 'UDISE+'],
+  dataSources: ['PLFS (MoSPI)', 'World Bank', 'UDISE+'],
   lastUpdated: '2025-07',
 };

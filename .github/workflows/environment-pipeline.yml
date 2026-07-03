@@ -2,13 +2,13 @@ name: Environment Pipeline
 
 # ── Schedule: aligned to environment data release cycles ─────────────
 # World Bank environment indicators update mid-year.
-# CPCB AQI data is published annually.
+# Air quality is the World Bank PM2.5 annual-mean series (no curated AQI).
 # ISFR publishes biennially (next ISFR 2025 expected ~2026).
 # CEA installed capacity reports publish monthly/annually.
 # CWC/CGWB data updates annually.
 #
 # Quarterly runs catch World Bank updates and any curated data commits.
-# Curated data (CPCB AQI, FSI forest, CEA capacity, CWC/CGWB water)
+# Curated data (FSI forest, CEA capacity, CWC/CGWB water)
 # lives in pipeline source files and must be updated when new reports publish.
 
 on:
@@ -46,12 +46,15 @@ jobs:
       - name: Install pipeline dependencies
         run: |
           cd pipeline
-          pip install requests pydantic
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Run Environment pipeline
         run: |
           cd pipeline
           python src/environment/main.py
+
+      - name: Data diff guard (fail-closed — no commit on structural change)
+        run: python pipeline/src/common/diff_guard.py public/data/environment
 
       - name: Check for data changes
         id: changes
@@ -66,7 +69,7 @@ jobs:
           git add public/data/environment/
           git commit -m "data: update Environment data $(date +%Y-%m-%d)
 
-          Automated pipeline run. Sources: World Bank API + curated CPCB/ISFR/CEA/CWC/CGWB data.
+          Automated pipeline run. Sources: MOSPI Energy API + World Bank API + curated ISFR/CEA/CWC/CGWB data.
           Triggered by: ${{ github.event_name }}"
           git push
 

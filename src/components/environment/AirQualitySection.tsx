@@ -130,6 +130,32 @@ export function AirQualitySection({ data }: AirQualitySectionProps) {
           </div>
         )}
 
+        {!hasStateAQI && cityDots.length === 0 && (
+          <div
+            className="mt-10 p-5 rounded-lg max-w-2xl"
+            style={{ background: 'var(--bg-raised)', border: '1px solid rgba(255,255,255,0.06)' }}
+          >
+            <p className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+              City &amp; state air quality
+            </p>
+            <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+              India's Air Quality Index (AQI) is a <strong>daily</strong>, station-level index — CPCB
+              does not publish an annual-average AQI by state, so we don't show one here rather than
+              present a number that can't be traced to source. For live readings across 250+ cities,
+              see the official CPCB portal.
+            </p>
+            <a
+              href="https://airquality.cpcb.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium inline-flex items-center gap-1 hover:underline"
+              style={{ color: 'var(--teal)' }}
+            >
+              CPCB National Air Quality Index portal →
+            </a>
+          </div>
+        )}
+
         <RelatedTopics sectionId="air-quality" domain="environment" />
         <CrossDomainLink domain="environment" sectionId="air-quality" />
 

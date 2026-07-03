@@ -7,23 +7,33 @@
       "term": "Repo Rate",
       "simple": "The interest rate at which the RBI lends money to banks overnight.",
       "detail": "When banks need short-term funds, they borrow from the RBI by pledging government securities as collateral (a 'repurchase agreement'). The repo rate is the RBI's primary tool for controlling inflation. Raising the repo rate makes borrowing costlier, slowing spending and cooling prices. Cutting it does the opposite.",
-      "inContext": "6.25% (as of February 2025, cut from 6.50%)",
-      "relatedTerms": ["reverse-repo-rate", "mpc", "monetary-policy-stance"]
+      "inContext": "5.25% (as of December 2025, after four cuts from 6.50%)",
+      "relatedTerms": [
+        "reverse-repo-rate",
+        "mpc",
+        "monetary-policy-stance"
+      ]
     },
     {
       "id": "reverse-repo-rate",
       "term": "Reverse Repo Rate",
       "simple": "The interest rate the RBI pays banks for parking their excess cash with it.",
       "detail": "When banks have more money than they can lend, they deposit it with the RBI and earn the reverse repo rate. This acts as a floor for short-term interest rates — banks won't lend below what they can earn risk-free from the RBI. Since April 2022, the Standing Deposit Facility (SDF) has replaced the reverse repo rate as the effective floor of the Liquidity Adjustment Facility (LAF). The reverse repo rate remains formally in the framework but is no longer the operative floor rate.",
-      "relatedTerms": ["repo-rate", "crr"]
+      "relatedTerms": [
+        "repo-rate",
+        "crr"
+      ]
     },
     {
       "id": "crr",
       "term": "CRR (Cash Reserve Ratio)",
       "simple": "The percentage of deposits banks must keep with the RBI as cash — they can't lend this out.",
       "detail": "If CRR is 4%, a bank with ₹100 Cr in deposits must park ₹4 Cr with the RBI. Banks earn zero interest on CRR deposits. When the RBI raises CRR, banks have less money to lend, tightening liquidity. When it cuts CRR, more money flows into the lending system.",
-      "inContext": "4.0% (reduced from 4.5% in December 2024)",
-      "relatedTerms": ["slr", "repo-rate"]
+      "inContext": "3.0% (cut in phases during 2025, from 4.5% in late 2024)",
+      "relatedTerms": [
+        "slr",
+        "repo-rate"
+      ]
     },
     {
       "id": "slr",
@@ -31,22 +41,31 @@
       "simple": "The percentage of deposits banks must hold in safe assets like government bonds.",
       "detail": "SLR requires banks to keep a fraction of their deposits in liquid assets — mainly government securities, treasury bills, and gold. Unlike CRR (idle cash with RBI), SLR assets earn interest. SLR ensures banks always have a cushion of safe assets and also creates a captive market for government bonds.",
       "inContext": "18.0%",
-      "relatedTerms": ["crr"]
+      "relatedTerms": [
+        "crr"
+      ]
     },
     {
       "id": "mpc",
       "term": "MPC (Monetary Policy Committee)",
       "simple": "The six-member committee that decides the repo rate — India's most important interest rate decision.",
       "detail": "The MPC meets six times a year (roughly every two months) and votes on whether to raise, cut, or hold the repo rate. It has three members from the RBI (including the Governor, who chairs it and has a casting vote) and three external members appointed by the government. Decisions are by majority vote.",
-      "relatedTerms": ["repo-rate", "monetary-policy-stance", "inflation-targeting"]
+      "relatedTerms": [
+        "repo-rate",
+        "monetary-policy-stance",
+        "inflation-targeting"
+      ]
     },
     {
       "id": "monetary-policy-stance",
       "term": "Monetary Policy Stance",
       "simple": "The RBI's signal about which direction interest rates are likely to move next.",
       "detail": "The stance tells markets what to expect. 'Accommodative' means the RBI is biased toward cutting rates (supporting growth). 'Neutral' means no bias either way. 'Withdrawal of accommodation' means the RBI is biased toward raising rates (fighting inflation). 'Tightening' means active rate hikes. The stance change often precedes actual rate changes.",
-      "inContext": "Neutral (as of February 2025)",
-      "relatedTerms": ["mpc", "repo-rate"]
+      "inContext": "Neutral (as of December 2025)",
+      "relatedTerms": [
+        "mpc",
+        "repo-rate"
+      ]
     },
     {
       "id": "inflation-targeting",
@@ -54,7 +73,10 @@
       "simple": "The RBI's legal mandate to keep CPI inflation at 4%, with a tolerance band of 2-6%.",
       "detail": "Since 2016, the RBI is legally required to target 4% CPI inflation (±2%). If inflation stays above 6% or below 2% for three consecutive quarters, the MPC must explain why to Parliament. This framework replaced the earlier ad hoc approach and gives markets a clear anchor for expectations. The 4% target reflects a balance between price stability and growth.",
       "inContext": "CPI inflation was 4.95% (latest reading)",
-      "relatedTerms": ["mpc", "cpi-inflation"]
+      "relatedTerms": [
+        "mpc",
+        "cpi-inflation"
+      ]
     },
     {
       "id": "cpi-inflation",
@@ -62,7 +84,9 @@
       "simple": "The rate at which consumer prices are rising — what the RBI watches most closely.",
       "detail": "Consumer Price Index inflation measures the year-on-year change in prices of a household basket (food, fuel, housing, clothing, etc.). The RBI targets CPI because it directly reflects what citizens experience. Food inflation (which has a 46% weight in India's CPI) is the most volatile component and often drives headline numbers.",
       "inContext": "4.95% (latest reading)",
-      "relatedTerms": ["inflation-targeting"]
+      "relatedTerms": [
+        "inflation-targeting"
+      ]
     },
     {
       "id": "m3-money-supply",
@@ -70,29 +94,39 @@
       "simple": "All the money circulating in the economy — cash, bank deposits, and other liquid assets combined.",
       "detail": "M3 is the broadest measure of money in the economy. It includes currency with the public, demand deposits (savings/current accounts), time deposits (fixed deposits), and other deposits with the RBI. M3 growth indicates how fast the money supply is expanding — too fast can fuel inflation, too slow can choke growth.",
       "inContext": "11.3% growth (2024-25)",
-      "relatedTerms": ["crr", "repo-rate"]
+      "relatedTerms": [
+        "crr",
+        "repo-rate"
+      ]
     },
     {
       "id": "forex-reserves",
       "term": "Forex Reserves",
       "simple": "India's war chest of foreign currencies and gold, held by the RBI.",
       "detail": "Foreign exchange reserves include foreign currency assets (mainly US dollars, euros, pounds), gold, SDRs (IMF's special drawing rights), and India's reserve position at the IMF. The RBI uses these reserves to stabilize the rupee during volatile periods. Larger reserves provide a bigger buffer against external shocks like oil price spikes or capital flight.",
-      "inContext": "$643 billion (as of February 2026)",
-      "relatedTerms": ["exchange-rate"]
+      "inContext": "$643 billion (FY2024-25, RBI Handbook / World Bank)",
+      "relatedTerms": [
+        "exchange-rate"
+      ]
     },
     {
       "id": "exchange-rate",
       "term": "INR/USD Exchange Rate",
       "simple": "How many rupees it costs to buy one US dollar.",
       "detail": "India has a 'managed float' exchange rate — the rupee's value is determined by market forces (demand and supply of dollars), but the RBI intervenes to prevent excessive volatility. A weaker rupee makes imports costlier (raising inflation) but helps exporters. The RBI uses forex reserves to smooth sharp movements.",
-      "relatedTerms": ["forex-reserves"]
+      "relatedTerms": [
+        "forex-reserves"
+      ]
     },
     {
       "id": "basis-points",
       "term": "Basis Points (bps)",
       "simple": "A way to measure tiny changes in interest rates. 100 basis points = 1 percentage point.",
       "detail": "When the RBI cuts the repo rate by 25 basis points, it means a cut of 0.25 percentage points (e.g., from 6.50% to 6.25%). The term exists because saying '0.25%' can be confused with '0.25% of the rate' (which would be much smaller). In financial markets, even 25 bps can move billions of rupees in bond values.",
-      "relatedTerms": ["repo-rate", "mpc"]
+      "relatedTerms": [
+        "repo-rate",
+        "mpc"
+      ]
     }
   ]
 }

@@ -49,12 +49,15 @@ jobs:
       - name: Install pipeline dependencies
         run: |
           cd pipeline
-          pip install requests pydantic
+          pip install -r requirements.lock && pip install -e . --no-deps
 
       - name: Run RBI pipeline
         run: |
           cd pipeline
           python src/rbi/main.py
+
+      - name: Data diff guard (fail-closed — no commit on structural change)
+        run: python pipeline/src/common/diff_guard.py public/data/rbi
 
       - name: Check for data changes
         id: changes
