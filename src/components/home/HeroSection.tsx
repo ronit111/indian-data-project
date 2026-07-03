@@ -14,8 +14,10 @@ export function HeroSection({ summary }: HeroSectionProps) {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative"
     >
+      {/* Decorative glows — clipped here so the section itself can let the provenance popover overflow */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {/* Radial glow behind the counter — Structify.ai-style */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
@@ -37,6 +39,8 @@ export function HeroSection({ summary }: HeroSectionProps) {
           background: 'radial-gradient(circle, rgba(74,234,220,0.03) 0%, transparent 60%)',
         }}
       />
+
+      </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Overline */}
