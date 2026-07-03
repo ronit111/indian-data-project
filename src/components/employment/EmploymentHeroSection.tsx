@@ -73,7 +73,7 @@ export function EmploymentHeroSection({ summary }: EmploymentHeroSectionProps) {
           className="text-lg md:text-xl mt-6 max-w-xl mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Low unemployment. High growth. Sounds like a success story. But 58% are self-employed — and most of that is subsistence.
+          Low unemployment. High growth. Sounds like a success story. But 56% are self-employed — and most of that is subsistence.
         </motion.p>
 
         {/* Stat badges */}

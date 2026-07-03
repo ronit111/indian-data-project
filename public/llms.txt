@@ -83,7 +83,7 @@ This is an independent civic project built by one person, not affiliated with or
 - /census/glossary — Plain-language definitions of demographic terms: census, decadal growth, sex ratio, dependency ratio, infant mortality rate, total fertility rate, literacy rate, urbanization, NFHS, SRS.
 
 ### Education Domain
-- /education — Scrollytelling narrative: enrollment triumph (primary/secondary/tertiary GER trends), gender convergence in enrollment, dropout cliff (primary 1.9% → secondary 14.1%), learning quality gap (ASER outcomes), teacher challenge (pupil-teacher ratios), education spending vs global peers
+- /education — Scrollytelling narrative: enrollment triumph (primary/secondary/tertiary GER trends), gender convergence in enrollment, dropout cliff (primary 0.3% → secondary 11.5%, UDISE+ 2024-25), learning quality gap (ASER outcomes), teacher challenge (pupil-teacher ratios), education spending vs global peers
 - /education/explore — Browseable indicator explorer with categories: enrollment, quality, infrastructure, spending. Select any indicator to compare across 32 states/UTs.
 - /education/methodology — Data sources (UDISE+ 2024-25, ASER 2024, World Bank), indicator definitions, limitations
 - /education/glossary — Plain-language definitions of education terms: GER, NER, dropout rate, PTR, ASER, UDISE, NEP 2020, foundational literacy, RTE Act, and more.

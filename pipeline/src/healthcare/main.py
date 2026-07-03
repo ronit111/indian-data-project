@@ -274,8 +274,8 @@ def _build_glossary() -> dict:
                 "id": "ayushman-bharat",
                 "term": "Ayushman Bharat (PM-JAY)",
                 "simple": "World's largest government health insurance scheme, covering ₹5 lakh per family per year for hospitalization.",
-                "detail": "Launched 2018. Covers ~12 crore families (50 crore individuals) — the bottom 40% by income. Provides cashless hospitalization at empanelled hospitals (both public and private). Over 7 crore hospitalizations authorized since launch. Two components: (1) PM-JAY insurance for secondary/tertiary care, (2) Health & Wellness Centres (HWCs) for comprehensive primary care at 1.5 lakh upgraded sub-centres.",
-                "inContext": "PM-JAY covers ~50 crore people. ₹5 lakh/family/year. 7+ crore hospitalizations.",
+                "detail": "Launched 2018. Covers ~12 crore families (~55 crore individuals) — the bottom 40% by income. Provides cashless hospitalization at empanelled hospitals (both public and private). Over 7 crore hospitalizations authorized since launch. Two components: (1) PM-JAY insurance for secondary/tertiary care, (2) Health & Wellness Centres (HWCs) for comprehensive primary care at 1.5 lakh upgraded sub-centres.",
+                "inContext": "PM-JAY covers ~55 crore people. ₹5 lakh/family/year. 7+ crore hospitalizations.",
                 "relatedTerms": ["oop-expenditure", "phc"],
             },
             {

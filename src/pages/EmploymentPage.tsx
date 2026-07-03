@@ -120,9 +120,9 @@ export default function EmploymentPage() {
       <div className="composition-divider" />
 
       <NarrativeBridge
-        text="And for those who do work — men or women — the nature of that work is the problem. 58% are self-employed. Most of that is subsistence: a farmer on 2 acres, a street vendor, a gig worker without a contract."
+        text="And for those who do work — men or women — the nature of that work is the problem. 56% are self-employed. Most of that is subsistence: a farmer on 2 acres, a street vendor, a gig worker without a contract."
         highlights={{
-          '58%': 'var(--saffron)',
+          '56%': 'var(--saffron)',
           'self-employed': 'var(--saffron)',
           'subsistence': 'var(--saffron)',
         }}

@@ -168,7 +168,7 @@ const SECTIONS = [
         <ul className="space-y-2">
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />
-            <span>ISFR counts plantations as forest. The national 25% figure overstates natural forest cover. Ecological quality is not captured.</span>
+            <span>ISFR counts plantations as forest. The oft-quoted 25% green-cover figure (forest + tree cover) overstates natural forest cover. Ecological quality is not captured.</span>
           </li>
           <li className="flex gap-3 items-start">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--saffron)' }} />

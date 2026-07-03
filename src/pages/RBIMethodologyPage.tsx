@@ -86,7 +86,7 @@ const SECTIONS = [
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
             <span>
               <strong>Repo Rate</strong> — The rate at which RBI lends to commercial banks. Updated
-              after each MPC meeting (~6 per year). All 25 decisions from 2014 onward are included.
+              after each MPC meeting (~6 per year). All 28 decisions from 2014 onward are included.
             </span>
           </li>
           <li className="flex gap-3 items-start">
