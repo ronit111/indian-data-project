@@ -44,7 +44,7 @@ export const climateEnergy: TopicDef = {
       domains: ['environment'],
       sources: ['CEA', 'World Bank'],
       charts: [{
-        chartType: 'area', chartTitle: 'Renewable Energy Capacity Growth', unit: '% of total', accent: '#14B8A6',
+        chartType: 'area', chartTitle: 'Renewables in Energy Consumption (World Bank, incl. traditional biomass)', unit: '% of final energy consumption', accent: '#14B8A6',
         extractData: (bag) => {
           const d = energy(bag);
           if (!d?.renewablesPctTimeSeries?.length || d.renewablesPctTimeSeries.length < 3) return null;
