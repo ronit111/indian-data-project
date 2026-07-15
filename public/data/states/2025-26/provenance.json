@@ -1,7 +1,7 @@
 {
   "domain": "states",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-07-15",
   "spec": 1,
   "figures": {
     "summary.nationalGsdpTotal": {
@@ -20,7 +20,7 @@
           "name": "RBI Handbook XLSX (live scrape)",
           "publisher": "Reserve Bank of India",
           "url": "https://www.rbi.org.in/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-07-15"
         },
         {
           "kind": "derivation",
@@ -56,7 +56,7 @@
           "name": "RBI Handbook XLSX (live scrape)",
           "publisher": "Reserve Bank of India",
           "url": "https://www.rbi.org.in/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-07-15"
         },
         {
           "kind": "derivation",
