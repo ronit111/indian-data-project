@@ -1,7 +1,7 @@
 {
   "domain": "education",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-07-15",
   "spec": 1,
   "figures": {
     "summary.totalStudents": {
@@ -19,7 +19,7 @@
           "kind": "curation",
           "name": "Curated from the printed report; per-state values validated against national anchors",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -43,7 +43,7 @@
           "kind": "curation",
           "name": "Curated from the printed report; per-state values validated against national anchors",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -62,7 +62,7 @@
           "name": "World Bank Development Indicators API",
           "publisher": "World Bank",
           "url": "https://api.worldbank.org/",
-          "retrieved": "2026-06-05"
+          "retrieved": "2026-07-15"
         },
         {
           "kind": "check",
