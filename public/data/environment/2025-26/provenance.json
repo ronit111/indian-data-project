@@ -1,7 +1,7 @@
 {
   "domain": "environment",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-07-15",
   "spec": 1,
   "figures": {
     "summary.forestPct": {
@@ -19,7 +19,7 @@
           "kind": "curation",
           "name": "Curated from ISFR 2023; forest cover only",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-03"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -50,7 +50,7 @@
           "kind": "curation",
           "name": "Curated at the 2021 vintage",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-03"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",

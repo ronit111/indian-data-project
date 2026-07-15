@@ -3,87 +3,99 @@
   "pm25TimeSeries": [
     {
       "year": "2000",
-      "value": 61.51
+      "value": 50.76
     },
     {
       "year": "2001",
-      "value": 61.91
+      "value": 50.45
     },
     {
       "year": "2002",
-      "value": 62.37
+      "value": 51.25
     },
     {
       "year": "2003",
-      "value": 62.77
+      "value": 52.51
     },
     {
       "year": "2004",
-      "value": 62.95
+      "value": 50.84
     },
     {
       "year": "2005",
-      "value": 62.77
+      "value": 51.34
     },
     {
       "year": "2006",
-      "value": 61.2
+      "value": 49.25
     },
     {
       "year": "2007",
-      "value": 58.02
+      "value": 49.45
     },
     {
       "year": "2008",
-      "value": 54.37
+      "value": 51.27
     },
     {
       "year": "2009",
-      "value": 51.35
+      "value": 52.26
     },
     {
       "year": "2010",
-      "value": 50.1
+      "value": 51.72
     },
     {
       "year": "2011",
-      "value": 61.71
+      "value": 55.03
     },
     {
       "year": "2012",
-      "value": 74.0
+      "value": 53.02
     },
     {
       "year": "2013",
-      "value": 76.25
+      "value": 52.27
     },
     {
       "year": "2014",
-      "value": 79.04
+      "value": 51.69
     },
     {
       "year": "2015",
-      "value": 73.81
+      "value": 51.44
     },
     {
       "year": "2016",
-      "value": 75.79
+      "value": 54.42
     },
     {
       "year": "2017",
-      "value": 67.31
+      "value": 55.17
     },
     {
       "year": "2018",
-      "value": 68.12
+      "value": 56.68
     },
     {
       "year": "2019",
-      "value": 59.89
+      "value": 53.6
     },
     {
       "year": "2020",
-      "value": 48.39
+      "value": 52.19
+    },
+    {
+      "year": "2021",
+      "value": 55.62
+    },
+    {
+      "year": "2022",
+      "value": 50.66
+    },
+    {
+      "year": "2023",
+      "value": 54.05
     }
   ],
   "stateAQI": [],
