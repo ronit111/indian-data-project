@@ -1,7 +1,7 @@
 {
   "domain": "crime",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-07-15",
   "spec": 1,
   "figures": {
     "summary.totalCrimes": {
@@ -19,7 +19,7 @@
           "kind": "curation",
           "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -49,7 +49,7 @@
           "kind": "curation",
           "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -74,7 +74,7 @@
           "kind": "curation",
           "name": "Hand-curated from the printed tables; refreshed June 2026 against the primary PDFs",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-07-15"
         }
       ]
     }
