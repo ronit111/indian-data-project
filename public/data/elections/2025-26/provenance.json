@@ -1,7 +1,7 @@
 {
   "domain": "elections",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-07-15",
   "spec": 1,
   "figures": {
     "summary.turnout2024": {
@@ -19,7 +19,7 @@
           "kind": "curation",
           "name": "Hand-curated from official results and affidavit analyses",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-07-02"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -43,7 +43,7 @@
           "kind": "curation",
           "name": "Hand-curated from official results and affidavit analyses",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-07-02"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -67,7 +67,7 @@
           "kind": "curation",
           "name": "Hand-curated from official results and affidavit analyses",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-07-02"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
@@ -92,7 +92,7 @@
           "kind": "curation",
           "name": "Hand-curated from official results and affidavit analyses",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-07-02"
+          "published": "2026-07-15"
         },
         {
           "kind": "check",
