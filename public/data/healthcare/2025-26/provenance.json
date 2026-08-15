@@ -1,7 +1,7 @@
 {
   "domain": "healthcare",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-08-15",
   "spec": 1,
   "figures": {
     "summary.outOfPocketPct": {
@@ -19,7 +19,7 @@
           "kind": "curation",
           "name": "Curated at the 2021 vintage (WB SH.XPD.OOPC.CH.ZS)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-08-15"
         },
         {
           "kind": "check",
@@ -43,7 +43,7 @@
           "kind": "curation",
           "name": "WHO-derived World Bank estimates (SH.TBS.INCD); headline pinned to the latest published series point (July 2026)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-08-15"
         },
         {
           "kind": "check",
@@ -67,7 +67,7 @@
           "kind": "curation",
           "name": "Curated from the World Bank series; latest published point is 2020",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-08-15"
         },
         {
           "kind": "check",
@@ -92,7 +92,7 @@
           "kind": "curation",
           "name": "Corrected against the primary PDF (June 2026)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-05"
+          "published": "2026-08-15"
         },
         {
           "kind": "check",
