@@ -4,7 +4,7 @@ Instructions for AI assistants and human contributors working on this codebase.
 
 ## Stack
 
-React 19 + TypeScript + Vite 7 + Tailwind v4. Zustand (state), Framer Motion (animation), D3 (visualizations), Canvas API (share cards + SVG→PNG export). Deployed on Vercel via GitHub push to `main`.
+React 19 + TypeScript + Vite 7 + Tailwind v4. Zustand (state), Framer Motion (animation), D3 (visualizations), Canvas API (share cards + SVG→PNG export). Deployed on Vercel via GitHub push to `main` — **pushing to `main` deploys to production; always ask Ronit before pushing.**
 
 ## Architecture
 
@@ -47,7 +47,7 @@ Hub loads only `summary.json` per domain. Story pages load full datasets via dom
 ## Data Pipelines
 
 12 GitHub Actions workflows (11 domains + freshness monitor). Shared infrastructure in `pipeline/src/common/`:
-- `world_bank.py` — retry with backoff, shared by 7 pipelines
+- `world_bank.py` — retry with backoff, shared by 8 pipelines (economy, healthcare, education, rbi, employment, environment, census, crime)
 - `mospi_client.py` — paginated fetcher for MOSPI eSankhyiki API (CPI, GDP, PLFS, WPI, IIP, Energy, ASI). No auth required.
 - `rbi_handbook.py` — XLSX scraper for both RBI Handbooks (Indian Economy + Indian States). Anti-bot bypass via browser-like headers.
 
