@@ -1,7 +1,7 @@
 {
   "domain": "employment",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-09-01",
   "spec": 1,
   "figures": {
     "summary.unemploymentRate": {
@@ -20,13 +20,13 @@
           "name": "MOSPI eSankhyiki API (PLFS)",
           "publisher": "Ministry of Statistics and Programme Implementation",
           "url": "https://api.mospi.gov.in/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-09-01"
         },
         {
           "kind": "curation",
           "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-09-01"
         },
         {
           "kind": "check",
@@ -52,13 +52,13 @@
           "name": "MOSPI eSankhyiki API (PLFS)",
           "publisher": "Ministry of Statistics and Programme Implementation",
           "url": "https://api.mospi.gov.in/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-09-01"
         },
         {
           "kind": "curation",
           "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-09-01"
         },
         {
           "kind": "check",
@@ -83,13 +83,13 @@
           "name": "MOSPI eSankhyiki API (PLFS)",
           "publisher": "Ministry of Statistics and Programme Implementation",
           "url": "https://api.mospi.gov.in/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-09-01"
         },
         {
           "kind": "curation",
           "name": "Live API primary with curated fallback; values dual-source verified against the printed report (June 2026)",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-09-01"
         },
         {
           "kind": "check",
