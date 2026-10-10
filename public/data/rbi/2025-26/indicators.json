@@ -159,6 +159,10 @@
         {
           "year": "2024-25",
           "value": 4.95
+        },
+        {
+          "year": "2025-26",
+          "value": 2.4
         }
       ],
       "source": "World Bank FP.CPI.TOTL.ZG"
@@ -453,15 +457,19 @@
         },
         {
           "year": "2022-23",
-          "value": 37.09
+          "value": 38.19
         },
         {
           "year": "2023-24",
-          "value": 39.35
+          "value": 40.89
         },
         {
           "year": "2024-25",
-          "value": 40.02
+          "value": 41.61
+        },
+        {
+          "year": "2025-26",
+          "value": 44.03
         }
       ],
       "source": "World Bank FD.AST.PRVT.GD.ZS"
@@ -575,51 +583,51 @@
       "series": [
         {
           "year": "2004-05",
-          "value": 8.96
+          "value": 9.03
         },
         {
           "year": "2005-06",
-          "value": 8.92
+          "value": 8.98
         },
         {
           "year": "2006-07",
-          "value": 8.82
+          "value": 8.88
         },
         {
           "year": "2007-08",
-          "value": 8.93
+          "value": 8.98
         },
         {
           "year": "2008-09",
-          "value": 9.24
+          "value": 9.29
         },
         {
           "year": "2009-10",
-          "value": 9.52
+          "value": 9.57
         },
         {
           "year": "2010-11",
-          "value": 9.96
+          "value": 10.0
         },
         {
           "year": "2011-12",
-          "value": 10.42
+          "value": 10.44
         },
         {
           "year": "2012-13",
-          "value": 11.08
+          "value": 11.1
         },
         {
           "year": "2013-14",
-          "value": 11.74
+          "value": 11.76
         },
         {
           "year": "2014-15",
-          "value": 12.75
+          "value": 12.76
         },
         {
           "year": "2015-16",
-          "value": 13.43
+          "value": 13.44
         },
         {
           "year": "2016-17",
@@ -631,27 +639,31 @@
         },
         {
           "year": "2018-19",
-          "value": 14.3
+          "value": 14.28
         },
         {
           "year": "2019-20",
-          "value": 14.43
+          "value": 14.4
         },
         {
           "year": "2020-21",
-          "value": 14.57
+          "value": 14.55
         },
         {
           "year": "2021-22",
-          "value": 14.42
+          "value": 14.39
         },
         {
           "year": "2022-23",
-          "value": 14.32
+          "value": 14.27
         },
         {
           "year": "2023-24",
-          "value": 14.47
+          "value": 14.41
+        },
+        {
+          "year": "2024-25",
+          "value": 14.62
         }
       ],
       "source": "World Bank FB.CBK.BRCH.P5"
@@ -761,6 +773,10 @@
         {
           "year": "2024-25",
           "value": 643.04
+        },
+        {
+          "year": "2025-26",
+          "value": 700.07
         }
       ],
       "source": "World Bank FI.RES.TOTL.CD"
@@ -870,6 +886,10 @@
         {
           "year": "2024-25",
           "value": 83.67
+        },
+        {
+          "year": "2025-26",
+          "value": 87.16
         }
       ],
       "source": "World Bank PA.NUS.FCRF"

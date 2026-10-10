@@ -97,15 +97,19 @@
       },
       {
         "year": "2022-23",
-        "value": 37.09
+        "value": 38.19
       },
       {
         "year": "2023-24",
-        "value": 39.35
+        "value": 40.89
       },
       {
         "year": "2024-25",
-        "value": 40.02
+        "value": 41.61
+      },
+      {
+        "year": "2025-26",
+        "value": 44.03
       }
     ],
     "unit": "% of GDP",
@@ -289,6 +293,6 @@
       }
     ],
     "unit": "%",
-    "source": "RBI Handbook Table 62 (1-3yr Term Deposits, midpoint)"
+    "source": "World Bank FR.INR.DPST"
   }
 }
