@@ -121,39 +121,39 @@
     },
     {
       "year": "2007",
-      "value": 16.9
+      "value": 16.91
     },
     {
       "year": "2008",
-      "value": 17.11
+      "value": 17.12
     },
     {
       "year": "2009",
-      "value": 15.35
+      "value": 15.36
     },
     {
       "year": "2010",
-      "value": 14.94
+      "value": 14.95
     },
     {
       "year": "2011",
-      "value": 15.31
+      "value": 15.32
     },
     {
       "year": "2012",
-      "value": 16.24
+      "value": 16.26
     },
     {
       "year": "2013",
-      "value": 15.3
+      "value": 15.31
     },
     {
       "year": "2014",
-      "value": 15.86
+      "value": 15.88
     },
     {
       "year": "2015",
-      "value": 14.89
+      "value": 14.9
     },
     {
       "year": "2016",
@@ -211,77 +211,81 @@
     },
     {
       "year": "2007",
-      "value": 65.77
+      "value": 65.82
     },
     {
       "year": "2008",
-      "value": 68.3
+      "value": 68.35
     },
     {
       "year": "2009",
-      "value": 67.26
+      "value": 67.32
     },
     {
       "year": "2010",
-      "value": 67.67
-    },
-    {
-      "year": "2011",
       "value": 67.73
     },
     {
+      "year": "2011",
+      "value": 67.78
+    },
+    {
       "year": "2012",
-      "value": 72.18
+      "value": 72.24
     },
     {
       "year": "2013",
-      "value": 73.05
+      "value": 73.1
     },
     {
       "year": "2014",
-      "value": 74.79
+      "value": 74.85
     },
     {
       "year": "2015",
-      "value": 76.01
+      "value": 76.02
     },
     {
       "year": "2016",
-      "value": 75.48
+      "value": 75.49
     },
     {
       "year": "2017",
-      "value": 74.86
+      "value": 74.87
     },
     {
       "year": "2018",
-      "value": 74.99
+      "value": 75.0
     },
     {
       "year": "2019",
-      "value": 72.86
+      "value": 72.87
     },
     {
       "year": "2020",
-      "value": 71.36
+      "value": 71.37
     },
     {
       "year": "2021",
-      "value": 71.49
+      "value": 71.48
     },
     {
       "year": "2022",
-      "value": 71.74
+      "value": 71.65
     },
     {
       "year": "2023",
-      "value": 74.43
+      "value": 73.73
+    },
+    {
+      "year": "2024",
+      "value": 72.3
     }
   ],
   "energyUsePerCapitaTimeSeries": [
     {
       "year": "2000",
-      "value": 394.92
+      "value": 394.91
     },
     {
       "year": "2001",
@@ -297,83 +301,87 @@
     },
     {
       "year": "2004",
-      "value": 415.48
+      "value": 415.47
     },
     {
       "year": "2005",
-      "value": 425.37
+      "value": 424.91
     },
     {
       "year": "2006",
-      "value": 441.79
+      "value": 441.35
     },
     {
       "year": "2007",
-      "value": 461.2
+      "value": 460.58
     },
     {
       "year": "2008",
-      "value": 481.55
+      "value": 479.48
     },
     {
       "year": "2009",
-      "value": 509.45
+      "value": 510.93
     },
     {
       "year": "2010",
-      "value": 531.87
+      "value": 533.55
     },
     {
       "year": "2011",
-      "value": 546.68
+      "value": 546.88
     },
     {
       "year": "2012",
-      "value": 572.13
+      "value": 573.96
     },
     {
       "year": "2013",
-      "value": 577.25
+      "value": 578.4
     },
     {
       "year": "2014",
-      "value": 610.17
+      "value": 611.38
     },
     {
       "year": "2015",
-      "value": 622.34
+      "value": 621.38
     },
     {
       "year": "2016",
-      "value": 627.27
+      "value": 626.56
     },
     {
       "year": "2017",
-      "value": 648.01
+      "value": 646.62
     },
     {
       "year": "2018",
-      "value": 668.3
+      "value": 665.86
     },
     {
       "year": "2019",
-      "value": 666.98
+      "value": 663.73
     },
     {
       "year": "2020",
-      "value": 632.24
+      "value": 627.94
     },
     {
       "year": "2021",
-      "value": 676.81
+      "value": 677.24
     },
     {
       "year": "2022",
-      "value": 727.9
+      "value": 725.86
     },
     {
       "year": "2023",
-      "value": 763.2
+      "value": 764.76
+    },
+    {
+      "year": "2024",
+      "value": 776.54
     }
   ],
   "co2PerCapitaTimeSeries": [],
@@ -520,5 +528,5 @@
       "unit": "KToE"
     }
   ],
-  "source": "MOSPI Energy API (api.mospi.gov.in) + World Bank + CEA Installed Capacity Reports"
+  "source": "World Bank + CEA Installed Capacity Reports"
 }

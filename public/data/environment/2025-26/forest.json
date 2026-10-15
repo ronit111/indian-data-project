@@ -67,35 +67,39 @@
     },
     {
       "year": "2016",
-      "value": 23.91
+      "value": 23.92
     },
     {
       "year": "2017",
-      "value": 24.0
+      "value": 24.02
     },
     {
       "year": "2018",
-      "value": 24.09
+      "value": 24.12
     },
     {
       "year": "2019",
-      "value": 24.18
+      "value": 24.22
     },
     {
       "year": "2020",
-      "value": 24.27
+      "value": 24.32
     },
     {
       "year": "2021",
-      "value": 24.36
+      "value": 24.35
     },
     {
       "year": "2022",
-      "value": 24.45
+      "value": 24.38
     },
     {
       "year": "2023",
-      "value": 24.54
+      "value": 24.41
+    },
+    {
+      "year": "2024",
+      "value": 24.44
     }
   ],
   "forestKm2TimeSeries": [
@@ -165,35 +169,43 @@
     },
     {
       "year": "2016",
-      "value": 710940
+      "value": 711242
     },
     {
       "year": "2017",
-      "value": 713610
+      "value": 714204
     },
     {
       "year": "2018",
-      "value": 716270
+      "value": 717166
     },
     {
       "year": "2019",
-      "value": 718940
+      "value": 720128
     },
     {
       "year": "2020",
-      "value": 721600
+      "value": 723090
     },
     {
       "year": "2021",
-      "value": 724260
+      "value": 723950
     },
     {
       "year": "2022",
-      "value": 726930
+      "value": 724810
     },
     {
       "year": "2023",
-      "value": 729592
+      "value": 725670
+    },
+    {
+      "year": "2024",
+      "value": 726530
+    },
+    {
+      "year": "2025",
+      "value": 727390
     }
   ],
   "protectedAreasPct": [
