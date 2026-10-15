@@ -1,9 +1,9 @@
 {
   "year": "2025-26",
-  "totalPopulation": 1450935791,
+  "totalPopulation": 1463865525,
   "populationGrowthRate": 0.89,
   "literacyRate": 74.04,
-  "urbanizationRate": 35.38,
+  "urbanizationRate": 35.69,
   "sexRatio": 943,
   "topPopulousStates": [
     {
@@ -27,6 +27,6 @@
       "population": 89965000
     }
   ],
-  "lastUpdated": "2026-06-04",
+  "lastUpdated": "2026-10-15",
   "source": "World Bank + NPC Projections 2026 + Census of India 2011"
 }

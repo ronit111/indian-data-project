@@ -1,11 +1,11 @@
 {
   "domain": "census",
   "year": "2025-26",
-  "generated": "2026-07-03",
+  "generated": "2026-10-15",
   "spec": 1,
   "figures": {
     "summary.totalPopulation": {
-      "value": 1450935791,
+      "value": 1463865525,
       "unit": "people",
       "label": "Population of India",
       "chain": [
@@ -14,7 +14,7 @@
           "name": "World Bank Development Indicators API",
           "publisher": "World Bank",
           "url": "https://api.worldbank.org/",
-          "retrieved": "2026-06-04"
+          "retrieved": "2026-10-15"
         },
         {
           "kind": "check",
@@ -39,7 +39,7 @@
           "kind": "curation",
           "name": "Official Census 2011 national figure",
           "publisher": "Indian Data Project pipeline",
-          "published": "2026-06-04"
+          "published": "2026-10-15"
         }
       ],
       "basis": "The official national figure — India has published no full census since 2011."
